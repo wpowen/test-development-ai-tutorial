@@ -25,6 +25,9 @@
 
 ## 阅读教程
 
+- ChatGPT Site：<https://test-development-ai-tutorial.wpowen.chatgpt.site/>
+- GitHub Pages：<https://wpowen.github.io/test-development-ai-tutorial/>
+
 教程站源码在 `site/`：
 
 ```bash

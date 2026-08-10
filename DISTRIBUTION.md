@@ -6,6 +6,8 @@
 
 - GitHub：版本、实验代码、可复制物料、Issue、Release 和更新历史。
 - OpenAI Sites：面向学员的阅读、搜索、进度、复制和课程导航体验。
+- GitHub Pages：<https://wpowen.github.io/test-development-ai-tutorial/>。
+- ChatGPT Site：<https://test-development-ai-tutorial.wpowen.chatgpt.site/>。
 - 当前 `site/content/course.ts` 是站点内容源；实验真实性仍由 `courses/`、`research/` 和验证报告提供。
 - 旧 `tutorial/index.html` 是第一版原型，不再作为新增内容的权威来源。
 
@@ -49,6 +51,6 @@ Sites 使用同一份教程内容构建。评审阶段优先私有部署；公�
 ## 尚未完成
 
 - GitHub 仓库与 GitHub Pages 由同一内容源生成，并由 Actions 验证后发布；
-- ChatGPT Site 使用同一内容源构建，公开访问状态以当前部署为准；
+- ChatGPT Site v4 已公开部署，GitHub Pages 已由 Actions 发布；两端匿名请求均返回 200；
 - 尚未做测试开发从业者与初学者可用性测试；
 - 26 个计划页面仍未交付正文。

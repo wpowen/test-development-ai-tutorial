@@ -20,7 +20,8 @@ Verdict: `PASS-FIXTURE`，不等于 `PASS-LIVE` 或 `PASS-PRACTITIONER`。
 - 40 个测试还包含来源集中度加 filler、渠道借用、GitHub 报告冒用、职业地图漏场景、占位课程、空迁移标签、不存在 URL、缺少教程查看器、计划页冒充已交付页、缺少学习层和缺少专家角色。
 - 教程站已形成 11 个模块、52 个页面的专业知识树；其中 26 页组成测试全流程、传统专项、大模型、AI API/性能可靠性、RAG 质量门禁和职业迁移主路径，其余 26 页明确标记 `planned`。
 - 站点内容门禁、TypeScript 类型检查、vinext 生产构建、服务端 HTML 测试、同源 GitHub Pages 静态导出与静态安全测试全部通过。
-- GitHub 私有分发仓库的远端 Actions 已在 commit `4704ebd` 上运行通过，包含 10 个 evaluator 对抗测试、良好候选通过和已知回归被拒绝；这证明公开分发包在 GitHub 托管运行器上可执行，不等于生产效果。
+- GitHub 公开仓库提交 `4bf127a` 的 `rag-eval-gate` 运行 `31366782842` 成功，覆盖 40 个 Skill 回归、职业课程包验证、站点构建、10 个 evaluator 对抗测试、良好候选通过和已知回归被拒绝。
+- GitHub Pages 运行 `31367062592` 成功完成 build 与 deploy；公开 URL 匿名请求返回 200，并包含需求流程、AI 性能与职业演进章节。
 - ChatGPT Site 版本 3 已从提交 `68004b0` 部署成功并开放公共访问；匿名 HTTP 请求返回 200，页面包含新增 AI 性能与职业演进章节。
 - 先前选择 S01、S05、S32 三个高优先来源执行实时重开并通过；这不是 40 个来源的全量当前可达性证明。S33–S40 已在本轮检索中打开并登记，但未执行同一批次全量 URL 验证。
 - 独立 reviewer 首轮发现 evaluator 假阳性、CI 只跑好快照和 RAG 检索未入执行路径三个阻断项；修复后复审 verdict 为 PASS，确认原 adversarial probes 全部被拒绝、根目录 CI 本地等价命令通过、7 个 manifest runtime steps 达到预期 exit code。
