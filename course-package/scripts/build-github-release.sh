@@ -39,6 +39,7 @@ rsync -a \
   --exclude '.next/' \
   --exclude '.wrangler/' \
   --exclude '.vinext/' \
+  --exclude '.playwright-cli/' \
   --exclude '.openai/' \
   --exclude 'db/' \
   --exclude 'drizzle/' \
@@ -52,6 +53,7 @@ rsync -a \
   --exclude 'dist/' \
   --exclude 'site/' \
   --exclude 'github/' \
+  --exclude '.playwright-cli/' \
   --exclude '__pycache__/' \
   --exclude '*.pyc' \
   "$root/" "$target/course-package/"
