@@ -15,7 +15,7 @@ function setHash(id: string) {
 }
 
 export default function Home() {
-  const [currentId, setCurrentId] = useState("TD-T01");
+  const [currentId, setCurrentId] = useState("TD-F01");
   const [query, setQuery] = useState("");
   const [completed, setCompleted] = useState<string[]>([]);
   const [mobileNav, setMobileNav] = useState(false);
@@ -24,7 +24,7 @@ export default function Home() {
   useEffect(() => {
     const sync = () => {
       const id = window.location.hash.replace("#", "");
-      setCurrentId(pages.some((page) => page.id === id) ? id : "TD-T01");
+      setCurrentId(pages.some((page) => page.id === id) ? id : "TD-F01");
       setMobileNav(false);
     };
     sync();
@@ -64,7 +64,7 @@ export default function Home() {
     <div className="app-shell">
       <header className="topbar">
         <button className="mobile-menu" onClick={() => setMobileNav(!mobileNav)} aria-label="打开课程目录">目录</button>
-        <a className="brand" href="#TD-T01">
+        <a className="brand" href="#TD-F01">
           <span className="brand-mark">QE</span>
           <span><b>测试开发 × AI</b><small>从会测试，到会验证 AI 系统</small></span>
         </a>
@@ -78,7 +78,7 @@ export default function Home() {
         <div className="course-summary">
           <p className="eyebrow">当前可用版本</p>
           <h2>第一条完整学习路径</h2>
-          <p>8 页从基础概念走到 RAG 质量门禁。其余页面保留位置，但不冒充已完成。</p>
+          <p>12 页从传统测试基线、大模型运行基础走到 RAG 质量门禁。其余专题保留位置，但不冒充已完成。</p>
           <div className="summary-stats"><span><b>{delivered}</b> 已交付</span><span><b>{pages.length - delivered}</b> 待开发</span></div>
         </div>
         <label className="search-box">
@@ -181,7 +181,7 @@ export default function Home() {
       <aside className="right-rail">
         <p className="eyebrow">本页导航</p>
         {current.blocks.map((block, index) => <button key={block.title} onClick={() => document.getElementById(`section-${index}`)?.scrollIntoView({ behavior: "smooth" })}>{index + 1}. {block.title}</button>)}
-        <div className="route-card"><b>首条可用路径</b><p>{firstUsablePath.map((id) => id.replace("TD-T", "")).join(" → ")}</p><small>最终交付：RAG 发布质量门禁</small></div>
+        <div className="route-card"><b>首条可用路径</b><p>{firstUsablePath.join(" → ")}</p><small>传统测试基线 → 大模型基础 → RAG 发布质量门禁</small></div>
       </aside>
     </div>
   );

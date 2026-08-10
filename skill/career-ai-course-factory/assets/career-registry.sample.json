@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "last_verified": "2026-08-08",
+  "careers": [
+    {"career_id": "administrative-assistant", "name": "行政", "risk_class": "low", "task_families": ["信息整理", "沟通", "文档"]},
+    {"career_id": "project-coordinator", "name": "项目助理", "risk_class": "low", "task_families": ["会议", "跟进", "汇报"]},
+    {"career_id": "customer-support", "name": "客服", "risk_class": "medium", "task_families": ["问题归类", "回复", "升级"]},
+    {"career_id": "sales-representative", "name": "销售", "risk_class": "medium", "task_families": ["客户研究", "跟进", "提案"]},
+    {"career_id": "ecommerce-operator", "name": "电商运营", "risk_class": "medium", "task_families": ["商品", "评论", "活动"]},
+    {"career_id": "small-business-owner", "name": "小微店主", "risk_class": "medium", "task_families": ["经营", "营销", "客服"]},
+    {"career_id": "recruiter", "name": "招聘顾问", "risk_class": "medium", "task_families": ["岗位分析", "筛选", "面试"]},
+    {"career_id": "content-operator", "name": "新媒体运营", "risk_class": "low", "task_families": ["选题", "脚本", "复盘"]},
+    {"career_id": "teacher-trainer", "name": "教师或培训师", "risk_class": "medium", "task_families": ["备课", "反馈", "评价"]},
+    {"career_id": "test-development-engineer", "name": "测试开发", "risk_class": "medium", "task_families": ["测试设计", "自动化", "缺陷分析", "质量工具"]}
+  ]
+}

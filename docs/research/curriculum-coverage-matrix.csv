@@ -1,0 +1,33 @@
+cell_id,profession_domain_id,layer_kind,specialization_kind,learner_level,topic,required_by_source_ids,competitor_ids,course_ids,learner_artifact,exit_assessment,evidence_status,coverage_status,priority,gap_reason,decision
+TD-CELL-001,TD-D03,profession-baseline,,L0,研发测试流程与质量责任,S23;S32,C04;C05,TD-BASE-01,流程与变化地图,每个阶段标出风险证据与责任人,desk-researched,planned,critical,,保留为所有路线入口
+TD-CELL-002,TD-D03,profession-baseline,,L0,测试设计与风险切片,S23;S32,C04,TD-BASE-02,风险与测试追踪矩阵,注入遗漏业务状态后测试转红,desk-researched,planned,critical,,与 Oracle 入场考核绑定
+TD-CELL-003,TD-D03,profession-baseline,,L1,Oracle 数据与 Fixture,S23;S24,C02;C04,TD-BASE-02,Oracle 决策表与 Fixture,错误答案和错误数据均可区分,desk-researched,planned,critical,,作为所有 Eval 课程前置
+TD-CELL-004,TD-D05,profession-baseline,,L1,自动化 Trace CI 与发布,S23;S32,C05;C10,TD-BASE-03,可执行基线仓库与 CI Gate,产品 Mutation 导致非零退出,desk-researched,planned,critical,,先证明传统自动化不是假绿
+TD-CELL-005,TD-D01,ai-foundation,,L0,模型生命周期与版本,S23;S24,C01;C02,TD-FOUND-01,模型生命周期测试地图,训练推理部署风险可映射到证据,desk-researched,planned,high,,先于模型评测工具学习
+TD-CELL-006,TD-D01,ai-foundation,,L0,Token Attention Context 与解码,S33;S23,C01,TD-FOUND-02,推理变量实验表,固定版本后能解释输出差异,desk-researched,planned,high,,建立概率输出心智模型
+TD-CELL-007,TD-D01,ai-foundation,,L1,Embedding RAG 与引用链,S34;S09,C01;C02,TD-FOUND-03,AI 系统结构与 Trace 图,失败症状映射到检索或生成层,desk-researched,planned,critical,,作为 RAG 实验前置
+TD-CELL-008,TD-D02,ai-foundation,,L1,Tool call Agent Worker Workflow,S35;S01,C07;C10,TD-FOUND-03,Agent 状态与权限图,动作状态和终止条件均可观察,desk-researched,planned,critical,,作为 Agent 和 Workflow 路线前置
+TD-CELL-009,TD-D03,ai-assisted-work,,L1,AI 辅助需求与 Diff 风险分析,S14;S28,C05;C08,TD-AI-01,风险矩阵与追踪表,注入缺失状态规则后能发现遗漏,desk-researched,planned,high,,用非 AI 基线比较覆盖而非文案质量
+TD-CELL-010,TD-D03,ai-assisted-work,,L1,AI 生成自动化测试,S14;S21,C05;C07,TD-AI-02,可执行测试与 Mutation 报告,产品 Mutation 必须稳定 RED,desk-researched,planned,critical,,设置反假绿硬门禁
+TD-CELL-011,TD-D04,ai-assisted-work,,L2,AI 读取 Trace 做失败归因,S14;S28,C05,TD-AI-03,带引用的缺陷报告,删除关键证据后置信度下降,desk-researched,planned,high,,限制 AI 只提出证据化候选根因
+TD-CELL-012,TD-D03,ai-assisted-work,,L2,属性边界与 Fuzz 数据生成,S23;S24,C02,TD-AI-04,生成器与最小反例,命中边界缺陷并完成 shrink,desk-researched,planned,medium,,工具可替换而属性合同保持稳定
+TD-CELL-013,TD-D01,ai-system-quality,llm-quality,L1,Eval 数据 Dataset card Slice Holdout,S05;S06,C01;C02,TD-EVAL-01,版本化 Eval 数据与数据卡,重复污染和关键切片缺口被检出,desk-researched,planned,critical,,先建数据再比较模型
+TD-CELL-014,TD-D01,ai-system-quality,llm-quality,L2,组合 Oracle Rubric 与 Judge 校准,S05;S10,C01;C04,TD-EVAL-02;TD-AI-05,Rubric 校准报告与分歧集,Judge 反例触发人工门禁,desk-researched,planned,critical,,确定性规则优先且高风险人工复核
+TD-CELL-015,TD-D01,ai-system-quality,rag-quality,L2,RAG 检索回答引用忠实性,S09;S34,C01;C02,td-ai-006-rag-eval-ci,RAG Eval 仓库,幻觉丢引用和 Injection 使门禁转红,fixture-tested,covered,critical,,保留为首个完整可运行专题
+TD-CELL-016,TD-D01,ai-system-quality,rag-quality,L2,Prompt 模型知识库版本回归,S03;S09,C02,TD-AI-07,版本实验账本与 Slice 报告,关键 Slice 回归阻断候选版本,desk-researched,planned,high,,禁止只看总体平均分
+TD-CELL-017,TD-D01,ai-system-quality,llm-quality,L2,LLM RAG Agent 安全红队,S07;S08,C03,TD-AI-09,Attack set 与红队报告,注入泄露越权触发 Blocker,desk-researched,planned,critical,,作为跨系统安全专题建设
+TD-CELL-018,TD-D01,ai-system-quality,llm-quality,L2,多模态文档与截图评测,S23;S24,C06,TD-AI-10,多模态数据集与切片报告,OCR 版面和视觉事实 Mutation 被捕获,desk-researched,planned,medium,,当前仅规划需独立实验验证
+TD-CELL-019,TD-D02,agent-workflow-quality,agent-quality,L2,Agent 最终结果单步与轨迹,S35;S39,C07;C10,TD-AI-08,Trajectory cases 与 Agent report,错工具错参数和伪成功被拒绝,desk-researched,planned,critical,,组合业务终态与轨迹 Oracle
+TD-CELL-020,TD-D02,agent-workflow-quality,agent-quality,L2,Browser Agent 沙箱工具与权限,S01;S25,C07;C10,TD-AI-12,Policy 与 Agent Trace,越权调用和副作用被阻断,desk-researched,planned,critical,,默认使用合成系统和最小权限
+TD-CELL-021,TD-D02,agent-workflow-quality,workflow-quality,L2,Planner Generator Healer 工作流,S01;S02,C05;C10,TD-AI-11;TD-AI-13,Seed Specs Tests Trace 与 Healer policy,自愈后产品 Mutation 仍然 RED,desk-researched,planned,high,,防止删除断言与放宽等待
+TD-CELL-022,TD-D02,agent-workflow-quality,workflow-quality,L3,Worker Handoff 与多 Agent 验证,S35;S39,C07;C09,TD-AI-14,Handoff contract 与 Verifier report,独立 Verifier 拒绝伪成功并完成同预算对照,desk-researched,planned,critical,,新增独立专题而非并入 Agent 概览
+TD-CELL-023,TD-D05,quality-engineering,,L2,评测资产与系统版本管理,S05;S06,C01;C02,TD-AI-15,Experiment ledger 与 Version manifest,历史实验按固定依赖可重放,desk-researched,planned,critical,,模型 Prompt 数据工具 Scorer 一起版本化
+TD-CELL-024,TD-D05,quality-engineering,,L2,AI 评测 CI 与 Waiver,S03;S05,C02,TD-AI-16,CI Quality Gate 与 Waiver 模板,已知回归返回非零退出并阻断,desk-researched,planned,critical,,Waiver 必须有责任人和过期时间
+TD-CELL-025,TD-D04,quality-engineering,,L3,Trace 线上失败与回归闭环,S06;S28,C01,TD-AI-17,Feedback to eval 流水线,脱敏失败带 Lineage 进入回归集,desk-researched,planned,high,,生产证据需隐私审查
+TD-CELL-026,TD-D05,quality-engineering,,L3,质量成本延迟漂移与事故治理,S07;S24,C01,TD-AI-18;TD-AI-19,Pareto 报告 Runbook 与事故时间线,单一高分不能掩盖退化且漂移触发回滚,desk-researched,planned,high,,统计和生产实验仍待细化
+TD-CELL-027,TD-D01,benchmark-literacy,benchmark-engineering,L2,Benchmark 任务数据标注与 Holdout,S37;S38,C01;C02,TD-BENCH-01,Benchmark spec 与 Dataset card,污染重复和切分错误被发现,desk-researched,planned,critical,,不背榜单先审数据
+TD-CELL-028,TD-D01,benchmark-literacy,benchmark-engineering,L3,Harness Prompt 权限 Scorer 与聚合,S36;S38,C01,TD-BENCH-02,Harness config Metric card 与复现报告,改变协议后能解释分数变化,desk-researched,planned,critical,,分数必须绑定运行协议
+TD-CELL-029,TD-D01,benchmark-literacy,benchmark-engineering,L3,方差置信区间污染与版本可比性,S37;S40,C01,TD-BENCH-03,不确定性报告与污染审计,小样本和版本差异不会被误报为提升,desk-researched,planned,high,,统计实验尚未运行
+TD-CELL-030,TD-D05,benchmark-literacy,benchmark-engineering,L3,公开榜单到内部 Benchmark,S38;S39,C01;C02,TD-BENCH-04,内部 Benchmark 仓库,公开任务差异和线上失败回流可解释,desk-researched,planned,high,,保持企业分布与公开榜单边界
+TD-CELL-031,TD-D05,capstone,,L4,AI QE 端到端质量仓库,S05;S07,C02;C04,TD-AI-20,Commit 到 Eval CI Trace 回归与回滚仓库,组合故障被阻断诊断修复并保留证据,desk-researched,planned,critical,,整合八阶段工件而非新做演示
+TD-CELL-032,TD-D05,capstone,,L4,从业者与目标学员场景迁移,S13;S27,C04;C05,,,,unmeasured,gap,high,尚无测试开发从业者和目标学员验证,先细化一个专题再做从业评审与可用性测试

@@ -23,7 +23,7 @@ test("server-renders the test-development AI tutorial shell", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 
-test("ships the eight-page usable path and keeps planned pages honest", async () => {
+test("ships the twelve-page usable path and keeps planned pages honest", async () => {
   const response = await render();
   const html = await response.text();
   for (const id of ["TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"]) {

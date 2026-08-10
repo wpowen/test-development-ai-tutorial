@@ -5,8 +5,8 @@ const byId = new Map(pages.map((page) => [page.id, page]));
 
 if (pages.length < 25) errors.push(`expected at least 25 course pages, found ${pages.length}`);
 if (byId.size !== pages.length) errors.push("page IDs must be unique");
-if (firstUsablePath.length < 8) errors.push("first usable path must contain at least 8 pages");
-if (firstUsablePath[0] !== "TD-T01") errors.push("first usable path must start at the beginner entry TD-T01");
+if (firstUsablePath.length < 12) errors.push("first usable path must contain at least 12 pages after adding profession and model foundations");
+if (firstUsablePath[0] !== "TD-F01") errors.push("first usable path must start at the professional baseline entry TD-F01");
 
 for (const id of firstUsablePath) {
   const page = byId.get(id);

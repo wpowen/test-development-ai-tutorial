@@ -28,11 +28,14 @@ export type TutorialPage = {
 };
 
 export const modules = [
-  { id: "TD-M01", title: "先建立共同语言", subtitle: "理解 AI 为什么改变测试对象、断言和测试数据" },
+  { id: "TD-M00", title: "传统测试能力迁移", subtitle: "先拆解研发测试流程，再看 AI 改变了什么、保留了什么" },
+  { id: "TD-M01", title: "大模型与 AI 系统基础", subtitle: "理解模型如何运行，以及 Token、Context、RAG、Tool 和 Agent 为什么会失败" },
   { id: "TD-M02", title: "AI 帮你做传统测试", subtitle: "用 AI 提效，但必须证明生成结果有检测力" },
   { id: "TD-M03", title: "测试 LLM 和 RAG", subtitle: "把概率性回答变成可重复、可审计的质量证据" },
-  { id: "TD-M04", title: "测试 Agent", subtitle: "检查轨迹、工具、权限、安全与自愈风险" },
+  { id: "TD-M04", title: "测试 Agent、Worker 与 Workflow", subtitle: "检查轨迹、状态、工具、权限、Handoff、副作用和自愈风险" },
   { id: "TD-M05", title: "建设 AI 质量系统", subtitle: "把评测接入 CI、生产反馈、版本与回滚体系" },
+  { id: "TD-M06", title: "Benchmark 与分数工程", subtitle: "弄清数据、协议、Scorer、聚合、污染和榜单分数如何产生" },
+  { id: "TD-M07", title: "专业专题与 Capstone", subtitle: "按岗位路线组合工件，交付端到端 AI Quality Engineering 系统" },
 ] as const;
 
 const planned = (
@@ -64,7 +67,232 @@ const planned = (
   evidenceBoundary: "只有学习目标和知识位置，不代表页面已经完成。",
 });
 
-export const pages: TutorialPage[] = [
+const foundationPages: TutorialPage[] = [
+  {
+    id: "TD-F01",
+    moduleId: "TD-M00",
+    order: 1,
+    title: "先把传统测试开发这份工作拆开",
+    type: "概念",
+    status: "desk-researched",
+    duration: "30 分钟",
+    summary: "从研发测试流程、测试方法、自动化工具链、工件和发布责任出发，建立进入 AI 时代之前的职业基线。",
+    why: "如果不先知道测试开发原本负责什么，就无法判断 AI 真正在改变哪一步，也无法分辨“效率提高”与“质量责任被偷偷丢掉”。",
+    prerequisites: [],
+    outcomes: ["画出需求到生产反馈的测试生命周期", "区分方法、工具、工件和质量决策", "找出自己进入 AI 课程前需要补齐的传统能力"],
+    artifact: "传统测试开发能力与工件地图",
+    blocks: [
+      {
+        title: "测试开发不是写用例，而是把风险变成证据",
+        body: [
+          "测试开发的核心工作链路通常是：理解需求和系统 → 识别风险 → 选择测试策略 → 设计 Oracle 和数据 → 实现并执行检查 → 诊断失败 → 支持发布 → 把线上问题变成回归资产。自动化只是其中一段，不是全部职业价值。",
+          "AI 时代仍然保留这条主线。变化的是被测对象增加了模型、Prompt、知识库、检索器、工具、Agent 状态和评测器；如果原有风险、Oracle 和发布责任不清楚，增加 AI 只会放大不确定性。",
+        ],
+      },
+      {
+        title: "把工作拆成五类，不要按工具品牌拆",
+        body: ["用五类对象检查自己的职业基线。工具会更新，但这些对象长期稳定。"],
+        bullets: [
+          "流程：需求评审、设计、开发、测试、发布、监控和复盘如何衔接",
+          "方法：风险驱动、等价类、边界、状态、组合、属性、探索式和 Mutation",
+          "工件：测试策略、追踪矩阵、用例、Fixture、自动化代码、Trace、缺陷和发布报告",
+          "系统：API、UI、数据库、消息、第三方依赖、CI、日志与可观测性平台",
+          "决策：谁定义质量、谁批准放行、谁接受 Waiver、谁决定回滚",
+        ],
+      },
+      {
+        title: "AI 进入后，传统能力怎样迁移",
+        body: ["不是每项旧能力都会被替代。更常见的是原则保留，但输入、失败和证据扩展。"],
+        bullets: [
+          "固定断言 → 组合 Oracle：确定性规则、语义评分、模型 Judge 和人工审核",
+          "测试数据 → Eval dataset：增加风险切片、来源、版本、Holdout、污染和漂移",
+          "UI/API 自动化 → Agent/Workflow：增加工具、参数、状态、权限、重试、Handoff 和副作用",
+          "CI Pass/Fail → AI Quality Gate：增加模型、Prompt、数据、Scorer、统计波动、成本和 Waiver",
+          "日志诊断 → AI Trace：增加检索文档、Tool call、Token、Judge、延迟和完整轨迹",
+        ],
+        warning: "如果课程只教你使用一个 AI 工具，却不说明它改变了哪项职业责任，就不是完整的测试开发能力迁移。",
+      },
+      {
+        title: "做一次入场能力检查",
+        body: [
+          "选择一个你熟悉的普通业务流程，例如登录、下单或退款。写出三条业务风险、对应测试数据、主要 Oracle、自动化入口和发布结论。再说明如何注入一个产品缺陷，使测试稳定变红。",
+          "如果只能写出测试步骤，却写不出风险、Oracle、证据和失败注入，先补传统测试基础；可以免听概念，但不能免交这个工件。",
+        ],
+        expected: "你应得到一张可审计地图：每条风险都连接到输入、测试、Oracle、证据和责任人。",
+      },
+    ],
+    practice: ["选一个真实但可脱敏的业务流程，画出需求到生产反馈的生命周期", "列出至少五种当前测试工具，并把它们归回流程、方法或工件", "设计一个 Mutation，证明现有测试真的有检测力"],
+    completion: ["能解释测试开发的价值为什么不等于写用例", "已经提交一张传统能力与工件地图", "至少一个预埋缺陷能让测试稳定失败"],
+    sourceIds: ["S23", "S24", "S32"],
+    evidenceBoundary: "本页重建职业与方法基线；O*NET、ISTQB 和生产 ML 质量研究只能支持通用结构，不能替代目标企业自己的流程、岗位分工和发布政策。",
+  },
+  {
+    id: "TD-F02",
+    moduleId: "TD-M01",
+    order: 2,
+    title: "大模型从数据、训练到一次推理发生了什么",
+    type: "概念",
+    status: "desk-researched",
+    duration: "35 分钟",
+    summary: "用测试工程师需要的深度理解模型生命周期，知道一次错误回答可能来自训练、对齐、推理配置还是应用层。",
+    why: "不了解模型行为从哪里来，就会把所有问题都归因于 Prompt，也无法设计正确的版本、数据和回归策略。",
+    prerequisites: ["TD-F01"],
+    outcomes: ["解释数据、预训练、后训练、评测、部署、推理和监控的关系", "区分模型本体问题与应用编排问题", "为每个生命周期阶段写出可观察风险"],
+    artifact: "大模型生命周期与测试责任图",
+    blocks: [
+      {
+        title: "先区分模型是怎么来的，和模型这次怎么运行",
+        body: [
+          "预训练让模型从大量数据中学习统计规律；后训练或对齐让模型更能遵循指令、偏好和安全要求。部署后，一次推理会接收当前 Prompt、上下文和参数，再生成输出。测试人员通常不能重新训练基础模型，但必须记录它的版本，并控制本次推理的输入和配置。",
+          "模型可能没有学到某项知识，也可能学过但当前上下文诱导错误；还可能模型回答正确，却被检索、解析器或工具执行层破坏。生命周期图的作用是阻止所有问题都被模糊地叫作“模型不稳定”。",
+        ],
+      },
+      {
+        title: "测试视角的七个阶段",
+        body: ["每个阶段对应不同证据和责任边界。"],
+        bullets: [
+          "数据：来源、许可、质量、偏差、重复、敏感信息和污染",
+          "预训练：知识覆盖和基础能力；多数应用团队只能把模型版本视为外部依赖",
+          "后训练与对齐：指令遵循、偏好、安全和拒答边界可能变化",
+          "离线评测：Benchmark 和内部 Eval 是否代表真实任务，是否泄漏",
+          "部署：模型端点、量化、区域、限流、超时和回退策略",
+          "推理：Prompt、上下文、采样、工具、重试和解析器共同决定结果",
+          "监控：线上 Trace、漂移、成本、延迟、反馈和新失败回流",
+        ],
+      },
+      {
+        title: "一次回答错了，先问四个问题",
+        body: ["不要第一时间修改 Prompt。先定位变化来自哪里。"],
+        bullets: [
+          "模型是否换了版本或部署配置？",
+          "Prompt、系统指令、上下文或检索材料是否变化？",
+          "Temperature、Top-p、最大输出、重试或结构化解析是否变化？",
+          "工具、权限、数据源或后处理是否把正确意图变成错误结果？",
+        ],
+        expected: "同一错误症状可能有多个根因，因此测试报告要保存版本和 Trace，而不是只贴最终回答。",
+      },
+      {
+        title: "把模型当成版本化依赖，而不是神秘大脑",
+        body: [
+          "建立最小 Manifest：模型与提供方版本、Prompt 版本、推理参数、知识库/索引版本、工具 Schema、Scorer/Judge 版本、运行时间和环境。每个 Eval 报告都引用它。",
+          "如果提供方只给动态别名，至少记录调用日期、端点、可见配置和原始 Trace。无法固定的依赖要进入限制说明，并通过重复运行或更保守阈值处理。",
+        ],
+        code: "model_version: vendor/model-snapshot\nprompt_version: refund-assistant-v7\ndataset_version: refund-eval-2026-08\nknowledge_version: policy-index-42\ntemperature: 0\nmax_output_tokens: 600\nscorer_version: refund-rubric-v3",
+      },
+    ],
+    practice: ["为一个聊天或 RAG 功能画出七阶段生命周期", "拿一条失败分别写出模型层、推理层和应用层三种可能根因", "创建一份最小版本 Manifest"],
+    completion: ["能区分训练阶段与本次推理配置", "能指出至少四类被测依赖", "版本 Manifest 足以支持下一次回归比较"],
+    sourceIds: ["S23", "S24", "S33"],
+    evidenceBoundary: "本页解释测试所需的通用模型生命周期，不代表所有模型供应商公开相同训练细节；未公开的训练数据和对齐方法只能作为未知项处理。",
+  },
+  {
+    id: "TD-F03",
+    moduleId: "TD-M01",
+    order: 3,
+    title: "Token、Attention、Context 和概率生成为什么影响测试",
+    type: "概念",
+    status: "desk-researched",
+    duration: "40 分钟",
+    summary: "理解一次生成最关键的运行变量，并把它们转成可以控制、记录和做边界测试的条件。",
+    why: "同一业务问题换语言、格式、上下文顺序或采样参数后可能表现不同；这些不是玄学，而是必须进入测试设计的输入维度。",
+    prerequisites: ["TD-F02"],
+    outcomes: ["用通俗语言解释 Token、Attention、Context、Logits 和解码", "设计上下文与采样的对照实验", "识别确定性回归与统计稳定性测试的边界"],
+    artifact: "推理变量到测试设计映射表",
+    blocks: [
+      {
+        title: "模型不是一次写完整句话，而是逐步选择下一个 Token",
+        body: [
+          "输入会先被切成 Token。模型根据已有 Token 和上下文，为下一步可能出现的 Token 产生分数，再经过解码策略选择一个结果，重复直到结束。因此，中文、英文、标点、JSON、长文本和特殊符号会消耗不同上下文预算。",
+          "测试意义：不要只按“字符数”设计边界；记录输入和输出 Token，测试长短输入、多语言、结构化格式、截断位置和超限后的系统行为。",
+        ],
+      },
+      {
+        title: "Attention 和 Context 决定模型这次能看到什么、重视什么",
+        body: [
+          "Attention 让模型在当前上下文中建立不同位置之间的关系，但它不保证所有材料被等量、正确地使用。重要规则放在不同位置、加入无关文档、给出冲突指令或超过上下文窗口，都可能改变输出。",
+          "测试意义：构造位置变化、无关噪声、冲突上下文、过期政策和长上下文截断样例；保存最终送入模型的完整上下文，而不是只保存用户问题。",
+        ],
+      },
+      {
+        title: "Logits 和解码让输出具有概率性",
+        body: [
+          "模型为候选 Token 产生相对分数，解码策略再决定选哪个。Temperature、Top-p、随机种子和推理策略会改变多样性与重复性。Temperature 为 0 往往更稳定，但不等于数学上的完全确定，也不能消除服务端或并行计算差异。",
+          "测试意义：Schema、工具参数和禁止声明优先做确定性检查；语义质量需要重复运行、风险切片、分布统计和人工校准。不要把一次 PASS 当成稳定性证据。",
+        ],
+        warning: "不能为了让回归稳定，就把所有质量问题都改成字符串精确匹配；那会把合理表达差异误判为失败。",
+      },
+      {
+        title: "设计一个最小对照实验",
+        body: ["保持模型和业务问题不变，只改变一个变量，运行并记录结果。示例选择上下文顺序。"],
+        code: "A: [退款政策, 促销文案] -> 运行 5 次\nB: [促销文案, 退款政策] -> 运行 5 次\n固定: model, prompt, temperature, tools\n记录: answer, citations, forbidden_claim, latency, tokens",
+        expected: "你得到的不是“哪个回答更好看”，而是一张变量、运行次数、质量检查和差异说明表。",
+      },
+    ],
+    practice: ["比较短中文、长中文和同义英文问题的 Token/长度表现", "构造一条重要政策位于上下文开头与结尾的对照", "为随机输出定义重复次数和稳定性指标"],
+    completion: ["能说明输出为什么不是固定字符串", "实验每次只改变一个主要变量", "知道哪些检查确定性执行、哪些需要统计或人工"],
+    sourceIds: ["S23", "S33", "S40"],
+    evidenceBoundary: "Transformer 原始论文支持 Attention 架构基础；不同现代模型的 Tokenizer、位置机制、推理策略和服务端确定性可能不同，具体行为必须查看当前模型文档并实测。",
+  },
+  {
+    id: "TD-F04",
+    moduleId: "TD-M01",
+    order: 4,
+    title: "从 LLM 到 RAG、Agent 和 Workflow：测试对象怎样扩张",
+    type: "概念",
+    status: "desk-researched",
+    duration: "35 分钟",
+    summary: "建立直接 LLM、RAG、Agent、Worker 和固定 Workflow 的统一结构，知道新增一层就增加哪些失败和证据。",
+    why: "很多团队把所有智能系统都叫 Agent，导致测试范围模糊。先区分系统结构，才能决定测回答、检索、工具、状态、Handoff 还是业务终态。",
+    prerequisites: ["TD-F03"],
+    outcomes: ["区分 LLM、RAG、Agent、Worker 和 Workflow", "为每种结构列出新增失败模式", "画出一条带工具和人工确认的可测试流程"],
+    artifact: "AI 应用结构、失败与证据分层图",
+    blocks: [
+      {
+        title: "五种对象不要混成一个词",
+        body: ["它们都可能调用大模型，但控制方式和测试重点不同。"],
+        bullets: [
+          "LLM：输入上下文，生成输出；重点是格式、正确性、拒答、稳定性和成本",
+          "RAG：先检索再生成；增加召回、排序、污染、上下文、引用和忠实性",
+          "Agent：模型动态决定下一步和工具；增加轨迹、权限、循环、终止和副作用",
+          "Worker：在系统中承担一个边界明确的任务单元；增加输入输出契约、超时、重试和 Handoff",
+          "Workflow：代码预先规定路径和分支，可包含模型或 Worker；增加状态转换、并发、补偿和端到端业务不变量",
+        ],
+      },
+      {
+        title: "每增加一层，都要增加可观察证据",
+        body: [
+          "LLM 至少保存输入、Prompt、模型、参数和输出；RAG 还要保存 Query、文档 ID、排序和上下文；Agent 还要保存每个 Tool call、参数、返回、权限与状态；Workflow 还要保存节点、分支、重试、Handoff、补偿和终态。",
+          "只保存最终回答，会让“答案对但过程危险”“答案错但检索正确”“最终成功但中途重复扣款”等关键问题无法重放。",
+        ],
+      },
+      {
+        title: "测试维度从输出扩展到业务过程",
+        body: ["同一个退款助手，可以按下面层级设计测试。"],
+        bullets: [
+          "输出：是否正确说明政策，是否应该拒答或转人工",
+          "检索：是否找到正确政策，是否混入过期促销文档",
+          "工具：是否选择 refund_order，参数是否正确，是否先取得确认",
+          "轨迹：是否循环、跳过验证、错误重试或在失败后继续执行",
+          "Workflow：Worker Handoff 是否完整，终态数据库是否正确，补偿是否执行",
+          "运行：延迟、Token、成本、失败率和 Trace 是否在预算内",
+        ],
+        warning: "最终回复写着“没有退款”并不能证明工具没有真的执行退款。副作用必须直接检查。",
+      },
+      {
+        title: "画一条可测试的 Worker Workflow",
+        body: ["示例：分类 Worker → 政策检索 Worker → 风险判断 → 人工确认 → 执行 Worker → 独立 Verifier。"],
+        code: "request\n  -> classify\n  -> retrieve_policy\n  -> risk_check\n  -> human_approval?\n  -> execute_or_refuse\n  -> independent_verify\n  -> final_state",
+        expected: "图中每个节点都有输入、输出、状态、超时、失败路径和责任人；不可逆动作前存在明确人工或策略 Gate。",
+      },
+    ],
+    practice: ["把一个普通聊天功能分别扩展成 RAG、Agent 和 Workflow", "为每次扩展增加至少三种失败和三类 Trace 字段", "为不可逆工具动作设计权限、确认和补偿测试"],
+    completion: ["不再把 Workflow、Worker 和 Agent 当作同义词", "能解释为什么最终结果不足以测试 Agent", "已经完成一张结构、失败和证据分层图"],
+    sourceIds: ["S08", "S23", "S34", "S35", "S39"],
+    evidenceBoundary: "页面提供跨框架结构模型；不同产品对 Agent、Worker、Memory 和 Workflow 的命名不一致，课程以控制权、状态和证据，而不是品牌术语作为判定依据。",
+  },
+];
+
+const corePages: TutorialPage[] = [
   {
     id: "TD-T01",
     moduleId: "TD-M01",
@@ -75,7 +303,7 @@ export const pages: TutorialPage[] = [
     duration: "18 分钟",
     summary: "区分确定性软件检查与概率性 AI 质量判断，知道哪些旧方法仍然有效、哪些地方必须换思路。",
     why: "如果仍把 AI 当作普通接口，只断言状态码和固定字符串，就会漏掉幻觉、拒答失守、引用错误、工具越权和质量漂移。",
-    prerequisites: [],
+    prerequisites: ["TD-F04"],
     outcomes: [
       "说清普通软件与 AI 系统在输出、依赖和失败模式上的三个差异",
       "把一条 AI 失败归类为结构、行为、语义、安全或运行质量问题",
@@ -530,12 +758,26 @@ export const pages: TutorialPage[] = [
   planned("TD-T17", "TD-M04", 17, "Prompt injection、数据泄露和 excessive agency", "跟做", "构建攻击集并验证 Agent 不越权、不泄露", "攻击集与安全报告", ["TD-T16"]),
   planned("TD-T18", "TD-M04", 18, "Browser Agent 和 Playwright Test Agents", "跟做", "使用 planner、generator、healer 生成候选测试并保留证据", "Agent 生成测试包", ["TD-T06", "TD-T16"]),
   planned("TD-T19", "TD-M04", 19, "自愈测试为什么会误修绿", "诊断", "阻止 healer 通过删除断言或改变业务 oracle 修绿", "Healer 反作弊策略", ["TD-T18"]),
-  planned("TD-T20", "TD-M05", 20, "把评测接入 CI", "跟做", "让 AI 质量回归返回非零退出码并阻断合并", "CI quality gate", ["TD-T12"]),
-  planned("TD-T21", "TD-M05", 21, "评测集、Prompt、模型、知识库和工具版本", "参考", "为一次质量结论保存全部可重放依赖", "实验与版本账本", ["TD-T20"]),
-  planned("TD-T22", "TD-M05", 22, "Trace、生产失败和回归集闭环", "跟做", "把脱敏线上失败转成有 lineage 的回归样例", "反馈流水线", ["TD-T21"]),
-  planned("TD-T23", "TD-M05", 23, "质量、延迟和成本联合门禁", "参考", "比较质量、延迟和成本的多目标折中", "Pareto 对比报告", ["TD-T20"]),
-  planned("TD-T24", "TD-M05", 24, "漂移、告警、waiver 和回滚", "诊断", "为 AI 质量异常设计告警、例外和回滚路径", "事故与回滚 runbook", ["TD-T21", "TD-T22", "TD-T23"]),
-  planned("TD-T25", "TD-M05", 25, "Capstone：完成一个 AI Quality Engineering 仓库", "项目", "交付从 commit 到 CI、Trace、回归和人工门禁的端到端质量仓库", "AI QE Capstone 仓库", ["TD-T12", "TD-T17", "TD-T20", "TD-T24"]),
+  planned("TD-W01", "TD-M04", 20, "先区分 Agent、Worker 和固定 Workflow", "概念", "根据控制权、状态和路径确定测试对象，而不是按产品营销名称分类", "Agent/Worker/Workflow 对照图", ["TD-T15"]),
+  planned("TD-W02", "TD-M04", 21, "测试状态、循环、重试、Handoff 和终止条件", "跟做", "注入重复执行、丢状态、错误 Handoff 和不终止故障", "Workflow 状态与故障注入报告", ["TD-W01", "TD-T16"]),
+  planned("TD-W03", "TD-M04", 22, "单 Agent 与多 Agent 的公平对照", "诊断", "固定模型、工具、Token、时间和成功标准，判断多 Agent 是否真实提升", "同预算对照实验", ["TD-W02"]),
+  planned("TD-T20", "TD-M05", 23, "把评测接入 CI", "跟做", "让 AI 质量回归返回非零退出码并阻断合并", "CI quality gate", ["TD-T12", "TD-T14"]),
+  planned("TD-T21", "TD-M05", 24, "评测集、Prompt、模型、知识库和工具版本", "参考", "为一次质量结论保存全部可重放依赖", "实验与版本账本", ["TD-T20"]),
+  planned("TD-T22", "TD-M05", 25, "Trace、生产失败和回归集闭环", "跟做", "把脱敏线上失败转成有 lineage 的回归样例", "反馈流水线", ["TD-T21"]),
+  planned("TD-T23", "TD-M05", 26, "质量、延迟和成本联合门禁", "参考", "比较质量、延迟和成本的多目标折中", "Pareto 对比报告", ["TD-T20"]),
+  planned("TD-T24", "TD-M05", 27, "漂移、告警、waiver 和回滚", "诊断", "为 AI 质量异常设计告警、例外和回滚路径", "事故与回滚 runbook", ["TD-T21", "TD-T22", "TD-T23"]),
+  planned("TD-B01", "TD-M06", 28, "Benchmark 不是一张榜单：先拆评分流水线", "概念", "把任务、数据、协议、运行、Scorer、聚合和报告连接起来", "Benchmark 评分流水线图", ["TD-T21"]),
+  planned("TD-B02", "TD-M06", 29, "Benchmark 数据怎么来：采样、标注、Split 与 Holdout", "跟做", "构建带来源、风险切片和未见 Holdout 的小型数据集", "Dataset card 与 Holdout manifest", ["TD-B01"]),
+  planned("TD-B03", "TD-M06", 30, "Accuracy、Pass@k、Resolved rate 和 Judge score 怎么算", "跟做", "在小型 Fixture 上手算并运行四类分数", "Metric card 与计算脚本", ["TD-B02"]),
+  planned("TD-B04", "TD-M06", 31, "Prompt、Harness、工具权限为什么会改变分数", "诊断", "固定模型并改变一个协议变量，解释分数差异", "Benchmark 复现实验报告", ["TD-B03"]),
+  planned("TD-B05", "TD-M06", 32, "不确定性、污染、隐藏测试和版本可比性", "诊断", "审计样本量、重复运行、置信区间、泄漏和版本变化", "可信度与污染审计", ["TD-B04"]),
+  planned("TD-B06", "TD-M06", 33, "从 SWE-bench、AgentBench、HELM 到企业内部 Benchmark", "项目", "借鉴公开方法但换成真实业务任务、风险切片和维护政策", "内部 Benchmark 最小仓库", ["TD-B05", "TD-T22"]),
+  planned("TD-T25", "TD-M07", 34, "Capstone：完成一个 AI Quality Engineering 仓库", "项目", "交付从 commit 到 CI、Trace、回归、Benchmark 和人工门禁的端到端质量仓库", "AI QE Capstone 仓库", ["TD-T12", "TD-T17", "TD-T20", "TD-T24", "TD-B06"]),
+];
+
+export const pages: TutorialPage[] = [
+  ...foundationPages,
+  ...corePages.map((page) => ({ ...page, order: page.order + foundationPages.length })),
 ];
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
@@ -548,6 +790,14 @@ export const sourceNotes: Record<string, { title: string; url: string }> = {
   S23: { title: "ISTQB Certified Tester AI Testing Syllabus v2.0", url: "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf" },
   S24: { title: "The ML Test Score", url: "https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/" },
   S32: { title: "Software Quality Assurance Analysts and Testers", url: "https://www.onetonline.org/link/summary/15-1253.00" },
+  S33: { title: "Attention Is All You Need", url: "https://arxiv.org/abs/1706.03762" },
+  S34: { title: "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", url: "https://arxiv.org/abs/2005.11401" },
+  S35: { title: "ReAct: Synergizing Reasoning and Acting in Language Models", url: "https://arxiv.org/abs/2210.03629" },
+  S36: { title: "Language Model Evaluation Harness", url: "https://github.com/EleutherAI/lm-evaluation-harness" },
+  S37: { title: "Holistic Evaluation of Language Models", url: "https://crfm.stanford.edu/helm/index.html" },
+  S38: { title: "SWE-bench", url: "https://github.com/SWE-bench/SWE-bench" },
+  S39: { title: "AgentBench: Evaluating LLMs as Agents", url: "https://arxiv.org/abs/2308.03688" },
+  S40: { title: "Trustworthy third-party evaluations", url: "https://openai.com/index/trustworthy-third-party-evaluations-foundations/" },
 };
 
-export const firstUsablePath = ["TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"];
+export const firstUsablePath = ["TD-F01", "TD-F02", "TD-F03", "TD-F04", "TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"];
