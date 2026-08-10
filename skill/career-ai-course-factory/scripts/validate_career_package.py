@@ -20,7 +20,7 @@ from urllib.request import Request, urlopen
 
 REQUIRED_ROOT = [
     "career-profile.md", "tasks.json", "curriculum.json", "course-map.md",
-    "learning-architecture.md", "curriculum-gap-analysis.md", "validation-report.md", "update-log.md",
+    "industry-framework.md", "learning-architecture.md", "curriculum-gap-analysis.md", "validation-report.md", "update-log.md",
 ]
 LEARNING_ARCHITECTURE_MARKERS = [
     "## Learner transformation", "## Professional baseline", "## AI foundations",
@@ -40,7 +40,7 @@ REQUIRED_TUTORIAL_MARKDOWN = {
 }
 REQUIRED_RESEARCH = [
     "source-ledger.csv", "search-plan.json", "search-log.csv", "technology-radar.json",
-    "channel-coverage.json", "profession-map.json", "github-artifacts.csv", "job-signals.csv",
+    "channel-coverage.json", "profession-map.json", "profession-knowledge-system.json", "github-artifacts.csv", "job-signals.csv",
     "learner-signals.csv", "scenarios.json", "evidence-matrix.md", "competitor-matrix.csv",
     "ai-capability-map.md", "competency-transition-map.json", "curriculum-coverage-matrix.csv",
 ]
@@ -132,6 +132,9 @@ LEARNING_LAYER_KINDS = [
 AI_QUALITY_SPECIALIZATIONS = {
     "llm-quality", "rag-quality", "agent-quality", "workflow-quality", "benchmark-engineering",
 }
+AI_CHANGE_CLASSES = {"retained", "assisted", "automated", "transformed", "new-work", "declining"}
+MANDATORY_AI_CHANGE_CLASSES = {"retained", "assisted", "transformed", "new-work"}
+KNOWLEDGE_CELL_STATUSES = {"covered", "planned", "not-applicable", "gap"}
 COVERAGE_STATUSES = {"covered", "planned", "gap", "rejected"}
 COVERAGE_PRIORITIES = {"critical", "high", "medium", "low"}
 VALID_STATUSES = {
@@ -861,6 +864,255 @@ def validate_curriculum_gap_audit(root: Path, errors: list[str]) -> None:
             errors.append(f"curriculum coverage matrix misses AI-quality specializations: {', '.join(sorted(missing_specializations))}")
 
 
+def validate_profession_knowledge_system(root: Path, errors: list[str]) -> None:
+    framework_path = root / "industry-framework.md"
+    if framework_path.is_file():
+        framework = framework_path.read_text(encoding="utf-8")
+        if len(framework.strip()) < 2500:
+            errors.append("industry-framework.md is too thin to explain a full profession system")
+        for marker in [
+            "## End-to-end lifecycle", "## Specialization families", "## System and work-object classes",
+            "## Quality and outcome attributes", "## AI transformation", "## Role and career evolution",
+            "## Coverage verdict", "## Critical gaps",
+        ]:
+            if marker not in framework:
+                errors.append(f"industry-framework.md missing marker: {marker}")
+
+    path = root / "research/profession-knowledge-system.json"
+    if not path.is_file():
+        return
+    data = load_json(path, errors)
+    if not isinstance(data, dict):
+        return
+    require_fields(data, [
+        "profession_id", "as_of", "lifecycle_stages", "specialization_families",
+        "system_classes", "outcome_attributes", "role_evolution", "coverage_cells",
+        "review_status",
+    ], "profession knowledge system", errors)
+
+    ledger_path = root / "research/source-ledger.csv"
+    ledger_rows, _ = load_csv(ledger_path, errors) if ledger_path.is_file() else ([], [])
+    source_ids = {row.get("id", "").strip() for row in ledger_rows if row.get("id")}
+    course_path = root / "curriculum.json"
+    course_data = load_json(course_path, errors) if course_path.is_file() else None
+    course_ids = {
+        str(course.get("course_id", "")) for course in course_data.get("courses", [])
+        if isinstance(course_data, dict) and isinstance(course, dict) and course.get("course_id")
+    } if isinstance(course_data, dict) else set()
+
+    lifecycle = data.get("lifecycle_stages")
+    families = data.get("specialization_families")
+    systems = data.get("system_classes")
+    attributes = data.get("outcome_attributes")
+    roles = data.get("role_evolution")
+    cells = data.get("coverage_cells")
+    minimums = [
+        ("lifecycle stages", lifecycle, 8), ("specialization families", families, 6),
+        ("system classes", systems, 5), ("outcome attributes", attributes, 6),
+        ("role evolution levels", roles, 4), ("coverage cells", cells, 24),
+    ]
+    for label, values, minimum in minimums:
+        if not isinstance(values, list) or len(values) < minimum:
+            errors.append(f"profession knowledge system needs at least {minimum} {label}")
+
+    seen_change_classes: set[str] = set()
+    lifecycle_ids: set[str] = set()
+    family_ids: set[str] = set()
+    system_ids: set[str] = set()
+    attribute_ids: set[str] = set()
+
+    change_fields = [
+        "change_id", "change_class", "baseline_work", "ai_intervention", "human_accountability",
+        "new_failure_modes", "required_controls", "learner_proof", "evidence_ids", "confidence",
+    ]
+
+    def validate_evidence_and_courses(item: dict[str, Any], label: str, require_courses: bool = True) -> None:
+        evidence = item.get("evidence_ids")
+        if not isinstance(evidence, list) or not evidence:
+            errors.append(f"{label} needs evidence_ids")
+        elif set(evidence) - source_ids:
+            errors.append(f"{label} references unknown evidence IDs")
+        if require_courses:
+            courses = item.get("course_ids")
+            if not isinstance(courses, list):
+                errors.append(f"{label} course_ids must be a list")
+            elif set(str(value) for value in courses) - course_ids:
+                errors.append(f"{label} references unknown course IDs")
+
+    def validate_changes(item: dict[str, Any], label: str) -> None:
+        changes = item.get("ai_changes")
+        if not isinstance(changes, list) or not changes:
+            errors.append(f"{label} needs at least one AI change")
+            return
+        for change_index, change in enumerate(changes):
+            if not isinstance(change, dict):
+                errors.append(f"{label} AI change {change_index} is not an object")
+                continue
+            require_fields(change, change_fields, f"{label} AI change {change_index}", errors)
+            change_class = str(change.get("change_class", ""))
+            seen_change_classes.add(change_class)
+            if change_class not in AI_CHANGE_CLASSES:
+                errors.append(f"{label} AI change {change_index} has invalid change_class: {change_class}")
+            for list_field in ["new_failure_modes", "required_controls", "evidence_ids"]:
+                if not isinstance(change.get(list_field), list) or not change.get(list_field):
+                    errors.append(f"{label} AI change {change_index} needs non-empty {list_field}")
+            evidence = set(change.get("evidence_ids", [])) if isinstance(change.get("evidence_ids"), list) else set()
+            if evidence - source_ids:
+                errors.append(f"{label} AI change {change_index} references unknown evidence IDs")
+
+    if isinstance(lifecycle, list):
+        lifecycle_fields = [
+            "stage_id", "name", "trigger", "inputs", "activities", "outputs", "artifacts", "decision_gate",
+            "owner", "metrics", "tools", "failure_modes", "downstream_handoff", "evidence_ids", "course_ids", "ai_changes",
+        ]
+        for index, stage in enumerate(lifecycle):
+            if not isinstance(stage, dict):
+                errors.append(f"lifecycle stage {index} is not an object")
+                continue
+            require_fields(stage, lifecycle_fields, f"lifecycle stage {index}", errors)
+            stage_id = str(stage.get("stage_id", ""))
+            if stage_id in lifecycle_ids:
+                errors.append(f"duplicate lifecycle stage_id: {stage_id}")
+            lifecycle_ids.add(stage_id)
+            for list_field in ["inputs", "activities", "outputs", "artifacts", "metrics", "tools", "failure_modes"]:
+                if not isinstance(stage.get(list_field), list) or not stage.get(list_field):
+                    errors.append(f"lifecycle stage {index} needs non-empty {list_field}")
+            validate_evidence_and_courses(stage, f"lifecycle stage {index}")
+            validate_changes(stage, f"lifecycle stage {index}")
+
+    if isinstance(families, list):
+        family_fields = [
+            "family_id", "name", "scope", "protected_outcome", "risks", "methods", "artifacts", "metrics", "tools",
+            "prerequisites", "lifecycle_stage_ids", "system_class_ids", "evidence_ids", "course_ids", "ai_changes",
+        ]
+        for index, family in enumerate(families):
+            if not isinstance(family, dict):
+                errors.append(f"specialization family {index} is not an object")
+                continue
+            require_fields(family, family_fields, f"specialization family {index}", errors)
+            family_id = str(family.get("family_id", ""))
+            if family_id in family_ids:
+                errors.append(f"duplicate specialization family_id: {family_id}")
+            family_ids.add(family_id)
+            validate_evidence_and_courses(family, f"specialization family {index}")
+            validate_changes(family, f"specialization family {index}")
+
+    if isinstance(systems, list):
+        system_fields = [
+            "system_class_id", "name", "interfaces", "state", "dependencies", "observability_points",
+            "characteristic_failures", "quality_attribute_ids", "specialization_family_ids", "evidence_ids", "course_ids",
+        ]
+        for index, system in enumerate(systems):
+            if not isinstance(system, dict):
+                errors.append(f"system class {index} is not an object")
+                continue
+            require_fields(system, system_fields, f"system class {index}", errors)
+            system_id = str(system.get("system_class_id", ""))
+            if system_id in system_ids:
+                errors.append(f"duplicate system_class_id: {system_id}")
+            system_ids.add(system_id)
+            validate_evidence_and_courses(system, f"system class {index}")
+
+    if isinstance(attributes, list):
+        attribute_fields = [
+            "attribute_id", "name", "definition", "observable_indicators", "leading_metrics", "lagging_metrics",
+            "verification_methods", "decision_thresholds", "tradeoffs", "ai_specific_risks", "evidence_ids", "course_ids",
+        ]
+        for index, attribute in enumerate(attributes):
+            if not isinstance(attribute, dict):
+                errors.append(f"outcome attribute {index} is not an object")
+                continue
+            require_fields(attribute, attribute_fields, f"outcome attribute {index}", errors)
+            attribute_id = str(attribute.get("attribute_id", ""))
+            if attribute_id in attribute_ids:
+                errors.append(f"duplicate outcome attribute_id: {attribute_id}")
+            attribute_ids.add(attribute_id)
+            if not isinstance(attribute.get("decision_thresholds"), list) or not attribute.get("decision_thresholds"):
+                errors.append(f"outcome attribute {index} needs decision thresholds")
+            validate_evidence_and_courses(attribute, f"outcome attribute {index}")
+
+    if isinstance(roles, list):
+        role_fields = [
+            "role_id", "level", "current_responsibilities", "durable_skills", "assisted_or_automated_work",
+            "new_ai_responsibilities", "adjacent_roles", "transition_projects", "portfolio_evidence", "decision_authority",
+            "evidence_ids", "course_ids", "forecast_boundary",
+        ]
+        for index, role in enumerate(roles):
+            if not isinstance(role, dict):
+                errors.append(f"role evolution {index} is not an object")
+                continue
+            require_fields(role, role_fields, f"role evolution {index}", errors)
+            validate_evidence_and_courses(role, f"role evolution {index}")
+
+    if isinstance(families, list):
+        for index, family in enumerate(families):
+            if not isinstance(family, dict):
+                continue
+            if set(family.get("lifecycle_stage_ids", [])) - lifecycle_ids:
+                errors.append(f"specialization family {index} references unknown lifecycle stages")
+            if set(family.get("system_class_ids", [])) - system_ids:
+                errors.append(f"specialization family {index} references unknown system classes")
+    if isinstance(systems, list):
+        for index, system in enumerate(systems):
+            if not isinstance(system, dict):
+                continue
+            if set(system.get("quality_attribute_ids", [])) - attribute_ids:
+                errors.append(f"system class {index} references unknown outcome attributes")
+            if set(system.get("specialization_family_ids", [])) - family_ids:
+                errors.append(f"system class {index} references unknown specialization families")
+
+    if isinstance(cells, list):
+        seen_cells: set[str] = set()
+        for index, cell in enumerate(cells):
+            if not isinstance(cell, dict):
+                errors.append(f"knowledge coverage cell {index} is not an object")
+                continue
+            require_fields(cell, [
+                "cell_id", "lifecycle_stage_id", "specialization_family_id", "system_class_id",
+                "outcome_attribute_id", "learner_level", "status", "priority", "rationale",
+            ], f"knowledge coverage cell {index}", errors)
+            cell_id = str(cell.get("cell_id", ""))
+            if cell_id in seen_cells:
+                errors.append(f"duplicate knowledge coverage cell_id: {cell_id}")
+            seen_cells.add(cell_id)
+            if cell.get("status") not in KNOWLEDGE_CELL_STATUSES:
+                errors.append(f"knowledge coverage cell {index} has invalid status: {cell.get('status')}")
+            if cell.get("lifecycle_stage_id") not in lifecycle_ids or cell.get("specialization_family_id") not in family_ids or cell.get("system_class_id") not in system_ids or cell.get("outcome_attribute_id") not in attribute_ids:
+                errors.append(f"knowledge coverage cell {index} references an unknown dimension")
+            status = cell.get("status")
+            if status in {"covered", "planned"}:
+                require_fields(cell, ["course_ids", "learner_artifact", "assessment", "evidence_ids"], f"knowledge coverage cell {index}", errors)
+                validate_evidence_and_courses(cell, f"knowledge coverage cell {index}")
+            if status == "gap" and cell.get("priority") in {"critical", "high"}:
+                require_fields(cell, ["owner", "decision"], f"knowledge coverage cell {index}", errors)
+            if status == "not-applicable" and len(str(cell.get("rationale", "")).strip()) < 12:
+                errors.append(f"knowledge coverage cell {index} not-applicable rationale is too thin")
+
+    missing_changes = MANDATORY_AI_CHANGE_CLASSES - seen_change_classes
+    if missing_changes:
+        errors.append(f"profession knowledge system misses mandatory AI change classes: {', '.join(sorted(missing_changes))}")
+
+    critical_gaps = data.get("critical_gaps")
+    if not isinstance(critical_gaps, list):
+        errors.append("profession knowledge system critical_gaps must be a list")
+    else:
+        for index, gap in enumerate(critical_gaps):
+            if not isinstance(gap, dict):
+                errors.append(f"critical gap {index} is not an object")
+                continue
+            require_fields(gap, ["gap_id", "priority", "description", "decision", "owner", "acceptance_gate"], f"critical gap {index}", errors)
+            if gap.get("priority") in {"critical", "high"} and gap.get("decision") in {"unresolved", "", None}:
+                errors.append(f"profession knowledge system has unresolved {gap.get('priority')} gap: {gap.get('gap_id')}")
+
+    review_status = data.get("review_status")
+    if not isinstance(review_status, dict):
+        errors.append("profession knowledge system review_status must be an object")
+    else:
+        for review in ["lifecycle_continuity", "specialization_completeness", "system_diversity", "metrics_and_gates", "ai_change_realism", "career_coherence"]:
+            if review_status.get(review) not in {"pass", "conditional-pass"}:
+                errors.append(f"profession knowledge system review did not pass: {review}")
+
+
 def validate_tasks_and_curriculum(root: Path, errors: list[str]) -> None:
     scenario_data = load_json(root / "research/scenarios.json", errors) if (root / "research/scenarios.json").is_file() else None
     scenario_records = scenario_data.get("scenarios", []) if isinstance(scenario_data, dict) else []
@@ -1401,6 +1653,7 @@ def validate(root: Path) -> list[str]:
     if not (root / "tools/tool-registry.json").is_file():
         errors.append("missing tool registry: tools/tool-registry.json")
     validate_research(root, errors)
+    validate_profession_knowledge_system(root, errors)
     validate_curriculum_gap_audit(root, errors)
     validate_tasks_and_curriculum(root, errors)
     validate_courses(root, errors)

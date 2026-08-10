@@ -1,0 +1,28 @@
+{
+  "run_date": "2026-08-09",
+  "evidence_scope": "Deterministic offline snapshot evaluation harness and regression sensitivity only",
+  "environment": {"runtime":"Python 3 stdlib","credentials":"none","working_directory":"courses/td-ai-006-rag-eval-ci/lab"},
+  "commands": [
+    "python3 -m unittest discover -s tests -v",
+    "python3 scripts/reset_candidate.py && python3 scripts/evaluate.py --report reports/baseline.json",
+    "python3 scripts/inject_regression.py; python3 scripts/evaluate.py --report reports/mutation.json",
+    "python3 scripts/reset_candidate.py && python3 scripts/evaluate.py --report reports/repair.json"
+  ],
+  "adversarial_tests": {"count":10,"exit_code":0,"verdict":"PASS","covers":["disallowed citation","dangerous unexpected tool","Chinese prompt leak","single-case cost spike","unexpected candidate","negative telemetry","null answer","retrieval pollution","over-refusal","known-good control"]},
+  "baseline": {"exit_code":0,"verdict":"PASS","metrics":{"coverage":1.0,"candidate_set_exact":1.0,"task_pass_rate":1.0,"schema_pass_rate":1.0,"retrieval_recall":1.0,"retrieval_precision":1.0,"citation_pass_rate":1.0,"forbidden_claim_rate":0.0,"refusal_pass_rate":1.0,"tool_pass_rate":1.0,"p95_latency_ms":820.0,"avg_cost_usd":0.003875,"max_cost_usd":0.006}},
+  "mutation": {"exit_code":1,"verdict":"FAIL","injected":["retrieval miss and pollution","refund hallucination","missing citations","credential request","prompt injection disclosure","identity bypass","wrong destructive tool","latency regression","cost regression"],"metrics":{"coverage":1.0,"candidate_set_exact":1.0,"task_pass_rate":0.0,"schema_pass_rate":0.875,"retrieval_recall":0.5,"retrieval_precision":0.5,"citation_pass_rate":0.2,"forbidden_claim_rate":1.0,"refusal_pass_rate":0.625,"tool_pass_rate":0.875,"p95_latency_ms":4200.0,"avg_cost_usd":0.006375,"max_cost_usd":0.026}},
+  "repair": {"exit_code":0,"verdict":"PASS","action":"reset candidate-current.jsonl to candidate-good.jsonl","metrics":{"coverage":1.0,"candidate_set_exact":1.0,"task_pass_rate":1.0,"schema_pass_rate":1.0,"retrieval_recall":1.0,"retrieval_precision":1.0,"citation_pass_rate":1.0,"forbidden_claim_rate":0.0,"refusal_pass_rate":1.0,"tool_pass_rate":1.0,"p95_latency_ms":820.0,"avg_cost_usd":0.003875,"max_cost_usd":0.006}},
+  "artifacts": ["lab/reports/baseline.json","lab/reports/mutation.json","lab/reports/repair.json"],
+  "sha256": {
+    "lab/data/eval_cases.jsonl": "cb27a65028325e968f42d6a2516b1595365f4bf242528357010ce835a27ea91c",
+    "lab/data/candidate-good.jsonl": "1b342f9ce1712a6c20626836d406522dc21c177fa1f4840dae412d0167c3e624",
+    "lab/data/candidate-regressed.jsonl": "8d73e6e76cac982f112f11d12cac13f49143e4d57fd31d70eb7ba349a1e5219e",
+    "lab/data/thresholds.json": "56b41a7156ee3761cff27b61a0afcd442678765d80f6f76e5b8fe707f472c780",
+    "lab/scripts/evaluate.py": "4f361c042ffe0668956de0d5c5531c9ae6f4f5f250a3f54978b39e920c3bfee8",
+    "lab/tests/test_evaluate.py": "6a1c6642afb7b891c8f95abc5eb105f4335600662dd4d910ec3ff2ef33d3cc2f",
+    "lab/reports/baseline.json": "261de28bf81ca3bd7e3b57ba1852bd00735796b4c79e165e72e697873902b18e",
+    "lab/reports/mutation.json": "34ca01435a9e93d424cea88610ba86ca6bff8716afba1acffe20f6ce214bd1e8",
+    "lab/reports/repair.json": "261de28bf81ca3bd7e3b57ba1852bd00735796b4c79e165e72e697873902b18e"
+  },
+  "limitations": ["No live LLM provider was called","No real retriever was evaluated","Keyword/rule scorers are teaching fixtures","No practitioner review was performed"]
+}

@@ -35,8 +35,9 @@ export default function Home() {
   }, []);
 
   const current = pages.find((page) => page.id === currentId) ?? pages[0];
-  const previous = pages.find((page) => page.order === current.order - 1);
-  const next = pages.find((page) => page.order === current.order + 1);
+  const currentIndex = pages.findIndex((page) => page.id === current.id);
+  const previous = currentIndex > 0 ? pages[currentIndex - 1] : undefined;
+  const next = currentIndex < pages.length - 1 ? pages[currentIndex + 1] : undefined;
   const visiblePages = useMemo(() => {
     const keyword = query.trim().toLowerCase();
     if (!keyword) return pages;
@@ -69,7 +70,7 @@ export default function Home() {
           <span><b>测试开发 × AI</b><small>从会测试，到会验证 AI 系统</small></span>
         </a>
         <div className="top-progress">
-          <span>首条路径已完成 {completed.filter((id) => firstUsablePath.includes(id)).length}/{firstUsablePath.length}</span>
+          <span>专业主路径已完成 {completed.filter((id) => firstUsablePath.includes(id)).length}/{firstUsablePath.length}</span>
           <div><i style={{ width: `${(completed.filter((id) => firstUsablePath.includes(id)).length / firstUsablePath.length) * 100}%` }} /></div>
         </div>
       </header>
@@ -77,8 +78,8 @@ export default function Home() {
       <aside className={`sidebar ${mobileNav ? "open" : ""}`}>
         <div className="course-summary">
           <p className="eyebrow">当前可用版本</p>
-          <h2>第一条完整学习路径</h2>
-          <p>12 页从传统测试基线、大模型运行基础走到 RAG 质量门禁。其余专题保留位置，但不冒充已完成。</p>
+          <h2>从传统测试到 AI 质量工程</h2>
+          <p>26 页专业主路径覆盖完整测试生命周期、九类专项、大模型基础、AI API、性能可靠性、RAG 评测与职业迁移；未完成专题继续明确标记。</p>
           <div className="summary-stats"><span><b>{delivered}</b> 已交付</span><span><b>{pages.length - delivered}</b> 待开发</span></div>
         </div>
         <label className="search-box">
@@ -181,7 +182,7 @@ export default function Home() {
       <aside className="right-rail">
         <p className="eyebrow">本页导航</p>
         {current.blocks.map((block, index) => <button key={block.title} onClick={() => document.getElementById(`section-${index}`)?.scrollIntoView({ behavior: "smooth" })}>{index + 1}. {block.title}</button>)}
-        <div className="route-card"><b>首条可用路径</b><p>{firstUsablePath.join(" → ")}</p><small>传统测试基线 → 大模型基础 → RAG 发布质量门禁</small></div>
+        <div className="route-card"><b>专业主路径</b><p>{firstUsablePath.join(" → ")}</p><small>测试全流程 → 专项 → 大模型 → AI 接口与性能 → RAG 质量门禁 → 职业演进</small></div>
       </aside>
     </div>
   );

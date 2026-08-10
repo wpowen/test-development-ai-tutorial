@@ -1,0 +1,36 @@
+{
+  "profession": "test-development-ai",
+  "generated_at": "2026-08-09T12:53:12Z",
+  "research_question": "测试开发岗位如何使用 AI 改造传统质量工作，并测试、治理 LLM、RAG 与 Agent 系统？",
+  "freshness_required": true,
+  "run_scope": "full",
+  "available_surfaces": [
+    {"surface_id": "SURF-LIVE", "surface": "live-web", "is_live": true, "status": "available", "attempted_at": "2026-08-09T12:30:00Z", "evidence": "search-log.csv Q01-Q04 and opened URLs", "limits": "搜索结果需打开原始页面后才能作为证据"},
+    {"surface_id": "SURF-OFFICIAL", "surface": "official-doc-domain-search", "is_live": true, "status": "available", "attempted_at": "2026-08-09T12:36:00Z", "evidence": "search-log.csv Q05-Q08 and Q11 with official opened URLs", "limits": "适合验证当前能力，不证明业务效果"},
+    {"surface_id": "SURF-PLATFORM", "surface": "platform-search", "is_live": true, "status": "available", "attempted_at": "2026-08-09T12:32:00Z", "evidence": "search-log.csv Q03 Q09 Q12-Q14 and opened platform pages", "limits": "课程、行业和实践页属于供给或需求信号"},
+    {"surface_id": "SURF-COMMUNITY", "surface": "community-search", "is_live": true, "status": "available", "attempted_at": "2026-08-09T12:43:00Z", "evidence": "search-log.csv Q10 and opened discussion URLs", "limits": "只作为从业者或反证信号"},
+    {"surface_id": "SURF-LOCAL", "surface": "local-repository-and-runtime", "is_live": false, "status": "available", "attempted_at": "2026-08-09T12:50:00Z", "evidence": "validator and TD-AI-06 lab execution output", "limits": "只验证课程物料和离线实验，不代表生产环境"}
+  ],
+  "query_families": [
+    {"family": "role-reality", "languages": ["zh", "en"], "purpose": "识别 AI 质量岗位的任务、产物与技能"},
+    {"family": "latest-capability", "languages": ["zh", "en"], "purpose": "验证当前测试智能体与评测框架能力"},
+    {"family": "profession-ai-workflow", "languages": ["zh", "en"], "purpose": "查找测试开发与 AI 结合的工作流"},
+    {"family": "artifact-and-code", "languages": ["zh", "en"], "purpose": "发现可运行仓库、数据集与 CI 配置"},
+    {"family": "failure-and-counterevidence", "languages": ["zh", "en"], "purpose": "定位越权、幻觉、误修复与维护风险"},
+    {"family": "competitor-supply", "languages": ["zh", "en"], "purpose": "核对多平台课程供给与缺失的学习者证据"},
+    {"family": "adoption-and-demand", "languages": ["zh", "en"], "purpose": "观察招聘与从业者转型信号"},
+    {"family": "privacy-and-governance", "languages": ["zh", "en"], "purpose": "定义数据、权限和人工审批边界"}
+  ],
+  "freshness_policy": [
+    {"claim_type": "fast-changing technology", "max_age_days": 90},
+    {"claim_type": "job, adoption, competitor", "max_age_days": 365},
+    {"claim_type": "practitioner issue and counterevidence", "max_age_days": 730},
+    {"claim_type": "standard or durable method", "max_age_days": 0, "rule": "verify latest edition and label historical sources"}
+  ],
+  "stop_conditions": [
+    "BLOCKED-FRESHNESS when current claims cannot be verified live",
+    "stop ranking when a scenario lacks three evidence classes",
+    "stop packaging when the learner artifact cannot fail on a meaningful regression"
+  ],
+  "run_status": "complete"
+}

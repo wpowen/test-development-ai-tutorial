@@ -1,0 +1,95 @@
+{
+  "lesson_id": "td-ai-006-rag-eval-ci-l01",
+  "target_learner": "会运行 Python 命令但第一次系统测试 RAG/LLM 应用的测试开发工程师",
+  "level": "L2-control-and-check",
+  "estimated_minutes": 12,
+  "job_result": "能用一套可重复评测阻断无依据回答并解释失败证据",
+  "artifact": "eval_cases.jsonl + reports/*.json + verification checklist",
+  "stages": [
+    {
+      "stage_id": "cold-open-failure",
+      "instructor_action": "先展示客服助手给出知识库中不存在的退款承诺，但人工扫一眼很容易放过",
+      "learner_action": "在揭示指标前判断这条回答应通过、失败还是进入人工复核",
+      "expected_observation": "回答语气可信但缺少依据，文本流畅不等于可发布",
+      "debrief": "测试对象是概率性 AI 输出及其证据，不是普通字符串接口",
+      "artifact_or_assessment": "记录 learner prediction"
+    },
+    {
+      "stage_id": "stakes-and-promise",
+      "instructor_action": "说明错误政策答复会造成客诉和错误放行，并展示本节最后要生成的 JSON 门禁报告",
+      "learner_action": "确认自己的放行标准至少包含依据、引用和拒答边界",
+      "expected_observation": "学习目标是做出可审计发布判断而不是获得一段漂亮回答",
+      "debrief": "AI 只能提供质量证据，发布权仍属于质量负责人",
+      "artifact_or_assessment": "三项放行条件"
+    },
+    {
+      "stage_id": "before-after",
+      "instructor_action": "对比随机对话抽查与版本化黄金集加阈值门禁",
+      "learner_action": "指出旧流程中不可重复和无法回归的两个环节",
+      "expected_observation": "同一候选版本可以被同一用例集重复比较",
+      "debrief": "先建立非 AI 基线和验收阈值，再讨论工具",
+      "artifact_or_assessment": "before-after workflow note"
+    },
+    {
+      "stage_id": "plain-mental-model",
+      "instructor_action": "把评测解释成体检单：单项检查、风险切片和最终放行不是一回事",
+      "learner_action": "把依据、引用、拒答分别映射到一个可检查字段",
+      "expected_observation": "一个总分无法解释哪类业务风险失败",
+      "debrief": "确定性检查优先，语义 judge 需要校准和人工抽审",
+      "artifact_or_assessment": "metric-to-risk mapping"
+    },
+    {
+      "stage_id": "guided-demo",
+      "instructor_action": "运行 reset 与 baseline evaluation 并打开逐用例 JSON 报告",
+      "learner_action": "复制命令运行 baseline 并找到报告中的通过阈值和失败切片字段",
+      "expected_observation": "baseline 命令退出码为 0 且 verdict 为 PASS",
+      "debrief": "必须同时保存命令、版本、环境和机器可读输出",
+      "artifact_or_assessment": "lab/reports/baseline.json"
+    },
+    {
+      "stage_id": "failure-diagnosis",
+      "instructor_action": "注入一条无依据政策回答，在运行前暂停让学习者预测哪个检查会红",
+      "learner_action": "运行 mutation 并用报告证据解释失败，不允许只说模型变差了",
+      "expected_observation": "mutation 命令退出码非 0 且 verdict 为 FAIL",
+      "debrief": "有意义的门禁必须能被真实相关的回归触发",
+      "artifact_or_assessment": "lab/reports/mutation.json + diagnosis"
+    },
+    {
+      "stage_id": "learner-practice",
+      "instructor_action": "给出一个未完成的高风险退款用例和阈值位置",
+      "learner_action": "补全输入、运行评测并修改阈值或检查逻辑使测试表达业务规则，而不是硬编码结果",
+      "expected_observation": "新用例可重复运行且错误候选保持红色",
+      "debrief": "学习者必须生成自己的可检查产物",
+      "artifact_or_assessment": "新增 eval case and report slice"
+    },
+    {
+      "stage_id": "transfer-challenge",
+      "instructor_action": "把业务条件改为物流时效并移除原退款关键词",
+      "learner_action": "迁移数据契约和检查逻辑，不得只替换 Prompt 名词",
+      "expected_observation": "同一质量框架适用，但风险切片、参考依据和阈值需要重设",
+      "debrief": "能迁移到相邻业务对象才算掌握工作流",
+      "artifact_or_assessment": "logistics eval fixture proposal",
+      "source_context": "客服退款政策知识库与退款风险切片",
+      "target_context": "将同一评测门禁迁移到另一份知识库和新的业务风险切片",
+      "invariant": "发布判断仍必须由版本化样例、可解释失败证据和人工质量负责人共同完成",
+      "must_change": ["物流知识库与引用白名单", "时效承诺风险切片及阈值", "未知问题和拒答样例"],
+      "success_criterion": "新物流夹具的正常版本通过，注入错误时效承诺后门禁稳定失败，并能由报告定位到对应风险切片"
+    },
+    {
+      "stage_id": "artifact-handoff",
+      "instructor_action": "展示 quickstart、reusable Skill、样例输入、预期输出、检查表和 provenance",
+      "learner_action": "按检查表复跑 repair，并写下真实项目接入前仍缺的三项证据",
+      "expected_observation": "repair 重新 PASS，同时明确 fixture、live 和 practitioner evidence 的边界",
+      "debrief": "可下载物料必须说明来源、运行、失败、重置和不能证明什么",
+      "artifact_or_assessment": "verified material pack and gap list"
+    }
+  ],
+  "interaction_prompts": [
+    "这条看起来合理的回答，你会放行、阻断还是人工复核？为什么？",
+    "注入无依据政策回答后，你预测哪个字段先失败？",
+    "把场景换成物流时效后，哪些数据和阈值必须重做？"
+  ],
+  "recovery_path": "运行 python3 scripts/reset_candidate.py 后重新执行 baseline；若环境异常则使用已保存报告完成诊断并标记未运行",
+  "evidence_status": "fixture-tested",
+  "limitations": "教学弧和实验室已结构化验证；未测真实学习者完课、保留率、迁移能力或岗位绩效"
+}

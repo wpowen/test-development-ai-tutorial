@@ -1,0 +1,90 @@
+{
+  "profession_id": "test-development-ai",
+  "canonical_name": "测试开发 / Software Quality Assurance Analysts and Testers",
+  "taxonomy": [
+    {"system": "O*NET-SOC", "id": "15-1253.00", "scope": "US occupation baseline"},
+    {"system": "project", "id": "test-development-ai", "scope": "AI-native test development specialization"}
+  ],
+  "as_of": "2026-08-10",
+  "role_variants": [
+    {"variant_id": "qa-automation", "name": "自动化测试开发", "applicability": "Web/API/移动端产品"},
+    {"variant_id": "ai-quality", "name": "AI 应用质量工程师", "applicability": "LLM/RAG/Agent 产品"},
+    {"variant_id": "test-platform", "name": "测试平台与质量基础设施工程师", "applicability": "CI、数据、可观测性和发布门禁"}
+  ],
+  "lifecycle": ["理解需求与风险", "设计质量策略", "构建测试数据与环境", "实现自动化与执行检查", "诊断失败", "发布决策", "生产反馈与改进"],
+  "traditional_quality_baseline": [
+    {"baseline_id":"TD-BL01","name":"需求、风险与可追溯性","methods":["风险驱动测试","验收标准","追踪矩阵"],"artifacts":["测试策略","风险矩阵","追踪表"],"ai_change":"模型、Prompt、知识库和工具版本成为新的变更输入"},
+    {"baseline_id":"TD-BL02","name":"测试设计与 Oracle","methods":["等价类","边界值","状态转换","组合","属性"],"artifacts":["测试用例","断言","状态模型"],"ai_change":"从固定断言扩展为确定性规则、语义评测和人工校准的组合 Oracle"},
+    {"baseline_id":"TD-BL03","name":"测试数据与环境","methods":["Fixture","隔离","合成数据","数据清理"],"artifacts":["测试数据","环境清单","数据 Lineage"],"ai_change":"增加 Eval dataset、风险切片、Holdout、污染和漂移控制"},
+    {"baseline_id":"TD-BL04","name":"自动化测试工程","methods":["API/UI/集成自动化","测试分层","Mutation"],"artifacts":["测试仓库","执行报告","Mutation 报告"],"ai_change":"AI 可生成和自愈测试，但必须证明没有删除或放宽业务 Oracle"},
+    {"baseline_id":"TD-BL05","name":"失败诊断与证据链","methods":["Trace","Log","Screenshot","Network","Diff"],"artifacts":["缺陷报告","证据图","根因记录"],"ai_change":"需要同时保留检索、生成、工具、状态、Judge、Token、延迟和成本证据"},
+    {"baseline_id":"TD-BL06","name":"CI、发布与生产改进","methods":["回归选择","发布门禁","Waiver","回滚","事故复盘"],"artifacts":["CI Gate","发布报告","Runbook"],"ai_change":"门禁同时管理模型、Prompt、数据、工具、Scorer、统计波动、漂移和线上反馈"}
+  ],
+  "work_domains": [
+    {
+      "domain_id": "TD-D01",
+      "name": "AI 输出与检索质量评测",
+      "job_result": "把概率性回答转成可重复的质量基线和可解释失败切片",
+      "business_events": ["知识库或模型候选发布", "离线或线上质量异常"],
+      "artifacts": ["黄金集", "分层指标", "失败报告", "阈值策略"],
+      "systems": ["客服 RAG/LLM 应用", "评测框架", "CI"],
+      "decision_rights": ["AI 可计算指标和候选归因", "质量负责人决定阻断、修复或 waiver"],
+      "failure_costs": ["错误政策答复", "客诉", "错误放行", "误判根因"],
+      "ai_lanes": ["test-ai-systems", "build-ai-quality-system"],
+      "scenario_ids": ["TD-S01", "TD-S02"],
+      "evidence_ids": ["S03", "S09", "S10", "S13", "S23", "S32"]
+    },
+    {
+      "domain_id": "TD-D02",
+      "name": "Agent 轨迹与安全验证",
+      "job_result": "验证 Agent 的工具选择、参数、顺序、权限和终态",
+      "business_events": ["工具 schema 或 Agent Prompt 变化", "新增权限或数据源准备发布"],
+      "artifacts": ["任务集", "参考轨迹", "轨迹 scorer", "攻击集", "安全报告"],
+      "systems": ["客服 Agent", "工具沙箱", "红队框架"],
+      "decision_rights": ["AI 只在沙箱执行批准动作", "产品与安全负责人保留发布权"],
+      "failure_costs": ["错误退款", "越权调用", "敏感信息泄露", "错误终态"],
+      "ai_lanes": ["test-ai-systems", "build-ai-quality-system"],
+      "scenario_ids": ["TD-S03", "TD-S04"],
+      "evidence_ids": ["S06", "S08", "S10", "S22", "S23"]
+    },
+    {
+      "domain_id": "TD-D03",
+      "name": "AI 辅助测试设计与实现",
+      "job_result": "从业务风险生成可审查、可运行、能被变异测试证伪的自动化检查",
+      "business_events": ["结算流程新增业务规则"],
+      "artifacts": ["测试计划", "自动化测试", "业务 oracle", "变异结果", "评审清单"],
+      "systems": ["Web 结算系统", "Playwright Test Agents", "CI"],
+      "decision_rights": ["AI 可生成和修复候选测试", "测试负责人保留业务 oracle 和合并权"],
+      "failure_costs": ["伪覆盖", "脆弱测试", "遗漏状态规则", "错误修复"],
+      "ai_lanes": ["use-ai-for-work", "agentize-work"],
+      "scenario_ids": ["TD-S05"],
+      "evidence_ids": ["S01", "S02", "S18", "S21", "S32"]
+    },
+    {
+      "domain_id": "TD-D04",
+      "name": "失败诊断与证据链",
+      "job_result": "把大量失败日志、trace、截图和代码变化整理成可复核的候选根因",
+      "business_events": ["CI 批量失败"],
+      "artifacts": ["证据图", "失败聚类", "引用 trace", "候选归因报告"],
+      "systems": ["CI", "日志平台", "代码仓库", "缺陷系统"],
+      "decision_rights": ["AI 可聚类和引用证据", "值班工程师确认根因和关闭状态"],
+      "failure_costs": ["错误归因", "重复排障", "误关缺陷", "恢复延迟"],
+      "ai_lanes": ["use-ai-for-work", "agentize-work"],
+      "scenario_ids": ["TD-S06"],
+      "evidence_ids": ["S14", "S20", "S22", "S32"]
+    },
+    {
+      "domain_id": "TD-D05",
+      "name": "发布门禁与生产反馈",
+      "job_result": "把版本变化和生产失败持续转成可追溯评测、门禁与回归资产",
+      "business_events": ["AI 组件版本在合并请求中变化", "生产 trace 被采样"],
+      "artifacts": ["版本清单", "CI 门禁", "waiver 日志", "脱敏样例", "lineage 记录"],
+      "systems": ["代码仓库", "CI", "评测平台", "生产可观测性"],
+      "decision_rights": ["AI 可运行比较和辅助标注", "质量与隐私负责人批准例外和入库"],
+      "failure_costs": ["静默回归", "黄金集污染", "隐私泄露", "无审计例外"],
+      "ai_lanes": ["build-ai-quality-system", "agentize-work"],
+      "scenario_ids": ["TD-S07", "TD-S08"],
+      "evidence_ids": ["S04", "S05", "S07", "S23", "S24", "S27", "S28", "S29", "S30", "S31"]
+    }
+  ]
+}

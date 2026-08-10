@@ -1,0 +1,50 @@
+{
+  "profession_id": "test-development-ai",
+  "architecture_profile": "ai-quality-engineer",
+  "audience": "有传统测试或测试开发经验，希望迁移到 AI 应用质量、Agent 测试或 AI QE 平台的工程师",
+  "as_of": "2026-08-10",
+  "professional_baseline": {
+    "lifecycle_stages": ["需求与风险", "质量策略", "测试设计", "数据与环境", "自动化与执行", "失败诊断", "发布决策", "生产反馈"],
+    "work_domains": ["需求与风险分析", "测试设计与 Oracle", "API/UI/集成自动化", "测试数据与环境", "失败诊断与证据链", "CI 与发布", "生产质量改进"],
+    "methods": ["风险驱动测试", "等价类与边界值", "状态与组合测试", "属性与 Fuzz", "Mutation testing", "可追溯性", "测试分层"],
+    "tools_and_artifacts": ["测试计划", "追踪矩阵", "自动化测试仓库", "Fixture 与测试数据", "Trace/Log/Diff", "CI Gate", "缺陷与事故记录"],
+    "quality_decisions": ["测试范围与优先级", "缺陷是否成立", "版本是否放行", "例外是否批准", "事故是否回滚"],
+    "entry_assessment": "提交一个可执行传统测试仓库；需求可追踪到断言，注入一个业务缺陷后测试稳定由绿变红"
+  },
+  "ai_foundations": {
+    "model_lifecycle": ["数据", "预训练", "后训练与对齐", "离线评测", "部署", "推理", "线上监控与反馈"],
+    "core_primitives": ["Token", "Embedding", "Attention", "Context window", "Logits", "Sampling and decoding", "Structured output", "Tool call", "State and memory", "Trace"],
+    "application_patterns": ["Direct LLM", "RAG", "Multimodal", "Agent", "Multi-agent", "Deterministic workflow"],
+    "capability_boundaries": ["非确定性", "幻觉", "上下文限制", "Prompt 敏感", "知识时效", "工具错误", "过度代理权", "隐私泄露", "延迟与成本"],
+    "test_implications": ["所有依赖版本化", "构造 Eval dataset", "按风险切片", "组合 Oracle", "Judge 人工校准", "故障注入", "保存完整 Trace", "高风险人工 Gate"]
+  },
+  "transition_matrix": [
+    {"transition_id":"TD-TR01","baseline_competency":"需求与风险分析","retained_principle":"风险决定测试深度和发布证据","ai_change":"模型 Prompt 知识库和工具版本共同改变行为","new_ai_capability":"建立 AI 变更影响与风险模型","new_failure_modes":["遗漏 AI 依赖","把流畅回答误判为正确"],"learner_artifact":"AI 风险矩阵与版本影响图","assessment":"注入一个未记录依赖变化并被风险审计识别","course_ids":["TD-BASE-01","TD-AI-01"]},
+    {"transition_id":"TD-TR02","baseline_competency":"测试设计与 Oracle","retained_principle":"结果必须有可解释判定依据","ai_change":"语义输出允许多种正确表达且具有随机性","new_ai_capability":"设计确定性规则语义 Judge 和人工组合 Oracle","new_failure_modes":["平均分掩盖 blocker","Judge 偏差"],"learner_artifact":"风险到 Oracle 决策表与校准集","assessment":"错误退款承诺必须被 blocker 阻断","course_ids":["TD-BASE-02","TD-FOUND-04","TD-AI-05"]},
+    {"transition_id":"TD-TR03","baseline_competency":"测试数据与覆盖","retained_principle":"数据代表风险和边界","ai_change":"Eval 数据可能污染泄漏漂移或被模型记忆","new_ai_capability":"管理 Dataset card 风险切片 Holdout 和 Lineage","new_failure_modes":["数据污染","分布失真"],"learner_artifact":"版本化 Eval dataset 与 dataset card","assessment":"检测重复污染并保留未见 Holdout","course_ids":["TD-BASE-03","TD-EVAL-01","TD-BENCH-01"]},
+    {"transition_id":"TD-TR04","baseline_competency":"自动化测试","retained_principle":"自动化必须对产品缺陷敏感","ai_change":"AI 生成和自愈测试可能删除或放宽 Oracle","new_ai_capability":"用 Mutation 和 Semantic diff 审计 AI 测试","new_failure_modes":["伪覆盖","自愈误修绿"],"learner_artifact":"Mutation 报告和 Healer 策略","assessment":"禁止删除断言且产品 Mutation 必须变红","course_ids":["TD-AI-02","TD-AI-11","TD-AI-13"]},
+    {"transition_id":"TD-TR05","baseline_competency":"失败诊断","retained_principle":"根因结论必须回到证据","ai_change":"失败分布在检索生成工具权限状态和 Judge","new_ai_capability":"保存分层 Trace 并进行反事实诊断","new_failure_modes":["错误归因","不可复现"],"learner_artifact":"AI 失败证据图与引用式报告","assessment":"删除关键证据后归因置信度必须下降","course_ids":["TD-AI-03","TD-AI-08","TD-AI-17"]},
+    {"transition_id":"TD-TR06","baseline_competency":"CI 与发布门禁","retained_principle":"门禁支持责任人做发布决策","ai_change":"Prompt 模型数据工具和 Scorer 同时变化且指标波动","new_ai_capability":"建设可重放统计门禁 Waiver 与回滚","new_failure_modes":["静默回归","阈值漂移"],"learner_artifact":"实验账本与 AI Quality Gate","assessment":"已知回归返回非零退出码并阻断合并","course_ids":["TD-AI-15","TD-AI-16","TD-AI-19"]},
+    {"transition_id":"TD-TR07","baseline_competency":"生产监控与事故改进","retained_principle":"线上失败应进入可验证改进闭环","ai_change":"需要观察模型检索工具 token 成本和多轮状态","new_ai_capability":"构建 Trace-to-eval 和漂移治理","new_failure_modes":["敏感数据回流","黄金集污染"],"learner_artifact":"脱敏反馈流水线与事故 Runbook","assessment":"一条线上失败带 Lineage 进入回归集","course_ids":["TD-AI-17","TD-AI-18","TD-AI-19"]},
+    {"transition_id":"TD-TR08","baseline_competency":"行业对标与质量报告","retained_principle":"比较必须使用相同协议和可复现证据","ai_change":"Benchmark 分数受数据 Prompt Harness Scorer 权限和污染影响","new_ai_capability":"审计并复现 Benchmark 分数","new_failure_modes":["榜单误读","不可比版本"],"learner_artifact":"Benchmark spec Metric card 和复现报告","assessment":"改变一个协议变量并解释分数变化","course_ids":["TD-BENCH-01","TD-BENCH-02","TD-BENCH-03","TD-BENCH-04"]}
+  ],
+  "learning_stages": [
+    {"stage_id":"TD-ST00","layer_kind":"profession-baseline","order":1,"title":"传统测试能力基线","learner_transformation":"把经验变成可执行可追踪的测试闭环","prerequisite_stage_ids":[],"required_concepts":["风险与测试设计","Oracle 与 Mutation","自动化与 CI"],"learner_artifact":"传统测试基线仓库","exit_assessment":"注入业务缺陷后稳定 RED 并可诊断","failure_injection":"产品业务规则 Mutation","course_ids":["TD-BASE-01","TD-BASE-02","TD-BASE-03"],"source_ids":["S32","S23"]},
+    {"stage_id":"TD-ST01","layer_kind":"ai-foundation","order":2,"title":"大模型与 AI 系统基础","learner_transformation":"能从运行机制和系统结构解释 AI 失败","prerequisite_stage_ids":["TD-ST00"],"required_concepts":["模型生命周期","Token Attention Context Decoding","RAG Tool call Agent Trace"],"learner_artifact":"AI 系统结构与证据图","exit_assessment":"为五类失败定位首查层和证据","failure_injection":"改变上下文采样或工具结果并观察行为差异","course_ids":["TD-FOUND-01","TD-FOUND-02","TD-FOUND-03","TD-FOUND-04"],"source_ids":["S33","S34","S35","S23"]},
+    {"stage_id":"TD-ST02","layer_kind":"ai-assisted-work","order":3,"title":"AI 应用于传统测试","learner_transformation":"用 AI 提效同时保持测试检测力和责任边界","prerequisite_stage_ids":["TD-ST01"],"required_concepts":["非 AI 基线","反例审计","Mutation","人工 Gate"],"learner_artifact":"AI 辅助测试资产与修订证据","exit_assessment":"AI 资产捕获新增缺陷且不降低原有 Oracle","failure_injection":"AI 生成漏边界或删除断言","course_ids":["TD-AI-01","TD-AI-02","TD-AI-03","TD-AI-04"],"source_ids":["S01","S14","S21","S32"]},
+    {"stage_id":"TD-ST03","layer_kind":"ai-system-quality","order":4,"title":"LLM RAG 与多模态评测","learner_transformation":"从单次问答转向版本化数据和组合 Oracle","prerequisite_stage_ids":["TD-ST02"],"required_concepts":["Eval case 与风险切片","Rubric Scorer Judge","检索生成分层","拒答与安全"],"learner_artifact":"版本化 AI Eval 仓库","exit_assessment":"已知幻觉引用检索和拒答回归全部被识别","failure_injection":"污染检索丢引用错误承诺和过度拒答","course_ids":["TD-EVAL-01","TD-EVAL-02","TD-AI-05","td-ai-006-rag-eval-ci","TD-AI-07","TD-AI-09","TD-AI-10"],"source_ids":["S03","S04","S05","S09","S10","S13","S23"]},
+    {"stage_id":"TD-ST04","layer_kind":"agent-workflow-quality","order":5,"title":"Agent 与 Workflow 质量","learner_transformation":"检查轨迹状态工具权限副作用和业务终态","prerequisite_stage_ids":["TD-ST03"],"required_concepts":["Workflow 与 Agent 区别","Trajectory","工具协议与权限","状态和终止条件"],"learner_artifact":"Agent 轨迹评测与沙箱策略","exit_assessment":"错工具越权循环和伪成功被独立 Verifier 拒绝","failure_injection":"错工具错参数越权无限循环和错误 handoff","course_ids":["TD-AI-08","TD-AI-11","TD-AI-12","TD-AI-13","TD-AI-14"],"source_ids":["S01","S06","S08","S10","S35","S39"]},
+    {"stage_id":"TD-ST05","layer_kind":"quality-engineering","order":6,"title":"AI Quality Engineering","learner_transformation":"把评测变成可重放可观测可治理的工程系统","prerequisite_stage_ids":["TD-ST04"],"required_concepts":["版本与实验账本","CI Gate","Trace 与反馈","成本延迟漂移和回滚"],"learner_artifact":"AI 质量平台最小闭环","exit_assessment":"Commit 到门禁 Trace 回归和回滚形成证据链","failure_injection":"版本漂移成本激增和线上失败","course_ids":["TD-AI-15","TD-AI-16","TD-AI-17","TD-AI-18","TD-AI-19"],"source_ids":["S07","S23","S24","S27","S28","S29","S30","S31"]},
+    {"stage_id":"TD-ST06","layer_kind":"benchmark-literacy","order":7,"title":"Benchmark 与分数工程","learner_transformation":"能复现解释和质疑公开或内部 Benchmark 分数","prerequisite_stage_ids":["TD-ST05"],"required_concepts":["任务和数据构造","Harness 与 Scorer","聚合与不确定性","污染与版本可比性"],"learner_artifact":"小型可复现 Benchmark","exit_assessment":"复现一项分数并解释协议变化造成的差异","failure_injection":"改变 Prompt Scorer 或污染样本","course_ids":["TD-BENCH-01","TD-BENCH-02","TD-BENCH-03","TD-BENCH-04"],"source_ids":["S36","S37","S38","S39","S40"]},
+    {"stage_id":"TD-ST07","layer_kind":"capstone","order":8,"title":"AI QE Capstone","learner_transformation":"为真实职业场景交付端到端 AI 质量系统并答辩","prerequisite_stage_ids":["TD-ST06"],"required_concepts":["风险到证据闭环","可重放实验","生产反馈与治理"],"learner_artifact":"端到端 AI QE 仓库与发布答辩","exit_assessment":"故障注入可阻断可诊断可修复并保留证据边界","failure_injection":"跨检索生成工具成本与漂移的组合事故","course_ids":["TD-AI-20"],"source_ids":["S07","S23","S24","S40"]}
+  ],
+  "specialization_tracks": [
+    {"track_id":"TD-TRACK-LLM","track_kind":"llm-quality","title":"LLM 输出与 Judge 质量","prerequisite_stage_ids":["TD-ST03"],"course_ids":["TD-AI-05","TD-AI-07","TD-EVAL-02"],"capstone_artifact":"LLM Eval Suite 与 Judge 校准报告","source_ids":["S04","S05","S13","S23"]},
+    {"track_id":"TD-TRACK-RAG","track_kind":"rag-quality","title":"RAG 检索生成与引用质量","prerequisite_stage_ids":["TD-ST03"],"course_ids":["td-ai-006-rag-eval-ci"],"capstone_artifact":"RAG 分层质量门禁","source_ids":["S09","S10","S34"]},
+    {"track_id":"TD-TRACK-AGENT","track_kind":"agent-quality","title":"Agent 轨迹工具与安全","prerequisite_stage_ids":["TD-ST04"],"course_ids":["TD-AI-08","TD-AI-09","TD-AI-12"],"capstone_artifact":"Agent 沙箱与轨迹评测器","source_ids":["S06","S08","S35","S39"]},
+    {"track_id":"TD-TRACK-WORKFLOW","track_kind":"workflow-quality","title":"Workflow Worker 与多 Agent 测试","prerequisite_stage_ids":["TD-ST04"],"course_ids":["TD-AI-11","TD-AI-13","TD-AI-14"],"capstone_artifact":"可重放 Workflow 与独立 Verifier","source_ids":["S01","S10","S18","S22"]},
+    {"track_id":"TD-TRACK-BENCH","track_kind":"benchmark-engineering","title":"Benchmark 设计复现与审计","prerequisite_stage_ids":["TD-ST06"],"course_ids":["TD-BENCH-01","TD-BENCH-02","TD-BENCH-03","TD-BENCH-04"],"capstone_artifact":"Benchmark spec Dataset card Metric card 与复现报告","source_ids":["S36","S37","S38","S39","S40"]},
+    {"track_id":"TD-TRACK-AI-QA","track_kind":"ai-assisted-testing","title":"AI 辅助传统测试与防作弊","prerequisite_stage_ids":["TD-ST02"],"course_ids":["TD-AI-01","TD-AI-02","TD-AI-03","TD-AI-04","TD-AI-13"],"capstone_artifact":"AI 辅助测试资产与检测力报告","source_ids":["S01","S14","S21","S32"]}
+  ],
+  "source_ids": ["S01", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S13", "S14", "S23", "S24", "S32", "S33", "S34", "S35", "S36", "S37", "S38", "S39", "S40"]
+}

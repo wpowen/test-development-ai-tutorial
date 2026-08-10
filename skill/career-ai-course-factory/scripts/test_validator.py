@@ -66,6 +66,90 @@ def build_valid(root: Path) -> None:
     write(root / "research/evidence-matrix.md", "## Evidence\n## Competitor observations\n## Vendor claims\n## Inference\n## Unknown\n")
     write(root / "research/ai-capability-map.md", "\n".join(["use-ai-for-work", "test-ai-systems", "agentize-work", "build-ai-quality-system"]))
 
+    framework_body = "本节解释职业的输入、活动、工件、决策、指标、工具、失败、AI 变化、人工责任、学习产物和证据边界，并说明它怎样与其他职业维度形成可审计的能力闭环。" * 16
+    write(root / "industry-framework.md", "# Industry framework\n\n" + "\n\n".join(
+        f"{marker}\n\n{framework_body}" for marker in [
+            "## End-to-end lifecycle", "## Specialization families", "## System and work-object classes",
+            "## Quality and outcome attributes", "## AI transformation", "## Role and career evolution",
+            "## Coverage verdict", "## Critical gaps",
+        ]
+    ))
+    lifecycle_ids = [f"life-{index}" for index in range(8)]
+    family_ids = [f"family-{index}" for index in range(6)]
+    system_ids = [f"system-{index}" for index in range(5)]
+    attribute_ids = [f"attribute-{index}" for index in range(6)]
+    change_classes = ["retained", "assisted", "automated", "transformed", "new-work", "declining"]
+
+    def ai_change(index: int) -> dict[str, object]:
+        return {
+            "change_id":f"change-{index}", "change_class":change_classes[index % len(change_classes)],
+            "baseline_work":"a bounded professional step with an inspectable artifact",
+            "ai_intervention":"AI proposes or executes a bounded step under an explicit control",
+            "human_accountability":"the qualified owner verifies evidence and owns the decision",
+            "new_failure_modes":["plausible unsupported output", "stale or unsafe action"],
+            "required_controls":["versioned input and output", "fallback and human approval"],
+            "learner_proof":"a seeded failure is detected and repaired", "evidence_ids":["S0", "S1"],
+            "confidence":"medium",
+        }
+
+    dump(root / "research/profession-knowledge-system.json", {
+        "profession_id":"c", "as_of":"2026-01-01",
+        "lifecycle_stages":[{
+            "stage_id":stage_id, "name":f"lifecycle {index}", "trigger":"a verifiable business event",
+            "inputs":["versioned input"], "activities":["analyze", "verify"], "outputs":["decision evidence"],
+            "artifacts":["report"], "decision_gate":"named owner accepts or rejects", "owner":"quality owner",
+            "metrics":["risk coverage", "failure rate"], "tools":["versioned professional tool"],
+            "failure_modes":["missing evidence", "wrong handoff"], "downstream_handoff":"next lifecycle owner",
+            "evidence_ids":["S0", "S1"], "course_ids":["example" if index == 0 else f"c{min(index, 7)}"],
+            "ai_changes":[ai_change(index)],
+        } for index, stage_id in enumerate(lifecycle_ids)],
+        "specialization_families":[{
+            "family_id":family_id, "name":f"specialization {index}", "scope":"cross-lifecycle professional specialty",
+            "protected_outcome":"a measurable quality outcome", "risks":["critical failure"],
+            "methods":["risk analysis", "failure injection"], "artifacts":["specialty report"],
+            "metrics":["p95 indicator", "error rate"], "tools":["specialty tool"], "prerequisites":["professional baseline"],
+            "lifecycle_stage_ids":[lifecycle_ids[index % len(lifecycle_ids)]], "system_class_ids":[system_ids[index % len(system_ids)]],
+            "evidence_ids":["S0", "S1"], "course_ids":["example" if index == 0 else f"c{index}"],
+            "ai_changes":[ai_change(index + 8)],
+        } for index, family_id in enumerate(family_ids)],
+        "system_classes":[{
+            "system_class_id":system_id, "name":f"system {index}", "interfaces":["versioned interface"],
+            "state":["observable state"], "dependencies":["external dependency"], "observability_points":["metric", "trace"],
+            "characteristic_failures":["timeout", "incorrect state"], "quality_attribute_ids":[attribute_ids[index % len(attribute_ids)]],
+            "specialization_family_ids":[family_ids[index % len(family_ids)]], "evidence_ids":["S0", "S1"],
+            "course_ids":["example" if index == 0 else f"c{index}"],
+        } for index, system_id in enumerate(system_ids)],
+        "outcome_attributes":[{
+            "attribute_id":attribute_id, "name":f"attribute {index}", "definition":"observable professional outcome",
+            "observable_indicators":["user-visible result"], "leading_metrics":["risk coverage"], "lagging_metrics":["escaped failures"],
+            "verification_methods":["controlled experiment"], "decision_thresholds":["workload-specific SLO and named owner"],
+            "tradeoffs":["quality versus cost"], "ai_specific_risks":["non-deterministic regression"],
+            "evidence_ids":["S0", "S1"], "course_ids":["example" if index == 0 else f"c{index}"],
+        } for index, attribute_id in enumerate(attribute_ids)],
+        "role_evolution":[{
+            "role_id":f"role-{index}", "level":f"level-{index}", "current_responsibilities":["own professional evidence"],
+            "durable_skills":["risk judgment"], "assisted_or_automated_work":["bounded drafting and execution"],
+            "new_ai_responsibilities":["evaluate AI-specific failures"], "adjacent_roles":["platform quality"],
+            "transition_projects":["build a red-green quality gate"], "portfolio_evidence":["versioned report"],
+            "decision_authority":"authority grows with level", "evidence_ids":["S0", "S1"],
+            "course_ids":["example" if index == 0 else f"c{index}"], "forecast_boundary":"signal, not market-wide proof",
+        } for index in range(4)],
+        "coverage_cells":[{
+            "cell_id":f"knowledge-cell-{index}", "lifecycle_stage_id":lifecycle_ids[index % len(lifecycle_ids)],
+            "specialization_family_id":family_ids[index % len(family_ids)], "system_class_id":system_ids[index % len(system_ids)],
+            "outcome_attribute_id":attribute_ids[index % len(attribute_ids)], "learner_level":f"L{1 + index % 4}",
+            "status":"covered" if index == 0 else "planned", "priority":"high" if index % 7 == 0 else "medium",
+            "rationale":"material profession combination requires explicit learner proof", "course_ids":["example" if index == 0 else f"c{1 + index % 7}"],
+            "learner_artifact":"checked professional artifact", "assessment":"seeded failure must be detected",
+            "evidence_ids":["S0", "S1"],
+        } for index in range(24)],
+        "critical_gaps":[],
+        "review_status":{
+            "lifecycle_continuity":"pass", "specialization_completeness":"pass", "system_diversity":"pass",
+            "metrics_and_gates":"pass", "ai_change_realism":"pass", "career_coherence":"pass",
+        },
+    })
+
     ledger_fields = ["id", "title", "creator", "source_type", "platform", "language", "year", "url", "access_date", "evidence_tier", "publisher_group", "source_family_id", "channel_ids", "relevance", "credibility", "used_for", "limitations"]
     (root / "research").mkdir(parents=True, exist_ok=True)
     channel_by_index = {
@@ -315,6 +399,37 @@ class ValidatorTests(unittest.TestCase):
             stage["prerequisite_stage_ids"] = [] if index == 0 else [data["learning_stages"][index - 1]["stage_id"]]
         dump(path, data)
         self.assertTrue(any("eight learning stages" in error or "eight-layer" in error for error in validate(self.root)))
+
+    def test_profession_knowledge_system_requires_specialization_families(self) -> None:
+        path = self.root / "research/profession-knowledge-system.json"
+        data = json.loads(path.read_text())
+        data["specialization_families"] = data["specialization_families"][:2]
+        dump(path, data)
+        self.assertTrue(any("at least 6 specialization families" in error for error in validate(self.root)))
+
+    def test_profession_ai_change_cannot_omit_human_accountability(self) -> None:
+        path = self.root / "research/profession-knowledge-system.json"
+        data = json.loads(path.read_text())
+        data["lifecycle_stages"][0]["ai_changes"][0]["human_accountability"] = ""
+        dump(path, data)
+        self.assertTrue(any("human_accountability" in error for error in validate(self.root)))
+
+    def test_profession_metric_needs_decision_threshold(self) -> None:
+        path = self.root / "research/profession-knowledge-system.json"
+        data = json.loads(path.read_text())
+        data["outcome_attributes"][0]["decision_thresholds"] = []
+        dump(path, data)
+        self.assertTrue(any("needs decision thresholds" in error for error in validate(self.root)))
+
+    def test_profession_high_gap_cannot_remain_unresolved(self) -> None:
+        path = self.root / "research/profession-knowledge-system.json"
+        data = json.loads(path.read_text())
+        data["critical_gaps"] = [{
+            "gap_id":"gap-1", "priority":"high", "description":"missing specialty", "decision":"unresolved",
+            "owner":"curriculum owner", "acceptance_gate":"specialty artifact and assessment exist",
+        }]
+        dump(path, data)
+        self.assertTrue(any("unresolved high gap" in error for error in validate(self.root)))
 
     def test_ai_quality_profile_requires_distinct_specializations(self) -> None:
         path = self.root / "research/competency-transition-map.json"

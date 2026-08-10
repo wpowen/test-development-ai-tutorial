@@ -33,6 +33,7 @@ Read the references required by the selected mode:
 - Multi-channel evidence and source independence: `references/multi-channel-evidence-protocol.md`
 - Search routing and freshness: `references/search-and-freshness-protocol.md`
 - Profession/work-domain decomposition: `references/profession-decomposition-protocol.md`
+- Full profession knowledge system and completeness gate: `references/profession-knowledge-system-protocol.md`
 - Profession-to-AI curriculum architecture: `references/curriculum-architecture-protocol.md`
 - Proactive coverage and missing-topic discovery: `references/curriculum-gap-audit-protocol.md`
 - Business scenario proof: `references/business-scenario-protocol.md`
@@ -96,7 +97,15 @@ Do not divide the curriculum by tools. Trace every candidate through:
 
 `role variant -> work domain -> business event -> artifact -> failure -> AI intervention -> learner proof -> reusable material`.
 
-### 4A. Build the profession-to-AI learning architecture
+### 4A. Build the profession knowledge system
+
+Follow `references/profession-knowledge-system-protocol.md`. Create `industry-framework.md` and `research/profession-knowledge-system.json` before any learning architecture or course ranking.
+
+Reconstruct five mandatory dimensions: end-to-end lifecycle, specialization families, system/work-object classes, quality/outcome attributes, and role/career evolution. Then classify AI changes as `retained`, `assisted`, `automated`, `transformed`, `new-work`, or `declining`, preserving the non-AI baseline, human accountability, new failures, controls, learner proof, source IDs, and confidence.
+
+Build the coverage cube across lifecycle, specialization, system, outcome, and learner level. High or critical gaps block curriculum generation. This is the gate that must discover API, stability, performance, security, platform, operations, or other profession-specific specialties even when the user never names them.
+
+### 4B. Build the profession-to-AI learning architecture
 
 Follow `references/curriculum-architecture-protocol.md`. Create `learning-architecture.md` and `research/competency-transition-map.json` before ranking courses.
 
@@ -113,7 +122,7 @@ A complete series must cover the eight layer kinds in dependency order:
 
 Learners may test out of explanatory pages, but may not bypass a layer's artifact-based exit assessment. For `ai-quality-engineer`, keep LLM, RAG, Agent, Workflow, and Benchmark as explicit specialization tracks rather than one shallow “AI testing” bucket.
 
-### 4B. Audit curriculum coverage before selecting courses
+### 4C. Audit curriculum coverage before selecting courses
 
 Follow `references/curriculum-gap-audit-protocol.md`. Build `research/curriculum-coverage-matrix.csv` and the human-readable `curriculum-gap-analysis.md` before creating or ranking `curriculum.json`.
 
@@ -249,6 +258,10 @@ Then run a fresh-agent forward test when available:
 - check that page order follows prerequisites rather than source publication order;
 - check that the professional baseline, AI foundation, and benchmark layers cannot be omitted or moved after dependent courses;
 - check that the six research systems, coverage matrix, and all six independent expert reviews cannot be omitted;
+- check that lifecycle, specialization, system, outcome, and career dimensions cannot be omitted or replaced by tool categories;
+- check that AI-change records cannot omit the non-AI baseline, human accountability, new failures, controls, learner proof, and evidence;
+- check that a traditional specialization family cannot disappear merely because the user did not name it;
+- check that metrics without workload, distribution, threshold, and decision owner cannot pass as a professional quality gate;
 - check that a high or critical gap without an explicit decision blocks curriculum generation;
 - check that competitor analysis covers modules, learner artifacts, execution proof, and assessment rather than only titles and promises;
 - check that an AI-quality profile exposes separate LLM, RAG, Agent, Workflow, and Benchmark tracks;

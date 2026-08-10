@@ -35,6 +35,42 @@ def main() -> int:
 
     write(root / "career-profile.md", f"# {args.career_name} × AI\n\nStatus: scaffold; research not run.\n\n## Role reality\n\nTODO\n\n## AI transformation thesis\n\nTODO\n\n## Boundaries\n\nTODO")
     write(root / "course-map.md", f"# {args.career_name} × AI course map\n\nNo course has passed AI-centrality or utility gates.")
+    write(root / "industry-framework.md", f"""# {args.career_name} profession knowledge system
+
+Status: scaffold; profession completeness research not run.
+
+## End-to-end lifecycle
+
+TODO
+
+## Specialization families
+
+TODO
+
+## System and work-object classes
+
+TODO
+
+## Quality and outcome attributes
+
+TODO
+
+## AI transformation
+
+TODO
+
+## Role and career evolution
+
+TODO
+
+## Coverage verdict
+
+FAIL: not researched.
+
+## Critical gaps
+
+All dimensions remain unknown.
+""")
     write(root / "learning-architecture.md", f"""# {args.career_name} × AI learning architecture
 
 Status: scaffold; research not run.
@@ -173,6 +209,32 @@ Research and review have not run.
         "learning_stages": [],
         "specialization_tracks": [],
         "source_ids": [],
+    }, ensure_ascii=False, indent=2))
+    write(root / "research/profession-knowledge-system.json", json.dumps({
+        "profession_id": args.career_slug,
+        "as_of": today,
+        "lifecycle_stages": [],
+        "specialization_families": [],
+        "system_classes": [],
+        "outcome_attributes": [],
+        "role_evolution": [],
+        "coverage_cells": [],
+        "critical_gaps": [{
+            "gap_id": "scaffold-not-researched",
+            "priority": "critical",
+            "description": "Profession knowledge system has not been researched.",
+            "decision": "unresolved",
+            "owner": "course owner",
+            "acceptance_gate": "All five dimensions and independent reviews pass.",
+        }],
+        "review_status": {
+            "lifecycle_continuity": "not-run",
+            "specialization_completeness": "not-run",
+            "system_diversity": "not-run",
+            "metrics_and_gates": "not-run",
+            "ai_change_realism": "not-run",
+            "career_coherence": "not-run",
+        },
     }, ensure_ascii=False, indent=2))
     (root / "courses").mkdir()
     write(root / "tasks.json", json.dumps({"career_id": args.career_slug, "tasks": []}, ensure_ascii=False, indent=2))

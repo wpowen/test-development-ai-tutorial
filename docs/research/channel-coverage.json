@@ -1,0 +1,69 @@
+{
+  "profession": "test-development-ai",
+  "generated_at": "2026-08-09T14:20:00+08:00",
+  "channels": [
+    {
+      "channel_id": "profession-authority",
+      "purpose": "校准职业任务、质量责任、风险和能力边界",
+      "source_ids": ["S07", "S08", "S23", "S24", "S32", "S41", "S42", "S43", "S44", "S47", "S50", "S60", "S61", "S62", "S63", "S64", "S65"],
+      "query_ids": ["Q04", "Q07", "Q11", "Q17", "Q20", "Q25", "Q26", "Q27", "Q31"],
+      "claim_boundary": "支持职业任务与能力结构；不证明某门课程有效",
+      "status": "complete",
+      "limitations": "O*NET 为美国职业分类；中国岗位需在完整课程阶段补本地分类与招聘复核"
+    },
+    {
+      "channel_id": "ai-primary",
+      "purpose": "确认当前 AI 测试、评测、Agent 和浏览器自动化能力",
+      "source_ids": ["S01", "S02", "S03", "S04", "S05", "S06", "S09", "S10", "S25", "S26", "S33", "S34", "S35", "S36", "S37", "S38", "S39", "S40", "S44", "S45", "S46", "S49", "S51", "S52", "S53", "S54", "S55", "S56", "S57", "S66"],
+      "query_ids": ["Q01", "Q02", "Q05", "Q06", "Q08", "Q15", "Q18", "Q21", "Q22", "Q23", "Q24", "Q26", "Q27", "Q28", "Q29"],
+      "claim_boundary": "官方行为和实现存在性；不证明生产效果或职业价值",
+      "status": "complete",
+      "limitations": "工具快速变化；每次生成课程仍需按版本重开官方文档"
+    },
+    {
+      "channel_id": "github-artifact",
+      "purpose": "检查代码入口、版本、许可证、问题和 CI 表面",
+      "source_ids": ["S05", "S26", "S36", "S38", "S45", "S46", "S51", "S52"],
+      "query_ids": ["Q15", "Q22", "Q23", "Q26", "Q27", "Q28"],
+      "claim_boundary": "当前仅完成元数据审计；不能支持默认实验室可运行声明",
+      "status": "complete",
+      "limitations": "两个仓库均未在本样例中完成干净环境 smoke test"
+    },
+    {
+      "channel_id": "practitioner-failure",
+      "purpose": "发现真实工作语言、失败、维护和证据链问题",
+      "source_ids": ["S13", "S14", "S18", "S21", "S22", "S59"],
+      "query_ids": ["Q09", "Q10", "Q13", "Q14", "Q30"],
+      "claim_boundary": "支持案例和假设；不能估计普遍发生率",
+      "status": "complete",
+      "limitations": "社区信号有选择偏差且缺少组织级测量"
+    },
+    {
+      "channel_id": "market-demand",
+      "purpose": "观察雇主、专业体系和行业对 AI 质量能力的要求",
+      "source_ids": ["S20", "S23", "S27", "S28", "S29", "S30", "S31", "S41", "S58", "S59", "S63"],
+      "query_ids": ["Q04", "Q12", "Q16", "Q25", "Q30"],
+      "claim_boundary": "岗位和行业语言是需求信号；不是市场规模或未来就业预测",
+      "status": "complete",
+      "limitations": "五个职位均为英文科技公司样本；不代表中国招聘总体"
+    },
+    {
+      "channel_id": "learner-supply",
+      "purpose": "分析现有课程承诺、模块、实操物料和公开缺口",
+      "source_ids": ["S11", "S12", "S14", "S15", "S16", "S17", "S19"],
+      "query_ids": ["Q03", "Q14", "Q19"],
+      "claim_boundary": "只证明公开课程供给和页面承诺；不证明学员掌握或绩效提升",
+      "status": "complete",
+      "limitations": "部分平台页只能观察标题、目录或营销文案"
+    },
+    {
+      "channel_id": "counterevidence",
+      "purpose": "约束安全、漂移、维护、版本和验证失败边界",
+      "source_ids": ["S02", "S07", "S08", "S20", "S22", "S24", "S40", "S48", "S50", "S57", "S58", "S59", "S64", "S65"],
+      "query_ids": ["Q01", "Q07", "Q10", "Q11", "Q12", "Q20", "Q24", "Q27", "Q29", "Q30", "Q31"],
+      "claim_boundary": "说明边界和反例；单个失败不能推翻全部可行场景",
+      "status": "complete",
+      "limitations": "尚无本样例企业生产事故或真实流量测量"
+    }
+  ]
+}

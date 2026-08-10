@@ -28,14 +28,17 @@ export type TutorialPage = {
 };
 
 export const modules = [
-  { id: "TD-M00", title: "传统测试能力迁移", subtitle: "先拆解研发测试流程，再看 AI 改变了什么、保留了什么" },
+  { id: "TD-M00", title: "完整测试生命周期", subtitle: "从需求、策略、设计、执行到发布与生产反馈，先建立专业测试骨架" },
+  { id: "TD-M08", title: "传统测试专项", subtitle: "接口、集成、UI、数据、性能、稳定性、安全、可观测性和混沌工程" },
   { id: "TD-M01", title: "大模型与 AI 系统基础", subtitle: "理解模型如何运行，以及 Token、Context、RAG、Tool 和 Agent 为什么会失败" },
   { id: "TD-M02", title: "AI 帮你做传统测试", subtitle: "用 AI 提效，但必须证明生成结果有检测力" },
+  { id: "TD-M09", title: "AI 接口、性能与可靠性", subtitle: "测试流式协议、结构化输出、TTFT、TPOT、Goodput、容量、限流、重试和降级" },
   { id: "TD-M03", title: "测试 LLM 和 RAG", subtitle: "把概率性回答变成可重复、可审计的质量证据" },
   { id: "TD-M04", title: "测试 Agent、Worker 与 Workflow", subtitle: "检查轨迹、状态、工具、权限、Handoff、副作用和自愈风险" },
   { id: "TD-M05", title: "建设 AI 质量系统", subtitle: "把评测接入 CI、生产反馈、版本与回滚体系" },
   { id: "TD-M06", title: "Benchmark 与分数工程", subtitle: "弄清数据、协议、Scorer、聚合、污染和榜单分数如何产生" },
   { id: "TD-M07", title: "专业专题与 Capstone", subtitle: "按岗位路线组合工件，交付端到端 AI Quality Engineering 系统" },
+  { id: "TD-M10", title: "职业演进", subtitle: "从测试执行转向质量信号、评测工程、平台工程与生产可靠性" },
 ] as const;
 
 const planned = (
@@ -65,6 +68,14 @@ const planned = (
   completion: [],
   sourceIds: [],
   evidenceBoundary: "只有学习目标和知识位置，不代表页面已经完成。",
+});
+
+type ProfessionalLesson = Pick<TutorialPage, "id" | "moduleId" | "title" | "type" | "duration" | "summary" | "why" | "prerequisites" | "outcomes" | "artifact" | "blocks" | "practice" | "completion" | "sourceIds" | "evidenceBoundary">;
+
+const delivered = (page: ProfessionalLesson): TutorialPage => ({
+  ...page,
+  order: 0,
+  status: "desk-researched",
 });
 
 const foundationPages: TutorialPage[] = [
@@ -290,6 +301,223 @@ const foundationPages: TutorialPage[] = [
     sourceIds: ["S08", "S23", "S34", "S35", "S39"],
     evidenceBoundary: "页面提供跨框架结构模型；不同产品对 Agent、Worker、Memory 和 Workflow 的命名不一致，课程以控制权、状态和证据，而不是品牌术语作为判定依据。",
   },
+];
+
+const professionalPages: TutorialPage[] = [
+  delivered({
+    id: "TD-P01", moduleId: "TD-M00", title: "需求文档解析：从自然语言变成可追踪的质量条件", type: "跟做", duration: "45 分钟",
+    summary: "把 PRD、原型、接口契约和业务规则拆成实体、规则、状态、异常、非功能约束与待确认问题，并建立需求到测试证据的追踪关系。",
+    why: "AI 可以快速摘要和生成候选用例，但若输入缺少版本、规则冲突和验收口径，它只会更快地产生看似完整的错误。需求测试的专业价值是发现歧义、遗漏和不可验证条件。",
+    prerequisites: ["TD-F01"],
+    outcomes: ["识别需求中的规则、状态、角色和异常", "建立需求—风险—测试—证据追踪", "用 AI 辅助解析但保留人工决策与引用"],
+    artifact: "需求解析表、问题清单与双向追踪矩阵",
+    blocks: [
+      { title: "先固定输入，再调用 AI", body: ["保存 PRD 版本、原型链接、OpenAPI/事件 Schema、历史缺陷和业务术语表。把每段需求赋予稳定编号，AI 的每条结论必须引用输入段落，不能只给一份无出处摘要。", "测试人员先定义输出结构：业务实体、角色权限、前置条件、状态转换、主流程、异常、边界、非功能要求和待确认项。"], bullets: ["版本与生效时间", "规则来源和责任人", "显式需求与推断分开", "冲突、缺失、不可测试表述单独列出"] },
+      { title: "让 AI 生成候选，不让它替你批准", body: ["可让模型按固定 Schema 提取规则并生成澄清问题，但每一条必须回链到需求 ID。没有证据的内容标记 inference，不得进入已确认验收标准。"], code: "任务：解析以下需求片段。\n输出：requirement_id、rule、precondition、state_change、exception、nfr、source_quote、confidence、question。\n约束：不得补写原文没有的政策；冲突项单独输出。", expected: "结果中每条规则都有 requirement_id 和来源；无来源建议被标为推断或问题，而不是事实。" },
+      { title: "从规则形成追踪矩阵", body: ["每个需求连接业务风险、测试层级、测试 ID、Oracle、数据、自动化位置和执行证据。正向追踪防止需求未测试，反向追踪防止无依据用例和重复资产。"], bullets: ["功能正确性与状态不变量", "权限、审计与敏感数据", "性能、容量和可用性", "依赖失败、补偿与回滚"] },
+      { title: "用变更做影响分析", body: ["需求更新时，不要重写所有用例。让 AI 对比版本并提出受影响规则、测试和数据，再由测试人员依据追踪矩阵确认。高风险变化必须生成新增或修改后的证据计划。"], warning: "AI 解析结果没有 source ID、版本和待确认项时，不得直接生成发布用例。" },
+    ],
+    practice: ["选一页真实脱敏 PRD，生成至少 10 条结构化规则", "找出 3 个歧义或冲突并形成澄清问题", "完成 5 条需求到证据的双向追踪"],
+    completion: ["所有结论能回到输入版本和段落", "推断没有冒充已确认需求", "至少一个变更能定位受影响测试与证据"],
+    sourceIds: ["S41", "S42", "S43"],
+    evidenceBoundary: "本页流程依据标准测试过程与契约规范综合；AI 解析效果尚未在用户企业的真实 PRD 分布上测量，因此结论必须由需求、研发和测试共同确认。",
+  }),
+  delivered({
+    id: "TD-P02", moduleId: "TD-M00", title: "风险策略、测试层级与用例设计", type: "概念", duration: "40 分钟",
+    summary: "把需求风险分配到静态检查、单元、组件、契约、集成、系统、验收和生产验证，避免所有问题都堆给端到端自动化。",
+    why: "专业测试不是用例越多越好，而是在最便宜、最接近根因的位置获得足够证据。AI 生成大量用例很容易掩盖覆盖空洞和维护成本。",
+    prerequisites: ["TD-P01"], outcomes: ["按影响与可能性排列风险", "为风险选择测试层级和设计技术", "定义进入、退出和发布门禁"],
+    artifact: "风险测试策略与分层覆盖表",
+    blocks: [
+      { title: "风险决定投入，不是页面数量决定投入", body: ["先写失败后果、暴露人群、可发现性、可恢复性和合规影响，再决定深度。高影响且难恢复的支付、权限、数据破坏和 AI 工具副作用，应采用多层 Oracle 与人工批准。"], bullets: ["影响程度", "发生可能性", "发现难度", "恢复成本", "合规和声誉"] },
+      { title: "把问题放在正确层级", body: ["规则和状态尽量在单元/组件层证明；消费者—提供者兼容性放在契约层；网络、数据库、消息和第三方协作放在集成层；关键用户旅程保留少量端到端；生产验证关注真实配置、流量和回滚。", "每个风险要说明为什么选择该层、由谁维护、失败时能否快速定位。重复覆盖可以存在，但必须服务于不同风险，而不是多个 UI 用例重复证明同一个字段。"] },
+      { title: "设计技术仍然是 AI 时代的底座", body: ["等价类、边界值、决策表、状态转换、组合、属性测试、模型测试和探索式测试不会因为 AI 消失。AI 可根据规则生成候选，但测试人员要检查覆盖模型，并用 mutation 或预埋缺陷证明检测力。"], expected: "一组高质量测试应能说明覆盖了哪些风险和规则，并能让已知坏版本稳定失败，而不是只展示生成数量。" },
+      { title: "门禁必须绑定决策", body: ["进入条件说明环境、数据和依赖是否就绪；退出条件说明关键风险、缺陷、性能预算和证据完整度；Waiver 要有负责人、期限和补偿；发布后要有监控、回滚和复盘入口。", "每个门禁都说明触发后停止什么、谁能批准例外、需要补充哪类证据，避免只有红黄绿颜色却没有行动。"], warning: "总通过率不能抵消关键权限、数据破坏或安全 blocker。" },
+    ],
+    practice: ["为退款流程列出 8 个风险并排序", "把每个风险分配到最早可验证层级", "设计一个 mutation 证明关键用例有检测力"],
+    completion: ["风险与测试层级一一关联", "高风险项有独立 blocker", "退出条件能支持真实放行或拒绝决策"],
+    sourceIds: ["S41", "S42", "S50"], evidenceBoundary: "风险排序和阈值必须结合目标业务事故成本校准；标准只提供过程框架，不提供可直接复制到所有组织的统一门槛。",
+  }),
+  delivered({
+    id: "TD-P03", moduleId: "TD-M00", title: "测试数据、环境、执行、结果收集与发布闭环", type: "跟做", duration: "50 分钟",
+    summary: "建立从可重放数据和环境 Manifest，到执行证据、失败归因、缺陷、放行、线上反馈和回归沉淀的完整闭环。",
+    why: "用例生成只是中间环节。真正能支撑决策的是同一版本、数据和环境下可重复执行的证据，以及失败能回到日志、Trace、变更和负责人。",
+    prerequisites: ["TD-P02"], outcomes: ["构建数据与环境清单", "区分测试失败、产品缺陷和基础设施噪声", "输出可审计发布报告"], artifact: "一次可重放执行包与发布结论",
+    blocks: [
+      { title: "数据和环境都要版本化", body: ["记录数据集、随机种子、脱敏策略、账户状态、依赖 Stub、数据库迁移、服务版本、Feature Flag、模型/Prompt/知识库版本和区域。无法固定的外部依赖要声明并通过录制回放或隔离实验处理。"], code: "run_id: release-2026-08-10-01\ncommit: abc123\ndataset: refund-v7\nenvironment: staging-cn-v12\nflags: refund_agent=true\nmodel: provider/model-snapshot\nknowledge: policy-index-42", expected: "任何失败都能找到本次运行使用的代码、配置、数据、依赖和 AI 版本。" },
+      { title: "执行不是点开始，而是控制实验", body: ["先做 smoke 和环境探针，再按风险并行执行；采集请求、响应、日志、指标、Trace、截图和副作用状态。重试必须标记原始失败，不能把 flaky 隐藏为绿色。"] },
+      { title: "结果收集要保留原始证据", body: ["报告同时展示测试覆盖、关键门禁、失败列表、历史对比、变更范围、环境健康、已知问题和证据链接。聚类和 AI 归因只能作为候选解释，必须能回到原始 Trace、Log 和 Diff。"], bullets: ["产品失败", "测试脚本失败", "数据/环境失败", "第三方依赖失败", "非确定性或待复现"] },
+      { title: "发布结论与生产反馈闭环", body: ["明确 Go、No-Go 或有期限 Waiver；记录谁批准、剩余风险、监控指标、灰度范围和回滚触发器。线上事故脱敏后进入回归集，先复现再修复，并验证旧版本失败、新版本通过。"], warning: "没有运行清单和原始证据的 PASS，不足以支持发布。" },
+    ],
+    practice: ["为一次回归创建环境与数据 Manifest", "把 5 个失败分成产品、测试、环境、依赖和未知", "写一份包含回滚触发器的发布结论"],
+    completion: ["执行包可由另一人重放", "每个失败都有原始证据链接", "发布结论包含剩余风险、责任人和回滚条件"],
+    sourceIds: ["S41", "S42", "S48"], evidenceBoundary: "页面定义审计型执行闭环；不同 CI、可观测平台和组织审批流程需适配，当前站点未连接用户的生产环境。",
+  }),
+  delivered({
+    id: "TD-S01", moduleId: "TD-M08", title: "接口、契约、集成与事件测试", type: "跟做", duration: "45 分钟",
+    summary: "从 HTTP 行为和 OpenAPI Schema，深入到消费者契约、鉴权、幂等、超时、消息顺序、重复投递与分布式一致性。",
+    why: "接口返回 200 只证明一次传输成功。专业接口测试还要验证业务不变量、兼容性、依赖失败和最终状态。AI 接口同样建立在这些基础上。",
+    prerequisites: ["TD-P03"], outcomes: ["验证协议与业务契约", "设计依赖故障和幂等测试", "追踪跨服务与事件终态"], artifact: "接口与集成风险矩阵",
+    blocks: [
+      { title: "四层接口检查", body: ["传输层检查方法、状态码、Header、超时和编码；Schema 层检查字段、类型、枚举和兼容性；业务层检查权限、状态机、余额和不变量；依赖层检查数据库、缓存、消息和第三方失败。"], code: "request -> gateway -> service -> db/event -> downstream\nassert: protocol + schema + invariant + side_effect + trace", expected: "一次接口测试既保存请求响应，也能验证数据库、事件或下游产生的真实副作用。" },
+      { title: "契约测试保护协作边界", body: ["OpenAPI 描述提供者契约，消费者驱动契约表达调用方真实依赖。兼容性门禁关注删除字段、收紧类型、改变枚举语义、默认值和错误结构；契约通过仍不能替代业务集成测试。"] },
+      { title: "分布式失败是专项核心", body: ["注入超时、部分成功、重复请求、乱序消息、重复投递、网络分区和依赖降级，检查幂等键、重试边界、补偿、死信和最终一致性。"], bullets: ["at-least-once 重复", "超时后服务端已成功", "消费者落后和积压", "Schema 演进", "跨服务 Trace 断裂"] },
+      { title: "AI 可以生成变体，但 Oracle 来自契约", body: ["模型适合从 Schema 生成边界和负向输入、解释变更影响、补充消费者场景；不得自行发明状态语义。生成测试要绑定 OpenAPI/契约版本，并通过预埋破坏性变更验证。"], warning: "只对 Mock 做断言会验证 Mock 自己，不会证明真实提供者和消费者兼容。" },
+    ],
+    practice: ["为一个接口列出协议、Schema、业务和依赖检查", "注入一次超时后成功并验证幂等", "制造一个破坏性契约变更让门禁失败"],
+    completion: ["不再用 200 代表业务成功", "至少覆盖一种重复或乱序", "契约版本与测试证据可追踪"],
+    sourceIds: ["S43", "S44", "S58"], evidenceBoundary: "OpenAPI、HTTP 和 Pact 支持契约与协议方法；真实一致性、消息语义和补偿策略必须按目标架构实测。",
+  }),
+  delivered({
+    id: "TD-S02", moduleId: "TD-M08", title: "UI、兼容性、可访问性与数据质量", type: "概念", duration: "35 分钟",
+    summary: "把用户界面、浏览器/设备组合、无障碍、数据迁移和分析口径纳入质量体系，而不是只测主路径按钮。",
+    why: "用户体验失败、辅助技术不可用和数据口径错误，经常不会被 API 自动化发现。AI 生成 UI 或自动探索也需要稳定的语义和数据 Oracle。",
+    prerequisites: ["TD-S01"], outcomes: ["建立兼容矩阵", "设计可访问性人工与自动检查", "验证数据契约和迁移不变量"], artifact: "体验与数据专项检查表",
+    blocks: [
+      { title: "UI 自动化只保留关键旅程", body: ["组件层验证状态和交互，视觉回归检查布局差异，端到端保留关键业务旅程。选择器优先使用角色、标签和稳定测试 ID，避免绑定实现细节。"], bullets: ["键盘与焦点", "加载、空、错误和恢复状态", "响应式和多语言", "视觉差异与动态区域"] },
+      { title: "兼容性矩阵按用户与风险裁剪", body: ["基于流量、客户承诺、OS/浏览器生命周期、设备能力和监管要求选择组合。不要追求所有组合；对关键组合做完整回归，对长尾做 smoke、监控和支持政策。", "矩阵要标明浏览器内核、输入方式、屏幕尺寸、网络、语言和账户类型。每次线上兼容事故都应回流，调整代表性组合和支持边界。"] },
+      { title: "可访问性不能只靠扫描器", body: ["自动检查可发现语义、对比度和 ARIA 等问题，但键盘流程、焦点顺序、屏幕阅读器表达和认知负担仍需人工验证。生成式 UI 必须在变化后重复检查。", "缺陷报告要描述受影响用户、操作路径、预期语义和辅助技术环境，而不是只贴一个规则编号。"], warning: "自动无障碍扫描通过不等于符合全部用户体验。" },
+      { title: "数据质量检查业务不变量", body: ["验证 Schema、唯一性、完整性、及时性、一致性、血缘、权限、迁移前后数量和聚合口径。AI 可帮助生成 SQL 和异常解释，但最终 Oracle 来自数据合同和业务定义。", "对训练集、知识库和评测集还要增加来源许可、重复、泄漏、代表性、切片平衡和版本漂移。异常修复不能直接覆盖原始数据，需保留变换记录。"], expected: "报表数字能回到源表、变换版本和业务口径，迁移前后关键不变量可复核。" },
+    ],
+    practice: ["为目标产品建立最小浏览器/设备矩阵", "仅用键盘完成一条关键旅程并记录问题", "为一张核心表写 5 个数据不变量"],
+    completion: ["矩阵有用户和风险依据", "自动与人工可访问性检查都有位置", "数据结论可回到血缘和业务定义"],
+    sourceIds: ["S50", "S59", "S61"], evidenceBoundary: "页面给出跨产品专项结构；设备占比、辅助技术组合、数据口径和法规要求须按目标市场更新。",
+  }),
+  delivered({
+    id: "TD-S03", moduleId: "TD-M08", title: "性能、负载、容量与长稳测试", type: "跟做", duration: "50 分钟",
+    summary: "从用户目标和服务预算定义工作负载，区分响应时间、吞吐、并发、饱和、错误与资源，完成基线、负载、压力、突发、容量和 soak 实验。",
+    why: "压测不是把并发调高。没有流量模型、阈值、资源和瓶颈证据，测试无法回答系统能服务多少用户、何时退化以及扩容是否有效。",
+    prerequisites: ["TD-S01"], outcomes: ["设计开放与封闭负载模型", "设置分位数阈值与错误预算", "从指标和 Trace 定位瓶颈"], artifact: "性能测试计划、结果与容量结论",
+    blocks: [
+      { title: "先定义 SLO 和工作负载", body: ["写清业务动作比例、到达率、并发、数据规模、缓存热度、地区、峰值持续时间和增长假设。延迟使用 p50/p95/p99，不用平均值遮蔽尾部。"], code: "thresholds:\n  http_req_failed: rate < 0.01\n  http_req_duration: p(95) < 800ms\nworkload:\n  browse: 70%\n  create_order: 20%\n  refund: 10%", expected: "测试计划同时包含业务负载、服务阈值和资源观测，不只是虚拟用户数。" },
+      { title: "六类实验回答不同问题", body: ["基线验证单请求；负载验证预期峰值；压力寻找拐点；突发验证瞬时流量；容量估计可承载量；soak 暴露泄漏、积压和性能衰减。恢复阶段同样要测。", "每类实验都要固定环境、预热、稳态时长、停止条件和数据清理策略。否则版本对比可能只是缓存、后台任务或数据规模不同。"] },
+      { title: "关联四类信号", body: ["同时查看延迟、流量、错误、饱和，以及 CPU、内存、连接池、线程、队列、数据库、缓存、GC 和下游。用 Trace 连接慢请求到具体组件，用 Profile 验证热点。"], bullets: ["到达率是否被系统真实接收", "排队是否增长", "错误是否来自限流或超时", "扩容后瓶颈是否转移"] },
+      { title: "报告要给容量决策", body: ["给出在目标 SLO 下的最大稳定吞吐、资源配置、拐点、瓶颈、恢复时间、单请求成本和安全余量。对比版本时固定工作负载与环境。"], warning: "压测工具显示高 RPS，不代表业务完成率高；失败请求、排队和下游副作用都必须计入。" },
+    ],
+    practice: ["为一个接口写流量模型和 p95 阈值", "设计峰值与 soak 两个实验", "画出延迟、错误、饱和与资源的关联图"],
+    completion: ["负载模型来自业务假设", "阈值能触发 PASS/FAIL", "报告给出容量、瓶颈和安全余量"],
+    sourceIds: ["S45", "S47", "S51"], evidenceBoundary: "k6、SRE 和可观测文档支持方法与指标；任何容量数字都必须在目标部署、数据和流量下实测，本页不提供通用容量承诺。",
+  }),
+  delivered({
+    id: "TD-S04", moduleId: "TD-M08", title: "可靠性、安全、可观测性、容灾与混沌", type: "诊断", duration: "45 分钟",
+    summary: "用 SLO、错误预算、威胁模型、Telemetry、故障注入、恢复和演练验证系统在真实失败下是否可控。",
+    why: "功能测试回答正常时能不能用；深度质量工程还要回答依赖坏了会怎样、攻击者能做什么、能否发现、多久恢复、数据会不会损坏。",
+    prerequisites: ["TD-S03"], outcomes: ["定义黄金信号和 SLO", "从威胁模型生成安全测试", "设计可停止的故障与恢复演练"], artifact: "可靠性与安全验证计划",
+    blocks: [
+      { title: "可靠性从用户 SLO 开始", body: ["定义可用性、正确性、延迟和新鲜度 SLI，再设置 SLO 与错误预算。监控延迟、流量、错误、饱和；告警针对用户影响和预算消耗，不针对每个波动。", "按用户旅程和风险切片观察，避免整体可用率掩盖某个地区、租户或关键动作持续失败。"] },
+      { title: "安全测试从资产与边界开始", body: ["识别身份、权限、敏感数据、管理接口、供应链、租户隔离和审计；检查认证、授权、输入处理、会话、加密、密钥、日志和滥用防护。AI 系统还要加入 Prompt injection、数据泄露和工具越权。"], bullets: ["谁可以做什么", "数据在哪些边界流动", "失败是否默认安全", "审计是否不可抵赖"] },
+      { title: "Telemetry 是可测试的产品能力", body: ["日志、指标和 Trace 要共享 request/trace ID，保存版本和关键业务状态，避免泄露敏感内容。测试告警、Dashboard、采样、保留期和 Trace 断链，而不是默认“上线后能看见”。", "为关键告警建立合成探针和故障演练，检查告警是否及时、是否包含处置上下文、是否重复轰炸，以及值班人员能否从信号走到可执行 Runbook。"], expected: "一次注入故障可以从告警定位到 Trace、服务、依赖和业务影响，并保留恢复证据。" },
+      { title: "混沌和容灾必须有假设与停止条件", body: ["先在小范围验证实例终止、网络延迟、依赖超时、区域故障、数据恢复和降级。声明稳态指标、爆炸半径、自动停止、回滚和负责人。备份成功不等于恢复成功，必须做恢复演练。"], warning: "没有可观测性、回滚和授权的故障注入，不是专业混沌实验。" },
+    ],
+    practice: ["为关键旅程定义 3 个 SLI 与一个 SLO", "画出资产、信任边界和两条攻击路径", "设计一个有停止条件的依赖超时实验"],
+    completion: ["告警能连接用户影响", "安全测试来自威胁模型", "故障实验验证恢复而非只制造中断"],
+    sourceIds: ["S48", "S49", "S50", "S60"], evidenceBoundary: "SRE、OpenTelemetry、OWASP 与混沌原则支持通用框架；安全与容灾结论必须由有授权的目标环境测试和组织政策确认。",
+  }),
+  delivered({
+    id: "TD-A01", moduleId: "TD-M09", title: "AI 接口服务和普通接口到底哪里不同", type: "概念", duration: "35 分钟",
+    summary: "在普通 API 契约之上，加入模型版本、采样、上下文、Token、流式事件、结构化输出、工具调用、内容安全、限流和成本。",
+    why: "只测状态码和最终 JSON 会漏掉首 Token 卡顿、流中断、Schema 修复、工具副作用、模型漂移和昂贵重试。AI 接口是协议、概率模型和算力服务的组合。",
+    prerequisites: ["TD-F04", "TD-S01"], outcomes: ["画出 AI API 四层被测面", "识别同步、流式、工具和批处理契约", "保存可复现实验 Manifest"], artifact: "AI API 测试面与版本 Manifest",
+    blocks: [
+      { title: "四层被测面", body: ["协议层：HTTP、鉴权、幂等、SSE、错误和限流；模型行为层：正确性、拒答、稳定性和安全；服务性能层：排队、prefill、decode、Token 吞吐和成本；生产可靠性层：重试、回退、降级、区域和可观测。"] },
+      { title: "同一个请求有更多版本变量", body: ["记录模型快照/别名、系统 Prompt、用户输入、上下文、采样参数、最大输出、结构化 Schema、工具定义、知识库、供应商、区域和调用时间。动态别名不能被当成固定依赖。", "还要保存 request ID、输入输出 Token、重试次数、缓存状态和内容安全结果。托管服务无法公开的内部版本应明确标为未知，而不是伪造一个可复现版本号。"], code: "model + prompt + context + sampling + schema + tools + knowledge + region + time", expected: "两次结果差异可以先对比 Manifest，而不是直接归因于“模型随机”。" },
+      { title: "测试矩阵覆盖交互模式", body: ["同步响应检查超时和完整体；流式响应检查事件顺序、首 Token、断连和取消；结构化输出检查 Schema 与语义；工具调用检查名称、参数、权限和副作用；批处理检查异步状态、重复提交和部分失败。"] },
+      { title: "错误响应也是产品契约", body: ["区分认证、配额、速率限制、输入超限、安全拒绝、模型不可用、超时、解析失败和工具失败；验证 Retry-After、request ID、是否可重试和用户可理解降级。"], warning: "重试不区分错误类型会制造放大流量、重复工具动作和更高成本。" },
+    ],
+    practice: ["把一个模型调用拆成四层测试面", "为流式、结构化和工具调用各写 3 个异常", "创建可比较的请求 Manifest"],
+    completion: ["AI API 契约不只含最终文本", "模型与应用版本均可追踪", "每类错误有明确重试或不重试策略"],
+    sourceIds: ["S56", "S57", "S58", "S59"], evidenceBoundary: "页面综合官方接口指南和协议规范；具体事件字段、模型别名、限额与行为可能更新，执行前必须重新核对当前供应商文档。",
+  }),
+  delivered({
+    id: "TD-A02", moduleId: "TD-M09", title: "流式、结构化输出、工具调用与异步任务怎么测", type: "跟做", duration: "50 分钟",
+    summary: "为 AI API 的四种关键交互建立协议状态机、故障注入和业务终态 Oracle。",
+    why: "最终内容正确不代表流式过程、工具动作和异步状态正确。断流后重复扣款、JSON 可解析但语义错误、工具参数越权都可能被终态文本掩盖。",
+    prerequisites: ["TD-A01"], outcomes: ["验证流式事件状态机", "区分 Schema 合法与业务正确", "检查工具副作用和异步幂等"], artifact: "AI API 协议状态机与自动化检查表",
+    blocks: [
+      { title: "流式响应按事件序列测试", body: ["检查 Content-Type、事件类型、顺序、增量拼接、usage、结束标志和错误事件。注入首字节超时、中途断连、客户端取消、代理缓冲和重连；确认服务是否继续计费或执行工具。"], code: "connect -> response.created -> output.delta* -> output.completed|error\nassert order, no duplicate, valid UTF-8, final usage, cancellation", expected: "断流和取消后状态可解释；不会默默重复动作，最终 usage 与完成状态可追踪。" },
+      { title: "结构化输出有两层 Oracle", body: ["第一层验证 JSON 和 Schema；第二层验证字段间业务不变量、枚举语义、引用真实性和拒答边界。测试超长、缺字段、额外字段、递归结构、Unicode、Schema 版本和解析失败降级。"] },
+      { title: "工具调用直接检查动作", body: ["验证工具选择、参数类型与范围、身份权限、用户确认、幂等键、超时、重试、补偿和最终副作用。最终回复不能替代数据库、账本或外部系统状态检查。"], warning: "高风险工具执行前缺少权限或人工 Gate 时，即使回答质量很高也必须阻断。" },
+      { title: "异步与批处理按状态机和集合检查", body: ["验证 submitted、running、partial、completed、failed、cancelled；检查重复提交、断点续传、部分失败、顺序、结果集合完整性、过期和重放。回调要验证签名、去重和乱序。"], expected: "每个任务 ID 只有一个可解释终态；部分失败不会被汇总成功掩盖。" },
+    ],
+    practice: ["为 SSE 写事件顺序和断流测试", "为一个 JSON Schema 增加 5 个语义不变量", "模拟工具超时后成功并验证幂等"],
+    completion: ["流式过程可重放", "Schema 和业务 Oracle 分开", "工具与异步任务的真实终态被直接验证"],
+    sourceIds: ["S56", "S57", "S58"], evidenceBoundary: "示例使用通用事件状态机表达；不同供应商的事件名称与取消语义不同，需要按当前 SDK、API 与代理链实测。",
+  }),
+  delivered({
+    id: "TD-A03", moduleId: "TD-M09", title: "AI 性能指标：TTFT、TPOT、ITL、Goodput 与成本", type: "概念", duration: "45 分钟",
+    summary: "把用户等待、生成速度、Token 吞吐、满足 SLO 的有效吞吐和单位成功成本连接起来，避免只看总延迟或 GPU 利用率。",
+    why: "生成式服务有排队、prefill 和逐 Token decode。两个总延迟相同的请求，用户体感和资源瓶颈可能完全不同。",
+    prerequisites: ["TD-A02", "TD-S03"], outcomes: ["计算并解释核心生成指标", "为不同业务设置 SLO", "识别吞吐、质量和成本的权衡"], artifact: "AI 性能指标卡与门禁",
+    blocks: [
+      { title: "一次生成分成三段", body: ["排队等待进入服务；prefill 处理输入上下文并产生首 Token；decode 逐个生成后续 Token。长输入常压高 prefill，长输出常压 decode，批处理和调度会改变两者。"] },
+      { title: "核心指标和公式", body: ["TTFT 是请求到首 Token；TPOT 是首 Token 后平均每个输出 Token 时间；ITL 是相邻 Token 间隔分布；E2E 是总时长；请求吞吐与输入/输出 Token 吞吐描述系统处理量。"], code: "TTFT = first_token_time - request_start\nTPOT = (last_token_time - first_token_time) / (output_tokens - 1)\nGoodput = requests_meeting_all_SLOs / second\ncost_per_success = total_cost / successful_quality_passes", expected: "指标卡同时给 p50/p95/p99、输入输出长度切片、并发/到达率和质量通过条件。" },
+      { title: "Goodput 比裸吞吐更接近业务价值", body: ["吞吐高但 TTFT、TPOT、错误或质量超限的请求不是有效产出。定义 Goodput 时同时绑定延迟、错误、输出完整和最低质量，避免通过截短回答换取漂亮性能。"] },
+      { title: "按场景设 SLO", body: ["交互聊天更关注 TTFT 和 ITL；代码/报告生成更关注 E2E、输出 Token 速度和完整性；批任务更关注总吞吐、截止时间和成本；工具 Agent 还要拆每步模型、工具和排队。"], warning: "GPU 利用率高不等于用户体验好，平均延迟低也不能证明尾部和高风险切片达标。" },
+    ],
+    practice: ["从一条 Trace 计算 TTFT 和 TPOT", "为聊天和批任务分别定义指标卡", "写一个包含质量条件的 Goodput 定义"],
+    completion: ["能区分 TTFT、TPOT、ITL 和 E2E", "指标按输入输出长度切片", "性能门禁没有牺牲质量和成本"],
+    sourceIds: ["S51", "S52", "S53", "S54"], evidenceBoundary: "vLLM、NVIDIA 和 Triton 文档支持指标定义；阈值必须从目标产品 SLO、模型、硬件和成本预算校准，不能照抄教学数字。",
+  }),
+  delivered({
+    id: "TD-A04", moduleId: "TD-M09", title: "AI 负载、容量与瓶颈实验", type: "跟做", duration: "55 分钟",
+    summary: "按输入/输出 Token、上下文分布、到达模型、并发和质量条件设计生成式负载，找到服务拐点和可承诺容量。",
+    why: "固定短 Prompt 的高并发压测无法代表真实生成负载。长上下文、长输出、缓存命中、工具等待和批调度都会改变算力与排队。",
+    prerequisites: ["TD-A03"], outcomes: ["构建 Token 工作负载分布", "比较开放和封闭负载", "给出 Goodput 容量与安全余量"], artifact: "AI 容量实验计划与结果表",
+    blocks: [
+      { title: "工作负载至少有五个维度", body: ["输入 Token 分布、输出 Token 分布、请求到达率/并发、模型/量化/硬件、场景和质量切片。还要记录缓存、流式、结构化、工具和多轮上下文。"], code: "scenario,input_tokens,output_tokens,arrival_rps,concurrency,quality_gate\nchat-short,p50=400,p50=120,8,32,pass\nreport-long,p50=8000,p50=1800,0.5,8,pass", expected: "测试数据反映线上长度和场景分布，而不是所有请求使用同一个 Hello Prompt。" },
+      { title: "开放与封闭模型回答不同问题", body: ["封闭模型固定并发，用户完成后再发请求，容易在系统变慢时自动降低到达率；开放模型按外部到达率持续发送，更容易暴露排队和过载。容量评估通常需要二者结合。"] },
+      { title: "逐级加压寻找拐点", body: ["预热后逐级提高到达率，保持足够稳态；记录 TTFT、TPOT、Goodput、队列、错误、Token 吞吐、GPU、KV Cache 和成本。达到 SLO 破坏点后停止，再验证恢复和降级。", "每一级保留原始请求切片与服务指标，确认客户端实际发送速率没有被本地 CPU、连接数或压测工具自身限制。"] },
+      { title: "容量结论使用 Goodput", body: ["报告最大稳定 Goodput、资源配置、长度切片、拐点、瓶颈、安全余量和扩容策略。比较动态批处理、并行、量化或缓存时只改变一个主要变量。"], warning: "继续压到系统完全崩溃并不能自动增加价值；有停止条件、恢复验证和业务容量结论才是实验。" },
+    ],
+    practice: ["从真实或模拟 Trace 构建 Token 长度分布", "分别运行开放/封闭模型思维实验", "为过载定义停止、降级和恢复条件"],
+    completion: ["负载包含 Token 与场景分布", "找到 SLO 拐点而非只记录最大 RPS", "容量结论绑定 Goodput、资源和安全余量"],
+    sourceIds: ["S51", "S52", "S53"], evidenceBoundary: "本页是可执行实验设计，不包含用户硬件上的实测容量；需使用 GenAI-Perf、vLLM benchmark 或目标压测工具在真实部署验证。",
+  }),
+  delivered({
+    id: "TD-A05", moduleId: "TD-M09", title: "发现 AI 性能问题：从用户慢到 Queue、GPU 与 KV Cache", type: "诊断", duration: "50 分钟",
+    summary: "用症状—指标—Trace—资源—对照实验链路定位排队、prefill、decode、调度、缓存、网络、工具和下游瓶颈。",
+    why: "“模型慢”不是根因。没有分阶段指标和资源关联，扩 GPU、缩 Prompt 或换模型都可能只把瓶颈移动到别处。",
+    prerequisites: ["TD-A04"], outcomes: ["按症状选择首查指标", "关联请求 Trace 与服务资源", "设计单变量验证实验"], artifact: "AI 性能诊断树与实验记录",
+    blocks: [
+      { title: "先按症状分流", body: ["TTFT 高而 TPOT 正常：查队列、prefill、长上下文和调度；TTFT 正常而 TPOT 高：查 decode、GPU 饱和、批处理和输出长度；两者都高：查过载、资源争用或网络；只在 Agent 慢：拆模型、检索、工具和重试。"] },
+      { title: "服务端关键观测", body: ["监控运行/等待请求、队列时间、prefill/decode 时间、输入输出 Token、KV Cache 使用、缓存命中、批大小、GPU 计算/显存、错误与抢占。Prometheus histogram 要使用正确 bucket 并按场景切片。"], bullets: ["queue_time", "time_to_first_token", "time_per_output_token", "requests_running/waiting", "kv_cache_usage", "gpu_utilization/memory"] },
+      { title: "Trace 连接用户与资源", body: ["为请求保存模型、长度、场景、批次、重试、检索和工具 span。先找到慢请求切片，再对比正常请求的 Queue、prefill、decode 与下游，避免只看全局平均 Dashboard。"], expected: "诊断结论能指出哪个阶段、哪些请求、什么资源或依赖导致 SLO 破坏。" },
+      { title: "用单变量实验证伪", body: ["分别缩短输入、限制输出、降低到达率、关闭缓存、调整批处理或替换工具延迟，每次只改变一个主要变量。记录假设、变化、结果和是否推翻。"], warning: "相关性不是根因；GPU 高和延迟高同时出现，仍需受控实验或更细 Trace 验证。" },
+    ],
+    practice: ["为 TTFT 高、TPOT 高、Agent 慢各画一条诊断路径", "设计一个缩短上下文的单变量实验", "说明如何证明队列而非模型计算是瓶颈"],
+    completion: ["症状映射到生成阶段", "请求指标与资源指标可关联", "根因结论有对照实验支持"],
+    sourceIds: ["S51", "S53", "S54", "S55"], evidenceBoundary: "指标名称与可见程度依赖 serving stack；托管 API 可能不暴露 GPU/KV 指标，此时只能结合客户端阶段指标、供应商遥测与受控负载推断并标记未知。",
+  }),
+  delivered({
+    id: "TD-A06", moduleId: "TD-M09", title: "限流、超时、重试、回退与降级", type: "诊断", duration: "45 分钟",
+    summary: "验证 AI 服务在配额、过载、长尾、模型故障和工具失败下不会形成重试风暴、重复副作用或无声质量下降。",
+    why: "生成请求昂贵且长尾明显。盲目重试会增加排队与成本，模型回退会改变质量和安全边界，工具调用还可能重复执行。",
+    prerequisites: ["TD-A05"], outcomes: ["按错误分类重试", "验证退避、抖动与预算", "把回退质量纳入发布门禁"], artifact: "AI 服务韧性状态机与故障矩阵",
+    blocks: [
+      { title: "错误先分类再处理", body: ["认证、无效输入和策略拒绝通常不应重试；速率限制按 Retry-After 与指数退避；瞬时 5xx/网络故障在总预算内重试；上下文超限要调整输入；工具副作用必须依赖幂等与状态查询。"] },
+      { title: "重试有四个预算", body: ["限制最大次数、总时间、总 Token/费用和业务副作用。使用指数退避与随机抖动，避免大量客户端同步重试；服务端要观测 retry amplification。"], code: "attempt_budget=3\ntime_budget_ms=12000\ncost_budget_usd=0.08\nidempotency_key=request_id\nbackoff=exponential+jitter", expected: "故障期间总请求量、费用和重复动作受控，原始错误与每次尝试均可追踪。" },
+      { title: "回退不是天然安全", body: ["切换更小模型、旧 Prompt、缓存回答或规则模板会改变正确性、拒答、安全和格式。每条回退路径都有独立评测切片、SLO 和明确用户提示；无法满足关键质量时应安全失败或转人工。", "回退时记录实际模型、原因和持续时间，禁止把降级输出混进主模型质量统计。恢复主路径后先小流量验证，避免在依赖尚未稳定时来回抖动。"] },
+      { title: "故障矩阵覆盖恢复", body: ["注入 429、5xx、超时、断流、模型不可用、工具部分成功、区域故障和知识库不可用；检查告警、退避、熔断、降级、幂等、用户消息、恢复时间和恢复后队列。", "每次实验保存原始请求和恢复证据。"], warning: "把所有失败隐藏成一个友好回答，会丢失真实状态并让错误业务继续执行。" },
+    ],
+    practice: ["为 400/401/429/500/超时写处理策略", "模拟重试风暴并定义放大率门禁", "为小模型回退建立质量切片"],
+    completion: ["不可重试错误不会循环", "重试受次数、时间、成本和副作用约束", "回退路径经过质量与安全验证"],
+    sourceIds: ["S46", "S57", "S59"], evidenceBoundary: "官方限流和 SRE 资料支持策略；具体配额、Retry-After、错误码和回退能力依供应商与账户动态变化，发布前需在线验证。",
+  }),
+  delivered({
+    id: "TD-C01", moduleId: "TD-M10", title: "测试岗位不会只剩点点点：能力如何迁移", type: "参考", duration: "35 分钟",
+    summary: "把传统 QA、测试开发和自动化能力迁移到 Quality Engineering、AI Eval、开发者生产力、平台与 SRE，而不是用“AI 会替代测试”制造焦虑。",
+    why: "可自动化的是重复执行和候选生成，不会自动消失的是风险决策、Oracle、实验、系统性证据、生产可靠性和跨团队质量责任。",
+    prerequisites: ["TD-A06", "TD-T12"], outcomes: ["区分被自动化与新增工作", "绘制个人能力迁移路线", "用可交付工件证明专业度"], artifact: "12 个月测试 × AI 能力路线图",
+    blocks: [
+      { title: "工作从执行转向质量信号工程", body: ["AI 会加速需求摘要、候选用例、代码草稿、数据生成和失败聚类，但这些产物仍需来源、检测力、校准和责任边界。测试人员的重心转向风险建模、可测试性、评测数据、质量门禁和生产反馈。"] },
+      { title: "四条可组合路线", body: ["Quality Engineer/SDET 深化测试架构、契约和平台；AI Quality/Eval Engineer 建设数据集、Scorer、Judge 校准和 AI 门禁；Developer Productivity 建设 CI、测试基础设施和反馈速度；Reliability/Platform 负责 SLO、容量、可观测、事故与成本。"], bullets: ["业务风险与测试设计", "软件与数据工程", "AI 系统与评测", "性能可靠性与平台", "沟通、治理和决策"] },
+      { title: "用作品而不是工具列表证明能力", body: ["一个强作品应包含需求追踪、风险策略、自动化、故障注入、AI Eval、性能实验、Trace、CI 门禁、版本 Manifest、Waiver 和回滚。说明哪些是 desk research、fixture、真实在线运行和生产验证。"], expected: "面试者能复现你的实验、看到坏版本被拒绝，并理解你为何选择这些指标和阈值。" },
+      { title: "12 个月学习顺序", body: ["1–3 月补齐需求、接口、数据、自动化与 CI；4–6 月学习 LLM/RAG/Agent 和 Eval；7–9 月完成 AI 性能、可靠性和可观测；10–12 月建设端到端质量平台并参与真实发布。每阶段以工件和失败证据结业。"], warning: "只收集 Prompt 和工具证书不会形成长期壁垒；职业价值来自可复用的质量系统和决策证据。" },
+    ],
+    practice: ["把当前工作标成保留、辅助、自动化、转型和新增", "选择两条路线组合并列出缺口", "规划一个能让坏版本失败的公开作品"],
+    completion: ["路线图基于工件而非岗位名称", "每季度有可验证产出", "能诚实区分实验、在线和生产证据"],
+    sourceIds: ["S23", "S60", "S62", "S64"], evidenceBoundary: "行业方向来自标准、研究与岗位信号的综合，不构成对单个公司或个人岗位的保证；组织结构、地区与招聘周期会影响实际需求。",
+  }),
 ];
 
 const corePages: TutorialPage[] = [
@@ -776,9 +1004,13 @@ const corePages: TutorialPage[] = [
 ];
 
 export const pages: TutorialPage[] = [
-  ...foundationPages,
-  ...corePages.map((page) => ({ ...page, order: page.order + foundationPages.length })),
-];
+  foundationPages[0],
+  ...professionalPages.filter((page) => page.id.startsWith("TD-P") || page.id.startsWith("TD-S")),
+  ...foundationPages.slice(1),
+  ...professionalPages.filter((page) => page.id.startsWith("TD-A")),
+  ...corePages,
+  ...professionalPages.filter((page) => page.id.startsWith("TD-C")),
+].map((page, index) => ({ ...page, order: index + 1 }));
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
   S03: { title: "Promptfoo Introduction", url: "https://www.promptfoo.dev/docs/intro/" },
@@ -798,6 +1030,36 @@ export const sourceNotes: Record<string, { title: string; url: string }> = {
   S38: { title: "SWE-bench", url: "https://github.com/SWE-bench/SWE-bench" },
   S39: { title: "AgentBench: Evaluating LLMs as Agents", url: "https://arxiv.org/abs/2308.03688" },
   S40: { title: "Trustworthy third-party evaluations", url: "https://openai.com/index/trustworthy-third-party-evaluations-foundations/" },
+  S41: { title: "ISTQB CTFL Syllabus v4.0.1", url: "https://istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf" },
+  S42: { title: "ISO/IEC/IEEE 29119-2 Software testing processes", url: "https://www.iso.org/standard/79428.html" },
+  S43: { title: "ISO/IEC 25010 Product quality model", url: "https://www.iso.org/standard/78176.html" },
+  S44: { title: "OpenAPI Specification", url: "https://spec.openapis.org/oas/" },
+  S45: { title: "Pact Documentation", url: "https://docs.pact.io/" },
+  S46: { title: "k6 Metrics and Thresholds", url: "https://grafana.com/docs/k6/latest/using-k6/metrics/" },
+  S47: { title: "Google SRE: Monitoring Distributed Systems", url: "https://sre.google/sre-book/monitoring-distributed-systems/" },
+  S48: { title: "Google SRE: Addressing Cascading Failures", url: "https://sre.google/sre-book/addressing-cascading-failures/" },
+  S49: { title: "OpenTelemetry Signals", url: "https://opentelemetry.io/docs/concepts/signals/" },
+  S50: { title: "OWASP ASVS 5.0", url: "https://owasp.org/www-project-application-security-verification-standard/" },
+  S51: { title: "vLLM Production Metrics", url: "https://docs.vllm.ai/en/latest/design/metrics/" },
+  S52: { title: "NVIDIA GenAI-Perf", url: "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/perf_benchmark/genai-perf-README.html" },
+  S53: { title: "Triton Inference Server Metrics", url: "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/user_guide/metrics.html" },
+  S54: { title: "Prometheus Histograms and Summaries", url: "https://prometheus.io/docs/practices/histograms/" },
+  S55: { title: "OpenAI Latency Optimization", url: "https://developers.openai.com/api/docs/guides/latency-optimization" },
+  S56: { title: "OpenAI Streaming Responses", url: "https://developers.openai.com/api/docs/guides/streaming-responses" },
+  S57: { title: "OpenAI Rate Limits", url: "https://developers.openai.com/api/docs/guides/rate-limits" },
+  S58: { title: "2025 DORA Report", url: "https://dora.dev/research/2025/dora-report/" },
+  S59: { title: "How Google SRE uses agentic AI", url: "https://cloud.google.com/blog/products/devops-sre/how-google-sre-is-using-agentic-ai-to-improve-operations/" },
+  S60: { title: "Principles of Chaos Engineering", url: "https://principlesofchaos.org/" },
+  S61: { title: "HTTP Semantics RFC 9110", url: "https://www.rfc-editor.org/rfc/rfc9110.html" },
+  S62: { title: "WCAG 2.2", url: "https://www.w3.org/TR/WCAG22/" },
+  S63: { title: "TMMi Model", url: "https://www.tmmi.org/tmmi-model/" },
+  S64: { title: "ISO/IEC 42001 AI management systems", url: "https://www.iso.org/standard/42001" },
+  S65: { title: "NIST Generative AI Profile", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" },
+  S66: { title: "OpenAI Structured Outputs", url: "https://developers.openai.com/api/docs/guides/structured-outputs" },
 };
 
-export const firstUsablePath = ["TD-F01", "TD-F02", "TD-F03", "TD-F04", "TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"];
+export const firstUsablePath = [
+  "TD-F01", "TD-P01", "TD-P02", "TD-P03", "TD-S01", "TD-S02", "TD-S03", "TD-S04",
+  "TD-F02", "TD-F03", "TD-F04", "TD-A01", "TD-A02", "TD-A03", "TD-A04", "TD-A05", "TD-A06",
+  "TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12", "TD-C01",
+];

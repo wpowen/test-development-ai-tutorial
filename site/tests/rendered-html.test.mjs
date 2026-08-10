@@ -18,17 +18,19 @@ test("server-renders the test-development AI tutorial shell", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
   const html = await response.text();
   assert.match(html, /测试开发 × AI/);
-  assert.match(html, /第一条完整学习路径/);
+  assert.match(html, /从传统测试到 AI 质量工程/);
   assert.match(html, /测试开发遇到 AI 后/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 
-test("ships the twelve-page usable path and keeps planned pages honest", async () => {
+test("ships the professional path and keeps planned pages honest", async () => {
   const response = await render();
   const html = await response.text();
   for (const id of ["TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"]) {
     assert.match(html, new RegExp(id));
   }
+  for (const id of ["TD-P01", "TD-S03", "TD-A03", "TD-A06", "TD-C01"]) assert.match(html, new RegExp(id));
+  assert.match(html, /26 页专业主路径/);
   assert.match(html, /待开发/);
   assert.match(html, /实验已跑/);
   assert.match(html, /资料已审/);

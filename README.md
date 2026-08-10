@@ -2,23 +2,25 @@
 
 一套面向测试开发工程师的可操作 AI 质量工程教程。
 
-这里不是 Prompt 合集，也不是 AI 工具清单。第一条学习路径从传统测试能力迁移、大模型运行、AI 系统结构、Oracle 和评测数据开始，最终完成一个可运行的 RAG 发布质量门禁。
+这里不是 Prompt 合集，也不是 AI 工具清单。专业主路径从完整测试生命周期、传统专项、大模型运行和 AI 接口开始，进入生成式性能可靠性、Oracle、评测数据与 RAG 发布门禁，并给出职业迁移路线。
 
 ## 当前完成度
 
-- 完整知识树：38 页；
-- 已交付首条学习路径：12 页；
+- 完整知识树：52 页；
+- 已交付专业主路径：26 页；
 - 已运行实验：离线 RAG evaluator；
 - 已保存证据：`PASS → FAIL → PASS`；
 - 尚未完成：真实模型、真实检索器、从业者和学员验证。
 
-其余 26 页仍明确标记为 `planned`，本仓库不把课程目录宣传成完整课程。
+其余 26 页仍明确标记为 `planned`，本仓库不把课程目录宣传成已完成正文。
 
 ## 先看专业架构与缺口审计
 
 - `docs/learning-architecture.md`：传统测试主线与 AI 主线怎样由浅入深融合；
+- `docs/industry-framework.md`：生命周期、专项、系统对象、质量属性和职业演进的完整行业框架；
 - `docs/course-map.md`：八阶段课程地图、学员工件和退出标准；
 - `docs/curriculum-gap-analysis.md`：Skill 如何从六类来源主动发现缺课，而不是等待用户提醒；
+- `docs/research/profession-knowledge-system.json`：可机器校验的职业知识系统和覆盖立方体；
 - `skill/career-ai-course-factory/`：可复用课程研究与生成 Skill。
 
 ## 阅读教程
@@ -29,6 +31,14 @@
 cd site
 npm install
 npm run dev
+```
+
+同一内容可导出到 GitHub Pages：
+
+```bash
+cd site
+npm test
+npm run export:static
 ```
 
 ## 运行实验

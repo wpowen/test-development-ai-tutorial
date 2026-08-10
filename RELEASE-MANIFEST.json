@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "source_commit": "6379b418c9f3ba78bc9a97045ec4738dbd6dcf57",
+  "page_count": 52,
+  "delivered_page_count": 26,
+  "file_count": 164,
+  "evidence_level": "fixture-tested; desk-researched; not production-validated"
+}

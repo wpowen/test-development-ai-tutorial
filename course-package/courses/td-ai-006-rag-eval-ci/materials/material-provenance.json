@@ -1,0 +1,71 @@
+{
+  "course_id": "td-ai-006-rag-eval-ci",
+  "generated_at": "2026-08-09T15:00:00+08:00",
+  "materials": [
+    {
+      "material_id": "M01",
+      "path": "materials/quickstart.md",
+      "purpose": "让学习者在无凭证路径中完成 baseline 到 mutation 再到 repair",
+      "source_ids": ["S03", "S09", "S23"],
+      "scenario_ids": ["TD-S01"],
+      "generated_from": ["course contract", "offline lab commands", "execution evidence"],
+      "license_or_usage": "项目原创说明；外部来源仅作事实和设计依据，不复制其正文",
+      "validation_status": "fixture-tested",
+      "validation_evidence": ["evidence/execution-evidence.json", "lab/reports/baseline.json", "lab/reports/mutation.json", "lab/reports/repair.json"],
+      "contains_synthetic_data": true,
+      "limitations": "只证明本地合成 fixture 的可运行性"
+    },
+    {
+      "material_id": "M02",
+      "path": "materials/reusable-skill.md",
+      "purpose": "把黄金集、阈值、失败注入和人工放行边界复用于相邻 RAG 场景",
+      "source_ids": ["S03", "S07", "S09", "S10"],
+      "scenario_ids": ["TD-S01"],
+      "generated_from": ["scenario semantic contract", "evaluation workflow", "human gate"],
+      "license_or_usage": "项目原创模板；使用者必须复核所选工具许可证和数据权限",
+      "validation_status": "static-reviewed",
+      "validation_evidence": ["validation-report.md"],
+      "contains_synthetic_data": false,
+      "limitations": "未用企业数据或真实 provider 运行"
+    },
+    {
+      "material_id": "M03",
+      "path": "materials/sample-input.md",
+      "purpose": "解释合成知识库、用例和候选输出的输入契约",
+      "source_ids": ["S09", "S13", "S23"],
+      "scenario_ids": ["TD-S01"],
+      "generated_from": ["synthetic customer-support fixture", "RAG failure taxonomy"],
+      "license_or_usage": "项目原创合成数据；不得误称真实客服数据",
+      "validation_status": "fixture-tested",
+      "validation_evidence": ["lab/tests/test_evaluate.py"],
+      "contains_synthetic_data": true,
+      "limitations": "合成样本不能估计生产发生率"
+    },
+    {
+      "material_id": "M04",
+      "path": "materials/expected-output.md",
+      "purpose": "给出机器可读报告、阈值和红绿结果的检查方式",
+      "source_ids": ["S03", "S04", "S09"],
+      "scenario_ids": ["TD-S01"],
+      "generated_from": ["evaluator output schema", "saved reports"],
+      "license_or_usage": "项目原创说明和合成结果",
+      "validation_status": "fixture-tested",
+      "validation_evidence": ["lab/reports/baseline.json", "lab/reports/mutation.json", "lab/reports/repair.json"],
+      "contains_synthetic_data": true,
+      "limitations": "离线 scorer 不是 LLM judge 或生产模型效果证明"
+    },
+    {
+      "material_id": "M05",
+      "path": "materials/verification-checklist.md",
+      "purpose": "约束数据、阈值、失败证据、人工审批和声明边界",
+      "source_ids": ["S07", "S08", "S23", "S24"],
+      "scenario_ids": ["TD-S01"],
+      "generated_from": ["risk standards", "professional syllabus", "course execution contract"],
+      "license_or_usage": "项目原创检查表；标准内容以链接和摘要方式引用",
+      "validation_status": "static-reviewed",
+      "validation_evidence": ["validation-report.md"],
+      "contains_synthetic_data": false,
+      "limitations": "未经过企业质量负责人或法务审核"
+    }
+  ]
+}
