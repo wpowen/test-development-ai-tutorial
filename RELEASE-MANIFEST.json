@@ -1,10 +1,10 @@
 {
   "schema_version": "1.1",
-  "source_commit": "f66278542cbb6d15f37949fb515de58e74c53fd9",
+  "source_commit": "e352e36f2b075fd0eff0c30bcaa1976d11f83ff2",
   "release_scope": "pilot-path",
   "catalog_complete": false,
   "page_count": 60,
-  "delivered_page_count": 34,
+  "delivered_page_count": 8,
   "file_count": 237,
   "evidence_level": "fixture-tested; desk-researched; not production-validated"
 }

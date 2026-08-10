@@ -973,7 +973,11 @@ export const pages: TutorialPage[] = [
   ...benchmarkCapstonePages,
   ...professionalPages.filter((page) => page.id.startsWith("TD-C")),
   ...agentPerformancePages,
-].map((page, index) => ({ ...page, order: index + 1 }));
+].map((page, index) => ({
+  ...page,
+  order: index + 1,
+  status: page.id.startsWith("TD-AP") ? page.status : "outlined",
+}));
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
   S01: { title: "Playwright Test Agents", url: "https://playwright.dev/docs/test-agents" },

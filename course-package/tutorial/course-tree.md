@@ -10,31 +10,31 @@
 
 从需求、策略、设计、执行到发布与生产反馈，先建立专业测试骨架
 
-- TD-F01 · 先把传统测试开发这份工作拆开 · desk-researched
-- TD-P01 · 需求文档解析：从自然语言变成可追踪的质量条件 · desk-researched
-- TD-P02 · 风险策略、测试层级与用例设计 · desk-researched
-- TD-P03 · 测试数据、环境、执行、结果收集与发布闭环 · desk-researched
+- TD-F01 · 先把传统测试开发这份工作拆开 · outlined
+- TD-P01 · 需求文档解析：从自然语言变成可追踪的质量条件 · outlined
+- TD-P02 · 风险策略、测试层级与用例设计 · outlined
+- TD-P03 · 测试数据、环境、执行、结果收集与发布闭环 · outlined
 
 ### 传统测试专项
 
 接口、集成、UI、数据、性能、稳定性、安全、可观测性和混沌工程
 
-- TD-S01 · 接口、契约、集成与事件测试 · desk-researched
-- TD-S02 · UI、兼容性、可访问性与数据质量 · desk-researched
-- TD-S03 · 性能、负载、容量与长稳测试 · desk-researched
-- TD-S04 · 可靠性、安全、可观测性、容灾与混沌 · desk-researched
+- TD-S01 · 接口、契约、集成与事件测试 · outlined
+- TD-S02 · UI、兼容性、可访问性与数据质量 · outlined
+- TD-S03 · 性能、负载、容量与长稳测试 · outlined
+- TD-S04 · 可靠性、安全、可观测性、容灾与混沌 · outlined
 
 ### 大模型与 AI 系统基础
 
 理解模型如何运行，以及 Token、Context、RAG、Tool 和 Agent 为什么会失败
 
-- TD-F02 · 大模型从数据、训练到一次推理发生了什么 · desk-researched
-- TD-F03 · Token、Attention、Context 和概率生成为什么影响测试 · desk-researched
-- TD-F04 · 从 LLM 到 RAG、Agent 和 Workflow：测试对象怎样扩张 · desk-researched
-- TD-T01 · 测试开发遇到 AI 后，测试对象发生了什么变化 · desk-researched
-- TD-T02 · LLM、RAG、Agent 的最小结构 · desk-researched
-- TD-T03 · 概率性输出为什么不能只用传统断言 · desk-researched
-- TD-T04 · 从测试用例到评测样例、黄金集和风险切片 · desk-researched
+- TD-F02 · 大模型从数据、训练到一次推理发生了什么 · outlined
+- TD-F03 · Token、Attention、Context 和概率生成为什么影响测试 · outlined
+- TD-F04 · 从 LLM 到 RAG、Agent 和 Workflow：测试对象怎样扩张 · outlined
+- TD-T01 · 测试开发遇到 AI 后，测试对象发生了什么变化 · outlined
+- TD-T02 · LLM、RAG、Agent 的最小结构 · outlined
+- TD-T03 · 概率性输出为什么不能只用传统断言 · outlined
+- TD-T04 · 从测试用例到评测样例、黄金集和风险切片 · outlined
 
 ### AI 帮你做传统测试
 
@@ -49,21 +49,21 @@
 
 测试流式协议、结构化输出、TTFT、TPOT、Goodput、容量、限流、重试和降级
 
-- TD-A01 · AI 接口服务和普通接口到底哪里不同 · desk-researched
-- TD-A02 · 流式、结构化输出、工具调用与异步任务怎么测 · desk-researched
-- TD-A03 · AI 性能指标：TTFT、TPOT、ITL、Goodput 与成本 · desk-researched
-- TD-A04 · AI 负载、容量与瓶颈实验 · desk-researched
-- TD-A05 · 发现 AI 性能问题：从用户慢到 Queue、GPU 与 KV Cache · desk-researched
-- TD-A06 · 限流、超时、重试、回退与降级 · desk-researched
+- TD-A01 · AI 接口服务和普通接口到底哪里不同 · outlined
+- TD-A02 · 流式、结构化输出、工具调用与异步任务怎么测 · outlined
+- TD-A03 · AI 性能指标：TTFT、TPOT、ITL、Goodput 与成本 · outlined
+- TD-A04 · AI 负载、容量与瓶颈实验 · outlined
+- TD-A05 · 发现 AI 性能问题：从用户慢到 Queue、GPU 与 KV Cache · outlined
+- TD-A06 · 限流、超时、重试、回退与降级 · outlined
 
 ### 测试 LLM 和 RAG
 
 把概率性回答变成可重复、可审计的质量证据
 
-- TD-T09 · 第一个 LLM 评测 · fixture-tested
-- TD-T10 · RAG 的检索质量 · fixture-tested
-- TD-T11 · 回答、引用、忠实性和拒答 · desk-researched
-- TD-T12 · 让 RAG 的错误退款承诺在上线前变红 · fixture-tested
+- TD-T09 · 第一个 LLM 评测 · outlined
+- TD-T10 · RAG 的检索质量 · outlined
+- TD-T11 · 回答、引用、忠实性和拒答 · outlined
+- TD-T12 · 让 RAG 的错误退款承诺在上线前变红 · outlined
 - TD-T13 · Prompt、模型和知识库版本 A/B · outlined
 - TD-T14 · LLM-as-judge 的校准和反例 · outlined
 
@@ -111,7 +111,7 @@
 
 从测试执行转向质量信号、评测工程、平台工程与生产可靠性
 
-- TD-C01 · 测试岗位不会只剩点点点：能力如何迁移 · desk-researched
+- TD-C01 · 测试岗位不会只剩点点点：能力如何迁移 · outlined
 
 ### Agent 性能与稳定性工程
 
@@ -129,7 +129,7 @@
 ## 页面状态
 
 - 发布范围：`pilot-path`。
-- 深度正文：34/60 页。
+- 深度正文：8/60 页。
 - `outlined` 表示知识位置已确定，但逐题研究和教材正文尚未通过门禁。
 - `desk-researched` 表示正文和来源已整理，但没有运行目标系统。
 - `fixture-tested` 表示对应离线夹具已经运行，不代表生产效果。
