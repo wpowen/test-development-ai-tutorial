@@ -1,0 +1,1 @@
+{"project_id":123,"mr_iid":7,"pipeline_id":9001,"commit_sha":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","run_id":"run-42","junit":{"artifact_ref":"artifact://junit/run-42","sha256":"junit-sha-42","total":3,"passed":3,"failed":0}}

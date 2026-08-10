@@ -46,8 +46,12 @@ A complete knowledge tree is not yet a distributable product. Before a public or
 - includes concept, data/oracle design, guided execution, diagnosis, repair, and transfer;
 - has a route manifest that controls the default page and next/previous path;
 - exposes the same page IDs, statuses, sources, and evidence boundary in every publication target.
+- links every named script, config, dataset, prompt file, pipeline, dashboard or runbook to a real repository-owned file.
+- contains a substantive architecture or workflow diagram and an executable profession-specific SOP on every public page.
 
-Every delivered page on that path must have at least 4 substantive teaching blocks, 3 observable outcomes, 3 learner actions, 3 completion checks, source notes, and a non-trivial evidence boundary. A guided lab must include exact input or commands and observable expected results. A fixture-tested guided lab must contain at least two runnable/observable steps and retain its execution evidence.
+Every delivered page on that path must have at least 4 substantive teaching blocks, 3 observable outcomes, 3 learner actions, 3 completion checks, source notes, a non-trivial evidence boundary, a meaningful five-node architecture/workflow diagram, and at least one repository-owned handoff material. A guided lab must include exact input or commands and observable expected results. A fixture-tested guided lab must link a real script plus at least one tested fixture/config/evidence file, contain at least two runnable/observable steps, and retain its execution evidence.
+
+Page and module IDs are exact keys, not loose prefixes. Course grouping, support-material injection, public-status promotion, prerequisites, and navigation must use exact membership or anchored patterns. Validate a prefix-collision fixture so a new specialization ID cannot silently inherit another track's materials, architecture, or completion status.
 
 Do not publicly label the full profession tutorial complete while only the first path is delivered. Preserve the full knowledge tree internally and publish only the validated path or subset.
 

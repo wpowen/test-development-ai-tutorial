@@ -1,0 +1,16 @@
+{
+  "evidence_scope": "deterministic Python standard-library fixture for AI service reliability, latency fault, retry amplification and observability",
+  "commands": [
+    "python3 lab/reliability_lab.py --config lab/configs/baseline.json --output evidence/baseline",
+    "python3 lab/reliability_lab.py --config lab/configs/latency-retry-fault.json --output evidence/latency-retry-fault",
+    "python3 lab/reliability_lab.py --config lab/configs/repaired.json --output evidence/repaired",
+    "python3 -m unittest discover -s lab -p 'test_*.py'"
+  ],
+  "baseline": {"exit_code": 0, "verdict": "PASS", "report": "evidence/baseline/summary.json"},
+  "mutation": {"exit_code": 1, "verdict": "FAIL", "report": "evidence/latency-retry-fault/summary.json", "fault": "virtual provider latency plus excessive retry attempts"},
+  "repair": {"exit_code": 0, "verdict": "PASS", "report": "evidence/repaired/summary.json"},
+  "unit_tests": {"exit_code": 0, "verdict": "PASS", "command": "python3 -m unittest discover -s lab -p 'test_*.py'"},
+  "environment": {"runtime": "Python standard library", "credentials": false, "network": false, "virtual_time": true},
+  "static_review": {"files": ["lab/k8s/pod-failure.yaml", "lab/k8s/network-delay.yaml"], "executed": false, "reason": "Kubernetes/Chaos Mesh are intentionally not available or invoked in the default lab"},
+  "limitations": ["synthetic deterministic workload", "no real model, provider, tool, GPU, Kubernetes cluster or production traffic", "does not prove production capacity, cost, quality or recovery time"]
+}

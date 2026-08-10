@@ -137,6 +137,10 @@ The default path must work without hidden context. Supply:
 
 Every learner-facing file must be listed in `materials/material-provenance.json` with its source IDs, scenario IDs, generation lineage, usage/license boundary, validation status and evidence, synthetic-data flag, and limitations.
 
+Every public tutorial page must expose its materials directly in the learner interface. A link is valid only when it resolves to a non-empty repository-owned file in the assembled release. If the page shows a command that names a script or config, the linked material set must contain that file. `fixture-tested` requires a real executable script, versioned fixture/config, preserved expected output, deliberate failure and repair evidence. Prose that says “运行以下脚本” while omitting the script is a release-blocking defect.
+
+Each public page contains an architecture or workflow diagram with at least five meaningful nodes and a caption explaining system boundaries or evidence flow. Decorative boxes do not satisfy this gate. The diagram must help the learner locate inputs, execution, telemetry, decisions, failure containment or handoff.
+
 “Paste this prompt into any AI” is not a runnable lab unless the lesson specifically evaluates prompt behavior across defined cases and versions.
 
 ## Video contract

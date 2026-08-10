@@ -1,0 +1,5 @@
+schema_version: quality-jira-basis-v1
+webhook: hmac-sha256-constant-time
+required: [issue_key, issue_version, acceptance_criteria_ref, source_snapshot_hash]
+ai_authority: candidate-only
+human_gate: AI质量负责人

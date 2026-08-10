@@ -1583,6 +1583,7 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
         "page_id", "slug", "module_id", "title", "page_type", "level", "order",
         "scenario_ids", "learner_result", "artifact", "keywords",
         "evidence_status", "delivery_status", "updated_at", "source_ids",
+        "architecture", "materials",
     ]
     for index, page in enumerate(pages):
         if not isinstance(page, dict):
@@ -1616,6 +1617,44 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
             }
             if not isinstance(sections, dict) or not required_sections.issubset(sections):
                 errors.append(f"tutorial delivered page {index} lacks required content sections")
+            architecture = page.get("architecture")
+            if not isinstance(architecture, dict):
+                errors.append(f"tutorial delivered page {index} lacks an architecture/workflow diagram")
+            else:
+                require_fields(architecture, ["title", "caption", "nodes"], f"tutorial page {index} architecture", errors)
+                if not isinstance(architecture.get("nodes"), list) or len(architecture.get("nodes", [])) < 5:
+                    errors.append(f"tutorial page {index} architecture needs at least 5 nodes")
+            materials = page.get("materials")
+            if not isinstance(materials, list) or not materials:
+                errors.append(f"tutorial delivered page {index} needs learner-facing materials")
+            else:
+                tested_materials = 0
+                has_script = False
+                seen_hrefs: set[str] = set()
+                for material_index, material in enumerate(materials):
+                    label = f"tutorial page {index} material {material_index}"
+                    if not isinstance(material, dict):
+                        errors.append(f"{label} is not an object")
+                        continue
+                    require_fields(material, ["title", "description", "href", "kind", "validation"], label, errors)
+                    href = str(material.get("href", ""))
+                    if href in seen_hrefs:
+                        errors.append(f"{label} repeats href {href}")
+                    seen_hrefs.add(href)
+                    if href.startswith(("http://", "https://", "//")) or ".." in Path(href).parts:
+                        errors.append(f"{label} must reference a repository-owned relative path")
+                    elif href and not (root / "site/public" / href).is_file():
+                        errors.append(f"{label} references missing file: site/public/{href}")
+                    if material.get("kind") not in {"script", "config", "fixture", "guide", "evidence", "archive"}:
+                        errors.append(f"{label} has invalid kind")
+                    if material.get("validation") not in {"static-reviewed", "fixture-tested"}:
+                        errors.append(f"{label} has invalid validation")
+                    if material.get("validation") == "fixture-tested":
+                        tested_materials += 1
+                    if material.get("kind") == "script":
+                        has_script = True
+                if page.get("delivery_status") == "fixture-tested" and (tested_materials < 2 or not has_script):
+                    errors.append(f"tutorial fixture-tested page {index} needs two tested materials including a script")
 
     incomplete_public = {
         page_id for page_id, page in page_by_id.items()

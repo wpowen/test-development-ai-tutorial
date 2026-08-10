@@ -1,0 +1,22 @@
+fixture_version: "1.0"
+name: order-assistant-chaos
+status: synthetic-fixture
+description: 只读订单助手的合成故障演练输入；不含真实订单、用户或资金副作用。
+task_oracle:
+  admitted_task: task_id and trace_id are present
+  success: terminal_state == completed and no policy violation
+  allowed_terminal_states: [completed, timeout, dependency_failed]
+workload:
+  tasks: 120
+  seed: 42
+  arrival_interval_ms: 120
+  dependencies: [retrieval, model, read_only_tool]
+faults:
+  - id: provider-latency-retry-storm
+    variable: model_latency_and_tool_transient_error
+    blast_radius: synthetic-process-only
+    stop_condition: any SLO gate is false
+observability:
+  required_fields: [run_id, task_id, trace_id, terminal_state, attempt, queue_wait_ms, e2e_latency_ms, cost]
+  sensitive_data_policy: do-not-store-prompts-or-pii
+production_claim: NOT_RUN

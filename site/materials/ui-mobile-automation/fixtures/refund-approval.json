@@ -1,0 +1,10 @@
+{
+  "scenario_id": "refund-approval",
+  "actor": "support-agent",
+  "trigger": "customer requests refund for eligible order",
+  "input": {"order_id": "ORD-SYN-1001", "amount": 49.9, "currency": "CNY", "reason": "duplicate-charge"},
+  "workflow": ["open order", "verify eligibility", "submit approval", "confirm audit event"],
+  "business_oracle": {"approval_status": "approved", "audit_event": "refund_approval_recorded"},
+  "stable_locators": {"web": "data-testid=refund-approval", "android": "com.example.app:id/refund_approval", "ios": "refundApproval"},
+  "privacy": "synthetic fixture; no payment credential or customer PII"
+}

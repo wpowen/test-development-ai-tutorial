@@ -1,0 +1,9 @@
+{
+  "run_id": "reliability-latency-retry-fault-v1", "seed": 42, "tasks": 120, "workers": 5,
+  "arrival_interval_ms": 70, "model_latency_ms": 520, "tool_latency_ms": 360,
+  "model_failure_rate": 0.03, "tool_failure_rate": 0.42,
+  "model_max_attempts": 4, "tool_max_attempts": 5, "backoff_ms": 15,
+  "task_deadline_ms": 1800, "model_call_cost": 0.012, "tool_call_cost": 0.001, "retrieval_call_cost": 0.001,
+  "fault": "provider latency + retry storm",
+  "thresholds": {"task_success_rate": 0.96, "e2e_p95_ms": 1800, "queue_p95_ms": 250, "retry_amplification": 1.08, "call_amplification": 4.2, "cost_per_success": 0.03}
+}

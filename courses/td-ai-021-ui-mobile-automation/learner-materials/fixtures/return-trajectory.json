@@ -1,0 +1,10 @@
+{
+  "scenario_id": "return-trajectory",
+  "actor": "returns-operator",
+  "trigger": "returned parcel moves through inspection and disposition",
+  "input": {"return_id": "RET-SYN-4001", "status_sequence": ["created", "in_transit", "received", "inspected", "refunded"]},
+  "workflow": ["search return", "open timeline", "verify current status", "inspect event history"],
+  "business_oracle": {"current_status": "refunded", "timeline_order": "monotonic", "all_events_traceable": true},
+  "stable_locators": {"web": "data-testid=return-timeline", "android": "com.example.app:id/return_timeline", "ios": "returnTimeline"},
+  "ai_boundary": "AI may summarize a trace; only the deterministic oracle decides trajectory validity"
+}

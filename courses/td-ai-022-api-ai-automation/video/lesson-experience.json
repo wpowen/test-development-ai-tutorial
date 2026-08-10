@@ -1,0 +1,98 @@
+{
+  "lesson_id": "td-ai-022-api-ai-automation-l01",
+  "target_learner": "会做 HTTP 自动化、需要把 AI 生成候选变成可靠 API 发布门禁的测试开发工程师",
+  "level": "L2-guided-workflow",
+  "estimated_minutes": 25,
+  "job_result": "从版本化 OpenAPI 生成候选，并用独立 Oracle 检出一个业务状态契约缺陷",
+  "artifact": "OpenAPI fixtures + Oracle catalog + three machine reports + Run Manifest",
+  "stages": [
+    {
+      "stage_id": "cold-open-failure",
+      "instructor_action": "展示 SHIPPED 订单取消接口返回 202、普通状态码断言仍为绿色，但业务规则已经被破坏的报告",
+      "learner_action": "在看到 Oracle 之前写下是否允许发布，并列出仍需确认的状态、权限和副作用证据",
+      "expected_observation": "HTTP 202 只能证明请求被受理，不能证明当前订单状态允许取消或副作用符合业务规则",
+      "debrief": "发布判断必须同时依赖协议、业务状态、权限、幂等和事件终态，不能只看响应成功",
+      "artifact_or_assessment": "包含发布决定、依据和未知项的初始判断记录"
+    },
+    {
+      "stage_id": "stakes-and-promise",
+      "instructor_action": "展示本课会交付的两份 OpenAPI、事件 fixture、mutation catalog、三份报告和 Run Manifest",
+      "learner_action": "把每个可下载文件映射到候选生成、独立审查、执行、诊断或发布门禁中的一个步骤",
+      "expected_observation": "可复用课程结果是一条可重放证据链，不是若干提示词或看起来合理的测试代码",
+      "debrief": "只有输入、Oracle、运行结果和退出码共同版本化，CI 红绿结果才可审计并支持回归比较",
+      "artifact_or_assessment": "材料到专业决策步骤的完整映射表"
+    },
+    {
+      "stage_id": "before-after",
+      "instructor_action": "对比孤立 endpoint 请求清单和包含 operation graph、状态机、事件流与副作用账本的目标架构",
+      "learner_action": "为契约、Schema、权限、业务状态、幂等、异步和 SSE 七类风险分别找到检查位置",
+      "expected_observation": "AI 或异步 API 的测试对象包含完整状态与事件轨迹，而不是只有最终 response body",
+      "debrief": "OpenAPI 提供协议事实，consumer contract 和独立业务 Oracle 补足真实依赖与领域不变量",
+      "artifact_or_assessment": "七类风险到检查器和证据字段的一一映射图"
+    },
+    {
+      "stage_id": "plain-mental-model",
+      "instructor_action": "用道路图和交通规则解释 Spec 候选生成与独立 Oracle 的分工，并标出 AI 的允许权限",
+      "learner_action": "把五条候选断言分类为协议事实、业务规则、实现细节或仍需 owner 决定的未知项",
+      "expected_observation": "生成器可以提出路线和边界，但关键业务 expected 不能由被测实现或同一个模型自证",
+      "debrief": "把生成器、被测实现和 Oracle 分离，才能发现结构正确但业务语义错误的 AI 候选",
+      "artifact_or_assessment": "带来源、owner 和允许状态的 Oracle 分类表"
+    },
+    {
+      "stage_id": "guided-demo",
+      "instructor_action": "从 learner-materials 根目录运行 baseline，并逐项打开输入 hash、Oracle hash 和 case 结果",
+      "learner_action": "核对订单与支付 operationId、权限拒绝、单次副作用、异步转移和唯一事件终态",
+      "expected_observation": "baseline 以 exit 0 完成，报告为 PASS，所有必需 case 都有实际结果且没有静默 skip",
+      "debrief": "固定健康输入与可重放报告后，后续 mutation 和 repair 才能证明测试资产具有检测力",
+      "artifact_or_assessment": "经字段检查的 baseline.json 与复跑命令"
+    },
+    {
+      "stage_id": "failure-diagnosis",
+      "instructor_action": "运行 mutation 模式并打开 MUT-ORDER-SHIPPED-ACCEPTED 对应的 expected、actual 和失败 case",
+      "learner_action": "先预测失败信号，再沿 BUS-SHIPPED-REJECT 解释为什么 202 违反批准的订单状态规则",
+      "expected_observation": "mutation 稳定以 exit 1 完成，只有 BUS-SHIPPED-REJECT 失败并显示期望 409、实际 202",
+      "debrief": "已知业务缺陷稳定变红才是检测力证据；修改 expected、跳过 case 或放宽规则都会制造假绿",
+      "artifact_or_assessment": "包含 mutation ID、失败定位和根因说明的 mutation.json"
+    },
+    {
+      "stage_id": "learner-practice",
+      "instructor_action": "提供重复支付事件和幂等规则，但不提供完整断言，让学习者补充重复副作用负控制",
+      "learner_action": "写出事件去重 Oracle、预测失败结果，运行检查后再执行 repair 并比较三份报告",
+      "expected_observation": "重复投递不会产生第二次业务副作用，repair 以 exit 0 恢复且原 Oracle 保持不变",
+      "debrief": "修复应发生在实现的去重和状态保护层，不能通过删除 mutation 或更改业务规则恢复绿色",
+      "artifact_or_assessment": "新增幂等 case、repair.json 和三态差异记录"
+    },
+    {
+      "stage_id": "transfer-challenge",
+      "instructor_action": "把订单取消场景替换为有多级审批、角色权限、通知 webhook 和审计日志的企业审批 API",
+      "learner_action": "重建审批状态机、角色矩阵、幂等键、通知副作用、事件终态和具名决策 owner",
+      "expected_observation": "证据链和红绿方法保持不变，但订单规则、角色、事件、阈值与副作用必须重新取证",
+      "debrief": "可迁移的是契约到门禁的方法，不是订单 fixture 中的状态、权限或教学阈值",
+      "artifact_or_assessment": "企业审批 API 的 OpenAPI、Oracle catalog 和越权 mutation 报告",
+      "source_context": "订单取消与支付意图 API 的离线契约、状态和事件夹具",
+      "target_context": "企业审批 API",
+      "invariant": "版本化契约、独立 Oracle、状态机、权限、副作用账本和0/1/0证据链",
+      "must_change": [
+        "审批状态、角色矩阵和负责关闭业务冲突的 owner",
+        "通知 webhook、审计日志副作用和对应发布阈值"
+      ],
+      "success_criterion": "健康审批路径 exit 0，越权或非法状态 mutation exit 1，repair 后恢复 exit 0 且报告可追溯"
+    },
+    {
+      "stage_id": "artifact-handoff",
+      "instructor_action": "展示 learner-materials 文件树、三份报告、provenance 和外部工具适配边界，并说明复跑路径",
+      "learner_action": "独立复跑0/1/0和unittest，随后列出接入真实服务前缺少的权限、环境、阈值和owner证据",
+      "expected_observation": "学习者能够区分 fixture-tested 运行证据与 Schemathesis、Pact、k6、GitLab CI 的 NOT_RUN 说明",
+      "debrief": "离线夹具证明材料和门禁逻辑可复现，但不能升级为真实兼容性、容量或生产发布结论",
+      "artifact_or_assessment": "经复跑的公开材料包和真实项目证据差距清单"
+    }
+  ],
+  "interaction_prompts": [
+    "接口返回 202 但订单已经 SHIPPED，你会放行吗，仍缺哪三类证据？",
+    "哪个 Oracle 与被测实现独立，若由同一个模型生成会有什么风险？",
+    "迁移到企业审批 API 时，哪些字段保持不变，哪些业务规则必须重新取证？"
+  ],
+  "recovery_path": "在 learner-materials 根目录重新运行 baseline；若环境异常，保留 stderr 与 NOT_RUN，不手工修改报告或伪造 PASS",
+  "evidence_status": "fixture-tested",
+  "limitations": "离线合成夹具已验证；Schemathesis、Pact、k6、GitLab CI、真实服务、模型、生产流量和学习者效果均未运行或未验证"
+}

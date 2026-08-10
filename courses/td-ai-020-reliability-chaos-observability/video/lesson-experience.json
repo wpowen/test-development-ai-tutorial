@@ -1,0 +1,23 @@
+{
+  "lesson_id": "td-ai-020-reliability-chaos-observability-l01",
+  "target_learner": "会写 API 测试、第一次负责 AI 服务稳定性门禁的测试开发工程师",
+  "level": "L3-engineering-system",
+  "estimated_minutes": 25,
+  "job_result": "运行一个有任务级 Trace 的 AI 稳定性夹具，并用 0/1/0 证据解释重试反馈环",
+  "artifact": "三阶段 JSON 报告、JSONL Trace、指标字典、故障诊断与迁移 gate",
+  "stages": [
+    {"stage_id":"cold-open-failure","instructor_action":"展示入口看似成功但任务 queue/e2e 超时、调用和成本放大的报告","learner_action":"先判断是否放行并写出缺失的三个分母","expected_observation":"HTTP 成功不能证明 task 正确、及时或低成本","debrief":"业务 task 是发布分母，request/model/tool/attempt 必须分开","artifact_or_assessment":"初始发布判断"},
+    {"stage_id":"stakes-and-promise","instructor_action":"展示故障时 queue p95、retry amplification 和 cost_per_success 的变化","learner_action":"提出质量、延迟、成本和副作用四项联合条件","expected_observation":"单看 QPS 会掩盖重试反馈环","debrief":"good-task gate 需要多层证据","artifact_or_assessment":"质量、延迟、成本与副作用四项联合发布门禁表"},
+    {"stage_id":"before-after","instructor_action":"对比只有平均延迟的旧报告与含 task/trace/attempt 的新报告","learner_action":"映射旧报告无法回答的根因问题","expected_observation":"新报告可以定位 queue→dependency error→retry→terminal state","debrief":"Trace 承载细节，metrics 保持低基数","artifact_or_assessment":"证据字段映射"},
+    {"stage_id":"plain-mental-model","instructor_action":"用机场安检队列类比 bounded admission，用订单链路类比 task root trace","learner_action":"画出 task、retrieval、model、tool、retry 的父子关系","expected_observation":"同一任务可产生多个 attempt 和成本","debrief":"关键路径是 wall-clock，不是所有子调用简单相加；并行子调用不能简单累加","artifact_or_assessment":"带分母与关键路径标注的 Trace 草图"},
+    {"stage_id":"guided-demo","instructor_action":"运行 baseline 并打开 summary.json 和一条 traces.jsonl","learner_action":"检查 seed、任务数、p95、放大和所有 check","expected_observation":"baseline exit 0 且 gate_pass true","debrief":"先固定可回放健康基线，后续故障才有可比较的对照证据","artifact_or_assessment":"baseline evidence"},
+    {"stage_id":"failure-diagnosis","instructor_action":"运行 latency/retry fault，要求学习者在看结果前预测红指标","learner_action":"沿 JSONL 找工具失败、attempt、排队和终态","expected_observation":"fault exit 1 且至少一个门禁为 false","debrief":"可重复红结果说明检测力，不是脚本异常","artifact_or_assessment":"四列诊断记录"},
+    {"stage_id":"learner-practice","instructor_action":"只给出 repaired 配置与阈值，不直接解释结论","learner_action":"比较三份报告并判断修复的是反馈环还是阈值","expected_observation":"repair exit 0 且关键指标恢复","debrief":"修复边界和重试责任，不放宽 gate","artifact_or_assessment":"baseline、故障、修复三份报告差异表"},
+    {"stage_id":"transfer-challenge","instructor_action":"把合成任务迁移到一个隔离 AI 网关的只读工单场景","learner_action":"重建 workload、oracle、工具副作用、阈值和停止条件","expected_observation":"方法不变，但配置与业务阈值不能照抄","debrief":"迁移的是证据链，不是教学数字","artifact_or_assessment":"迁移 gate 提案","source_context":"合成 AI 任务的虚拟延迟/重试夹具","target_context":"隔离 AI 网关的只读工单任务","invariant":"task 分母、Trace 关联、分层指标和红绿门禁","must_change":["任务 oracle 与允许终态","到达分布、成本表和 SLO 阈值","真实依赖与授权停止条件"],"success_criterion":"目标场景可运行基线、受控故障变红、修复复测变绿，并能从 Trace 指向具体根因"},
+    {"stage_id":"artifact-handoff","instructor_action":"展示课程目录、报告、unittest、YAML 静态清单和未知项","learner_action":"按 checklist 复跑并写出生产接入前待补证据","expected_observation":"学习者能区分 fixture-tested、static-reviewed 和 live unknown","debrief":"没有真实集群/模型执行，就不能声称生产验证","artifact_or_assessment":"完整证据包与差距清单"}
+  ],
+  "interaction_prompts":["入口成功但任务超时，你会放行吗？","哪个分母能暴露 retry storm？","迁移到真实网关后哪些字段不能照抄？"],
+  "recovery_path":"重新运行 baseline；如输出目录异常，检查 Python 版本和权限并保留 NOT_RUN 记录",
+  "evidence_status":"fixture-tested",
+  "limitations":"只验证本机标准库夹具与 YAML 静态形状；未测真实模型、生产流量、K8s/Chaos Mesh 执行或学习者效果"
+}

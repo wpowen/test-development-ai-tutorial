@@ -1,0 +1,66 @@
+{
+  "run_date": "2026-08-10",
+  "evidence_scope": "Deterministic Python standard-library UI contract fixture, package-shape validation, and meaningful locator plus business-oracle mutation only",
+  "environment": {
+    "runtime": "Python 3 standard library",
+    "credentials": "none",
+    "network": false,
+    "working_directory": "courses/td-ai-021-ui-mobile-automation",
+    "external_platform_execution": "NOT_RUN/static-reviewed"
+  },
+  "commands": [
+    "python3 -m unittest discover -s lab/tests -v",
+    "python3 lab/scripts/reset_candidate.py && python3 lab/scripts/evaluate.py --report lab/reports/baseline.json",
+    "python3 lab/scripts/inject_regression.py; python3 lab/scripts/evaluate.py --report lab/reports/mutation.json",
+    "python3 lab/scripts/reset_candidate.py && python3 lab/scripts/evaluate.py --report lab/reports/repair.json",
+    "python3 learner-materials/scripts/ui_contract_lab.py validate",
+    "python3 learner-materials/scripts/ui_contract_lab.py baseline|mutation|repair"
+  ],
+  "unit_tests": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "count": 4,
+    "covers": ["package shape", "canonical contract", "lab 0/1/0", "copied learner-materials 0/1/0"]
+  },
+  "baseline": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "lab/reports/baseline.json",
+    "metrics": {"oracle_pass": true, "missing_contracts": []}
+  },
+  "mutation": {
+    "exit_code": 1,
+    "verdict": "FAIL",
+    "report": "lab/reports/mutation.json",
+    "injected": ["deleted stable_locator", "deleted business_assertion"],
+    "metrics": {"oracle_pass": false, "missing_contracts": ["stable_locator", "business_assertion"]}
+  },
+  "repair": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "lab/reports/repair.json",
+    "action": "restore ui_contract.json from canonical_contract.json without weakening the oracle",
+    "metrics": {"oracle_pass": true, "missing_contracts": []}
+  },
+  "learner_materials": {
+    "validation_exit_code": 0,
+    "sequence": [0, 1, 0],
+    "reports": ["learner-materials/reports/final-baseline.json", "learner-materials/reports/final-mutation.json", "learner-materials/reports/final-repair.json"]
+  },
+  "static_review": {
+    "status": "NOT_RUN/static-reviewed",
+    "files": [
+      "materials/examples/playwright/login.spec.ts",
+      "materials/examples/maestro/login.yaml",
+      "materials/examples/appium/login.js",
+      "materials/examples/appium/login.py",
+      "materials/examples/espresso/LoginUiTest.kt",
+      "materials/examples/xcuitest/LoginUITests.swift"
+    ]
+  },
+  "limitations": [
+    "No browser, emulator, simulator, real device, Appium server, Maestro CLI, Gradle instrumentation, Xcode, model, agent, or MCP was executed",
+    "The synthetic fixture proves offline regression sensitivity, not production flake rate, compatibility, ROI, learner transfer, or practitioner acceptance",
+    "Static platform examples require project-specific URLs, identifiers, versions, signing, devices, test data, and review before execution"
+  ]
+}

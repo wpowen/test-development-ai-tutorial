@@ -16,6 +16,22 @@
       "TD-P06",
       "TD-P07",
       "TD-P08",
+      "TD-PS01",
+      "TD-PS02",
+      "TD-PS03",
+      "TD-PS04",
+      "TD-PS05",
+      "TD-PS06",
+      "TD-PS07",
+      "TD-PS08",
+      "TD-PS09",
+      "TD-PS10",
+      "TD-PS11",
+      "TD-PS12",
+      "TD-QP01",
+      "TD-QP02",
+      "TD-QP03",
+      "TD-QP04",
       "TD-AP01",
       "TD-AP02",
       "TD-AP03",
@@ -36,10 +52,34 @@
       "order": 1
     },
     {
+      "module_id": "TD-M08",
+      "title": "传统测试专项",
+      "learner_result": "接口、集成、UI、数据、性能、稳定性、安全、可观测性和混沌工程",
+      "order": 2
+    },
+    {
+      "module_id": "TD-M02",
+      "title": "AI 帮你做传统测试",
+      "learner_result": "用 AI 提效，但必须证明生成结果有检测力",
+      "order": 3
+    },
+    {
+      "module_id": "TD-M09",
+      "title": "AI 接口、性能与可靠性",
+      "learner_result": "测试流式协议、结构化输出、TTFT、TPOT、Goodput、容量、限流、重试和降级",
+      "order": 4
+    },
+    {
+      "module_id": "TD-M07",
+      "title": "专业专题与 Capstone",
+      "learner_result": "按岗位路线组合工件，交付端到端 AI Quality Engineering 系统",
+      "order": 5
+    },
+    {
       "module_id": "TD-M11",
       "title": "Agent 性能与稳定性工程",
       "learner_result": "从工作负载、指标、Trace、容量压测到生产 SLO、告警与故障处置",
-      "order": 2
+      "order": 6
     }
   ],
   "pages": [
@@ -71,6 +111,27 @@
         "S90",
         "S91",
         "S92"
+      ],
+      "architecture": {
+        "title": "测试开发职业价值链",
+        "caption": "AI 只能进入明确的工作节点；输入、工件、决定和反馈缺一项，就无法证明提效。",
+        "nodes": [
+          "触发事件",
+          "输入与依赖",
+          "风险与工程活动",
+          "可审计工件",
+          "发布/质量决定",
+          "生产反馈回流"
+        ]
+      },
+      "materials": [
+        {
+          "title": "职业现实地图模板",
+          "description": "用最近一次需求、发布或事故还原真实流程，再决定 AI 的权限和人工门禁。",
+          "href": "materials/career-reality-map.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        }
       ],
       "previous_page_id": "",
       "next_page_id": "TD-P01",
@@ -116,6 +177,56 @@
         "S81",
         "S85"
       ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-F01",
       "next_page_id": "TD-P02",
       "content_sections": {
@@ -159,6 +270,56 @@
         "S66",
         "S81",
         "S85"
+      ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
       ],
       "previous_page_id": "TD-P01",
       "next_page_id": "TD-P03",
@@ -204,6 +365,56 @@
         "S81",
         "S82"
       ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-P02",
       "next_page_id": "TD-P04",
       "content_sections": {
@@ -247,6 +458,56 @@
         "S43",
         "S45",
         "S82"
+      ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
       ],
       "previous_page_id": "TD-P03",
       "next_page_id": "TD-P05",
@@ -292,6 +553,56 @@
         "S87",
         "S07"
       ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-P04",
       "next_page_id": "TD-P06",
       "content_sections": {
@@ -336,6 +647,56 @@
         "S45",
         "S85"
       ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-P05",
       "next_page_id": "TD-P07",
       "content_sections": {
@@ -379,6 +740,56 @@
         "S42",
         "S49",
         "S89"
+      ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
       ],
       "previous_page_id": "TD-P06",
       "next_page_id": "TD-P08",
@@ -426,8 +837,58 @@
         "S82",
         "S07"
       ],
+      "architecture": {
+        "title": "需求到发布证据的可执行链",
+        "caption": "每一阶段都消费上游的版本化工件；文档冲突、无来源规则或已知缺陷会分别触发 BLOCKED 或 FAIL。",
+        "nodes": [
+          "PRD/技术方案",
+          "Basis Gate",
+          "需求契约",
+          "风险与 TestPackage",
+          "自动化执行",
+          "Run Manifest",
+          "发布证据"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Requirements-to-Evidence 实验包",
+          "description": "包含脚本、输入、状态、报告和说明；解压后按 README 运行。",
+          "href": "materials/requirements-to-evidence.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "离线实验说明",
+          "description": "完整跑通基线、文档冲突、代码缺陷和修复流程，预期退出码包含 0/2/1/0。",
+          "href": "materials/requirements-to-evidence/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "可运行 Pipeline",
+          "description": "Python 标准库实现的需求依据、契约、测试包和证据门禁脚本。",
+          "href": "materials/requirements-to-evidence/pipeline.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "基线需求契约",
+          "description": "可替换成脱敏项目数据的结构化输入示例。",
+          "href": "materials/requirements-to-evidence/seed/requirement-contract.json",
+          "kind": "fixture",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "故障报告样例",
+          "description": "已知产品缺陷被门禁发现后的机器可读结果。",
+          "href": "materials/requirements-to-evidence/reports/mutation.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-P07",
-      "next_page_id": "TD-AP01",
+      "next_page_id": "TD-PS01",
       "content_sections": {
         "outcome": "运行端到端离线证据链；验证文档冲突与产品缺陷两类阻断；生成有责任人与边界的发布建议",
         "professional_relevance": "这条链路的价值不在于第一次生成多少用例，而在于需求、接口、代码或模型变化后，能否知道哪些证据过期、该重跑什么、谁接受残余风险。",
@@ -441,13 +902,1538 @@
       }
     },
     {
+      "page_id": "TD-PS01",
+      "slug": "td-ps01",
+      "module_id": "TD-M08",
+      "title": "API 业务契约：从 HTTP 结果到可验证副作用",
+      "page_type": "guided-lab",
+      "level": "L1",
+      "order": 10,
+      "prerequisite_ids": [
+        "TD-P08"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "拆出协议、Schema、业务和副作用 Oracle；为幂等与错误模型设计可重放请求；把 Trace 和状态证据接入发布判断",
+      "artifact": "API 业务契约测试包与运行 Manifest",
+      "keywords": [
+        "TD-PS01",
+        "TD-M08",
+        "API 业务契约：从 HTTP 结果到可验证副作用"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S44",
+        "S61",
+        "S45"
+      ],
+      "architecture": {
+        "title": "取消请求的证据链",
+        "caption": "请求经过网关、领域服务和账本后，还必须证明事件副作用与最终状态；任一关键证据缺失都不能把响应 202 当成业务完成。",
+        "nodes": [
+          "调用方与幂等键",
+          "API Gateway",
+          "订单领域服务",
+          "订单/退款账本",
+          "事件总线与消费者",
+          "Trace/日志/指标",
+          "发布门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "API 取消契约夹具",
+          "description": "订单取消 OpenAPI、错误模型和状态不变量。",
+          "href": "materials/api-ai-automation/fixtures/order-cancel.openapi.yaml",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "API 运行 Manifest",
+          "description": "记录环境、数据、Trace 和副作用断言。",
+          "href": "materials/api-ai-automation/guides/api-run-manifest.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "API 专项完整实验包",
+          "description": "离线脚本、OpenAPI、事件夹具、配置、指南与红绿报告。",
+          "href": "materials/api-ai-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 红绿实验脚本",
+          "description": "从材料根目录直接运行 baseline、mutation、repair，预期退出码 0/1/0。",
+          "href": "materials/api-ai-automation/scripts/api_automation.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 实验运行说明",
+          "description": "给出可复制命令、预期结果、外部工具 NOT_RUN 边界和迁移步骤。",
+          "href": "materials/api-ai-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-P08",
+      "next_page_id": "TD-PS02",
+      "content_sections": {
+        "outcome": "拆出协议、Schema、业务和副作用 Oracle；为幂等与错误模型设计可重放请求；把 Trace 和状态证据接入发布判断",
+        "professional_relevance": "生产事故常发生在接口返回成功、状态却没有推进，或重试造成重复副作用的瞬间。测试开发需要证明业务结果，而不是收集 200 数量。",
+        "plain_explanation": "订单取消接口允许已支付且未发货订单进入 CANCEL_PENDING，并发出一次退款事件。风险包括已发货误取消、非订单所有者越权、超时后服务端已成功、重复请求重复退款，以及事件消费延迟。\n把可接受结果写成状态机和不变量：退款次数不超过一次、退款金额不超过实付金额、拒绝请求不改变订单状态。",
+        "smallest_example": "POST /orders/O-42/cancel\nheaders: Idempotency-Key: cancel-O-42-1\nassert: status in [202,409]\nassert: refund_count_delta == 1\nassert: trace_id is present",
+        "learner_action": "为取消接口补齐成功、拒绝、重放和依赖超时四组请求；注入一次重复事件并证明账本不重复；输出带 trace_id、状态前后值和发布结论的运行 Manifest",
+        "expected_result": "正常请求只有一个退款意图；同一幂等键重放不会增加退款计数。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "四层 Oracle 均有独立断言；故障注入能稳定变红且诊断链完整；报告明确阻断项、责任人和回滚条件",
+        "evidence_boundary": "页面方法依据 OpenAPI、HTTP 语义和 Pact 官方资料整理；接口、账本、事件和重试语义未在目标系统真实运行，阈值必须用目标业务风险校准。"
+      }
+    },
+    {
+      "page_id": "TD-PS02",
+      "slug": "td-ps02",
+      "module_id": "TD-M08",
+      "title": "OpenAPI Schema 与属性测试：让坏请求和破坏性变更变红",
+      "page_type": "guided-lab",
+      "level": "L1",
+      "order": 11,
+      "prerequisite_ids": [
+        "TD-PS01"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "从 OpenAPI 生成受控正反例；区分 Schema 失败和业务属性失败；用 mutation 证明测试确实有检测力",
+      "artifact": "OpenAPI 负向测试集、属性清单与 mutation 报告",
+      "keywords": [
+        "TD-PS02",
+        "TD-M08",
+        "OpenAPI Schema 与属性测试：让坏请求和破坏性变更变红"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S44",
+        "S61",
+        "S43"
+      ],
+      "architecture": {
+        "title": "规范到最小失败请求",
+        "caption": "Schema 只是入口，属性和状态才是业务证据；变异器制造坏契约，报告必须回链到最小请求和对应风险。",
+        "nodes": [
+          "OpenAPI 版本",
+          "例生成器",
+          "Schema 校验器",
+          "业务属性 Oracle",
+          "被测 API",
+          "Mutation 控制器",
+          "报告与门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "支付意图规范夹具",
+          "description": "含边界、错误和跨字段约束的 OpenAPI 文件。",
+          "href": "materials/api-ai-automation/fixtures/payment-intent.openapi.yaml",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Schema Mutation 清单",
+          "description": "可审查的破坏性变更与预期失败。",
+          "href": "materials/api-ai-automation/configs/schema-mutations.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "API 专项完整实验包",
+          "description": "离线脚本、OpenAPI、事件夹具、配置、指南与红绿报告。",
+          "href": "materials/api-ai-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 红绿实验脚本",
+          "description": "从材料根目录直接运行 baseline、mutation、repair，预期退出码 0/1/0。",
+          "href": "materials/api-ai-automation/scripts/api_automation.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 实验运行说明",
+          "description": "给出可复制命令、预期结果、外部工具 NOT_RUN 边界和迁移步骤。",
+          "href": "materials/api-ai-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS01",
+      "next_page_id": "TD-PS03",
+      "content_sections": {
+        "outcome": "从 OpenAPI 生成受控正反例；区分 Schema 失败和业务属性失败；用 mutation 证明测试确实有检测力",
+        "professional_relevance": "Schema 通过不等于业务正确；结构化 API 最容易把测试退化成字段类型检查。",
+        "plain_explanation": "支付意图包含 amount、currency、merchant_id、customer_id 和 return_url。除了 required/type，还要检查金额大于零、币种与商户配置匹配、客户只能访问自己的意图、过期意图不能再次确认。\n把每个字段约束映射到风险和 Oracle，避免生成大量没有业务意义的随机字符串。",
+        "smallest_example": "cases = [valid_payment, amount_zero, currency_unknown, owner_mismatch, expired_intent]\nfor case in cases:\n    response = client.send(case)\n    assert oracle(response, case)\nmutation: remove_required('merchant_id')\nmutation: allow(amount <= 0)",
+        "learner_action": "从一个 OpenAPI 操作生成并审查 10 个正反例；删除一个 required 字段并验证 mutation 门禁失败；把一个跨字段规则写成独立属性并生成最小重放",
+        "expected_result": "每个负向样例都有明确错误模型；契约 mutation 至少使一个检查失败，而不是全套仍然绿色。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "每个关键约束有业务 Oracle；至少一种契约破坏会阻断；报告区分结构、业务和环境失败",
+        "evidence_boundary": "OpenAPI 与 HTTP 来源支持规范和协议测试方法；Schema 变异、随机数据分布和服务业务规则没有在目标 API 上执行验证，教学样例不代表实际覆盖率。"
+      }
+    },
+    {
+      "page_id": "TD-PS03",
+      "slug": "td-ps03",
+      "module_id": "TD-M08",
+      "title": "契约、事件与鉴权：测试跨服务边界的真实兼容性",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 12,
+      "prerequisite_ids": [
+        "TD-PS02"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "建立消费者驱动契约与版本策略；验证鉴权、租户和事件不变量；沿 Trace 诊断最终一致性问题",
+      "artifact": "Pact/事件契约包、权限矩阵和补偿诊断记录",
+      "keywords": [
+        "TD-PS03",
+        "TD-M08",
+        "契约、事件与鉴权：测试跨服务边界的真实兼容性"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S45",
+        "S44",
+        "S50"
+      ],
+      "architecture": {
+        "title": "事件契约与权限传播",
+        "caption": "身份策略、事件版本和幂等存储共同决定下游是否安全消费；任何一段断链都可能产生静默副作用。",
+        "nodes": [
+          "Checkout API",
+          "Auth/租户策略",
+          "契约 Broker",
+          "事件总线",
+          "库存消费者",
+          "支付消费者",
+          "死信/补偿与 Trace"
+        ]
+      },
+      "materials": [
+        {
+          "title": "结算事件契约",
+          "description": "包含版本、租户和幂等字段的事件 Fixture。",
+          "href": "materials/api-ai-automation/fixtures/checkout-events.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "消费者兼容矩阵",
+          "description": "记录版本变更、消费者依赖和阻断规则。",
+          "href": "materials/api-ai-automation/guides/consumer-compatibility.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "API 专项完整实验包",
+          "description": "离线脚本、OpenAPI、事件夹具、配置、指南与红绿报告。",
+          "href": "materials/api-ai-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 红绿实验脚本",
+          "description": "从材料根目录直接运行 baseline、mutation、repair，预期退出码 0/1/0。",
+          "href": "materials/api-ai-automation/scripts/api_automation.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 实验运行说明",
+          "description": "给出可复制命令、预期结果、外部工具 NOT_RUN 边界和迁移步骤。",
+          "href": "materials/api-ai-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS02",
+      "next_page_id": "TD-PS04",
+      "content_sections": {
+        "outcome": "建立消费者驱动契约与版本策略；验证鉴权、租户和事件不变量；沿 Trace 诊断最终一致性问题",
+        "professional_relevance": "服务间测试如果只依赖共享 Mock，会让提供者和消费者各自绿色、集成后却失败。",
+        "plain_explanation": "Checkout 服务接受购物车后发布 order.created，库存、支付和通知消费者异步处理。业务要求同一 order_id 只能产生一次支付意图，跨租户事件不能被消费，库存失败必须进入可追踪补偿状态。",
+        "smallest_example": "event = {event_id, aggregate_id, version, tenant_id, payload}\nassert consumer.accepts(event)\nassert idempotency_store.seen(event.event_id) is False\nassert cross_tenant(event, consumer) is denied",
+        "learner_action": "为一个消费者写出读取字段和错误契约；注入跨租户 event 并验证拒绝无副作用；重放乱序与重复事件并记录最终状态",
+        "expected_result": "提供者删除消费者字段或改变事件版本时契约失败；重复 event_id 不产生第二个支付意图。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "提供者破坏性变更可在部署前失败；鉴权负例和事件幂等均有证据；补偿、死信和 Trace 诊断路径可执行",
+        "evidence_boundary": "Pact、OpenAPI 与 OWASP 官方资料支持契约和权限测试框架；消息中间件、策略引擎和补偿语义需在目标架构中实测，页面不宣称真实跨服务已运行。"
+      }
+    },
+    {
+      "page_id": "TD-PS04",
+      "slug": "td-ps04",
+      "module_id": "TD-M08",
+      "title": "Web UI 关键旅程：隔离、定位器、网络控制与跨浏览器",
+      "page_type": "guided-lab",
+      "level": "L1",
+      "order": 13,
+      "prerequisite_ids": [
+        "TD-PS03"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "建立隔离且可重放的用户旅程；选择可维护 Locator 和等待策略；按用户风险裁剪浏览器与视口矩阵",
+      "artifact": "退款审批 UI 套件、浏览器矩阵和 Trace 包",
+      "keywords": [
+        "TD-PS04",
+        "TD-M08",
+        "Web UI 关键旅程：隔离、定位器、网络控制与跨浏览器"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S62",
+        "S43",
+        "S58"
+      ],
+      "architecture": {
+        "title": "UI 旅程的控制面与证据面",
+        "caption": "浏览器只是执行端，业务 API、身份、依赖路由和 Trace 才共同构成可诊断的 UI 证据。",
+        "nodes": [
+          "测试数据工厂",
+          "浏览器上下文",
+          "Web UI",
+          "订单/退款 API",
+          "第三方路由 Stub",
+          "Trace/截图/控制台",
+          "回归门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "审批旅程 Fixture",
+          "description": "角色、订单状态、空态和错误态数据。",
+          "href": "materials/ui-mobile-automation/fixtures/refund-approval.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Playwright 旅程指南",
+          "description": "Locator、等待、隔离和 Trace 采集规则。",
+          "href": "materials/ui-mobile-automation/guides/web-journey-sop.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Web/Android/iOS 专项实验包",
+          "description": "UI 契约脚本、四类业务夹具、设备矩阵、指南与平台样例索引。",
+          "href": "materials/ui-mobile-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI 契约红绿脚本",
+          "description": "验证稳定定位器和业务 Oracle，预埋缺失字段后变红，再恢复为绿。",
+          "href": "materials/ui-mobile-automation/scripts/ui_contract_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI/移动端实验说明",
+          "description": "给出 0/1/0 命令，并区分离线夹具与浏览器、模拟器、真机 NOT_RUN。",
+          "href": "materials/ui-mobile-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS03",
+      "next_page_id": "TD-PS05",
+      "content_sections": {
+        "outcome": "建立隔离且可重放的用户旅程；选择可维护 Locator 和等待策略；按用户风险裁剪浏览器与视口矩阵",
+        "professional_relevance": "UI 自动化最常见的失败不是产品逻辑，而是脆弱定位器、共享状态、第三方网络和错误等待。",
+        "plain_explanation": "审批人打开待处理退款，需看到订单状态、金额、风险标签和审计记录；批准后 UI 显示处理中，并在异步完成后更新。需要覆盖空列表、权限不足、重复点击、网络失败和窄视口布局。",
+        "smallest_example": "await page.getByRole('button', {name: '批准退款'}).click();\nawait expect(page.getByRole('status')).toHaveText('处理中');\nawait page.waitForResponse('**/refunds/*/status');\nawait expect(page.getByTestId('refund-state')).toHaveText('已完成');",
+        "learner_action": "实现一个不使用固定 sleep 的审批旅程；让第三方通知失败并验证 UI 呈现可诊断错误；为 Chromium、Firefox、WebKit 和两个视口写风险选择理由",
+        "expected_result": "测试在不同运行速度下等待业务信号；失败 Trace 能看到 DOM、网络和控制台，而不是只有超时。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "测试上下文和业务数据相互隔离；关键断言包含 UI 状态与 API/业务证据；失败 Trace 足以支持人工诊断",
+        "evidence_boundary": "本页采用浏览器自动化与质量模型的通用方法；未真实启动浏览器或接入目标站点，浏览器兼容性、渲染差异和网络行为均为 desk-researched 状态。"
+      }
+    },
+    {
+      "page_id": "TD-PS05",
+      "slug": "td-ps05",
+      "module_id": "TD-M08",
+      "title": "Web UI 兼容性、无障碍与视觉回归",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 14,
+      "prerequisite_ids": [
+        "TD-PS04"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "建立按用户风险裁剪的兼容矩阵；区分自动 a11y 规则和人工语义审查；定位视觉差异的真实原因",
+      "artifact": "Web 兼容性与可访问性证据包",
+      "keywords": [
+        "TD-PS05",
+        "TD-M08",
+        "Web UI 兼容性、无障碍与视觉回归"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S62",
+        "S43",
+        "S58"
+      ],
+      "architecture": {
+        "title": "兼容性证据分层",
+        "caption": "同一页面的可访问性、响应式和视觉证据来自不同检查层，不能用一个截图或一次点击替代全部层次。",
+        "nodes": [
+          "用户/输入方式",
+          "浏览器与视口矩阵",
+          "DOM/语义检查",
+          "键盘/焦点路径",
+          "视觉快照",
+          "差异诊断",
+          "人工批准与门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "客服工作台矩阵",
+          "description": "浏览器、视口、语言和用户风险映射。",
+          "href": "materials/ui-mobile-automation/configs/web-compatibility-matrix.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "a11y 与视觉 SOP",
+          "description": "自动检查、人工复核和基线审批步骤。",
+          "href": "materials/ui-mobile-automation/guides/a11y-visual-regression.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Web/Android/iOS 专项实验包",
+          "description": "UI 契约脚本、四类业务夹具、设备矩阵、指南与平台样例索引。",
+          "href": "materials/ui-mobile-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI 契约红绿脚本",
+          "description": "验证稳定定位器和业务 Oracle，预埋缺失字段后变红，再恢复为绿。",
+          "href": "materials/ui-mobile-automation/scripts/ui_contract_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI/移动端实验说明",
+          "description": "给出 0/1/0 命令，并区分离线夹具与浏览器、模拟器、真机 NOT_RUN。",
+          "href": "materials/ui-mobile-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS04",
+      "next_page_id": "TD-PS06",
+      "content_sections": {
+        "outcome": "建立按用户风险裁剪的兼容矩阵；区分自动 a11y 规则和人工语义审查；定位视觉差异的真实原因",
+        "professional_relevance": "主路径点击通过仍可能让键盘用户无法完成任务、窄屏信息溢出或错误状态被遮挡。",
+        "plain_explanation": "客服工作台支持鼠标、键盘和辅助技术；退款金额、风险提示和确认对话框必须在 1280px 与 390px 视口可读，英文与中文长文本不能遮挡批准控件。",
+        "smallest_example": "matrix = [\n  {browser:'chromium', viewport:'1280x800', locale:'zh-CN'},\n  {browser:'webkit', viewport:'390x844', locale:'en-US'}\n]\nchecks = ['keyboard-order', 'dialog-name', 'contrast', 'overflow', 'visual-diff']",
+        "learner_action": "为客服工作台裁剪两个浏览器、两个视口和两种语言；注入长文本并记录溢出元素；完成一次键盘-only 旅程并保留焦点证据",
+        "expected_result": "每个矩阵组合有选择理由；失败报告能指出元素、规则、截图和变更 commit。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "矩阵选择与用户风险相连；自动规则与人工语义检查分开；视觉基线更新有审查和回滚证据",
+        "evidence_boundary": "WCAG 与质量模型提供通用检查框架；本页未真实运行浏览器、辅助技术或视觉基线，具体合规结论必须在目标产品和目标市场复核。"
+      }
+    },
+    {
+      "page_id": "TD-PS06",
+      "slug": "td-ps06",
+      "module_id": "TD-M08",
+      "title": "Android 自动化：生命周期、同步、权限与设备矩阵",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 15,
+      "prerequisite_ids": [
+        "TD-PS05"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "拆分 Android 测试层级与同步策略；覆盖权限、后台恢复和设备差异；用日志、截图和崩溃信息诊断失败",
+      "artifact": "Android 设备矩阵、生命周期用例与失败包",
+      "keywords": [
+        "TD-PS06",
+        "TD-M08",
+        "Android 自动化：生命周期、同步、权限与设备矩阵"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S43",
+        "S61",
+        "S58"
+      ],
+      "architecture": {
+        "title": "Android 扫描状态链",
+        "caption": "移动 UI 状态、系统生命周期和服务端幂等状态必须同时观察，否则恢复场景容易出现假绿或重复入账。",
+        "nodes": [
+          "收货员与设备",
+          "Android Activity/Process",
+          "扫描与权限层",
+          "本地状态/队列",
+          "库存 API",
+          "库存账本",
+          "logcat/Trace/报告"
+        ]
+      },
+      "materials": [
+        {
+          "title": "Android 收货 Fixture",
+          "description": "扫描、权限、网络和生命周期状态。",
+          "href": "materials/ui-mobile-automation/fixtures/android-receiving.yaml",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "设备矩阵与失败包规范",
+          "description": "设备选择、logcat、截图和 Trace 采集。",
+          "href": "materials/ui-mobile-automation/guides/android-device-matrix.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Web/Android/iOS 专项实验包",
+          "description": "UI 契约脚本、四类业务夹具、设备矩阵、指南与平台样例索引。",
+          "href": "materials/ui-mobile-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI 契约红绿脚本",
+          "description": "验证稳定定位器和业务 Oracle，预埋缺失字段后变红，再恢复为绿。",
+          "href": "materials/ui-mobile-automation/scripts/ui_contract_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI/移动端实验说明",
+          "description": "给出 0/1/0 命令，并区分离线夹具与浏览器、模拟器、真机 NOT_RUN。",
+          "href": "materials/ui-mobile-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS05",
+      "next_page_id": "TD-PS07",
+      "content_sections": {
+        "outcome": "拆分 Android 测试层级与同步策略；覆盖权限、后台恢复和设备差异；用日志、截图和崩溃信息诊断失败",
+        "professional_relevance": "移动端失败经常来自生命周期、系统权限、网络切换和设备差异，单一模拟器绿不能代表用户可用。",
+        "plain_explanation": "收货员扫描条码后上传库存；相机权限首次拒绝、应用切到后台、网络断开、屏幕旋转或低电量都不能让已扫描货物重复入库。服务端以幂等 receipt_id 作为独立 Oracle。",
+        "smallest_example": "launchReceipt('R-17')\nassertPermission('CAMERA', expected='prompt')\nscan('SKU-9')\nrotate()\nbackgroundFor('3s')\nresume()\nassertServerInvariant('receipt_id=R-17', 'count=1')",
+        "learner_action": "设计首次拒绝相机权限和再次进入的路径；注入进程杀死并检查 receipt_id 幂等；写出至少三种设备切片及其业务理由",
+        "expected_result": "恢复后扫描状态可解释；同一 receipt_id 重放不会产生第二次库存入账。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "同步策略不依赖固定等待；生命周期与服务端状态均有证据；设备未运行时报告明确标 desk-researched",
+        "evidence_boundary": "Android 测试层次和权限策略为 desk-researched；本页未启动 Android 模拟器或真机，设备、ROM、性能和系统弹窗结论不能当作运行结果。"
+      }
+    },
+    {
+      "page_id": "TD-PS07",
+      "slug": "td-ps07",
+      "module_id": "TD-M08",
+      "title": "iOS 自动化：可访问性标识、权限、签名与状态残留",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 16,
+      "prerequisite_ids": [
+        "TD-PS06"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "设计可访问性标识驱动的定位策略；覆盖权限、后台恢复和签名前置条件；区分设备、应用和服务状态故障",
+      "artifact": "iOS 预约改期测试包与 xcresult 证据规范",
+      "keywords": [
+        "TD-PS07",
+        "TD-M08",
+        "iOS 自动化：可访问性标识、权限、签名与状态残留"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S43",
+        "S62",
+        "S58"
+      ],
+      "architecture": {
+        "title": "iOS 预约改期证据链",
+        "caption": "应用状态、系统授权和预约服务的版本冲突必须在同一运行包中关联，才能定位是 UI、权限还是业务竞争失败。",
+        "nodes": [
+          "患者与 iOS 设备",
+          "XCUITest/Accessibility",
+          "系统权限与生命周期",
+          "预约 API",
+          "Slot 版本/账本",
+          "xcresult/系统日志",
+          "回归门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "iOS 预约 Fixture",
+          "description": "预约、时段版本、权限和恢复状态。",
+          "href": "materials/ui-mobile-automation/fixtures/ios-reschedule.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "XCUITest 运行前检查",
+          "description": "签名、权限、清理和 xcresult 采集。",
+          "href": "materials/ui-mobile-automation/guides/ios-xcuitest-preflight.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Web/Android/iOS 专项实验包",
+          "description": "UI 契约脚本、四类业务夹具、设备矩阵、指南与平台样例索引。",
+          "href": "materials/ui-mobile-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI 契约红绿脚本",
+          "description": "验证稳定定位器和业务 Oracle，预埋缺失字段后变红，再恢复为绿。",
+          "href": "materials/ui-mobile-automation/scripts/ui_contract_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI/移动端实验说明",
+          "description": "给出 0/1/0 命令，并区分离线夹具与浏览器、模拟器、真机 NOT_RUN。",
+          "href": "materials/ui-mobile-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS06",
+      "next_page_id": "TD-PS08",
+      "content_sections": {
+        "outcome": "设计可访问性标识驱动的定位策略；覆盖权限、后台恢复和签名前置条件；区分设备、应用和服务状态故障",
+        "professional_relevance": "iOS 测试常被签名、权限弹窗、动画和上一次运行残留干扰；一条 UI 通过不能证明预约状态可靠。",
+        "plain_explanation": "患者选择新时段并确认，客户端可能遇到通知权限、网络切换、后台恢复和旧预约残留。服务端以 appointment_id 与 slot_version 约束重复提交和并发占用。",
+        "smallest_example": "app.buttons['reschedule-confirm'].tap()\nXCTAssertTrue(app.staticTexts['pending'].waitForExistence(timeout: 5))\nassertTraceHas('appointment_id', 'slot_version')\nassertServerState('slot_version', expected: 8)",
+        "learner_action": "为预约改期控件定义 accessibilityIdentifier 和业务断言；模拟并发 slot_version 冲突并确认 UI 友好失败；写出模拟器与真机各自不能证明的事项",
+        "expected_result": "UI 显示处理中时服务端请求可追踪；重复点击不会产生第二个预约变更。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "关键控件不依赖坐标定位；权限、数据清理和签名前置有记录；服务端预约状态与 UI 结果相互印证",
+        "evidence_boundary": "XCTest、WCAG 和质量模型用于方法设计；本页未运行 XCUITest、模拟器或真机，签名、OS、动画和设备兼容性均只能标为 desk-researched。"
+      }
+    },
+    {
+      "page_id": "TD-PS08",
+      "slug": "td-ps08",
+      "module_id": "TD-M02",
+      "title": "AI UI 生成与自愈：先证明检测力，再谈省维护",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 17,
+      "prerequisite_ids": [
+        "TD-PS04",
+        "TD-PS05"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "定义生成测试的来源、Oracle 和审查门禁；区分 Locator 修复与业务变化；用轨迹和 mutation 识别误修绿",
+      "artifact": "AI UI 生成审查包、轨迹评测和自愈审计记录",
+      "keywords": [
+        "TD-PS08",
+        "TD-M02",
+        "AI UI 生成与自愈：先证明检测力，再谈省维护"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S62",
+        "S43",
+        "S59"
+      ],
+      "architecture": {
+        "title": "UI 生成到人工门禁",
+        "caption": "自愈是受限候选搜索，不是自动批准；轨迹、业务状态和权限证据共同决定是否接受修复。",
+        "nodes": [
+          "需求/业务 Oracle",
+          "页面与可访问性树",
+          "Planner",
+          "Generator/Locator 候选",
+          "Critic/轨迹评测",
+          "人工审查",
+          "CI 门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "退货 UI 轨迹夹具",
+          "description": "相似按钮、权限和错误成功页场景。",
+          "href": "materials/ui-mobile-automation/fixtures/return-trajectory.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "自愈审计规则",
+          "description": "候选范围、误修绿、人工审查和回滚。",
+          "href": "materials/ui-mobile-automation/configs/self-healing-policy.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Web/Android/iOS 专项实验包",
+          "description": "UI 契约脚本、四类业务夹具、设备矩阵、指南与平台样例索引。",
+          "href": "materials/ui-mobile-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI 契约红绿脚本",
+          "description": "验证稳定定位器和业务 Oracle，预埋缺失字段后变红，再恢复为绿。",
+          "href": "materials/ui-mobile-automation/scripts/ui_contract_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "UI/移动端实验说明",
+          "description": "给出 0/1/0 命令，并区分离线夹具与浏览器、模拟器、真机 NOT_RUN。",
+          "href": "materials/ui-mobile-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS07",
+      "next_page_id": "TD-PS09",
+      "content_sections": {
+        "outcome": "定义生成测试的来源、Oracle 和审查门禁；区分 Locator 修复与业务变化；用轨迹和 mutation 识别误修绿",
+        "professional_relevance": "自愈的目标不是让脚本永远通过，而是保留业务 Oracle；错误地点击相似按钮或绕过权限，比测试失败更危险。",
+        "plain_explanation": "页面同时出现‘申请退货’、‘取消订单’和‘联系客服’；AI 可能依据视觉相似度点错控件。真实 Oracle 是退货状态、订单权限、退款金额和审计事件，不是 URL 或按钮文字单独变化。",
+        "smallest_example": "candidate = heal(locator_failure, allowed=['role','label','testid'])\nassert candidate.source_ref\nassert candidate.business_oracle\nassert not candidate.crosses_permission_boundary\nrequire_human_review(candidate)",
+        "learner_action": "设计一个相似按钮导致误修绿的页面夹具；为候选 Locator 补 source_ref、业务 Oracle 和权限边界；比较自愈前后误修绿率与人工审查率",
+        "expected_result": "自愈后仍验证退货状态、金额和审计事件；若只到达‘成功页面’但业务状态未变，轨迹评测必须失败。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "生成步骤可回溯到业务来源；自愈保留原失败且不跨权限边界；预埋错路径会被轨迹或业务 Oracle 阻断",
+        "evidence_boundary": "页面是 AI 辅助 UI 的 desk-researched 设计；未真实运行浏览器 Agent、自愈框架或目标站点，任何维护率、误修率和兼容性结论必须由离线夹具或授权环境验证。"
+      }
+    },
+    {
+      "page_id": "TD-PS09",
+      "slug": "td-ps09",
+      "module_id": "TD-M09",
+      "title": "AI 性能指标：TTFT、TPOT、Goodput 与单位成功成本",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 18,
+      "prerequisite_ids": [
+        "TD-PS03"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "定义 AI 请求阶段指标与分母；区分 TTFT、TPOT、端到端和 Goodput；用质量、SLO 和成本做 Pareto 决策",
+      "artifact": "AI 性能 workload、指标卡和容量决策报告",
+      "keywords": [
+        "TD-PS09",
+        "TD-M09",
+        "AI 性能指标：TTFT、TPOT、Goodput 与单位成功成本"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S51",
+        "S52",
+        "S54"
+      ],
+      "architecture": {
+        "title": "AI 请求阶段指标链",
+        "caption": "从到达到首 token、连续生成、工具调用到任务成功，性能和质量必须在同一 trace 中关联。",
+        "nodes": [
+          "Workload/到达率",
+          "队列与调度",
+          "Prefill/TTFT",
+          "Decode/TPOT",
+          "工具与检索",
+          "质量/Goodput",
+          "成本与容量门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "客服 Agent Workload",
+          "description": "输入长度、并发、工具比例和风险切片。",
+          "href": "materials/api-ai-automation/configs/ai-performance-workload.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "AI 指标卡模板",
+          "description": "阶段指标、分母、分位数和联合门禁。",
+          "href": "materials/api-ai-automation/guides/ai-performance-metric-card.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "API 专项完整实验包",
+          "description": "离线脚本、OpenAPI、事件夹具、配置、指南与红绿报告。",
+          "href": "materials/api-ai-automation.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 红绿实验脚本",
+          "description": "从材料根目录直接运行 baseline、mutation、repair，预期退出码 0/1/0。",
+          "href": "materials/api-ai-automation/scripts/api_automation.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "API 实验运行说明",
+          "description": "给出可复制命令、预期结果、外部工具 NOT_RUN 边界和迁移步骤。",
+          "href": "materials/api-ai-automation/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS08",
+      "next_page_id": "TD-PS10",
+      "content_sections": {
+        "outcome": "定义 AI 请求阶段指标与分母；区分 TTFT、TPOT、端到端和 Goodput；用质量、SLO 和成本做 Pareto 决策",
+        "professional_relevance": "平均延迟变快可能伴随长输入质量下降、工具调用放大和 p99 恶化；AI 性能必须与任务成功绑定。",
+        "plain_explanation": "客服 Agent 先检索政策，再调用模型并可能查询订单。短 FAQ 与长退款对话的输入、工具数、输出长度和风险完全不同；性能报告必须保留这些切片。",
+        "smallest_example": "workload = {slices:['faq','refund-long'], concurrency:[1,8,32], output_tokens:256}\nmetrics = ['queue_ms','ttft_ms','tpot_ms','e2e_ms','goodput','cost_per_success']\ngate = safety_blockers == 0 and refund_success >= 0.98 and p95_ttft_ms <= budget",
+        "learner_action": "为 FAQ 与退款长对话定义两个 workload slice；计算 TTFT、TPOT、Goodput 和 cost_per_success 的分母；注入一次工具超时并解释重试对性能和成本的影响",
+        "expected_result": "报告按 slice 展示 p50/p95/p99、任务质量和成本；不能用整体平均值掩盖退款长对话尾延迟。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "指标按切片和分位数呈现；质量底线先于速度优化；报告包含回退条件与未知内部指标",
+        "evidence_boundary": "vLLM、GenAI-Perf 和 Prometheus 官方资料支持指标定义；页面未在目标模型、硬件或供应商服务上压测，所有容量、阈值和成本数字必须重新实测。"
+      }
+    },
+    {
+      "page_id": "TD-PS10",
+      "slug": "td-ps10",
+      "module_id": "TD-M08",
+      "title": "故障注入：从单点失败到重试风暴与级联故障",
+      "page_type": "guided-lab",
+      "level": "L1",
+      "order": 19,
+      "prerequisite_ids": [
+        "TD-PS09"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "按假设设计故障实验；验证超时、限流、依赖降级和补偿；用 SLO 与副作用证据判断实验结论",
+      "artifact": "Chaos Experiment Card、注入记录和复盘报告",
+      "keywords": [
+        "TD-PS10",
+        "TD-M08",
+        "故障注入：从单点失败到重试风暴与级联故障"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S48",
+        "S60",
+        "S47"
+      ],
+      "architecture": {
+        "title": "故障传播与停止链",
+        "caption": "故障注入只对隔离依赖生效，停止条件同时观察用户 SLI、系统传播和不可逆副作用。",
+        "nodes": [
+          "实验授权/隔离命名空间",
+          "注入器",
+          "模型/工具/检索依赖",
+          "Agent 重试与降级",
+          "订单 API/队列",
+          "SLI/Trace/副作用",
+          "自动停止与回滚"
+        ]
+      },
+      "materials": [
+        {
+          "title": "订单助手实验卡",
+          "description": "工具超时、429、空检索和停止条件。",
+          "href": "materials/reliability-chaos-observability/fixtures/order-assistant-chaos.yaml",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "Chaos 授权与复验指南",
+          "description": "隔离、观察、回滚和残留清理。",
+          "href": "materials/reliability-chaos-observability/guides/chaos-experiment-sop.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "稳定性与故障注入实验包",
+          "description": "负载配置、Chaos 实验卡、Trace 契约、Runbook 和三组机器报告。",
+          "href": "materials/reliability-chaos-observability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "稳定性红绿实验脚本",
+          "description": "模拟队列、重试、工具调用和成本，故障配置必须以退出码 1 被门禁拦截。",
+          "href": "materials/reliability-chaos-observability/scripts/reliability_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "稳定性实验运行说明",
+          "description": "给出 0/1/0 命令、报告位置和 K8s/Chaos Mesh/生产环境 NOT_RUN 边界。",
+          "href": "materials/reliability-chaos-observability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS09",
+      "next_page_id": "TD-PS11",
+      "content_sections": {
+        "outcome": "按假设设计故障实验；验证超时、限流、依赖降级和补偿；用 SLO 与副作用证据判断实验结论",
+        "professional_relevance": "可靠性不是没有故障，而是故障传播可控、用户影响可知、恢复动作可执行。",
+        "plain_explanation": "订单助手可查询订单、解释退款政策，但不能在没有二次确认时退款。实验只在隔离命名空间和合成账户执行，先声明 blast radius、停止条件、观察人和回滚命令；没有这些字段的实验保持 BLOCKED。",
+        "smallest_example": "experiment: tool-timeout\nhypothesis: assistant remains read-only and returns bounded fallback\nblast_radius: namespace=qa-chaos, users=synthetic\nstop_if: error_rate > 0.10 or side_effect_count > 0\nrollback: disable_fault('tool-timeout')",
+        "learner_action": "写一张工具超时 Chaos Experiment Card；为重试风暴定义停止条件和副作用 Oracle；恢复后验证队列、Feature Flag 和合成数据均清理",
+        "expected_result": "工具超时后助手不执行退款，响应可解释，错误率和 Trace 显示降级；触发停止条件时实验自动结束。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "实验有明确授权和 blast radius；故障后降级不越权且可观测；恢复与同一回归集复验均有证据",
+        "evidence_boundary": "页面依据 Google SRE 与 Chaos Engineering 原则做 desk-researched 设计；未在任何 K8s 集群或生产环境运行故障注入，实验安全性和恢复时间必须先在授权隔离环境验证。"
+      }
+    },
+    {
+      "page_id": "TD-PS11",
+      "slug": "td-ps11",
+      "module_id": "TD-M09",
+      "title": "线上可观测性：把 AI 质量、Trace、成本和 SLO 接成一条链",
+      "page_type": "concept",
+      "level": "L1",
+      "order": 20,
+      "prerequisite_ids": [
+        "TD-PS10"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "定义 AI 观测字段和脱敏边界；把质量事件连接到 Trace 与版本 Manifest；建立告警、调查和回归回流路径",
+      "artifact": "AI 可观测性字段契约、Dashboard 设计和事故样例",
+      "keywords": [
+        "TD-PS11",
+        "TD-M09",
+        "线上可观测性：把 AI 质量、Trace、成本和 SLO 接成一条链"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S49",
+        "S47",
+        "S51"
+      ],
+      "architecture": {
+        "title": "AI 质量信号闭环",
+        "caption": "Trace 把模型、检索、工具、性能和业务结果连接起来；脱敏与权限是观测系统的前置约束。",
+        "nodes": [
+          "用户请求/风险切片",
+          "Gateway 与 Trace",
+          "模型/检索/工具 Span",
+          "日志与指标",
+          "质量/成本评测",
+          "告警与版本冻结",
+          "回归集与发布门禁"
+        ]
+      },
+      "materials": [
+        {
+          "title": "Agent Trace 字段契约",
+          "description": "版本、Span、质量、成本和脱敏字段。",
+          "href": "materials/reliability-chaos-observability/configs/agent-trace-schema.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "线上质量调查指南",
+          "description": "告警窗口、诊断树、回滚和回流。",
+          "href": "materials/reliability-chaos-observability/guides/ai-observability-investigation.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "稳定性与故障注入实验包",
+          "description": "负载配置、Chaos 实验卡、Trace 契约、Runbook 和三组机器报告。",
+          "href": "materials/reliability-chaos-observability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "稳定性红绿实验脚本",
+          "description": "模拟队列、重试、工具调用和成本，故障配置必须以退出码 1 被门禁拦截。",
+          "href": "materials/reliability-chaos-observability/scripts/reliability_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "稳定性实验运行说明",
+          "description": "给出 0/1/0 命令、报告位置和 K8s/Chaos Mesh/生产环境 NOT_RUN 边界。",
+          "href": "materials/reliability-chaos-observability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS10",
+      "next_page_id": "TD-PS12",
+      "content_sections": {
+        "outcome": "定义 AI 观测字段和脱敏边界；把质量事件连接到 Trace 与版本 Manifest；建立告警、调查和回归回流路径",
+        "professional_relevance": "没有输入、检索、工具、模型版本和最终结果的关联，线上质量下降只能靠猜；过度采集又会泄露敏感数据。",
+        "plain_explanation": "客服退款正确率连续下降，Judge 分数保持稳定，可能是知识库索引过期、输入分布变化、Judge 漂移或工具错误。需要同时查看质量切片、检索版本、Trace、成本和用户反馈。",
+        "smallest_example": "trace = {trace_id, manifest_id, risk_slice, model_version, prompt_hash,\n  retrieval_ids, tool_names, latency:{ttft,e2e}, token_counts, outcome}\nredact(trace, fields=['email','phone','credential','raw_payment'])",
+        "learner_action": "设计一份不含 PII 的 Agent Trace 字段契约；为高风险退款正确率下降写连续窗口告警；把一条脱敏失败样例映射回回归用例",
+        "expected_result": "可以从一个质量异常回到版本和链路；敏感字段不进入默认 Dashboard，原始数据访问有权限和保留期限。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "质量、性能、成本与版本可关联；敏感数据边界和访问控制明确；告警动作能冻结、诊断、回滚并回流",
+        "evidence_boundary": "OpenTelemetry、Google SRE 和 vLLM 资料支持信号与指标设计；本页未接入生产 telemetry 或真实 Trace，字段可见性、PII 策略和告警阈值需由目标组织验证。"
+      }
+    },
+    {
+      "page_id": "TD-PS12",
+      "slug": "td-ps12",
+      "module_id": "TD-M09",
+      "title": "稳定性 Runbook：SLO 触发后的冻结、回滚与复盘",
+      "page_type": "project",
+      "level": "L1",
+      "order": 21,
+      "prerequisite_ids": [
+        "TD-PS11"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "定义 AI 服务 SLO、错误预算和触发级别；执行冻结、降级、回滚和复验决策；把事故转化为新增测试与门禁",
+      "artifact": "稳定性 Runbook、GameDay 记录和事故复盘报告",
+      "keywords": [
+        "TD-PS12",
+        "TD-M09",
+        "稳定性 Runbook：SLO 触发后的冻结、回滚与复盘"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S47",
+        "S48",
+        "S49"
+      ],
+      "architecture": {
+        "title": "稳定性事件闭环",
+        "caption": "稳定性决策从 SLO 告警开始，经冻结、降级、回滚和复验，最终必须把事故转为新的自动化证据。",
+        "nodes": [
+          "SLO/错误预算",
+          "告警与事故分级",
+          "版本冻结",
+          "只读/降级",
+          "回滚与配置恢复",
+          "切片回归复验",
+          "复盘与质量资产"
+        ]
+      },
+      "materials": [
+        {
+          "title": "退款助手 Runbook",
+          "description": "触发级别、止损动作、回滚和复验。",
+          "href": "materials/reliability-chaos-observability/guides/refund-agent-runbook.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "稳定性 GameDay 记录模板",
+          "description": "时间线、操作、证据、影响和新增回归。",
+          "href": "materials/reliability-chaos-observability/fixtures/stability-gameday-report.yaml",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "稳定性与故障注入实验包",
+          "description": "负载配置、Chaos 实验卡、Trace 契约、Runbook 和三组机器报告。",
+          "href": "materials/reliability-chaos-observability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "稳定性红绿实验脚本",
+          "description": "模拟队列、重试、工具调用和成本，故障配置必须以退出码 1 被门禁拦截。",
+          "href": "materials/reliability-chaos-observability/scripts/reliability_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "稳定性实验运行说明",
+          "description": "给出 0/1/0 命令、报告位置和 K8s/Chaos Mesh/生产环境 NOT_RUN 边界。",
+          "href": "materials/reliability-chaos-observability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS11",
+      "next_page_id": "TD-QP01",
+      "content_sections": {
+        "outcome": "定义 AI 服务 SLO、错误预算和触发级别；执行冻结、降级、回滚和复验决策；把事故转化为新增测试与门禁",
+        "professional_relevance": "监控图表不会自动恢复服务。稳定性能力的专业证据是值班人员能在压力下做出有边界、可审计、可回滚的动作。",
+        "plain_explanation": "高风险退款切片正确率跌破基线，p95 TTFT 上升，工具调用次数翻倍；低风险 FAQ 仍正常。Runbook 必须优先保护资金与权限，不能用全局平均掩盖高风险影响。",
+        "smallest_example": "为高风险任务定义任务成功、工具政策、p95 延迟、可用性和成本指标；每条告警绑定严重级别、owner、止损动作和回滚版本。SLO 数值只是示例，必须从真实业务承诺和风险成本校准。",
+        "learner_action": "为高风险退款写一页值班 Runbook；演练一次‘只读降级→回滚→回归复验’路径；把事故根因转成一个 API/UI/Eval 回归门禁",
+        "expected_result": "每个 SLO 触发器都有明确动作和 owner；回滚后有连续窗口与风险切片复验；复盘产物能产生具体回归资产",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "每个 SLO 触发器都有明确动作和 owner；回滚后有连续窗口与风险切片复验；复盘产物能产生具体回归资产",
+        "evidence_boundary": "Google SRE、OpenTelemetry 和 Chaos Engineering 资料支持 Runbook 结构；未在真实生产、K8s 或值班系统执行演练，SLO、回滚耗时和恢复结论不能视为实测结果。"
+      }
+    },
+    {
+      "page_id": "TD-QP01",
+      "slug": "td-qp01",
+      "module_id": "TD-M07",
+      "title": "Jira 需求事件：从 Basis Gate 到人工批准",
+      "page_type": "guided-lab",
+      "level": "L2-L3",
+      "order": 22,
+      "prerequisite_ids": [
+        "TD-P01",
+        "TD-P02"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "为 Jira 需求事件建立可重放的 Basis Pack；把 AI 输出限制为带 provenance 的候选；记录人工批准、拒绝和 superseded 决策",
+      "artifact": "Jira requirement event、Basis Gate 报告、候选评审记录与 approved revision",
+      "keywords": [
+        "TD-QP01",
+        "TD-M07",
+        "Jira 需求事件：从 Basis Gate 到人工批准"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S93",
+        "S94",
+        "S66"
+      ],
+      "architecture": {
+        "title": "Jira 需求到人工批准的证据链",
+        "caption": "事件只触发回读；Basis Gate 决定输入是否可用，AI 只生成候选，人工批准决定是否允许执行。",
+        "nodes": [
+          "Jira 需求与变更",
+          "Webhook Gateway/Inbox",
+          "Jira REST 回读",
+          "Basis Gate/Source Pack",
+          "AI 候选与 provenance",
+          "Review Console/人工批准",
+          "Orchestrator/审计与执行请求"
+        ]
+      },
+      "materials": [
+        {
+          "title": "Jira Basis Gate 脚本",
+          "description": "按 issue、changelog、来源 hash 和冲突责任人生成 TD-QP01 的 accepted/blocked 结果。",
+          "href": "materials/quality-platform-integrations/learner-materials/scripts/basis_gate_and_candidate_review.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Jira 事件与评审配置",
+          "description": "定义 webhook 验签、去重、候选 provenance 和人工批准字段，供本页动作使用。",
+          "href": "materials/quality-platform-integrations/learner-materials/configs/jira-basis-gate.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "需求变更事件夹具",
+          "description": "包含当前 revision、changelog 和与旧技术方案冲突的脱敏 Jira 事件。",
+          "href": "materials/quality-platform-integrations/learner-materials/fixtures/jira-requirement-event.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "TD-QP01 Jira 评审 SOP",
+          "description": "指导回读、Basis Gate、候选评审、supersede、回滚和 NOT_RUN 记录。",
+          "href": "materials/quality-platform-integrations/learner-materials/guides/td-qp01-jira-review-sop.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "质量控制平面完整实验包",
+          "description": "包含 Jira、GitLab、K8s、事件总线、审计与脱敏通知的离线材料。",
+          "href": "materials/quality-platform-integrations.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "质量控制平面运行说明",
+          "description": "主模拟器与四个专题入口均可直接运行，完整路径预期退出码 0/1/0。",
+          "href": "materials/quality-platform-integrations/learner-materials/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-PS12",
+      "next_page_id": "TD-QP02",
+      "content_sections": {
+        "outcome": "为 Jira 需求事件建立可重放的 Basis Pack；把 AI 输出限制为带 provenance 的候选；记录人工批准、拒绝和 superseded 决策",
+        "professional_relevance": "需求 webhook 只说明发生了变化，不说明当前事实是什么。没有回读、Basis Gate 和人工批准，AI 很容易把旧方案、缺失条件或冲突规则变成自动化门禁。",
+        "plain_explanation": "场景是 Jira 中的订单取消需求：产品更新验收条件，技术方案仍引用旧的已发货状态规则。事件到达后，平台先用 issue key、changelog、版本和 source snapshot hash 回读 Jira；不能把 webhook payload 当作事实来源。\nBasis Gate 检查目标项目、issue 类型、当前 revision、必需字段、引用坐标、敏感数据和冲突责任人。缺字段、版本不唯一或有效来源冲突时状态为 BLOCKED，禁止生成执行计划；需求变更会把旧候选标为 superseded。",
+        "smallest_example": "unzip quality-platform-integrations.zip\ncd quality-platform-integrations/learner-materials\npython3 scripts/basis_gate_and_candidate_review.py",
+        "learner_action": "用一个需求变更夹具跑出 accepted 和 blocked 两种 Basis Gate 结果；让 AI 候选缺少 source_ref 并证明它不能进入 approved；记录一次 reviewer reject、supersede 和按新 revision 重评",
+        "expected_result": "一次运行可以从 Jira 事件追到当前 source snapshot、Basis Gate、AI provenance、reviewer 和最终 revision；任一关键证据缺失都停在 BLOCKED 或 NOT_RUN。",
+        "common_errors": "AI 可以整理冲突，不能替产品或技术负责人选择冲突规则。；NOT_RUN 不是成功也不是失败；它表示没有真实租户证据，后续验收必须从隔离 Jira project 开始。",
+        "completion_check": "Basis Gate 能阻断冲突、缺失和过期依据；每个 AI 候选都有 provenance、scope 和人工决定；审计记录能重建事件、revision、review 和回滚关系",
+        "evidence_boundary": "本页基于 research-redesign/40-quality-platform-integrations.md 与 Atlassian、CloudEvents、结构化输出资料做 desk research；未连接真实 Jira 租户、真实模型或组织审批流程，所有租户字段、权限、阈值和批准结果均为 NOT_RUN。"
+      }
+    },
+    {
+      "page_id": "TD-QP02",
+      "slug": "td-qp02",
+      "module_id": "TD-M07",
+      "title": "GitLab MR 与 Pipeline：把 JUnit 证据绑定到当前 SHA",
+      "page_type": "guided-lab",
+      "level": "L2-L3",
+      "order": 23,
+      "prerequisite_ids": [
+        "TD-QP01",
+        "TD-P06"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "建立 project_id、mr_iid、pipeline_id、run_id、commit_sha 的绑定；确定性聚合 JUnit 与工件证据；实现当前 SHA 优先的 fail-closed gate",
+      "artifact": "MR 质量门禁 Manifest、JUnit 聚合摘要、当前 SHA status 与 fail-closed 诊断报告",
+      "keywords": [
+        "TD-QP02",
+        "TD-M07",
+        "GitLab MR 与 Pipeline：把 JUnit 证据绑定到当前 SHA"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S95",
+        "S96",
+        "S97"
+      ],
+      "architecture": {
+        "title": "当前 SHA 的 MR 质量证据链",
+        "caption": "Webhook 触发回读，Pipeline 与 JUnit 只作为当前 SHA 的可验证证据；门禁缺证据即关闭。",
+        "nodes": [
+          "GitLab MR/当前 HEAD",
+          "Project Webhook/Inbox",
+          "Pipeline 与 Jobs",
+          "JUnit/Artifact Store",
+          "确定性聚合器",
+          "SHA-bound Status Check",
+          "MR Approval/Protected Branch Gate"
+        ]
+      },
+      "materials": [
+        {
+          "title": "GitLab SHA 门禁脚本",
+          "description": "回读 MR HEAD、Pipeline、JUnit 和 artifact provenance，并输出当前 SHA 的 fail-closed 决策。",
+          "href": "materials/quality-platform-integrations/learner-materials/scripts/gitlab_sha_junit_gate.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "MR/JUnit 门禁配置",
+          "description": "定义必跑套件、重试计数、flaky/error 口径、artifact hash 和 status 字段。",
+          "href": "materials/quality-platform-integrations/learner-materials/configs/gitlab-junit-gate.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "MR Pipeline JUnit 夹具",
+          "description": "覆盖当前 SHA、旧 SHA、缺报告、失败用例和必跑套件缺失的事件与报告引用。",
+          "href": "materials/quality-platform-integrations/learner-materials/fixtures/mr-pipeline-junit.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "TD-QP02 SHA/JUnit SOP",
+          "description": "指导探针、回读、聚合、status 写入、竞态诊断、回滚和 NOT_RUN 记录。",
+          "href": "materials/quality-platform-integrations/learner-materials/guides/td-qp02-sha-junit-sop.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "质量控制平面完整实验包",
+          "description": "包含 Jira、GitLab、K8s、事件总线、审计与脱敏通知的离线材料。",
+          "href": "materials/quality-platform-integrations.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "质量控制平面运行说明",
+          "description": "主模拟器与四个专题入口均可直接运行，完整路径预期退出码 0/1/0。",
+          "href": "materials/quality-platform-integrations/learner-materials/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-QP01",
+      "next_page_id": "TD-QP03",
+      "content_sections": {
+        "outcome": "建立 project_id、mr_iid、pipeline_id、run_id、commit_sha 的绑定；确定性聚合 JUnit 与工件证据；实现当前 SHA 优先的 fail-closed gate",
+        "professional_relevance": "Pipeline 成功、测试报告存在和当前 MR 可合并不是同一件事。旧 SHA 的绿色状态、缺失 JUnit、没有 Pipeline 或必跑套件缺失，都不能被解释为当前代码通过。",
+        "plain_explanation": "场景是订单服务 MR：Pipeline 在 commit A 上完成，测试生成两份 JUnit；开发者随后推送 commit B，旧 Pipeline 的 success 事件才到达。质量平台必须把 run、Pipeline、报告和 status 绑定到 A，并确认 MR 当前 HEAD 已经变成 B，不能让 A 的绿色结果覆盖 B。\n合并条件是 Pipeline 成功、必跑套件齐全、JUnit 可读且属于当前 SHA、外部质量状态成功、必需审批和线程规则满足；任何条件缺失都为 failed 或 inconclusive，而不是 skipped-as-success。",
+        "smallest_example": "unzip quality-platform-integrations.zip\ncd quality-platform-integrations/learner-materials\npython3 scripts/gitlab_sha_junit_gate.py",
+        "learner_action": "为两个 commit 生成一条旧 SHA 竞态并拆开 status 与当前 HEAD；聚合通过、失败、flaky、缺失 suite 四类 JUnit 证据；让报告 hash 或 SHA 不匹配并确认 gate 不会 success",
+        "expected_result": "相同 run 重复接收 webhook 或重复拉取报告只产生一个最终决策；任何证据不完整的路径都保留原因和重试上下文。",
+        "common_errors": "NOT_RUN 表示尚未获得真实 GitLab 证据；静态设计不能证明当前 SHA 竞态或 fail-closed 实现已经上线。",
+        "completion_check": "Manifest 能唯一绑定 MR、Pipeline、run、suite 和 SHA；没有 Pipeline、缺报告或 SHA 不匹配时门禁 fail-closed；报告和 status 可回链到 artifact、原因、策略版本和审计事件",
+        "evidence_boundary": "本页基于 GitLab Pipeline/MR/JUnit/status check 官方文档以及质量控制平面设计做 desk research；未连接真实 GitLab 实例或 Runner，版本、tier、权限、报告接口、合并结果和性能指标均为 NOT_RUN。"
+      }
+    },
+    {
+      "page_id": "TD-QP03",
+      "slug": "td-qp03",
+      "module_id": "TD-M07",
+      "title": "Kubernetes 临时测试环境：隔离、回收与审计",
+      "page_type": "guided-lab",
+      "level": "L2-L3",
+      "order": 24,
+      "prerequisite_ids": [
+        "TD-QP02",
+        "TD-PS11"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "设计每次 run 独立且可追踪的 namespace 基线；验证 runner 与 provisioner 的最小权限；证明 TTL、显式 cleanup 和 Kubernetes audit 能闭环",
+      "artifact": "Ephemeral Environment Manifest、RBAC/NetworkPolicy 验收报告、cleanup 和 audit 记录",
+      "keywords": [
+        "TD-QP03",
+        "TD-M07",
+        "Kubernetes 临时测试环境：隔离、回收与审计"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S98",
+        "S99",
+        "S100",
+        "S101"
+      ],
+      "architecture": {
+        "title": "临时测试环境的隔离与回收链",
+        "caption": "环境不是一次性 kubectl apply；身份、资源、网络、生命周期和审计必须共同证明可控。",
+        "nodes": [
+          "MR/Run 请求",
+          "Namespace Provisioner",
+          "Namespace/RBAC/ServiceAccount",
+          "Quota/NetworkPolicy",
+          "Test Job/Runner",
+          "TTL/Stop/Cleanup Worker",
+          "K8s Audit/平台审计"
+        ]
+      },
+      "materials": [
+        {
+          "title": "临时 namespace 回收脚本",
+          "description": "按 environment_id 和精确 owner/run 标签检查创建、失败、TTL 与显式 cleanup，输出残留清单。",
+          "href": "materials/quality-platform-integrations/learner-materials/scripts/ephemeral_namespace_cleanup.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "临时环境安全基线配置",
+          "description": "包含 namespace、RBAC、quota、默认拒绝 NetworkPolicy、ServiceAccount、资源限制和 Job TTL。",
+          "href": "materials/quality-platform-integrations/learner-materials/configs/ephemeral-namespace-baseline.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "K8s 失败与审计夹具",
+          "description": "记录 Secret/跨 namespace deny、quota 拒绝、网络拒绝、Job 失败和 cleanup 残留。",
+          "href": "materials/quality-platform-integrations/learner-materials/fixtures/k8s-isolation-audit.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "TD-QP03 临时环境 SOP",
+          "description": "指导集群预检、创建、运行、故障注入、TTL/stop 回收、审计复核和 NOT_RUN 记录。",
+          "href": "materials/quality-platform-integrations/learner-materials/guides/td-qp03-k8s-ephemeral-sop.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "质量控制平面完整实验包",
+          "description": "包含 Jira、GitLab、K8s、事件总线、审计与脱敏通知的离线材料。",
+          "href": "materials/quality-platform-integrations.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "质量控制平面运行说明",
+          "description": "主模拟器与四个专题入口均可直接运行，完整路径预期退出码 0/1/0。",
+          "href": "materials/quality-platform-integrations/learner-materials/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-QP02",
+      "next_page_id": "TD-QP04",
+      "content_sections": {
+        "outcome": "设计每次 run 独立且可追踪的 namespace 基线；验证 runner 与 provisioner 的最小权限；证明 TTL、显式 cleanup 和 Kubernetes audit 能闭环",
+        "professional_relevance": "临时环境如果共享 namespace、默认读取 Secret、没有网络边界或没有 owner/TTL，就会把测试污染、越权访问和资源泄漏变成平台事故。",
+        "plain_explanation": "场景是订单服务 MR 需要执行集成测试。质量平台为 project_id、mr_iid、commit_sha、run_id 创建唯一 namespace，部署被测服务、测试 Job 和报告上传通道；另一个 MR 不能读取、写入或复用这个 namespace。\n环境的失败边界包括跨 namespace 访问、读取 Secret、创建未批准资源、突破 CPU/内存/Pod quota、访问未 allowlist 的 endpoint、Job 完成后 namespace 残留和清理器误删非本 run 资源。生产集群和生产 namespace 不在本页范围。",
+        "smallest_example": "unzip quality-platform-integrations.zip\ncd quality-platform-integrations/learner-materials\npython3 scripts/ephemeral_namespace_cleanup.py",
+        "learner_action": "设计一个含 quota、默认拒绝网络、ServiceAccount 和 Job TTL 的临时环境基线；为 runner 写出至少三条 can-i 预期结果并加入跨 namespace/Secret 负例；模拟 cleanup 失败并让报告保留残留资源与审计关联",
+        "expected_result": "一次 run 的创建、测试、失败、过期和删除都可回到同一 environment_id；任何未授权访问或残留资源都不被标记为清理成功。",
+        "common_errors": "Kubernetes manifest 的静态审阅不能证明网络策略被实际 enforcement，也不能证明清理 worker 在目标集群有权限。",
+        "completion_check": "Provisioner、runner、cleaner 权限边界可验证；环境有 namespace/RBAC/NetworkPolicy/TTL/owner 全套证据；回收失败、网络越权和审计缺失都会 fail-closed",
+        "evidence_boundary": "本页基于 Kubernetes 官方资源模型、RBAC、NetworkPolicy、Job TTL、审计资料和质量平台设计做 desk research；未在真实集群或真实网络插件执行，版本、准入、权限、隔离、回收时延和审计完整性均为 NOT_RUN。"
+      }
+    },
+    {
+      "page_id": "TD-QP04",
+      "slug": "td-qp04",
+      "module_id": "TD-M07",
+      "title": "跨系统事件总线：幂等、重放、脱敏通知与审计闭环",
+      "page_type": "project",
+      "level": "L2-L3",
+      "order": 25,
+      "prerequisite_ids": [
+        "TD-QP01",
+        "TD-QP02",
+        "TD-QP03"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "定义可去重、可追踪、可脱敏的事件信封；实现 Jira/GitLab 回写的幂等与 reconciliation 边界；把通知、外部审计和平台审计闭合为一次 run",
+      "artifact": "CloudEvents 风格事件包、Inbox/Outbox/DLQ 记录、回写结果、脱敏通知和审计闭环报告",
+      "keywords": [
+        "TD-QP04",
+        "TD-M07",
+        "跨系统事件总线：幂等、重放、脱敏通知与审计闭环"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S102",
+        "S89",
+        "S93",
+        "S95",
+        "S101"
+      ],
+      "architecture": {
+        "title": "跨系统质量事件的审计闭环",
+        "caption": "事件网关负责可信入站，编排器负责状态与副作用，适配器负责回写；通知只是脱敏消费者。",
+        "nodes": [
+          "Jira/GitLab/K8s 上游事件",
+          "Event Gateway/验签去重",
+          "Inbox/Outbox/DLQ",
+          "Quality Orchestrator/状态机",
+          "Jira/GitLab/K8s 适配器",
+          "Artifact/脱敏通知",
+          "Reconciliation/Trace/审计 Sink"
+        ]
+      },
+      "materials": [
+        {
+          "title": "事件重放与对账脚本",
+          "description": "重放重复/乱序/旧事件，检查 Jira/GitLab/K8s 副作用幂等，并从当前事实执行 reconciliation。",
+          "href": "materials/quality-platform-integrations/learner-materials/scripts/event_replay_and_reconcile.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "事件网关策略配置",
+          "description": "定义 CloudEvents 字段、验签时间窗、tenant allowlist、去重键、重试/DLQ 和脱敏字段。",
+          "href": "materials/quality-platform-integrations/learner-materials/configs/event-gateway-policy.yaml",
+          "kind": "config",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "跨系统质量事件夹具",
+          "description": "包含 Jira 需求、GitLab gate、K8s cleanup、重复/乱序事件和含敏感字段的通知输入。",
+          "href": "materials/quality-platform-integrations/learner-materials/fixtures/quality-event-envelope.json",
+          "kind": "fixture",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "TD-QP04 事件审计 SOP",
+          "description": "指导入站验签、幂等/重放、回写、脱敏通知、DLQ、对账、回滚和 NOT_RUN 记录。",
+          "href": "materials/quality-platform-integrations/learner-materials/guides/td-qp04-event-audit-sop.md",
+          "kind": "guide",
+          "validation": "static-reviewed"
+        },
+        {
+          "title": "质量控制平面完整实验包",
+          "description": "包含 Jira、GitLab、K8s、事件总线、审计与脱敏通知的离线材料。",
+          "href": "materials/quality-platform-integrations.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "质量控制平面运行说明",
+          "description": "主模拟器与四个专题入口均可直接运行，完整路径预期退出码 0/1/0。",
+          "href": "materials/quality-platform-integrations/learner-materials/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-QP03",
+      "next_page_id": "TD-AP01",
+      "content_sections": {
+        "outcome": "定义可去重、可追踪、可脱敏的事件信封；实现 Jira/GitLab 回写的幂等与 reconciliation 边界；把通知、外部审计和平台审计闭合为一次 run",
+        "professional_relevance": "跨系统集成最容易在重复、乱序、漏投、部分成功和敏感数据泄露时失真。Webhook、ChatOps 和单个系统的状态都不能单独证明质量平台已经完成一次运行。",
+        "plain_explanation": "场景是 Jira 需求变更触发 GitLab MR 质量运行：GitLab Pipeline 在 K8s 临时 namespace 执行，JUnit 与日志进入 artifact store，质量平台把缺陷/链接回写 Jira，把当前 SHA gate 写回 GitLab，并向 ChatOps 发送脱敏摘要。任何一步重复、乱序、漏投或部分失败，都必须可解释。\n通知系统只消费已脱敏的结果，不成为事实来源；Jira、GitLab、Kubernetes audit、artifact provenance 和平台 append-only audit 共同支撑重建。AI 可以做事件分类、失败聚类和通知草稿，但不能直接发送未审查 PII、创建重复缺陷或改变 gate。",
+        "smallest_example": "unzip quality-platform-integrations.zip\ncd quality-platform-integrations/learner-materials\npython3 scripts/event_replay_and_reconcile.py",
+        "learner_action": "设计包含 Jira/GitLab/K8s 关联字段的最小事件信封；重放一次事件并证明 Jira 缺陷、GitLab status 和 K8s cleanup 不重复；让通知含敏感字段并确认被脱敏拒绝，同时用 reconciliation 修复一次漏事件",
+        "expected_result": "给定一个 run_id，可以从首个 Jira 事件到最终 gate、缺陷、通知、环境回收和外部审计引用重建完整 causation graph。",
+        "common_errors": "跨系统静态契约不能证明 delivery guarantee；只有隔离租户/集群的重放和故障验收产生真实闭环证据。",
+        "completion_check": "Inbox/Outbox/DLQ/reconciliation 的职责和幂等键明确；回写、通知和清理的部分成功状态可分别诊断；审计 graph 能关联 actor、action、resource、run、trace、版本和结果",
+        "evidence_boundary": "本页基于 CloudEvents、W3C Trace Context、Atlassian/GitLab/Kubernetes 官方资料与研究重设计做 desk research；未在真实租户、集群、事件总线或通知系统执行投递/重放，delivery、幂等、回写、脱敏和审计闭环均为 NOT_RUN。"
+      }
+    },
+    {
       "page_id": "TD-AP01",
       "slug": "td-ap01",
       "module_id": "TD-M11",
       "title": "为什么 Agent 压测不是把并发数调高",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 10,
+      "order": 26,
       "prerequisite_ids": [],
       "scenario_ids": [
         "TD-SYNTHETIC-COURSE"
@@ -470,7 +2456,71 @@
         "S75",
         "S77"
       ],
-      "previous_page_id": "TD-P08",
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
+      "previous_page_id": "TD-QP04",
       "next_page_id": "TD-AP02",
       "content_sections": {
         "outcome": "画出 Agent 任务的完整关键路径；区分请求成功、步骤成功与业务任务成功；解释开环和闭环负载何时会掩盖问题",
@@ -491,7 +2541,7 @@
       "title": "建立 Agent 性能指标树：系统、模型、轨迹、成本",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 11,
+      "order": 27,
       "prerequisite_ids": [
         "TD-AP01"
       ],
@@ -516,6 +2566,70 @@
         "S73",
         "S74"
       ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-AP01",
       "next_page_id": "TD-AP03",
       "content_sections": {
@@ -537,7 +2651,7 @@
       "title": "设计工作负载：任务、上下文、工具与故障分布",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 12,
+      "order": 28,
       "prerequisite_ids": [
         "TD-AP02"
       ],
@@ -560,6 +2674,70 @@
         "S47",
         "S75"
       ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-AP02",
       "next_page_id": "TD-AP04",
       "content_sections": {
@@ -581,7 +2759,7 @@
       "title": "设计 Trace 与数据模型：让一次慢任务可下钻",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 13,
+      "order": 29,
       "prerequisite_ids": [
         "TD-AP03"
       ],
@@ -605,6 +2783,70 @@
         "S72",
         "S80"
       ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-AP03",
       "next_page_id": "TD-AP05",
       "content_sections": {
@@ -626,7 +2868,7 @@
       "title": "搭建压测架构：发压、夹具、观测、判定四层分离",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 14,
+      "order": 30,
       "prerequisite_ids": [
         "TD-AP04"
       ],
@@ -651,6 +2893,70 @@
         "S78",
         "S79"
       ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-AP04",
       "next_page_id": "TD-AP06",
       "content_sections": {
@@ -672,7 +2978,7 @@
       "title": "执行完整压测 SOP：基线、变坏、修复、容量",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 15,
+      "order": 31,
       "prerequisite_ids": [
         "TD-AP05"
       ],
@@ -699,6 +3005,70 @@
         "S72",
         "S75"
       ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-AP05",
       "next_page_id": "TD-AP07",
       "content_sections": {
@@ -720,7 +3090,7 @@
       "title": "诊断压测失败：从症状反推瓶颈与反馈环",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 16,
+      "order": 32,
       "prerequisite_ids": [
         "TD-AP06"
       ],
@@ -745,6 +3115,70 @@
         "S68",
         "S75"
       ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
+      ],
       "previous_page_id": "TD-AP06",
       "next_page_id": "TD-AP08",
       "content_sections": {
@@ -766,7 +3200,7 @@
       "title": "把压测接入生产：SLO、告警、降级与 Runbook",
       "page_type": "project",
       "level": "L2-L3",
-      "order": 17,
+      "order": 33,
       "prerequisite_ids": [
         "TD-AP07"
       ],
@@ -790,6 +3224,70 @@
         "S71",
         "S75",
         "S76"
+      ],
+      "architecture": {
+        "title": "Agent 性能与稳定性观测链",
+        "caption": "从业务任务到模型与工具调用，再回到成功任务、尾延迟、调用放大、成本和 SLO；只看 HTTP RPS 会漏掉真正的失败。",
+        "nodes": [
+          "工作负载模型",
+          "并发/到达率",
+          "Agent 编排",
+          "模型·RAG·工具",
+          "Trace 与资源指标",
+          "质量·性能·成本门禁",
+          "容量/降级决定"
+        ]
+      },
+      "materials": [
+        {
+          "title": "下载完整 Agent 负载实验包",
+          "description": "包含模拟器、三组配置、Trace 和红绿报告；解压后无需 API Key 即可运行。",
+          "href": "materials/agent-load-stability.zip",
+          "kind": "archive",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "Agent 负载实验说明",
+          "description": "无需 API Key，跑出正常、重试风暴和修复后的 0/1/0 证据。",
+          "href": "materials/agent-load-stability/README.md",
+          "kind": "guide",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "负载与故障模拟器",
+          "description": "生成任务级指标、调用放大、尾延迟和预算结果的本地脚本。",
+          "href": "materials/agent-load-stability/agent_load_lab.py",
+          "kind": "script",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴配置",
+          "description": "有意制造无边界重试和失败放大的红灯配置。",
+          "href": "materials/agent-load-stability/configs/retry-storm.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后配置",
+          "description": "限制重试、并发和退避后的对照配置。",
+          "href": "materials/agent-load-stability/configs/repaired.json",
+          "kind": "config",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "重试风暴红灯报告",
+          "description": "保存了 p95、排队、重试放大和门禁失败字段的机器可读证据。",
+          "href": "materials/agent-load-stability/reports/retry-storm/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        },
+        {
+          "title": "修复后绿灯报告",
+          "description": "使用同一工作负载与门禁复跑后的恢复证据，可和红灯报告直接对比。",
+          "href": "materials/agent-load-stability/reports/repaired/summary.json",
+          "kind": "evidence",
+          "validation": "fixture-tested"
+        }
       ],
       "previous_page_id": "TD-AP07",
       "next_page_id": "",

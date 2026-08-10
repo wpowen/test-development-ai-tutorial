@@ -1,0 +1,11 @@
+{
+  "course_id": "td-ai-020-reliability-chaos-observability",
+  "generated_at": "2026-08-10T00:00:00+08:00",
+  "materials": [
+    {"material_id":"M01","path":"materials/quickstart.md","purpose":"复跑三阶段实验","source_ids":["S01","S04"],"scenario_ids":["TD-S08"],"generated_from":["research SOP","offline fixture"],"license_or_usage":"项目原创说明","validation_status":"fixture-tested","validation_evidence":["evidence/execution-evidence.json"],"contains_synthetic_data":true,"limitations":"仅证明夹具可运行"},
+    {"material_id":"M02","path":"materials/reusable-skill.md","purpose":"迁移任务分母与稳定性门禁","source_ids":["S01","S02","S05"],"scenario_ids":["TD-S08"],"generated_from":["research synthesis"],"license_or_usage":"项目原创模板","validation_status":"static-reviewed","validation_evidence":["course.md"],"contains_synthetic_data":false,"limitations":"未经过生产团队评审"},
+    {"material_id":"M03","path":"materials/sample-input.md","purpose":"说明固定 workload 与 oracle","source_ids":["S01","S04"],"scenario_ids":["TD-S08"],"generated_from":["synthetic fixture design"],"license_or_usage":"项目原创合成数据","validation_status":"fixture-tested","validation_evidence":["evidence/baseline/summary.json"],"contains_synthetic_data":true,"limitations":"不代表真实任务分布"},
+    {"material_id":"M04","path":"materials/expected-output.md","purpose":"解释机器报告与红绿结果","source_ids":["S01","S03","S04"],"scenario_ids":["TD-S08"],"generated_from":["saved reports","metric dictionary"],"license_or_usage":"项目原创说明","validation_status":"fixture-tested","validation_evidence":["evidence/execution-evidence.json"],"contains_synthetic_data":true,"limitations":"不证明生产性能或成本"},
+    {"material_id":"M05","path":"materials/verification-checklist.md","purpose":"约束运行证据与静态审查边界","source_ids":["S01","S02","S05"],"scenario_ids":["TD-S08"],"generated_from":["course gates","research SOP"],"license_or_usage":"项目原创检查表","validation_status":"static-reviewed","validation_evidence":["course.md","evidence/execution-evidence.json"],"contains_synthetic_data":false,"limitations":"未经过授权生产演练"}
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "lesson_id": "td-ai-021-ui-mobile-automation-l01",
+  "target_learner": "会写基础 UI 测试、第一次审核 AI 生成或修复测试的测试开发工程师",
+  "level": "L2-control-and-check",
+  "estimated_minutes": 25,
+  "job_result": "能运行 UI 契约 0/1/0 门禁，拒绝删除业务 oracle 的误修复，并规划跨平台迁移",
+  "artifact": "离线三阶段 JSON 报告、跨平台代码样例、自愈策略、选型矩阵和诊断 Runbook",
+  "stages": [
+    {
+      "stage_id": "cold-open-failure",
+      "instructor_action": "先展示 AI 把 locator 修好却同时删掉账户状态断言后的绿色测试，再展示 mutation 报告中的两个缺失合同字段",
+      "learner_action": "在查看解释前决定该修复应接受、拒绝还是人工复核，并写出判断依据",
+      "expected_observation": "页面动作仍可能成功，但缺少业务 oracle 后测试已经不能证明结算结果正确",
+      "debrief": "测试变绿不是修复完成，行为证明和 locator 可达性必须分开审核",
+      "artifact_or_assessment": "一条带理由的修复拒绝决定"
+    },
+    {
+      "stage_id": "stakes-and-promise",
+      "instructor_action": "说明弱断言或误修绿会让结算回归逃逸，并展示本节最终交付的三份报告和跨平台材料包",
+      "learner_action": "列出结算测试负责人放行生成测试前必须看到的 locator、oracle 与重放证据",
+      "expected_observation": "AI 可以生成计划和候选修复，但不能取得业务断言和合并决定的所有权",
+      "debrief": "课程结果是可审计的质量决定，不是让模型自动完成更多点击步骤",
+      "artifact_or_assessment": "生成测试放行条件清单"
+    },
+    {
+      "stage_id": "before-after",
+      "instructor_action": "对比坐标点击加模型自报通过的旧流程，与语义 locator、业务 oracle、mutation 和人工 diff 审核的新流程",
+      "learner_action": "指出旧流程中无法判断误点、误修复和业务回归的三个证据缺口",
+      "expected_observation": "新流程把地址、验收单、失败证据和决策责任拆成可单独检查的环节",
+      "debrief": "跨平台抽象可以共享业务不变量，但不能抹掉 Android 与 iOS 的查询和同步差异",
+      "artifact_or_assessment": "前后流程证据差异表"
+    },
+    {
+      "stage_id": "plain-mental-model",
+      "instructor_action": "把 locator 解释成地址、business oracle 解释成验收单、AI healer 解释成只能建议改地址的导航员",
+      "learner_action": "把 Web test-id、Android resource-id、iOS identifier 与同一业务结果分别放入地址栏和验收栏",
+      "expected_observation": "平台 locator 可以不同，但批准过的业务不变量不能被候选修复静默改写",
+      "debrief": "稳定门禁需要语义 locator、平台同步和业务 assertion 三层同时成立",
+      "artifact_or_assessment": "跨平台 locator-oracle 映射表"
+    },
+    {
+      "stage_id": "guided-demo",
+      "instructor_action": "从课程根目录运行 reset 和 baseline evaluation，并逐字段打开 baseline.json",
+      "learner_action": "复制命令运行 baseline，核对退出码、status、oracle_pass 与 missing_contracts",
+      "expected_observation": "baseline 退出码为 0，status 为 PASS，且两个合同字段都未缺失",
+      "debrief": "先保存确定性健康基线，后续 mutation 才能证明门禁对相关回归敏感",
+      "artifact_or_assessment": "lab/reports/baseline.json"
+    },
+    {
+      "stage_id": "failure-diagnosis",
+      "instructor_action": "运行 inject_regression 删除稳定 locator 和业务断言，并在揭示报告前暂停让学习者预测结果",
+      "learner_action": "运行 mutation，使用 JSON 字段解释失败，不得只写测试坏了或模型不可靠",
+      "expected_observation": "mutation 退出码为 1，status 为 FAIL，并列出 stable_locator 与 business_assertion",
+      "debrief": "有意义的失败注入必须击中质量合同，同时让报告能指出被破坏的具体责任边界",
+      "artifact_or_assessment": "lab/reports/mutation.json 与诊断记录"
+    },
+    {
+      "stage_id": "learner-practice",
+      "instructor_action": "只提供 canonical fixture、自愈策略和 learner-materials runner，不直接给出修复结论",
+      "learner_action": "恢复合同、执行 repair，并检查 self-healing policy 是否禁止删断言、force、skip 和无限 retry",
+      "expected_observation": "repair 退出码重新为 0，业务 oracle 保持原值，策略仍是 recommend-only",
+      "debrief": "正确 repair 恢复合同或产品行为，不通过放宽门禁来制造绿色结果",
+      "artifact_or_assessment": "repair 报告与策略审查结论"
+    },
+    {
+      "stage_id": "transfer-challenge",
+      "instructor_action": "把 Web 结算登录改为移动端真实差异更明显的收货与预约改期任务，要求重新选择平台查询和证据",
+      "learner_action": "使用 learner-materials fixture 重建 Android resource-id、iOS identifier、输入数据和业务 oracle",
+      "expected_observation": "0/1/0 证据逻辑保持不变，但平台 locator、fixture、同步路径和业务状态必须重做",
+      "debrief": "可迁移的是证据链和人审边界，不是登录示例中的字段名或教学账号",
+      "artifact_or_assessment": "Android 与 iOS 迁移合同提案",
+      "source_context": "Web 结算登录的语义 locator、账户状态 oracle 与受控 healing diff",
+      "target_context": "Android 收货与 iOS 改期场景",
+      "invariant": "AI 只能生成候选测试和修复，确定性业务 oracle、失败证据与结算测试负责人审批仍是放行条件",
+      "must_change": ["Android resource-id 与 iOS accessibility identifier", "收货和改期的输入 fixture 与业务终态", "设备、权限、同步和日志证据"],
+      "success_criterion": "两个移动场景都能定义健康 baseline，删除 locator 或业务 oracle 后门禁变红，恢复合同后重新通过，同时平台执行保持 NOT_RUN 直到真实设备验证"
+    },
+    {
+      "stage_id": "artifact-handoff",
+      "instructor_action": "展示 quickstart、learner-materials、平台代码、provenance、三阶段证据和所有 NOT_RUN 边界",
+      "learner_action": "按检查表复跑 0/1/0，并写出接入真实浏览器或设备前仍需补齐的版本、环境和人审证据",
+      "expected_observation": "离线 fixture 保持 fixture-tested，所有平台与 AI/MCP 示例继续标记 static-reviewed/NOT_RUN",
+      "debrief": "完整课程包必须同时交付运行路径、失败路径、恢复路径、来源、限制和下一位责任人",
+      "artifact_or_assessment": "验证后的课程材料包与待补证据清单"
+    }
+  ],
+  "interaction_prompts": [
+    "AI 修好 locator 但删除业务断言时，你会接受、拒绝还是人工复核？依据是什么？",
+    "删除两个合同字段后，你预测哪个 JSON 字段和退出码会先变化？",
+    "迁移到 Android 收货与 iOS 改期后，哪些 locator、fixture 和 oracle 不能照抄？"
+  ],
+  "recovery_path": "从课程根目录运行 python3 lab/scripts/reset_candidate.py，再执行 repair；learner-materials 使用 python3 scripts/ui_contract_lab.py repair。若平台环境不可用，保留 NOT_RUN 并用已保存离线报告完成合同诊断。",
+  "evidence_status": "fixture-tested",
+  "limitations": "只验证 Python 标准库离线合同、材料路径和红绿敏感性；未运行浏览器、Android/iOS 设备、Playwright Agent、Maestro、Appium、Espresso、XCUITest、模型或真实学习者迁移评估"
+}

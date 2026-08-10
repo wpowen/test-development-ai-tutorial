@@ -1,0 +1,30 @@
+schema_version: "1.0"
+trace_root:
+  required: [run_id, task_id, trace_id, task_type, terminal_state]
+  cardinality_rule: user_id and raw_prompt are never metric labels
+spans:
+  - name: admission
+    fields: [arrival_timestamp, priority, accepted, queue_wait_ms]
+  - name: retrieval
+    fields: [index_version, result_count, latency_ms, status]
+  - name: generation
+    fields: [model_version, input_tokens, output_tokens, latency_ms, status]
+  - name: tool
+    fields: [tool_name, schema_version, attempt, idempotency_key_hash, latency_ms, status]
+  - name: retry
+    fields: [dependency, attempt, reason_class, retry_after_ms, budget_remaining]
+terminal_states: [completed, timeout, dependency_failed, policy_blocked, budget_exceeded, cancelled]
+metrics:
+  - name: task_success_rate
+    numerator: tasks passing business oracle
+    denominator: admitted tasks
+  - name: retry_amplification
+    numerator: all attempts
+    denominator: initial task attempts
+  - name: call_amplification
+    numerator: retrieval plus model plus tool calls
+    denominator: admitted tasks
+observability: traces carry span detail while metrics remain low-cardinality
+fault_handling: every dependency fault is classified and linked to a retry or terminal event
+privacy: raw prompt, raw tool arguments and PII remain redacted or referenced by hash
+production_execution: NOT_RUN

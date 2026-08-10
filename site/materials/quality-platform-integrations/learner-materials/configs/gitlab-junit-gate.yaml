@@ -1,0 +1,5 @@
+schema_version: quality-gitlab-junit-v1
+sha_binding: project_id+mr_iid+commit_sha+run_id
+required: [pipeline_id, current_head_sha, junit_artifact_sha256]
+missing_report: fail-closed
+status_target: current-commit-only

@@ -1,0 +1,19 @@
+apiVersion: chaos-mesh.org/v1alpha1
+kind: NetworkChaos
+metadata:
+  name: model-egress-delay
+  namespace: chaos-mesh
+spec:
+  action: delay
+  mode: one
+  selector:
+    namespaces: [demo]
+    labelSelectors:
+      app: ai-gateway
+  delay:
+    latency: 100ms
+    correlation: '100'
+    jitter: 20ms
+  direction: to
+  externalTargets:
+    - MODEL_ENDPOINT_HOST

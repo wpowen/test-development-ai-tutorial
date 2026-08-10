@@ -1,0 +1,83 @@
+{
+  "run_id": "RUN-20260810T153948Z",
+  "status": "PASS",
+  "evidence_status": "fixture-tested",
+  "generator": "deterministic-spec-candidate-v1",
+  "oracle": "independent-oracle-v1",
+  "oracle_path": "lab/oracle.py",
+  "input_hashes": {
+    "openapi": "d023051e33028f4888334812fd118eb6860044c5bdabf0dd7b6b1d3d9688d361",
+    "candidates": "12ecfbeb8489e729488d5c2571b14164b96f9600a5bb0bd223bb9bc7dc142490",
+    "implementation": "d627f8b6969db6e23c322cc81ca97baa1173aa664f72b0eaf94fd579c76e69d8",
+    "oracle": "33c7bba29dae5e5c81471385535f4b31ed37cdf0f16580ca39587181bc58a61d"
+  },
+  "selected_case_ids": [
+    "SPEC-cancelOrder-shape",
+    "SPEC-getTask-shape",
+    "SPEC-orderEvents-shape",
+    "BUS-SHIPPED-REJECT",
+    "AUTH-NONOWNER-REJECT",
+    "IDEMP-SINGLE-EFFECT",
+    "ASYNC-LEGAL-TRANSITIONS",
+    "SSE-ONE-TERMINAL"
+  ],
+  "results": [
+    {
+      "case_id": "SPEC-cancelOrder-shape",
+      "kind": "contract",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "SPEC-getTask-shape",
+      "kind": "contract",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "SPEC-orderEvents-shape",
+      "kind": "contract",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "BUS-SHIPPED-REJECT",
+      "kind": "business",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "AUTH-NONOWNER-REJECT",
+      "kind": "permission",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "IDEMP-SINGLE-EFFECT",
+      "kind": "idempotency",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "ASYNC-LEGAL-TRANSITIONS",
+      "kind": "async",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    },
+    {
+      "case_id": "SSE-ONE-TERMINAL",
+      "kind": "sse",
+      "status": "PASS",
+      "issues": [],
+      "oracle": "independent-oracle-v1"
+    }
+  ],
+  "boundary": "synthetic offline service; no live endpoint, credentials, external queue, or production data"
+}

@@ -1,0 +1,10 @@
+{
+  "baseline_id": "order-cancel-v2",
+  "precedence_rule": "approved PRD owns business meaning; current design and OpenAPI own implementation detail; semantic conflict blocks downstream work",
+  "conflicts": [],
+  "sources": [
+    {"id":"PRD-v3","owner":"product-owner-order","sha256":"fixture-prd-v3","refs":["PRD-v3#R17","PRD-v3#R18","PRD-v3#R19"]},
+    {"id":"TECH-a13f","owner":"tech-owner-order","sha256":"fixture-tech-a13f","refs":["TECH-a13f#S04"]},
+    {"id":"OPENAPI-v7","owner":"service-owner-order","sha256":"fixture-openapi-v7","refs":["OPENAPI-v7#/cancel","OPENAPI-v7#/cancel/responses/409","OPENAPI-v7#/cancel/responses/403"]}
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "stable_locator": "getByTestId('account-status')",
+  "business_assertion": "Dashboard visible AND account status == Active",
+  "scenario": "valid-login-shows-dashboard"
+}

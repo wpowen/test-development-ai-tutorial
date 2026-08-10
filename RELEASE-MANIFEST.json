@@ -1,10 +1,10 @@
 {
   "schema_version": "1.2",
-  "source_commit": "16d204b4765ce1ba10b7f8920d7a826f8c1ab26d",
+  "source_commit": "cf94a115748d1dd8863a09fc2f2bd83447dce6e7",
   "release_scope": "pilot-path",
   "catalog_complete": false,
-  "page_count": 17,
-  "delivered_page_count": 17,
+  "page_count": 33,
+  "delivered_page_count": 33,
   "promised_page_ids": [
     "TD-F01",
     "TD-P01",
@@ -15,6 +15,22 @@
     "TD-P06",
     "TD-P07",
     "TD-P08",
+    "TD-PS01",
+    "TD-PS02",
+    "TD-PS03",
+    "TD-PS04",
+    "TD-PS05",
+    "TD-PS06",
+    "TD-PS07",
+    "TD-PS08",
+    "TD-PS09",
+    "TD-PS10",
+    "TD-PS11",
+    "TD-PS12",
+    "TD-QP01",
+    "TD-QP02",
+    "TD-QP03",
+    "TD-QP04",
     "TD-AP01",
     "TD-AP02",
     "TD-AP03",
@@ -28,12 +44,12 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:e4f625f0a9c716180eec4205824aa0ba7b7f0b27481fba9cbfb9e066d0f52fc8",
+  "content_hash": "sha256:be4689dd7dab89ff0065d8bbb7106602355301e695ffe707bb082446ee6b7161",
   "validation_verdict": "PASS",
   "publication_targets": [
     "github-pages",
     "chatgpt-site"
   ],
-  "file_count": 140,
+  "file_count": 470,
   "evidence_level": "fixture-tested; desk-researched; not production-validated"
 }

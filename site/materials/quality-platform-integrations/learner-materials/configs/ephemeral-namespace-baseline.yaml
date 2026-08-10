@@ -1,0 +1,6 @@
+schema_version: quality-k8s-ephemeral-v1
+namespace_prefix: quality-run-
+role: namespace-job-runner
+deny: [cluster-admin, secret-read]
+ttl_seconds_after_finished: 900
+cleanup_owner: quality-cleaner

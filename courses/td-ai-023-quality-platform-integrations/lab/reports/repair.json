@@ -1,0 +1,114 @@
+{
+  "verdict": "PASS",
+  "exit_code": 0,
+  "mutation_id": null,
+  "failed_oracle_ids": [],
+  "checks": [
+    {
+      "oracle_id": "WEBHOOK-SIGNATURE",
+      "passed": true,
+      "reason": "signed webhook accepted"
+    },
+    {
+      "oracle_id": "INBOX-DEDUPE",
+      "passed": true,
+      "reason": "one side effect for replay"
+    },
+    {
+      "oracle_id": "AI-HUMAN-BOUNDARY",
+      "passed": true,
+      "reason": "candidate has human approval"
+    },
+    {
+      "oracle_id": "SHA-BINDING",
+      "passed": true,
+      "reason": "evidence belongs to current HEAD"
+    },
+    {
+      "oracle_id": "JUNIT-COMPLETE",
+      "passed": true,
+      "reason": "required report is present and green"
+    },
+    {
+      "oracle_id": "K8S-BOUNDARY",
+      "passed": true,
+      "reason": "isolated namespace and least privilege"
+    },
+    {
+      "oracle_id": "WRITEBACK-IDEMPOTENCY",
+      "passed": true,
+      "reason": "one Jira and one current-SHA status write"
+    },
+    {
+      "oracle_id": "NOTIFICATION-REDACTION",
+      "passed": true,
+      "reason": "notification contains no credentials"
+    },
+    {
+      "oracle_id": "AUDIT-CHAIN",
+      "passed": true,
+      "reason": "audit hash is chained"
+    }
+  ],
+  "input_hash": "1bfd141a7210bb1b9142f4c3ac1a5a7c4db397d43b04afe38f93a9e96e79eae4",
+  "oracle_version": "oracle-v1",
+  "course_id": "td-ai-023-quality-platform-integrations",
+  "mode": "repair",
+  "state": {
+    "webhook": {
+      "verified": true,
+      "event_id": "jira-evt-42"
+    },
+    "inbox": {
+      "accepted": 1,
+      "duplicates": 1,
+      "keys": [
+        "jira:PROJ-42:jira-evt-42"
+      ]
+    },
+    "candidate": {
+      "status": "approved",
+      "auto_approved": false,
+      "model": "offline-rule-candidate-v1",
+      "prompt_hash": "sha256:fixture"
+    },
+    "run": {
+      "run_id": "run-42",
+      "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pipeline_id": 9001
+    },
+    "gitlab": {
+      "head_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pipeline_status": "success"
+    },
+    "junit": {
+      "present": true,
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "artifact_sha256": "junit-sha-42"
+    },
+    "k8s": {
+      "namespace": "quality-run-42",
+      "roles": [
+        "namespace-job-runner"
+      ],
+      "ttl_seconds": 900,
+      "owner_run_id": "run-42"
+    },
+    "writeback": {
+      "jira_updates": 1,
+      "gitlab_statuses": 1,
+      "fingerprint": "fp-42"
+    },
+    "notification": {
+      "body": "PROJ-42 MR !7 sha aaaaaaaa result PASS failures=0 artifact=artifact://junit/run-42"
+    },
+    "audit": {
+      "previous_hash": "genesis",
+      "event": "gate:PASS:run-42",
+      "append_only": true,
+      "hash": "9b0fdc02a2ef891d4885136d4097b246eab59eb3cd75f62ec2dace821d1ac763"
+    }
+  }
+}

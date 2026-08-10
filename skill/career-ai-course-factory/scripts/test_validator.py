@@ -56,8 +56,12 @@ def build_valid(root: Path) -> None:
             "evidence_status":"fixture-tested", "delivery_status":"fixture-tested","updated_at":"2026-01-01",
             "source_ids":["S0"],"previous_page_id":"" if index == 0 else f"page-{index-1}",
             "next_page_id":"" if index == 14 else f"page-{index+1}",
+            "architecture":{"title":"Evidence workflow","caption":"A complete professional workflow with explicit evidence and decision boundaries.","nodes":["input","analysis","artifact","execution","decision"]},
+            "materials":[{"title":"Runnable fixture","description":"A repository-owned tested script for the lesson.","href":"materials/example.py","kind":"script","validation":"fixture-tested"},{"title":"Fixture input","description":"A versioned learner input.","href":"materials/input.json","kind":"fixture","validation":"fixture-tested"}],
             "content_sections":{"outcome":"build a gate","professional_relevance":"release evidence","plain_explanation":"a gate is a repeatable check","smallest_example":"one case","learner_action":"run the command","expected_result":"visible PASS","common_errors":"empty evidence","completion_check":"red green proof","evidence_boundary":"fixture only"}
         })
+    write(root / "site/public/materials/example.py", "print('PASS')\n")
+    write(root / "site/public/materials/input.json", "{}\n")
     dump(root / "tutorial/tutorial-site.json", {"tutorial_id":"career-ai","title":"Career AI Tutorial","audience":"beginner","updated_at":"2026-01-01","default_page_id":"page-0","release_scope":{"mode":"pilot-path","promised_page_ids":[page["page_id"] for page in tutorial_pages],"catalog_complete":False,"validated_at":"2026-01-01"},"modules":tutorial_modules,"pages":tutorial_pages})
     page_id_blob = " ".join(page["page_id"] for page in tutorial_pages)
     html = f'''<!doctype html><html><head><meta charset="utf-8"><title>Tutorial</title><style>{"body{{color:#222}}" * 500}</style></head><body><input id="tutorial-search"><nav id="course-nav">{page_id_blob}</nav><main id="tutorial-content">{readable_body * 10}</main><aside id="page-toc"></aside><div id="progress-bar"></div><script>const COURSE_DATA = {json.dumps(tutorial_pages)};</script></body></html>'''
@@ -514,6 +518,17 @@ class ValidatorTests(unittest.TestCase):
         data["modules"].append({"module_id":"empty-module","title":"Empty","learner_result":"none","order":99})
         dump(path, data)
         self.assertTrue(any("contains empty modules" in error for error in validate(self.root)))
+
+    def test_delivered_tutorial_page_requires_real_material_file(self) -> None:
+        (self.root / "site/public/materials/example.py").unlink()
+        self.assertTrue(any("references missing file" in error for error in validate(self.root)))
+
+    def test_delivered_tutorial_page_requires_architecture(self) -> None:
+        path = self.root / "tutorial/tutorial-site.json"
+        data = json.loads(path.read_text())
+        del data["pages"][0]["architecture"]
+        dump(path, data)
+        self.assertTrue(any("lacks an architecture" in error for error in validate(self.root)))
 
     def test_first_tutorial_page_may_have_no_prerequisite(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"

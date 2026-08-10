@@ -1,0 +1,6 @@
+schema_version: quality-event-gateway-v1
+required_envelope: [specversion, id, source, type, time, subject, datacontenttype, dataschema, data]
+replay_window_seconds: 300
+dedupe_key: source+id
+large_payload: artifact_ref_only
+notification: redacted-consumer-only

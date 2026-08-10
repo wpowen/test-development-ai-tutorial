@@ -1,0 +1,16 @@
+appId: com.example.app
+---
+- launchApp:
+    clearState: true
+- tapOn:
+    id: email
+- inputText: qa@example.test
+- tapOn:
+    id: password
+- inputText: test-password
+- tapOn:
+    text: Sign in
+- assertVisible:
+    text: Dashboard
+- assertVisible:
+    text: Active

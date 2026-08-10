@@ -1,0 +1,10 @@
+{
+  "course_id": "td-ai-023-quality-platform-integrations",
+  "materials": [
+    {"material_id":"M01","path":"materials/quickstart.md","purpose":"复现0/1/0与unittest","source_ids":["S23","S07"],"scenario_ids":["TD-S07"],"generated_from":["lab scripts","fresh execution"],"license_or_usage":"项目原创；合成夹具","validation_status":"fixture-tested","validation_evidence":["evidence/execution-evidence.json"],"contains_synthetic_data":true,"limitations":"不证明真实集成"},
+    {"material_id":"M02","path":"materials/reusable-skill.md","purpose":"迁移质量控制平面方法","source_ids":["S23","S13"],"scenario_ids":["TD-S07"],"generated_from":["research-redesign/40-quality-platform-integrations.md"],"license_or_usage":"项目原创总结；官方能力仅作边界参考","validation_status":"static-reviewed","validation_evidence":["course.md"],"contains_synthetic_data":false,"limitations":"未在目标租户验收"},
+    {"material_id":"M03","path":"materials/sample-input.md","purpose":"解释事件与策略夹具","source_ids":["S03","S07"],"scenario_ids":["TD-S07"],"generated_from":["lab/fixtures","lab/configs"],"license_or_usage":"项目原创合成数据","validation_status":"fixture-tested","validation_evidence":["lab/reports/baseline.json"],"contains_synthetic_data":true,"limitations":"不代表企业 payload"},
+    {"material_id":"M04","path":"materials/expected-output.md","purpose":"阅读机器证据与失败 Oracle","source_ids":["S23","S13"],"scenario_ids":["TD-S07"],"generated_from":["fresh execution"],"license_or_usage":"项目原创","validation_status":"fixture-tested","validation_evidence":["evidence/execution-evidence.json"],"contains_synthetic_data":true,"limitations":"教学阈值"},
+    {"material_id":"M05","path":"materials/verification-checklist.md","purpose":"人工门与上线边界复核","source_ids":["S23","S07"],"scenario_ids":["TD-S07"],"generated_from":["research synthesis"],"license_or_usage":"项目原创检查表","validation_status":"static-reviewed","validation_evidence":["course.md"],"contains_synthetic_data":false,"limitations":"未经过生产 owner 签核"}
+  ]
+}

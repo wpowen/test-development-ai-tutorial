@@ -1,0 +1,11 @@
+{
+  "scenario_id": "ios-reschedule",
+  "platform": "ios",
+  "actor": "customer",
+  "trigger": "customer changes an appointment slot",
+  "input": {"appointment_id": "APT-SYN-3001", "new_slot": "2026-08-12T10:30:00+08:00"},
+  "flow": ["launch", "open appointments", "select appointment", "choose new slot", "confirm"],
+  "business_oracle": {"appointment_status": "rescheduled", "displayed_slot": "2026-08-12T10:30:00+08:00"},
+  "stable_locator": {"accessibility_identifier": "confirmReschedule", "label": "Confirm"},
+  "execution_status": "NOT_RUN/static-reviewed"
+}

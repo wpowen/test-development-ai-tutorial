@@ -1,0 +1,27 @@
+schema: web-compatibility-matrix.v1
+purpose: record browser coverage before Playwright execution
+execution_status: NOT_RUN/static-reviewed
+matrix:
+  - browser: chromium
+    channel: pinned-project-version
+    viewport: 1440x900
+    locale: zh-CN
+    timezone: Asia/Shanghai
+    required_checks: [semantic-locator, business-oracle, trace-on-first-retry]
+  - browser: firefox
+    channel: pinned-project-version
+    viewport: 1440x900
+    locale: zh-CN
+    timezone: Asia/Shanghai
+    required_checks: [semantic-locator, business-oracle]
+  - browser: webkit
+    channel: pinned-project-version
+    viewport: 1440x900
+    locale: zh-CN
+    timezone: Asia/Shanghai
+    required_checks: [semantic-locator, business-oracle]
+environment_contract:
+  fonts: pinned
+  animations: disabled-or-controlled
+  network: stubbed-or-recorded
+  baseline_approval: human-required

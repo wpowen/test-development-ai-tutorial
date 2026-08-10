@@ -1,0 +1,27 @@
+{
+  "openapi": "3.1.0",
+  "info": {"title": "Order Cancellation API", "version": "1.0.0"},
+  "paths": {
+    "/orders/{order_id}/cancellation": {
+      "post": {
+        "operationId": "cancelOrder",
+        "parameters": [{"name": "order_id", "in": "path", "required": true, "schema": {"type": "string"}}],
+        "requestBody": {"required": true, "content": {"application/json": {"schema": {"$ref": "#/components/schemas/CancelRequest"}}}},
+        "responses": {
+          "202": {"description": "accepted", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/CancelAccepted"}}}},
+          "403": {"description": "forbidden", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Error"}}}},
+          "409": {"description": "invalid state", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Error"}}}}
+        }
+      }
+    },
+    "/tasks/{task_id}": {"get": {"operationId": "getTask", "responses": {"200": {"description": "task", "content": {"application/json": {"schema": {"$ref": "#/components/schemas/Task"}}}}}}},
+    "/orders/{order_id}/events": {"get": {"operationId": "orderEvents", "responses": {"200": {"description": "SSE", "content": {"text/event-stream": {"itemSchema": {"$ref": "#/components/schemas/OrderEvent"}}}}}}}
+  },
+  "components": {"schemas": {
+    "CancelRequest": {"type": "object", "required": ["idempotency_key"], "properties": {"idempotency_key": {"type": "string", "minLength": 1}}},
+    "CancelAccepted": {"type": "object", "required": ["task_id", "status"], "properties": {"task_id": {"type": "string"}, "status": {"const": "CANCEL_PENDING"}}},
+    "Task": {"type": "object", "required": ["task_id", "status"], "properties": {"task_id": {"type": "string"}, "status": {"enum": ["QUEUED", "CANCEL_PENDING", "COMPLETED"]}}},
+    "OrderEvent": {"type": "object", "required": ["id", "type", "terminal"], "properties": {"id": {"type": "string"}, "type": {"enum": ["task.accepted", "order.cancelled", "error"]}, "terminal": {"type": "boolean"}}},
+    "Error": {"type": "object", "required": ["code"], "properties": {"code": {"type": "string"}}}
+  }}
+}

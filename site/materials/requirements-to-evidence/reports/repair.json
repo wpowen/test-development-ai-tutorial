@@ -1,0 +1,91 @@
+{
+  "run_id": "RUN-20260810T135024Z",
+  "status": "PASS",
+  "evidence_status": "fixture-tested",
+  "baseline_id": "order-cancel-v2",
+  "input_hashes": {
+    "basis": "49ab5e26fd6299a7a2e953c0ee13153d2ca0ce88a31e57aa3beefad93c7f9364",
+    "contract": "ea5ae166cffa76c2299a6f7b1976c8aacd41c02287cd1bf16a52e8386dd8661f",
+    "test_package": "73dfef50f568d4037ccdc711ca3a6a7bcfddda053c08d6c8c7c4e63047069b99",
+    "implementation": "4f8a25d3e34422393cd123152ebb6b4214cd656b098e87f6b351096032c4c54d"
+  },
+  "selected_test_ids": [
+    "T-CANCEL-SHIPPED-01",
+    "T-CANCEL-IDEMPOTENT-01",
+    "T-CANCEL-AUTH-01"
+  ],
+  "skipped": [],
+  "retries": 0,
+  "results": [
+    {
+      "test_id": "T-CANCEL-SHIPPED-01",
+      "requirement_ids": [
+        "REQ-CANCEL-002"
+      ],
+      "risk_ids": [
+        "RISK-INVALID-STATE"
+      ],
+      "status": "PASS",
+      "mismatches": {},
+      "evidence": {
+        "actual": {
+          "status_code": 409,
+          "refund_count": 0,
+          "state": "SHIPPED"
+        },
+        "source_refs": [
+          "PRD-v3#R17",
+          "OPENAPI-v7#/cancel/responses/409"
+        ],
+        "mutation_id": null
+      }
+    },
+    {
+      "test_id": "T-CANCEL-IDEMPOTENT-01",
+      "requirement_ids": [
+        "REQ-CANCEL-001"
+      ],
+      "risk_ids": [
+        "RISK-REFUND-DUPLICATE"
+      ],
+      "status": "PASS",
+      "mismatches": {},
+      "evidence": {
+        "actual": {
+          "status_code": 202,
+          "refund_count": 1,
+          "state": "CANCEL_PENDING"
+        },
+        "source_refs": [
+          "PRD-v3#R18",
+          "OPENAPI-v7#/cancel"
+        ],
+        "mutation_id": null
+      }
+    },
+    {
+      "test_id": "T-CANCEL-AUTH-01",
+      "requirement_ids": [
+        "REQ-CANCEL-003"
+      ],
+      "risk_ids": [
+        "RISK-UNAUTHORIZED-CANCEL"
+      ],
+      "status": "PASS",
+      "mismatches": {},
+      "evidence": {
+        "actual": {
+          "status_code": 403,
+          "refund_count": 0,
+          "state": "PAID_NOT_SHIPPED"
+        },
+        "source_refs": [
+          "PRD-v3#R19",
+          "OPENAPI-v7#/cancel/responses/403"
+        ],
+        "mutation_id": null
+      }
+    }
+  ],
+  "boundary": "synthetic offline fixture; not production validated; human release decision required"
+}

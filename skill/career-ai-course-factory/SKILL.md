@@ -270,6 +270,12 @@ Keep two explicit surfaces. The internal curriculum catalog is the complete rese
 
 A complete knowledge tree is not a distributable course. Before public or paid release, deliver at least one 8-page beginner-to-artifact path with no planned prerequisite. Each delivered page must pass the content-density and learner-action gates in the tutorial contract; the path must end in a profession-relevant artifact with preserved verification evidence. The default entry is the first beginner page, not the most impressive lab.
 
+Do not equate a non-empty manuscript with a completed lesson. Every public page must carry a profession-specific architecture or workflow diagram, repository-owned learner materials, exact commands or actions, an observable expected result, a failure path, recovery, evidence boundary, and a completion check. Any script, config, dataset, prompt file, API example, pipeline file, dashboard definition, or runbook named by the lesson must exist in the published repository and be linked from the page. A `fixture-tested` page needs at least one real script plus a second tested fixture/config/evidence file, and its claimed command must be rerun by validation. Missing material, dead link, empty file, decorative diagram, pseudo-command, or unexecuted “实测” claim keeps the page internal.
+
+Treat page and module IDs as exact identifiers. Routing, delivery-support attachment, status promotion, prerequisite resolution, and material assignment must use exact sets or anchored patterns; a broad prefix test such as `startsWith("TD-P")` is forbidden when IDs such as `TD-P01` and `TD-PS01` can coexist. Add a collision regression proving that a newly introduced ID cannot inherit another track's architecture, materials, status, or evidence.
+
+For a professional specialization, require the complete engineering chain rather than a tool overview: problem and failure cost -> reference architecture -> data/contracts -> implementation/configuration -> execution SOP -> telemetry and diagnosis -> gate/decision -> rollback or human escalation. Split Web, Android, iOS, API, data, performance, stability, chaos, security, CI/CD, and AI-system testing when their tools, failure modes, or evidence differ. A shared generic paragraph generator is forbidden; shared viewers, schemas, and validated fixtures are allowed.
+
 Declare the release scope before building a public artifact. Use `pilot-path` when only a validated subset of the internal catalog is public, or `complete-catalog` when every internal catalog page is validated and public. Preserve `promised_page_ids`, `catalog_complete`, and the validation timestamp in the canonical content model and release manifest. In both modes, any planned, outlined, blocked, navigation-only, empty-module, or density-gate-failing record is forbidden from public artifacts. Under `complete-catalog`, the internal and public page sets must also match. Content completeness never upgrades its evidence status: a fully written `desk-researched` page remains desk-researched until stronger proof exists.
 
 Treat GitHub and OpenAI Sites as two publication targets generated from one validated content source. GitHub carries versioned source, sanitized labs, reusable materials, issues, and releases. Sites carries the learner-facing experience and should remain private during review. Never maintain independent HTML, JSON, and course prose as competing truth. Do not make a public deployment until the public-safe subset and access level are explicitly confirmed.
@@ -303,6 +309,9 @@ Then run a fresh-agent forward test when available:
 - check that public navigation, HTML, JSON, sitemaps, and archives reject every planned, outlined, or blocked page and every empty module;
 - check that public page IDs equal `promised_page_ids`, while unfinished catalog entries remain only in internal research artifacts;
 - check the assembled release directory, not only its source package: reject internal authoring trees, incomplete course records in any public JSON, extra HTML navigation IDs, placeholder copy, learner-artifact hash drift, or a manifest without page IDs, verdict and publication targets;
+- probe every public text surface, including secondary HTML, XML, JavaScript search indexes, Markdown catalogs, YAML and CSV metadata, for serialized `planned`, `outlined`, or `blocked` learner records; do not validate only the main HTML and JSON;
+- delete or rename every linked learner material in turn and prove validation fails; check that fixture-tested pages link a real tested script and preserved red/green evidence;
+- reject a public lesson without a substantive architecture/workflow diagram, executable SOP, expected output, injected failure, diagnosis path and repository-owned handoff material;
 - check that page order follows prerequisites rather than source publication order;
 - check that the professional baseline, AI foundation, and benchmark layers cannot be omitted or moved after dependent courses;
 - check that the six research systems, coverage matrix, and all six independent expert reviews cannot be omitted;
@@ -359,6 +368,8 @@ Stop and report the gap when any applies:
 - completeness language exceeds the validated release scope or evidence status;
 - publication targets are built from independently edited course copies or expose private research and production data;
 - the final public release directory has not passed `validate_public_release.py` after assembly;
+- a lesson names a script, config, dataset, prompt, pipeline, dashboard or runbook that is absent, empty, unlinked, outside the public repository, or not covered by the claimed validation status;
+- a page is labelled complete because prose exists, but lacks an architecture/workflow diagram, runnable handoff, expected result, failure/recovery path, and professional decision boundary;
 - the test cannot be shown to fail on a meaningful regression;
 - a current tool claim lacks a primary source and version/date;
 - the workflow depends on hidden credentials without an offline path;

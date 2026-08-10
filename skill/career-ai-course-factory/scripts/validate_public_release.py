@@ -8,12 +8,17 @@ import hashlib
 import json
 import re
 import sys
+import zipfile
 from pathlib import Path
 from typing import Any
 
 
 INCOMPLETE = {"planned", "outlined", "blocked"}
 PLACEHOLDERS = ("仅保留知识位置", "本页尚未开发", "本页尚未通过逐题研究", "仅提纲")
+PUBLIC_TEXT_SUFFIXES = {
+    ".html", ".htm", ".xml", ".js", ".mjs", ".cjs", ".md", ".txt",
+    ".yaml", ".yml", ".csv",
+}
 REQUIRED_MANIFEST_FIELDS = {
     "schema_version", "source_commit", "release_scope", "catalog_complete",
     "page_count", "delivered_page_count", "promised_page_ids", "content_hash",
@@ -63,6 +68,27 @@ def find_incomplete_records(value: Any, path: str = "$") -> list[str]:
         for index, child in enumerate(value):
             errors.extend(find_incomplete_records(child, f"{path}[{index}]"))
     return errors
+
+
+def is_public_file(root: Path, path: Path) -> bool:
+    parts = path.relative_to(root).parts
+    return "skill" not in parts and ".github" not in parts and path.is_file()
+
+
+def find_incomplete_text(text: str) -> list[str]:
+    """Find serialized learner-state leaks without rejecting ordinary prose."""
+    findings: list[str] = []
+    statuses = "|".join(sorted(INCOMPLETE))
+    patterns = {
+        "delivery status": rf"(?i)(?:[\"']?delivery[_-]?status[\"']?|deliveryStatus)\s*[:=]\s*[\"']?({statuses})\b",
+        "learner status": rf"(?i)(?:[\"']?status[\"']?\s*:|data-status\s*=)\s*[\"']?({statuses})\b",
+        "XML status": rf"(?i)<(?:delivery[_-]?status|status)>\s*({statuses})\s*</",
+    }
+    for label, pattern in patterns.items():
+        match = re.search(pattern, text)
+        if match:
+            findings.append(f"serialized incomplete {label}={match.group(1).lower()}")
+    return findings
 
 
 def validate_release(root: Path) -> list[str]:
@@ -121,6 +147,51 @@ def validate_release(root: Path) -> list[str]:
     if incomplete_pages:
         errors.append(f"public tutorial contains incomplete pages: {', '.join(incomplete_pages)}")
 
+    for index, page in enumerate(pages):
+        if not isinstance(page, dict):
+            continue
+        architecture = page.get("architecture")
+        if not isinstance(architecture, dict) or not isinstance(architecture.get("nodes"), list) or len(architecture.get("nodes", [])) < 5:
+            errors.append(f"public tutorial page {index} lacks a substantive architecture/workflow diagram")
+        materials = page.get("materials")
+        if not isinstance(materials, list) or not materials:
+            errors.append(f"public tutorial page {index} lacks learner-facing materials")
+            continue
+        tested = 0
+        has_script = False
+        for material_index, material in enumerate(materials):
+            label = f"public tutorial page {index} material {material_index}"
+            if not isinstance(material, dict):
+                errors.append(f"{label} is not an object")
+                continue
+            href = str(material.get("href", ""))
+            if not href or href.startswith(("http://", "https://", "//")) or ".." in Path(href).parts:
+                errors.append(f"{label} must reference a repository-owned relative file")
+            elif not (root / "site" / href).is_file() or (root / "site" / href).stat().st_size == 0:
+                errors.append(f"{label} references missing or empty file: site/{href}")
+            else:
+                material_path = root / "site" / href
+                try:
+                    if material.get("kind") == "script" and material_path.suffix == ".py":
+                        compile(material_path.read_text(encoding="utf-8"), str(material_path), "exec")
+                    if material_path.suffix == ".json":
+                        json.loads(material_path.read_text(encoding="utf-8"))
+                    if material.get("kind") == "archive" and material_path.suffix == ".zip":
+                        with zipfile.ZipFile(material_path) as zipped:
+                            names = [item.filename for item in zipped.infolist() if not item.is_dir()]
+                            if not names:
+                                errors.append(f"{label} archive is empty")
+                            if any(Path(name).is_absolute() or ".." in Path(name).parts for name in names):
+                                errors.append(f"{label} archive contains an unsafe path")
+                except (SyntaxError, UnicodeDecodeError, json.JSONDecodeError, zipfile.BadZipFile) as exc:
+                    errors.append(f"{label} cannot be parsed: {exc}")
+            if material.get("validation") == "fixture-tested":
+                tested += 1
+            if material.get("kind") == "script":
+                has_script = True
+        if page.get("delivery_status") == "fixture-tested" and (tested < 2 or not has_script):
+            errors.append(f"public fixture-tested page {index} needs two tested materials including a script")
+
     module_ids = {str(module.get("module_id", "")) for module in modules if isinstance(module, dict)}
     used_modules = {str(page.get("module_id", "")) for page in pages if isinstance(page, dict)}
     empty_modules = module_ids - used_modules
@@ -174,7 +245,7 @@ def validate_release(root: Path) -> list[str]:
         errors.append("release manifest must declare github-pages and chatgpt-site publication targets")
 
     for path in root.rglob("*.json"):
-        if path == manifest_path or "skill" in path.relative_to(root).parts or ".github" in path.relative_to(root).parts:
+        if path == manifest_path or not is_public_file(root, path):
             continue
         data = load_json(path, errors)
         if data is None:
@@ -182,14 +253,20 @@ def validate_release(root: Path) -> list[str]:
         for problem in find_incomplete_records(data):
             errors.append(f"public JSON {path.relative_to(root)} {problem}")
 
-    for relative in artifact_roots:
-        base = root / relative
-        candidates = [base] if base.is_file() else list(base.rglob("*")) if base.is_dir() else []
-        for path in candidates:
-            if path.is_file() and path.suffix.lower() in {".html", ".md", ".txt", ".json"}:
-                text = path.read_text(encoding="utf-8", errors="replace")
-                if any(marker in text for marker in PLACEHOLDERS):
-                    errors.append(f"learner artifact exposes placeholder copy: {path.relative_to(root)}")
+    for path in root.rglob("*"):
+        if not is_public_file(root, path) or path.suffix.lower() not in PUBLIC_TEXT_SUFFIXES:
+            continue
+        relative = path.relative_to(root)
+        text = path.read_text(encoding="utf-8", errors="replace")
+        if any(marker in text for marker in PLACEHOLDERS):
+            errors.append(f"public artifact exposes placeholder copy: {relative}")
+        for finding in find_incomplete_text(text):
+            errors.append(f"public artifact {relative} {finding}")
+        if path.suffix.lower() in {".html", ".htm"}:
+            for attribute in ("data-page-id", "data-id", "data-go"):
+                for value in re.findall(rf'{attribute}=["\']([^"\']+)["\']', text):
+                    if value not in page_ids and not value.startswith("${"):
+                        errors.append(f"public HTML {relative} exposes unknown {attribute}={value}")
 
     return errors
 

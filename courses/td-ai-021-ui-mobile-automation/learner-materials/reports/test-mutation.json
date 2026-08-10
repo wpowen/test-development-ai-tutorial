@@ -1,0 +1,9 @@
+{
+  "status": "FAIL",
+  "oracle_pass": false,
+  "missing_contracts": [
+    "stable_locator",
+    "business_assertion"
+  ],
+  "execution": "offline-standard-library"
+}

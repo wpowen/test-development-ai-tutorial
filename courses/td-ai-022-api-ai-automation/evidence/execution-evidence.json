@@ -1,0 +1,19 @@
+{
+  "course_id":"td-ai-022-api-ai-automation",
+  "evidence_scope":"copy-safe learner-materials package using a Python standard-library offline API contract/state/event fixture",
+  "commands":[
+    "python3 scripts/api_automation.py baseline --report reports/baseline.json",
+    "python3 scripts/api_automation.py mutation --report reports/mutation.json",
+    "python3 scripts/api_automation.py repair --report reports/repair.json",
+    "python3 -m unittest discover -s tests -v"
+  ],
+  "run_at":"2026-08-10T00:00:00+08:00",
+  "workdir":"courses/td-ai-022-api-ai-automation/learner-materials",
+  "baseline":{"command":"python3 scripts/api_automation.py baseline --report reports/baseline.json","exit_code":0,"verdict":"PASS","evidence_path":"learner-materials/reports/baseline.json"},
+  "mutation":{"command":"python3 scripts/api_automation.py mutation --report reports/mutation.json","exit_code":1,"verdict":"FAIL","failed_case_ids":["BUS-SHIPPED-REJECT"],"evidence_path":"learner-materials/reports/mutation.json","mutation_id":"MUT-ORDER-SHIPPED-ACCEPTED"},
+  "repair":{"command":"python3 scripts/api_automation.py repair --report reports/repair.json","exit_code":0,"verdict":"PASS","evidence_path":"learner-materials/reports/repair.json"},
+  "unittest":{"command":"python3 -m unittest discover -s tests -v","expected_exit_code":0,"verdict":"PASS","tests":3,"includes_copy_isolation":true},
+  "environment":{"runtime":"Python 3 standard library","credentials":false,"external_network":false,"third_party_packages":false,"data":"synthetic order, payment intent, and checkout event fixtures"},
+  "not_run":["Schemathesis","Pact","k6","GitLab CI","live endpoint","real LLM","production traffic"],
+  "limitations":["does not prove real API compatibility","does not prove model quality or enterprise defect detection","YAML is read as a controlled text contract rather than parsed by a general YAML engine","fake async/SSE reducer is not a network canary"]
+}

@@ -1,0 +1,96 @@
+{
+  "generated_from": "lab/seed/openapi.json",
+  "generator": "deterministic-spec-candidate-v1",
+  "cases": [
+    {
+      "case_id": "SPEC-cancelOrder-shape",
+      "operation_id": "cancelOrder",
+      "method": "POST",
+      "path": "/orders/{order_id}/cancellation",
+      "kind": "contract"
+    },
+    {
+      "case_id": "SPEC-getTask-shape",
+      "operation_id": "getTask",
+      "method": "GET",
+      "path": "/tasks/{task_id}",
+      "kind": "contract"
+    },
+    {
+      "case_id": "SPEC-orderEvents-shape",
+      "operation_id": "orderEvents",
+      "method": "GET",
+      "path": "/orders/{order_id}/events",
+      "kind": "contract"
+    },
+    {
+      "case_id": "BUS-SHIPPED-REJECT",
+      "operation_id": "cancelOrder",
+      "kind": "business",
+      "fixture": {
+        "owner": true,
+        "state": "SHIPPED",
+        "repeat": 1
+      },
+      "expected": {
+        "status": 409,
+        "refund_count": 0,
+        "state": "SHIPPED"
+      }
+    },
+    {
+      "case_id": "AUTH-NONOWNER-REJECT",
+      "operation_id": "cancelOrder",
+      "kind": "permission",
+      "fixture": {
+        "owner": false,
+        "state": "PAID_NOT_SHIPPED",
+        "repeat": 1
+      },
+      "expected": {
+        "status": 403,
+        "refund_count": 0,
+        "state": "PAID_NOT_SHIPPED"
+      }
+    },
+    {
+      "case_id": "IDEMP-SINGLE-EFFECT",
+      "operation_id": "cancelOrder",
+      "kind": "idempotency",
+      "fixture": {
+        "owner": true,
+        "state": "PAID_NOT_SHIPPED",
+        "repeat": 2
+      },
+      "expected": {
+        "status": 202,
+        "refund_count": 1,
+        "state": "CANCEL_PENDING"
+      }
+    },
+    {
+      "case_id": "ASYNC-LEGAL-TRANSITIONS",
+      "operation_id": "getTask",
+      "kind": "async",
+      "expected": {
+        "states": [
+          "QUEUED",
+          "CANCEL_PENDING",
+          "COMPLETED"
+        ]
+      }
+    },
+    {
+      "case_id": "SSE-ONE-TERMINAL",
+      "operation_id": "orderEvents",
+      "kind": "sse",
+      "expected": {
+        "events": [
+          "task.accepted",
+          "order.cancelled"
+        ],
+        "terminal_count": 1
+      }
+    }
+  ]
+}

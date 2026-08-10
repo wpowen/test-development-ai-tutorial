@@ -1,0 +1,113 @@
+openapi: 3.1.0
+info:
+  title: Synthetic Order Cancellation API
+  version: 1.0.0
+  description: Public teaching fixture. No production data or endpoint is represented.
+servers:
+  - url: https://sandbox.invalid
+paths:
+  /orders/{order_id}/cancellation:
+    post:
+      operationId: cancelOrder
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: order_id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CancelOrderRequest'
+      responses:
+        '202':
+          description: Cancellation accepted for asynchronous processing.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancellationTask'
+        '403':
+          description: Caller does not own the order.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Current order state does not allow cancellation.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /cancellation-tasks/{task_id}:
+    get:
+      operationId: getCancellationTask
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: task_id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Current asynchronous task state.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancellationTask'
+  /orders/{order_id}/cancellation-events:
+    get:
+      operationId: streamOrderCancellationEvents
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Server-sent cancellation lifecycle events.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    CancelOrderRequest:
+      type: object
+      additionalProperties: false
+      required: [idempotency_key, reason_code]
+      properties:
+        idempotency_key:
+          type: string
+          minLength: 8
+          maxLength: 128
+        reason_code:
+          type: string
+          enum: [CUSTOMER_REQUEST, ADDRESS_ERROR, DUPLICATE_ORDER]
+    CancellationTask:
+      type: object
+      additionalProperties: false
+      required: [task_id, order_id, status]
+      properties:
+        task_id:
+          type: string
+        order_id:
+          type: string
+        status:
+          type: string
+          enum: [QUEUED, CANCEL_PENDING, COMPLETED, FAILED]
+    Error:
+      type: object
+      additionalProperties: false
+      required: [code, message]
+      properties:
+        code:
+          type: string
+        message:
+          type: string
