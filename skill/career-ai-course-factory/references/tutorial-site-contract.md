@@ -25,7 +25,7 @@ Build pages from knowledge dependencies, not tool names. Trace:
 
 `profession outcome -> business scenario -> learner action -> required concept -> prerequisite -> tutorial page -> learner artifact -> verification`.
 
-The tree must include:
+The internal knowledge tree must include:
 
 - at least 4 modules;
 - at least 15 pages for a full profession tutorial;
@@ -34,7 +34,7 @@ The tree must include:
 - every non-foundation page reachable from a beginner entry page;
 - exactly one primary next page for the default route.
 
-Planned pages remain visible but visibly labelled `planned`. A title in a navigation tree is not a delivered tutorial page.
+The internal tree may contain `planned`, `outlined`, and `blocked` records so curriculum gaps remain visible to maintainers. These records must not be serialized into any learner-facing navigation, HTML payload, public JSON, sitemap, search index, or release archive. A title in an internal tree is not a delivered tutorial page.
 
 ## Minimum distributable learning path
 
@@ -49,16 +49,16 @@ A complete knowledge tree is not yet a distributable product. Before a public or
 
 Every delivered page on that path must have at least 4 substantive teaching blocks, 3 observable outcomes, 3 learner actions, 3 completion checks, source notes, and a non-trivial evidence boundary. A guided lab must include exact input or commands and observable expected results. A fixture-tested guided lab must contain at least two runnable/observable steps and retain its execution evidence.
 
-Do not publicly label the full profession tutorial complete while only the first path is delivered. Publish the knowledge tree and the path completion separately.
+Do not publicly label the full profession tutorial complete while only the first path is delivered. Preserve the full knowledge tree internally and publish only the validated path or subset.
 
 ## Release-scope contract
 
 Every generated tutorial and release manifest must declare one release scope. Scope is a machine-checkable promise, not marketing copy.
 
-- `pilot-path`: only the declared `promised_page_ids` are promised as delivered. Other catalog entries may remain `planned`, but every learner-facing surface must say that the catalog is partial.
+- `pilot-path`: only a validated subset of the internal catalog is public. Other catalog entries may remain incomplete internally, but are absent from every learner-facing artifact.
 - `complete-catalog`: every page in the declared catalog is promised as delivered. `planned`, `outlined`, `blocked`, navigation-only, or section-plan-only pages are forbidden.
 
-The manifest records `mode`, `promised_page_ids`, `catalog_complete`, and `validated_at`. Validators must fail when a promised page is missing, not delivered, has unresolved prerequisites, lacks required teaching blocks/actions/checks/sources, or is absent from a publication target. For `complete-catalog`, `promised_page_ids` must equal the full page-ID set and `catalog_complete` must be true.
+The manifest records `mode`, `promised_page_ids`, `catalog_complete`, and `validated_at`. For every public release, `promised_page_ids` must exactly equal the public page-ID set. Validators must fail when a public page is missing, incomplete, unpromised, has unresolved prerequisites, lacks required teaching blocks/actions/checks/sources, or is absent from a publication target. Public modules with no public page are forbidden. For `complete-catalog`, the public page set must also equal the internal catalog and `catalog_complete` must be true.
 
 Content completeness and evidence strength are independent. A `desk-researched` page can be complete instructional content while still being unverified in production; the interface must preserve that evidence boundary. Never upgrade `desk-researched` to `fixture-tested`, `live-tested`, or `practitioner-reviewed` merely because the page is fully written.
 
@@ -174,16 +174,16 @@ Required blocks:
 - copy buttons for commands and reusable snippets;
 - local completion checkboxes and progress indicator;
 - responsive mobile navigation;
-- visible `planned`, `desk-researched`, `fixture-tested`, `live-tested`, and `practitioner-reviewed` labels;
+- visible `desk-researched`, `fixture-tested`, `live-tested`, and `practitioner-reviewed` labels;
 - an evidence boundary block on every delivered lab or project page.
 
-Do not hide incomplete pages. Show their learning goal and status, but do not fabricate tutorial content.
+Do not publish incomplete pages. Keep their learning goal, dependency, owner, and status in internal curriculum artifacts until every publication gate passes.
 
 ## Research-to-page traceability
 
 Each delivered page records `source_ids` and `scenario_ids` in `tutorial-site.json`. The human page shows concise source notes, while detailed provenance remains in the research ledger.
 
-A page can be:
+A page can have these internal production and evidence states:
 
 - `planned`: title and role in the tree only;
 - `outlined`: outcome, prerequisites, page type, and section plan;
@@ -192,6 +192,8 @@ A page can be:
 - `live-tested`: current external system or model was run;
 - `practitioner-reviewed`: a relevant practitioner reviewed the page and task;
 - `production-validated`: evidence comes from a real production workflow.
+
+Only `desk-researched`, `fixture-tested`, `live-tested`, `practitioner-reviewed`, and `production-validated` pages may enter the public tutorial. Evidence strength remains visible and must not be inflated.
 
 ## Fail-closed rules
 
@@ -202,7 +204,9 @@ Reject a complete tutorial package when:
 - pages are organized primarily by tool brand;
 - one page tries to teach multiple independent job results;
 - a delivered page lacks learner action, expected result, common error, or completion check;
-- planned pages look complete;
+- a public artifact contains a planned, outlined, blocked, navigation-only, or section-plan-only page;
+- a public module has no public page;
+- public page IDs do not exactly equal `promised_page_ids`;
 - a lab has no failure injection or reset path;
 - previous/next links ignore prerequisite order;
 - the HTML requires a dev server or remote dependency;

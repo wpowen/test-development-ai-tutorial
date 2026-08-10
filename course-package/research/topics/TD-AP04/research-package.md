@@ -22,6 +22,10 @@ Root `invoke_agent`/application workflow span; child generation, retrieval, tool
 
 TD-AP04 includes span tree, signal responsibility, minimum tables, critical-path diagnosis and privacy controls.
 
+## Editorial review
+
+PASS. Protected the cited OpenTelemetry semantic-convention status and separated standard `gen_ai.*` fields from application extensions. Kept wall-clock critical-path analysis instead of adding parallel child durations. The page does not ask learners to log prompts, credentials or PII by default, and it preserves sampling, retention and access controls.
+
 ## Validation
 
 PASS: standard and custom fields are separated; evolving semantics and privacy are explicit.

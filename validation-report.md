@@ -16,9 +16,9 @@ Verdict: `PASS-FIXTURE`，不等于 `PASS-LIVE` 或 `PASS-PRACTITIONER`。
 - Mutation 检测到退款幻觉、丢引用、拒答失守、Prompt injection、身份绕过、错误破坏性工具、延迟与成本回归。
 - 新版 package validator 已用 `--run-labs` 实际执行 manifest 中 7 个步骤并通过；其中已知回归步骤按契约返回 exit 1。
 - evaluator 的 10 个对抗回归测试全部通过，覆盖恶意引用、危险工具、中文提示词泄露、单次高成本、额外 candidate、负 telemetry、空答案、检索污染和过度拒答。
-- Skill validator 自身 41 个 fail-closed 回归测试通过；新增 complete-catalog 发布范围门禁，禁止完整发布中混入 planned、outlined、blocked 或导航占位页。
+- Skill validator 自身 47 个 fail-closed 回归测试通过；任何公开发布模式都禁止混入 planned、outlined、blocked、未承诺页面或空模块，公开页面 ID 必须与 `promised_page_ids` 完全一致。
 - 回归测试还包含来源集中度加 filler、渠道借用、GitHub 报告冒用、职业地图漏场景、占位课程、空迁移标签、不存在 URL、缺少教程查看器、计划页冒充已交付页、缺少学习层和缺少专家角色。
-- 教程站已形成 11 个模块、52/52 页完整专业知识树；全部页面有正文、练习、完成检查、来源和证据边界，0 个页面标记为 `planned`。
+- 内部课程目录保留 65 个站点命题位置；公开教程只投影 17 个通过逐题研究、正文、编辑与验证门禁的页面，分属 2 个非空模块。其余 48 个未完成命题不会进入公开 HTML、JSON、导航、搜索或发布承诺。
 - 站点内容门禁、TypeScript 类型检查、vinext 生产构建、服务端 HTML 测试、同源 GitHub Pages 静态导出与静态安全测试全部通过；静态测试新增浏览器脚本语法解析，防止 GitHub Pages 因非法内联 JavaScript 卡在 loading。
 - GitHub 公开仓库提交 `4bf127a` 的 `rag-eval-gate` 运行 `31366782842` 成功，覆盖 40 个 Skill 回归、职业课程包验证、站点构建、10 个 evaluator 对抗测试、良好候选通过和已知回归被拒绝。
 - GitHub Pages 运行 `31367062592` 成功完成 build 与 deploy；公开 URL 匿名请求返回 200，并包含需求流程、AI 性能与职业演进章节。

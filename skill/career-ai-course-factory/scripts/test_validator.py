@@ -48,23 +48,22 @@ def build_valid(root: Path) -> None:
     ]
     tutorial_pages = []
     for index in range(15):
-        delivered = index == 0
         tutorial_pages.append({
             "page_id":f"page-{index}","slug":f"page-{index}","module_id":f"module-{min(index // 4, 3)}",
-            "title":f"Tutorial page {index}","page_type":"guided-lab" if delivered else "concept","level":"L1",
+            "title":f"Tutorial page {index}","page_type":"guided-lab","level":"L1",
             "order":index,"prerequisite_ids":[] if index == 0 else [f"page-{index-1}"],"scenario_ids":["scenario-0"],
             "learner_result":"produce a checked result","artifact":"report","keywords":["AI","quality"],
-            "evidence_status":"fixture-tested" if delivered else "desk-researched",
-            "delivery_status":"fixture-tested" if delivered else "planned","updated_at":"2026-01-01",
+            "evidence_status":"fixture-tested", "delivery_status":"fixture-tested","updated_at":"2026-01-01",
             "source_ids":["S0"],"previous_page_id":"" if index == 0 else f"page-{index-1}",
             "next_page_id":"" if index == 14 else f"page-{index+1}",
-            **({"content_sections":{"outcome":"build a gate","professional_relevance":"release evidence","plain_explanation":"a gate is a repeatable check","smallest_example":"one case","learner_action":"run the command","expected_result":"visible PASS","common_errors":"empty evidence","completion_check":"red green proof","evidence_boundary":"fixture only"}} if delivered else {})
+            "content_sections":{"outcome":"build a gate","professional_relevance":"release evidence","plain_explanation":"a gate is a repeatable check","smallest_example":"one case","learner_action":"run the command","expected_result":"visible PASS","common_errors":"empty evidence","completion_check":"red green proof","evidence_boundary":"fixture only"}
         })
-    dump(root / "tutorial/tutorial-site.json", {"tutorial_id":"career-ai","title":"Career AI Tutorial","audience":"beginner","updated_at":"2026-01-01","default_page_id":"page-0","release_scope":{"mode":"pilot-path","promised_page_ids":["page-0"],"catalog_complete":False,"validated_at":"2026-01-01"},"modules":tutorial_modules,"pages":tutorial_pages})
+    dump(root / "tutorial/tutorial-site.json", {"tutorial_id":"career-ai","title":"Career AI Tutorial","audience":"beginner","updated_at":"2026-01-01","default_page_id":"page-0","release_scope":{"mode":"pilot-path","promised_page_ids":[page["page_id"] for page in tutorial_pages],"catalog_complete":False,"validated_at":"2026-01-01"},"modules":tutorial_modules,"pages":tutorial_pages})
     page_id_blob = " ".join(page["page_id"] for page in tutorial_pages)
     html = f'''<!doctype html><html><head><meta charset="utf-8"><title>Tutorial</title><style>{"body{{color:#222}}" * 500}</style></head><body><input id="tutorial-search"><nav id="course-nav">{page_id_blob}</nav><main id="tutorial-content">{readable_body * 10}</main><aside id="page-toc"></aside><div id="progress-bar"></div><script>const COURSE_DATA = {json.dumps(tutorial_pages)};</script></body></html>'''
     write(root / "tutorial/index.html", html)
-    write(root / "research/topics/page-0/research-package.md", "# Page 0 research\n\n## Research brief\n\nScoped learner question and decision.\n\n## Source pack\n\nOpened primary sources with limitations.\n\n## Evidence synthesis\n\nFacts, synthesis and unknowns.\n\n## Engineering blueprint\n\nMetrics, data, workflow and failure path.\n\n## Manuscript map\n\nMaps evidence into the learner page.\n\n## Editorial review\n\nPASS: protected fields, commands, limits and citations preserved; no generic template prose.\n\n## Validation\n\nPASS: claims, actions and boundaries checked.\n")
+    for page in tutorial_pages:
+        write(root / f"research/topics/{page['page_id']}/research-package.md", f"# {page['page_id']} research\n\n## Research brief\n\nScoped learner question and decision.\n\n## Source pack\n\nOpened primary sources with limitations.\n\n## Evidence synthesis\n\nFacts, synthesis and unknowns.\n\n## Engineering blueprint\n\nMetrics, data, workflow and failure path.\n\n## Manuscript map\n\nMaps evidence into the learner page.\n\n## Editorial review\n\nPASS: protected fields, commands, limits, citations, uncertainty and scope preserved; no generic template prose.\n\n## Validation\n\nPASS: claims, actions and boundaries checked.\n")
     write(root / "research/evidence-matrix.md", "## Evidence\n## Competitor observations\n## Vendor claims\n## Inference\n## Unknown\n")
     write(root / "research/ai-capability-map.md", "\n".join(["use-ai-for-work", "test-ai-systems", "agentize-work", "build-ai-quality-system"]))
 
@@ -495,12 +494,26 @@ class ValidatorTests(unittest.TestCase):
         (self.root / "tutorial/index.html").unlink()
         self.assertTrue(any("missing tutorial file: tutorial/index.html" in error for error in validate(self.root)))
 
-    def test_planned_tutorial_page_cannot_claim_delivered_without_sections(self) -> None:
+    def test_public_tutorial_cannot_contain_incomplete_page(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"
         data = json.loads(path.read_text())
-        data["pages"][1]["delivery_status"] = "fixture-tested"
+        data["pages"][1]["delivery_status"] = "outlined"
         dump(path, data)
-        self.assertTrue(any("lacks required content sections" in error for error in validate(self.root)))
+        self.assertTrue(any("public tutorial contains incomplete pages" in error for error in validate(self.root)))
+
+    def test_public_release_must_promise_every_visible_page(self) -> None:
+        path = self.root / "tutorial/tutorial-site.json"
+        data = json.loads(path.read_text())
+        data["release_scope"]["promised_page_ids"] = data["release_scope"]["promised_page_ids"][:-1]
+        dump(path, data)
+        self.assertTrue(any("must equal the public page set" in error for error in validate(self.root)))
+
+    def test_public_tutorial_cannot_contain_empty_module(self) -> None:
+        path = self.root / "tutorial/tutorial-site.json"
+        data = json.loads(path.read_text())
+        data["modules"].append({"module_id":"empty-module","title":"Empty","learner_result":"none","order":99})
+        dump(path, data)
+        self.assertTrue(any("contains empty modules" in error for error in validate(self.root)))
 
     def test_first_tutorial_page_may_have_no_prerequisite(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"
@@ -520,6 +533,7 @@ class ValidatorTests(unittest.TestCase):
     def test_complete_catalog_cannot_contain_planned_pages(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"
         data = json.loads(path.read_text())
+        data["pages"][1]["delivery_status"] = "planned"
         data["release_scope"] = {
             "mode":"complete-catalog",
             "promised_page_ids":[page["page_id"] for page in data["pages"]],

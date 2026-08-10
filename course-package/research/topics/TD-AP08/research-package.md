@@ -23,6 +23,10 @@ Define good-task SLI, error budget and high-risk slices. Page on user symptoms/r
 
 TD-AP08 covers multidimensional SLO, alert levels, protections, Runbook and release/production feedback loop.
 
+## Editorial review
+
+PASS. Kept the good-task SLI denominator, error-budget logic, high-risk slices, rapid-burn paging and named degradation actions. Sample thresholds remain examples requiring local calibration. The page distinguishes user-symptom alerts from diagnostic metrics and preserves human approval for risky side effects and recovery.
+
 ## Validation
 
 PASS: SLO denominator, owner, action, rollback and evidence boundary are explicit; sample thresholds are not universal claims.

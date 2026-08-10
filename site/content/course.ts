@@ -962,7 +962,7 @@ const corePages: TutorialPage[] = [
   },
 ];
 
-export const pages: TutorialPage[] = [
+export const catalogPages: TutorialPage[] = [
   professionRealityPage,
   ...requirementsTestingLifecyclePages,
   ...professionalPages.filter((page) => page.id.startsWith("TD-S")),
@@ -981,6 +981,18 @@ export const pages: TutorialPage[] = [
   order: index + 1,
   status: page.id === "TD-F01" || page.id.startsWith("TD-AP") || page.id.startsWith("TD-P") ? page.status : "outlined",
 }));
+
+const incompleteStatuses = new Set<TutorialPage["status"]>(["planned", "outlined"]);
+
+// Public course data is a fail-closed projection of the internal curriculum catalog.
+// Incomplete topics remain in catalogPages for research planning but never reach learners.
+export const pages: TutorialPage[] = catalogPages
+  .filter((page) => !incompleteStatuses.has(page.status))
+  .map((page, index) => ({ ...page, order: index + 1 }));
+
+export const publicModules = modules.filter((module) =>
+  pages.some((page) => page.moduleId === module.id),
+);
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
   S01: { title: "Playwright Test Agents", url: "https://playwright.dev/docs/test-agents" },
@@ -1068,7 +1080,7 @@ export const firstUsablePath = [professionRealityPage.id, ...requirementsTesting
 
 export const releaseScope = {
   mode: "pilot-path" as const,
-  promisedPageIds: [professionRealityPage.id, ...requirementsTestingLifecyclePages.map((page) => page.id)],
+  promisedPageIds: pages.map((page) => page.id),
   catalogComplete: false,
   validatedAt: "2026-08-10",
 };

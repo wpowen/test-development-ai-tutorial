@@ -1,14 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { firstUsablePath, modules, pages, sourceNotes } from "../content/course";
+import { firstUsablePath, pages, publicModules, sourceNotes } from "../content/course";
 
-const statusLabel = {
-  planned: "待开发",
-  outlined: "仅提纲",
-  "desk-researched": "资料已审",
-  "fixture-tested": "实验已跑",
-};
+const statusLabel = (status: string) => status === "fixture-tested" ? "实验已跑" : "资料已审";
 
 function setHash(id: string) {
   window.location.hash = id;
@@ -64,8 +59,7 @@ export default function Home() {
     window.setTimeout(() => setCopied(null), 1200);
   };
 
-  const delivered = pages.filter((page) => page.status === "desk-researched" || page.status === "fixture-tested").length;
-  const currentModule = modules.find((item) => item.id === current.moduleId)!;
+  const currentModule = publicModules.find((item) => item.id === current.moduleId)!;
 
   return (
     <div className="app-shell">
@@ -85,15 +79,15 @@ export default function Home() {
         <div className="course-summary">
           <p className="eyebrow">当前可用版本</p>
           <h2>从传统测试到 AI 质量工程</h2>
-          <p>完整知识树保留；当前深度交付“需求文档到执行证据”八页实战。仅有主题但未完成逐题研究的页面继续显示为提纲。</p>
-          <div className="summary-stats"><span><b>{delivered}</b> 深度正文</span><span><b>{pages.length - delivered}</b> 提纲/待重写</span></div>
+          <p>这里只展示已经完成逐题研究、正文、实操和验证门禁的内容。内部研究路线图不会混入公开课程。</p>
+          <div className="summary-stats"><span><b>{pages.length}</b> 可学习页面</span><span><b>{publicModules.length}</b> 已交付模块</span></div>
         </div>
         <label className="search-box">
           <span>⌕</span>
           <input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="搜索 RAG、Agent、CI…" />
         </label>
         <nav className="course-nav" aria-label="课程目录">
-          {modules.map((group) => {
+          {publicModules.map((group) => {
             const groupPages = visiblePages.filter((page) => page.moduleId === group.id);
             if (!groupPages.length) return null;
             return <section key={group.id}>
@@ -106,7 +100,7 @@ export default function Home() {
                 onClick={() => setHash(page.id)}
               >
                 <span className="page-number">{String(page.order).padStart(2, "0")}</span>
-                <span className="page-name">{page.title}<small>{page.type} · {statusLabel[page.status]}</small></span>
+                <span className="page-name">{page.title}<small>{page.type} · {statusLabel(page.status)}</small></span>
                 <span className={`status-dot ${completed.includes(page.id) ? "done" : page.status}`} />
               </button>)}
             </section>;
@@ -118,23 +112,13 @@ export default function Home() {
         <div className="reader-inner">
           <div className="breadcrumb"><span>{currentModule.title}</span><span>›</span><span>{current.id}</span></div>
           <div className="lesson-meta">
-            <span className={`status-badge ${current.status}`}>{statusLabel[current.status]}</span>
+            <span className={`status-badge ${current.status}`}>{statusLabel(current.status)}</span>
             <span>{current.type}</span><span>{current.duration}</span><span>更新于 2026-08-10</span>
           </div>
           <h1>{current.title}</h1>
           <p className="lead">{current.summary}</p>
 
-          {current.status === "planned" || current.status === "outlined" ? (
-            <section className="planned-panel">
-              <p className="eyebrow">{current.status === "outlined" ? "仅保留知识位置" : "本页尚未开发"}</p>
-              <h2>本页尚未通过逐题调研与教材正文门禁</h2>
-              <p>{current.why}</p>
-              <div className="planned-grid"><div><b>学完应当能够</b><p>{current.outcomes[0]}</p></div><div><b>最终产物</b><p>{current.artifact}</p></div></div>
-              <p className="boundary"><b>当前证据边界：</b>{current.evidenceBoundary}</p>
-            </section>
-          ) : (
-            <>
-              <section className="why-card"><b>为什么测试开发需要这一页</b><p>{current.why}</p></section>
+          <section className="why-card"><b>为什么测试开发需要这一页</b><p>{current.why}</p></section>
 
               {current.prerequisites.length > 0 && <section className="prerequisites"><b>前置页面</b>{current.prerequisites.map((id) => {
                 const page = pages.find((item) => item.id === id);
@@ -166,13 +150,11 @@ export default function Home() {
                 <button className={completed.includes(current.id) ? "completed" : ""} onClick={toggleComplete}>{completed.includes(current.id) ? "✓ 已标记完成" : "标记本页完成"}</button>
               </section>
 
-              <section className="evidence-card">
-                <h2>证据与边界</h2>
-                <p>{current.evidenceBoundary}</p>
-                <div className="sources">{current.sourceIds.map((id) => sourceNotes[id] && <a key={id} href={sourceNotes[id].url} target="_blank" rel="noreferrer"><b>{id}</b>{sourceNotes[id].title}</a>)}</div>
-              </section>
-            </>
-          )}
+          <section className="evidence-card">
+            <h2>证据与边界</h2>
+            <p>{current.evidenceBoundary}</p>
+            <div className="sources">{current.sourceIds.map((id) => sourceNotes[id] && <a key={id} href={sourceNotes[id].url} target="_blank" rel="noreferrer"><b>{id}</b>{sourceNotes[id].title}</a>)}</div>
+          </section>
 
           <nav className="page-nav">
             {previous ? <button onClick={() => setHash(previous.id)}><small>← 上一页</small><b>{previous.title}</b></button> : <span />}

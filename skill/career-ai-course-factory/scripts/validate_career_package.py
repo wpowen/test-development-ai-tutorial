@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -1557,11 +1558,11 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
     require_fields(data, ["tutorial_id", "title", "audience", "updated_at", "default_page_id", "release_scope", "modules", "pages"], "tutorial site", errors)
     modules = data.get("modules")
     pages = data.get("pages")
-    if not isinstance(modules, list) or len(modules) < 4:
-        errors.append("tutorial site needs at least 4 modules")
+    if not isinstance(modules, list) or not modules:
+        errors.append("tutorial site needs at least one public module")
         modules = []
-    if not isinstance(pages, list) or len(pages) < 15:
-        errors.append("tutorial site needs at least 15 pages")
+    if not isinstance(pages, list) or not pages:
+        errors.append("tutorial site needs at least one public page")
         pages = []
 
     module_ids: set[str] = set()
@@ -1615,6 +1616,21 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
             }
             if not isinstance(sections, dict) or not required_sections.issubset(sections):
                 errors.append(f"tutorial delivered page {index} lacks required content sections")
+
+    incomplete_public = {
+        page_id for page_id, page in page_by_id.items()
+        if page.get("delivery_status") in {"planned", "outlined", "blocked"}
+    }
+    if incomplete_public:
+        errors.append(f"public tutorial contains incomplete pages: {', '.join(sorted(incomplete_public))}")
+
+    used_module_ids = {
+        str(page.get("module_id")) for page in pages
+        if isinstance(page, dict) and page.get("module_id")
+    }
+    empty_module_ids = module_ids - used_module_ids
+    if empty_module_ids:
+        errors.append(f"public tutorial contains empty modules: {', '.join(sorted(empty_module_ids))}")
 
     for index, page in enumerate(pages):
         if not isinstance(page, dict):
@@ -1670,6 +1686,8 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
         promised_set = {str(page_id) for page_id in promised_ids}
         if len(promised_set) != len(promised_ids):
             errors.append("tutorial release_scope promised_page_ids must be unique")
+        if promised_set != page_ids:
+            errors.append("tutorial release_scope promised_page_ids must equal the public page set")
         unknown_promised = promised_set - page_ids
         if unknown_promised:
             errors.append(f"tutorial release_scope references unknown pages: {', '.join(sorted(unknown_promised))}")
@@ -1695,6 +1713,10 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
                 if dependency_page and dependency_page.get("delivery_status") in {"planned", "outlined", "blocked"}:
                     errors.append(f"tutorial promised page {page_id} has incomplete prerequisite {dependency}")
         if mode == "complete-catalog":
+            if len(modules) < 4:
+                errors.append("complete-catalog tutorial needs at least 4 modules")
+            if len(pages) < 15:
+                errors.append("complete-catalog tutorial needs at least 15 pages")
             if release_scope.get("catalog_complete") is not True:
                 errors.append("complete-catalog release_scope must set catalog_complete=true")
             if promised_set != page_ids:
@@ -1705,8 +1727,11 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
             }
             if incomplete_catalog:
                 errors.append(f"complete-catalog contains incomplete pages: {', '.join(sorted(incomplete_catalog))}")
-        elif release_scope.get("catalog_complete") is not False:
-            errors.append("pilot-path release_scope must set catalog_complete=false")
+        else:
+            if len(pages) < 8:
+                errors.append("pilot-path public tutorial needs at least 8 delivered pages")
+            if release_scope.get("catalog_complete") is not False:
+                errors.append("pilot-path release_scope must set catalog_complete=false")
 
     html = html_path.read_text(encoding="utf-8")
     if len(html.strip()) < 8000:
@@ -1717,6 +1742,10 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
     lowered = html.lower()
     if "<script src=\"http" in lowered or "<link" in lowered and "href=\"http" in lowered:
         errors.append("tutorial/index.html must not depend on remote scripts or styles")
+    if re.search(r'"(?:status|delivery_status)"\s*:\s*"(?:planned|outlined|blocked)"', html):
+        errors.append("tutorial/index.html exposes incomplete public pages")
+    if any(marker in html for marker in ["仅保留知识位置", "本页尚未开发", "本页尚未通过逐题研究"]):
+        errors.append("tutorial/index.html exposes incomplete-page placeholders")
     for page_id in page_ids:
         if page_id not in html:
             errors.append(f"tutorial/index.html does not embed page: {page_id}")

@@ -22,6 +22,10 @@ Root object is `task_run`; children are queue, generation, tool, handoff and sta
 
 Site page TD-AP01 covers work unit, dynamic amplification, load models and the shared order-exception scenario.
 
+## Editorial review
+
+PASS. Preserved the distinction among admitted tasks, HTTP requests, model calls and tool calls; kept open-loop, closed-loop and coordinated-omission terminology tied to their engineering consequences. Removed any suggestion that one concurrency number proves Agent capacity. The page still requires a task-level business oracle and labels the target path distribution as unknown.
+
 ## Validation
 
 PASS: the page distinguishes all denominators, explains coordinated omission risk, includes a counterexample, and labels production capacity unknown.

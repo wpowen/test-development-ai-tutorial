@@ -23,6 +23,10 @@ Four layers: service golden signals; model TTFT/TTFO/ITL/E2E; trajectory task su
 
 TD-AP02 includes exact metric tables, formulas, valid interpretation, invalid interpretation and threshold method.
 
+## Editorial review
+
+PASS. Checked TTFT, TTFO, ITL, E2E, throughput, task success, retry amplification and cost denominators against the cited definitions. Kept goodput as a locally defined composite rather than a vendor standard. No universal threshold or unsupported benchmark number remains; every metric is connected to a workload slice, decision and owner action.
+
 ## Validation
 
 PASS: no universal threshold is invented; all critical metrics include semantics and decision use.

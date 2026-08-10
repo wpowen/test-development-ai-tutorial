@@ -19,23 +19,17 @@ test("server-renders the test-development AI tutorial shell", async () => {
   const html = await response.text();
   assert.match(html, /测试开发 × AI/);
   assert.match(html, /从传统测试到 AI 质量工程/);
-  assert.match(html, /测试开发遇到 AI 后/);
+  assert.match(html, /先重建测试开发这份工作，再判断 AI 应该改哪里/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 
-test("ships the requirements-to-evidence deep pilot without claiming full completion", async () => {
+test("ships only validated public pages without empty catalog placeholders", async () => {
   const response = await render();
   const html = await response.text();
-  for (const id of ["TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"]) {
-    assert.match(html, new RegExp(id));
-  }
-  for (const id of ["TD-P01", "TD-S03", "TD-A03", "TD-A06", "TD-C01"]) assert.match(html, new RegExp(id));
-  for (const id of ["TD-T05", "TD-T14", "TD-W03", "TD-T24", "TD-B06", "TD-T25"]) assert.match(html, new RegExp(id));
-  for (const id of ["TD-AP01", "TD-AP02", "TD-AP03", "TD-AP04", "TD-AP05", "TD-AP06", "TD-AP07", "TD-AP08"]) assert.match(html, new RegExp(id));
   for (const id of ["TD-F01", "TD-P01", "TD-P02", "TD-P03", "TD-P04", "TD-P05", "TD-P06", "TD-P07", "TD-P08"]) assert.match(html, new RegExp(id));
-  assert.doesNotMatch(html, /52 页完整课程/);
-  assert.match(html, /需求文档到执行证据.*八页实战/);
-  assert.match(html, /仅提纲/);
+  for (const id of ["TD-AP01", "TD-AP02", "TD-AP03", "TD-AP04", "TD-AP05", "TD-AP06", "TD-AP07", "TD-AP08"]) assert.match(html, new RegExp(id));
+  for (const id of ["TD-S03", "TD-A03", "TD-A06", "TD-C01", "TD-T12", "TD-B06"]) assert.doesNotMatch(html, new RegExp(`data-page-id="${id}"`));
+  assert.doesNotMatch(html, /完整课程|仅提纲|待开发|仅保留知识位置|本页尚未通过逐题研究/);
   assert.match(html, /实验已跑/);
   assert.match(html, /资料已审/);
 });

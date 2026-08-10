@@ -22,6 +22,10 @@ Map symptom combinations to hypotheses, confirming and disconfirming evidence, a
 
 TD-AP07 includes a symptom matrix, coordinated omission, retry budget and incident repair order.
 
+## Editorial review
+
+PASS. Preserved the separation of symptom, hypothesis, confirming evidence, disconfirming evidence and controlled rerun. The page does not equate correlation with causality or recommend deleting thresholds to make a test pass. Retry budgets still span all layers, and emergency feedback-loop controls precede deeper diagnosis.
+
 ## Validation
 
 PASS: it separates symptom/hypothesis/test, rejects threshold deletion and preserves quality/cost gates.

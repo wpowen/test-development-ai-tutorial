@@ -1,16 +1,17 @@
-import { firstUsablePath, pages, releaseScope, sourceNotes } from "../content/course.ts";
+import { catalogPages, firstUsablePath, pages, publicModules, releaseScope, sourceNotes } from "../content/course.ts";
 
 const errors: string[] = [];
 const byId = new Map(pages.map((page) => [page.id, page]));
 
-if (pages.length < 60) errors.push(`knowledge catalog must contain the original map plus the deep pilot, found ${pages.length}`);
+if (catalogPages.length < 60) errors.push(`internal knowledge catalog must preserve the full topic map, found ${catalogPages.length}`);
+if (pages.length < 8) errors.push(`public tutorial needs at least 8 delivered pages, found ${pages.length}`);
 if (byId.size !== pages.length) errors.push("page IDs must be unique");
 if (releaseScope.mode !== "pilot-path") errors.push("current release must declare pilot-path scope");
 if (releaseScope.catalogComplete) errors.push("pilot-path release cannot claim catalogComplete=true");
-if (releaseScope.promisedPageIds.length !== 9) errors.push("profession-reality plus requirements-to-evidence path must promise exactly 9 deep pages");
 if (new Set(releaseScope.promisedPageIds).size !== releaseScope.promisedPageIds.length) errors.push("promised IDs must be unique");
-if (firstUsablePath.join(",") !== releaseScope.promisedPageIds.join(",")) errors.push("learner path must equal promised deep-pilot pages");
+if (releaseScope.promisedPageIds.join(",") !== pages.map((page) => page.id).join(",")) errors.push("promised IDs must exactly equal public page IDs");
 if (firstUsablePath[0] !== "TD-F01") errors.push("deep path must start with profession reality reconstruction");
+if (publicModules.some((module) => !pages.some((page) => page.moduleId === module.id))) errors.push("public navigation contains an empty module");
 
 const bannedGenericPhrases = [
   "先把真实问题说清楚",
@@ -32,13 +33,10 @@ for (const id of firstUsablePath) {
 }
 
 for (const page of pages) {
+  if (["planned", "outlined"].includes(page.status)) errors.push(`${page.id} exposes an incomplete page on the public surface`);
   for (const dependency of page.prerequisites) {
     if (!byId.has(dependency)) errors.push(`${page.id} references unknown prerequisite ${dependency}`);
     if ((byId.get(dependency)?.order ?? 999) >= page.order) errors.push(`${page.id} prerequisite ${dependency} must appear earlier`);
-  }
-  if (page.status === "planned" || page.status === "outlined") {
-    if (releaseScope.promisedPageIds.includes(page.id)) errors.push(`${page.id} is promised but not delivered`);
-    continue;
   }
   const contentLength = JSON.stringify(page.blocks).length;
   if (contentLength < 750) errors.push(`${page.id} content is too thin (${contentLength} chars)`);
@@ -68,4 +66,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Tutorial content valid: ${releaseScope.promisedPageIds.length} deep pages delivered; ${pages.length} topics visible.`);
+console.log(`Tutorial content valid: ${pages.length} delivered pages public; ${catalogPages.length - pages.length} incomplete topics kept internal.`);

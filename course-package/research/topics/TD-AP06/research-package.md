@@ -22,6 +22,10 @@ The standard-library simulator uses open arrivals, bounded workers, deterministi
 
 TD-AP06 contains exact baseline, mutation and repair commands plus report reading order and troubleshooting boundary.
 
+## Editorial review
+
+PASS. Rechecked the published commands, exit-code sequence and report names against the deterministic fixture. Kept the meaningful red condition: retry amplification and queue damage can fail the gate even when final task success stays high. The manuscript states that this proves the simulator and gate behavior only, not production capacity.
+
 ## Validation
 
 PASS with fresh execution: baseline exit 0, retry-storm exit 1, repaired exit 0. Evidence is stored under the course package.

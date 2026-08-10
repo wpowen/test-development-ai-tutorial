@@ -22,6 +22,10 @@ Use task slices and joint distributions for token length, step count, tools, cac
 
 TD-AP03 teaches slicing, four variable families, five test shapes and a replay record.
 
+## Editorial review
+
+PASS. Retained the distinction between observed traffic, forecast traffic and synthetic fault cases. The replay schema keeps task type, token bucket, expected tools, allowed terminal states, budgets and fixture version. Wording does not imply that an average prompt or one traffic trace represents production; privacy and provenance controls remain explicit.
+
 ## Validation
 
 PASS: workload is not an average prompt; it includes allowed terminal states, budgets and evidence limitations.

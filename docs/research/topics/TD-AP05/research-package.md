@@ -22,6 +22,10 @@ Separate workload driver, SUT/fixtures, telemetry, and evaluator/gate. Correlate
 
 TD-AP05 maps tasks to tool candidates, blind spots, side-effect controls and the required Manifest.
 
+## Editorial review
+
+PASS. Tool names remain examples within four responsibilities—load generation, SUT/fixtures, telemetry and evaluation—not endorsements or an all-in-one claim. Preserved each tool's blind spot, the run/task/version correlation fields, sandbox and idempotency controls, and the warning that product documentation does not prove scale suitability.
+
 ## Validation
 
 PASS: selection is by responsibility and limitation, not a generic best-tool list.

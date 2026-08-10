@@ -209,7 +209,7 @@ For each page promised by the release scope, create `research/topics/<topic-id>/
 
 Use search and lower-cost agents to divide evidence lanes, not to mass-produce final pages. The integrating pass must reopen pivotal sources, resolve conflicting definitions, create the engineering design, and reject unsupported thresholds or generic prose.
 
-Do not generate several delivered pages by mapping a short topic record through one shared prose template. Shared metadata and viewer components are allowed; shared learner-facing paragraphs, workflow filler, or generic headings are a publication failure. A page remains `outlined` until its own research package and manuscript validation pass.
+Do not generate several delivered pages by mapping a short topic record through one shared prose template. Shared metadata and viewer components are allowed; shared learner-facing paragraphs, workflow filler, or generic headings are a publication failure. A page remains `outlined` until its own research package and manuscript validation pass. `planned`, `outlined`, and `blocked` are internal production states. They may exist in the topic system, coverage matrix, and roadmap, but never in a learner-facing navigation, HTML payload, public JSON, sitemap, or release archive.
 
 Before a page can leave `outlined`, its research package must include an editorial review that follows `references/technical-editorial-humanizer-gate.md`. The review freezes facts, commands, fields, numbers, citations, uncertainty, and scope before changing expression. It rejects marketing claims, chatbot guidance, repeated generic headings, vague attribution, ornamental lists, and conclusions that do not change a learner action or professional decision.
 
@@ -264,11 +264,13 @@ Derive the navigation from knowledge prerequisites:
 
 Use concept, guided-lab, diagnostic, reference, and project pages. Every delivered page shows the learner's location, outcome, prerequisite, professional relevance, plain explanation, smallest example, learner action, expected result, common error, completion check, previous/next page, evidence status, and updated date.
 
-The HTML is the primary learning interface. It must open directly without a server, expose a grouped left course tree, search, in-page navigation, previous/next progression, copyable commands, local completion progress, mobile navigation, and honest delivery-status labels. Planned pages stay visible but cannot look delivered.
+The HTML is the primary learning interface. It must open directly without a server, expose a grouped left course tree, search, in-page navigation, previous/next progression, copyable commands, local completion progress, mobile navigation, and honest evidence-status labels.
+
+Keep two explicit surfaces. The internal curriculum catalog is the complete research and production backlog. The public tutorial is a projection containing only pages whose independent research package, manuscript, editorial review, density gate, learner action, verification path, and publication checks passed. Remove empty modules after projection. The public `promised_page_ids` set must equal the full public page-ID set; a visible but unpromised page is a publication failure.
 
 A complete knowledge tree is not a distributable course. Before public or paid release, deliver at least one 8-page beginner-to-artifact path with no planned prerequisite. Each delivered page must pass the content-density and learner-action gates in the tutorial contract; the path must end in a profession-relevant artifact with preserved verification evidence. The default entry is the first beginner page, not the most impressive lab.
 
-Declare the release scope before building a public artifact. Use `pilot-path` when only a named subset is promised, or `complete-catalog` when every catalog page is promised. Preserve `promised_page_ids`, `catalog_complete`, and the validation timestamp in the canonical content model and release manifest. Under `complete-catalog`, any planned, outlined, blocked, navigation-only, or density-gate-failing page blocks build and publication. Content completeness never upgrades its evidence status: a fully written `desk-researched` page remains desk-researched until stronger proof exists.
+Declare the release scope before building a public artifact. Use `pilot-path` when only a validated subset of the internal catalog is public, or `complete-catalog` when every internal catalog page is validated and public. Preserve `promised_page_ids`, `catalog_complete`, and the validation timestamp in the canonical content model and release manifest. In both modes, any planned, outlined, blocked, navigation-only, empty-module, or density-gate-failing record is forbidden from public artifacts. Under `complete-catalog`, the internal and public page sets must also match. Content completeness never upgrades its evidence status: a fully written `desk-researched` page remains desk-researched until stronger proof exists.
 
 Treat GitHub and OpenAI Sites as two publication targets generated from one validated content source. GitHub carries versioned source, sanitized labs, reusable materials, issues, and releases. Sites carries the learner-facing experience and should remain private during review. Never maintain independent HTML, JSON, and course prose as competing truth. Do not make a public deployment until the public-safe subset and access level are explicitly confirmed.
 
@@ -297,7 +299,8 @@ Then run a fresh-agent forward test when available:
 - check that a GitHub link without pinned run evidence cannot support a runnable-lab claim;
 - check that an attractive script without learner action, failure diagnosis, transfer, and material provenance fails;
 - check that a complete package without a navigable tutorial viewer fails;
-- check that planned navigation items cannot masquerade as delivered pages;
+- check that public navigation, HTML, JSON, sitemaps, and archives reject every planned, outlined, or blocked page and every empty module;
+- check that public page IDs equal `promised_page_ids`, while unfinished catalog entries remain only in internal research artifacts;
 - check that page order follows prerequisites rather than source publication order;
 - check that the professional baseline, AI foundation, and benchmark layers cannot be omitted or moved after dependent courses;
 - check that the six research systems, coverage matrix, and all six independent expert reviews cannot be omitted;
@@ -350,7 +353,7 @@ Stop and report the gap when any applies:
 - the lesson has no learner action, failure diagnosis, transfer task, or material provenance;
 - the package has no tutorial knowledge tree or self-contained tutorial viewer;
 - the package is described as distributable but has no complete 8-page beginner-to-artifact path;
-- the release scope is absent, its promised page IDs do not match the learner-facing artifacts, or a complete-catalog release contains an incomplete page;
+- the release scope is absent, its promised page IDs do not exactly equal the learner-facing page set, or any public artifact contains a planned, outlined, blocked, navigation-only, empty-module, or density-gate-failing record;
 - completeness language exceeds the validated release scope or evidence status;
 - publication targets are built from independently edited course copies or expose private research and production data;
 - the test cannot be shown to fail on a meaningful regression;
