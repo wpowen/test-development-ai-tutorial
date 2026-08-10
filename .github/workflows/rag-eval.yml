@@ -1,8 +1,39 @@
 name: rag-eval-gate
 on:
+  push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 jobs:
+  course-factory:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Compile factory scripts
+        run: python3 -m py_compile skill/career-ai-course-factory/scripts/*.py
+      - name: Run fail-closed factory regressions
+        run: python3 skill/career-ai-course-factory/scripts/test_validator.py
+
+  tutorial-site:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci
+      - name: Validate content and build tutorial
+        run: npm test
+
   offline-eval:
     runs-on: ubuntu-latest
     defaults:
@@ -10,7 +41,7 @@ jobs:
         working-directory: courses/td-ai-006-rag-eval-ci/lab
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v7
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Adversarial evaluator tests
