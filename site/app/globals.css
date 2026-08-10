@@ -58,6 +58,7 @@ a { color: inherit; }
 .status-dot { width: 7px; height: 7px; margin-top: 5px; border: 1px solid #aeb7b2; border-radius: 50%; }
 .status-dot.fixture-tested { border: 0; background: var(--forest); }
 .status-dot.desk-researched { border: 0; background: #6b8fd8; }
+.status-dot.outlined { border-color: #d29b44; background: #fff3db; }
 .status-dot.done { border: 0; background: #8fba26; box-shadow: 0 0 0 3px rgba(143,186,38,.15); }
 
 .reader { margin-left: 340px; margin-right: 230px; padding-top: 72px; min-height: 100vh; }
@@ -68,6 +69,7 @@ a { color: inherit; }
 .status-badge { padding: 5px 8px; border-radius: 6px; color: #45504b; background: #edf0ed; font-weight: 750; }
 .status-badge.fixture-tested { background: #dfeee8; color: var(--forest); }
 .status-badge.desk-researched { background: var(--blue); color: #355c9b; }
+.status-badge.outlined { background: #fff3db; color: #835915; }
 .reader h1 { margin: 20px 0 14px; max-width: 760px; font-size: clamp(34px, 4vw, 54px); line-height: 1.08; letter-spacing: -.045em; }
 .lead { margin: 0; max-width: 710px; color: #4f5a55; font-size: 18px; line-height: 1.8; }
 
@@ -93,6 +95,13 @@ a { color: inherit; }
 .section-body ul { margin: 17px 0; padding: 0; list-style: none; }
 .section-body li { position: relative; margin: 9px 0; padding-left: 23px; color: #34403a; font-size: 14px; line-height: 1.7; }
 .section-body li::before { content: ""; position: absolute; left: 2px; top: 10px; width: 7px; height: 7px; border-radius: 2px; background: var(--forest); transform: rotate(45deg); }
+.table-wrap { margin: 20px 0 24px; overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+.table-wrap table { width: 100%; min-width: 620px; border-collapse: collapse; font-size: 13px; line-height: 1.55; }
+.table-wrap th, .table-wrap td { padding: 11px 13px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.table-wrap th { background: #edf3ef; color: var(--forest-dark); font-weight: 800; }
+.table-wrap tr:last-child td { border-bottom: 0; }
+.table-wrap th:last-child, .table-wrap td:last-child { border-right: 0; }
+.table-wrap > small { display: block; padding: 9px 13px; color: var(--muted); background: #fafbf9; }
 .code-box { position: relative; margin: 20px 0; border: 1px solid #263b34; border-radius: 10px; overflow: hidden; background: #12201b; }
 .code-box button { position: absolute; top: 9px; right: 9px; padding: 5px 8px; border: 1px solid #42574f; border-radius: 5px; background: #1e3029; color: #cbd9d3; font-size: 10px; cursor: pointer; }
 .code-box pre { margin: 0; padding: 24px 18px; overflow-x: auto; color: #e0f0e9; font: 12px/1.75 ui-monospace, SFMono-Regular, Menlo, monospace; white-space: pre-wrap; }

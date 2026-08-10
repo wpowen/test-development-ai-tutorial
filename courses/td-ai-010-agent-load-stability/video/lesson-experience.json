@@ -1,0 +1,23 @@
+{
+  "lesson_id": "td-ai-010-agent-load-stability-l01",
+  "target_learner": "会做 API 压测但第一次系统测试 Agent 的测试开发工程师",
+  "level": "L3-engineering-system",
+  "estimated_minutes": 18,
+  "job_result": "能运行三阶段 Agent 压测并从 Trace 解释重试风暴",
+  "artifact": "metric dictionary + traces + gate reports + runbook",
+  "stages": [
+    {"stage_id":"cold-open-failure","instructor_action":"展示入口返回 200 但退款任务在后台超时并产生多次工具调用的反差","learner_action":"在看到内部指标前写下是否可发布以及判断仍缺少的三类证据","expected_observation":"入口请求成功只能证明任务被受理，不能证明业务终态正确或及时完成","debrief":"用户任务才是业务成功率的分母，HTTP 请求只是其中一个观察层","artifact_or_assessment":"一份包含决定、依据与未知项的初始发布判断"},
+    {"stage_id":"stakes-and-promise","instructor_action":"展示工具失败后重试造成排队、尾延迟和单位成功成本同步放大的曲线","learner_action":"写出质量、时延、成本和副作用四项联合发布条件","expected_observation":"只优化吞吐会让错误、高成本或重复副作用被绿色曲线掩盖","debrief":"门禁必须联合任务正确性、尾延迟、调用放大和成本预算","artifact_or_assessment":"四项可检查的任务级发布条件与对应分母"},
+    {"stage_id":"before-after","instructor_action":"对比只有 QPS 与平均延迟的旧报告和包含任务 Trace、终态与成本的新报告","learner_action":"指出旧报告无法回答的至少四个专业问题并映射到新字段","expected_observation":"新报告能够从任务失败下钻到队列、模型、工具、重试和最终终态","debrief":"总曲线只描述症状，关联 Trace 才能形成可审计证据链","artifact_or_assessment":"旧报告缺口与新证据字段的一一映射表"},
+    {"stage_id":"plain-mental-model","instructor_action":"解释 Task 根 Trace、模型与工具子 Span、动态扇出和 open-loop 到达模型","learner_action":"画出模型、工具、队列与状态操作的父子 Span，并标注分母","expected_observation":"同样数量用户任务会因模型决策、失败和重试产生不同内部调用量","debrief":"记录任务、调用与 attempt 的独立分母，并锁定所有影响比较的版本","artifact_or_assessment":"带分母、版本和关键路径的 Agent Trace 结构图"},
+    {"stage_id":"guided-demo","instructor_action":"运行 baseline 命令并逐项打开 summary.json 与一条完整 traces.jsonl 记录","learner_action":"检查 workload、seed、任务成功率、p95、放大系数和门禁结果","expected_observation":"baseline 退出码为 0、gate_pass 为 true，且所有门禁字段都可追溯","debrief":"先固定可回放的健康基线，后续故障与修复才具有比较意义","artifact_or_assessment":"baseline summary、逐任务 Trace 和检查记录"},
+    {"stage_id":"failure-diagnosis","instructor_action":"运行 retry-storm 场景并选择一条排队最长或 attempt 最多的任务 Trace","learner_action":"沿 Trace 定位排队、工具失败、重试和 E2E 的因果顺序","expected_observation":"命令以 exit 1 结束，queue p95、E2E p95 或 retry amplification 明确超限","debrief":"故障版本稳定变红是门禁具有检测力的证据，不是实验执行失败","artifact_or_assessment":"mutation summary、慢 Trace 与三段式诊断记录"},
+    {"stage_id":"learner-practice","instructor_action":"提供限制重试、增加 worker 与退避预算的修复配置，但不解释预期结论","learner_action":"先预测哪些指标恢复，再运行 repaired 并逐项比较三份报告","expected_observation":"repaired 退出码为 0，排队、尾延迟和重试放大回到门禁范围","debrief":"修复反馈环和容量保护，而不是删除断言或放宽阈值制造假绿","artifact_or_assessment":"repair evidence 与 baseline/mutation/repair 差异表"},
+    {"stage_id":"transfer-challenge","instructor_action":"把订单退款 Agent 改为具有状态检查点与人工升级的工单处置 Agent","learner_action":"重新设计任务切片、工具链、允许终态、故障注入和业务预算","expected_observation":"Task 分母、Trace 与红绿方法保持不变，但 workload 和阈值必须重建","debrief":"可迁移的是测量与验证方法，不是教学配置中的固定数值","artifact_or_assessment":"新 Agent 的 workload、Trace 和门禁提案","source_context":"订单退款 Agent 的离线性能与稳定性夹具","target_context":"把同一指标、Trace、SOP 与 SLO 迁移到另一个有状态工具 Agent","invariant":"Task 分母、Trace、红绿证据和人工权限边界","must_change":["任务切片","工具链与允许终态","业务 SLO 和成本预算"],"success_criterion":"新场景正常版本通过、故障版本稳定失败，并能从 Trace 定位具体步骤"},
+    {"stage_id":"artifact-handoff","instructor_action":"展示完整课程包、三阶段报告、研究包、快速开始和生产验证清单","learner_action":"按清单复跑实验并写出接入真实项目之前仍缺少的证据","expected_observation":"学习者能够明确区分离线 fixture 可运行与生产容量、质量和稳定性证明","debrief":"可运行实验是证据链起点，不能被包装成未经现场验证的生产结论","artifact_or_assessment":"经复跑的证据包以及真实项目待验证差距列表"}
+  ],
+  "interaction_prompts": ["入口 200 但任务超时，你会放行吗？", "哪一个指标最先暴露重试反馈环？", "迁移到工单 Agent 后哪些字段必须修改？"],
+  "recovery_path": "重新运行 baseline 配置；若环境异常，检查 Python 版本和输出目录权限并保留未运行标记",
+  "evidence_status": "fixture-tested",
+  "limitations": "离线教学夹具已验证；未测真实模型、企业流量或真实学习者效果"
+}

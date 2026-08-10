@@ -1645,6 +1645,14 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
         for page_id in promised_set:
             if page_id not in page_by_id:
                 continue
+            package_path = root / "research" / "topics" / page_id / "research-package.md"
+            if not package_path.is_file():
+                errors.append(f"tutorial promised page {page_id} missing per-topic research package")
+            else:
+                package_text = package_path.read_text(encoding="utf-8")
+                for marker in ["## Research brief", "## Source pack", "## Evidence synthesis", "## Engineering blueprint", "## Manuscript map", "## Validation"]:
+                    if marker not in package_text:
+                        errors.append(f"tutorial promised page {page_id} research package missing marker: {marker}")
             for dependency in page_by_id[page_id].get("prerequisite_ids", []):
                 dependency_page = page_by_id.get(str(dependency))
                 if dependency_page and dependency_page.get("delivery_status") in {"planned", "outlined", "blocked"}:

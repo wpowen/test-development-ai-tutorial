@@ -40,10 +40,10 @@
 
 用 AI 提效，但必须证明生成结果有检测力
 
-- TD-T05 · 从 PRD 和代码 Diff 提取风险 · desk-researched
-- TD-T06 · AI 生成测试，但证明测试真的会失败 · desk-researched
-- TD-T07 · 生成边界与 Fuzz 数据 · desk-researched
-- TD-T08 · AI 做失败聚类，但必须保留证据链 · desk-researched
+- TD-T05 · 从 PRD 和代码 Diff 提取风险 · outlined
+- TD-T06 · AI 生成测试，但证明测试真的会失败 · outlined
+- TD-T07 · 生成边界与 Fuzz 数据 · outlined
+- TD-T08 · AI 做失败聚类，但必须保留证据链 · outlined
 
 ### AI 接口、性能与可靠性
 
@@ -64,48 +64,48 @@
 - TD-T10 · RAG 的检索质量 · fixture-tested
 - TD-T11 · 回答、引用、忠实性和拒答 · desk-researched
 - TD-T12 · 让 RAG 的错误退款承诺在上线前变红 · fixture-tested
-- TD-T13 · Prompt、模型和知识库版本 A/B · desk-researched
-- TD-T14 · LLM-as-judge 的校准和反例 · desk-researched
+- TD-T13 · Prompt、模型和知识库版本 A/B · outlined
+- TD-T14 · LLM-as-judge 的校准和反例 · outlined
 
 ### 测试 Agent、Worker 与 Workflow
 
 检查轨迹、状态、工具、权限、Handoff、副作用和自愈风险
 
-- TD-T15 · 最终结果、单步动作和完整轨迹 · desk-researched
-- TD-T16 · 工具选择、参数和权限 · desk-researched
-- TD-T17 · Prompt injection、数据泄露和 Excessive Agency · desk-researched
-- TD-T18 · Browser Agent 和 Playwright Test Agents · desk-researched
-- TD-T19 · 自愈测试为什么会误修绿 · desk-researched
-- TD-W01 · 先区分 Agent、Worker 和固定 Workflow · desk-researched
-- TD-W02 · 测试状态、循环、重试、Handoff 和终止条件 · desk-researched
-- TD-W03 · 单 Agent 与多 Agent 的公平对照 · desk-researched
+- TD-T15 · 最终结果、单步动作和完整轨迹 · outlined
+- TD-T16 · 工具选择、参数和权限 · outlined
+- TD-T17 · Prompt injection、数据泄露和 Excessive Agency · outlined
+- TD-T18 · Browser Agent 和 Playwright Test Agents · outlined
+- TD-T19 · 自愈测试为什么会误修绿 · outlined
+- TD-W01 · 先区分 Agent、Worker 和固定 Workflow · outlined
+- TD-W02 · 测试状态、循环、重试、Handoff 和终止条件 · outlined
+- TD-W03 · 单 Agent 与多 Agent 的公平对照 · outlined
 
 ### 建设 AI 质量系统
 
 把评测接入 CI、生产反馈、版本与回滚体系
 
-- TD-T20 · 把评测接入 CI · desk-researched
-- TD-T21 · 评测集、Prompt、模型、知识库和工具版本 · desk-researched
-- TD-T22 · Trace、生产失败和回归集闭环 · desk-researched
-- TD-T23 · 质量、延迟和成本联合门禁 · desk-researched
-- TD-T24 · 漂移、告警、Waiver 和回滚 · desk-researched
+- TD-T20 · 把评测接入 CI · outlined
+- TD-T21 · 评测集、Prompt、模型、知识库和工具版本 · outlined
+- TD-T22 · Trace、生产失败和回归集闭环 · outlined
+- TD-T23 · 质量、延迟和成本联合门禁 · outlined
+- TD-T24 · 漂移、告警、Waiver 和回滚 · outlined
 
 ### Benchmark 与分数工程
 
 弄清数据、协议、Scorer、聚合、污染和榜单分数如何产生
 
-- TD-B01 · Benchmark 不是一张榜单：先拆评分流水线 · desk-researched
-- TD-B02 · Benchmark 数据怎么来：采样、标注、Split 与 Holdout · desk-researched
-- TD-B03 · Accuracy、Pass@k、Resolved Rate 和 Judge Score 怎么算 · desk-researched
-- TD-B04 · Prompt、Harness、工具权限为什么会改变分数 · desk-researched
-- TD-B05 · 不确定性、污染、隐藏测试和版本可比性 · desk-researched
-- TD-B06 · 从 SWE-bench、AgentBench、HELM 到企业内部 Benchmark · desk-researched
+- TD-B01 · Benchmark 不是一张榜单：先拆评分流水线 · outlined
+- TD-B02 · Benchmark 数据怎么来：采样、标注、Split 与 Holdout · outlined
+- TD-B03 · Accuracy、Pass@k、Resolved Rate 和 Judge Score 怎么算 · outlined
+- TD-B04 · Prompt、Harness、工具权限为什么会改变分数 · outlined
+- TD-B05 · 不确定性、污染、隐藏测试和版本可比性 · outlined
+- TD-B06 · 从 SWE-bench、AgentBench、HELM 到企业内部 Benchmark · outlined
 
 ### 专业专题与 Capstone
 
 按岗位路线组合工件，交付端到端 AI Quality Engineering 系统
 
-- TD-T25 · Capstone：完成一个 AI Quality Engineering 仓库 · desk-researched
+- TD-T25 · Capstone：完成一个 AI Quality Engineering 仓库 · outlined
 
 ### 职业演进
 
@@ -113,10 +113,24 @@
 
 - TD-C01 · 测试岗位不会只剩点点点：能力如何迁移 · desk-researched
 
+### Agent 性能与稳定性工程
+
+从工作负载、指标、Trace、容量压测到生产 SLO、告警与故障处置
+
+- TD-AP01 · 为什么 Agent 压测不是把并发数调高 · desk-researched
+- TD-AP02 · 建立 Agent 性能指标树：系统、模型、轨迹、成本 · desk-researched
+- TD-AP03 · 设计工作负载：任务、上下文、工具与故障分布 · desk-researched
+- TD-AP04 · 设计 Trace 与数据模型：让一次慢任务可下钻 · desk-researched
+- TD-AP05 · 搭建压测架构：发压、夹具、观测、判定四层分离 · desk-researched
+- TD-AP06 · 执行完整压测 SOP：基线、变坏、修复、容量 · fixture-tested
+- TD-AP07 · 诊断压测失败：从症状反推瓶颈与反馈环 · desk-researched
+- TD-AP08 · 把压测接入生产：SLO、告警、降级与 Runbook · desk-researched
+
 ## 页面状态
 
-- 发布范围：`complete-catalog`。
-- 已交付：52/52 页。
+- 发布范围：`pilot-path`。
+- 深度正文：34/60 页。
+- `outlined` 表示知识位置已确定，但逐题研究和教材正文尚未通过门禁。
 - `desk-researched` 表示正文和来源已整理，但没有运行目标系统。
 - `fixture-tested` 表示对应离线夹具已经运行，不代表生产效果。
 - 内容完成度与证据等级分开记录，不因正文完整而升级证据状态。

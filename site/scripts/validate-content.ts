@@ -3,15 +3,14 @@ import { firstUsablePath, pages, releaseScope, sourceNotes } from "../content/co
 const errors: string[] = [];
 const byId = new Map(pages.map((page) => [page.id, page]));
 
-if (pages.length !== 52) errors.push(`complete catalog must contain exactly 52 course pages, found ${pages.length}`);
+if (pages.length < 60) errors.push(`knowledge catalog must contain the original map plus the deep pilot, found ${pages.length}`);
 if (byId.size !== pages.length) errors.push("page IDs must be unique");
-if (releaseScope.mode !== "complete-catalog") errors.push("public full release must declare complete-catalog scope");
-if (!releaseScope.catalogComplete) errors.push("complete-catalog release must set catalogComplete=true");
-if (releaseScope.promisedPageIds.length !== pages.length) errors.push("complete-catalog promised IDs must equal the full catalog");
-if (new Set(releaseScope.promisedPageIds).size !== pages.length) errors.push("complete-catalog promised IDs must be unique");
-for (const page of pages) if (!releaseScope.promisedPageIds.includes(page.id)) errors.push(`complete-catalog scope does not promise ${page.id}`);
-if (firstUsablePath.length !== pages.length) errors.push("complete-catalog learner path must contain every page");
-if (firstUsablePath[0] !== "TD-F01") errors.push("first usable path must start at the professional baseline entry TD-F01");
+if (releaseScope.mode !== "pilot-path") errors.push("current release must declare pilot-path scope");
+if (releaseScope.catalogComplete) errors.push("pilot-path release cannot claim catalogComplete=true");
+if (releaseScope.promisedPageIds.length !== 8) errors.push("Agent performance pilot must promise exactly 8 deep pages");
+if (new Set(releaseScope.promisedPageIds).size !== releaseScope.promisedPageIds.length) errors.push("promised IDs must be unique");
+if (firstUsablePath.join(",") !== releaseScope.promisedPageIds.join(",")) errors.push("learner path must equal promised deep-pilot pages");
+if (firstUsablePath[0] !== "TD-AP01") errors.push("deep pilot must start at TD-AP01");
 
 for (const id of firstUsablePath) {
   const page = byId.get(id);
@@ -19,7 +18,7 @@ for (const id of firstUsablePath) {
     errors.push(`usable path references unknown page ${id}`);
     continue;
   }
-  if (page.status === "planned") errors.push(`usable path page ${id} is still planned`);
+  if (["planned", "outlined"].includes(page.status)) errors.push(`usable path page ${id} is not delivered`);
 }
 
 for (const page of pages) {
@@ -27,9 +26,8 @@ for (const page of pages) {
     if (!byId.has(dependency)) errors.push(`${page.id} references unknown prerequisite ${dependency}`);
     if ((byId.get(dependency)?.order ?? 999) >= page.order) errors.push(`${page.id} prerequisite ${dependency} must appear earlier`);
   }
-  if (page.status === "planned") {
-    errors.push(`${page.id} is planned inside a complete-catalog release`);
-    if (page.blocks.length || page.practice.length || page.completion.length) errors.push(`${page.id} planned page must not masquerade as delivered content`);
+  if (page.status === "planned" || page.status === "outlined") {
+    if (releaseScope.promisedPageIds.includes(page.id)) errors.push(`${page.id} is promised but not delivered`);
     continue;
   }
   const contentLength = JSON.stringify(page.blocks).length;
@@ -56,4 +54,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Tutorial content valid: ${pages.length}/${pages.length} pages delivered under complete-catalog scope.`);
+console.log(`Tutorial content valid: ${releaseScope.promisedPageIds.length} deep pages delivered; ${pages.length} topics visible.`);

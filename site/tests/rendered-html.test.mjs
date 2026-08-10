@@ -23,7 +23,7 @@ test("server-renders the test-development AI tutorial shell", async () => {
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
 });
 
-test("ships the complete 52-page professional curriculum", async () => {
+test("ships the Agent performance deep pilot without claiming full completion", async () => {
   const response = await render();
   const html = await response.text();
   for (const id of ["TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"]) {
@@ -31,9 +31,10 @@ test("ships the complete 52-page professional curriculum", async () => {
   }
   for (const id of ["TD-P01", "TD-S03", "TD-A03", "TD-A06", "TD-C01"]) assert.match(html, new RegExp(id));
   for (const id of ["TD-T05", "TD-T14", "TD-W03", "TD-T24", "TD-B06", "TD-T25"]) assert.match(html, new RegExp(id));
-  assert.match(html, /52 页完整课程/);
-  assert.match(html, /<b>52<\/b> 已交付/);
-  assert.match(html, /<b>0<\/b> 待开发/);
+  for (const id of ["TD-AP01", "TD-AP02", "TD-AP03", "TD-AP04", "TD-AP05", "TD-AP06", "TD-AP07", "TD-AP08"]) assert.match(html, new RegExp(id));
+  assert.doesNotMatch(html, /52 页完整课程/);
+  assert.match(html, /深度样章/);
+  assert.match(html, /仅提纲/);
   assert.match(html, /实验已跑/);
   assert.match(html, /资料已审/);
 });

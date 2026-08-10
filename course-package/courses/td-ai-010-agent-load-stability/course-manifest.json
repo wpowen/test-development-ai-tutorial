@@ -1,0 +1,32 @@
+{
+  "course_id": "td-ai-010-agent-load-stability",
+  "title": "AI Agent 性能与稳定性工程",
+  "scenario_ids": ["TD-S03"],
+  "ai_lane": "test-ai-systems",
+  "ai_centrality_score": 5,
+  "professional_value_score": 5,
+  "system_under_test": "订单查询与退款工具 Agent 的任务、模型、工具、队列和状态链路",
+  "ai_roles": ["system-under-test", "trace-analyzer"],
+  "learner_artifact": ["metric dictionary", "workload model", "trace schema", "load-test report", "SLO and runbook"],
+  "tool_adapters": ["offline-agent-fixture", "OpenTelemetry-compatible-schema"],
+  "work_domain_ids": ["TD-D03"],
+  "primary_artifact_ids": ["agent-load-stability-gate"],
+  "decision_owner": "客服 Agent 产品与质量负责人",
+  "allowed_ai_authority": "在沙箱执行受限工具，不得接触真实资金",
+  "prerequisite_course_ids": ["TD-AI-09"],
+  "transfer_target": "把同一指标、Trace、SOP 与 SLO 迁移到另一个有状态工具 Agent",
+  "lesson_flow": ["demo", "guided-practice", "failure-injection", "repair", "transfer"],
+  "default_path_requires_credentials": false,
+  "baseline_comparison": true,
+  "failure_injection": true,
+  "execution_proof": "evidence/execution-evidence.json",
+  "validation_workdir": ".",
+  "validation_steps": [
+    {"name":"baseline","command":["python3","lab/agent_load_lab.py","--config","lab/configs/baseline.json","--output","evidence/baseline"],"expected_exit_code":0},
+    {"name":"retry storm must fail","command":["python3","lab/agent_load_lab.py","--config","lab/configs/retry-storm.json","--output","evidence/retry-storm"],"expected_exit_code":1},
+    {"name":"repaired","command":["python3","lab/agent_load_lab.py","--config","lab/configs/repaired.json","--output","evidence/repaired"],"expected_exit_code":0}
+  ],
+  "status": "fixture-tested",
+  "evidence_ids": ["S47", "S48", "S51", "S52", "S57"],
+  "topic_page_ids": ["TD-AP01", "TD-AP02", "TD-AP03", "TD-AP04", "TD-AP05", "TD-AP06", "TD-AP07", "TD-AP08"]
+}

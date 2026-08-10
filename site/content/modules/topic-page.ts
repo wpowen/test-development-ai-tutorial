@@ -27,7 +27,7 @@ export const buildTopicPage = (spec: TopicSpec): TutorialPage => ({
   order: 0,
   title: spec.title,
   type: spec.type,
-  status: "desk-researched",
+  status: "outlined",
   duration: spec.duration,
   summary: spec.summary,
   why: spec.why,

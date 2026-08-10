@@ -3,64 +3,20 @@
   "title": "测试开发 × AI 完整教程",
   "audience": "希望从传统测试开发系统进阶到 AI 质量工程的学习者",
   "updated_at": "2026-08-10",
-  "default_page_id": "TD-F01",
+  "default_page_id": "TD-AP01",
   "release_scope": {
-    "mode": "complete-catalog",
+    "mode": "pilot-path",
     "promised_page_ids": [
-      "TD-F01",
-      "TD-P01",
-      "TD-P02",
-      "TD-P03",
-      "TD-S01",
-      "TD-S02",
-      "TD-S03",
-      "TD-S04",
-      "TD-F02",
-      "TD-F03",
-      "TD-F04",
-      "TD-A01",
-      "TD-A02",
-      "TD-A03",
-      "TD-A04",
-      "TD-A05",
-      "TD-A06",
-      "TD-T01",
-      "TD-T02",
-      "TD-T03",
-      "TD-T04",
-      "TD-T05",
-      "TD-T06",
-      "TD-T07",
-      "TD-T08",
-      "TD-T09",
-      "TD-T10",
-      "TD-T11",
-      "TD-T12",
-      "TD-T13",
-      "TD-T14",
-      "TD-T15",
-      "TD-T16",
-      "TD-T17",
-      "TD-T18",
-      "TD-T19",
-      "TD-W01",
-      "TD-W02",
-      "TD-W03",
-      "TD-T20",
-      "TD-T21",
-      "TD-T22",
-      "TD-T23",
-      "TD-T24",
-      "TD-B01",
-      "TD-B02",
-      "TD-B03",
-      "TD-B04",
-      "TD-B05",
-      "TD-B06",
-      "TD-T25",
-      "TD-C01"
+      "TD-AP01",
+      "TD-AP02",
+      "TD-AP03",
+      "TD-AP04",
+      "TD-AP05",
+      "TD-AP06",
+      "TD-AP07",
+      "TD-AP08"
     ],
-    "catalog_complete": true,
+    "catalog_complete": false,
     "validated_at": "2026-08-10"
   },
   "modules": [
@@ -129,6 +85,12 @@
       "title": "职业演进",
       "learner_result": "从测试执行转向质量信号、评测工程、平台工程与生产可靠性",
       "order": 11
+    },
+    {
+      "module_id": "TD-M11",
+      "title": "Agent 性能与稳定性工程",
+      "learner_result": "从工作负载、指标、Trace、容量压测到生产 SLO、告警与故障处置",
+      "order": 12
     }
   ],
   "pages": [
@@ -1063,8 +1025,8 @@
         "TD-M02",
         "从 PRD 和代码 Diff 提取风险"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S14",
@@ -1106,8 +1068,8 @@
         "TD-M02",
         "AI 生成测试，但证明测试真的会失败"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S01",
@@ -1149,8 +1111,8 @@
         "TD-M02",
         "生成边界与 Fuzz 数据"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S23",
@@ -1192,8 +1154,8 @@
         "TD-M02",
         "AI 做失败聚类，但必须保留证据链"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S14",
@@ -1412,8 +1374,8 @@
         "TD-M03",
         "Prompt、模型和知识库版本 A/B"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S03",
@@ -1455,8 +1417,8 @@
         "TD-M03",
         "LLM-as-judge 的校准和反例"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S04",
@@ -1499,8 +1461,8 @@
         "TD-M04",
         "最终结果、单步动作和完整轨迹"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S10",
@@ -1542,8 +1504,8 @@
         "TD-M04",
         "工具选择、参数和权限"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S06",
@@ -1585,8 +1547,8 @@
         "TD-M04",
         "Prompt injection、数据泄露和 Excessive Agency"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S07",
@@ -1629,8 +1591,8 @@
         "TD-M04",
         "Browser Agent 和 Playwright Test Agents"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S01",
@@ -1672,8 +1634,8 @@
         "TD-M04",
         "自愈测试为什么会误修绿"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S01",
@@ -1715,8 +1677,8 @@
         "TD-M04",
         "先区分 Agent、Worker 和固定 Workflow"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S10",
@@ -1759,8 +1721,8 @@
         "TD-M04",
         "测试状态、循环、重试、Handoff 和终止条件"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S06",
@@ -1802,8 +1764,8 @@
         "TD-M04",
         "单 Agent 与多 Agent 的公平对照"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S10",
@@ -1846,8 +1808,8 @@
         "TD-M05",
         "把评测接入 CI"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S03",
@@ -1889,8 +1851,8 @@
         "TD-M05",
         "评测集、Prompt、模型、知识库和工具版本"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S05",
@@ -1932,8 +1894,8 @@
         "TD-M05",
         "Trace、生产失败和回归集闭环"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S10",
@@ -1975,8 +1937,8 @@
         "TD-M05",
         "质量、延迟和成本联合门禁"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S24",
@@ -2020,8 +1982,8 @@
         "TD-M05",
         "漂移、告警、Waiver 和回滚"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S07",
@@ -2063,8 +2025,8 @@
         "TD-M06",
         "Benchmark 不是一张榜单：先拆评分流水线"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S36",
@@ -2106,8 +2068,8 @@
         "TD-M06",
         "Benchmark 数据怎么来：采样、标注、Split 与 Holdout"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S23",
@@ -2149,8 +2111,8 @@
         "TD-M06",
         "Accuracy、Pass@k、Resolved Rate 和 Judge Score 怎么算"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S36",
@@ -2192,8 +2154,8 @@
         "TD-M06",
         "Prompt、Harness、工具权限为什么会改变分数"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S36",
@@ -2235,8 +2197,8 @@
         "TD-M06",
         "不确定性、污染、隐藏测试和版本可比性"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S37",
@@ -2279,8 +2241,8 @@
         "TD-M06",
         "从 SWE-bench、AgentBench、HELM 到企业内部 Benchmark"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S37",
@@ -2326,8 +2288,8 @@
         "TD-M07",
         "Capstone：完成一个 AI Quality Engineering 仓库"
       ],
-      "evidence_status": "desk-researched",
-      "delivery_status": "desk-researched",
+      "evidence_status": "outlined",
+      "delivery_status": "outlined",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S07",
@@ -2382,7 +2344,7 @@
         "S64"
       ],
       "previous_page_id": "TD-T25",
-      "next_page_id": "",
+      "next_page_id": "TD-AP01",
       "content_sections": {
         "outcome": "区分被自动化与新增工作；绘制个人能力迁移路线；用可交付工件证明专业度",
         "professional_relevance": "可自动化的是重复执行和候选生成，不会自动消失的是风险决策、Oracle、实验、系统性证据、生产可靠性和跨团队质量责任。",
@@ -2393,6 +2355,371 @@
         "common_errors": "只收集 Prompt 和工具证书不会形成长期壁垒；职业价值来自可复用的质量系统和决策证据。",
         "completion_check": "路线图基于工件而非岗位名称；每季度有可验证产出；能诚实区分实验、在线和生产证据",
         "evidence_boundary": "行业方向来自标准、研究与岗位信号的综合，不构成对单个公司或个人岗位的保证；组织结构、地区与招聘周期会影响实际需求。"
+      }
+    },
+    {
+      "page_id": "TD-AP01",
+      "slug": "td-ap01",
+      "module_id": "TD-M11",
+      "title": "为什么 Agent 压测不是把并发数调高",
+      "page_type": "concept",
+      "level": "L2-L3",
+      "order": 53,
+      "prerequisite_ids": [],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "画出 Agent 任务的完整关键路径；区分请求成功、步骤成功与业务任务成功；解释开环和闭环负载何时会掩盖问题",
+      "artifact": "Agent 压测对象与失败模型",
+      "keywords": [
+        "TD-AP01",
+        "TD-M11",
+        "为什么 Agent 压测不是把并发数调高"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S47",
+        "S48",
+        "S68",
+        "S72",
+        "S75",
+        "S77"
+      ],
+      "previous_page_id": "TD-C01",
+      "next_page_id": "TD-AP02",
+      "content_sections": {
+        "outcome": "画出 Agent 任务的完整关键路径；区分请求成功、步骤成功与业务任务成功；解释开环和闭环负载何时会掩盖问题",
+        "professional_relevance": "普通接口通常把一次请求视为一个工作单元；Agent 的一个用户任务会动态展开成多步有状态工作流。如果仍只看 QPS 和接口 p95，你可能得到全绿的网关曲线，同时用户任务超时、重复扣费、成本失控或执行了错误副作用。",
+        "plain_explanation": "假设用户让报销 Agent 完成“读取发票、核对政策、创建报销单”。入口 API 可能 200 返回一个 task_id，但后台还要完成 OCR、两次模型判断、政策检索、财务系统写入和最终确认。入口 200 只能证明受理成功，不能证明任务正确结束。\n压测报告因此至少保留三层分母：收到多少用户任务、启动多少 Agent 运行、内部产生多少模型/工具调用。任何百分比都必须写明分母，否则 99.9% 的‘成功率’没有可比较含义。",
+        "smallest_example": "call_amplification = (model_calls + tool_calls) / accepted_tasks\nretry_amplification = total_attempts / first_attempts\ngoodput = successful_tasks_meeting_latency_and_cost_slo / test_duration",
+        "learner_action": "画出一个真实 Agent 从入口到终态的所有步骤和依赖；分别写出入口成功、任务成功和业务正确的判定；为模型调用、工具调用、重试和总时长设置初始预算",
+        "expected_result": "你能说明吞吐不是完成量：只有正确、及时、成本合格的任务才进入 goodput。",
+        "common_errors": "不要直接对生产写接口做压测。退款、发信、建单等副作用必须使用沙箱、幂等键和清理脚本。",
+        "completion_check": "图中包含队列、模型、工具、状态和外部依赖；所有成功率都注明分母；能解释为何闭环压测可能掩盖过载",
+        "evidence_boundary": "来源支持负载模型、级联故障与 Agent Trace 的通用机制；具体容量、调用放大和预算必须由目标系统实测。"
+      }
+    },
+    {
+      "page_id": "TD-AP02",
+      "slug": "td-ap02",
+      "module_id": "TD-M11",
+      "title": "建立 Agent 性能指标树：系统、模型、轨迹、成本",
+      "page_type": "reference",
+      "level": "L2-L3",
+      "order": 54,
+      "prerequisite_ids": [
+        "TD-AP01"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "区分 TTFT、TTFO、TPOT/ITL 和 E2E；计算任务 Goodput 与单位成功成本；为每个指标指定维度、窗口和行动",
+      "artifact": "Agent 性能指标字典",
+      "keywords": [
+        "TD-AP02",
+        "TD-M11",
+        "建立 Agent 性能指标树：系统、模型、轨迹、成本"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S47",
+        "S51",
+        "S67",
+        "S69",
+        "S73",
+        "S74"
+      ],
+      "previous_page_id": "TD-AP01",
+      "next_page_id": "TD-AP03",
+      "content_sections": {
+        "outcome": "区分 TTFT、TTFO、TPOT/ITL 和 E2E；计算任务 Goodput 与单位成功成本；为每个指标指定维度、窗口和行动",
+        "professional_relevance": "单一平均延迟无法解释首字等待、逐 Token 卡顿、工具等待、队列积压和重试放大。指标树必须同时回答：快不快、对不对、稳不稳、贵不贵，以及慢在哪里。",
+        "plain_explanation": "沿用 SRE 四类信号，但必须按成功/失败请求、任务类型和依赖拆维度。平均值只适合看总量，发布门禁使用分位数和错误预算。",
+        "smallest_example": "cost_per_success = total_cost / successful_tasks\nquality_adjusted_cost = total_cost / tasks_meeting_quality_latency_budget\n# 不要用 total_cost / accepted_tasks 掩盖失败和超时",
+        "learner_action": "为一个 Agent 写出不少于 15 个指标并归入四层；给每个百分比补充分母；选择 5 个指标写出阈值超限后的具体动作",
+        "expected_result": "一条合格定义示例：checkout_agent/task_e2e_ms，成功任务 p95，5 分钟滚动，按 workflow_version 和 task_type 分组；连续 3 个窗口 > 12s 则停止放量并检查 queue/model/tool 三段耗时。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "同时覆盖正确性、延迟、容量、轨迹和成本；能从 E2E 下钻到 queue/model/tool；至少一个门禁使用 Goodput 而不是裸吞吐",
+        "evidence_boundary": "指标语义来自官方文档和 SRE 方法；阈值示例仅作教学，不能直接用于生产。"
+      }
+    },
+    {
+      "page_id": "TD-AP03",
+      "slug": "td-ap03",
+      "module_id": "TD-M11",
+      "title": "设计工作负载：任务、上下文、工具与故障分布",
+      "page_type": "reference",
+      "level": "L2-L3",
+      "order": 55,
+      "prerequisite_ids": [
+        "TD-AP02"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "把生产流量切成任务类别；建立输入与路径联合分布；设计稳态、突发、浸泡和故障场景",
+      "artifact": "版本化工作负载模型",
+      "keywords": [
+        "TD-AP03",
+        "TD-M11",
+        "设计工作负载：任务、上下文、工具与故障分布"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S68",
+        "S77",
+        "S47",
+        "S75"
+      ],
+      "previous_page_id": "TD-AP02",
+      "next_page_id": "TD-AP04",
+      "content_sections": {
+        "outcome": "把生产流量切成任务类别；建立输入与路径联合分布；设计稳态、突发、浸泡和故障场景",
+        "professional_relevance": "Agent 性能高度依赖输入长度、任务复杂度、工具扇出、缓存命中和失败重试。如果测试分布与生产不同，容量数字即使精确也没有决策价值。",
+        "plain_explanation": "先按业务风险和执行路径分类，再统计每类任务的占比、上下文长度、预期工具链、允许终态和成本预算。相同 Prompt 长度可能走完全不同的工具路径。",
+        "smallest_example": "{\n  \"task_id\": \"refund-long-007\",\n  \"task_type\": \"refund_decision\",\n  \"input_token_bucket\": \"8k-16k\",\n  \"expected_tools\": [\"policy_lookup\", \"order_lookup\", \"refund\"],\n  \"allowed_terminal_states\": [\"refunded\", \"handoff\"],\n  \"latency_budget_ms\": 12000,\n  \"cost_budget\": 0.08,\n  \"fixture_version\": \"workload-2026-08-v1\"\n}",
+        "learner_action": "抽样至少 30 条脱敏 Trace 建立任务切片；生成一份不含生产 PII 的回放数据集；设计基线、容量、突发、浸泡和故障五个场景",
+        "expected_result": "工作负载包含联合分布而非单一平均值；每条任务有允许终态和预算；能解释样本与生产流量之间的偏差",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "工作负载包含联合分布而非单一平均值；每条任务有允许终态和预算；能解释样本与生产流量之间的偏差",
+        "evidence_boundary": "工作负载建模原则可迁移；示例比例是教学数据，真实比例必须来自脱敏生产 Trace 或业务预测。"
+      }
+    },
+    {
+      "page_id": "TD-AP04",
+      "slug": "td-ap04",
+      "module_id": "TD-M11",
+      "title": "设计 Trace 与数据模型：让一次慢任务可下钻",
+      "page_type": "reference",
+      "level": "L2-L3",
+      "order": 56,
+      "prerequisite_ids": [
+        "TD-AP03"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "设计 Agent Span 树；定义低基数指标与高维 Trace 的边界；写出可关联的结果表结构",
+      "artifact": "Agent 可观测性 Schema",
+      "keywords": [
+        "TD-AP04",
+        "TD-M11",
+        "设计 Trace 与数据模型：让一次慢任务可下钻"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S49",
+        "S70",
+        "S71",
+        "S72",
+        "S80"
+      ],
+      "previous_page_id": "TD-AP03",
+      "next_page_id": "TD-AP05",
+      "content_sections": {
+        "outcome": "设计 Agent Span 树；定义低基数指标与高维 Trace 的边界；写出可关联的结果表结构",
+        "professional_relevance": "只有最终延迟和日志文本时，无法回答慢在排队、模型、工具还是重试。结构化 Trace 是压测诊断、线上监控和离线评测复用同一证据的基础。",
+        "plain_explanation": "OpenTelemetry GenAI 约定正在快速演进，推荐采用通用 OTel 字段并把供应商字段放入命名空间。根 Span 表示 invoke_agent，子 Span 表示 generation、tool、retrieval、handoff 和状态读写。",
+        "smallest_example": "invoke_agent task_id=... workflow.version=v12\n├─ queue.wait duration_ms=...\n├─ gen_ai.chat model=... input_tokens=... output_tokens=...\n├─ execute_tool tool.name=order_lookup retry=0\n├─ gen_ai.chat model=...\n├─ execute_tool tool.name=refund idempotency_key=...\n└─ task.finalize terminal_state=refunded success=true",
+        "learner_action": "为一条 Agent 任务画根 Span 与子 Span；将当前日志字段分配到 Metric/Trace/Log；从一条慢 Trace 计算未归因时间",
+        "expected_result": "选一条 p99 慢 Trace，能指出关键路径、重试分支、最长依赖和未归因时间，而不是只说‘模型慢’。",
+        "common_errors": "不要为了可观测性把 Authorization、原始用户输入或完整工具结果写入公开日志。",
+        "completion_check": "Trace 能跨入口、模型、工具和终态关联；指标标签无 task_id 等高基数字段；敏感字段有默认关闭、采样和保留策略",
+        "evidence_boundary": "OTel GenAI 语义约定仍在演进，落地前需锁定版本并做兼容层；Schema 示例不是法规合规意见。"
+      }
+    },
+    {
+      "page_id": "TD-AP05",
+      "slug": "td-ap05",
+      "module_id": "TD-M11",
+      "title": "搭建压测架构：发压、夹具、观测、判定四层分离",
+      "page_type": "concept",
+      "level": "L2-L3",
+      "order": 57,
+      "prerequisite_ids": [
+        "TD-AP04"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "设计四层压测架构；按对象选工具而不是找万能工具；隔离副作用并保存版本证据",
+      "artifact": "Agent 压测系统架构图",
+      "keywords": [
+        "TD-AP05",
+        "TD-M11",
+        "搭建压测架构：发压、夹具、观测、判定四层分离"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S52",
+        "S67",
+        "S70",
+        "S77",
+        "S78",
+        "S79"
+      ],
+      "previous_page_id": "TD-AP04",
+      "next_page_id": "TD-AP06",
+      "content_sections": {
+        "outcome": "设计四层压测架构；按对象选工具而不是找万能工具；隔离副作用并保存版本证据",
+        "professional_relevance": "没有分层架构时，团队常用一个 HTTP 发压工具承担任务生成、业务判定、模型指标和诊断，最后只能得到吞吐曲线，无法验证 Agent 是否正确完成任务。",
+        "plain_explanation": "发压层控制到达模式；被测与夹具层提供真实/模拟依赖；观测层收集指标和 Trace；判定层把质量、延迟、成本和安全条件合成门禁。它们通过 run_id、task_id 和版本 Manifest 关联。",
+        "smallest_example": "workload driver ──task──> Agent gateway ──> queue/orchestrator\n      │                         ├─> model endpoint/fixture\n      │                         └─> tools/sandbox fixtures\n      └─ run manifest           └─> OTel collector ─> metrics/traces\n                                             └─> evaluator ─> gate report",
+        "learner_action": "画出四层架构和数据流；为每层选择一个工具并写明缺口；列出所有有副作用的工具及隔离方案",
+        "expected_result": "run_id: ap-load-20260810-001\nworkflow_version: refund-agent-v12\nworkload_version: workload-v3\nmodel_endpoint: fixture-v1\ntool_schema_version: tools-v8\nthreshold_version: slo-v4\nprice_version: 2026-08-10\nseed: 42",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "架构能替换真实依赖与夹具；判定层同时检查质量、性能、成本和安全；每次运行可由 Manifest 回放",
+        "evidence_boundary": "工具能力来自官方文档或项目仓库；没有在目标企业网络、数据量和合规环境中完成对比基准。"
+      }
+    },
+    {
+      "page_id": "TD-AP06",
+      "slug": "td-ap06",
+      "module_id": "TD-M11",
+      "title": "执行完整压测 SOP：基线、变坏、修复、容量",
+      "page_type": "guided-lab",
+      "level": "L2-L3",
+      "order": 58,
+      "prerequisite_ids": [
+        "TD-AP05"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "执行三阶段压测；读取 JSONL Trace 和汇总报告；用证据解释门禁为何红/绿",
+      "artifact": "三阶段 Agent 压测证据包",
+      "keywords": [
+        "TD-AP06",
+        "TD-M11",
+        "执行完整压测 SOP：基线、变坏、修复、容量"
+      ],
+      "evidence_status": "fixture-tested",
+      "delivery_status": "fixture-tested",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S47",
+        "S48",
+        "S67",
+        "S68",
+        "S69",
+        "S70",
+        "S72",
+        "S75"
+      ],
+      "previous_page_id": "TD-AP05",
+      "next_page_id": "TD-AP07",
+      "content_sections": {
+        "outcome": "执行三阶段压测；读取 JSONL Trace 和汇总报告；用证据解释门禁为何红/绿",
+        "professional_relevance": "看懂指标不等于能验证系统。这个实验强制经历绿色基线、故障注入红灯和修复复跑，证明门禁真的能发现问题。",
+        "plain_explanation": "离线脚本模拟订单处置 Agent 的模型和工具步骤。retry-storm 场景提高工具失败率并允许激进重试；repaired 场景加入重试预算、退避和队列保护。随机种子固定，因此结果可复现。",
+        "smallest_example": "python3 courses/td-ai-010-agent-load-stability/lab/agent_load_lab.py \\\n  --config courses/td-ai-010-agent-load-stability/lab/configs/baseline.json \\\n  --output courses/td-ai-010-agent-load-stability/evidence/baseline",
+        "learner_action": "完成 baseline → retry-storm → repaired；从 traces.jsonl 找出一条重试最多的任务；修改一个阈值并解释它会防止哪类业务损失",
+        "expected_result": "退出码 0；gate_pass=true。报告包含 summary.json 和 traces.jsonl。",
+        "common_errors": "故障场景失败是测试通过；如果坏版本也绿，说明阈值、负载或故障注入没有检测力。",
+        "completion_check": "三次运行退出码为 0/1/0；报告保留相同 seed 和 workload；能用 Trace 解释红灯而不是只引用总分",
+        "evidence_boundary": "已运行确定性离线模拟器，证明采集、聚合和门禁机制；不调用真实模型、真实工具，也不代表生产容量。"
+      }
+    },
+    {
+      "page_id": "TD-AP07",
+      "slug": "td-ap07",
+      "module_id": "TD-M11",
+      "title": "诊断压测失败：从症状反推瓶颈与反馈环",
+      "page_type": "diagnostic",
+      "level": "L2-L3",
+      "order": 59,
+      "prerequisite_ids": [
+        "TD-AP06"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "按症状树定位根因候选；识别协调遗漏和重试反馈环；设计一次只改一个变量的验证实验",
+      "artifact": "性能故障诊断记录",
+      "keywords": [
+        "TD-AP07",
+        "TD-M11",
+        "诊断压测失败：从症状反推瓶颈与反馈环"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S48",
+        "S51",
+        "S57",
+        "S67",
+        "S68",
+        "S75"
+      ],
+      "previous_page_id": "TD-AP06",
+      "next_page_id": "TD-AP08",
+      "content_sections": {
+        "outcome": "按症状树定位根因候选；识别协调遗漏和重试反馈环；设计一次只改一个变量的验证实验",
+        "professional_relevance": "‘p95 变差’只是症状。错误归因会导致盲目加机器、降低阈值或增加重试，反而扩大成本和故障。",
+        "plain_explanation": "把失败窗口与健康窗口按相同 workload 比较，定位从哪一层开始偏移。Trace 只能提供强线索；通过控制变量、依赖夹具或资源隔离复跑，才能提高因果置信度。",
+        "smallest_example": "同一系统用闭环和开环各跑一次；若闭环 p95 较好但吞吐下降，不能据此宣称容量更高。",
+        "learner_action": "从 retry-storm 报告写出三条证据链；设计一个控制变量实验排除错误假设；画出网关、SDK、Agent、工具四层重试乘法",
+        "expected_result": "retry_budget_per_task: 2\nmax_total_task_ms: 12000\nrespect_retry_after: true\nbackoff: exponential_with_jitter\nretryable: [429, 502, 503]\nnon_retryable: [400, 401, 403, policy_violation]",
+        "common_errors": "增加无限队列只会把错误变成更长等待；增加无限重试只会把局部失败变成全局过载。",
+        "completion_check": "诊断区分症状、假设和验证；没有用平均延迟掩盖尾部；修复没有删除质量或成本门禁",
+        "evidence_boundary": "诊断树基于公开指标语义与 SRE 机制，是优先级启发式；真实根因仍需目标系统 Trace、资源和变更证据。"
+      }
+    },
+    {
+      "page_id": "TD-AP08",
+      "slug": "td-ap08",
+      "module_id": "TD-M11",
+      "title": "把压测接入生产：SLO、告警、降级与 Runbook",
+      "page_type": "project",
+      "level": "L2-L3",
+      "order": 60,
+      "prerequisite_ids": [
+        "TD-AP07"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "定义多维 Agent SLO；设计症状告警与原因面板；写出限流、熔断、降级和回滚 Runbook",
+      "artifact": "Agent 生产稳定性方案",
+      "keywords": [
+        "TD-AP08",
+        "TD-M11",
+        "把压测接入生产：SLO、告警、降级与 Runbook"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S47",
+        "S48",
+        "S70",
+        "S71",
+        "S75",
+        "S76"
+      ],
+      "previous_page_id": "TD-AP07",
+      "next_page_id": "",
+      "content_sections": {
+        "outcome": "定义多维 Agent SLO；设计症状告警与原因面板；写出限流、熔断、降级和回滚 Runbook",
+        "professional_relevance": "上线前压测只能证明某个环境、版本和工作负载下的表现。模型、Prompt、工具、流量和价格持续变化，生产必须持续监测质量、性能、成本与轨迹。",
+        "plain_explanation": "建议把可用性定义为‘任务正确完成且满足时延、成本和安全预算’，并为高风险切片单独设 SLO。模型调用 99.9% 可用不能替代业务任务 SLO。",
+        "smallest_example": "Task SLI = good_tasks / eligible_tasks\ngood_task = correct_terminal_state\n         && e2e_ms <= latency_budget(task_type)\n         && cost <= cost_budget(task_type)\n         && policy_pass\n         && no_duplicate_side_effect",
+        "learner_action": "定义一个高风险和一个普通任务 SLO；为重试风暴写告警与三步止血 Runbook；把实验中的坏 Trace 加入回归 workload",
+        "expected_result": "alert: agent_goodput_burn_rate\ncheck:\n  - compare task_type/workflow_version/model_version\n  - inspect queue_p95, retry_amplification, dependency_p95\n  - open 3 slow/error trace_ids\nmitigate:\n  - freeze rollout\n  - cap retries and queue\n  - route risky write tasks to human\nrecover:\n  - verify 3 healthy windows\n  - canary 5% -> 25% -> 100%\npostmortem:\n  - add incident trace to workload and regression gate",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "SLO 分母和 good task 条件明确；告警对应具体人和动作；降级不会扩大权限或重复副作用；事故能回流为可复现回归",
+        "evidence_boundary": "SLO 与 Runbook 模板来自通用 SRE 和 GenAI 可观测性实践；业务影响等级、阈值、值班责任和合规要求必须由组织确认。"
       }
     }
   ]

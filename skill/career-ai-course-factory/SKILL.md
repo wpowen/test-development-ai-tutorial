@@ -25,6 +25,7 @@ Do not claim professional authority. Separate sourced facts, practitioner signal
 - `update-tools`: refresh model, framework, agent, evaluation, and fallback adapters.
 - `package-video`: derive a video only after the course passes professional-utility gates.
 - `build-tutorial`: turn the researched profession map into a beginner tutorial knowledge tree, tutorial pages, and a self-contained learning site.
+- `research-topic`: deeply research one approved topic into an evidence synthesis, engineering blueprint, learner manuscript, and validation record.
 - `validate`: run structural, evidence, AI-centrality, and execution-proof gates.
 
 Read the references required by the selected mode:
@@ -44,6 +45,7 @@ Read the references required by the selected mode:
 - Validation status: `references/validation-rubric.md`
 - Lesson experience and material handoff: `references/teaching-experience-protocol.md`
 - Beginner tutorial tree, page types, and viewer: `references/tutorial-site-contract.md`
+- Per-topic deep research, engineering blueprint, and manuscript: `references/topic-research-and-manuscript-protocol.md`
 
 ## Four mandatory AI lanes
 
@@ -132,6 +134,14 @@ Map every candidate learning cell across profession domain, learning layer, spec
 
 Do not continue when a high or critical gap lacks a decision, a required learning layer is absent, or an AI-quality profile has no distinct LLM, RAG, Agent, Workflow, and Benchmark cells. This gate exists so the Skill discovers missing foundations and professional topics itself instead of waiting for user corrections.
 
+### 4D. Build the complete topic system before writing pages
+
+Follow `references/topic-research-and-manuscript-protocol.md`. Create `research/topic-system.md` from the profession knowledge system, competency transition map, and curriculum coverage matrix.
+
+Every topic needs one controlling question, explicit scope, prerequisite concepts, a professional decision, a learner artifact, and a verification path. The topic system is the completeness surface; it may contain planned topics. It is not evidence that any page has been written.
+
+Reject topic lists generated from an arbitrary lesson count, one-line course records, or tool names. Split topics that contain multiple independent job results. Run the coverage audit against the topic system before selecting the first manuscript.
+
 ### 5. Build evidence-backed business scenarios
 
 Follow `references/business-scenario-protocol.md`. A scenario is not “用 AI 写测试用例”; it names the actor, trigger, business system, business object, realistic input, current workflow, failure cost, constraints, AI intervention, inspectable output, decision or handoff, AI-specific failures, and validation plan.
@@ -173,6 +183,14 @@ Sequence by knowledge and artifact dependencies, not popularity:
 `professional baseline -> AI foundations -> bounded assisted-work lab -> AI system evaluation -> agent/workflow evaluation -> production quality loop -> benchmark literacy -> capstone`.
 
 Every curriculum entry records `stage_id`, `level`, `prerequisite_course_ids`, `knowledge_dependencies`, `professional_baseline`, `new_ai_capability`, `assessment`, `source_ids`, and `delivery_status`. A stage is complete only when its exit artifact passes; watching the pages is not completion.
+
+### 8A. Research and synthesize every promised topic independently
+
+For each page promised by the release scope, create `research/topics/<topic-id>/research-brief.md`, `source-pack.csv`, `evidence-synthesis.md`, `engineering-blueprint.md`, `manuscript.md`, and `validation.md` by following `references/topic-research-and-manuscript-protocol.md`.
+
+Use search and lower-cost agents to divide evidence lanes, not to mass-produce final pages. The integrating pass must reopen pivotal sources, resolve conflicting definitions, create the engineering design, and reject unsupported thresholds or generic prose.
+
+Do not generate several delivered pages by mapping a short topic record through one shared prose template. Shared metadata and viewer components are allowed; shared learner-facing paragraphs, workflow filler, or generic headings are a publication failure. A page remains `outlined` until its own research package and manuscript validation pass.
 
 ### 9. Build one exemplar before scaling
 
@@ -264,6 +282,11 @@ Then run a fresh-agent forward test when available:
 - check that AI-change records cannot omit the non-AI baseline, human accountability, new failures, controls, learner proof, and evidence;
 - check that a traditional specialization family cannot disappear merely because the user did not name it;
 - check that metrics without workload, distribution, threshold, and decision owner cannot pass as a professional quality gate;
+- check that multiple delivered pages cannot be produced from one short record and a shared generic prose template;
+- check that every promised page has its own research brief, source pack, evidence synthesis, engineering blueprint, manuscript, and validation record;
+- check that reference pages define metric semantics, aggregation, interpretation, threshold method, and failure action instead of listing names;
+- check that guided labs preserve commands, expected outputs, a meaningful red result, repair/reset, and a green rerun;
+- check that learner-facing pages do not use generic pedagogical filler as a substitute for domain explanation;
 - check that a high or critical gap without an explicit decision blocks curriculum generation;
 - check that competitor analysis covers modules, learner artifacts, execution proof, and assessment rather than only titles and promises;
 - check that an AI-quality profile exposes separate LLM, RAG, Agent, Workflow, and Benchmark tracks;
@@ -291,6 +314,9 @@ Stop and report the gap when any applies:
 - the package lacks a profession-to-AI competency transition map or any of the eight learning layers;
 - the package lacks a curriculum coverage matrix, human-readable gap audit, or any of the six evidence systems and six expert reviews;
 - a high or critical curriculum gap has no explicit decision;
+- the topic system is absent, was derived from an arbitrary lesson count, or leaves a critical coverage cell without an owner;
+- a promised page lacks its own topic research package or passed manuscript validation;
+- delivered pages are generated from shared generic prose instead of topic-specific synthesis;
 - AI foundation knowledge appears only after courses that depend on it;
 - an AI-quality profile collapses LLM, RAG, Agent, Workflow, and Benchmark into one undifferentiated topic;
 - current claims have no preserved search route, query, access date, and opened source;

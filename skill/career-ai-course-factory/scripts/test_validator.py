@@ -63,6 +63,7 @@ def build_valid(root: Path) -> None:
     page_id_blob = " ".join(page["page_id"] for page in tutorial_pages)
     html = f'''<!doctype html><html><head><meta charset="utf-8"><title>Tutorial</title><style>{"body{{color:#222}}" * 500}</style></head><body><input id="tutorial-search"><nav id="course-nav">{page_id_blob}</nav><main id="tutorial-content">{readable_body * 10}</main><aside id="page-toc"></aside><div id="progress-bar"></div><script>const COURSE_DATA = {json.dumps(tutorial_pages)};</script></body></html>'''
     write(root / "tutorial/index.html", html)
+    write(root / "research/topics/page-0/research-package.md", "# Page 0 research\n\n## Research brief\n\nScoped learner question and decision.\n\n## Source pack\n\nOpened primary sources with limitations.\n\n## Evidence synthesis\n\nFacts, synthesis and unknowns.\n\n## Engineering blueprint\n\nMetrics, data, workflow and failure path.\n\n## Manuscript map\n\nMaps evidence into the learner page.\n\n## Validation\n\nPASS: claims, actions and boundaries checked.\n")
     write(root / "research/evidence-matrix.md", "## Evidence\n## Competitor observations\n## Vendor claims\n## Inference\n## Unknown\n")
     write(root / "research/ai-capability-map.md", "\n".join(["use-ai-for-work", "test-ai-systems", "agentize-work", "build-ai-quality-system"]))
 
@@ -483,6 +484,10 @@ class ValidatorTests(unittest.TestCase):
         data = json.loads(path.read_text())
         self.assertEqual(data["pages"][0]["prerequisite_ids"], [])
         self.assertFalse(any("tutorial page 0 prerequisite_ids" in error for error in validate(self.root)))
+
+    def test_promised_tutorial_page_requires_independent_research_package(self) -> None:
+        (self.root / "research/topics/page-0/research-package.md").unlink()
+        self.assertTrue(any("page-0 missing per-topic research package" in error for error in validate(self.root)))
 
     def test_complete_catalog_cannot_contain_planned_pages(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"

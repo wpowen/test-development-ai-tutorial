@@ -2,6 +2,7 @@ import { aiAssistedTestingPages } from "./modules/ai-assisted-testing.ts";
 import { benchmarkCapstonePages } from "./modules/benchmark-capstone.ts";
 import { llmAgentPages } from "./modules/llm-agent.ts";
 import { qualitySystemPages } from "./modules/quality-system.ts";
+import { agentPerformancePages } from "./modules/agent-performance.ts";
 
 export type TutorialBlock = {
   title: string;
@@ -10,6 +11,11 @@ export type TutorialBlock = {
   code?: string;
   expected?: string;
   warning?: string;
+  table?: {
+    headers: string[];
+    rows: string[][];
+    caption?: string;
+  };
 };
 
 export type TutorialPage = {
@@ -18,7 +24,7 @@ export type TutorialPage = {
   order: number;
   title: string;
   type: "概念" | "跟做" | "诊断" | "参考" | "项目";
-  status: "planned" | "desk-researched" | "fixture-tested";
+  status: "planned" | "outlined" | "desk-researched" | "fixture-tested";
   duration: string;
   summary: string;
   why: string;
@@ -44,6 +50,7 @@ export const modules = [
   { id: "TD-M06", title: "Benchmark 与分数工程", subtitle: "弄清数据、协议、Scorer、聚合、污染和榜单分数如何产生" },
   { id: "TD-M07", title: "专业专题与 Capstone", subtitle: "按岗位路线组合工件，交付端到端 AI Quality Engineering 系统" },
   { id: "TD-M10", title: "职业演进", subtitle: "从测试执行转向质量信号、评测工程、平台工程与生产可靠性" },
+  { id: "TD-M11", title: "Agent 性能与稳定性工程", subtitle: "从工作负载、指标、Trace、容量压测到生产 SLO、告警与故障处置" },
 ] as const;
 
 type ProfessionalLesson = Pick<TutorialPage, "id" | "moduleId" | "title" | "type" | "duration" | "summary" | "why" | "prerequisites" | "outcomes" | "artifact" | "blocks" | "practice" | "completion" | "sourceIds" | "evidenceBoundary">;
@@ -965,6 +972,7 @@ export const pages: TutorialPage[] = [
   ...qualitySystemPages,
   ...benchmarkCapstonePages,
   ...professionalPages.filter((page) => page.id.startsWith("TD-C")),
+  ...agentPerformancePages,
 ].map((page, index) => ({ ...page, order: index + 1 }));
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
@@ -1025,13 +1033,27 @@ export const sourceNotes: Record<string, { title: string; url: string }> = {
   S64: { title: "ISO/IEC 42001 AI management systems", url: "https://www.iso.org/standard/42001" },
   S65: { title: "NIST Generative AI Profile", url: "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" },
   S66: { title: "OpenAI Structured Outputs", url: "https://developers.openai.com/api/docs/guides/structured-outputs" },
+  S67: { title: "NVIDIA AIPerf Metrics Reference", url: "https://docs.nvidia.com/aiperf/reference/ai-perf-metrics-reference" },
+  S68: { title: "NVIDIA AIPerf Arrival Patterns", url: "https://docs.nvidia.com/aiperf/dev/tutorials/load-patterns-scheduling/arrival-patterns-simulating-realistic-traffic" },
+  S69: { title: "vLLM Per-request Metrics", url: "https://docs.vllm.ai/en/latest/features/per_request_metrics/" },
+  S70: { title: "OpenTelemetry GenAI Semantic Conventions", url: "https://opentelemetry.io/docs/specs/semconv/gen-ai/" },
+  S71: { title: "OpenTelemetry GenAI Observability", url: "https://opentelemetry.io/blog/2026/genai-observability/" },
+  S72: { title: "OpenAI Agents SDK Tracing", url: "https://openai.github.io/openai-agents-python/tracing/" },
+  S73: { title: "OpenAI Agents SDK Usage", url: "https://openai.github.io/openai-agents-python/usage/" },
+  S74: { title: "LangSmith Trajectory Evaluations", url: "https://docs.langchain.com/langsmith/trajectory-evals" },
+  S75: { title: "Google SRE: Handling Overload", url: "https://sre.google/sre-book/handling-overload/" },
+  S76: { title: "Google SRE: Service Best Practices", url: "https://sre.google/sre-book/service-best-practices/" },
+  S77: { title: "k6 Scenarios", url: "https://grafana.com/docs/k6/latest/using-k6/scenarios/" },
+  S78: { title: "Arize Phoenix", url: "https://github.com/arize-ai/phoenix" },
+  S79: { title: "Langfuse Open Source", url: "https://langfuse.com/handbook/chapters/open-source" },
+  S80: { title: "OpenTelemetry GenAI Attribute Registry", url: "https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/" },
 };
 
-export const firstUsablePath = pages.map((page) => page.id);
+export const firstUsablePath = agentPerformancePages.map((page) => page.id);
 
 export const releaseScope = {
-  mode: "complete-catalog" as const,
-  promisedPageIds: pages.map((page) => page.id),
-  catalogComplete: true,
+  mode: "pilot-path" as const,
+  promisedPageIds: agentPerformancePages.map((page) => page.id),
+  catalogComplete: false,
   validatedAt: "2026-08-10",
 };

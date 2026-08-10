@@ -8,7 +8,7 @@ target="${1:-$root/dist/github-release}"
 (cd "$root/site" && npm test)
 node "$root/scripts/sync-tutorial-package.mjs"
 
-catalog_json="$(cd "$root/site" && node --input-type=module -e 'import("./content/course.ts").then(({pages,releaseScope}) => process.stdout.write(JSON.stringify({pageCount:pages.length,deliveredPageCount:pages.filter((page)=>page.status!=="planned").length,releaseScope})))')"
+catalog_json="$(cd "$root/site" && node --input-type=module -e 'import("./content/course.ts").then(({pages,releaseScope}) => process.stdout.write(JSON.stringify({pageCount:pages.length,deliveredPageCount:pages.filter((page)=>["desk-researched","fixture-tested"].includes(page.status)).length,releaseScope})))')"
 page_count="$(jq -r '.pageCount' <<<"$catalog_json")"
 delivered_page_count="$(jq -r '.deliveredPageCount' <<<"$catalog_json")"
 release_mode="$(jq -r '.releaseScope.mode' <<<"$catalog_json")"
@@ -28,7 +28,7 @@ cp "$root/course-map.md" "$target/docs/course-map.md"
 cp "$root/curriculum-gap-analysis.md" "$target/docs/curriculum-gap-analysis.md"
 cp "$root/industry-framework.md" "$target/docs/industry-framework.md"
 cp "$root/curriculum.json" "$target/docs/curriculum.json"
-cp "$root/research/"* "$target/docs/research/"
+rsync -a "$root/research/" "$target/docs/research/"
 
 rsync -a --exclude '__pycache__/' --exclude '*.pyc' "$factory/" "$target/skill/career-ai-course-factory/"
 
@@ -58,7 +58,7 @@ rsync -a \
   --exclude '*.pyc' \
   "$root/" "$target/course-package/"
 
-rsync -a "$root/courses/td-ai-006-rag-eval-ci/" "$target/courses/td-ai-006-rag-eval-ci/"
+rsync -a "$root/courses/" "$target/courses/"
 
 credential_hits="$(rg -n --pcre2 --hidden --glob '!package-lock.json' '(?<![A-Za-z0-9])(sk-(?:proj-)?[A-Za-z0-9_-]{20,}|gho_[A-Za-z0-9]{20,}|art_v1_[A-Za-z0-9]{20,})' "$target" | rg -v 'sk-live-demo-secret' || true)"
 if [[ -n "$credential_hits" ]]; then

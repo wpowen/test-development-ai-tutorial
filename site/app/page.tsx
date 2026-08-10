@@ -5,6 +5,7 @@ import { firstUsablePath, modules, pages, sourceNotes } from "../content/course"
 
 const statusLabel = {
   planned: "待开发",
+  outlined: "仅提纲",
   "desk-researched": "资料已审",
   "fixture-tested": "实验已跑",
 };
@@ -15,7 +16,7 @@ function setHash(id: string) {
 }
 
 export default function Home() {
-  const [currentId, setCurrentId] = useState("TD-F01");
+  const [currentId, setCurrentId] = useState("TD-AP01");
   const [query, setQuery] = useState("");
   const [completed, setCompleted] = useState<string[]>([]);
   const [mobileNav, setMobileNav] = useState(false);
@@ -24,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const sync = () => {
       const id = window.location.hash.replace("#", "");
-      setCurrentId(pages.some((page) => page.id === id) ? id : "TD-F01");
+      setCurrentId(pages.some((page) => page.id === id) ? id : "TD-AP01");
       setMobileNav(false);
     };
     sync();
@@ -63,14 +64,14 @@ export default function Home() {
     window.setTimeout(() => setCopied(null), 1200);
   };
 
-  const delivered = pages.filter((page) => page.status !== "planned").length;
+  const delivered = pages.filter((page) => page.status === "desk-researched" || page.status === "fixture-tested").length;
   const currentModule = modules.find((item) => item.id === current.moduleId)!;
 
   return (
     <div className="app-shell">
       <header className="topbar">
         <button className="mobile-menu" onClick={() => setMobileNav(!mobileNav)} aria-label="打开课程目录">目录</button>
-        <a className="brand" href="#TD-F01">
+        <a className="brand" href="#TD-AP01">
           <span className="brand-mark">QE</span>
           <span><b>测试开发 × AI</b><small>从会测试，到会验证 AI 系统</small></span>
         </a>
@@ -84,8 +85,8 @@ export default function Home() {
         <div className="course-summary">
           <p className="eyebrow">当前可用版本</p>
           <h2>从传统测试到 AI 质量工程</h2>
-          <p>52 页完整课程覆盖测试生命周期、传统专项、大模型基础、AI 辅助测试、AI API 与性能、LLM/RAG/Agent/Workflow 评测、质量系统、Benchmark 与职业迁移。</p>
-          <div className="summary-stats"><span><b>{delivered}</b> 已交付</span><span><b>{pages.length - delivered}</b> 待开发</span></div>
+          <p>知识体系 v3 已展开；当前重点交付“Agent 性能与稳定性”深度样章。旧批量模板页已降级为提纲，按逐题调研门禁重写。</p>
+          <div className="summary-stats"><span><b>{delivered}</b> 深度正文</span><span><b>{pages.length - delivered}</b> 提纲/待重写</span></div>
         </div>
         <label className="search-box">
           <span>⌕</span>
@@ -123,21 +124,16 @@ export default function Home() {
           <h1>{current.title}</h1>
           <p className="lead">{current.summary}</p>
 
-          {current.status === "planned" ? (
+          {current.status === "planned" || current.status === "outlined" ? (
             <section className="planned-panel">
-              <p className="eyebrow">本页没有冒充完成</p>
-              <h2>知识位置已经确定，正文尚未达到交付门禁</h2>
+              <p className="eyebrow">{current.status === "outlined" ? "仅保留知识位置" : "本页尚未开发"}</p>
+              <h2>本页尚未通过逐题调研与教材正文门禁</h2>
               <p>{current.why}</p>
               <div className="planned-grid"><div><b>学完应当能够</b><p>{current.outcomes[0]}</p></div><div><b>最终产物</b><p>{current.artifact}</p></div></div>
               <p className="boundary"><b>当前证据边界：</b>{current.evidenceBoundary}</p>
             </section>
           ) : (
             <>
-              <section className="outcome-card">
-                <div><span>本页完成后</span><ul>{current.outcomes.map((item) => <li key={item}>{item}</li>)}</ul></div>
-                <div><span>你会带走</span><strong>{current.artifact}</strong><small>不是“听懂了”，而是可检查的职业产物</small></div>
-              </section>
-
               <section className="why-card"><b>为什么测试开发需要这一页</b><p>{current.why}</p></section>
 
               {current.prerequisites.length > 0 && <section className="prerequisites"><b>前置页面</b>{current.prerequisites.map((id) => {
@@ -151,6 +147,7 @@ export default function Home() {
                   <h2>{block.title}</h2>
                   {block.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                   {block.bullets && <ul>{block.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}
+                  {block.table && <div className="table-wrap"><table><thead><tr>{block.table.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{block.table.rows.map((row, rowIndex) => <tr key={`${block.title}-${rowIndex}`}>{row.map((cell, cellIndex) => <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>)}</tr>)}</tbody></table>{block.table.caption && <small>{block.table.caption}</small>}</div>}
                   {block.code && <div className="code-box"><button onClick={() => copy(block.code!, `${current.id}-${index}`)}>{copied === `${current.id}-${index}` ? "已复制" : "复制"}</button><pre>{block.code}</pre></div>}
                   {block.expected && <div className="expected"><b>你应该看到 / 得出</b><p>{block.expected}</p></div>}
                   {block.warning && <div className="warning"><b>别踩这个坑</b><p>{block.warning}</p></div>}
@@ -187,7 +184,7 @@ export default function Home() {
       <aside className="right-rail">
         <p className="eyebrow">本页导航</p>
         {current.blocks.map((block, index) => <button key={block.title} onClick={() => document.getElementById(`section-${index}`)?.scrollIntoView({ behavior: "smooth" })}>{index + 1}. {block.title}</button>)}
-        <div className="route-card"><b>专业主路径</b><p>{firstUsablePath.join(" → ")}</p><small>测试全流程 → 专项 → 大模型 → AI 接口与性能 → RAG 质量门禁 → 职业演进</small></div>
+        <div className="route-card"><b>当前深度路径</b><p>{firstUsablePath.join(" → ")}</p><small>对象模型 → 指标 → 工作负载 → Trace → 架构 → SOP → 诊断 → 生产稳定性</small></div>
       </aside>
     </div>
   );

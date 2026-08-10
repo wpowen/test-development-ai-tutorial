@@ -1,0 +1,13 @@
+{
+  "evidence_scope": "deterministic offline Agent load and retry-storm fixture",
+  "commands": [
+    "python3 lab/agent_load_lab.py --config lab/configs/baseline.json --output evidence/baseline",
+    "python3 lab/agent_load_lab.py --config lab/configs/retry-storm.json --output evidence/retry-storm",
+    "python3 lab/agent_load_lab.py --config lab/configs/repaired.json --output evidence/repaired"
+  ],
+  "baseline": {"exit_code": 0, "verdict": "PASS", "report": "evidence/baseline/summary.json"},
+  "mutation": {"exit_code": 1, "verdict": "FAIL", "report": "evidence/retry-storm/summary.json"},
+  "repair": {"exit_code": 0, "verdict": "PASS", "report": "evidence/repaired/summary.json"},
+  "environment": {"runtime": "Python standard library", "seed": 42, "credentials": false},
+  "limitations": ["offline deterministic fixture", "no real model or tool", "not a production capacity claim"]
+}

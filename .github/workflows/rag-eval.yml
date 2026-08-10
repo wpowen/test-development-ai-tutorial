@@ -56,3 +56,24 @@ jobs:
             echo "ERROR: known regression unexpectedly passed"
             exit 1
           fi
+
+  agent-load-stability:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: courses/td-ai-010-agent-load-stability
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Healthy baseline must pass
+        run: python3 lab/agent_load_lab.py --config lab/configs/baseline.json --output evidence/baseline
+      - name: Retry storm must fail
+        run: |
+          if python3 lab/agent_load_lab.py --config lab/configs/retry-storm.json --output evidence/retry-storm; then
+            echo "ERROR: retry storm unexpectedly passed"
+            exit 1
+          fi
+      - name: Repaired configuration must pass
+        run: python3 lab/agent_load_lab.py --config lab/configs/repaired.json --output evidence/repaired
