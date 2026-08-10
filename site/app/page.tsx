@@ -28,10 +28,15 @@ export default function Home() {
       setMobileNav(false);
     };
     sync();
-    const saved = window.localStorage.getItem("career-ai-completed");
-    if (saved) setCompleted(JSON.parse(saved));
+    const restoreTimer = window.setTimeout(() => {
+      const saved = window.localStorage.getItem("career-ai-completed");
+      if (saved) setCompleted(JSON.parse(saved));
+    }, 0);
     window.addEventListener("hashchange", sync);
-    return () => window.removeEventListener("hashchange", sync);
+    return () => {
+      window.clearTimeout(restoreTimer);
+      window.removeEventListener("hashchange", sync);
+    };
   }, []);
 
   const current = pages.find((page) => page.id === currentId) ?? pages[0];
@@ -59,7 +64,7 @@ export default function Home() {
   };
 
   const delivered = pages.filter((page) => page.status !== "planned").length;
-  const module = modules.find((item) => item.id === current.moduleId)!;
+  const currentModule = modules.find((item) => item.id === current.moduleId)!;
 
   return (
     <div className="app-shell">
@@ -79,7 +84,7 @@ export default function Home() {
         <div className="course-summary">
           <p className="eyebrow">当前可用版本</p>
           <h2>从传统测试到 AI 质量工程</h2>
-          <p>26 页专业主路径覆盖完整测试生命周期、九类专项、大模型基础、AI API、性能可靠性、RAG 评测与职业迁移；未完成专题继续明确标记。</p>
+          <p>52 页完整课程覆盖测试生命周期、传统专项、大模型基础、AI 辅助测试、AI API 与性能、LLM/RAG/Agent/Workflow 评测、质量系统、Benchmark 与职业迁移。</p>
           <div className="summary-stats"><span><b>{delivered}</b> 已交付</span><span><b>{pages.length - delivered}</b> 待开发</span></div>
         </div>
         <label className="search-box">
@@ -110,7 +115,7 @@ export default function Home() {
 
       <main className="reader">
         <div className="reader-inner">
-          <div className="breadcrumb"><span>{module.title}</span><span>›</span><span>{current.id}</span></div>
+          <div className="breadcrumb"><span>{currentModule.title}</span><span>›</span><span>{current.id}</span></div>
           <div className="lesson-meta">
             <span className={`status-badge ${current.status}`}>{statusLabel[current.status]}</span>
             <span>{current.type}</span><span>{current.duration}</span><span>更新于 2026-08-10</span>

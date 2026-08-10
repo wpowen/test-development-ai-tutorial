@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import vm from "node:vm";
 
 const html = await readFile(new URL("../dist-github-pages/index.html", import.meta.url), "utf8");
 
@@ -9,6 +10,14 @@ test("static GitHub Pages export contains the professional curriculum", () => {
   assert.match(html, /专业主路径已完成/);
   assert.match(html, /localStorage/);
   assert.match(html, /搜索需求、接口、TTFT/);
+  assert.equal((html.match(/"moduleId":"TD-/g) ?? []).length, 52);
+  assert.doesNotMatch(html, /"status":"planned"/);
+});
+
+test("static export ships syntactically valid client JavaScript", () => {
+  const match = html.match(/<script>([\s\S]*)<\/script>/);
+  assert.ok(match, "inline client script must exist");
+  assert.doesNotThrow(() => new vm.Script(match[1], { filename: "github-pages-inline.js" }));
 });
 
 test("static export does not include private Sites configuration", () => {

@@ -1517,7 +1517,7 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
     data = load_json(data_path, errors)
     if not isinstance(data, dict):
         return
-    require_fields(data, ["tutorial_id", "title", "audience", "updated_at", "default_page_id", "modules", "pages"], "tutorial site", errors)
+    require_fields(data, ["tutorial_id", "title", "audience", "updated_at", "default_page_id", "release_scope", "modules", "pages"], "tutorial site", errors)
     modules = data.get("modules")
     pages = data.get("pages")
     if not isinstance(modules, list) or len(modules) < 4:
@@ -1617,6 +1617,51 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
     delivered = [page for page in pages if isinstance(page, dict) and page.get("delivery_status") not in {"planned", "outlined", "blocked"}]
     if not delivered:
         errors.append("tutorial site needs at least one delivered page")
+
+    release_scope = data.get("release_scope")
+    if not isinstance(release_scope, dict):
+        errors.append("tutorial release_scope must be an object")
+    else:
+        require_fields(release_scope, ["mode", "promised_page_ids", "catalog_complete", "validated_at"], "tutorial release_scope", errors)
+        mode = release_scope.get("mode")
+        promised_ids = release_scope.get("promised_page_ids")
+        if mode not in {"pilot-path", "complete-catalog"}:
+            errors.append("tutorial release_scope mode must be pilot-path or complete-catalog")
+        if not isinstance(promised_ids, list) or not promised_ids:
+            errors.append("tutorial release_scope promised_page_ids must be a non-empty list")
+            promised_ids = []
+        promised_set = {str(page_id) for page_id in promised_ids}
+        if len(promised_set) != len(promised_ids):
+            errors.append("tutorial release_scope promised_page_ids must be unique")
+        unknown_promised = promised_set - page_ids
+        if unknown_promised:
+            errors.append(f"tutorial release_scope references unknown pages: {', '.join(sorted(unknown_promised))}")
+        incomplete_promised = {
+            page_id for page_id in promised_set
+            if page_id in page_by_id and page_by_id[page_id].get("delivery_status") in {"planned", "outlined", "blocked"}
+        }
+        if incomplete_promised:
+            errors.append(f"tutorial release_scope promises incomplete pages: {', '.join(sorted(incomplete_promised))}")
+        for page_id in promised_set:
+            if page_id not in page_by_id:
+                continue
+            for dependency in page_by_id[page_id].get("prerequisite_ids", []):
+                dependency_page = page_by_id.get(str(dependency))
+                if dependency_page and dependency_page.get("delivery_status") in {"planned", "outlined", "blocked"}:
+                    errors.append(f"tutorial promised page {page_id} has incomplete prerequisite {dependency}")
+        if mode == "complete-catalog":
+            if release_scope.get("catalog_complete") is not True:
+                errors.append("complete-catalog release_scope must set catalog_complete=true")
+            if promised_set != page_ids:
+                errors.append("complete-catalog promised_page_ids must equal the full tutorial catalog")
+            incomplete_catalog = {
+                page_id for page_id, page in page_by_id.items()
+                if page.get("delivery_status") in {"planned", "outlined", "blocked"}
+            }
+            if incomplete_catalog:
+                errors.append(f"complete-catalog contains incomplete pages: {', '.join(sorted(incomplete_catalog))}")
+        elif release_scope.get("catalog_complete") is not False:
+            errors.append("pilot-path release_scope must set catalog_complete=false")
 
     html = html_path.read_text(encoding="utf-8")
     if len(html.strip()) < 8000:

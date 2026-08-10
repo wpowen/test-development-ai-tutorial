@@ -1,0 +1,57 @@
+import { buildTopicPage, type TopicSpec } from "./topic-page.ts";
+
+const specs: TopicSpec[] = [
+  {
+    id: "TD-T05", moduleId: "TD-M02", title: "从 PRD 和代码 Diff 提取风险", type: "跟做", duration: "45 分钟",
+    summary: "让 AI 先生成候选影响面，再用需求条款、代码差异和历史缺陷把候选风险收敛成可追踪测试任务。",
+    why: "直接让模型写用例会把需求假设和代码事实混在一起；测试负责人需要的是每条风险为何存在、落到哪里、怎样验证。",
+    prerequisites: ["TD-T04"], outcomes: ["把 PRD 句子改写成可观察行为", "将代码 Diff 映射到受影响接口、状态和数据", "输出有证据、有优先级、有 Oracle 的风险矩阵"], artifact: "PRD-Diff 风险矩阵与追踪表",
+    problem: "场景是一项数字商品退款规则变更：PRD 写着“已激活商品转人工复核”，代码 Diff 同时修改资格判断、订单状态和审计事件。模型可以快速枚举影响，但它看不到团队隐含约束，也可能把未变更模块写成高风险。",
+    workflow: ["抽取 actor、trigger、business rule、状态变化和禁止行为", "读取 Diff 的控制流、Schema、配置与依赖变化", "要求模型逐条引用 PRD 段落和变更文件，不接受无引用风险", "按影响×可能性×可检测性排序，并为高风险项定义 Oracle"],
+    scenario: "准备一段脱敏 PRD 和一个小型 unified diff。先让模型输出 JSON 风险候选，再由脚本检查每个候选是否同时包含 requirement_ref、diff_ref、risk、oracle 和 owner。最后人工删除没有证据的猜测，并补上模型遗漏的跨服务影响。",
+    code: "required_fields = {'requirement_ref','diff_ref','risk','oracle','owner'}\nfor item in ai_risks:\n    assert required_fields <= item.keys()\n    assert item['requirement_ref'] in prd_ids\n    assert item['diff_ref'] in changed_files",
+    expected: "得到一张可追踪矩阵；每条高风险项能回到 PRD 与 Diff，且有测试层级、观察点、负责人。模型生成但无来源的项目被明确拒绝。",
+    failure: "常见失败是模型只复述 PRD、把所有变化判为高风险，或虚构不存在的代码路径。先检查上下文是否包含完整变更，再检查引用是否真实；仍无法确认的项目进入人工澄清，而不是自动生成测试。",
+    sourceIds: ["S14", "S32", "S41"], evidenceBoundary: "页面方法由测试工作职责、基础测试流程和公开 AI 辅助测试实践支持；示例为脱敏合成变更，未证明模型能在任意企业代码库稳定识别完整影响面。",
+  },
+  {
+    id: "TD-T06", moduleId: "TD-M02", title: "AI 生成测试，但证明测试真的会失败", type: "跟做", duration: "55 分钟",
+    summary: "把 AI 生成的候选测试接入 mutation 或故障注入，用红绿证据判断它们是否真正具备缺陷检测力。",
+    why: "测试数量、代码覆盖率和自然语言解释都不能证明测试有用；一个已知坏版本仍然绿色，就说明 Oracle 或执行链失效。",
+    prerequisites: ["TD-T05"], outcomes: ["约束模型生成可执行测试和业务断言", "注入控制流、边界或状态变异", "用 mutation 报告淘汰假绿测试并补齐盲区"], artifact: "AI 生成测试包与 Mutation 检测报告",
+    problem: "继续使用退款资格函数。模型往往生成 happy path 和字段存在性断言，却遗漏“已激活不得自动退款”的阻断规则。需要反转资格条件、删除审计事件或放宽金额边界，观察哪些测试能稳定把坏版本打红。",
+    workflow: ["从风险矩阵生成候选，但限定输入、动作、业务 Oracle 和证据字段", "先在原始实现上运行并保存 baseline", "逐个注入可解释变异，记录 killed、survived 与未执行", "为 survived 变异补测试或说明等价/不可达理由，再复跑"],
+    scenario: "模型生成 Playwright/API/单元测试候选后，人工只保留能落到明确风险的测试。将 `activated && digital` 的拒绝条件反转；如果测试仍通过，检查是否只断言 HTTP 200、是否根本没有执行变异代码、是否环境读取了旧构建。",
+    code: "python3 scripts/run_baseline.py\npython3 scripts/inject_mutation.py --id refund-eligibility-invert\npytest -q\npython3 scripts/report_mutation.py",
+    expected: "baseline 为绿；注入退款资格变异后至少一个高风险测试失败且退出码非零；修复或重置后恢复绿色，并保存 survived 列表。",
+    failure: "mutation 仍绿时不要先增加随机用例。先证明变异被加载、目标路径被覆盖、断言观察到业务结果，再判断是否需要新样例。删除断言或把期望改成当前错误输出属于 false green。",
+    sourceIds: ["S01", "S18", "S21"], evidenceBoundary: "公开材料支持 AI 生成测试与验证不足的现实风险；本页提供方法和命令形状，除已有 RAG fixture 外未在所有目标框架上运行这些 mutation 示例。",
+  },
+  {
+    id: "TD-T07", moduleId: "TD-M02", title: "生成边界与 Fuzz 数据", type: "跟做", duration: "50 分钟",
+    summary: "用模型解释业务约束、用确定性生成器覆盖边界和状态组合，再保存可重放的最小失败种子。",
+    why: "让模型直接随机造数据既不可复现，也容易泄露真实信息；AI 更适合提出输入维度，测试代码负责生成、收缩和重放。",
+    prerequisites: ["TD-T06"], outcomes: ["从 Schema 和业务规则提取边界维度", "构建带 seed 的属性与 Fuzz 生成器", "把失败样例缩减为最小可重放种子"], artifact: "边界模型、数据生成器与最小失败种子",
+    problem: "退款金额同时受币种精度、订单状态、激活时间、渠道和幂等键约束。单字段边界全部通过，不代表组合安全；例如 0.01 元、刚好跨日、重复请求和已激活状态组合可能触发重复退款。",
+    workflow: ["从 OpenAPI/Schema、PRD 和数据库约束列出合法域与非法域", "让模型提出遗漏组合，但由人审查并写成确定性策略", "固定 seed 运行属性测试，保存输入、环境和失败 Trace", "使用 shrink/minimize 删除无关字段，生成稳定回归用例"],
+    scenario: "定义金额、状态、时间、币种和幂等键五个维度。先跑合法边界，再故意放宽幂等检查。生成器应找到重复请求造成双写的组合，并把几十个字段缩减成金额、订单状态与重复键三个必要条件。",
+    code: "seed=20260810\nfor case in generate_refund_cases(seed):\n    result = submit_refund(case)\n    assert invariant_no_double_refund(result)\n# 保存 failing_case、seed、system_version 后再最小化",
+    expected: "相同 seed 能重复发现预埋缺陷；最小失败样例删除无关字段后仍失败，并作为固定回归样例进入数据集。",
+    failure: "失败无法重现通常来自未保存 seed、时间、外部依赖或状态初始化。先固定这些变量；若模型生成了不符合 Schema 的数据，应在生成层拒绝，而不是把大量 400 响应当作有效覆盖。",
+    sourceIds: ["S23", "S32", "S41"], evidenceBoundary: "页面整合标准测试设计、AI 测试知识和职业任务来源；生成器为教学伪代码，具体 shrink 能力、组合规模和阈值需在目标框架及业务数据上验证。",
+  },
+  {
+    id: "TD-T08", moduleId: "TD-M02", title: "AI 做失败聚类，但必须保留证据链", type: "诊断", duration: "45 分钟",
+    summary: "让模型生成候选故障簇和归因摘要，但每条结论必须链接到失败样例、Trace、日志、Diff 和验证实验。",
+    why: "聚类能减少重复排查，但语言模型会把相关性写成因果关系；没有证据链接和单变量验证，漂亮报告会误导修复优先级。",
+    prerequisites: ["TD-T07"], outcomes: ["规范化来自多测试层的失败事件", "生成带引用和置信度的候选故障簇", "通过验证实验合并、拆分或否决模型归因"], artifact: "证据链接式失败聚类与归因报告",
+    problem: "一次回归出现 80 个失败：UI 超时、API 502、Agent 工具调用失败和数据库锁等待。模型可能全部归为“网络问题”，但真正原因可能是一个连接池配置变更，也可能是三类独立故障。",
+    workflow: ["保留 test_id、trace_id、timestamp、commit、environment 与原始错误", "对消息脱敏和归一化，但不丢失可回查引用", "让模型输出 cluster、evidence_refs、hypothesis、confidence 和 next_experiment", "按单变量实验验证，只有重复成立的假设才升级为根因"],
+    scenario: "将失败记录按同一时间窗与 Trace 关联。模型提出“连接池耗尽”候选后，先在固定负载下恢复旧配置，再只改变连接池参数。如果故障随参数消失，才把假设升级；否则拆分集群继续检查外部依赖和测试环境。",
+    expected: "报告中的每个簇都能打开至少两条原始证据，明确区分 symptom、hypothesis 与 verified cause，并给出下一步实验和责任人。",
+    failure: "常见错误是只把堆栈文本送入模型、忽略时间和版本，或让模型直接填写 root cause。引用不存在、簇内证据来自不同版本、实验不能复现时，结论必须降级为未知。",
+    sourceIds: ["S14", "S22", "S49"], evidenceBoundary: "来源支持 AI 辅助诊断、浏览器验证局限和 Trace 信号设计；示例未在真实企业事故库评估聚类准确率，不能声称减少了固定比例的定位时间。",
+  },
+];
+
+export const aiAssistedTestingPages = specs.map(buildTopicPage);

@@ -5,6 +5,15 @@ root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 factory="$root/../career-ai-course-factory"
 target="${1:-$root/dist/github-release}"
 
+(cd "$root/site" && npm test)
+node "$root/scripts/sync-tutorial-package.mjs"
+
+catalog_json="$(cd "$root/site" && node --input-type=module -e 'import("./content/course.ts").then(({pages,releaseScope}) => process.stdout.write(JSON.stringify({pageCount:pages.length,deliveredPageCount:pages.filter((page)=>page.status!=="planned").length,releaseScope})))')"
+page_count="$(jq -r '.pageCount' <<<"$catalog_json")"
+delivered_page_count="$(jq -r '.deliveredPageCount' <<<"$catalog_json")"
+release_mode="$(jq -r '.releaseScope.mode' <<<"$catalog_json")"
+catalog_complete="$(jq -r '.releaseScope.catalogComplete' <<<"$catalog_json")"
+
 mkdir -p "$target"
 find "$target" -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
 
@@ -62,10 +71,12 @@ source_commit="$(git -C "$root/site" rev-parse HEAD 2>/dev/null || echo unknown)
 file_count="$(find "$target" -type f ! -path '*/.git/*' | wc -l | tr -d ' ')"
 jq -n \
   --arg source_commit "$source_commit" \
-  --argjson page_count 52 \
-  --argjson delivered_page_count 26 \
+  --arg release_mode "$release_mode" \
+  --argjson catalog_complete "$catalog_complete" \
+  --argjson page_count "$page_count" \
+  --argjson delivered_page_count "$delivered_page_count" \
   --argjson file_count "$file_count" \
-  '{schema_version:"1.0", source_commit:$source_commit, page_count:$page_count, delivered_page_count:$delivered_page_count, file_count:$file_count, evidence_level:"fixture-tested; desk-researched; not production-validated"}' \
+  '{schema_version:"1.1", source_commit:$source_commit, release_scope:$release_mode, catalog_complete:$catalog_complete, page_count:$page_count, delivered_page_count:$delivered_page_count, file_count:$file_count, evidence_level:"fixture-tested; desk-researched; not production-validated"}' \
   > "$target/RELEASE-MANIFEST.json"
 
 echo "$target"

@@ -227,6 +227,8 @@ The HTML is the primary learning interface. It must open directly without a serv
 
 A complete knowledge tree is not a distributable course. Before public or paid release, deliver at least one 8-page beginner-to-artifact path with no planned prerequisite. Each delivered page must pass the content-density and learner-action gates in the tutorial contract; the path must end in a profession-relevant artifact with preserved verification evidence. The default entry is the first beginner page, not the most impressive lab.
 
+Declare the release scope before building a public artifact. Use `pilot-path` when only a named subset is promised, or `complete-catalog` when every catalog page is promised. Preserve `promised_page_ids`, `catalog_complete`, and the validation timestamp in the canonical content model and release manifest. Under `complete-catalog`, any planned, outlined, blocked, navigation-only, or density-gate-failing page blocks build and publication. Content completeness never upgrades its evidence status: a fully written `desk-researched` page remains desk-researched until stronger proof exists.
+
 Treat GitHub and OpenAI Sites as two publication targets generated from one validated content source. GitHub carries versioned source, sanitized labs, reusable materials, issues, and releases. Sites carries the learner-facing experience and should remain private during review. Never maintain independent HTML, JSON, and course prose as competing truth. Do not make a public deployment until the public-safe subset and access level are explicitly confirmed.
 
 The transfer stage must name the source context, a genuinely different target context, what remains invariant, at least two things the learner must adapt, and a success criterion. A `transfer-challenge` label without this contract does not count.
@@ -299,6 +301,8 @@ Stop and report the gap when any applies:
 - the lesson has no learner action, failure diagnosis, transfer task, or material provenance;
 - the package has no tutorial knowledge tree or self-contained tutorial viewer;
 - the package is described as distributable but has no complete 8-page beginner-to-artifact path;
+- the release scope is absent, its promised page IDs do not match the learner-facing artifacts, or a complete-catalog release contains an incomplete page;
+- completeness language exceeds the validated release scope or evidence status;
 - publication targets are built from independently edited course copies or expose private research and production data;
 - the test cannot be shown to fail on a meaningful regression;
 - a current tool claim lacks a primary source and version/date;

@@ -51,6 +51,19 @@ Every delivered page on that path must have at least 4 substantive teaching bloc
 
 Do not publicly label the full profession tutorial complete while only the first path is delivered. Publish the knowledge tree and the path completion separately.
 
+## Release-scope contract
+
+Every generated tutorial and release manifest must declare one release scope. Scope is a machine-checkable promise, not marketing copy.
+
+- `pilot-path`: only the declared `promised_page_ids` are promised as delivered. Other catalog entries may remain `planned`, but every learner-facing surface must say that the catalog is partial.
+- `complete-catalog`: every page in the declared catalog is promised as delivered. `planned`, `outlined`, `blocked`, navigation-only, or section-plan-only pages are forbidden.
+
+The manifest records `mode`, `promised_page_ids`, `catalog_complete`, and `validated_at`. Validators must fail when a promised page is missing, not delivered, has unresolved prerequisites, lacks required teaching blocks/actions/checks/sources, or is absent from a publication target. For `complete-catalog`, `promised_page_ids` must equal the full page-ID set and `catalog_complete` must be true.
+
+Content completeness and evidence strength are independent. A `desk-researched` page can be complete instructional content while still being unverified in production; the interface must preserve that evidence boundary. Never upgrade `desk-researched` to `fixture-tested`, `live-tested`, or `practitioner-reviewed` merely because the page is fully written.
+
+Reject words such as “完整课程”, “全量”, “全部完成”, or equivalent public claims whenever the release-scope gate does not pass. A page title, outline, JSON record, or navigation item never counts as completed instruction.
+
 ## Single-source publishing
 
 GitHub and OpenAI Sites are publication targets, not separate course authoring surfaces. Keep one canonical content model and generate both targets from the same validated commit.
@@ -194,3 +207,5 @@ Reject a complete tutorial package when:
 - previous/next links ignore prerequisite order;
 - the HTML requires a dev server or remote dependency;
 - research sources cannot be traced to scenarios and delivered pages.
+- release scope is missing, a promised page is not delivered, or a `complete-catalog` release contains any incomplete page;
+- public completeness claims disagree with the validated release scope.

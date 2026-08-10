@@ -59,7 +59,7 @@ def build_valid(root: Path) -> None:
             "next_page_id":"" if index == 14 else f"page-{index+1}",
             **({"content_sections":{"outcome":"build a gate","professional_relevance":"release evidence","plain_explanation":"a gate is a repeatable check","smallest_example":"one case","learner_action":"run the command","expected_result":"visible PASS","common_errors":"empty evidence","completion_check":"red green proof","evidence_boundary":"fixture only"}} if delivered else {})
         })
-    dump(root / "tutorial/tutorial-site.json", {"tutorial_id":"career-ai","title":"Career AI Tutorial","audience":"beginner","updated_at":"2026-01-01","default_page_id":"page-0","modules":tutorial_modules,"pages":tutorial_pages})
+    dump(root / "tutorial/tutorial-site.json", {"tutorial_id":"career-ai","title":"Career AI Tutorial","audience":"beginner","updated_at":"2026-01-01","default_page_id":"page-0","release_scope":{"mode":"pilot-path","promised_page_ids":["page-0"],"catalog_complete":False,"validated_at":"2026-01-01"},"modules":tutorial_modules,"pages":tutorial_pages})
     page_id_blob = " ".join(page["page_id"] for page in tutorial_pages)
     html = f'''<!doctype html><html><head><meta charset="utf-8"><title>Tutorial</title><style>{"body{{color:#222}}" * 500}</style></head><body><input id="tutorial-search"><nav id="course-nav">{page_id_blob}</nav><main id="tutorial-content">{readable_body * 10}</main><aside id="page-toc"></aside><div id="progress-bar"></div><script>const COURSE_DATA = {json.dumps(tutorial_pages)};</script></body></html>'''
     write(root / "tutorial/index.html", html)
@@ -483,6 +483,18 @@ class ValidatorTests(unittest.TestCase):
         data = json.loads(path.read_text())
         self.assertEqual(data["pages"][0]["prerequisite_ids"], [])
         self.assertFalse(any("tutorial page 0 prerequisite_ids" in error for error in validate(self.root)))
+
+    def test_complete_catalog_cannot_contain_planned_pages(self) -> None:
+        path = self.root / "tutorial/tutorial-site.json"
+        data = json.loads(path.read_text())
+        data["release_scope"] = {
+            "mode":"complete-catalog",
+            "promised_page_ids":[page["page_id"] for page in data["pages"]],
+            "catalog_complete":True,
+            "validated_at":"2026-01-01",
+        }
+        dump(path, data)
+        self.assertTrue(any("complete-catalog contains incomplete pages" in error for error in validate(self.root)))
 
     def test_decorative_ai_fails(self) -> None:
         data = json.loads((self.root / "tasks.json").read_text())

@@ -1,3 +1,8 @@
+import { aiAssistedTestingPages } from "./modules/ai-assisted-testing.ts";
+import { benchmarkCapstonePages } from "./modules/benchmark-capstone.ts";
+import { llmAgentPages } from "./modules/llm-agent.ts";
+import { qualitySystemPages } from "./modules/quality-system.ts";
+
 export type TutorialBlock = {
   title: string;
   body: string[];
@@ -40,35 +45,6 @@ export const modules = [
   { id: "TD-M07", title: "专业专题与 Capstone", subtitle: "按岗位路线组合工件，交付端到端 AI Quality Engineering 系统" },
   { id: "TD-M10", title: "职业演进", subtitle: "从测试执行转向质量信号、评测工程、平台工程与生产可靠性" },
 ] as const;
-
-const planned = (
-  id: string,
-  moduleId: string,
-  order: number,
-  title: string,
-  type: TutorialPage["type"],
-  summary: string,
-  artifact: string,
-  prerequisites: string[],
-): TutorialPage => ({
-  id,
-  moduleId,
-  order,
-  title,
-  type,
-  status: "planned",
-  duration: "待细化",
-  summary,
-  why: "本页已进入知识树，但尚未达到可交付内容门禁。",
-  prerequisites,
-  outcomes: [summary],
-  artifact,
-  blocks: [],
-  practice: [],
-  completion: [],
-  sourceIds: [],
-  evidenceBoundary: "只有学习目标和知识位置，不代表页面已经完成。",
-});
 
 type ProfessionalLesson = Pick<TutorialPage, "id" | "moduleId" | "title" | "type" | "duration" | "summary" | "why" | "prerequisites" | "outcomes" | "artifact" | "blocks" | "practice" | "completion" | "sourceIds" | "evidenceBoundary">;
 
@@ -758,10 +734,6 @@ const corePages: TutorialPage[] = [
     sourceIds: ["S03", "S04", "S23"],
     evidenceBoundary: "页面提供数据结构和风险覆盖方法；8 条教学样例不能代表真实生产分布，也不能用于计算业务质量水平。",
   },
-  planned("TD-T05", "TD-M02", 5, "从 PRD 和代码 Diff 提取风险", "跟做", "产出有业务依据的风险矩阵和追踪表", "风险矩阵", ["TD-T04"]),
-  planned("TD-T06", "TD-M02", 6, "AI 生成测试，但证明测试真的会失败", "跟做", "用 mutation 证明 AI 生成测试具有检测力", "自动化测试与 mutation 报告", ["TD-T05"]),
-  planned("TD-T07", "TD-M02", 7, "生成边界与 Fuzz 数据", "跟做", "让生成器命中预埋边界缺陷并保存最小失败样例", "失败种子", ["TD-T06"]),
-  planned("TD-T08", "TD-M02", 8, "AI 做失败聚类，但必须保留证据链", "诊断", "生成可回到 Trace、Log 和 Diff 的候选归因", "引用式归因报告", ["TD-T07"]),
   {
     id: "TD-T09",
     moduleId: "TD-M03",
@@ -979,28 +951,6 @@ const corePages: TutorialPage[] = [
     sourceIds: ["S03", "S04", "S09", "S13", "S23"],
     evidenceBoundary: "已验证离线 fixture 与 evaluator 机制；没有调用真实模型、真实检索器或企业数据，也没有经过目标学员和测试开发专家盲评。",
   },
-  planned("TD-T13", "TD-M03", 13, "Prompt、模型和知识库版本 A/B", "跟做", "用同一评测集比较多个候选版本并给出门禁结论", "版本对比报告", ["TD-T12"]),
-  planned("TD-T14", "TD-M03", 14, "LLM-as-judge 的校准和反例", "诊断", "识别 Judge 偏差、漂移和人工分歧", "Judge 校准集", ["TD-T13"]),
-  planned("TD-T15", "TD-M04", 15, "最终结果、单步动作和完整轨迹", "概念", "区分 Agent 三个评测层级并选择证据", "Agent 评测层级图", ["TD-T03", "TD-T04"]),
-  planned("TD-T16", "TD-M04", 16, "工具选择、参数和权限", "跟做", "注入错误工具和参数并由沙箱阻断", "工具策略与轨迹报告", ["TD-T15"]),
-  planned("TD-T17", "TD-M04", 17, "Prompt injection、数据泄露和 excessive agency", "跟做", "构建攻击集并验证 Agent 不越权、不泄露", "攻击集与安全报告", ["TD-T16"]),
-  planned("TD-T18", "TD-M04", 18, "Browser Agent 和 Playwright Test Agents", "跟做", "使用 planner、generator、healer 生成候选测试并保留证据", "Agent 生成测试包", ["TD-T06", "TD-T16"]),
-  planned("TD-T19", "TD-M04", 19, "自愈测试为什么会误修绿", "诊断", "阻止 healer 通过删除断言或改变业务 oracle 修绿", "Healer 反作弊策略", ["TD-T18"]),
-  planned("TD-W01", "TD-M04", 20, "先区分 Agent、Worker 和固定 Workflow", "概念", "根据控制权、状态和路径确定测试对象，而不是按产品营销名称分类", "Agent/Worker/Workflow 对照图", ["TD-T15"]),
-  planned("TD-W02", "TD-M04", 21, "测试状态、循环、重试、Handoff 和终止条件", "跟做", "注入重复执行、丢状态、错误 Handoff 和不终止故障", "Workflow 状态与故障注入报告", ["TD-W01", "TD-T16"]),
-  planned("TD-W03", "TD-M04", 22, "单 Agent 与多 Agent 的公平对照", "诊断", "固定模型、工具、Token、时间和成功标准，判断多 Agent 是否真实提升", "同预算对照实验", ["TD-W02"]),
-  planned("TD-T20", "TD-M05", 23, "把评测接入 CI", "跟做", "让 AI 质量回归返回非零退出码并阻断合并", "CI quality gate", ["TD-T12", "TD-T14"]),
-  planned("TD-T21", "TD-M05", 24, "评测集、Prompt、模型、知识库和工具版本", "参考", "为一次质量结论保存全部可重放依赖", "实验与版本账本", ["TD-T20"]),
-  planned("TD-T22", "TD-M05", 25, "Trace、生产失败和回归集闭环", "跟做", "把脱敏线上失败转成有 lineage 的回归样例", "反馈流水线", ["TD-T21"]),
-  planned("TD-T23", "TD-M05", 26, "质量、延迟和成本联合门禁", "参考", "比较质量、延迟和成本的多目标折中", "Pareto 对比报告", ["TD-T20"]),
-  planned("TD-T24", "TD-M05", 27, "漂移、告警、waiver 和回滚", "诊断", "为 AI 质量异常设计告警、例外和回滚路径", "事故与回滚 runbook", ["TD-T21", "TD-T22", "TD-T23"]),
-  planned("TD-B01", "TD-M06", 28, "Benchmark 不是一张榜单：先拆评分流水线", "概念", "把任务、数据、协议、运行、Scorer、聚合和报告连接起来", "Benchmark 评分流水线图", ["TD-T21"]),
-  planned("TD-B02", "TD-M06", 29, "Benchmark 数据怎么来：采样、标注、Split 与 Holdout", "跟做", "构建带来源、风险切片和未见 Holdout 的小型数据集", "Dataset card 与 Holdout manifest", ["TD-B01"]),
-  planned("TD-B03", "TD-M06", 30, "Accuracy、Pass@k、Resolved rate 和 Judge score 怎么算", "跟做", "在小型 Fixture 上手算并运行四类分数", "Metric card 与计算脚本", ["TD-B02"]),
-  planned("TD-B04", "TD-M06", 31, "Prompt、Harness、工具权限为什么会改变分数", "诊断", "固定模型并改变一个协议变量，解释分数差异", "Benchmark 复现实验报告", ["TD-B03"]),
-  planned("TD-B05", "TD-M06", 32, "不确定性、污染、隐藏测试和版本可比性", "诊断", "审计样本量、重复运行、置信区间、泄漏和版本变化", "可信度与污染审计", ["TD-B04"]),
-  planned("TD-B06", "TD-M06", 33, "从 SWE-bench、AgentBench、HELM 到企业内部 Benchmark", "项目", "借鉴公开方法但换成真实业务任务、风险切片和维护政策", "内部 Benchmark 最小仓库", ["TD-B05", "TD-T22"]),
-  planned("TD-T25", "TD-M07", 34, "Capstone：完成一个 AI Quality Engineering 仓库", "项目", "交付从 commit 到 CI、Trace、回归、Benchmark 和人工门禁的端到端质量仓库", "AI QE Capstone 仓库", ["TD-T12", "TD-T17", "TD-T20", "TD-T24", "TD-B06"]),
 ];
 
 export const pages: TutorialPage[] = [
@@ -1008,19 +958,38 @@ export const pages: TutorialPage[] = [
   ...professionalPages.filter((page) => page.id.startsWith("TD-P") || page.id.startsWith("TD-S")),
   ...foundationPages.slice(1),
   ...professionalPages.filter((page) => page.id.startsWith("TD-A")),
-  ...corePages,
+  ...corePages.filter((page) => ["TD-T01", "TD-T02", "TD-T03", "TD-T04"].includes(page.id)),
+  ...aiAssistedTestingPages,
+  ...corePages.filter((page) => ["TD-T09", "TD-T10", "TD-T11", "TD-T12"].includes(page.id)),
+  ...llmAgentPages,
+  ...qualitySystemPages,
+  ...benchmarkCapstonePages,
   ...professionalPages.filter((page) => page.id.startsWith("TD-C")),
 ].map((page, index) => ({ ...page, order: index + 1 }));
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
+  S01: { title: "Playwright Test Agents", url: "https://playwright.dev/docs/test-agents" },
+  S02: { title: "Playwright Release Notes", url: "https://playwright.dev/docs/release-notes" },
   S03: { title: "Promptfoo Introduction", url: "https://www.promptfoo.dev/docs/intro/" },
   S04: { title: "DeepEval Introduction", url: "https://deepeval.com/docs/introduction" },
   S05: { title: "OpenAI Evals", url: "https://github.com/openai/evals" },
+  S06: { title: "Inspect AI", url: "https://inspect.aisi.org.uk/" },
+  S07: { title: "NIST AI RMF Core", url: "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" },
+  S08: { title: "OWASP Top 10 for LLM Applications 2025", url: "https://genai.owasp.org/resource/owasp-top-10-for-llm-applications-2025/" },
   S09: { title: "Ragas Metrics", url: "https://docs.ragas.io/en/stable/concepts/metrics/available_metrics/" },
   S10: { title: "Application-specific Evaluation", url: "https://docs.langchain.com/langsmith/evaluation-approaches" },
+  S12: { title: "Testing and Refining LLM Applications", url: "https://www.coursera.org/learn/testing-and-refining-llm-applications1" },
   S13: { title: "A Practical Introduction to Testing LLMs", url: "https://www.ministryoftesting.com/insights/a-practical-introduction-to-testing-llms" },
+  S14: { title: "AI-driven Testing in Practice", url: "https://www.ministryoftesting.com/media-sessions/ai-driven-testing-in-practice-from-requirements-to-reliable-automation" },
+  S18: { title: "Playwright 三智能体实践", url: "https://www.cnblogs.com/hogwarts/p/20198664" },
+  S21: { title: "Proving Generated Tests Can Fail", url: "https://www.reddit.com/r/Playwright/comments/1uxl3gh/made_a_small_set_of_playwright_skills_for_myself/" },
+  S22: { title: "Browser Access Did Not Solve Verification", url: "https://www.reddit.com/r/Playwright/comments/1s5cu65/browser_access_didnt_solve_verification/" },
   S23: { title: "ISTQB Certified Tester AI Testing Syllabus v2.0", url: "https://istqb.org/wp-content/uploads/2026/05/ISTQB-_CTAI_Syllabus_v2.0_Release.pdf" },
   S24: { title: "The ML Test Score", url: "https://research.google/pubs/the-ml-test-score-a-rubric-for-ml-production-readiness-and-technical-debt-reduction/" },
+  S27: { title: "AI Engineer, Quality and Evals", url: "https://jobs.ashbyhq.com/fieldguide/f4f0aea0-826d-451f-bd17-b04772e221cc/" },
+  S28: { title: "Staff Engineer, Engineering Productivity and AI Quality", url: "https://jobs.ashbyhq.com/harperinsure/eb0356be-3ab7-42a4-ab78-a263a323bcdc" },
+  S29: { title: "AI Quality Engineer", url: "https://jobs.ashbyhq.com/hostinger/5c996684-3e44-4f46-90ca-0e288126295e" },
+  S31: { title: "AI Engineer", url: "https://jobs.ashbyhq.com/fluency/9a83146e-e32d-4e0c-84b5-59996a58a821/" },
   S32: { title: "Software Quality Assurance Analysts and Testers", url: "https://www.onetonline.org/link/summary/15-1253.00" },
   S33: { title: "Attention Is All You Need", url: "https://arxiv.org/abs/1706.03762" },
   S34: { title: "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks", url: "https://arxiv.org/abs/2005.11401" },
@@ -1058,8 +1027,11 @@ export const sourceNotes: Record<string, { title: string; url: string }> = {
   S66: { title: "OpenAI Structured Outputs", url: "https://developers.openai.com/api/docs/guides/structured-outputs" },
 };
 
-export const firstUsablePath = [
-  "TD-F01", "TD-P01", "TD-P02", "TD-P03", "TD-S01", "TD-S02", "TD-S03", "TD-S04",
-  "TD-F02", "TD-F03", "TD-F04", "TD-A01", "TD-A02", "TD-A03", "TD-A04", "TD-A05", "TD-A06",
-  "TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12", "TD-C01",
-];
+export const firstUsablePath = pages.map((page) => page.id);
+
+export const releaseScope = {
+  mode: "complete-catalog" as const,
+  promisedPageIds: pages.map((page) => page.id),
+  catalogComplete: true,
+  validatedAt: "2026-08-10",
+};
