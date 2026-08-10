@@ -1,0 +1,15 @@
+{
+  "coverage": {"op": ">=", "value": 1.0},
+  "candidate_set_exact": {"op": ">=", "value": 1.0},
+  "task_pass_rate": {"op": ">=", "value": 1.0},
+  "schema_pass_rate": {"op": ">=", "value": 1.0},
+  "retrieval_recall": {"op": ">=", "value": 1.0},
+  "retrieval_precision": {"op": ">=", "value": 1.0},
+  "citation_pass_rate": {"op": ">=", "value": 1.0},
+  "forbidden_claim_rate": {"op": "<=", "value": 0.0},
+  "refusal_pass_rate": {"op": ">=", "value": 1.0},
+  "tool_pass_rate": {"op": ">=", "value": 1.0},
+  "p95_latency_ms": {"op": "<=", "value": 2000},
+  "avg_cost_usd": {"op": "<=", "value": 0.02},
+  "max_cost_usd": {"op": "<=", "value": 0.02}
+}

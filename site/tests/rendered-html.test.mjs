@@ -1,0 +1,35 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+
+async function render() {
+  const workerUrl = new URL("../dist/server/index.js", import.meta.url);
+  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
+  const { default: worker } = await import(workerUrl.href);
+  return worker.fetch(
+    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
+    { waitUntil() {}, passThroughOnException() {} },
+  );
+}
+
+test("server-renders the test-development AI tutorial shell", async () => {
+  const response = await render();
+  assert.equal(response.status, 200);
+  assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  const html = await response.text();
+  assert.match(html, /测试开发 × AI/);
+  assert.match(html, /第一条完整学习路径/);
+  assert.match(html, /测试开发遇到 AI 后/);
+  assert.doesNotMatch(html, /codex-preview|Your site is taking shape|SkeletonPreview/);
+});
+
+test("ships the eight-page usable path and keeps planned pages honest", async () => {
+  const response = await render();
+  const html = await response.text();
+  for (const id of ["TD-T01", "TD-T02", "TD-T03", "TD-T04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"]) {
+    assert.match(html, new RegExp(id));
+  }
+  assert.match(html, /待开发/);
+  assert.match(html, /实验已跑/);
+  assert.match(html, /资料已审/);
+});

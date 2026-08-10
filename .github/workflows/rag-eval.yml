@@ -1,0 +1,25 @@
+name: rag-eval-gate
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  offline-eval:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: courses/td-ai-006-rag-eval-ci/lab
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Adversarial evaluator tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Evaluate candidate under review
+        run: python3 scripts/evaluate.py --candidate data/candidate-current.jsonl --report reports/ci-current.json
+      - name: Prove known regression is rejected
+        run: |
+          if python3 scripts/evaluate.py --candidate data/candidate-regressed.jsonl --report reports/ci-mutation.json; then
+            echo "ERROR: known regression unexpectedly passed"
+            exit 1
+          fi
