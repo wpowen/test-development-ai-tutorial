@@ -7,10 +7,20 @@ if (pages.length < 60) errors.push(`knowledge catalog must contain the original 
 if (byId.size !== pages.length) errors.push("page IDs must be unique");
 if (releaseScope.mode !== "pilot-path") errors.push("current release must declare pilot-path scope");
 if (releaseScope.catalogComplete) errors.push("pilot-path release cannot claim catalogComplete=true");
-if (releaseScope.promisedPageIds.length !== 8) errors.push("Agent performance pilot must promise exactly 8 deep pages");
+if (releaseScope.promisedPageIds.length !== 9) errors.push("profession-reality plus requirements-to-evidence path must promise exactly 9 deep pages");
 if (new Set(releaseScope.promisedPageIds).size !== releaseScope.promisedPageIds.length) errors.push("promised IDs must be unique");
 if (firstUsablePath.join(",") !== releaseScope.promisedPageIds.join(",")) errors.push("learner path must equal promised deep-pilot pages");
-if (firstUsablePath[0] !== "TD-AP01") errors.push("deep pilot must start at TD-AP01");
+if (firstUsablePath[0] !== "TD-F01") errors.push("deep path must start with profession reality reconstruction");
+
+const bannedGenericPhrases = [
+  "先把真实问题说清楚",
+  "按证据顺序完成工作流",
+  "在最小业务场景里亲手做一次",
+  "迁移到你的项目",
+  "轮到你动手",
+  "本页完成后",
+  "你会带走",
+];
 
 for (const id of firstUsablePath) {
   const page = byId.get(id);
@@ -39,6 +49,10 @@ for (const page of pages) {
   if (page.sourceIds.length < 3) errors.push(`${page.id} needs at least 3 source references`);
   for (const sourceId of page.sourceIds) if (!sourceNotes[sourceId]) errors.push(`${page.id} references unknown source ${sourceId}`);
   if (page.evidenceBoundary.length < 35) errors.push(`${page.id} evidence boundary is too thin`);
+  const learnerCopy = JSON.stringify({ summary: page.summary, why: page.why, blocks: page.blocks, practice: page.practice, completion: page.completion });
+  for (const phrase of bannedGenericPhrases) {
+    if (learnerCopy.includes(phrase)) errors.push(`${page.id} contains generic/template phrase: ${phrase}`);
+  }
   if (page.type === "跟做") {
     const codeBlocks = page.blocks.filter((block) => block.code).length;
     const expectedBlocks = page.blocks.filter((block) => block.expected).length;

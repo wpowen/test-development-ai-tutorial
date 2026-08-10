@@ -20,7 +20,7 @@ from urllib.request import Request, urlopen
 
 REQUIRED_ROOT = [
     "career-profile.md", "tasks.json", "curriculum.json", "course-map.md",
-    "industry-framework.md", "learning-architecture.md", "curriculum-gap-analysis.md", "validation-report.md", "update-log.md",
+    "profession-reality-map.md", "industry-framework.md", "learning-architecture.md", "curriculum-gap-analysis.md", "validation-report.md", "update-log.md",
 ]
 LEARNING_ARCHITECTURE_MARKERS = [
     "## Learner transformation", "## Professional baseline", "## AI foundations",
@@ -40,7 +40,7 @@ REQUIRED_TUTORIAL_MARKDOWN = {
 }
 REQUIRED_RESEARCH = [
     "source-ledger.csv", "search-plan.json", "search-log.csv", "technology-radar.json",
-    "channel-coverage.json", "profession-map.json", "profession-knowledge-system.json", "github-artifacts.csv", "job-signals.csv",
+    "channel-coverage.json", "profession-reality-map.json", "profession-map.json", "profession-knowledge-system.json", "github-artifacts.csv", "job-signals.csv",
     "learner-signals.csv", "scenarios.json", "evidence-matrix.md", "competitor-matrix.csv",
     "ai-capability-map.md", "competency-transition-map.json", "curriculum-coverage-matrix.csv",
 ]
@@ -609,6 +609,43 @@ def validate_research(root: Path, errors: list[str]) -> None:
                 errors.append(f"learner signal row {index} references unknown source")
             if row.get("claim_status") not in {"observed", "vendor-claim", "inferred", "unknown"}:
                 errors.append(f"learner signal row {index} has invalid claim_status")
+
+    profession_reality_path = research / "profession-reality-map.json"
+    if profession_reality_path.is_file():
+        reality = load_json(profession_reality_path, errors)
+        if isinstance(reality, dict):
+            require_fields(reality, [
+                "profession_id", "as_of", "review_status", "role_variants", "work_rhythms",
+                "workflow_stages", "dependencies", "artifacts", "performance_and_promotion",
+                "pain_points", "information_barriers", "ai_opportunities", "beginner_reuse_pack",
+                "source_ids",
+            ], "profession reality map", errors)
+            minimums = {
+                "role_variants": 3, "work_rhythms": 3, "workflow_stages": 6,
+                "dependencies": 5, "artifacts": 6, "pain_points": 5,
+                "information_barriers": 3, "ai_opportunities": 5,
+            }
+            for field, minimum in minimums.items():
+                values = reality.get(field)
+                if not isinstance(values, list) or len(values) < minimum:
+                    errors.append(f"profession reality map needs at least {minimum} {field}")
+            if reality.get("review_status") not in {"desk-researched", "practitioner-reviewed"}:
+                errors.append("profession reality map has invalid review_status")
+            source_ids = set(reality.get("source_ids", [])) if isinstance(reality.get("source_ids"), list) else set()
+            if len(source_ids) < 3 or source_ids - ledger_ids:
+                errors.append("profession reality map needs at least 3 known source IDs")
+            opportunities = reality.get("ai_opportunities", [])
+            for index, opportunity in enumerate(opportunities if isinstance(opportunities, list) else []):
+                if not isinstance(opportunity, dict):
+                    errors.append(f"profession AI opportunity {index} is not an object")
+                    continue
+                require_fields(opportunity, [
+                    "opportunity_id", "work_stage_id", "change_class", "baseline_pain",
+                    "ai_role", "inspectable_output", "human_gate", "ai_failures",
+                    "baseline_metric", "success_measure", "starter_material", "evidence_status",
+                ], f"profession AI opportunity {index}", errors)
+                if opportunity.get("change_class") not in {"retained", "assisted", "automated", "transformed", "new-work", "declining"}:
+                    errors.append(f"profession AI opportunity {index} has invalid change_class")
 
     profession_domain_by_scenario: dict[str, str] = {}
     profession_map_path = research / "profession-map.json"
@@ -1650,7 +1687,7 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
                 errors.append(f"tutorial promised page {page_id} missing per-topic research package")
             else:
                 package_text = package_path.read_text(encoding="utf-8")
-                for marker in ["## Research brief", "## Source pack", "## Evidence synthesis", "## Engineering blueprint", "## Manuscript map", "## Validation"]:
+                for marker in ["## Research brief", "## Source pack", "## Evidence synthesis", "## Engineering blueprint", "## Manuscript map", "## Editorial review", "## Validation"]:
                     if marker not in package_text:
                         errors.append(f"tutorial promised page {page_id} research package missing marker: {marker}")
             for dependency in page_by_id[page_id].get("prerequisite_ids", []):

@@ -1,0 +1,74 @@
+{
+  "profession_id": "software-test-development-ai-quality",
+  "as_of": "2026-08-10",
+  "review_status": "desk-researched",
+  "role_variants": [
+    {"id": "associate-test-engineer", "scope": "在指导下分析工件、维护测试、记录结果和缺陷", "claim_status": "fact", "source_ids": ["S90"]},
+    {"id": "test-automation-sdet", "scope": "设计和维护自动化、框架、CI 与环境工具", "claim_status": "fact", "source_ids": ["S32", "S90", "S91"]},
+    {"id": "senior-test-quality-engineer", "scope": "负责一个范围的风险策略、标准、跨团队依赖和质量决策证据", "claim_status": "fact", "source_ids": ["S90"]},
+    {"id": "lead-principal-quality-engineer", "scope": "跨团队质量杠杆、平台、标准、指导与组织级改进；具体边界因组织而异", "claim_status": "inference", "source_ids": ["S90", "S92"]},
+    {"id": "backend-engineering-productivity-transition", "scope": "部分组织把 SET 能力并入后端工程或工程效能", "claim_status": "counterevidence", "source_ids": ["S91"]}
+  ],
+  "work_rhythms": [
+    {"id": "ordinary-day", "events": ["需求或设计评审", "测试设计与自动化", "CI 失败分诊", "风险沟通"], "claim_status": "synthesis"},
+    {"id": "sprint-release", "events": ["范围与策略", "持续反馈", "回归与缺陷", "发布证据", "上线观察"], "claim_status": "synthesis"},
+    {"id": "incident-exception", "events": ["用户症状", "日志和 Trace", "根因候选", "修复验证", "回归资产"], "claim_status": "synthesis"}
+  ],
+  "workflow_stages": [
+    {"stage_id": "W1", "name": "需求与设计评审", "trigger": "业务或技术变更进入评审", "inputs": ["PRD", "技术方案", "接口或事件契约"], "dependencies": ["产品", "研发", "架构"], "artifacts": ["风险问题", "冲突单", "可测试性结论"], "decision": "补充文档或调整设计", "failure_cost": "错误前提传播到全部下游测试", "source_ids": ["S32", "S90"]},
+    {"stage_id": "W2", "name": "风险与测试策略", "trigger": "范围和截止时间可见", "inputs": ["变更范围", "业务影响", "历史缺陷"], "dependencies": ["产品负责人", "技术负责人", "发布负责人"], "artifacts": ["风险地图", "测试策略", "退出条件"], "decision": "测试投入和剩余风险", "failure_cost": "高风险区域没有被验证", "source_ids": ["S82", "S90"]},
+    {"stage_id": "W3", "name": "测试设计与准备", "trigger": "测试依据可用", "inputs": ["状态模型", "接口契约", "策略"], "dependencies": ["测试数据", "环境", "服务依赖"], "artifacts": ["测试条件", "Oracle", "Fixture", "自动化代码"], "decision": "是否具备执行条件", "failure_cost": "用例看似完整但无法判断对错", "source_ids": ["S82", "S85"]},
+    {"stage_id": "W4", "name": "执行与失败诊断", "trigger": "可测试构建可用", "inputs": ["构建版本", "测试包", "环境和数据"], "dependencies": ["CI", "日志", "Trace", "研发"], "artifacts": ["运行清单", "结果", "缺陷", "失败分类"], "decision": "产品缺陷、测试缺陷、环境缺陷或阻断", "failure_cost": "误报拖慢交付或漏报进入生产", "source_ids": ["S32", "S89", "S91"]},
+    {"stage_id": "W5", "name": "发布与上线", "trigger": "候选版本完成验证", "inputs": ["测试证据", "遗留缺陷", "监控和回滚计划"], "dependencies": ["发布负责人", "SRE", "业务 owner"], "artifacts": ["发布建议", "Waiver", "上线观察项"], "decision": "放行、延期、灰度或回滚", "failure_cost": "无证据放行或错误阻断业务", "source_ids": ["S32", "S47"]},
+    {"stage_id": "W6", "name": "生产反馈与持续改进", "trigger": "线上指标、事故或客户问题", "inputs": ["监控", "Trace", "客服反馈", "事故记录"], "dependencies": ["SRE", "客服", "研发", "数据团队"], "artifacts": ["根因", "回归样例", "规则和平台改进"], "decision": "如何防止同类问题复发", "failure_cost": "事故经验没有进入质量系统", "source_ids": ["S32", "S47"]}
+  ],
+  "dependencies": [
+    {"id": "people", "items": ["产品", "研发", "架构", "SRE", "安全", "客服"]},
+    {"id": "documents", "items": ["PRD", "技术方案", "接口契约", "发布政策"]},
+    {"id": "systems", "items": ["代码库", "CI", "缺陷系统", "日志与 Trace", "监控"]},
+    {"id": "data-environment", "items": ["测试数据", "身份权限", "依赖服务", "可复现环境"]},
+    {"id": "governance-time", "items": ["审批人", "合规规则", "发布窗口", "SLO"]}
+  ],
+  "artifacts": [
+    {"id": "risk-map", "consumer": "测试策略和负责人"},
+    {"id": "test-strategy", "consumer": "项目团队和发布方"},
+    {"id": "requirement-contract", "consumer": "测试设计和自动化"},
+    {"id": "test-package", "consumer": "执行器和审查者"},
+    {"id": "run-evidence", "consumer": "缺陷诊断和发布方"},
+    {"id": "release-evidence-pack", "consumer": "发布或风险接受者"},
+    {"id": "regression-asset", "consumer": "后续 CI 和质量平台"}
+  ],
+  "performance_and_promotion": {
+    "public_signals": ["可靠交付", "风险识别和决策质量", "持续反馈", "测试稳定性", "可复用工具和标准", "跨团队影响", "知识共享和指导"],
+    "internal_status": "INTERNAL-UNKNOWN",
+    "closure_actions": ["读取目标公司职级和绩效模板", "访谈测试负责人和晋升评委", "抽样过去晋升材料与质量目标"]
+  },
+  "pain_points": [
+    {"id": "P1", "kind": "fragmented-context", "pain": "需求与技术资料分散且可能冲突", "current_workaround": "人工搜索和会议确认", "unknown": "目标团队返工率"},
+    {"id": "P2", "kind": "oracle-gap", "pain": "测试步骤容易生成但业务 Oracle 不完整", "current_workaround": "依赖资深人员补充", "unknown": "关键规则覆盖率"},
+    {"id": "P3", "kind": "repetitive-preparation", "pain": "测试数据、脚手架和适配器重复建设", "current_workaround": "复制旧项目", "unknown": "可复用比例"},
+    {"id": "P4", "kind": "diagnosis-cost", "pain": "CI 日志、环境和产品错误混在一起", "current_workaround": "人工逐层排查", "unknown": "平均定位时间"},
+    {"id": "P5", "kind": "evidence-fragmentation", "pain": "发布证据散落且 NOT_RUN 容易被忽略", "current_workaround": "人工汇报", "unknown": "错误放行或重复确认成本"},
+    {"id": "P6", "kind": "new-ai-risk", "pain": "LLM 和 Agent 引入概率性、成本、权限和副作用", "current_workaround": "零散 Prompt 测试", "unknown": "真实风险切片和事故库"}
+  ],
+  "information_barriers": [
+    {"id": "public", "available": ["职业任务", "通用能力框架", "公开工具和标准", "公开职业变迁案例"], "status": "researchable"},
+    {"id": "internal", "available": [], "missing": ["发布政策", "历史事故", "代码和 Trace 权限", "绩效与晋升规则"], "status": "INTERNAL-UNKNOWN"},
+    {"id": "tacit", "available": [], "missing": ["资深人员判断规则", "非正式协作和升级路径"], "status": "INTERVIEW-REQUIRED"}
+  ],
+  "ai_opportunities": [
+    {"opportunity_id": "AI-O1", "work_stage_id": "W1", "change_class": "assisted", "baseline_pain": "多份文档冲突和引用丢失", "ai_role": "证据抽取与冲突候选", "inspectable_output": "Test Basis Pack 与 Conflict Register", "human_gate": "产品和技术 owner 裁决冲突", "ai_failures": ["采用旧版本", "补写缺失规则", "丢失来源"], "baseline_metric": "评审耗时、返工项、未决冲突", "success_measure": "更快形成可引用清单且不减少冲突发现", "starter_material": "source manifest、抽取 Skill、冲突夹具", "evidence_status": "fixture-tested"},
+    {"opportunity_id": "AI-O2", "work_stage_id": "W2", "change_class": "assisted", "baseline_pain": "风险和边界依赖个人经验", "ai_role": "基于引用生成候选风险与问题", "inspectable_output": "Risk Register 与 Review Question Pack", "human_gate": "测试负责人确定优先级和接受风险", "ai_failures": ["风险泛化", "忽略业务影响", "伪造阈值"], "baseline_metric": "评审问题命中率和后期新增高风险项", "success_measure": "更早发现可执行问题且没有无来源阈值", "starter_material": "风险 schema、提示词、反例", "evidence_status": "desk-researched"},
+    {"opportunity_id": "AI-O3", "work_stage_id": "W3", "change_class": "transformed", "baseline_pain": "从规则到可执行测试的转换重复且易丢 Oracle", "ai_role": "生成候选 TestPackage 和代码适配器", "inspectable_output": "带 source_refs 和 Oracle 的测试包", "human_gate": "审查业务语义并用 Mutation 证明检测力", "ai_failures": ["只测 happy path", "断言实现细节", "生成不可运行代码"], "baseline_metric": "设计耗时、风险覆盖、Mutation 检出率", "success_measure": "更短准备时间且 Mutation 检出率不下降", "starter_material": "TestPackage schema、生成 Skill、可运行夹具", "evidence_status": "fixture-tested"},
+    {"opportunity_id": "AI-O4", "work_stage_id": "W4", "change_class": "assisted", "baseline_pain": "失败证据跨日志、Trace 和环境分散", "ai_role": "聚合证据并提出可证伪根因候选", "inspectable_output": "Failure Classification 与证据链接", "human_gate": "责任工程师确认根因和处置", "ai_failures": ["把相关性当因果", "遗漏环境变更", "隐藏不确定性"], "baseline_metric": "MTTD、MTTR 和误分类率", "success_measure": "定位更快且人工复核一致率达到项目门槛", "starter_material": "Trace schema、分类 rubric、故障注入", "evidence_status": "desk-researched"},
+    {"opportunity_id": "AI-O5", "work_stage_id": "W5", "change_class": "assisted", "baseline_pain": "发布证据手工拼接且状态容易混淆", "ai_role": "汇总版本化证据和未完成项", "inspectable_output": "Release Evidence Pack", "human_gate": "具名发布人决定放行、Waiver 或阻断", "ai_failures": ["把 NOT_RUN 当 PASS", "省略失败切片", "自动批准"], "baseline_metric": "汇总耗时、缺失证据项和错误状态数", "success_measure": "更快汇总且所有非 PASS 状态完整保留", "starter_material": "证据清单、状态机、发布审查 Skill", "evidence_status": "desk-researched"},
+    {"opportunity_id": "AI-O6", "work_stage_id": "W6", "change_class": "new-work", "baseline_pain": "传统测试缺少 LLM、RAG 和 Agent 的数据集、轨迹和统计门禁", "ai_role": "被测系统、评测辅助和质量基础设施", "inspectable_output": "Eval Dataset、Scorer、Trace 与 CI Gate", "human_gate": "质量负责人校准 Judge、阈值和生产处置", "ai_failures": ["Judge 偏差", "数据污染", "轨迹越权", "成本失控"], "baseline_metric": "风险切片通过率、人工一致率、延迟和单位成功成本", "success_measure": "AI 特有失败可重复、可定位、可阻断", "starter_material": "离线 Eval 夹具、负例、指标和适配器", "evidence_status": "fixture-tested"}
+  ],
+  "beginner_reuse_pack": {
+    "fixture": "虚构订单取消与退款资料包",
+    "commands": ["python3 pipeline.py all", "python3 pipeline.py inject-doc-conflict", "python3 pipeline.py inject-code-defect", "python3 pipeline.py repair"],
+    "failure_injection": ["有效文档冲突必须 BLOCKED", "实现缺陷必须 FAIL"],
+    "transfer_checklist": ["替换并脱敏本地文档", "补充责任人和来源优先级", "由业务 owner 定义 Oracle", "记录原流程基线", "限制模型权限", "校准并复核结果"]
+  },
+  "source_ids": ["S32", "S82", "S90", "S91", "S92"]
+}

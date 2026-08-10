@@ -16,7 +16,7 @@ function setHash(id: string) {
 }
 
 export default function Home() {
-  const [currentId, setCurrentId] = useState("TD-AP01");
+  const [currentId, setCurrentId] = useState(firstUsablePath[0]);
   const [query, setQuery] = useState("");
   const [completed, setCompleted] = useState<string[]>([]);
   const [mobileNav, setMobileNav] = useState(false);
@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     const sync = () => {
       const id = window.location.hash.replace("#", "");
-      setCurrentId(pages.some((page) => page.id === id) ? id : "TD-AP01");
+      setCurrentId(pages.some((page) => page.id === id) ? id : firstUsablePath[0]);
       setMobileNav(false);
     };
     sync();
@@ -71,7 +71,7 @@ export default function Home() {
     <div className="app-shell">
       <header className="topbar">
         <button className="mobile-menu" onClick={() => setMobileNav(!mobileNav)} aria-label="打开课程目录">目录</button>
-        <a className="brand" href="#TD-AP01">
+        <a className="brand" href={`#${firstUsablePath[0]}`}>
           <span className="brand-mark">QE</span>
           <span><b>测试开发 × AI</b><small>从会测试，到会验证 AI 系统</small></span>
         </a>
@@ -85,7 +85,7 @@ export default function Home() {
         <div className="course-summary">
           <p className="eyebrow">当前可用版本</p>
           <h2>从传统测试到 AI 质量工程</h2>
-          <p>知识体系 v3 已展开；当前重点交付“Agent 性能与稳定性”深度样章。旧批量模板页已降级为提纲，按逐题调研门禁重写。</p>
+          <p>完整知识树保留；当前深度交付“需求文档到执行证据”八页实战。仅有主题但未完成逐题研究的页面继续显示为提纲。</p>
           <div className="summary-stats"><span><b>{delivered}</b> 深度正文</span><span><b>{pages.length - delivered}</b> 提纲/待重写</span></div>
         </div>
         <label className="search-box">
@@ -149,14 +149,14 @@ export default function Home() {
                   {block.bullets && <ul>{block.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}
                   {block.table && <div className="table-wrap"><table><thead><tr>{block.table.headers.map((header) => <th key={header}>{header}</th>)}</tr></thead><tbody>{block.table.rows.map((row, rowIndex) => <tr key={`${block.title}-${rowIndex}`}>{row.map((cell, cellIndex) => <td key={`${rowIndex}-${cellIndex}`}>{cell}</td>)}</tr>)}</tbody></table>{block.table.caption && <small>{block.table.caption}</small>}</div>}
                   {block.code && <div className="code-box"><button onClick={() => copy(block.code!, `${current.id}-${index}`)}>{copied === `${current.id}-${index}` ? "已复制" : "复制"}</button><pre>{block.code}</pre></div>}
-                  {block.expected && <div className="expected"><b>你应该看到 / 得出</b><p>{block.expected}</p></div>}
-                  {block.warning && <div className="warning"><b>别踩这个坑</b><p>{block.warning}</p></div>}
+                  {block.expected && <div className="expected"><b>预期结果</b><p>{block.expected}</p></div>}
+                  {block.warning && <div className="warning"><b>常见误区</b><p>{block.warning}</p></div>}
                 </div>
               </section>)}
 
               <section className="practice-card">
-                <p className="eyebrow">轮到你动手</p>
-                <h2>练习与迁移</h2>
+                <p className="eyebrow">实操</p>
+                <h2>练习与项目替换</h2>
                 <ol>{current.practice.map((item) => <li key={item}>{item}</li>)}</ol>
               </section>
 
@@ -184,7 +184,7 @@ export default function Home() {
       <aside className="right-rail">
         <p className="eyebrow">本页导航</p>
         {current.blocks.map((block, index) => <button key={block.title} onClick={() => document.getElementById(`section-${index}`)?.scrollIntoView({ behavior: "smooth" })}>{index + 1}. {block.title}</button>)}
-        <div className="route-card"><b>当前深度路径</b><p>{firstUsablePath.join(" → ")}</p><small>对象模型 → 指标 → 工作负载 → Trace → 架构 → SOP → 诊断 → 生产稳定性</small></div>
+        <div className="route-card"><b>当前深度路径</b><p>{firstUsablePath.join(" → ")}</p><small>测试依据 → 需求契约 → 评审 → 风险 → Oracle → 自动化 → 执行证据 → 变更回归</small></div>
       </aside>
     </div>
   );

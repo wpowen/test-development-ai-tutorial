@@ -1,0 +1,9 @@
+{
+  "schema_version": "requirement-contract.v1",
+  "unsupported_fields": [],
+  "requirements": [
+    {"requirement_id":"REQ-CANCEL-001","status":"ACCEPTED","statement":"Paid, unshipped order can be cancelled once","source_refs":["PRD-v3#R18","OPENAPI-v7#/cancel"]},
+    {"requirement_id":"REQ-CANCEL-002","status":"ACCEPTED","statement":"Shipped order cancellation is rejected with 409","source_refs":["PRD-v3#R17","OPENAPI-v7#/cancel/responses/409"]},
+    {"requirement_id":"REQ-CANCEL-003","status":"ACCEPTED","statement":"Non-owner cancellation is rejected with 403","source_refs":["PRD-v3#R19","OPENAPI-v7#/cancel/responses/403"]}
+  ]
+}

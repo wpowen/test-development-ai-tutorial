@@ -1,0 +1,23 @@
+{
+  "lesson_id":"td-ai-011-requirements-to-evidence-l01",
+  "target_learner":"会做接口测试但第一次把 AI 接入需求到执行链路的测试开发工程师",
+  "level":"L2-guided-workflow",
+  "estimated_minutes":15,
+  "job_result":"能阻断无依据需求并让一个已知产品缺陷稳定变红",
+  "artifact":"Test Basis + Requirement Contract + TestPackage + three-state evidence",
+  "stages":[
+    {"stage_id":"cold-open-failure","instructor_action":"展示 SHIPPED 订单错误返回 202","learner_action":"判断能否发布并写出缺少的证据","expected_observation":"HTTP 成功不等于业务正确","debrief":"关键 Oracle 来自批准契约和状态不变量","artifact_or_assessment":"初始发布判断"},
+    {"stage_id":"stakes-and-promise","instructor_action":"展示文档冲突如何生成一组方向相反的下游测试用例","learner_action":"分别写出产品 owner、技术 owner 和测试负责人的决策权限","expected_observation":"模型没有权限选择冲突中的业务规则或批准发布","debrief":"来源冲突必须传播为 BLOCKED 并交给具名责任人关闭","artifact_or_assessment":"包含 owner、允许动作和禁止动作的责任边界表"},
+    {"stage_id":"before-after","instructor_action":"对比直接生成用例与具有父子关系和状态的九工件链","learner_action":"为九个工件分别标出输入字段、下游消费者和失效条件","expected_observation":"结构化中间工件支持追溯、阻断和变更回归","debrief":"无法被下游消费的长摘要不能替代工件契约","artifact_or_assessment":"含输入、输出和下游消费者的工件链图"},
+    {"stage_id":"plain-mental-model","instructor_action":"解释事实、推断、UNKNOWN 和 BLOCKED 的来源与传播规则","learner_action":"依据 source_ref 给四条候选规则分类，并写出是否允许进入下游","expected_observation":"缺失和冲突不能强制二值化，状态会直接阻断后续生成","debrief":"状态本身决定下游能否继续以及需要哪个责任人处理","artifact_or_assessment":"带来源、状态和下游决定的 Requirement Contract"},
+    {"stage_id":"guided-demo","instructor_action":"运行 baseline 命令并逐项打开输入 hash、选择集和测试结果","learner_action":"核对 basis、contract、test package、implementation hash 以及 skip 和 retry","expected_observation":"baseline 退出码为 0，三条测试通过且执行证据字段完整","debrief":"绿色结果必须绑定具体输入版本、测试选择集和原始结果","artifact_or_assessment":"可复现并通过字段检查的 baseline report"},
+    {"stage_id":"failure-diagnosis","instructor_action":"注入已发货可取消缺陷并运行同一份测试包","learner_action":"沿 test_id 回到 risk_id、requirement_id 和 source_ref，记录期望与实际","expected_observation":"mutation 退出码为 1，实际 202 与契约要求的 409 冲突","debrief":"已知负控制被准确发现，才能证明测试具有检测力","artifact_or_assessment":"含 mutation ID、来源和失败归因的 mutation report"},
+    {"stage_id":"learner-practice","instructor_action":"提供恢复实现的命令，但不预告哪些证据字段会发生变化","learner_action":"先预测结果，再用同一契约和测试包重跑并比较三份报告","expected_observation":"repair 退出码为 0，失败测试重新通过且输入关系可追溯","debrief":"修复产品行为而不是修改业务断言或跳过失败测试","artifact_or_assessment":"repair report 与 baseline/mutation/repair 差异表"},
+    {"stage_id":"transfer-challenge","instructor_action":"把订单取消工件链改成具有多级状态和越权风险的企业审批流程","learner_action":"重建审批状态、角色权限、副作用 Oracle、来源优先级和领域 owner","expected_observation":"工件链和阻断原则不变，但所有业务规则与测试数据需要重新确认","debrief":"可迁移的是证据链和验证方法，不是订单教学夹具中的规则","artifact_or_assessment":"企业审批流程的 Requirement Contract、mutation 和 Impact Set","source_context":"订单取消合成夹具","target_context":"企业审批流程","invariant":"来源、版本、BLOCKED、独立 Oracle 和红绿证据","must_change":["审批状态机与角色权限","通知和审计副作用","领域 owner 与发布门禁"],"success_criterion":"正常审批路径通过，越权审批 mutation 稳定失败并能追溯到批准契约"},
+    {"stage_id":"artifact-handoff","instructor_action":"展示 Schema、Prompt、Skill、运行报告和验证清单的下载位置","learner_action":"独立复跑实验，并列出接入真实企业文档与服务前仍缺少的证据","expected_observation":"能够区分 fixture-tested 与 production validated 的证据范围","debrief":"离线运行是证据链起点，不能被包装成未经现场验证的效果证明","artifact_or_assessment":"经复跑的三态证据与生产接入差距清单"}
+  ],
+  "interaction_prompts":["文档冲突时谁决定？","HTTP 202 为什么不够？","哪个 Oracle 与实现独立？"],
+  "recovery_path":"运行 reset 恢复健康夹具；环境异常保持 NOT_RUN 并保留错误输出",
+  "evidence_status":"fixture-tested",
+  "limitations":"离线合成夹具；未测试真实模型 企业文档 支付服务或真实学习者效果"
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": "test-package.v1",
+  "tests": [
+    {
+      "test_id": "T-CANCEL-SHIPPED-01",
+      "requirement_ids": [
+        "REQ-CANCEL-002"
+      ],
+      "risk_ids": [
+        "RISK-INVALID-STATE"
+      ],
+      "fixture": {
+        "owner": true,
+        "state": "SHIPPED",
+        "captured_amount": 10000
+      },
+      "expected": {
+        "status_code": 409,
+        "refund_count": 0,
+        "state": "SHIPPED"
+      },
+      "source_refs": [
+        "PRD-v3#R17",
+        "OPENAPI-v7#/cancel/responses/409"
+      ]
+    },
+    {
+      "test_id": "T-CANCEL-IDEMPOTENT-01",
+      "requirement_ids": [
+        "REQ-CANCEL-001"
+      ],
+      "risk_ids": [
+        "RISK-REFUND-DUPLICATE"
+      ],
+      "fixture": {
+        "owner": true,
+        "state": "PAID_NOT_SHIPPED",
+        "captured_amount": 10000,
+        "repeat": 2
+      },
+      "expected": {
+        "status_code": 202,
+        "refund_count": 1,
+        "state": "CANCEL_PENDING"
+      },
+      "source_refs": [
+        "PRD-v3#R18",
+        "OPENAPI-v7#/cancel"
+      ]
+    },
+    {
+      "test_id": "T-CANCEL-AUTH-01",
+      "requirement_ids": [
+        "REQ-CANCEL-003"
+      ],
+      "risk_ids": [
+        "RISK-UNAUTHORIZED-CANCEL"
+      ],
+      "fixture": {
+        "owner": false,
+        "state": "PAID_NOT_SHIPPED",
+        "captured_amount": 10000
+      },
+      "expected": {
+        "status_code": 403,
+        "refund_count": 0,
+        "state": "PAID_NOT_SHIPPED"
+      },
+      "source_refs": [
+        "PRD-v3#R19",
+        "OPENAPI-v7#/cancel/responses/403"
+      ]
+    }
+  ]
+}

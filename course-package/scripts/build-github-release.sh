@@ -27,6 +27,7 @@ cp "$root/learning-architecture.md" "$target/docs/learning-architecture.md"
 cp "$root/course-map.md" "$target/docs/course-map.md"
 cp "$root/curriculum-gap-analysis.md" "$target/docs/curriculum-gap-analysis.md"
 cp "$root/industry-framework.md" "$target/docs/industry-framework.md"
+cp "$root/profession-reality-map.md" "$target/docs/profession-reality-map.md"
 cp "$root/curriculum.json" "$target/docs/curriculum.json"
 rsync -a "$root/research/" "$target/docs/research/"
 

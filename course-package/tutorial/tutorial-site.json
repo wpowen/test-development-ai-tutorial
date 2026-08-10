@@ -3,18 +3,19 @@
   "title": "测试开发 × AI 完整教程",
   "audience": "希望从传统测试开发系统进阶到 AI 质量工程的学习者",
   "updated_at": "2026-08-10",
-  "default_page_id": "TD-AP01",
+  "default_page_id": "TD-F01",
   "release_scope": {
     "mode": "pilot-path",
     "promised_page_ids": [
-      "TD-AP01",
-      "TD-AP02",
-      "TD-AP03",
-      "TD-AP04",
-      "TD-AP05",
-      "TD-AP06",
-      "TD-AP07",
-      "TD-AP08"
+      "TD-F01",
+      "TD-P01",
+      "TD-P02",
+      "TD-P03",
+      "TD-P04",
+      "TD-P05",
+      "TD-P06",
+      "TD-P07",
+      "TD-P08"
     ],
     "catalog_complete": false,
     "validated_at": "2026-08-10"
@@ -98,48 +99,50 @@
       "page_id": "TD-F01",
       "slug": "td-f01",
       "module_id": "TD-M00",
-      "title": "先把传统测试开发这份工作拆开",
-      "page_type": "concept",
+      "title": "先重建测试开发这份工作，再判断 AI 应该改哪里",
+      "page_type": "guided-lab",
       "level": "L1",
       "order": 1,
       "prerequisite_ids": [],
       "scenario_ids": [
         "TD-SYNTHETIC-COURSE"
       ],
-      "learner_result": "画出需求到生产反馈的测试生命周期；区分方法、工具、工件和质量决策；找出自己进入 AI 课程前需要补齐的传统能力",
-      "artifact": "传统测试开发能力与工件地图",
+      "learner_result": "重建一条真实测试工作链；区分执行产出、质量结果和晋升证据；把痛点分成可辅助、可重构和不可委托三类；得到一份可直接复用的资深从业者 Agent 提示词",
+      "artifact": "职业现实地图、AI 机会待办与内部信息访谈清单",
       "keywords": [
         "TD-F01",
         "TD-M00",
-        "先把传统测试开发这份工作拆开"
+        "先重建测试开发这份工作，再判断 AI 应该改哪里"
       ],
-      "evidence_status": "outlined",
-      "delivery_status": "outlined",
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
       "updated_at": "2026-08-10",
       "source_ids": [
-        "S23",
-        "S24",
-        "S32"
+        "S32",
+        "S82",
+        "S90",
+        "S91",
+        "S92"
       ],
       "previous_page_id": "",
       "next_page_id": "TD-P01",
       "content_sections": {
-        "outcome": "画出需求到生产反馈的测试生命周期；区分方法、工具、工件和质量决策；找出自己进入 AI 课程前需要补齐的传统能力",
-        "professional_relevance": "如果不先知道测试开发原本负责什么，就无法判断 AI 真正在改变哪一步，也无法分辨“效率提高”与“质量责任被偷偷丢掉”。",
-        "plain_explanation": "测试开发的核心工作链路通常是：理解需求和系统 → 识别风险 → 选择测试策略 → 设计 Oracle 和数据 → 实现并执行检查 → 诊断失败 → 支持发布 → 把线上问题变成回归资产。自动化只是其中一段，不是全部职业价值。\nAI 时代仍然保留这条主线。变化的是被测对象增加了模型、Prompt、知识库、检索器、工具、Agent 状态和评测器；如果原有风险、Oracle 和发布责任不清楚，增加 AI 只会放大不确定性。",
-        "smallest_example": "你应得到一张可审计地图：每条风险都连接到输入、测试、Oracle、证据和责任人。",
-        "learner_action": "选一个真实但可脱敏的业务流程，画出需求到生产反馈的生命周期；列出至少五种当前测试工具，并把它们归回流程、方法或工件；设计一个 Mutation，证明现有测试真的有检测力",
-        "expected_result": "能解释测试开发的价值为什么不等于写用例；已经提交一张传统能力与工件地图；至少一个预埋缺陷能让测试稳定失败",
-        "common_errors": "如果课程只教你使用一个 AI 工具，却不说明它改变了哪项职业责任，就不是完整的测试开发能力迁移。",
-        "completion_check": "能解释测试开发的价值为什么不等于写用例；已经提交一张传统能力与工件地图；至少一个预埋缺陷能让测试稳定失败",
-        "evidence_boundary": "本页重建职业与方法基线；O*NET、ISTQB 和生产 ML 质量研究只能支持通用结构，不能替代目标企业自己的流程、岗位分工和发布政策。"
+        "outcome": "重建一条真实测试工作链；区分执行产出、质量结果和晋升证据；把痛点分成可辅助、可重构和不可委托三类；得到一份可直接复用的资深从业者 Agent 提示词",
+        "professional_relevance": "如果连测试开发靠什么创造价值、被哪些人和系统卡住、怎样证明风险被控制都没有还原，后面列出的 AI 用法只会是工具清单。职业地图决定课程教什么，也决定哪些建议必须因公司而异。",
+        "plain_explanation": "公开职业资料给出的是共同骨架，不是某家公司的标准答案。O*NET 列出的工作包括参与需求和设计评审、设计测试策略与程序、维护自动化、监控性能、分析日志和代码、重建生产环境、支持客户问题和判断发布准备。英国 Government Digital and Data 框架进一步把 CI、可复用框架、全生命周期质量和技术问题解决放进测试工程师职责。\n把它还原成工作节奏：白天可能在需求评审、测试设计、自动化实现和 CI 分诊之间切换；迭代末要交付风险范围、执行证据、遗留问题和上线观察；事故发生后又要从用户症状和 Trace 回到根因、修复验证和回归资产。具体会议、审批人与系统权限仍是 INTERNAL-UNKNOWN。",
+        "smallest_example": "每个 AI 机会都应写出原流程基线、输入权限、可检查产出、人工门禁、新失败和成功指标。写不出来就先不做课程。",
+        "learner_action": "用最近一次需求重建一天、一个迭代和一次异常路径；列出至少六个工件及其下游消费者；把公司内部流程和晋升规则标成 INTERNAL-UNKNOWN 并列出访谈问题；选择一个 AI 机会，记录原流程基线和失败注入方法",
+        "expected_result": "你是[测试开发/质量工程]职业重建分析员。你可以采用资深从业者的工作视角，但不得声称真实任职经历，也不得编造公司内部实践。\n\n先重建职业，不要推荐 AI 工具。所有关键结论标成 FACT、PRACTITIONER-SIGNAL、INFERENCE、VENDOR-CLAIM 或 INTERNAL-UNKNOWN，并给 source_id。\n\n请分别还原：\n1. 一个普通工作日；\n2. 一个迭代或发布周期；\n3. 一项交付从触发到下游决定；\n4. 一次失败或线上事故如何回流。\n\n每一步写清 actor、input、dependency、system、artifact、decision_right、failure_cost、downstream_consumer。\n再分析绩效与晋升证据、痛点、当前绕法、公开与内部信息差。内部流程、权限、指标、历史事故和晋升规则不知道就写 INTERNAL-UNKNOWN，并给出要访谈的人或要读取的文档。\n\n职业地图完成后才允许提出 AI 方案。每个方案必须包含：原流程基线、AI 权限、可检查产出、人工门禁、AI 新失败、验证方法、成功指标、可供初学者复用的夹具或 Skill。凡是只有“让 AI 生成一段内容”且无法注入缺陷证明变红的方案，一律拒绝。",
+        "common_errors": "如果 AI 产物没有进入真实工件链，也没有人用它做决定，它只是一次演示。",
+        "completion_check": "职业链包含触发、依赖、工件、决定和失败成本；绩效证据与内部晋升规则已分开；AI 机会有明确权限、人工门禁和衡量指标；至少一个初学者 Starter Pack 能通过故障注入变红",
+        "evidence_boundary": "本页根据公开职业框架、公开雇主材料和从业者讨论重建共同结构，状态为 desk-researched。它不能证明目标公司的职责、流程、绩效或晋升规则；GitLab 的角色迁移是单一组织案例；论坛只提供痛点和差异信号。"
       }
     },
     {
       "page_id": "TD-P01",
       "slug": "td-p01",
       "module_id": "TD-M00",
-      "title": "需求文档解析：从自然语言变成可追踪的质量条件",
+      "title": "先冻结测试依据：别让 AI 读一堆互相打架的文档",
       "page_type": "guided-lab",
       "level": "L1",
       "order": 2,
@@ -149,41 +152,42 @@
       "scenario_ids": [
         "TD-SYNTHETIC-COURSE"
       ],
-      "learner_result": "识别需求中的规则、状态、角色和异常；建立需求—风险—测试—证据追踪；用 AI 辅助解析但保留人工决策与引用",
-      "artifact": "需求解析表、问题清单与双向追踪矩阵",
+      "learner_result": "建立可复现的文档输入包；为每段内容分配稳定引用；在冲突未解决时停止下游生成",
+      "artifact": "Test Basis Pack 与 source-manifest.json",
       "keywords": [
         "TD-P01",
         "TD-M00",
-        "需求文档解析：从自然语言变成可追踪的质量条件"
+        "先冻结测试依据：别让 AI 读一堆互相打架的文档"
       ],
-      "evidence_status": "outlined",
-      "delivery_status": "outlined",
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S41",
         "S42",
-        "S43"
+        "S81",
+        "S85"
       ],
       "previous_page_id": "TD-F01",
       "next_page_id": "TD-P02",
       "content_sections": {
-        "outcome": "识别需求中的规则、状态、角色和异常；建立需求—风险—测试—证据追踪；用 AI 辅助解析但保留人工决策与引用",
-        "professional_relevance": "AI 可以快速摘要和生成候选用例，但若输入缺少版本、规则冲突和验收口径，它只会更快地产生看似完整的错误。需求测试的专业价值是发现歧义、遗漏和不可验证条件。",
-        "plain_explanation": "保存 PRD 版本、原型链接、OpenAPI/事件 Schema、历史缺陷和业务术语表。把每段需求赋予稳定编号，AI 的每条结论必须引用输入段落，不能只给一份无出处摘要。\n测试人员先定义输出结构：业务实体、角色权限、前置条件、状态转换、主流程、异常、边界、非功能要求和待确认项。",
-        "smallest_example": "任务：解析以下需求片段。\n输出：requirement_id、rule、precondition、state_change、exception、nfr、source_quote、confidence、question。\n约束：不得补写原文没有的政策；冲突项单独输出。",
-        "learner_action": "选一页真实脱敏 PRD，生成至少 10 条结构化规则；找出 3 个歧义或冲突并形成澄清问题；完成 5 条需求到证据的双向追踪",
-        "expected_result": "结果中每条规则都有 requirement_id 和来源；无来源建议被标为推断或问题，而不是事实。",
-        "common_errors": "AI 解析结果没有 source ID、版本和待确认项时，不得直接生成发布用例。",
-        "completion_check": "所有结论能回到输入版本和段落；推断没有冒充已确认需求；至少一个变更能定位受影响测试与证据",
-        "evidence_boundary": "本页流程依据标准测试过程与契约规范综合；AI 解析效果尚未在用户企业的真实 PRD 分布上测量，因此结论必须由需求、研发和测试共同确认。"
+        "outcome": "建立可复现的文档输入包；为每段内容分配稳定引用；在冲突未解决时停止下游生成",
+        "professional_relevance": "模型可以很快归纳多份文档，但它不知道哪份已经过期，也没有权力替团队决定冲突规则。输入版本和来源优先级不清楚，后面的测试用例越完整，返工越大。",
+        "plain_explanation": "贯穿案例是订单取消：买家可以取消未发货订单；已支付订单取消后异步退款。这里故意放入一条冲突——PRD 禁止已发货订单取消，旧技术方案却仍写着 SHIPPED 可取消。正确结果不是让模型选一个更合理的说法，而是把该条标成 BLOCKED。\n最小输入包包含 PRD、技术方案、OpenAPI、状态机、业务术语表、变更范围和历史缺陷。每份文件记录版本、责任人、有效期、敏感等级和内容哈希。网页链接不能只保存当前地址，还要保存访问日期或提交版本。",
+        "smallest_example": "{\n  \"baseline_id\": \"order-cancel-2026-08-10\",\n  \"sources\": [\n    {\"id\":\"PRD-v3\",\"type\":\"prd\",\"owner\":\"product-a\",\"sha256\":\"…\",\"precedence\":1},\n    {\"id\":\"TECH-a13f\",\"type\":\"design\",\"owner\":\"tech-b\",\"sha256\":\"…\",\"precedence\":2},\n    {\"id\":\"OPENAPI-v7\",\"type\":\"contract\",\"owner\":\"service-c\",\"sha256\":\"…\",\"precedence\":3}\n  ],\n  \"precedence_rule\": \"业务语义由已批准 PRD 决定；实现细节由当前技术方案和接口契约决定；任意语义冲突必须进入评审，不得自动覆盖\"\n}",
+        "learner_action": "把一份脱敏 PRD 和一份技术方案切成稳定 source_ref；写出来源优先级和冲突升级责任人；故意加入一条冲突并确认流水线停止",
+        "expected_result": "任何人拿到 manifest，都能确认模型读了哪些文件、哪个版本，以及某条结论来自哪个段落。",
+        "common_errors": "‘综合判断后采用更合理规则’会抹掉冲突，也会把模型变成没有授权的产品负责人。",
+        "completion_check": "每份输入有版本、owner、hash 和敏感等级；任一结论可回到具体段落；冲突不会被模型静默合并",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
       }
     },
     {
       "page_id": "TD-P02",
       "slug": "td-p02",
       "module_id": "TD-M00",
-      "title": "风险策略、测试层级与用例设计",
-      "page_type": "concept",
+      "title": "把自然语言变成需求契约：让下游程序能直接消费",
+      "page_type": "guided-lab",
       "level": "L1",
       "order": 3,
       "prerequisite_ids": [
@@ -192,41 +196,42 @@
       "scenario_ids": [
         "TD-SYNTHETIC-COURSE"
       ],
-      "learner_result": "按影响与可能性排列风险；为风险选择测试层级和设计技术；定义进入、退出和发布门禁",
-      "artifact": "风险测试策略与分层覆盖表",
+      "learner_result": "定义 Requirement Contract；区分事实、推断、未知与冲突；校验结构正确不等于语义正确",
+      "artifact": "requirement-contract.json 与校验结果",
       "keywords": [
         "TD-P02",
         "TD-M00",
-        "风险策略、测试层级与用例设计"
+        "把自然语言变成需求契约：让下游程序能直接消费"
       ],
-      "evidence_status": "outlined",
-      "delivery_status": "outlined",
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S41",
-        "S42",
-        "S50"
+        "S66",
+        "S81",
+        "S85"
       ],
       "previous_page_id": "TD-P01",
       "next_page_id": "TD-P03",
       "content_sections": {
-        "outcome": "按影响与可能性排列风险；为风险选择测试层级和设计技术；定义进入、退出和发布门禁",
-        "professional_relevance": "专业测试不是用例越多越好，而是在最便宜、最接近根因的位置获得足够证据。AI 生成大量用例很容易掩盖覆盖空洞和维护成本。",
-        "plain_explanation": "先写失败后果、暴露人群、可发现性、可恢复性和合规影响，再决定深度。高影响且难恢复的支付、权限、数据破坏和 AI 工具副作用，应采用多层 Oracle 与人工批准。",
-        "smallest_example": "一组高质量测试应能说明覆盖了哪些风险和规则，并能让已知坏版本稳定失败，而不是只展示生成数量。",
-        "learner_action": "为退款流程列出 8 个风险并排序；把每个风险分配到最早可验证层级；设计一个 mutation 证明关键用例有检测力",
-        "expected_result": "风险与测试层级一一关联；高风险项有独立 blocker；退出条件能支持真实放行或拒绝决策",
-        "common_errors": "总通过率不能抵消关键权限、数据破坏或安全 blocker。",
-        "completion_check": "风险与测试层级一一关联；高风险项有独立 blocker；退出条件能支持真实放行或拒绝决策",
-        "evidence_boundary": "风险排序和阈值必须结合目标业务事故成本校准；标准只提供过程框架，不提供可直接复制到所有组织的统一门槛。"
+        "outcome": "定义 Requirement Contract；区分事实、推断、未知与冲突；校验结构正确不等于语义正确",
+        "professional_relevance": "一段‘需求摘要’不能直接生成可靠测试。下游需要稳定字段、可追溯引用和停止状态，才能判断哪些规则可测、哪些规则仍待确认。",
+        "plain_explanation": "字段不是为了让 JSON 看起来专业，而是为了支持后续风险分析、用例生成、执行和变更回归。订单取消至少要明确参与者、前置状态、触发、状态变化、拒绝路径、退款副作用、幂等不变量、接口和待确认项。",
+        "smallest_example": "{\n  \"requirement_id\": \"REQ-CANCEL-001\",\n  \"status\": \"ACCEPTED|UNKNOWN|BLOCKED\",\n  \"statement\": \"已支付且未发货的订单允许买家取消，并创建一次退款请求\",\n  \"actors\": [\"BUYER\"],\n  \"preconditions\": [\"payment_status=PAID\", \"shipment_status=NOT_SHIPPED\"],\n  \"trigger\": \"POST /orders/{order_id}/cancel\",\n  \"state_transitions\": [\"PAID->CANCEL_PENDING\", \"CANCEL_PENDING->CANCELLED\"],\n  \"invariants\": [\"refund_count<=1\", \"refund_total<=captured_amount\"],\n  \"exceptions\": [\"SHIPPED->409\", \"non-owner->403\"],\n  \"side_effects\": [\"emit refund.requested\"],\n  \"nfrs\": [],\n  \"unknowns\": [\"退款完成时限未定义\"],\n  \"source_refs\": [\"PRD-v3#R17\", \"OPENAPI-v7#/cancel\"]\n}",
+        "learner_action": "为自己的业务补一条状态转换和一条不变量；加入一个文档未定义的字段并确认校验失败；让产品 owner 只评审关键业务语义而不是整段模型解释",
+        "expected_result": "任务：从 INPUT_SOURCES 提取 RequirementContract[]。\n\n输出要求：\n- 严格遵守 REQUIREMENT_CONTRACT_SCHEMA。\n- statement、preconditions、transitions、invariants、exceptions 的每一项都要绑定 source_refs。\n- 文档没有定义的 SLA、重试、金额、权限、状态不得推断；放入 unknowns。\n- 有效来源冲突时 status=BLOCKED，并输出 conflict_id、source_refs、impact、owner_needed。\n- 不生成测试用例，不建议产品规则，不修改原文。\n\n完成后再做一次自检：列出任何无法由引用支持的字段；若存在，将该字段删除或改为 UNKNOWN。",
+        "common_errors": "模型能输出正确 JSON，只说明传输契约成立；不能据此宣称需求已经正确。",
+        "completion_check": "Requirement Contract 能被程序读取；每个关键规则有来源或明确 UNKNOWN；结构通过与业务确认被分成两道门禁",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
       }
     },
     {
       "page_id": "TD-P03",
       "slug": "td-p03",
       "module_id": "TD-M00",
-      "title": "测试数据、环境、执行、结果收集与发布闭环",
-      "page_type": "guided-lab",
+      "title": "需求评审不是让 AI 总结：要把歧义、冲突和不可测项逼出来",
+      "page_type": "diagnostic",
       "level": "L1",
       "order": 4,
       "prerequisite_ids": [
@@ -235,33 +240,256 @@
       "scenario_ids": [
         "TD-SYNTHETIC-COURSE"
       ],
-      "learner_result": "构建数据与环境清单；区分测试失败、产品缺陷和基础设施噪声；输出可审计发布报告",
-      "artifact": "一次可重放执行包与发布结论",
+      "learner_result": "识别五类可测试性缺口；生成可关闭的评审问题；传播 BLOCKED 而不是强行生成用例",
+      "artifact": "review-questions.json 与评审决议记录",
       "keywords": [
         "TD-P03",
         "TD-M00",
-        "测试数据、环境、执行、结果收集与发布闭环"
+        "需求评审不是让 AI 总结：要把歧义、冲突和不可测项逼出来"
       ],
-      "evidence_status": "outlined",
-      "delivery_status": "outlined",
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
       "updated_at": "2026-08-10",
       "source_ids": [
         "S41",
         "S42",
-        "S48"
+        "S81",
+        "S82"
       ],
       "previous_page_id": "TD-P02",
+      "next_page_id": "TD-P04",
+      "content_sections": {
+        "outcome": "识别五类可测试性缺口；生成可关闭的评审问题；传播 BLOCKED 而不是强行生成用例",
+        "professional_relevance": "测试最早产生价值的地方，是在代码提交前发现不可测试规则。泛泛的‘建议补充异常场景’不会推动决策，问题必须指向来源、失败影响和需要谁回答。",
+        "plain_explanation": "评审 Agent 不复述需求，而是检查：歧义、来源冲突、缺失分支、不可观察结果和未定义非功能要求。每个问题记录严重性、影响的需求、来源、回答人和关闭证据。",
+        "smallest_example": "{\n  \"question_id\": \"RQ-007\",\n  \"requirement_ids\": [\"REQ-CANCEL-001\"],\n  \"type\": \"SOURCE_CONFLICT\",\n  \"question\": \"订单进入 SHIPPED 后是否仍允许取消？\",\n  \"source_refs\": [\"PRD-v3#R17\", \"TECH-a13f#S04\"],\n  \"impact\": \"决定 409 拒绝用例、退款副作用与仓配状态回滚\",\n  \"owner\": \"product-owner-order\",\n  \"status\": \"OPEN\",\n  \"close_with\": \"批准后的 PRD 段落和 Requirement Contract 新版本\"\n}",
+        "learner_action": "从自己的文档中找一条不可观察的成功条件；把‘请完善’改成有 owner 和关闭证据的问题；检查关键问题未关闭时下游是否确实停止",
+        "expected_result": "你是需求可测试性审查员，不负责重写需求。\n逐项检查：来源冲突、状态缺口、异常与重试、幂等、副作用、权限、数据、NFR、可观察 Oracle。\n输出 ReviewQuestion[]。每个问题必须包含 source_refs、impact、owner、block_level、close_with。\n如果问题会改变关键 Oracle、资金、权限或发布判断，block_level=RELEASE_BLOCKER。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "每个问题有来源、影响和责任人；RELEASE_BLOCKER 不会被生成流程跳过；关闭决议产生新版本而非覆盖历史",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
+      }
+    },
+    {
+      "page_id": "TD-P04",
+      "slug": "td-p04",
+      "module_id": "TD-M00",
+      "title": "从需求契约到风险策略：决定测什么、在哪一层测",
+      "page_type": "concept",
+      "level": "L1",
+      "order": 5,
+      "prerequisite_ids": [
+        "TD-P03"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "建立风险到测试的映射；避免全部堆到 E2E；为高风险定义测试、监控和处置",
+      "artifact": "risk-test-plan.json 与测试层级决策表",
+      "keywords": [
+        "TD-P04",
+        "TD-M00",
+        "从需求契约到风险策略：决定测什么、在哪一层测"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S41",
+        "S43",
+        "S45",
+        "S82"
+      ],
+      "previous_page_id": "TD-P03",
+      "next_page_id": "TD-P05",
+      "content_sections": {
+        "outcome": "建立风险到测试的映射；避免全部堆到 E2E；为高风险定义测试、监控和处置",
+        "professional_relevance": "AI 很容易生成几十条格式工整的用例，却不会自动知道哪项失败会造成资金损失，也不会替团队承担测试不足的风险。先做风险策略，才能控制范围和测试层级。",
+        "plain_explanation": "订单取消的主要风险不是‘接口报错’，而是重复退款、越权取消、已发货仍取消、状态和账本不一致、事件丢失。每项风险记录触发、影响、暴露面和责任人。",
+        "smallest_example": "{\n  \"risk_id\": \"RISK-REFUND-DUPLICATE\",\n  \"requirement_ids\": [\"REQ-CANCEL-001\"],\n  \"failure\": \"重试或并发请求创建两笔退款\",\n  \"impact\": \"资金损失与账务对账失败\",\n  \"severity\": \"CRITICAL\",\n  \"test_levels\": [\"unit\", \"service-integration\", \"contract\"],\n  \"oracles\": [\"refund_count<=1\", \"refund_total<=captured_amount\"],\n  \"monitoring\": [\"duplicate_refund_block_total\", \"refund_amount_mismatch_total\"],\n  \"owner\": \"payments-quality-owner\"\n}",
+        "learner_action": "为订单取消补一个安全风险和一个稳定性风险；把一个 E2E 用例下沉到更合适的层级；写出一项明确接受的残余风险及 owner",
+        "expected_result": "输入：ACCEPTED RequirementContract、架构图、历史缺陷、变更范围。\n输出：RiskTestPlan[]。\n要求：\n- 每个 risk_id 绑定 requirement_ids 和 source_refs；\n- 给出 failure、impact、test_levels、oracle、data、monitoring、owner；\n- 说明未选择 E2E 或未覆盖组合的理由；\n- 不编造严重性定义和阈值，缺失时标 UNKNOWN；\n- 高风险没有 oracle、监控或 owner 时 status=BLOCKED。",
+        "common_errors": "‘生成 100 条测试用例’会鼓励重复和低价值组合；课程不使用数量作为完成标准。",
+        "completion_check": "关键风险都有测试与 Oracle；层级选择有理由；高风险同时有监控和责任人",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
+      }
+    },
+    {
+      "page_id": "TD-P05",
+      "slug": "td-p05",
+      "module_id": "TD-M00",
+      "title": "生成测试之前先固定 Oracle：否则 AI 只会生成自洽答案",
+      "page_type": "guided-lab",
+      "level": "L1",
+      "order": 6,
+      "prerequisite_ids": [
+        "TD-P04"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "区分精确与概率 Oracle；生成可追溯测试包；用负控制证明测试有检测力",
+      "artifact": "test-package.json、数据夹具和 Oracle 清单",
+      "keywords": [
+        "TD-P05",
+        "TD-M00",
+        "生成测试之前先固定 Oracle：否则 AI 只会生成自洽答案"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S41",
+        "S45",
+        "S87",
+        "S07"
+      ],
+      "previous_page_id": "TD-P04",
+      "next_page_id": "TD-P06",
+      "content_sections": {
+        "outcome": "区分精确与概率 Oracle；生成可追溯测试包；用负控制证明测试有检测力",
+        "professional_relevance": "同一个模型根据自己理解的需求生成代码和断言，错误规则也可能一起通过。关键业务结果必须依赖独立契约、状态不变量、账本或人工确认样例。",
+        "plain_explanation": "可执行 TestPackage 至少包含测试 ID、需求/风险映射、层级、前置数据、动作、Oracle、清理、证据和适用版本。对订单取消，HTTP 200 不是关键 Oracle；账本金额、退款次数、状态和事件才是。",
+        "smallest_example": "{\n  \"test_id\": \"T-CANCEL-IDEMPOTENT-01\",\n  \"requirement_ids\": [\"REQ-CANCEL-001\"],\n  \"risk_ids\": [\"RISK-REFUND-DUPLICATE\"],\n  \"fixture\": {\"order\":\"PAID_NOT_SHIPPED\", \"idempotency_key\":\"idem-001\"},\n  \"actions\": [\"POST cancel\", \"POST cancel with same key\"],\n  \"oracles\": [\n    \"response[0].status=202\",\n    \"response[1].refund_id=response[0].refund_id\",\n    \"refund_operation_count(order_id)=1\",\n    \"refund_total=captured_amount\"\n  ],\n  \"evidence\": [\"responses\", \"ledger_rows\", \"events\", \"trace_id\"]\n}",
+        "learner_action": "把一个‘检查结果正确’改成可执行 Oracle；为幂等和并发各写一条独立不变量；植入一个错误实现并确认测试稳定失败",
+        "expected_result": "依据 RequirementContract v2 和 RiskTestPlan 生成 TestPackage[]。\n约束：\n1. 每个测试绑定 requirement_ids、risk_ids、test_level。\n2. 必须给出 fixture、actions、oracles、cleanup、evidence。\n3. 金额、权限、状态和副作用优先使用确定性 Oracle。\n4. 不得从被测实现反向推导预期结果。\n5. 无独立 Oracle 时 status=BLOCKED_TEST，并说明需要哪个 owner。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "每个测试保护明确风险；关键 Oracle 不依赖生成实现的同一模型；至少一个负控制被可靠发现",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
+      }
+    },
+    {
+      "page_id": "TD-P06",
+      "slug": "td-p06",
+      "module_id": "TD-M00",
+      "title": "把测试包接到自动化：接口、契约、集成和 UI 各自负责什么",
+      "page_type": "guided-lab",
+      "level": "L1",
+      "order": 7,
+      "prerequisite_ids": [
+        "TD-P05"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "为测试选择合适适配器；生成后做静态与运行审查；保留代码到契约的双向追溯",
+      "artifact": "自动化测试骨架、adapter contract 与追溯索引",
+      "keywords": [
+        "TD-P06",
+        "TD-M00",
+        "把测试包接到自动化：接口、契约、集成和 UI 各自负责什么"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S01",
+        "S44",
+        "S45",
+        "S85"
+      ],
+      "previous_page_id": "TD-P05",
+      "next_page_id": "TD-P07",
+      "content_sections": {
+        "outcome": "为测试选择合适适配器；生成后做静态与运行审查；保留代码到契约的双向追溯",
+        "professional_relevance": "直接让 AI 从 PRD 写 Playwright 脚本，往往把所有场景塞进 UI，还会基于当前页面行为生成错误断言。先有测试包，再选择执行适配器，代码才有稳定的业务依据。",
+        "plain_explanation": "API 适配器负责请求和响应证据；数据库/事件适配器只读验证副作用；UI 适配器只覆盖用户可见关键路径。生产退款、取消和扣款等动作不得由教学 Agent 直接执行。",
+        "smallest_example": "输入：TestPackage、OpenAPI v7、adapter contract、测试环境变量清单。\n输出：pytest/Playwright 测试骨架与 traceability-index.json。\n要求：\n- 每个测试函数标注 test_id、requirement_ids、risk_ids；\n- Oracle 原样来自 TestPackage，不得根据实际响应改写；\n- 失败必须保存 request_id、trace_id、响应和依赖状态；\n- 禁止 skip、宽泛 try/except、固定 sleep 和删除失败断言；\n- 只能调用允许的 sandbox 工具。",
+        "learner_action": "为一个 TestPackage 选择 API/契约/集成/UI 层；审查一段只有 HTTP 200 的假绿测试；生成一份 test_id 到代码函数的追溯索引",
+        "expected_result": "修改 REQ-CANCEL-001 后，可以列出受影响的契约、用例、自动化函数和上一次执行证据。",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "自动化代码不改变业务 Oracle；高风险副作用只在隔离环境执行；任一函数能回溯需求与风险",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
+      }
+    },
+    {
+      "page_id": "TD-P07",
+      "slug": "td-p07",
+      "module_id": "TD-M00",
+      "title": "执行、收集、归因：一次绿色结果需要哪些证据",
+      "page_type": "diagnostic",
+      "level": "L1",
+      "order": 8,
+      "prerequisite_ids": [
+        "TD-P06"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "生成可复现 Run Manifest；区分产品失败、测试失败和环境阻塞；禁止重试掩盖波动",
+      "artifact": "run-manifest.json、原始日志与缺陷候选",
+      "keywords": [
+        "TD-P07",
+        "TD-M00",
+        "执行、收集、归因：一次绿色结果需要哪些证据"
+      ],
+      "evidence_status": "desk-researched",
+      "delivery_status": "desk-researched",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S01",
+        "S42",
+        "S49",
+        "S89"
+      ],
+      "previous_page_id": "TD-P06",
+      "next_page_id": "TD-P08",
+      "content_sections": {
+        "outcome": "生成可复现 Run Manifest；区分产品失败、测试失败和环境阻塞；禁止重试掩盖波动",
+        "professional_relevance": "绿色截图无法证明测了哪个版本、是否跳过用例、是否因重试碰巧通过。执行结果只有连同输入、环境和原始证据一起保存，才能支持缺陷归因和发布判断。",
+        "plain_explanation": "Run Manifest 记录代码/镜像、需求 baseline、TestPackage、数据、依赖、模型/Prompt（如果参与）、环境和命令。任一关键版本缺失时，结果是 NOT_RUN 或 BLOCKED，不是 PASS。",
+        "smallest_example": "{\n  \"run_id\":\"RUN-20260810-001\",\n  \"code_sha\":\"7a31…\",\n  \"baseline_id\":\"order-cancel-v2\",\n  \"test_package_hash\":\"b82f…\",\n  \"fixture_hash\":\"f104…\",\n  \"environment\":\"local-sandbox\",\n  \"command\":\"python3 pipeline.py execute\",\n  \"retry_policy\":\"none\",\n  \"selected_test_ids\":[\"T-CANCEL-SHIPPED-01\",\"T-CANCEL-IDEMPOTENT-01\"]\n}",
+        "learner_action": "给一次运行补齐 code/baseline/data/test hash；制造环境失败并确认状态是 BLOCKED 而不是 FAIL；检查重试是否记录每次结果",
+        "expected_result": "python3 pipeline.py reset\npython3 pipeline.py execute --report reports/baseline.json\npython3 pipeline.py inject-code-defect\npython3 pipeline.py execute --report reports/mutation.json\npython3 pipeline.py repair\npython3 pipeline.py execute --report reports/repair.json",
+        "common_errors": "‘最终全部通过’若没有 selected tests、skipped、retry 和版本信息，只能算展示文字。",
+        "completion_check": "运行结果可在同一夹具上复现；失败状态不会被强制二值化；原始证据足以支持缺陷归因",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
+      }
+    },
+    {
+      "page_id": "TD-P08",
+      "slug": "td-p08",
+      "module_id": "TD-M00",
+      "title": "变更回归与发布判断：把整条证据链串起来",
+      "page_type": "project",
+      "level": "L1",
+      "order": 9,
+      "prerequisite_ids": [
+        "TD-P07"
+      ],
+      "scenario_ids": [
+        "TD-SYNTHETIC-COURSE"
+      ],
+      "learner_result": "运行端到端离线证据链；验证文档冲突与产品缺陷两类阻断；生成有责任人与边界的发布建议",
+      "artifact": "Requirements-to-Evidence Capstone 与三态运行证据",
+      "keywords": [
+        "TD-P08",
+        "TD-M00",
+        "变更回归与发布判断：把整条证据链串起来"
+      ],
+      "evidence_status": "fixture-tested",
+      "delivery_status": "fixture-tested",
+      "updated_at": "2026-08-10",
+      "source_ids": [
+        "S41",
+        "S42",
+        "S66",
+        "S81",
+        "S82",
+        "S07"
+      ],
+      "previous_page_id": "TD-P07",
       "next_page_id": "TD-S01",
       "content_sections": {
-        "outcome": "构建数据与环境清单；区分测试失败、产品缺陷和基础设施噪声；输出可审计发布报告",
-        "professional_relevance": "用例生成只是中间环节。真正能支撑决策的是同一版本、数据和环境下可重复执行的证据，以及失败能回到日志、Trace、变更和负责人。",
-        "plain_explanation": "记录数据集、随机种子、脱敏策略、账户状态、依赖 Stub、数据库迁移、服务版本、Feature Flag、模型/Prompt/知识库版本和区域。无法固定的外部依赖要声明并通过录制回放或隔离实验处理。",
-        "smallest_example": "run_id: release-2026-08-10-01\ncommit: abc123\ndataset: refund-v7\nenvironment: staging-cn-v12\nflags: refund_agent=true\nmodel: provider/model-snapshot\nknowledge: policy-index-42",
-        "learner_action": "为一次回归创建环境与数据 Manifest；把 5 个失败分成产品、测试、环境、依赖和未知；写一份包含回滚触发器的发布结论",
-        "expected_result": "任何失败都能找到本次运行使用的代码、配置、数据、依赖和 AI 版本。",
-        "common_errors": "没有运行清单和原始证据的 PASS，不足以支持发布。",
-        "completion_check": "执行包可由另一人重放；每个失败都有原始证据链接；发布结论包含剩余风险、责任人和回滚条件",
-        "evidence_boundary": "页面定义审计型执行闭环；不同 CI、可观测平台和组织审批流程需适配，当前站点未连接用户的生产环境。"
+        "outcome": "运行端到端离线证据链；验证文档冲突与产品缺陷两类阻断；生成有责任人与边界的发布建议",
+        "professional_relevance": "这条链路的价值不在于第一次生成多少用例，而在于需求、接口、代码或模型变化后，能否知道哪些证据过期、该重跑什么、谁接受残余风险。",
+        "plain_explanation": "依次产生 Test Basis Pack、Requirement Contract、Review Question Pack、Risk Test Plan、TestPackage、自动化代码/追溯索引、Run Manifest、Evidence Pack 和 Impact Set。每个工件都有 parent IDs、版本、owner、状态和下游消费者。",
+        "smallest_example": "Test Basis -> Requirement Contract -> Review Questions\n           -> Risk Test Plan -> TestPackage -> Executable Tests\n           -> Run Manifest -> Evidence Pack -> Impact Set",
+        "learner_action": "完整保存 BLOCKED、FAIL、PASS 三种结果；新增一个未授权取消的 mutation；为一次接口契约变更生成 Impact Set",
+        "expected_result": "cd courses/td-ai-011-requirements-to-evidence/lab\npython3 pipeline.py reset\npython3 pipeline.py inject-doc-conflict\npython3 pipeline.py all",
+        "common_errors": "按页面完成检查逐项复核；没有证据时不得把推断当成通过。",
+        "completion_check": "文档冲突阻断且不生成下游测试；代码缺陷能稳定变红并正确归因；修复后生成可审计但不越权的发布候选",
+        "evidence_boundary": "本专题使用虚构的订单取消与退款资料包验证工件结构和离线流水线。它能证明流程可运行、冲突能阻断、预埋缺陷能被测试发现；不能证明模型能正确理解你公司的全部文档，也不能替代产品、研发、法务和发布责任人的确认。"
       }
     },
     {
@@ -271,7 +499,7 @@
       "title": "接口、契约、集成与事件测试",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 5,
+      "order": 10,
       "prerequisite_ids": [
         "TD-P03"
       ],
@@ -293,7 +521,7 @@
         "S44",
         "S58"
       ],
-      "previous_page_id": "TD-P03",
+      "previous_page_id": "TD-P08",
       "next_page_id": "TD-S02",
       "content_sections": {
         "outcome": "验证协议与业务契约；设计依赖故障和幂等测试；追踪跨服务与事件终态",
@@ -314,7 +542,7 @@
       "title": "UI、兼容性、可访问性与数据质量",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 6,
+      "order": 11,
       "prerequisite_ids": [
         "TD-S01"
       ],
@@ -357,7 +585,7 @@
       "title": "性能、负载、容量与长稳测试",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 7,
+      "order": 12,
       "prerequisite_ids": [
         "TD-S01"
       ],
@@ -400,7 +628,7 @@
       "title": "可靠性、安全、可观测性、容灾与混沌",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 8,
+      "order": 13,
       "prerequisite_ids": [
         "TD-S03"
       ],
@@ -444,7 +672,7 @@
       "title": "大模型从数据、训练到一次推理发生了什么",
       "page_type": "concept",
       "level": "L1",
-      "order": 9,
+      "order": 14,
       "prerequisite_ids": [
         "TD-F01"
       ],
@@ -487,7 +715,7 @@
       "title": "Token、Attention、Context 和概率生成为什么影响测试",
       "page_type": "concept",
       "level": "L1",
-      "order": 10,
+      "order": 15,
       "prerequisite_ids": [
         "TD-F02"
       ],
@@ -530,7 +758,7 @@
       "title": "从 LLM 到 RAG、Agent 和 Workflow：测试对象怎样扩张",
       "page_type": "concept",
       "level": "L1",
-      "order": 11,
+      "order": 16,
       "prerequisite_ids": [
         "TD-F03"
       ],
@@ -575,7 +803,7 @@
       "title": "AI 接口服务和普通接口到底哪里不同",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 12,
+      "order": 17,
       "prerequisite_ids": [
         "TD-F04",
         "TD-S01"
@@ -620,7 +848,7 @@
       "title": "流式、结构化输出、工具调用与异步任务怎么测",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 13,
+      "order": 18,
       "prerequisite_ids": [
         "TD-A01"
       ],
@@ -663,7 +891,7 @@
       "title": "AI 性能指标：TTFT、TPOT、ITL、Goodput 与成本",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 14,
+      "order": 19,
       "prerequisite_ids": [
         "TD-A02",
         "TD-S03"
@@ -708,7 +936,7 @@
       "title": "AI 负载、容量与瓶颈实验",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 15,
+      "order": 20,
       "prerequisite_ids": [
         "TD-A03"
       ],
@@ -751,7 +979,7 @@
       "title": "发现 AI 性能问题：从用户慢到 Queue、GPU 与 KV Cache",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 16,
+      "order": 21,
       "prerequisite_ids": [
         "TD-A04"
       ],
@@ -795,7 +1023,7 @@
       "title": "限流、超时、重试、回退与降级",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 17,
+      "order": 22,
       "prerequisite_ids": [
         "TD-A05"
       ],
@@ -838,7 +1066,7 @@
       "title": "测试开发遇到 AI 后，测试对象发生了什么变化",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 18,
+      "order": 23,
       "prerequisite_ids": [
         "TD-F04"
       ],
@@ -881,7 +1109,7 @@
       "title": "LLM、RAG、Agent 的最小结构",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 19,
+      "order": 24,
       "prerequisite_ids": [
         "TD-T01"
       ],
@@ -924,7 +1152,7 @@
       "title": "概率性输出为什么不能只用传统断言",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 20,
+      "order": 25,
       "prerequisite_ids": [
         "TD-T02"
       ],
@@ -968,7 +1196,7 @@
       "title": "从测试用例到评测样例、黄金集和风险切片",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 21,
+      "order": 26,
       "prerequisite_ids": [
         "TD-T03"
       ],
@@ -1011,7 +1239,7 @@
       "title": "从 PRD 和代码 Diff 提取风险",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 22,
+      "order": 27,
       "prerequisite_ids": [
         "TD-T04"
       ],
@@ -1054,7 +1282,7 @@
       "title": "AI 生成测试，但证明测试真的会失败",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 23,
+      "order": 28,
       "prerequisite_ids": [
         "TD-T05"
       ],
@@ -1097,7 +1325,7 @@
       "title": "生成边界与 Fuzz 数据",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 24,
+      "order": 29,
       "prerequisite_ids": [
         "TD-T06"
       ],
@@ -1140,7 +1368,7 @@
       "title": "AI 做失败聚类，但必须保留证据链",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 25,
+      "order": 30,
       "prerequisite_ids": [
         "TD-T07"
       ],
@@ -1183,7 +1411,7 @@
       "title": "第一个 LLM 评测",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 26,
+      "order": 31,
       "prerequisite_ids": [
         "TD-T04"
       ],
@@ -1226,7 +1454,7 @@
       "title": "RAG 的检索质量",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 27,
+      "order": 32,
       "prerequisite_ids": [
         "TD-T09"
       ],
@@ -1269,7 +1497,7 @@
       "title": "回答、引用、忠实性和拒答",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 28,
+      "order": 33,
       "prerequisite_ids": [
         "TD-T10"
       ],
@@ -1313,7 +1541,7 @@
       "title": "让 RAG 的错误退款承诺在上线前变红",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 29,
+      "order": 34,
       "prerequisite_ids": [
         "TD-T09",
         "TD-T10",
@@ -1360,7 +1588,7 @@
       "title": "Prompt、模型和知识库版本 A/B",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 30,
+      "order": 35,
       "prerequisite_ids": [
         "TD-T12"
       ],
@@ -1403,7 +1631,7 @@
       "title": "LLM-as-judge 的校准和反例",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 31,
+      "order": 36,
       "prerequisite_ids": [
         "TD-T13"
       ],
@@ -1446,7 +1674,7 @@
       "title": "最终结果、单步动作和完整轨迹",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 32,
+      "order": 37,
       "prerequisite_ids": [
         "TD-T03",
         "TD-T04"
@@ -1490,7 +1718,7 @@
       "title": "工具选择、参数和权限",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 33,
+      "order": 38,
       "prerequisite_ids": [
         "TD-T15"
       ],
@@ -1533,7 +1761,7 @@
       "title": "Prompt injection、数据泄露和 Excessive Agency",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 34,
+      "order": 39,
       "prerequisite_ids": [
         "TD-T16"
       ],
@@ -1576,7 +1804,7 @@
       "title": "Browser Agent 和 Playwright Test Agents",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 35,
+      "order": 40,
       "prerequisite_ids": [
         "TD-T06",
         "TD-T16"
@@ -1620,7 +1848,7 @@
       "title": "自愈测试为什么会误修绿",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 36,
+      "order": 41,
       "prerequisite_ids": [
         "TD-T18"
       ],
@@ -1663,7 +1891,7 @@
       "title": "先区分 Agent、Worker 和固定 Workflow",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 37,
+      "order": 42,
       "prerequisite_ids": [
         "TD-T15"
       ],
@@ -1706,7 +1934,7 @@
       "title": "测试状态、循环、重试、Handoff 和终止条件",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 38,
+      "order": 43,
       "prerequisite_ids": [
         "TD-W01",
         "TD-T16"
@@ -1750,7 +1978,7 @@
       "title": "单 Agent 与多 Agent 的公平对照",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 39,
+      "order": 44,
       "prerequisite_ids": [
         "TD-W02"
       ],
@@ -1793,7 +2021,7 @@
       "title": "把评测接入 CI",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 40,
+      "order": 45,
       "prerequisite_ids": [
         "TD-T12",
         "TD-T14"
@@ -1837,7 +2065,7 @@
       "title": "评测集、Prompt、模型、知识库和工具版本",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 41,
+      "order": 46,
       "prerequisite_ids": [
         "TD-T20"
       ],
@@ -1880,7 +2108,7 @@
       "title": "Trace、生产失败和回归集闭环",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 42,
+      "order": 47,
       "prerequisite_ids": [
         "TD-T21"
       ],
@@ -1923,7 +2151,7 @@
       "title": "质量、延迟和成本联合门禁",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 43,
+      "order": 48,
       "prerequisite_ids": [
         "TD-T20"
       ],
@@ -1966,7 +2194,7 @@
       "title": "漂移、告警、Waiver 和回滚",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 44,
+      "order": 49,
       "prerequisite_ids": [
         "TD-T21",
         "TD-T22",
@@ -2011,7 +2239,7 @@
       "title": "Benchmark 不是一张榜单：先拆评分流水线",
       "page_type": "concept",
       "level": "L4",
-      "order": 45,
+      "order": 50,
       "prerequisite_ids": [
         "TD-T21"
       ],
@@ -2054,7 +2282,7 @@
       "title": "Benchmark 数据怎么来：采样、标注、Split 与 Holdout",
       "page_type": "guided-lab",
       "level": "L4",
-      "order": 46,
+      "order": 51,
       "prerequisite_ids": [
         "TD-B01"
       ],
@@ -2097,7 +2325,7 @@
       "title": "Accuracy、Pass@k、Resolved Rate 和 Judge Score 怎么算",
       "page_type": "guided-lab",
       "level": "L4",
-      "order": 47,
+      "order": 52,
       "prerequisite_ids": [
         "TD-B02"
       ],
@@ -2140,7 +2368,7 @@
       "title": "Prompt、Harness、工具权限为什么会改变分数",
       "page_type": "diagnostic",
       "level": "L4",
-      "order": 48,
+      "order": 53,
       "prerequisite_ids": [
         "TD-B03"
       ],
@@ -2183,7 +2411,7 @@
       "title": "不确定性、污染、隐藏测试和版本可比性",
       "page_type": "diagnostic",
       "level": "L4",
-      "order": 49,
+      "order": 54,
       "prerequisite_ids": [
         "TD-B04"
       ],
@@ -2226,7 +2454,7 @@
       "title": "从 SWE-bench、AgentBench、HELM 到企业内部 Benchmark",
       "page_type": "project",
       "level": "L4",
-      "order": 50,
+      "order": 55,
       "prerequisite_ids": [
         "TD-B05",
         "TD-T22"
@@ -2270,7 +2498,7 @@
       "title": "Capstone：完成一个 AI Quality Engineering 仓库",
       "page_type": "project",
       "level": "L4",
-      "order": 51,
+      "order": 56,
       "prerequisite_ids": [
         "TD-T12",
         "TD-T17",
@@ -2319,7 +2547,7 @@
       "title": "测试岗位不会只剩点点点：能力如何迁移",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 52,
+      "order": 57,
       "prerequisite_ids": [
         "TD-A06",
         "TD-T12"
@@ -2364,7 +2592,7 @@
       "title": "为什么 Agent 压测不是把并发数调高",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 53,
+      "order": 58,
       "prerequisite_ids": [],
       "scenario_ids": [
         "TD-SYNTHETIC-COURSE"
@@ -2408,7 +2636,7 @@
       "title": "建立 Agent 性能指标树：系统、模型、轨迹、成本",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 54,
+      "order": 59,
       "prerequisite_ids": [
         "TD-AP01"
       ],
@@ -2454,7 +2682,7 @@
       "title": "设计工作负载：任务、上下文、工具与故障分布",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 55,
+      "order": 60,
       "prerequisite_ids": [
         "TD-AP02"
       ],
@@ -2498,7 +2726,7 @@
       "title": "设计 Trace 与数据模型：让一次慢任务可下钻",
       "page_type": "reference",
       "level": "L2-L3",
-      "order": 56,
+      "order": 61,
       "prerequisite_ids": [
         "TD-AP03"
       ],
@@ -2543,7 +2771,7 @@
       "title": "搭建压测架构：发压、夹具、观测、判定四层分离",
       "page_type": "concept",
       "level": "L2-L3",
-      "order": 57,
+      "order": 62,
       "prerequisite_ids": [
         "TD-AP04"
       ],
@@ -2589,7 +2817,7 @@
       "title": "执行完整压测 SOP：基线、变坏、修复、容量",
       "page_type": "guided-lab",
       "level": "L2-L3",
-      "order": 58,
+      "order": 63,
       "prerequisite_ids": [
         "TD-AP05"
       ],
@@ -2637,7 +2865,7 @@
       "title": "诊断压测失败：从症状反推瓶颈与反馈环",
       "page_type": "diagnostic",
       "level": "L2-L3",
-      "order": 59,
+      "order": 64,
       "prerequisite_ids": [
         "TD-AP06"
       ],
@@ -2683,7 +2911,7 @@
       "title": "把压测接入生产：SLO、告警、降级与 Runbook",
       "page_type": "project",
       "level": "L2-L3",
-      "order": 60,
+      "order": 65,
       "prerequisite_ids": [
         "TD-AP07"
       ],

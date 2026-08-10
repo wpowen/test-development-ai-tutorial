@@ -24,6 +24,7 @@ def dump(path: Path, data: object) -> None:
 def build_valid(root: Path) -> None:
     for name in ["career-profile.md", "course-map.md", "update-log.md"]:
         write(root / name)
+    write(root / "profession-reality-map.md", "# Profession reality map\n\nEvidence-bounded role, workflow, artifact, pain, promotion and AI opportunity reconstruction.\n")
     write(root / "validation-report.md", "## Evidence\n## Inference\n## Unknown\n## Professional utility verdict\n## Not tested\n")
     readable_body = "这是一份给课程负责人直接阅读和判断的中文评审内容，包含职业问题、AI 作用、业务场景、证据状态、学员产物、操作步骤、失败边界和下一步决策。" * 8
     architecture_body = "本阶段说明职业原有能力、AI 带来的变化、新失败模式、前置知识、学习者工件、故障注入和阶段退出标准。" * 16
@@ -63,7 +64,7 @@ def build_valid(root: Path) -> None:
     page_id_blob = " ".join(page["page_id"] for page in tutorial_pages)
     html = f'''<!doctype html><html><head><meta charset="utf-8"><title>Tutorial</title><style>{"body{{color:#222}}" * 500}</style></head><body><input id="tutorial-search"><nav id="course-nav">{page_id_blob}</nav><main id="tutorial-content">{readable_body * 10}</main><aside id="page-toc"></aside><div id="progress-bar"></div><script>const COURSE_DATA = {json.dumps(tutorial_pages)};</script></body></html>'''
     write(root / "tutorial/index.html", html)
-    write(root / "research/topics/page-0/research-package.md", "# Page 0 research\n\n## Research brief\n\nScoped learner question and decision.\n\n## Source pack\n\nOpened primary sources with limitations.\n\n## Evidence synthesis\n\nFacts, synthesis and unknowns.\n\n## Engineering blueprint\n\nMetrics, data, workflow and failure path.\n\n## Manuscript map\n\nMaps evidence into the learner page.\n\n## Validation\n\nPASS: claims, actions and boundaries checked.\n")
+    write(root / "research/topics/page-0/research-package.md", "# Page 0 research\n\n## Research brief\n\nScoped learner question and decision.\n\n## Source pack\n\nOpened primary sources with limitations.\n\n## Evidence synthesis\n\nFacts, synthesis and unknowns.\n\n## Engineering blueprint\n\nMetrics, data, workflow and failure path.\n\n## Manuscript map\n\nMaps evidence into the learner page.\n\n## Editorial review\n\nPASS: protected fields, commands, limits and citations preserved; no generic template prose.\n\n## Validation\n\nPASS: claims, actions and boundaries checked.\n")
     write(root / "research/evidence-matrix.md", "## Evidence\n## Competitor observations\n## Vendor claims\n## Inference\n## Unknown\n")
     write(root / "research/ai-capability-map.md", "\n".join(["use-ai-for-work", "test-ai-systems", "agentize-work", "build-ai-quality-system"]))
 
@@ -247,6 +248,28 @@ def build_valid(root: Path) -> None:
         {"domain_id":f"d{index}","name":"domain","job_result":"result","business_events":["event"],"artifacts":["artifact"],"systems":["system"],"decision_rights":["human"],"failure_costs":["cost"],"ai_lanes":[lanes[index % 4]],"scenario_ids":[f"scenario-{index}"] + ([f"scenario-{index+5}"] if index < 3 else []),"evidence_ids":["S0","S1"]}
         for index in range(5)
     ]})
+    dump(root / "research/profession-reality-map.json", {
+        "profession_id":"c", "as_of":"2026-01-01", "review_status":"desk-researched",
+        "role_variants":[{"id":"associate"},{"id":"senior"},{"id":"lead"}],
+        "work_rhythms":[{"id":"day"},{"id":"sprint"},{"id":"incident"}],
+        "workflow_stages":[{"stage_id":f"work-{index}"} for index in range(6)],
+        "dependencies":[{"id":f"dep-{index}"} for index in range(5)],
+        "artifacts":[{"id":f"artifact-{index}"} for index in range(6)],
+        "performance_and_promotion":{"public_signals":["reliable delivery", "reusable leverage"], "internal_status":"INTERNAL-UNKNOWN"},
+        "pain_points":[{"id":f"pain-{index}"} for index in range(5)],
+        "information_barriers":[{"id":"public"},{"id":"internal"},{"id":"tacit"}],
+        "ai_opportunities":[{
+            "opportunity_id":f"opp-{index}", "work_stage_id":f"work-{index % 6}",
+            "change_class":["retained", "assisted", "automated", "transformed", "new-work"][index],
+            "baseline_pain":"slow and fragmented work", "ai_role":"bounded assistant",
+            "inspectable_output":"versioned artifact", "human_gate":"named owner approves",
+            "ai_failures":["unsupported output"], "baseline_metric":"elapsed time and escaped errors",
+            "success_measure":"faster work without lower detection", "starter_material":"fixture and validated Skill",
+            "evidence_status":"desk-researched",
+        } for index in range(5)],
+        "beginner_reuse_pack":{"fixture":"synthetic", "failure_injection":"seeded defect", "transfer_checklist":"replace local inputs safely"},
+        "source_ids":["S0","S1","S2"],
+    })
 
     layer_kinds = [
         "profession-baseline", "ai-foundation", "ai-assisted-work", "ai-system-quality",
@@ -489,6 +512,11 @@ class ValidatorTests(unittest.TestCase):
         (self.root / "research/topics/page-0/research-package.md").unlink()
         self.assertTrue(any("page-0 missing per-topic research package" in error for error in validate(self.root)))
 
+    def test_promised_tutorial_page_requires_editorial_review(self) -> None:
+        path = self.root / "research/topics/page-0/research-package.md"
+        path.write_text(path.read_text().replace("## Editorial review", "## Editorial notes"))
+        self.assertTrue(any("## Editorial review" in error for error in validate(self.root)))
+
     def test_complete_catalog_cannot_contain_planned_pages(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"
         data = json.loads(path.read_text())
@@ -694,6 +722,17 @@ class ValidatorTests(unittest.TestCase):
             domain["scenario_ids"] = [scenario for scenario in domain["scenario_ids"] if scenario != "scenario-0"]
         dump(path, data)
         self.assertTrue(any("not mapped to a primary profession domain" in error for error in validate(self.root)))
+
+    def test_profession_reality_map_is_required(self) -> None:
+        (self.root / "research/profession-reality-map.json").unlink()
+        self.assertTrue(any("profession-reality-map.json" in error for error in validate(self.root)))
+
+    def test_profession_reality_map_rejects_shallow_ai_opportunity(self) -> None:
+        path = self.root / "research/profession-reality-map.json"
+        data = json.loads(path.read_text())
+        data["ai_opportunities"][0].pop("human_gate")
+        dump(path, data)
+        self.assertTrue(any("profession AI opportunity 0 missing field: human_gate" in error for error in validate(self.root)))
 
     def test_long_marker_shell_course_still_fails(self) -> None:
         text = "# Decorative course\n\n" + "\n\n".join(

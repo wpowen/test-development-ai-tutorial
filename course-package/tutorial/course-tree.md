@@ -10,10 +10,15 @@
 
 从需求、策略、设计、执行到发布与生产反馈，先建立专业测试骨架
 
-- TD-F01 · 先把传统测试开发这份工作拆开 · outlined
-- TD-P01 · 需求文档解析：从自然语言变成可追踪的质量条件 · outlined
-- TD-P02 · 风险策略、测试层级与用例设计 · outlined
-- TD-P03 · 测试数据、环境、执行、结果收集与发布闭环 · outlined
+- TD-F01 · 先重建测试开发这份工作，再判断 AI 应该改哪里 · desk-researched
+- TD-P01 · 先冻结测试依据：别让 AI 读一堆互相打架的文档 · desk-researched
+- TD-P02 · 把自然语言变成需求契约：让下游程序能直接消费 · desk-researched
+- TD-P03 · 需求评审不是让 AI 总结：要把歧义、冲突和不可测项逼出来 · desk-researched
+- TD-P04 · 从需求契约到风险策略：决定测什么、在哪一层测 · desk-researched
+- TD-P05 · 生成测试之前先固定 Oracle：否则 AI 只会生成自洽答案 · desk-researched
+- TD-P06 · 把测试包接到自动化：接口、契约、集成和 UI 各自负责什么 · desk-researched
+- TD-P07 · 执行、收集、归因：一次绿色结果需要哪些证据 · desk-researched
+- TD-P08 · 变更回归与发布判断：把整条证据链串起来 · fixture-tested
 
 ### 传统测试专项
 
@@ -129,7 +134,7 @@
 ## 页面状态
 
 - 发布范围：`pilot-path`。
-- 深度正文：8/60 页。
+- 深度正文：17/65 页。
 - `outlined` 表示知识位置已确定，但逐题研究和教材正文尚未通过门禁。
 - `desk-researched` 表示正文和来源已整理，但没有运行目标系统。
 - `fixture-tested` 表示对应离线夹具已经运行，不代表生产效果。

@@ -33,6 +33,7 @@ Read the references required by the selected mode:
 - Research and competitors: `references/research-protocol.md`
 - Multi-channel evidence and source independence: `references/multi-channel-evidence-protocol.md`
 - Search routing and freshness: `references/search-and-freshness-protocol.md`
+- Evidence-bounded profession veteran reconstruction: `references/profession-veteran-reconstruction-protocol.md`
 - Profession/work-domain decomposition: `references/profession-decomposition-protocol.md`
 - Full profession knowledge system and completeness gate: `references/profession-knowledge-system-protocol.md`
 - Profession-to-AI curriculum architecture: `references/curriculum-architecture-protocol.md`
@@ -46,6 +47,8 @@ Read the references required by the selected mode:
 - Lesson experience and material handoff: `references/teaching-experience-protocol.md`
 - Beginner tutorial tree, page types, and viewer: `references/tutorial-site-contract.md`
 - Per-topic deep research, engineering blueprint, and manuscript: `references/topic-research-and-manuscript-protocol.md`
+- Cross-lifecycle professional artifact chain: `references/professional-artifact-chain-protocol.md`
+- Technical editorial and anti-template gate: `references/technical-editorial-humanizer-gate.md`
 
 ## Four mandatory AI lanes
 
@@ -90,6 +93,16 @@ Follow `references/research-protocol.md` and `references/multi-channel-evidence-
 - `research/scenarios.json`.
 
 Use official docs and repositories for capability claims, direct course pages for competitor claims, and communities only for pain language or failure signals. Record publisher groups and source families so copied or same-vendor pages cannot masquerade as independent confirmation. GitHub stars, course enrollment, views, likes, and vendor marketing metrics are discovery or popularity signals, never efficacy proof.
+
+### 3A. Reconstruct the profession through an evidence-bounded veteran Agent
+
+Follow `references/profession-veteran-reconstruction-protocol.md` before decomposing work or selecting AI scenarios. The veteran framing is a research role, not evidence by itself and not a claim of personal employment history.
+
+Create `profession-reality-map.md` and `research/profession-reality-map.json`. Reconstruct role variants, an ordinary day, a weekly or sprint rhythm, one full deliverable lifecycle, one exception path, dependencies, tools, artifacts, decision rights, failure costs, performance and promotion signals, pain points, information barriers, current workarounds, and public-versus-internal knowledge gaps.
+
+Run independent veteran-operator, manager/promotion, workflow/platform, junior-observer, market/community, AI-systems, and adversarial-critic passes. Preserve disagreements. Do not invent target-company policies, data, access, incident history, or promotion rules; mark them `INTERNAL-UNKNOWN` with the interview question or document needed to close the gap.
+
+Only after this map passes may the Skill classify work as `retained`, `assisted`, `automated`, `transformed`, `new-work`, or `declining`. Every selected AI opportunity must connect a real pain to an inspectable artifact, a human decision, a measurable baseline, a failure mode, and a beginner-reusable starter pack.
 
 ### 4. Decompose the profession before selecting scenarios
 
@@ -142,6 +155,12 @@ Every topic needs one controlling question, explicit scope, prerequisite concept
 
 Reject topic lists generated from an arbitrary lesson count, one-line course records, or tool names. Split topics that contain multiple independent job results. Run the coverage audit against the topic system before selecting the first manuscript.
 
+### 4E. Design the professional artifact chain
+
+Follow `references/professional-artifact-chain-protocol.md` before writing any lifecycle course. Reconstruct how real inputs become reviewed intermediate artifacts, executable work, evidence, decisions, and downstream updates. Every artifact must name its schema, owner, source references, version, allowed AI authority, human gate, downstream consumer, and stop states.
+
+Reject a workflow that jumps directly from source documents to plausible prose or generated files. `UNKNOWN`, `BLOCKED`, `NOT_RUN`, and `SUPERSEDED` must remain distinct from `PASS` and `FAIL`. When a critical input, source reference, Oracle, environment, or accountable owner is missing, stop the chain instead of asking the model to infer a completion.
+
 ### 5. Build evidence-backed business scenarios
 
 Follow `references/business-scenario-protocol.md`. A scenario is not “用 AI 写测试用例”; it names the actor, trigger, business system, business object, realistic input, current workflow, failure cost, constraints, AI intervention, inspectable output, decision or handoff, AI-specific failures, and validation plan.
@@ -192,6 +211,8 @@ Use search and lower-cost agents to divide evidence lanes, not to mass-produce f
 
 Do not generate several delivered pages by mapping a short topic record through one shared prose template. Shared metadata and viewer components are allowed; shared learner-facing paragraphs, workflow filler, or generic headings are a publication failure. A page remains `outlined` until its own research package and manuscript validation pass.
 
+Before a page can leave `outlined`, its research package must include an editorial review that follows `references/technical-editorial-humanizer-gate.md`. The review freezes facts, commands, fields, numbers, citations, uncertainty, and scope before changing expression. It rejects marketing claims, chatbot guidance, repeated generic headings, vague attribution, ornamental lists, and conclusions that do not change a learner action or professional decision.
+
 ### 9. Build one exemplar before scaling
 
 The first course must produce a real artifact and a result the learner can verify locally. Prefer a small public or synthetic fixture with an honest evidence label over an untestable enterprise story.
@@ -222,6 +243,8 @@ JSON and CSV are backend evidence, never the primary review interface. Every com
 - `03-细化样课.md`: one fully readable lesson with business context, teacher flow, learner actions, commands, artifacts, assessment, and evidence boundary.
 
 Lead the user to this layer. Link machine-readable files only as optional provenance or implementation detail.
+
+Run editorial cleanup only after technical synthesis is complete. Do not use “去 AI 味” as permission to delete limits, commands, evidence, field definitions, failure paths, or uncertainty. Expression may become shorter; information and boundaries may not become weaker.
 
 ### 10A. Build the tutorial product
 

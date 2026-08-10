@@ -3,6 +3,8 @@ import { benchmarkCapstonePages } from "./modules/benchmark-capstone.ts";
 import { llmAgentPages } from "./modules/llm-agent.ts";
 import { qualitySystemPages } from "./modules/quality-system.ts";
 import { agentPerformancePages } from "./modules/agent-performance.ts";
+import { requirementsTestingLifecyclePages } from "./modules/requirements-testing-lifecycle.ts";
+import { professionRealityPage } from "./modules/profession-reality.ts";
 
 export type TutorialBlock = {
   title: string;
@@ -961,8 +963,9 @@ const corePages: TutorialPage[] = [
 ];
 
 export const pages: TutorialPage[] = [
-  foundationPages[0],
-  ...professionalPages.filter((page) => page.id.startsWith("TD-P") || page.id.startsWith("TD-S")),
+  professionRealityPage,
+  ...requirementsTestingLifecyclePages,
+  ...professionalPages.filter((page) => page.id.startsWith("TD-S")),
   ...foundationPages.slice(1),
   ...professionalPages.filter((page) => page.id.startsWith("TD-A")),
   ...corePages.filter((page) => ["TD-T01", "TD-T02", "TD-T03", "TD-T04"].includes(page.id)),
@@ -976,7 +979,7 @@ export const pages: TutorialPage[] = [
 ].map((page, index) => ({
   ...page,
   order: index + 1,
-  status: page.id.startsWith("TD-AP") ? page.status : "outlined",
+  status: page.id === "TD-F01" || page.id.startsWith("TD-AP") || page.id.startsWith("TD-P") ? page.status : "outlined",
 }));
 
 export const sourceNotes: Record<string, { title: string; url: string }> = {
@@ -1051,13 +1054,21 @@ export const sourceNotes: Record<string, { title: string; url: string }> = {
   S78: { title: "Arize Phoenix", url: "https://github.com/arize-ai/phoenix" },
   S79: { title: "Langfuse Open Source", url: "https://langfuse.com/handbook/chapters/open-source" },
   S80: { title: "OpenTelemetry GenAI Attribute Registry", url: "https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/" },
+  S81: { title: "ISO/IEC/IEEE 29148 Requirements Engineering", url: "https://www.iso.org/standard/72089.html" },
+  S82: { title: "ISTQB Advanced Level Test Analyst v4.0", url: "https://www.istqb.org/wp-content/uploads/sdm-uploads/ISTQB-CTAL-TA-Syllabus-v4.0-EN.pdf" },
+  S85: { title: "OpenAPI Specification 3.2", url: "https://spec.openapis.org/oas/latest.html" },
+  S87: { title: "Cucumber Gherkin Reference", url: "https://cucumber.io/docs/gherkin/reference/" },
+  S89: { title: "W3C Trace Context", url: "https://www.w3.org/TR/trace-context/" },
+  S90: { title: "UK Government Digital and Data Test Engineer Framework", url: "https://ddat-capability-framework.service.gov.uk/role/test-engineer" },
+  S91: { title: "GitLab SET Career Framework and Role Transition", url: "https://handbook.gitlab.com/handbook/engineering/careers/matrix/quality/software-engineer-in-test/intermediate/" },
+  S92: { title: "QA Career Ladder Practitioner Discussion", url: "https://www.reddit.com/r/softwaretesting/comments/1q9yva6/qa_career_ladder/" },
 };
 
-export const firstUsablePath = agentPerformancePages.map((page) => page.id);
+export const firstUsablePath = [professionRealityPage.id, ...requirementsTestingLifecyclePages.map((page) => page.id)];
 
 export const releaseScope = {
   mode: "pilot-path" as const,
-  promisedPageIds: agentPerformancePages.map((page) => page.id),
+  promisedPageIds: [professionRealityPage.id, ...requirementsTestingLifecyclePages.map((page) => page.id)],
   catalogComplete: false,
   validatedAt: "2026-08-10",
 };

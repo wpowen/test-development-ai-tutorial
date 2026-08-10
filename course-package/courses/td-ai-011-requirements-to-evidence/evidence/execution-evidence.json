@@ -1,0 +1,18 @@
+{
+  "course_id": "td-ai-011-requirements-to-evidence",
+  "evidence_scope": "deterministic offline requirement conflict and order-cancellation mutation fixture",
+  "commands": [
+    "python3 pipeline.py reset && python3 pipeline.py all --report reports/baseline.json",
+    "python3 pipeline.py inject-code-defect && python3 pipeline.py all --report reports/mutation.json",
+    "python3 pipeline.py repair && python3 pipeline.py all --report reports/repair.json",
+    "python3 pipeline.py reset && python3 pipeline.py inject-doc-conflict && python3 pipeline.py all"
+  ],
+  "run_at": "2026-08-10T00:00:00+08:00",
+  "workdir": "lab",
+  "baseline": {"command":"python3 pipeline.py all --report reports/baseline.json","exit_code":0,"verdict":"PASS","evidence_path":"lab/reports/baseline.json"},
+  "mutation": {"command":"python3 pipeline.py all --report reports/mutation.json","exit_code":1,"verdict":"FAIL","failed_test_ids":["T-CANCEL-SHIPPED-01"],"evidence_path":"lab/reports/mutation.json"},
+  "repair": {"command":"python3 pipeline.py all --report reports/repair.json","exit_code":0,"verdict":"PASS","evidence_path":"lab/reports/repair.json"},
+  "blocked_control": {"command":"python3 pipeline.py inject-doc-conflict && python3 pipeline.py all","exit_code":2,"verdict":"BLOCKED","conflict_id":"CONFLICT-SHIPPED-CANCEL"},
+  "environment": {"runtime":"Python standard library","credentials":false,"external_network":false,"data":"synthetic order-cancellation fixture"},
+  "limitations": ["synthetic offline fixture", "no live model or enterprise documents", "no payment service", "no learner trial or production validation"]
+}
