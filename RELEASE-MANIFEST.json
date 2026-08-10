@@ -1,10 +1,39 @@
 {
-  "schema_version": "1.1",
-  "source_commit": "22c4b95d82574f2ec2fba76a3ee31cbd52e474fa",
+  "schema_version": "1.2",
+  "source_commit": "16d204b4765ce1ba10b7f8920d7a826f8c1ab26d",
   "release_scope": "pilot-path",
   "catalog_complete": false,
   "page_count": 17,
   "delivered_page_count": 17,
-  "file_count": 314,
+  "promised_page_ids": [
+    "TD-F01",
+    "TD-P01",
+    "TD-P02",
+    "TD-P03",
+    "TD-P04",
+    "TD-P05",
+    "TD-P06",
+    "TD-P07",
+    "TD-P08",
+    "TD-AP01",
+    "TD-AP02",
+    "TD-AP03",
+    "TD-AP04",
+    "TD-AP05",
+    "TD-AP06",
+    "TD-AP07",
+    "TD-AP08"
+  ],
+  "learner_artifact_roots": [
+    "site",
+    "tutorial"
+  ],
+  "content_hash": "sha256:e4f625f0a9c716180eec4205824aa0ba7b7f0b27481fba9cbfb9e066d0f52fc8",
+  "validation_verdict": "PASS",
+  "publication_targets": [
+    "github-pages",
+    "chatgpt-site"
+  ],
+  "file_count": 140,
   "evidence_level": "fixture-tested; desk-researched; not production-validated"
 }

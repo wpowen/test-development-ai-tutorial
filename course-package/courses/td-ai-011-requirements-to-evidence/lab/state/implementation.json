@@ -1,6 +1,0 @@
-{
-  "version": "healthy-v1",
-  "allow_shipped_cancel": false,
-  "idempotency_broken": false,
-  "mutation_id": null
-}

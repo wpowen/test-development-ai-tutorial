@@ -284,6 +284,7 @@ Run:
 python3 scripts/validate_career_package.py <career-package>
 python3 scripts/validate_career_package.py <career-package> --verify-sources
 python3 scripts/validate_career_package.py <career-package> --run-labs
+python3 scripts/validate_public_release.py <public-release-directory>
 ```
 
 `--verify-sources` is the live existence gate for publication-time source claims. Static validation deliberately cannot prove that a URL exists; a current course package must not be described as live-source-verified unless this command (or an equivalent trusted re-open audit) passed in the current run. Anti-bot or credential-blocked pages remain `blocked`, not silently accepted.
@@ -301,6 +302,7 @@ Then run a fresh-agent forward test when available:
 - check that a complete package without a navigable tutorial viewer fails;
 - check that public navigation, HTML, JSON, sitemaps, and archives reject every planned, outlined, or blocked page and every empty module;
 - check that public page IDs equal `promised_page_ids`, while unfinished catalog entries remain only in internal research artifacts;
+- check the assembled release directory, not only its source package: reject internal authoring trees, incomplete course records in any public JSON, extra HTML navigation IDs, placeholder copy, learner-artifact hash drift, or a manifest without page IDs, verdict and publication targets;
 - check that page order follows prerequisites rather than source publication order;
 - check that the professional baseline, AI foundation, and benchmark layers cannot be omitted or moved after dependent courses;
 - check that the six research systems, coverage matrix, and all six independent expert reviews cannot be omitted;
@@ -356,6 +358,7 @@ Stop and report the gap when any applies:
 - the release scope is absent, its promised page IDs do not exactly equal the learner-facing page set, or any public artifact contains a planned, outlined, blocked, navigation-only, empty-module, or density-gate-failing record;
 - completeness language exceeds the validated release scope or evidence status;
 - publication targets are built from independently edited course copies or expose private research and production data;
+- the final public release directory has not passed `validate_public_release.py` after assembly;
 - the test cannot be shown to fail on a meaningful regression;
 - a current tool claim lacks a primary source and version/date;
 - the workflow depends on hidden credentials without an offline path;

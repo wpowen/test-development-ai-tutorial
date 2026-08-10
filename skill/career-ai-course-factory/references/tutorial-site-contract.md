@@ -73,6 +73,8 @@ GitHub and OpenAI Sites are publication targets, not separate course authoring s
 - Generated HTML, navigation manifests, and release summaries must not become independent manually edited truth.
 - Public outputs include only sanitized tutorials, fixtures, source notes, and declared evidence. Keep credentials, production data, private research notes, and unapproved reviews out of public artifacts.
 - Record `content_version`, source commit, build ID, content hash, validation verdict, and publication targets in each release manifest.
+- The final public archive records the exact ordered public page IDs and learner-artifact roots. Recompute the content hash after assembly, then validate the assembled archive. Validating the authoring package alone is insufficient.
+- Keep the internal authoring package, planned curriculum records, private topic backlog, and maintainer-only research outside public distribution archives. Publish only validated tutorial data, learner pages, sanitized evidence, labs, and the reusable Skill implementation.
 
 ## Five page types
 
@@ -213,3 +215,5 @@ Reject a complete tutorial package when:
 - research sources cannot be traced to scenarios and delivered pages.
 - release scope is missing, a promised page is not delivered, or a `complete-catalog` release contains any incomplete page;
 - public completeness claims disagree with the validated release scope.
+- the assembled public release contains an internal authoring tree, incomplete course record, extra navigation/search page, placeholder copy, cross-target page-ID drift, or content hash mismatch;
+- the release manifest omits ordered promised page IDs, learner-artifact roots, validation verdict, content hash, or publication targets.

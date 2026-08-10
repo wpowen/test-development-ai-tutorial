@@ -15,26 +15,10 @@ jobs:
       - name: Compile factory scripts
         run: python3 -m py_compile skill/career-ai-course-factory/scripts/*.py
       - name: Run fail-closed factory regressions
-        run: python3 skill/career-ai-course-factory/scripts/test_validator.py
-      - name: Validate the published profession package
-        run: python3 skill/career-ai-course-factory/scripts/validate_career_package.py course-package
-
-  tutorial-site:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: site
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
-        with:
-          node-version: "24"
-          cache: npm
-          cache-dependency-path: site/package-lock.json
-      - name: Install locked dependencies
-        run: npm ci
-      - name: Validate content and build tutorial
-        run: npm test
+        run: |
+          python3 -m unittest discover -s skill/career-ai-course-factory/scripts -p 'test_*.py'
+      - name: Validate the assembled public release
+        run: python3 skill/career-ai-course-factory/scripts/validate_public_release.py .
 
   offline-eval:
     runs-on: ubuntu-latest

@@ -15,21 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-python@v6
         with:
-          node-version: "24"
-          cache: npm
-          cache-dependency-path: site/package-lock.json
-      - name: Install locked dependencies
-        working-directory: site
-        run: npm ci
-      - name: Validate both site targets
-        working-directory: site
-        run: npm test
+          python-version: "3.12"
+      - name: Validate assembled public release
+        run: python3 skill/career-ai-course-factory/scripts/validate_public_release.py .
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: site/dist-github-pages
+          path: site
   deploy:
     environment:
       name: github-pages
