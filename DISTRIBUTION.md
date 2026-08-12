@@ -13,7 +13,7 @@
 
 ## 当前公开预览范围
 
-当前公开 85 个 `fixture-tested` 页面，另有 4 个未完成主题继续留在内部。预览覆盖职业现实、需求与技术文档解读、方法与 Oracle、传统测试专项、AI/LLM/RAG/Agent、质量平台、性能稳定性、Benchmark、Capstone 与高级安全质量专题。页面具备正文、练习、完成检查、来源、版本化 Prompt 或可运行 fixture 和证据边界；这仍不是 `PASS-LIVE`、`PASS-PRACTITIONER` 或生产适用性证明。
+当前公开 85 个页面，其中 73 页达到 `fixture-tested`、12 页保持 `desk-researched`，另有 4 个未完成主题继续留在内部。预览覆盖职业现实、需求与技术文档解读、方法与 Oracle、传统测试专项、AI/LLM/RAG/Agent、质量平台、性能稳定性、Benchmark、Capstone 与高级安全质量专题。页面具备正文、练习、完成检查、来源、版本化 Prompt 或可运行 fixture 和证据边界；这仍不是 `PASS-LIVE`、`PASS-PRACTITIONER` 或生产适用性证明。
 
 ## GitHub 发布包
 

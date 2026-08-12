@@ -35,10 +35,12 @@ jobs:
           missing = sorted(required.difference(ids))
           if missing:
               raise SystemExit(f"latest preview pages missing: {missing}")
-          invalid = [page["id"] for page in pages if page.get("status") != "fixture-tested"]
+          allowed = {"desk-researched", "fixture-tested"}
+          invalid = [page["id"] for page in pages if page.get("status") not in allowed]
           if invalid:
-              raise SystemExit(f"non-fixture preview pages found: {invalid}")
-          print("Fixture preview valid: 85 unique pages; maturity remains fixture-tested.")
+              raise SystemExit(f"preview contains unsupported maturity states: {invalid}")
+          counts = {status: sum(page.get("status") == status for page in pages) for status in sorted(allowed)}
+          print(f"Preview valid: 85 unique pages; honest maturity counts={counts}.")
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
