@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS11",
+  "mode": "repair",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "a916c332ba942cb5aab5839ca61ec82936bd4c59409ea45458d99c0c69873165",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS11-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS11-evidence-1.json",
+      "owner": "TD-PS11-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS11-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS11-evidence-2.json",
+      "owner": "TD-PS11-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS11-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS11-evidence-3.json",
+      "owner": "TD-PS11-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS11-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS11-evidence-4.json",
+      "owner": "TD-PS11-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS11-content-owner",
+    "oracle": "TD-PS11-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标 collector 采样、生产权限、托管模型内部 span 和真实恢复时间"
+}

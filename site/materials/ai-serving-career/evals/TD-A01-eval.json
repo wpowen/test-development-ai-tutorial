@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A01",
+  "version": "1.0.0",
+  "model_execution": "NOT_RUN",
+  "deterministic_fixture_eval": {
+    "expected": {
+      "request_id": "req-fixture-001",
+      "model.internal_version": "UNKNOWN",
+      "error.retryable": false
+    },
+    "fault_patch": {
+      "request_id": "",
+      "model.internal_version": "invented-2026-08-11"
+    },
+    "required_exit_codes": [
+      0,
+      1,
+      0
+    ]
+  },
+  "professional_oracle": "request_id 必须存在；公开版本变量齐全；不可见内部版本为 UNKNOWN；错误类别能驱动 retryable 决策。",
+  "boundary": "供应商内部模型修订、路由、限额和区域实现没有公开可观察证据。"
+}

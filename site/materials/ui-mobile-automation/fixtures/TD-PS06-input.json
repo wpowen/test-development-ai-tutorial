@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS06",
+  "scenario": "仓库收货扫码经过相机权限、旋转、后台、进程恢复、离线队列和库存 API",
+  "controlling_question": "怎样证明移动生命周期恢复不丢扫描状态也不重复入账，并区分应用、设备和服务端失败？",
+  "known_rules": [
+    "权限拒绝不创建收货记录",
+    "旋转后台与恢复保留可解释扫描状态",
+    "同一 receipt_id 只入账一次",
+    "失败包关联 logcat 设备状态和服务 trace"
+  ],
+  "faults": [
+    "扫描后进程被杀",
+    "网络切换导致重放",
+    "相机权限永久拒绝"
+  ],
+  "unknowns": [
+    "OEM 定制行为、目标 API level 分布和真机资源限制"
+  ],
+  "data_classification": "synthetic"
+}

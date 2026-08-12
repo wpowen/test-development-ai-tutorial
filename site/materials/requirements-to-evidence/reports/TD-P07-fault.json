@@ -1,0 +1,14 @@
+{
+  "run_id": "TD-P07-fault",
+  "page_id": "TD-P07",
+  "phase": "fault",
+  "status": "FAIL",
+  "finding_id": "UNATTRIBUTABLE_RUN",
+  "finding": "Run is missing pinned input, selection, retry, or raw evidence",
+  "prompt_hash": "d11f67a7514d7d629a80360fb88ba972f02ba0386707de0447c3bad8e279caf1",
+  "input_hash": "49cdbaae9ad1f0582facb5bcac63506b45870a17b30518702b99cb86f988f7ef",
+  "evidence_status": "fixture-tested",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "boundary": "deterministic offline negative-control fixture; not model, practitioner, integration, live, publication, or production evidence"
+}

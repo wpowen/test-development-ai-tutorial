@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS07",
+  "mode": "baseline",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "1ddcdac630d9c9178ada47a5ea71a5f02d167eeedad125cf90d799358b6157bb",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS07-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS07-evidence-1.json",
+      "owner": "TD-PS07-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS07-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS07-evidence-2.json",
+      "owner": "TD-PS07-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS07-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS07-evidence-3.json",
+      "owner": "TD-PS07-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS07-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS07-evidence-4.json",
+      "owner": "TD-PS07-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS07-content-owner",
+    "oracle": "TD-PS07-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标签名配置、真实通知服务和 iOS 版本分布"
+}

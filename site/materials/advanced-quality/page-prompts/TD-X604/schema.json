@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "topic_id",
+    "status",
+    "candidates",
+    "unknowns",
+    "human_decision_required"
+  ],
+  "properties": {
+    "topic_id": {
+      "const": "TD-X604"
+    },
+    "status": {
+      "enum": [
+        "CANDIDATE",
+        "UNKNOWN",
+        "BLOCKED"
+      ]
+    },
+    "candidates": {
+      "type": "array"
+    },
+    "unknowns": {
+      "type": "array"
+    },
+    "human_decision_required": {
+      "const": true
+    }
+  }
+}
+

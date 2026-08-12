@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "review-question-pack.v1",
+  "type": "object",
+  "required": [
+    "page_id",
+    "status",
+    "claims",
+    "decisions",
+    "unknowns",
+    "owner_questions"
+  ],
+  "properties": {
+    "page_id": {
+      "const": "TD-P03"
+    },
+    "status": {
+      "enum": [
+        "ACCEPTED",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "source_refs"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "source_refs": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "decision",
+          "owner"
+        ],
+        "properties": {
+          "decision": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "owner_questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "question",
+          "owner",
+          "close_with"
+        ],
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "close_with": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
+

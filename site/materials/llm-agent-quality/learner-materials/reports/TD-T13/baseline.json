@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-T13",
+  "mode": "baseline",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "state_hash": "633eb25429f2ec2a194412f694801eb9ceb42ac22281c55c3c8bf85871c08a34",
+  "checks": [
+    {
+      "oracle_id": "SINGLE-VARIABLE",
+      "passed": true
+    },
+    {
+      "oracle_id": "LOCKS-COMPLETE",
+      "passed": true
+    },
+    {
+      "oracle_id": "RISK-BLOCKER",
+      "passed": true
+    },
+    {
+      "oracle_id": "REPEATED-RUNS",
+      "passed": true
+    }
+  ],
+  "state": {
+    "locks": {
+      "dataset": "v1",
+      "prompt": "p1",
+      "retriever": "r1",
+      "tools": "read-only",
+      "scorer": "s1"
+    },
+    "candidate": {
+      "changed": [
+        "model"
+      ],
+      "blockers": 0
+    },
+    "repeats": 3
+  },
+  "not_run": [
+    "live model",
+    "live browser agent",
+    "live tool backend",
+    "live queue",
+    "practitioner review"
+  ]
+}

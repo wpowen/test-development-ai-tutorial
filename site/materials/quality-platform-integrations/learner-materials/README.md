@@ -23,19 +23,19 @@ python3 -m unittest discover -s tests -v
 
 完整路径是 `0/1/0`。也可用 `python3 scripts/quality_platform.py replay|rbac|missing-report --report reports/<name>.json` 检查其他故障。
 
-## 四个站点固定入口
+## 四页独立 baseline → fault → repair
 
-四个主题入口都是真实可执行脚本，会输出主题证据 JSON：
+每页都有自己的 lab manifest、Prompt/Schema/eval/version manifest、状态对象和命名 Oracle。以下命令各自生成 baseline、fault、repair 与 cycle-summary，只有观察到 `0/1/0` 才退出 `0`：
 
 ```bash
-python3 scripts/basis_gate_and_candidate_review.py
-python3 scripts/gitlab_sha_junit_gate.py
-python3 scripts/ephemeral_namespace_cleanup.py
-python3 scripts/event_replay_and_reconcile.py
+python3 scripts/basis_gate_and_candidate_review.py cycle --report-dir reports/td-qp01
+python3 scripts/gitlab_sha_junit_gate.py cycle --report-dir reports/td-qp02
+python3 scripts/ephemeral_namespace_cleanup.py cycle --report-dir reports/td-qp03
+python3 scripts/event_replay_and_reconcile.py cycle --report-dir reports/td-qp04
 ```
 
-对应的配置、fixtures 和 SOP 分别位于 `configs/jira-basis-gate.yaml`、`configs/gitlab-junit-gate.yaml`、`configs/ephemeral-namespace-baseline.yaml`、`configs/event-gateway-policy.yaml`，`fixtures/` 和 `guides/td-qp*.md`。这些入口复用主模拟器的确定性状态和 Oracle，但各自执行本主题的独立断言；不是空 wrapper。
+对应的配置、fixtures 和 SOP 分别位于 `configs/jira-basis-gate.yaml`、`configs/gitlab-junit-gate.yaml`、`configs/ephemeral-namespace-baseline.yaml`、`configs/event-gateway-policy.yaml`，`fixtures/` 和 `guides/td-qp*.md`。页面级运行契约在 `manifests/td-qp*-lab.json`，Prompt 契约在 `prompts/td-qp*/`；`manifests/shared-bundle-owners.json` 精确列出四个 owner，不允许前缀继承。
 
 ## 文件与边界
 
-`fixtures/webhook.json` 和 `configs/policy.json` 是可解析的合成夹具；`guides/` 说明事件 schema、SOP、权限和诊断。真实 Jira/GitLab/K8s/ChatOps 与 tier/版本能力仅 `static-reviewed/NOT_RUN`，没有被本材料伪造为 live evidence。
+`fixtures/webhook.json` 和 `configs/policy.json` 是可解析的合成夹具；`guides/` 说明事件 schema、SOP、权限和诊断。Prompt 的 provider/model 也是 `NOT_RUN`。真实 Jira/GitLab/K8s/ChatOps 与 tier/版本能力没有被本材料伪造成 live evidence。

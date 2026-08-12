@@ -1,0 +1,9 @@
+{
+  "entry_gate": ["能区分需求和技术设计", "能说明独立 Oracle", "能说出工件消费者", "能说出发布责任人"],
+  "route": [
+    {"step": 1, "focus": "需求到测试依据", "artifact": "需求依据表", "gate": "冲突时 BLOCKED"},
+    {"step": 2, "focus": "风险到专业测试设计", "artifact": "TestPackage", "gate": "Mutation 能检出"},
+    {"step": 3, "focus": "执行到发布证据", "artifact": "Run Manifest", "gate": "具名人类决策"},
+    {"step": 4, "focus": "AI 系统质量", "artifact": "Dataset + Eval + Trace", "gate": "版本和阈值可审计"}
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS01",
+  "mode": "repair",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "2f6e0178c743560238c1193694fba624f731bbe9593fe286bd1a34f644ccb43c",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS01-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS01-evidence-1.json",
+      "owner": "TD-PS01-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS01-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS01-evidence-2.json",
+      "owner": "TD-PS01-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS01-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS01-evidence-3.json",
+      "owner": "TD-PS01-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS01-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS01-evidence-4.json",
+      "owner": "TD-PS01-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS01-content-owner",
+    "oracle": "TD-PS01-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标支付网关幂等窗口、真实账本可查询性和业务延迟阈值"
+}

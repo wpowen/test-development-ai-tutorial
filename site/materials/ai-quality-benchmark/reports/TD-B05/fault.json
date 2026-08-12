@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-B05",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "证据不足时输出 SUSPECT/INCOMPARABLE，不宣布整体能力提升。",
+  "checks": [
+    {
+      "field": "contamination_audit_present",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "mutation_id": "TD-B05-fault",
+    "field": "contamination_audit_present",
+    "fault_value": false,
+    "professional_consequence": "候选只在污染题提升，Harness 又更新，却仍宣布显著进步。"
+  },
+  "remaining_unknowns": [
+    "无法确认闭源模型训练数据，污染检测仍可能假阴性。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

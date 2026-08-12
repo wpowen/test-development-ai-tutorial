@@ -1,0 +1,35 @@
+{
+  "schema_version": "agent-performance-cycle.v2",
+  "page_id": "TD-AP05",
+  "observed_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "expected_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "cycle_pass": true,
+  "fault_detected_by": [
+    "goodput_tasks_per_s",
+    "bottleneck_attributed",
+    "queue_p95_ms"
+  ],
+  "repair_comparison": {
+    "goodput_tasks_per_s": {
+      "fault": 0.0,
+      "repair": 5.42546
+    },
+    "bottleneck_attributed": {
+      "fault": 0.0,
+      "repair": 1.0
+    },
+    "queue_p95_ms": {
+      "fault": 2852939995.68455,
+      "repair": 0.0
+    }
+  },
+  "evidence_boundary": "Fixture-tested only; no live model, practitioner review, or production capacity evidence."
+}

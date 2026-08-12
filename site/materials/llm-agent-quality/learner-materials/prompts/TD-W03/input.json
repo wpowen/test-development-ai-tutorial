@@ -1,0 +1,17 @@
+{
+  "fixture_id": "TD-W03-input-v1",
+  "topic_id": "TD-W03",
+  "scenario": "offline_synthetic_fixture",
+  "facts": {
+    "identity": "sandbox-user",
+    "permission": "read-or-propose-only",
+    "tenant": "tenant-a",
+    "version": "v1",
+    "evidence_refs": [
+      "fixture://TD-W03/input",
+      "fixture://TD-W03/trace"
+    ]
+  },
+  "injected_fault": "multi-agent arm receives twice the token budget",
+  "external_calls": "NOT_RUN"
+}

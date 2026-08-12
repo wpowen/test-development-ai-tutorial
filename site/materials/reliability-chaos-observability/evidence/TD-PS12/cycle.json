@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS12",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标 IdP 策略、真实密钥管理、渗透授权范围和剩余风险接受人"
+}

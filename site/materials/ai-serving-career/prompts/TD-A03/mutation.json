@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A03",
+  "mutation_id": "MUT-TD-A03-01",
+  "description": "把质量失败请求计入 Goodput，并从单位成功成本中删除失败尝试费用。",
+  "fault_patch": {
+    "metrics.goodput_requests": 3,
+    "metrics.cost_per_success": 0.04
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

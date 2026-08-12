@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A04",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:e6a0ec0683d353b4978fea26a4d9f569d25c0c1cb794eb47415f58809727822d",
+  "manifest_sha256": "sha256:0d9cc407690151448a3adfe54f0db2aae19416240e79137b6782fbaa1149eb1e",
+  "checks": [
+    {
+      "field": "arrivals.planned",
+      "expected": 10,
+      "actual": 10,
+      "pass": true
+    },
+    {
+      "field": "arrivals.accounted",
+      "expected": 10,
+      "actual": 8,
+      "pass": false
+    },
+    {
+      "field": "capacity.evidence_level",
+      "expected": "fixture-only",
+      "actual": "fixture-only",
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "没有网络、模型、GPU、调度器或生产流量，不能外推真实容量。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

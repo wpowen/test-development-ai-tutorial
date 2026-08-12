@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS08",
+  "prompt_version": "1.0.0",
+  "structural_checks": [
+    "source_refs present",
+    "method_reason present",
+    "oracle_id belongs to manifest",
+    "fault present",
+    "unknowns preserved",
+    "human_gate present"
+  ],
+  "offline_contract_status": "PASS",
+  "model_execution": "NOT_RUN",
+  "evidence_boundary": "Prompt files and schema are versioned; no model quality claim."
+}

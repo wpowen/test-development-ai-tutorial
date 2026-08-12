@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS05",
+  "title": "Web UI 无障碍、兼容性与视觉回归",
+  "working_directory": "materials/ui-mobile-automation",
+  "owners": {
+    "content": "TD-PS05-content-owner",
+    "oracle": "TD-PS05-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS05.json",
+    "prompts/TD-PS05/system-v1.md",
+    "prompts/TD-PS05/task-v1.md",
+    "prompts/TD-PS05/critic-v1.md",
+    "prompts/TD-PS05/manifest.json",
+    "prompts/TD-PS05/mutation.json",
+    "fixtures/TD-PS05-input.json",
+    "schemas/TD-PS05-output.schema.json",
+    "evals/TD-PS05-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS05-ORACLE-01",
+      "statement": "关键控件 name role value 可编程确定",
+      "evidence": "TD-PS05-evidence-1.json",
+      "owner": "TD-PS05-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS05-ORACLE-02",
+      "statement": "完整退款过程键盘可达且焦点可见",
+      "evidence": "TD-PS05-evidence-2.json",
+      "owner": "TD-PS05-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS05-ORACLE-03",
+      "statement": "390px 与长文本不遮挡风险和批准控件",
+      "evidence": "TD-PS05-evidence-3.json",
+      "owner": "TD-PS05-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS05-ORACLE-04",
+      "statement": "视觉基线变更有设计 owner 审批",
+      "evidence": "TD-PS05-evidence-4.json",
+      "owner": "TD-PS05-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS05-FAULT-01",
+    "description": "移除对话框 accessible name",
+    "target_oracle": "TD-PS05-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS05.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS05/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS05.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS05/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS05.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS05/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS05.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS05/baseline.json",
+        "evidence/TD-PS05/fault.json",
+        "evidence/TD-PS05/repair.json",
+        "evidence/TD-PS05/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 真实辅助技术组合、用户研究结果和品牌容差"
+}

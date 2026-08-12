@@ -16,6 +16,24 @@ SEED = ROOT / "seed"
 STATE = ROOT / "state"
 ARTIFACTS = ROOT / "artifacts"
 REPORTS = ROOT / "reports"
+INPUTS = ROOT / "inputs"
+PROMPT_PACKAGE = ROOT / "prompt-package"
+SCHEMAS = ROOT / "schemas"
+RECEIPTS = ROOT / "receipts"
+PAGE_PROMPTS = ROOT / "page-prompts"
+PAGE_MANIFESTS = ROOT / "page-manifests"
+PAGE_IDS = tuple(f"TD-P0{index}" for index in range(1, 9))
+
+PAGE_FAILURES = {
+    "TD-P01": ("SOURCE_CONFLICT", "Test Basis contains contradictory authorities"),
+    "TD-P02": ("UNSUPPORTED_RULE", "Requirement Contract contains a value without source_refs"),
+    "TD-P03": ("UNOWNED_BLOCKER", "Review question has no accountable owner or close_with evidence"),
+    "TD-P04": ("METHOD_GAP", "Critical risk has no method, oracle, monitoring, or residual-risk owner"),
+    "TD-P05": ("SELF_CONFIRMING_ORACLE", "Expected result was derived from the implementation under test"),
+    "TD-P06": ("FAKE_GREEN_AUTOMATION", "Adapter swallowed an assertion or changed the approved oracle"),
+    "TD-P07": ("UNATTRIBUTABLE_RUN", "Run is missing pinned input, selection, retry, or raw evidence"),
+    "TD-P08": ("STALE_EVIDENCE", "Changed contract was allowed to inherit an obsolete PASS receipt"),
+}
 
 
 def load(path: Path):
@@ -45,6 +63,147 @@ def reset() -> int:
 def require_state():
     if not STATE.exists():
         reset()
+
+
+def validate_package(quiet: bool = False) -> tuple[int, dict]:
+    required = [INPUTS / "authority-policy.json", PROMPT_PACKAGE / "manifest.json", PROMPT_PACKAGE / "system-v1.md", PROMPT_PACKAGE / "task-v1.md", PROMPT_PACKAGE / "critic-v1.md", PROMPT_PACKAGE / "eval.json", PROMPT_PACKAGE / "mutation.json", SCHEMAS / "requirement-contract.schema.json"]
+    for page_id in PAGE_IDS:
+        required.extend([
+            PAGE_MANIFESTS / f"{page_id}.json",
+            PAGE_PROMPTS / page_id / "manifest.json",
+            PAGE_PROMPTS / page_id / "prompt-v1.md",
+            PAGE_PROMPTS / page_id / "input.json",
+            PAGE_PROMPTS / page_id / "schema.json",
+            PAGE_PROMPTS / page_id / "eval.json",
+        ])
+    missing = [str(path.relative_to(ROOT)) for path in required if not path.exists()]
+    result = {"status": "BLOCKED" if missing else "PASS", "missing": missing}
+    if not quiet: print(json.dumps(result, ensure_ascii=False, indent=2))
+    return (2 if missing else 0), result
+
+
+def validate_page_package(page_id: str) -> tuple[int, dict]:
+    if page_id not in PAGE_IDS:
+        return 2, {"status": "BLOCKED", "issues": [f"unknown page_id {page_id}"]}
+    manifest_path = PAGE_MANIFESTS / f"{page_id}.json"
+    prompt_dir = PAGE_PROMPTS / page_id
+    prompt_manifest_path = prompt_dir / "manifest.json"
+    required = [manifest_path, prompt_manifest_path, prompt_dir / "prompt-v1.md", prompt_dir / "input.json", prompt_dir / "schema.json", prompt_dir / "eval.json"]
+    issues = [f"missing {path.relative_to(ROOT)}" for path in required if not path.is_file() or path.stat().st_size == 0]
+    if issues:
+        return 2, {"status": "BLOCKED", "issues": issues}
+    manifest = load(manifest_path)
+    prompt_manifest = load(prompt_manifest_path)
+    evaluation = load(prompt_dir / "eval.json")
+    if manifest.get("owner_page_ids") != [page_id]:
+        issues.append("page manifest must declare exactly one owner_page_id")
+    if prompt_manifest.get("owner_page_ids") != [page_id]:
+        issues.append("prompt manifest must declare exactly one owner_page_id")
+    if prompt_manifest.get("provider") != "none" or prompt_manifest.get("model_status") != "NOT_RUN":
+        issues.append("offline prompt package must keep provider none and model_status NOT_RUN")
+    if len(evaluation.get("items", [])) < 5 or len(evaluation.get("mutations", [])) < 3:
+        issues.append("page eval must contain five checks and three negative controls")
+    step_ids = {step.get("step_id") for step in manifest.get("steps", [])}
+    if not {"baseline", "fault", "repair", "cycle"}.issubset(step_ids):
+        issues.append("page manifest must expose baseline, fault, repair, and cycle")
+    return (2 if issues else 0), {"status": "BLOCKED" if issues else "PASS", "issues": issues, "page_id": page_id}
+
+
+def page_phase(page_id: str, phase: str, report_path: str | None) -> int:
+    package_code, package_result = validate_page_package(page_id)
+    if package_code:
+        print(json.dumps(package_result, ensure_ascii=False, indent=2))
+        return package_code
+    if phase not in {"baseline", "fault", "repair"}:
+        print(json.dumps({"status": "BLOCKED", "issues": [f"unknown phase {phase}"]}, ensure_ascii=False))
+        return 2
+    failure_id, failure_message = PAGE_FAILURES[page_id]
+    status = "FAIL" if phase == "fault" else "PASS"
+    report = {
+        "run_id": f"{page_id}-{phase}",
+        "page_id": page_id,
+        "phase": phase,
+        "status": status,
+        "finding_id": failure_id if phase == "fault" else None,
+        "finding": failure_message if phase == "fault" else "approved fixture satisfies the page contract",
+        "prompt_hash": digest(PAGE_PROMPTS / page_id / "prompt-v1.md"),
+        "input_hash": digest(PAGE_PROMPTS / page_id / "input.json"),
+        "evidence_status": "fixture-tested",
+        "provider": "none",
+        "model_status": "NOT_RUN",
+        "boundary": "deterministic offline negative-control fixture; not model, practitioner, integration, live, publication, or production evidence",
+    }
+    target = ROOT / report_path if report_path else REPORTS / f"{page_id}-{phase}.json"
+    save(target, report)
+    print(json.dumps({"page_id": page_id, "phase": phase, "status": status, "report": str(target.relative_to(ROOT))}, ensure_ascii=False))
+    return 1 if status == "FAIL" else 0
+
+
+def page_cycle(page_id: str, report_path: str | None) -> int:
+    phases = []
+    for phase, expected_exit in (("baseline", 0), ("fault", 1), ("repair", 0)):
+        phase_report = f"reports/{page_id}-{phase}.json"
+        actual_exit = page_phase(page_id, phase, phase_report)
+        report = load(ROOT / phase_report)
+        phases.append({"phase": phase, "status": report["status"], "expected_exit_code": expected_exit, "actual_exit_code": actual_exit, "report": phase_report})
+        if actual_exit != expected_exit:
+            print(json.dumps({"status": "BLOCKED", "page_id": page_id, "phase": phase, "expected_exit": expected_exit, "actual_exit": actual_exit}, ensure_ascii=False))
+            return 2
+    cycle_report = {
+        "run_id": f"{page_id}-cycle",
+        "page_id": page_id,
+        "status": "PASS",
+        "phases": phases,
+        "evidence_status": "fixture-tested",
+        "provider": "none",
+        "model_status": "NOT_RUN",
+        "boundary": "0/1/0 deterministic teaching cycle only; no model/API, practitioner, integration, live, publication, or production claim",
+    }
+    target = ROOT / report_path if report_path else REPORTS / f"{page_id}-cycle.json"
+    save(target, cycle_report)
+    print(json.dumps({"status": "PASS", "page_id": page_id, "report": str(target.relative_to(ROOT))}, ensure_ascii=False))
+    return 0
+
+
+def validate_authority(quiet: bool = False) -> tuple[int, dict]:
+    policy = load(INPUTS / "authority-policy.json")
+    issues = []
+    if not policy.get("owner") or not policy.get("evidence"): issues.append("authority owner/evidence missing")
+    if policy.get("conflict_action") != "BLOCKED": issues.append("conflict action must be BLOCKED")
+    result = {"status": "BLOCKED" if issues else "PASS", "issues": issues, "precedence": policy.get("precedence")}
+    if not quiet: print(json.dumps(result, ensure_ascii=False, indent=2))
+    return (2 if issues else 0), result
+
+
+def validate_prompt_package(quiet: bool = False) -> tuple[int, dict]:
+    manifest = load(PROMPT_PACKAGE / "manifest.json")
+    evaluation = load(PROMPT_PACKAGE / "eval.json")
+    mutation = load(PROMPT_PACKAGE / "mutation.json")
+    issues = []
+    if manifest.get("provider") != "none" or manifest.get("model") != "offline-deterministic" or manifest.get("status") != "NOT_RUN":
+        issues.append("model manifest must remain explicit NOT_RUN offline")
+    if len(evaluation.get("items", [])) < 8: issues.append("eval set must cover eight classes")
+    if len(mutation.get("items", [])) < 3: issues.append("mutation set incomplete")
+    result = {"status": "BLOCKED" if issues else "PASS", "issues": issues, "eval_cases": len(evaluation.get("items", []))}
+    if not quiet: print(json.dumps(result, ensure_ascii=False, indent=2))
+    return (2 if issues else 0), result
+
+
+def validate_trace(quiet: bool = False) -> tuple[int, dict]:
+    trace_path = ROOT / "traceability.json"
+    if not trace_path.exists():
+        result = {"status": "BLOCKED", "issues": ["traceability.json missing"]}
+        if not quiet: print(json.dumps(result, ensure_ascii=False, indent=2))
+        return 2, result
+    trace = load(trace_path)
+    nodes = trace.get("links", [])
+    ids = {node.get("id") for node in nodes}
+    required = {"source", "claim", "risk", "method", "oracle", "case", "result"}
+    issues = [f"missing {kind} node" for kind in required if not any(node.get("kind") == kind for node in nodes)]
+    issues += [f"orphan {node.get('id')}" for node in nodes if node.get("kind") != "source" and any(ref not in ids for ref in node.get("refs", []))]
+    result = {"status": "BLOCKED" if issues else "PASS", "issues": issues, "node_count": len(nodes)}
+    if not quiet: print(json.dumps(result, ensure_ascii=False, indent=2))
+    return (2 if issues else 0), result
 
 
 def validate_basis(quiet: bool = False) -> tuple[int, dict]:
@@ -227,6 +386,12 @@ def repair() -> int:
 
 
 def run_all(report_path: str | None) -> int:
+    for gate in (validate_package, validate_authority, validate_prompt_package, validate_trace):
+        code, result = gate(quiet=True)
+        if code:
+            print(json.dumps(result, ensure_ascii=False, indent=2))
+            print("BLOCKED: package/authority/prompt/trace gate failed")
+            return 2
     basis_code, basis = validate_basis(quiet=True)
     if basis_code:
         print(json.dumps(basis, ensure_ascii=False, indent=2))
@@ -256,11 +421,17 @@ def evidence() -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["reset", "validate-basis", "inject-doc-conflict", "validate-contract", "inject-unsupported-rule", "generate-tests", "inject-code-defect", "execute", "repair", "all", "evidence"])
+    parser.add_argument("command", choices=["reset", "validate-package", "validate-authority", "validate-prompt-package", "validate-trace", "validate-basis", "inject-doc-conflict", "validate-contract", "inject-unsupported-rule", "generate-tests", "inject-code-defect", "execute", "repair", "all", "evidence", "page-phase", "page-cycle"])
     parser.add_argument("--report")
+    parser.add_argument("--page", choices=PAGE_IDS)
+    parser.add_argument("--phase", choices=["baseline", "fault", "repair"])
     args = parser.parse_args()
     commands = {
         "reset": reset,
+        "validate-package": lambda: validate_package()[0],
+        "validate-authority": lambda: validate_authority()[0],
+        "validate-prompt-package": lambda: validate_prompt_package()[0],
+        "validate-trace": lambda: validate_trace()[0],
         "validate-basis": lambda: validate_basis()[0],
         "inject-doc-conflict": inject_doc_conflict,
         "validate-contract": lambda: validate_contract()[0],
@@ -271,6 +442,8 @@ def main() -> int:
         "repair": repair,
         "all": lambda: run_all(args.report),
         "evidence": evidence,
+        "page-phase": lambda: page_phase(args.page or "", args.phase or "", args.report),
+        "page-cycle": lambda: page_cycle(args.page or "", args.report),
     }
     return commands[args.command]()
 

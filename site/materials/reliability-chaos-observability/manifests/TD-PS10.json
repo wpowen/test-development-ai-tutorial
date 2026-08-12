@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS10",
+  "title": "稳定性：超时、重试预算、熔断、限流与降级",
+  "working_directory": "materials/reliability-chaos-observability",
+  "owners": {
+    "content": "TD-PS10-content-owner",
+    "oracle": "TD-PS10-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS10.json",
+    "prompts/TD-PS10/system-v1.md",
+    "prompts/TD-PS10/task-v1.md",
+    "prompts/TD-PS10/critic-v1.md",
+    "prompts/TD-PS10/manifest.json",
+    "prompts/TD-PS10/mutation.json",
+    "fixtures/TD-PS10-input.json",
+    "schemas/TD-PS10-output.schema.json",
+    "evals/TD-PS10-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS10-ORACLE-01",
+      "statement": "端到端 deadline 不小于子调用但总链有界",
+      "evidence": "TD-PS10-evidence-1.json",
+      "owner": "TD-PS10-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS10-ORACLE-02",
+      "statement": "call amplification 不超过预算",
+      "evidence": "TD-PS10-evidence-2.json",
+      "owner": "TD-PS10-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS10-ORACLE-03",
+      "statement": "过载拒绝不产生退款写操作",
+      "evidence": "TD-PS10-evidence-3.json",
+      "owner": "TD-PS10-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS10-ORACLE-04",
+      "statement": "恢复窗口队列与错误率回到基线",
+      "evidence": "TD-PS10-evidence-4.json",
+      "owner": "TD-PS10-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS10-FAULT-01",
+    "description": "模型 429 与工具超时叠加",
+    "target_oracle": "TD-PS10-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS10.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS10/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS10.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS10/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS10.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS10/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS10.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS10/baseline.json",
+        "evidence/TD-PS10/fault.json",
+        "evidence/TD-PS10/repair.json",
+        "evidence/TD-PS10/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标供应商 Retry-After、真实队列容量和业务降级文案"
+}

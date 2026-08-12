@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "owner_page_ids": [
+    "TD-P02"
+  ],
+  "provider": "none",
+  "model": "offline-deterministic",
+  "model_status": "NOT_RUN",
+  "system_prompt": "prompt-v1.md",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "prompt-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "refusal_status": "BLOCKED",
+  "boundary": "versioned prompt contract; no model/API run"
+}
+

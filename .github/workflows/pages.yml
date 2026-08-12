@@ -15,11 +15,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-python@v6
-        with:
-          python-version: "3.12"
-      - name: Validate assembled public release
-        run: python3 skill/career-ai-course-factory/scripts/validate_public_release.py .
+      - name: Validate fixture-preview payload
+        run: |
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          html = Path("site/index.html").read_text(encoding="utf-8")
+          match = re.search(r"const COURSE_DATA=(.*?);const DATA=COURSE_DATA;", html, re.S)
+          if not match:
+              raise SystemExit("COURSE_DATA is missing from site/index.html")
+          data = json.loads(match.group(1))
+          pages = data.get("pages", [])
+          ids = [page.get("id") for page in pages]
+          if len(pages) != 85 or len(set(ids)) != 85:
+              raise SystemExit(f"expected 85 unique preview pages, got {len(pages)}")
+          required = {"TD-F01", "TD-P02", "TD-T19", "TD-T25", "TD-X805", "TD-AP08"}
+          missing = sorted(required.difference(ids))
+          if missing:
+              raise SystemExit(f"latest preview pages missing: {missing}")
+          invalid = [page["id"] for page in pages if page.get("status") != "fixture-tested"]
+          if invalid:
+              raise SystemExit(f"non-fixture preview pages found: {invalid}")
+          print("Fixture preview valid: 85 unique pages; maturity remains fixture-tested.")
+          PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:

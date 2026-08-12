@@ -1,0 +1,1 @@
+{"basis_ref":"../../fixtures/basis.json","basis_version":"digital-refund-v4","diff_refs":["refund.py#L18-L24","events.py#L9-L16"],"requested_output":"risk-candidates-v1"}

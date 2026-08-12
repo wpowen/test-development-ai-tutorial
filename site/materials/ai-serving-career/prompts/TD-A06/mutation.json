@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A06",
+  "mutation_id": "MUT-TD-A06-01",
+  "description": "忽略 Retry-After，重试八次，并静默启用未通过质量门禁的 fallback。",
+  "fault_patch": {
+    "retry.attempts": 8,
+    "retry.respected_retry_after": false,
+    "fallback.quality_gate": false
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

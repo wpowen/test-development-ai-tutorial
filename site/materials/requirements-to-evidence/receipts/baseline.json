@@ -1,0 +1,10 @@
+{
+  "run_id": "NOT_RUN",
+  "status": "NOT_RUN",
+  "provider": "none",
+  "model": "offline-deterministic",
+  "evidence_status": "fixture-tested",
+  "limitations": [
+    "no model/API invocation"
+  ]
+}

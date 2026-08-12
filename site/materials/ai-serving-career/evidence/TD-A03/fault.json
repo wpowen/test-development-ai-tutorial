@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A03",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:07e75c27ff4697a760a1e05ab74b9b2fe057c8ad959a3c72f5c02dbe49cec575",
+  "manifest_sha256": "sha256:55ce74df343743a4043cb6285c5224ab29b5590edcdac282829e448792210f1b",
+  "checks": [
+    {
+      "field": "metrics.goodput_requests",
+      "expected": 2,
+      "actual": 3,
+      "pass": false
+    },
+    {
+      "field": "metrics.total_arrivals",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "field": "metrics.cost_per_success",
+      "expected": 0.09,
+      "actual": 0.04,
+      "pass": false
+    }
+  ],
+  "unknowns": [
+    "fixture 时间戳和成本不代表任何模型、GPU、地区或供应商。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

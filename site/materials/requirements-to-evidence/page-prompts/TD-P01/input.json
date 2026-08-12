@@ -1,0 +1,14 @@
+{
+  "page_id": "TD-P01",
+  "baseline_id": "order-cancel-v2",
+  "source_refs": [
+    "PRD-v3#R17",
+    "PRD-v3#R18",
+    "PRD-v3#R19",
+    "OPENAPI-v7#/cancel",
+    "TECH-a13f#S04"
+  ],
+  "authority_policy": "PRD business rules > OpenAPI transport/schema > technical design implementation context; conflicts BLOCKED",
+  "fixture_boundary": "synthetic offline teaching fixture"
+}
+

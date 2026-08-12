@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x601-fairness-hitl",
+  "topic_id": "TD-X601",
+  "version": "1.0.0",
+  "purpose": "把群体切片、伤害 taxonomy、人类升级与 reviewer agreement 分开验证",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "GROUP_SLICE_MISSING",
+    "HARM_BLOCKER",
+    "HITL_INEFFECTIVE",
+    "BLOCKED"
+  ]
+}
+

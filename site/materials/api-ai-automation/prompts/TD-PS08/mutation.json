@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS08",
+  "mutation_id": "TD-PS08-FAULT-01",
+  "mutation": "回填跳过一个分片",
+  "expected_detected_by": "主键集合与关键行数按分片守恒",
+  "model_execution": "NOT_RUN"
+}

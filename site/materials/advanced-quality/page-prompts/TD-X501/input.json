@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X501",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "图文错配、缺少模态或跨模态 Oracle 冲突"
+}
+

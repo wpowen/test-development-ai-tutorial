@@ -1,0 +1,20 @@
+{
+  "version": "1.0.0",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "cases": [
+    {"id": "E1", "assertion": "责任被定义为质量风险可见、可验证、可决策", "expected": "pass"},
+    {"id": "E2", "assertion": "生命周期至少九阶段且需求与技术设计分别读取", "expected": "pass"},
+    {"id": "E3", "assertion": "文档冲突触发 BLOCKED 而非模型裁决", "expected": "pass"},
+    {"id": "E4", "assertion": "Oracle 不引用被测实现输出或本次模型输出", "expected": "pass"},
+    {"id": "E5", "assertion": "发布、Waiver、回滚均有具名人类责任边界", "expected": "pass"},
+    {"id": "E6", "assertion": "传统测试能力映射到 Eval、Trace、权限与生产治理", "expected": "pass"}
+  ],
+  "mutations": [
+    {"id": "M1", "change": "将 oracle 改为 implementation_output", "expected": "fail"},
+    {"id": "M2", "change": "将 release_decider 改为 ai_agent", "expected": "fail"},
+    {"id": "M3", "change": "删除 technical_design test basis", "expected": "fail"},
+    {"id": "M4", "change": "把文档冲突 action 改为 let_model_choose", "expected": "fail"}
+  ],
+  "boundary": "evaluation specification only; no model judge run"
+}

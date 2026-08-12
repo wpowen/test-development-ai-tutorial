@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS11",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标 collector 采样、生产权限、托管模型内部 span 和真实恢复时间"
+}

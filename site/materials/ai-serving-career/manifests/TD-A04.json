@@ -1,0 +1,84 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A04",
+  "topic_id": "TD-A04",
+  "title": "AI Serving 负载与容量：从 Token 分布到 SLO 拐点",
+  "working_directory": "materials/ai-serving-career",
+  "input_fixture": "fixtures/TD-A04-input.json",
+  "expected": {
+    "arrivals.planned": 10,
+    "arrivals.accounted": 10,
+    "capacity.evidence_level": "fixture-only"
+  },
+  "fault_patch": {
+    "arrivals.accounted": 8
+  },
+  "oracle": "计划到达数等于完成、失败、dropped 和仍排队之和；SLO 破坏后停止；容量以 Goodput 判定。",
+  "required_files": [
+    "owners.json",
+    "scripts/serving_lab.py",
+    "fixtures/TD-A04-input.json",
+    "prompts/TD-A04/system-v1.md",
+    "prompts/TD-A04/task-v1.md",
+    "prompts/TD-A04/critic-v1.md",
+    "prompts/TD-A04/manifest.json",
+    "prompts/TD-A04/mutation.json",
+    "schemas/TD-A04-output.schema.json",
+    "evals/TD-A04-eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A04.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A04/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A04.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-A04/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A04.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A04/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A04.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A04/baseline.json",
+        "evidence/TD-A04/fault.json",
+        "evidence/TD-A04/repair.json",
+        "evidence/TD-A04/cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "owners": {
+    "content": "TD-A04-content-owner",
+    "oracle": "TD-A04-oracle-owner",
+    "release": "ai-serving-career-release-owner"
+  },
+  "unknowns": [
+    "没有网络、模型、GPU、调度器或生产流量，不能外推真实容量。"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

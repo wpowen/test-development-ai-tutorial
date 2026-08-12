@@ -1,0 +1,290 @@
+{
+  "TD-T20": {
+    "expected": {
+      "blocking_exit_propagated": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "blocking_exit_propagated": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-T20-fault",
+      "field": "blocking_exit_propagated",
+      "fault_value": false,
+      "professional_consequence": "high-risk refund 已错误承诺，但报告 job 未传播非零退出码。"
+    },
+    "decision": "先杀死 blocker，再检查风险切片阈值，最后才展示总体分。",
+    "remaining_unknowns": [
+      "真实云 CI、企业审批和模型执行未运行。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-T21": {
+    "expected": {
+      "lineage_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "lineage_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-T21-fault",
+      "field": "lineage_complete",
+      "fault_value": false,
+      "professional_consequence": "A/B 同时更换模型、Prompt、知识索引和 Judge，却声称模型提升。"
+    },
+    "decision": "锁定字段同时变化时输出 CONFOUNDED，不生成 winner。",
+    "remaining_unknowns": [
+      "外部 Provider 的内部路由和历史 snapshot 可用性未知。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-T22": {
+    "expected": {
+      "source_trace_linked": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "source_trace_linked": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-T22-fault",
+      "field": "source_trace_linked",
+      "fault_value": false,
+      "professional_consequence": "直接复制含 PII 的 Trace，或过度脱敏后丢失越权工具触发条件。"
+    },
+    "decision": "不能稳定重放或未获隐私/领域批准的事件只能作调查线索。",
+    "remaining_unknowns": [
+      "真实保留期限、隐私分类和生产 Trace 平台未接入。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-T23": {
+    "expected": {
+      "joint_gate_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "joint_gate_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-T23-fault",
+      "field": "joint_gate_complete",
+      "fault_value": false,
+      "professional_consequence": "平均延迟下降但高风险正确率、p99 与重试成本恶化。"
+    },
+    "decision": "先淘汰突破硬底线的候选，再在合格候选中讨论 Pareto 权衡。",
+    "remaining_unknowns": [
+      "真实模型价格、流量、缓存与 SLO 未测。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-T24": {
+    "expected": {
+      "waiver_has_expiry": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "waiver_has_expiry": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-T24-fault",
+      "field": "waiver_has_expiry",
+      "fault_value": false,
+      "professional_consequence": "Judge 漂移导致质量下降未报警，团队通过放宽阈值维持绿灯。"
+    },
+    "decision": "高风险先回滚再调查；例外必须具名、受限并自动到期。",
+    "remaining_unknowns": [
+      "真实监控基线、值班流程和回滚演练未运行。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-T25": {
+    "expected": {
+      "capstone_trace_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "capstone_trace_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-T25-fault",
+      "field": "capstone_trace_complete",
+      "fault_value": false,
+      "professional_consequence": "只交文档、聊天截图或最终绿报告，没有首次红灯、trace、owner 或 hash closure。"
+    },
+    "decision": "闭包最多证明 fixture release candidate，不得晋级 publication、production 或 practitioner。",
+    "remaining_unknowns": [
+      "模型、真实 RAG/Agent、企业集成、人审和发布全部 NOT_RUN。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-B01": {
+    "expected": {
+      "pipeline_components_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "pipeline_components_complete": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-B01-fault",
+      "field": "pipeline_components_complete",
+      "fault_value": false,
+      "professional_consequence": "只按公开名次选择客服模型，却不知道工具预算、超时和 scorer。"
+    },
+    "decision": "关键字段缺失时标不可复现；公共分数不能自动成为企业 Gate。",
+    "remaining_unknowns": [
+      "课程没有复现完整公开榜单或验证当前模型排名。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-B02": {
+    "expected": {
+      "holdout_sealed": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "holdout_sealed": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-B02-fault",
+      "field": "holdout_sealed",
+      "fault_value": false,
+      "professional_consequence": "随机按行切分让同一 incident 改写跨组出现，高风险又被简单 FAQ 淹没。"
+    },
+    "decision": "发现泄漏或 Holdout 被反复调试时重建 split，并使旧结论失效。",
+    "remaining_unknowns": [
+      "合成数据不能证明真实流量代表性或领域标注质量。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-B03": {
+    "expected": {
+      "metric_denominator_declared": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "metric_denominator_declared": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-B03-fault",
+      "field": "metric_denominator_declared",
+      "fault_value": false,
+      "professional_consequence": "pass@5 很高但单次成功低、成本高，且安全 blocker 被均值掩盖。"
+    },
+    "decision": "不可比条件或样本不足时保留不确定，不输出虚假精确排名。",
+    "remaining_unknowns": [
+      "Fixture 没有运行随机模型或真实统计估计。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-B04": {
+    "expected": {
+      "single_variable_isolated": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "single_variable_isolated": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-B04-fault",
+      "field": "single_variable_isolated",
+      "fault_value": false,
+      "professional_consequence": "同时开放工具、延长超时和改 system prompt 后，把提升归因给模型。"
+    },
+    "decision": "一次只归因一个协议变量；多变量变化输出 CONFOUNDED。",
+    "remaining_unknowns": [
+      "公开 Harness 与真实模型适配器均未运行。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-B05": {
+    "expected": {
+      "contamination_audit_present": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "contamination_audit_present": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-B05-fault",
+      "field": "contamination_audit_present",
+      "fault_value": false,
+      "professional_consequence": "候选只在污染题提升，Harness 又更新，却仍宣布显著进步。"
+    },
+    "decision": "证据不足时输出 SUSPECT/INCOMPARABLE，不宣布整体能力提升。",
+    "remaining_unknowns": [
+      "无法确认闭源模型训练数据，污染检测仍可能假阴性。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  },
+  "TD-B06": {
+    "expected": {
+      "enterprise_oracle_linked": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "baseline_observations": {
+      "enterprise_oracle_linked": true,
+      "evidence_boundary_declared": true,
+      "human_owner_present": true
+    },
+    "mutation": {
+      "mutation_id": "TD-B06-fault",
+      "field": "enterprise_oracle_linked",
+      "fault_value": false,
+      "professional_consequence": "把公开题翻译成中文就当企业发布 Gate，缺少权限、事故和业务 Oracle。"
+    },
+    "decision": "内部 Benchmark 必须连接真实决策、领域 Oracle 和具名 owner。",
+    "remaining_unknowns": [
+      "真实企业数据、标注团队、权限和发布连接未建立。",
+      "Model/provider execution NOT_RUN",
+      "Practitioner/publication/production NOT_RUN"
+    ]
+  }
+}

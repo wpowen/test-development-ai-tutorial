@@ -1,0 +1,12 @@
+{
+  "responsibility": "make_quality_risk_visible_and_decidable",
+  "test_basis": ["requirements", "technical_design"],
+  "authority_conflict_action": "BLOCKED",
+  "oracle_source": "approved_requirement_and_domain_rule",
+  "method_selection": "risk_and_failure_mode",
+  "artifact_owner": "learner",
+  "downstream_consumer": "named_release_owner",
+  "release_decider": "named_human_owner",
+  "ai_permission": "candidate_generation_and_evidence_aggregation",
+  "production_feedback": "regression_and_eval_assets"
+}

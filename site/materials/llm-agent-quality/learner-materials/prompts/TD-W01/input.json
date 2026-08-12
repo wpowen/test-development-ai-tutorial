@@ -1,0 +1,17 @@
+{
+  "fixture_id": "TD-W01-input-v1",
+  "topic_id": "TD-W01",
+  "scenario": "offline_synthetic_fixture",
+  "facts": {
+    "identity": "sandbox-user",
+    "permission": "read-or-propose-only",
+    "tenant": "tenant-a",
+    "version": "v1",
+    "evidence_refs": [
+      "fixture://TD-W01/input",
+      "fixture://TD-W01/trace"
+    ]
+  },
+  "injected_fault": "asynchronous audit worker is misclassified as an agent",
+  "external_calls": "NOT_RUN"
+}

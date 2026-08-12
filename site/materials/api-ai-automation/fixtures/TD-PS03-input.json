@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS03",
+  "scenario": "Checkout 发布 order.created，库存支付通知消费者异步处理并可能重复乱序",
+  "controlling_question": "怎样在部署前证明消费者字段兼容，并在运行时证明租户、幂等、死信和补偿没有静默失败？",
+  "known_rules": [
+    "provider 变更满足所有活跃消费者",
+    "跨租户事件被拒绝且零副作用",
+    "重复 event_id 只产生一次支付意图",
+    "失败事件进入具名 dead-letter 或补偿终态"
+  ],
+  "faults": [
+    "删除消费者字段",
+    "重复并乱序投递",
+    "策略版本拒绝失效"
+  ],
+  "unknowns": [
+    "目标 broker 投递保证、策略引擎版本和补偿 owner"
+  ],
+  "data_classification": "synthetic"
+}

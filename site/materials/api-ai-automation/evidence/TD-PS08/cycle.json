@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS08",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标数据规模、锁等待、复制延迟、业务可接受停机窗口"
+}

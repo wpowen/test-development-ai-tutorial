@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T23",
+  "phase": "repair",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "先淘汰突破硬底线的候选，再在合格候选中讨论 Pareto 权衡。",
+  "checks": [
+    {
+      "field": "joint_gate_complete",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "真实模型价格、流量、缓存与 SLO 未测。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

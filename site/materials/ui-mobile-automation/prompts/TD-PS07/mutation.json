@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS07",
+  "mutation_id": "TD-PS07-FAULT-01",
+  "mutation": "动画和异步回调延迟",
+  "expected_detected_by": "稳定 identifier 不依赖本地化文字",
+  "model_execution": "NOT_RUN"
+}

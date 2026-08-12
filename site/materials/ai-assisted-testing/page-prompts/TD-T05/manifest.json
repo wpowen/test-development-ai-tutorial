@@ -1,0 +1,18 @@
+{
+  "package_id": "td-t05-risk-extraction",
+  "topic_id": "TD-T05",
+  "version": "1.0.0",
+  "purpose": "从冻结 basis 与当前代码 Diff 生成有来源的风险候选",
+  "authority": "candidate-only; product and test owners approve risk and Oracle",
+  "prompt": "prompt-v1.md",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../fixtures/oracles.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": ["SOURCE_CONFLICT", "UNSUPPORTED_RULE", "UNKNOWN", "BLOCKED"]
+}

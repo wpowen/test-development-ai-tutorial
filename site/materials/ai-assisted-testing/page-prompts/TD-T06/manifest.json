@@ -1,0 +1,18 @@
+{
+  "package_id": "td-t06-test-candidates",
+  "topic_id": "TD-T06",
+  "version": "1.0.0",
+  "purpose": "从已批准风险和独立 Oracle 生成测试候选，交由 mutation 验证检测力",
+  "authority": "candidate-only; generator cannot approve Oracle or mutation disposition",
+  "prompt": "prompt-v1.md",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../fixtures/oracles.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": ["ORACLE_UNKNOWN", "SURVIVED", "NO_COVERAGE", "BLOCKED"]
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T01",
+  "phase": "baseline",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "Eval contract 必须先声明对象、风险、数据、Oracle、阈值、owner 与 stop state。",
+  "checks": [
+    {
+      "field": "risk_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "stop_state_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "threshold_has_rationale",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "业务风险权重等待目标组织确认",
+    "阈值仅是合成场景决策"
+  ]
+}

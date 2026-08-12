@@ -26,3 +26,21 @@ python3 scripts/verify_learner_materials.py
 ## 生产边界
 
 K8s/Chaos Mesh 仍是 `static-reviewed / NOT_RUN`；本目录没有执行 `kubectl`、Chaos Mesh、真实模型、真实工具、生产流量或真实退款。学员必须获得授权、替换 selector/环境/回滚命令并由负责人复核后，才能在隔离环境做真实实验。
+
+<!-- WAVE1-OWNERS-START -->
+## Wave 1 独立专项与 Owners
+
+- TD-PS10 · 稳定性：超时、重试预算、熔断、限流与降级 · manifest: `manifests/TD-PS10.json` · owners 见 `owners.json`
+- TD-PS11 · 可观测性与混沌：Trace 完整性、受控注入和恢复证据 · manifest: `manifests/TD-PS11.json` · owners 见 `owners.json`
+- TD-PS12 · 安全测试：身份、授权、输入、秘密与跨租户副作用 · manifest: `manifests/TD-PS12.json` · owners 见 `owners.json`
+
+逐页运行：
+
+```bash
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS10.json --mode cycle
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS11.json --mode cycle
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS12.json --mode cycle
+```
+
+共享 runner 只执行 manifest；不得把一个页面的 Oracle、Prompt、fault 或 PASS 传播到其他页面。
+<!-- WAVE1-OWNERS-END -->

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A02",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:ef5dccc3d3a606d5aa7f740b3691a992ecb5dc8a62d1e65b261ea8a5502e2fa7",
+  "manifest_sha256": "sha256:f3720a1719cc4f42859dd6de3caba85e57b7a4e78fe16aeca4215c9ef98cf687",
+  "checks": [
+    {
+      "field": "stream.terminal_count",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    },
+    {
+      "field": "structured.semantic_pass",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "tool.side_effect_count",
+      "expected": 1,
+      "actual": 2,
+      "pass": false
+    },
+    {
+      "field": "async.terminal",
+      "expected": "completed",
+      "actual": "completed",
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "真实代理缓冲、网络分片、工具服务和任务队列没有运行。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

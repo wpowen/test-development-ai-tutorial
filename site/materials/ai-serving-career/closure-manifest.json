@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0.0",
+  "algorithm": "sha256",
+  "bundle_owner": "ai-serving-career-wave-3",
+  "file_count": 88,
+  "files": {
+    "README.md": "sha256:5b4b9bf27d18ff63e3efc803cf0f72c117a203b63fb2a9d6ea2cc842862a2766",
+    "evals/TD-A01-eval.json": "sha256:a602516ed8f6fbba9d370b9ea3700b58d98e8a384fccf3eedefda21164253729",
+    "evals/TD-A02-eval.json": "sha256:dcb2670930da095a3c4ffa6fd358a13f4f82d677a4b81b7aeaa5ca633adc5b33",
+    "evals/TD-A03-eval.json": "sha256:7f6060a31024937b7f3b82b0c9d4a58953d01e319d6327647aa565f2527d24e4",
+    "evals/TD-A04-eval.json": "sha256:1a921df84c632fd345949c7fc3b93b04d7c422a5124ae0a7c06d8ce974166719",
+    "evals/TD-A05-eval.json": "sha256:8c4d4ca365d8feb3419ac5168a2101c0c53142192af8abb7990219adb21cacb4",
+    "evals/TD-A06-eval.json": "sha256:e53a15827b32b6ea3654a3d4e2e545fd0fc74299b2c4c6514ef42f80daccee44",
+    "evals/TD-C01-eval.json": "sha256:3dfa78f4998c384edda0246ed2578c85f840cbdc1c6c1099141a3fddaf3d6c27",
+    "evidence/TD-A01/cycle.json": "sha256:210711c704dce272e33c20bda3c0afdb83a18a2c65f582827549818afc776dc5",
+    "evidence/TD-A01/fault.json": "sha256:779a7a79f22b16d0c4959d210e410e111d125194b5ce62e09bb93685448ea353",
+    "evidence/TD-A01/repair.json": "sha256:d8b5a41e72cc103a180e94adb8a7b328a5ac655a49b42bc49d0454405635cbb0",
+    "evidence/TD-A02/cycle.json": "sha256:8a91b5143abb7e32d09ba92aa5c3f218c2cb6bfcd0c30379d637fb779ab622bb",
+    "evidence/TD-A02/fault.json": "sha256:5b51ddc73797a21d6271d34f434807bd81094bac67df4aedff1a70526ebc11c9",
+    "evidence/TD-A02/repair.json": "sha256:3e8954a7699f60f91132340d8484edfce1ef3b8671979a0f4663a78deb23bedc",
+    "evidence/TD-A03/cycle.json": "sha256:6e16046240146e737ac06e0bf4928cb3c38ddfd43f10ee5d996d3e8d6a021b59",
+    "evidence/TD-A03/fault.json": "sha256:84c751e5a5d579d117f9b0c4a063c75453c24191b065e503800c27dd450818f2",
+    "evidence/TD-A03/repair.json": "sha256:518c2759350755631469064882747c14726fa9549d217f6224abd76e5e66939f",
+    "evidence/TD-A04/cycle.json": "sha256:326b28fd6925ba228ab9a1df680b3287974669b423abaeb1761e9085539101b5",
+    "evidence/TD-A04/fault.json": "sha256:a45c4a738c39dbd0ecbfe5a793cd5ad29ad72c4b57c6f1425abe8c997fc5edbe",
+    "evidence/TD-A04/repair.json": "sha256:d5ce30110776452a73e8933859864fd96925ec1700717e6d964728a4c88fed80",
+    "evidence/TD-A05/cycle.json": "sha256:d5d3805ab4db171a86218f0932b08a9fcc4ae887dc9d70af61263df4af229d6b",
+    "evidence/TD-A05/fault.json": "sha256:1e058c3e83f33ac0408bfd8e19bc1bb6d4eb73ff2a9fa83d0d91e77805590c51",
+    "evidence/TD-A05/repair.json": "sha256:5dfe5b111a6cf851a51ade99223f13dd8f226813ccd2fd6fa51c3599d358e735",
+    "evidence/TD-A06/cycle.json": "sha256:42673b1860e462ca0829b07a1e6359d17616f09a12965b94d60f227bd33e42c3",
+    "evidence/TD-A06/fault.json": "sha256:7284c4fc253a0eed95152e4e25fcf2c6b70da045629273ae77d80b45bcc2c347",
+    "evidence/TD-A06/repair.json": "sha256:e1286b69f24e1a7da9fc7d6098c76a0997e9a5f139acaafa90e5fe0ff9ba9f76",
+    "evidence/TD-C01/cycle.json": "sha256:471734237043dbb2aba9715de060546727365adf4b71698eb51dfaeeb2da7b8e",
+    "evidence/TD-C01/fault.json": "sha256:248cdc5967ef55e5a61c9a2dd7efcc19fd25646e31a00aaf03b53414e8912fc8",
+    "evidence/TD-C01/repair.json": "sha256:a5240ba78d09f9ddc00a080eebfc6c1044319b4957008f021103c3c88d4ec59f",
+    "fixtures/TD-A01-input.json": "sha256:9f57f189f33824791b32e8a9fe76bee809ab9f1eb7126153d3818753e8ef19ce",
+    "fixtures/TD-A02-input.json": "sha256:ef5dccc3d3a606d5aa7f740b3691a992ecb5dc8a62d1e65b261ea8a5502e2fa7",
+    "fixtures/TD-A03-input.json": "sha256:07e75c27ff4697a760a1e05ab74b9b2fe057c8ad959a3c72f5c02dbe49cec575",
+    "fixtures/TD-A04-input.json": "sha256:e6a0ec0683d353b4978fea26a4d9f569d25c0c1cb794eb47415f58809727822d",
+    "fixtures/TD-A05-input.json": "sha256:c37fa9e406954c5310aeded7c0e82d65b70af431317790e91713e05be2374c71",
+    "fixtures/TD-A06-input.json": "sha256:cce3ffd0d0834b16f1d3617d2dfd70ad1af8cf9a03b8fba677679f7c8c041f24",
+    "fixtures/TD-C01-input.json": "sha256:658d9ed8047cb5716f92b727b6f997e92ecffc855a51f8762e74045b993be932",
+    "manifests/TD-A01.json": "sha256:e9cf2dfa58a214880048a686daa30a6f15152f65dcd900675ac15b6d0a2ef89e",
+    "manifests/TD-A02.json": "sha256:f3720a1719cc4f42859dd6de3caba85e57b7a4e78fe16aeca4215c9ef98cf687",
+    "manifests/TD-A03.json": "sha256:55ce74df343743a4043cb6285c5224ab29b5590edcdac282829e448792210f1b",
+    "manifests/TD-A04.json": "sha256:0d9cc407690151448a3adfe54f0db2aae19416240e79137b6782fbaa1149eb1e",
+    "manifests/TD-A05.json": "sha256:12d84248c976a5f147367a7adadb1fe787455ce7a98a7f30de438b1d1be5e8b0",
+    "manifests/TD-A06.json": "sha256:6d2e347cd26600d1b7da091029d97250ce90623296f3969302a93a0d6733492e",
+    "manifests/TD-C01.json": "sha256:5b2fe67f1b3e74554b9aa6a38531d9bf0c37c2c24af022370cf8be8a6f15bd27",
+    "owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+    "prompts/TD-A01/critic-v1.md": "sha256:4e4a421dd33c271a5ff97f00f9835dba68448009a44f6c0d05ca9b25f0f100f9",
+    "prompts/TD-A01/manifest.json": "sha256:3c9803c8dc2ed2315358a54e7df34a83634c54267daecb19689ca3f9e68a4b34",
+    "prompts/TD-A01/mutation.json": "sha256:f7e0d99259dd0e2a5d19e05cac245112ab3448a0746b79f4d51178a1d9e34add",
+    "prompts/TD-A01/system-v1.md": "sha256:53c5168c8e47b704aa2684de176343fe2cc675231eb4ec73df43a5479b2c29d3",
+    "prompts/TD-A01/task-v1.md": "sha256:aa76aa397556a823bbadabf8b1f61b01e5c17c814164333b7a7dae1063707061",
+    "prompts/TD-A02/critic-v1.md": "sha256:53d1da3ad7e6e46c351555621f2d4a2ba4b2cb2d5372917ef443a6daaa075d10",
+    "prompts/TD-A02/manifest.json": "sha256:be21a959176a2489484efb20190999aebae2cf8cf322ae452033029a3e01d1e6",
+    "prompts/TD-A02/mutation.json": "sha256:73e4b91ac603fc61891a4309d57693c3145dce9103b9f3bce579754521d25a55",
+    "prompts/TD-A02/system-v1.md": "sha256:f511a04bb151d63f70bc071fe6e9a54bfd0439c19b889b94f47eefcd5831654c",
+    "prompts/TD-A02/task-v1.md": "sha256:7e700444181b5a18c63d612f65aea720aa927161c0af787e5326c9e1ef2d70f1",
+    "prompts/TD-A03/critic-v1.md": "sha256:3f48207bd753cf7abcd4a66b708c23b04b3ab5d04198fe6f43d6c8769dd02834",
+    "prompts/TD-A03/manifest.json": "sha256:f7efa1c83b124fe45794da9c96d32e838721117cd3a9df1fd0545a38705bc0a6",
+    "prompts/TD-A03/mutation.json": "sha256:946b9de05e14a57b4fd4adb202a95b1c53f534ce3047114f4ce238dd2c60f980",
+    "prompts/TD-A03/system-v1.md": "sha256:7ae65cc4a17b37452d778c46752f329092b0dd23b57423ffb2145a8f8b015113",
+    "prompts/TD-A03/task-v1.md": "sha256:00a48ee017834e42569ab51fac7ff6beb24fcbdcb5f80743c269efd8deaf2848",
+    "prompts/TD-A04/critic-v1.md": "sha256:88e4828b20da985b773773d1b3227aa5868ffc1f459685c61e2a2e144b9cd015",
+    "prompts/TD-A04/manifest.json": "sha256:b69cd59b06c0b38f48de876651965440572befe1b92a92d8ff188195828b89fa",
+    "prompts/TD-A04/mutation.json": "sha256:ace5b647e80995a008bf19d533ea481a4d7294cb99f812172d9656c73b24f7de",
+    "prompts/TD-A04/system-v1.md": "sha256:143b023404402afedb4da901f4fb5b23cb4c173925d5665b323cd7e026ffcfd7",
+    "prompts/TD-A04/task-v1.md": "sha256:5ca7044be1c4be7fd753fe354e57385c54dcfac56364759b8006fa257a3346a5",
+    "prompts/TD-A05/critic-v1.md": "sha256:f1734df509b858c03617584f370e744e442918b2a835f4a81c49cf1ebf0f0a63",
+    "prompts/TD-A05/manifest.json": "sha256:e0b094f3e131f06896cb280ecf9e3bca9a3bd29236139994154ffe915bd8613b",
+    "prompts/TD-A05/mutation.json": "sha256:1dfedfe37435451e81ff24d4c7baeddb862e78f3447ed4da5c1b908c4ab2057c",
+    "prompts/TD-A05/system-v1.md": "sha256:d87200e1e5592fec4cfdb6c9336f7f46778104b8d5aafe76d2c895934b2551d5",
+    "prompts/TD-A05/task-v1.md": "sha256:f3b29b1a62028bafd81e9f11940898b33b65ad81025282e3e8179f32f1b17513",
+    "prompts/TD-A06/critic-v1.md": "sha256:7493850158d9050a6b26cd0c2e950e338abde5246afce567e911907885f394d9",
+    "prompts/TD-A06/manifest.json": "sha256:ad1141ef7cad2ed6db97402f9b6d3c057b0faa95eb2a0efc57fd57b30bd49f08",
+    "prompts/TD-A06/mutation.json": "sha256:fc83de42196b6378bc50c4bfb21e0ea1b85757d08b29ef15224535c97fd8910d",
+    "prompts/TD-A06/system-v1.md": "sha256:255a235bbdd3c485e937107cf867bc37178afb3c16e7fe1f7da7f42961c1ff9c",
+    "prompts/TD-A06/task-v1.md": "sha256:8af33c217e5f95b9b355b4fb32ba782271cad5ffff2fd43eaef2360ab65c498c",
+    "prompts/TD-C01/critic-v1.md": "sha256:1437e63fc6782d90fa649d6fc88f0814d7bd008ca0fcdd1b3d4cbd55df4e0413",
+    "prompts/TD-C01/manifest.json": "sha256:aef2be8abe8d1d91dc269fdf6e9949ab899d0d2d16c391c8c4da620734d22e18",
+    "prompts/TD-C01/mutation.json": "sha256:95cdef5e3a280496e51d27001e8722ed2389fb5a3a9aaebf612a8a96d9765446",
+    "prompts/TD-C01/system-v1.md": "sha256:124d8218891178fc254376207dd5e1913f56192fe95be18b67001ad917cfa7ba",
+    "prompts/TD-C01/task-v1.md": "sha256:2e866508bc630806dd476eaf2b3644d8a7c4d5323075656f5e719e36e363b3ef",
+    "run-receipts.json": "sha256:2ac68a4ce204768e055880b7b36e41eaac725d5f1efaac48eeb06f1776336276",
+    "schemas/TD-A01-output.schema.json": "sha256:c403c7706b63647483a86f3a5d5a56637823aef727b9d610cb7e390ab4291c00",
+    "schemas/TD-A02-output.schema.json": "sha256:b1fbbb4c627bf93dd667dd9906ad753fe9b8e0192ec390f9638c14ea32b540a1",
+    "schemas/TD-A03-output.schema.json": "sha256:05acfbb5f02305adcea314c476ecdf8446c7f898d6709a7d4850e124e066f69a",
+    "schemas/TD-A04-output.schema.json": "sha256:d7205f9c30787dd8e59ff8d7755ae4e2ef150d06355e9218693e0cb2bf96af67",
+    "schemas/TD-A05-output.schema.json": "sha256:7b1dda6feafe2402a27af0c0943a9721cb951615fe8ca4ea4d84ec3559efb918",
+    "schemas/TD-A06-output.schema.json": "sha256:dafe47a185ce4d0908176288b4f78aed1b924bbcc5a2503b038d9a9b1292df8f",
+    "schemas/TD-C01-output.schema.json": "sha256:9175e8a667461c3ebf88360d01b1d21a668d32163e79e016b62e6e69f8baf7cb",
+    "scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253"
+  },
+  "pages": {
+    "TD-A01": {
+      "owner": "TD-A01-content-owner",
+      "oracle_owner": "TD-A01-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-A01-input.json": "sha256:9f57f189f33824791b32e8a9fe76bee809ab9f1eb7126153d3818753e8ef19ce",
+        "manifests/TD-A01.json": "sha256:e9cf2dfa58a214880048a686daa30a6f15152f65dcd900675ac15b6d0a2ef89e",
+        "prompts/TD-A01/manifest.json": "sha256:3c9803c8dc2ed2315358a54e7df34a83634c54267daecb19689ca3f9e68a4b34"
+      },
+      "material_hashes": {
+        "schemas/TD-A01-output.schema.json": "sha256:c403c7706b63647483a86f3a5d5a56637823aef727b9d610cb7e390ab4291c00",
+        "evals/TD-A01-eval.json": "sha256:a602516ed8f6fbba9d370b9ea3700b58d98e8a384fccf3eedefda21164253729",
+        "prompts/TD-A01/mutation.json": "sha256:f7e0d99259dd0e2a5d19e05cac245112ab3448a0746b79f4d51178a1d9e34add",
+        "evidence/TD-A01/cycle.json": "sha256:210711c704dce272e33c20bda3c0afdb83a18a2c65f582827549818afc776dc5"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    },
+    "TD-A02": {
+      "owner": "TD-A02-content-owner",
+      "oracle_owner": "TD-A02-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-A02-input.json": "sha256:ef5dccc3d3a606d5aa7f740b3691a992ecb5dc8a62d1e65b261ea8a5502e2fa7",
+        "manifests/TD-A02.json": "sha256:f3720a1719cc4f42859dd6de3caba85e57b7a4e78fe16aeca4215c9ef98cf687",
+        "prompts/TD-A02/manifest.json": "sha256:be21a959176a2489484efb20190999aebae2cf8cf322ae452033029a3e01d1e6"
+      },
+      "material_hashes": {
+        "schemas/TD-A02-output.schema.json": "sha256:b1fbbb4c627bf93dd667dd9906ad753fe9b8e0192ec390f9638c14ea32b540a1",
+        "evals/TD-A02-eval.json": "sha256:dcb2670930da095a3c4ffa6fd358a13f4f82d677a4b81b7aeaa5ca633adc5b33",
+        "prompts/TD-A02/mutation.json": "sha256:73e4b91ac603fc61891a4309d57693c3145dce9103b9f3bce579754521d25a55",
+        "evidence/TD-A02/cycle.json": "sha256:8a91b5143abb7e32d09ba92aa5c3f218c2cb6bfcd0c30379d637fb779ab622bb"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    },
+    "TD-A03": {
+      "owner": "TD-A03-content-owner",
+      "oracle_owner": "TD-A03-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-A03-input.json": "sha256:07e75c27ff4697a760a1e05ab74b9b2fe057c8ad959a3c72f5c02dbe49cec575",
+        "manifests/TD-A03.json": "sha256:55ce74df343743a4043cb6285c5224ab29b5590edcdac282829e448792210f1b",
+        "prompts/TD-A03/manifest.json": "sha256:f7efa1c83b124fe45794da9c96d32e838721117cd3a9df1fd0545a38705bc0a6"
+      },
+      "material_hashes": {
+        "schemas/TD-A03-output.schema.json": "sha256:05acfbb5f02305adcea314c476ecdf8446c7f898d6709a7d4850e124e066f69a",
+        "evals/TD-A03-eval.json": "sha256:7f6060a31024937b7f3b82b0c9d4a58953d01e319d6327647aa565f2527d24e4",
+        "prompts/TD-A03/mutation.json": "sha256:946b9de05e14a57b4fd4adb202a95b1c53f534ce3047114f4ce238dd2c60f980",
+        "evidence/TD-A03/cycle.json": "sha256:6e16046240146e737ac06e0bf4928cb3c38ddfd43f10ee5d996d3e8d6a021b59"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    },
+    "TD-A04": {
+      "owner": "TD-A04-content-owner",
+      "oracle_owner": "TD-A04-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-A04-input.json": "sha256:e6a0ec0683d353b4978fea26a4d9f569d25c0c1cb794eb47415f58809727822d",
+        "manifests/TD-A04.json": "sha256:0d9cc407690151448a3adfe54f0db2aae19416240e79137b6782fbaa1149eb1e",
+        "prompts/TD-A04/manifest.json": "sha256:b69cd59b06c0b38f48de876651965440572befe1b92a92d8ff188195828b89fa"
+      },
+      "material_hashes": {
+        "schemas/TD-A04-output.schema.json": "sha256:d7205f9c30787dd8e59ff8d7755ae4e2ef150d06355e9218693e0cb2bf96af67",
+        "evals/TD-A04-eval.json": "sha256:1a921df84c632fd345949c7fc3b93b04d7c422a5124ae0a7c06d8ce974166719",
+        "prompts/TD-A04/mutation.json": "sha256:ace5b647e80995a008bf19d533ea481a4d7294cb99f812172d9656c73b24f7de",
+        "evidence/TD-A04/cycle.json": "sha256:326b28fd6925ba228ab9a1df680b3287974669b423abaeb1761e9085539101b5"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    },
+    "TD-A05": {
+      "owner": "TD-A05-content-owner",
+      "oracle_owner": "TD-A05-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-A05-input.json": "sha256:c37fa9e406954c5310aeded7c0e82d65b70af431317790e91713e05be2374c71",
+        "manifests/TD-A05.json": "sha256:12d84248c976a5f147367a7adadb1fe787455ce7a98a7f30de438b1d1be5e8b0",
+        "prompts/TD-A05/manifest.json": "sha256:e0b094f3e131f06896cb280ecf9e3bca9a3bd29236139994154ffe915bd8613b"
+      },
+      "material_hashes": {
+        "schemas/TD-A05-output.schema.json": "sha256:7b1dda6feafe2402a27af0c0943a9721cb951615fe8ca4ea4d84ec3559efb918",
+        "evals/TD-A05-eval.json": "sha256:8c4d4ca365d8feb3419ac5168a2101c0c53142192af8abb7990219adb21cacb4",
+        "prompts/TD-A05/mutation.json": "sha256:1dfedfe37435451e81ff24d4c7baeddb862e78f3447ed4da5c1b908c4ab2057c",
+        "evidence/TD-A05/cycle.json": "sha256:d5d3805ab4db171a86218f0932b08a9fcc4ae887dc9d70af61263df4af229d6b"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    },
+    "TD-A06": {
+      "owner": "TD-A06-content-owner",
+      "oracle_owner": "TD-A06-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-A06-input.json": "sha256:cce3ffd0d0834b16f1d3617d2dfd70ad1af8cf9a03b8fba677679f7c8c041f24",
+        "manifests/TD-A06.json": "sha256:6d2e347cd26600d1b7da091029d97250ce90623296f3969302a93a0d6733492e",
+        "prompts/TD-A06/manifest.json": "sha256:ad1141ef7cad2ed6db97402f9b6d3c057b0faa95eb2a0efc57fd57b30bd49f08"
+      },
+      "material_hashes": {
+        "schemas/TD-A06-output.schema.json": "sha256:dafe47a185ce4d0908176288b4f78aed1b924bbcc5a2503b038d9a9b1292df8f",
+        "evals/TD-A06-eval.json": "sha256:e53a15827b32b6ea3654a3d4e2e545fd0fc74299b2c4c6514ef42f80daccee44",
+        "prompts/TD-A06/mutation.json": "sha256:fc83de42196b6378bc50c4bfb21e0ea1b85757d08b29ef15224535c97fd8910d",
+        "evidence/TD-A06/cycle.json": "sha256:42673b1860e462ca0829b07a1e6359d17616f09a12965b94d60f227bd33e42c3"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    },
+    "TD-C01": {
+      "owner": "TD-C01-content-owner",
+      "oracle_owner": "TD-C01-oracle-owner",
+      "source_hashes": {
+        "fixtures/TD-C01-input.json": "sha256:658d9ed8047cb5716f92b727b6f997e92ecffc855a51f8762e74045b993be932",
+        "manifests/TD-C01.json": "sha256:5b2fe67f1b3e74554b9aa6a38531d9bf0c37c2c24af022370cf8be8a6f15bd27",
+        "prompts/TD-C01/manifest.json": "sha256:aef2be8abe8d1d91dc269fdf6e9949ab899d0d2d16c391c8c4da620734d22e18"
+      },
+      "material_hashes": {
+        "schemas/TD-C01-output.schema.json": "sha256:9175e8a667461c3ebf88360d01b1d21a668d32163e79e016b62e6e69f8baf7cb",
+        "evals/TD-C01-eval.json": "sha256:3dfa78f4998c384edda0246ed2578c85f840cbdc1c6c1099141a3fddaf3d6c27",
+        "prompts/TD-C01/mutation.json": "sha256:95cdef5e3a280496e51d27001e8722ed2389fb5a3a9aaebf612a8a96d9765446",
+        "evidence/TD-C01/cycle.json": "sha256:471734237043dbb2aba9715de060546727365adf4b71698eb51dfaeeb2da7b8e"
+      },
+      "required_file_count": 10,
+      "evidence_boundary": "PASS-FIXTURE only"
+    }
+  },
+  "archive_excluded_from_hash_closure": "ai-serving-career.zip",
+  "forbidden_claims": [
+    "PASS-LIVE",
+    "PASS-PRACTITIONER",
+    "production capacity",
+    "employment guarantee"
+  ]
+}

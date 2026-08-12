@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS12",
+  "scenario": "退款助手能读取订单并调用工具，攻击者可能利用对象 ID、Prompt 注入、越权 token 或日志泄密",
+  "controlling_question": "怎样从 threat model 和权限矩阵构建确定性安全 Oracle，并证明拒绝发生在工具边界且没有跨租户读取或写副作用？",
+  "known_rules": [
+    "无效过期或错 audience token 被拒绝",
+    "跨租户对象读取和退款写入均为零",
+    "Prompt 内容不能扩大工具 allowlist",
+    "日志报告不含 token PII 或支付秘密"
+  ],
+  "faults": [
+    "替换 order_id 做 BOLA",
+    "注入忽略策略并调用退款工具",
+    "将 bearer token 写入日志"
+  ],
+  "unknowns": [
+    "目标 IdP 策略、真实密钥管理、渗透授权范围和剩余风险接受人"
+  ],
+  "data_classification": "synthetic"
+}

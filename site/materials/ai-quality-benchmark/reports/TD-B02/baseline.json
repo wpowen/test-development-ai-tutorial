@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-B02",
+  "phase": "baseline",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "发现泄漏或 Holdout 被反复调试时重建 split，并使旧结论失效。",
+  "checks": [
+    {
+      "field": "holdout_sealed",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "合成数据不能证明真实流量代表性或领域标注质量。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

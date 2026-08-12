@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS09",
+  "mutation_id": "TD-PS09-FAULT-01",
+  "mutation": "工具 fan-out 翻倍",
+  "expected_detected_by": "到达率与 dropped iterations 可核对",
+  "model_execution": "NOT_RUN"
+}

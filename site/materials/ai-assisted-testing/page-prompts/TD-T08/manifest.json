@@ -1,0 +1,18 @@
+{
+  "package_id": "td-t08-evidence-linked-clustering",
+  "topic_id": "TD-T08",
+  "version": "1.0.0",
+  "purpose": "生成带原始事件引用的失败簇与待验证假设，禁止把相似性写成根因",
+  "authority": "candidate clustering only; incident owner verifies cause and action",
+  "prompt": "prompt-v1.md",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../fixtures/oracles.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": ["EVIDENCE_MISSING", "VERSION_MIXED", "UNKNOWN", "BLOCKED"]
+}

@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X601",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "只报总体均值、伤害 blocker 被掩盖或同模型自批"
+}
+

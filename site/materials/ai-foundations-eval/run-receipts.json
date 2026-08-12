@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_level": "PASS-FIXTURE",
+  "python": "3.9.6",
+  "runs": [
+    {
+      "topic_id": "TD-F02",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-F02\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-F02/baseline.json\"}",
+      "report": "reports/TD-F02/baseline.json",
+      "report_sha256": "6e29772a287283a3d5c6ca58e66c4812d8eb847c435933c3e4468ffc046cc57d",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F02",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-F02\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-F02/fault.json\"}",
+      "report": "reports/TD-F02/fault.json",
+      "report_sha256": "1b043b27c501d59cf084791ebddf1bafa5f42e15089dd2eb0cb36c0d18b29dfd",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F02",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-F02\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-F02/repair.json\"}",
+      "report": "reports/TD-F02/repair.json",
+      "report_sha256": "7242645b1c8f99fec9e2a7ef8b8d509ec2e2989f9b043bebb496b87511a4a918",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F03",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-F03\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-F03/baseline.json\"}",
+      "report": "reports/TD-F03/baseline.json",
+      "report_sha256": "8f4fb840d3cd12bf4fb2278e18d2ca66a00145ee312d54dd0744f1c5fc8784ae",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F03",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-F03\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-F03/fault.json\"}",
+      "report": "reports/TD-F03/fault.json",
+      "report_sha256": "fda999415a652f34e1ea033d60065c36a7868d402c6bc0c7115a5fd3993665d2",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F03",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-F03\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-F03/repair.json\"}",
+      "report": "reports/TD-F03/repair.json",
+      "report_sha256": "86026cbceff9358dcf912dd51e35e9489ca89d18df209a09b9e8197818ea7e56",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F04",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-F04\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-F04/baseline.json\"}",
+      "report": "reports/TD-F04/baseline.json",
+      "report_sha256": "f33b9da128f6570c99d5c7c163bc995ef8a5d540d14b1c6c2c4bfffd6907b4d5",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F04",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-F04\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-F04/fault.json\"}",
+      "report": "reports/TD-F04/fault.json",
+      "report_sha256": "6a5db2f205f3f0fe3f97c14b4aafe5fdb2f06b63cc7a6b0fcdafaaf3d6d0615d",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-F04",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-F04\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-F04/repair.json\"}",
+      "report": "reports/TD-F04/repair.json",
+      "report_sha256": "dc11cb2f8a4bc129267ba222e63f5a8b43d15b808f0e4a20e4bfec6ead3fc9a8",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T01",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T01\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T01/baseline.json\"}",
+      "report": "reports/TD-T01/baseline.json",
+      "report_sha256": "5a642851a635571b38f820cecf97dfaf44afa2c9f5da2a44782a0ab2650b5983",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T01",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T01\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T01/fault.json\"}",
+      "report": "reports/TD-T01/fault.json",
+      "report_sha256": "774d463a95890a592e34a5ebc89583ca91fef7d23fe44d497ba110f2a000519a",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T01",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T01\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T01/repair.json\"}",
+      "report": "reports/TD-T01/repair.json",
+      "report_sha256": "4f8bbdaf542d7addbbb8d8d5af7692410281859164af9a364ce6891f466c6681",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T02",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T02\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T02/baseline.json\"}",
+      "report": "reports/TD-T02/baseline.json",
+      "report_sha256": "676c3014ae34217d3b3d8305d47f408c0316ed768da7acfa63514488b096cfd3",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T02",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T02\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T02/fault.json\"}",
+      "report": "reports/TD-T02/fault.json",
+      "report_sha256": "37fcdf701156a1a28b1cc8006e32ffed143b1f98c35c62f012de30bb99e4f5de",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T02",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T02\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T02/repair.json\"}",
+      "report": "reports/TD-T02/repair.json",
+      "report_sha256": "c966fed6a3f16f2ce80bc7cdcd4aeeb87826348b7ed8235b69c8f7acd215bc32",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T03",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T03\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T03/baseline.json\"}",
+      "report": "reports/TD-T03/baseline.json",
+      "report_sha256": "adecf6a099a0624defa6cbf4f81995672f46fb4cf6ae6f2ed6745f75ee42a250",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T03",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T03\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T03/fault.json\"}",
+      "report": "reports/TD-T03/fault.json",
+      "report_sha256": "3535df3b19e9c1e81fea9d5be42d19fcefdeae03fe9be91206cb95fb99f139c4",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T03",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T03\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T03/repair.json\"}",
+      "report": "reports/TD-T03/repair.json",
+      "report_sha256": "3bbdada74c193b56c33c7c09309c68ea914785f340ec981bab1c0a7ea2c79489",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T04",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T04\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T04/baseline.json\"}",
+      "report": "reports/TD-T04/baseline.json",
+      "report_sha256": "8632afa08103c9897912b60c948fea00ffb4772fc058b713700f0482fa71a0cc",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T04",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T04\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T04/fault.json\"}",
+      "report": "reports/TD-T04/fault.json",
+      "report_sha256": "c89f8dc3ed48b0aa9620164009789cfa1e602a16fb6654f353ef751e6c42611d",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T04",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T04\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T04/repair.json\"}",
+      "report": "reports/TD-T04/repair.json",
+      "report_sha256": "9a701f7dbd264ccd48345894007b9c2302ad37a19acad0092546616d98357482",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T09",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T09\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T09/baseline.json\"}",
+      "report": "reports/TD-T09/baseline.json",
+      "report_sha256": "7e5d7773917a888ecd7b6730cc0ff1248ab35fdb2305717d28a78865fe86b1d7",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T09",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T09\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T09/fault.json\"}",
+      "report": "reports/TD-T09/fault.json",
+      "report_sha256": "9e38944272b17c540604e359da52016b1645ca187497b22c88afe30f82b210a5",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T09",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T09\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T09/repair.json\"}",
+      "report": "reports/TD-T09/repair.json",
+      "report_sha256": "16e14441530dfaf5b4b0cb5c4e6ad158059bb2182d217ecabd4b3743f6f75c5c",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T10",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T10\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T10/baseline.json\"}",
+      "report": "reports/TD-T10/baseline.json",
+      "report_sha256": "0d80c2a249d85ff4971536ed62058e85f1d5d60535888ed775496e46cf862599",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T10",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T10\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T10/fault.json\"}",
+      "report": "reports/TD-T10/fault.json",
+      "report_sha256": "44f96489ce63d6af96e1ec75ac9282792f55f16fe7ce869db784d38ac2946cb6",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T10",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T10\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T10/repair.json\"}",
+      "report": "reports/TD-T10/repair.json",
+      "report_sha256": "12d54042fe20c494e94d4b4bc1fe1cc4fe59a81cf7690dfd286536e4e2980606",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T11",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T11\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T11/baseline.json\"}",
+      "report": "reports/TD-T11/baseline.json",
+      "report_sha256": "e01eaefc1fff3e7d6e16ed4e38e74ba34f8174f045be42668d068a4e1ac467a1",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T11",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T11\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T11/fault.json\"}",
+      "report": "reports/TD-T11/fault.json",
+      "report_sha256": "a889c7cacbf84e03abb5e8b40c733c150414c704276dd615e08f2e7f4f92860e",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T11",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T11\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T11/repair.json\"}",
+      "report": "reports/TD-T11/repair.json",
+      "report_sha256": "fabd38e9ec2abc118a0255259e619316eed1f54c5b4724dae47b554e446948fc",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T12",
+      "phase": "baseline",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T12\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T12/baseline.json\"}",
+      "report": "reports/TD-T12/baseline.json",
+      "report_sha256": "b8d4db4ca7394efdad5a41562eca5fea75904eb972bec11bbe65168e04fc071d",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T12",
+      "phase": "fault",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "stdout": "{\"topic_id\": \"TD-T12\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T12/fault.json\"}",
+      "report": "reports/TD-T12/fault.json",
+      "report_sha256": "c04071097fed02232f153fefe52892dbc87dc3a25db13363574575da543bffa3",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "topic_id": "TD-T12",
+      "phase": "repair",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "stdout": "{\"topic_id\": \"TD-T12\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T12/repair.json\"}",
+      "report": "reports/TD-T12/repair.json",
+      "report_sha256": "e4528390ca274768b51fca7df8d0f95218edb1aa8b623764d7a36f7984d8e0dc",
+      "model_execution": "NOT_RUN"
+    }
+  ],
+  "limitations": [
+    "No model/provider/network call",
+    "No practitioner or production validation"
+  ]
+}

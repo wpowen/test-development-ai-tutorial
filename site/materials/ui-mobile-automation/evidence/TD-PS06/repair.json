@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS06",
+  "mode": "repair",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "bb3f08af49d729e3cd652d05888069209ac795c2fab27a8ce532d304a5ac1182",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS06-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS06-evidence-1.json",
+      "owner": "TD-PS06-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS06-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS06-evidence-2.json",
+      "owner": "TD-PS06-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS06-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS06-evidence-3.json",
+      "owner": "TD-PS06-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS06-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS06-evidence-4.json",
+      "owner": "TD-PS06-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS06-content-owner",
+    "oracle": "TD-PS06-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: OEM 定制行为、目标 API level 分布和真机资源限制"
+}

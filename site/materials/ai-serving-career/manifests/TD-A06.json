@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A06",
+  "topic_id": "TD-A06",
+  "title": "AI Serving 韧性：限流、Timeout、Retry、Fallback 与 Degradation",
+  "working_directory": "materials/ai-serving-career",
+  "input_fixture": "fixtures/TD-A06-input.json",
+  "expected": {
+    "retry.attempts": 3,
+    "retry.respected_retry_after": true,
+    "fallback.quality_gate": true,
+    "tool.side_effect_count": 1
+  },
+  "fault_patch": {
+    "retry.attempts": 8,
+    "retry.respected_retry_after": false,
+    "fallback.quality_gate": false
+  },
+  "oracle": "429 尊重 Retry-After；attempt/time/cost 均不超预算；同一幂等键副作用至多一；fallback quality gate 通过才可使用。",
+  "required_files": [
+    "owners.json",
+    "scripts/serving_lab.py",
+    "fixtures/TD-A06-input.json",
+    "prompts/TD-A06/system-v1.md",
+    "prompts/TD-A06/task-v1.md",
+    "prompts/TD-A06/critic-v1.md",
+    "prompts/TD-A06/manifest.json",
+    "prompts/TD-A06/mutation.json",
+    "schemas/TD-A06-output.schema.json",
+    "evals/TD-A06-eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A06.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A06/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A06.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-A06/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A06.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A06/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A06.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A06/baseline.json",
+        "evidence/TD-A06/fault.json",
+        "evidence/TD-A06/repair.json",
+        "evidence/TD-A06/cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "owners": {
+    "content": "TD-A06-content-owner",
+    "oracle": "TD-A06-oracle-owner",
+    "release": "ai-serving-career-release-owner"
+  },
+  "unknowns": [
+    "真实供应商配额、Retry-After、fallback 模型质量和生产恢复没有运行。"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

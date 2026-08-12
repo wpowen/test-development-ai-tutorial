@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T21",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "锁定字段同时变化时输出 CONFOUNDED，不生成 winner。",
+  "checks": [
+    {
+      "field": "lineage_complete",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "mutation_id": "TD-T21-fault",
+    "field": "lineage_complete",
+    "fault_value": false,
+    "professional_consequence": "A/B 同时更换模型、Prompt、知识索引和 Judge，却声称模型提升。"
+  },
+  "remaining_unknowns": [
+    "外部 Provider 的内部路由和历史 snapshot 可用性未知。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

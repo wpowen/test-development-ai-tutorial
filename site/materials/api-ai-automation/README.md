@@ -61,3 +61,25 @@ AI 可以从批准的 Spec、需求与失败 trace 生成候选 case、属性和
 ## 证据范围
 
 当前状态仅为 `fixture-tested`。它证明公开材料在本地可读、脚本能从本目录运行、0/1/0 可复现；不证明真实 API 兼容性、模型质量、生产容量、费用、缺陷发现率或学习效果。
+
+<!-- WAVE1-OWNERS-START -->
+## Wave 1 独立专项与 Owners
+
+- TD-PS01 · API 业务契约：从 HTTP 结果到可验证副作用 · manifest: `manifests/TD-PS01.json` · owners 见 `owners.json`
+- TD-PS02 · OpenAPI Schema 与属性测试：让坏请求和破坏性变更变红 · manifest: `manifests/TD-PS02.json` · owners 见 `owners.json`
+- TD-PS03 · 契约与集成：事件兼容、租户边界和补偿 · manifest: `manifests/TD-PS03.json` · owners 见 `owners.json`
+- TD-PS08 · 数据与迁移：Schema 演进、回填、CDC 与回滚对账 · manifest: `manifests/TD-PS08.json` · owners 见 `owners.json`
+- TD-PS09 · 性能与容量：到达率、尾延迟、Goodput 与单位成功成本 · manifest: `manifests/TD-PS09.json` · owners 见 `owners.json`
+
+逐页运行：
+
+```bash
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS01.json --mode cycle
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS02.json --mode cycle
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS03.json --mode cycle
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS08.json --mode cycle
+python3 scripts/specialty_lab.py --manifest manifests/TD-PS09.json --mode cycle
+```
+
+共享 runner 只执行 manifest；不得把一个页面的 Oracle、Prompt、fault 或 PASS 传播到其他页面。
+<!-- WAVE1-OWNERS-END -->

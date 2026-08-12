@@ -1,0 +1,12 @@
+{
+  "responsibility": "count_test_cases",
+  "test_basis": ["technical_design"],
+  "authority_conflict_action": "let_model_choose",
+  "oracle_source": "implementation_output",
+  "method_selection": "favorite_tool",
+  "artifact_owner": "",
+  "downstream_consumer": "",
+  "release_decider": "ai_agent",
+  "ai_permission": "unbounded_autonomy",
+  "production_feedback": "close_ticket"
+}

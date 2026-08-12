@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-X101",
+  "page_id": "TD-X101",
+  "working_directory": "materials/advanced-quality",
+  "required_files": [
+    "advanced_quality_lab.py",
+    "owners.json",
+    "page-prompts/TD-X101/manifest.json",
+    "page-prompts/TD-X101/prompt-v1.md",
+    "page-prompts/TD-X101/input.json",
+    "page-prompts/TD-X101/schema.json",
+    "page-prompts/TD-X101/eval.json",
+    "page-prompts/TD-X101/mutation.json"
+  ],
+  "steps": [
+    {
+      "step_id": "td-x101-baseline",
+      "kind": "baseline",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X101 --phase baseline --report reports/td-x101-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x101-baseline.json"
+      ]
+    },
+    {
+      "step_id": "td-x101-fault",
+      "kind": "fault",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X101 --phase fault --report reports/td-x101-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-x101-fault.json"
+      ]
+    },
+    {
+      "step_id": "td-x101-repair",
+      "kind": "repair",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X101 --phase repair --report reports/td-x101-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x101-repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "td-x101-baseline",
+    "fault_step_id": "td-x101-fault",
+    "repair_step_id": "td-x101-repair"
+  },
+  "evidence_boundary": "deterministic offline fixture; real systems, practitioner review and production NOT_RUN"
+}

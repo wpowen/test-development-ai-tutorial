@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS08",
+  "title": "数据与迁移：Schema 演进、回填、CDC 与回滚对账",
+  "working_directory": "materials/api-ai-automation",
+  "owners": {
+    "content": "TD-PS08-content-owner",
+    "oracle": "TD-PS08-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS08.json",
+    "prompts/TD-PS08/system-v1.md",
+    "prompts/TD-PS08/task-v1.md",
+    "prompts/TD-PS08/critic-v1.md",
+    "prompts/TD-PS08/manifest.json",
+    "prompts/TD-PS08/mutation.json",
+    "fixtures/TD-PS08-input.json",
+    "schemas/TD-PS08-output.schema.json",
+    "evals/TD-PS08-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS08-ORACLE-01",
+      "statement": "主键集合与关键行数按分片守恒",
+      "evidence": "TD-PS08-evidence-1.json",
+      "owner": "TD-PS08-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS08-ORACLE-02",
+      "statement": "金额汇总和状态语义映射一致",
+      "evidence": "TD-PS08-evidence-2.json",
+      "owner": "TD-PS08-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS08-ORACLE-03",
+      "statement": "CDC 高水位前后的变更无丢失可容忍去重",
+      "evidence": "TD-PS08-evidence-3.json",
+      "owner": "TD-PS08-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS08-ORACLE-04",
+      "statement": "旧新读路径差异低于零容忍 blocker",
+      "evidence": "TD-PS08-evidence-4.json",
+      "owner": "TD-PS08-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS08-FAULT-01",
+    "description": "回填跳过一个分片",
+    "target_oracle": "TD-PS08-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS08.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS08/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS08.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS08/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS08.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS08/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS08.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS08/baseline.json",
+        "evidence/TD-PS08/fault.json",
+        "evidence/TD-PS08/repair.json",
+        "evidence/TD-PS08/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标数据规模、锁等待、复制延迟、业务可接受停机窗口"
+}

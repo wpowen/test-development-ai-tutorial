@@ -1,0 +1,146 @@
+{
+  "schema_version": "agent-performance-execution-evidence.v2",
+  "generated_at": "2026-08-11T00:00:00+08:00",
+  "evidence_scope": "eight deterministic offline Agent performance and stability baseline-fault-repair cycles",
+  "runtime": {
+    "name": "Python standard library",
+    "network": false,
+    "credentials": false,
+    "external_side_effects": false,
+    "seed": 42
+  },
+  "commands": [
+    "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP01-lab.json --mode baseline",
+    "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP01-lab.json --mode fault",
+    "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP01-lab.json --mode repair"
+  ],
+  "baseline": {"exit_code": 0, "verdict": "PASS", "report": "evidence/TD-AP01/baseline/summary.json"},
+  "mutation": {"exit_code": 1, "verdict": "FAIL", "report": "evidence/TD-AP01/retry-storm/summary.json"},
+  "repair": {"exit_code": 0, "verdict": "PASS", "report": "evidence/TD-AP01/repaired/summary.json"},
+  "environment": {"runtime": "Python standard library", "credentials": "none", "model_execution": "NOT_RUN", "enterprise_integration": "NOT_RUN"},
+  "topics": {
+    "TD-AP01": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP01-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP01/cycle-summary.json",
+      "cycle_report_sha256": "edf85b467edf362dcb687b1465701a2677a91eebd685bded4f6fb9579c3612ae"
+    },
+    "TD-AP02": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP02-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP02/cycle-summary.json",
+      "cycle_report_sha256": "72c098ab49d3c2f87ca09ca51786442f9d79fee31e3c094e6cc40ed32aaae40d"
+    },
+    "TD-AP03": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP03-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP03/cycle-summary.json",
+      "cycle_report_sha256": "f7671e4e2ca71bbb8db175eef5181d79179a0cfc744c2d3dfbd6e88ae63aaf05"
+    },
+    "TD-AP04": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP04-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP04/cycle-summary.json",
+      "cycle_report_sha256": "8a0b48aabd505f3b040485beaec4b2894857fa6b093d7d5c374124ee3b3e5ecf"
+    },
+    "TD-AP05": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP05-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP05/cycle-summary.json",
+      "cycle_report_sha256": "0438d65493fa024a8c26881bfdee7e07fb376db872e8f6b9f65a59553b7d16ab"
+    },
+    "TD-AP06": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP06-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP06/cycle-summary.json",
+      "cycle_report_sha256": "856749923bd2f3c249d9e3182875388eb818b0bb823bf73e5880cfba7f5b7f38"
+    },
+    "TD-AP07": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP07-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP07/cycle-summary.json",
+      "cycle_report_sha256": "a955c7de30fce4d56592215939fa52f2427529db60e95e2acade65879a1f2318"
+    },
+    "TD-AP08": {
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP08-lab.json --mode cycle",
+      "working_directory": "lab",
+      "observed_exit_codes": {
+        "baseline": 0,
+        "fault": 1,
+        "repair": 0,
+        "cycle": 0
+      },
+      "verdict": "PASS-FIXTURE",
+      "cycle_report": "evidence/TD-AP08/cycle-summary.json",
+      "cycle_report_sha256": "52daeb1af65c6938f58dafcc6b02b97302cedc341659729e935f981e33f17f9b"
+    }
+  },
+  "prompt_packages": {
+    "version": "1.0.0",
+    "provider": "none",
+    "model": "NOT_RUN",
+    "status": "NOT_RUN"
+  },
+  "summary": {
+    "topic_count": 8,
+    "expected_pattern": "0/1/0",
+    "topics_matching_pattern": 8,
+    "verdict": "PASS-FIXTURE"
+  },
+  "limitations": [
+    "synthetic deterministic workload",
+    "no live model or real tool integration",
+    "no practitioner review",
+    "not a production capacity claim",
+    "organizational SLO thresholds remain unknown"
+  ]
+}

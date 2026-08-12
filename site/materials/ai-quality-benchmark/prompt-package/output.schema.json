@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "topic_id",
+    "observed",
+    "expected",
+    "source_refs",
+    "status",
+    "unknowns",
+    "model_execution"
+  ],
+  "properties": {
+    "topic_id": {
+      "type": "string"
+    },
+    "observed": {
+      "type": "object"
+    },
+    "expected": {
+      "type": "object"
+    },
+    "source_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "status": {
+      "enum": [
+        "PASS_SCHEMA",
+        "PASS_SEMANTIC",
+        "FAIL",
+        "BLOCKED",
+        "UNKNOWN",
+        "NOT_RUN"
+      ]
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "model_execution": {
+      "const": "NOT_RUN"
+    }
+  },
+  "additionalProperties": false
+}

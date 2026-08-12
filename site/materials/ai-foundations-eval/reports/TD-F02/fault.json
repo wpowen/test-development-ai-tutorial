@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-F02",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "一次失败应先定位到生命周期层，再决定修模型、Prompt、数据或应用。",
+  "checks": [
+    {
+      "field": "model_version_pinned",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "prompt_version_pinned",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "trace_complete",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "id": "floating-model-alias",
+    "field": "model_version_pinned",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "真实提供方的训练数据与后训练细节未公开",
+    "未运行任何模型端点"
+  ]
+}

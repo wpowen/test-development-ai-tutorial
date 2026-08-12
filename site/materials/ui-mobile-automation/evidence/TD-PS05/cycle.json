@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS05",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 真实辅助技术组合、用户研究结果和品牌容差"
+}

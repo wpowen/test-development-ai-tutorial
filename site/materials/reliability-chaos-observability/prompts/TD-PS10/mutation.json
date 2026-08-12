@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS10",
+  "mutation_id": "TD-PS10-FAULT-01",
+  "mutation": "模型 429 与工具超时叠加",
+  "expected_detected_by": "端到端 deadline 不小于子调用但总链有界",
+  "model_execution": "NOT_RUN"
+}

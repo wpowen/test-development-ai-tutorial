@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["status","tests"],"properties":{"status":{"enum":["CANDIDATE","ORACLE_UNKNOWN","BLOCKED"]},"tests":{"type":"array","items":{"type":"object","required":["case_id","risk_ref","oracle_id","setup","action","assertions","cleanup","expected_failure_signal"]}}},"additionalProperties":false}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "bundle": "reliability-chaos-observability",
+  "bundle_owner": "traditional-testing-wave-1",
+  "shared_runner_owner": "course-factory-engineering",
+  "pages": {
+    "TD-PS10": {
+      "content_owner": "TD-PS10-content-owner",
+      "oracle_owner": "TD-PS10-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS10.json"
+    },
+    "TD-PS11": {
+      "content_owner": "TD-PS11-content-owner",
+      "oracle_owner": "TD-PS11-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS11.json"
+    },
+    "TD-PS12": {
+      "content_owner": "TD-PS12-content-owner",
+      "oracle_owner": "TD-PS12-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS12.json"
+    }
+  },
+  "boundary": "Shared code provides mechanics only; page manifests own business rules and maturity."
+}

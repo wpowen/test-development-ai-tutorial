@@ -1,0 +1,1 @@
+{"dimensions":{"amount_cents":[1,100,9999],"state":["PAID","ACTIVATED"],"repeat":[1,2]},"invariant":"refund_count<=1","seed":20260811,"requested_output":"method-and-generator-plan-v1"}

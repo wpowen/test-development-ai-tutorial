@@ -1,0 +1,1 @@
+{"events_ref":"../../fixtures/failure-events.json","correlation_fields":["trace_id","timestamp","commit","environment"],"requested_output":"evidence-linked-clusters-v1"}

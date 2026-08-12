@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS11",
+  "title": "可观测性与混沌：Trace 完整性、受控注入和恢复证据",
+  "working_directory": "materials/reliability-chaos-observability",
+  "owners": {
+    "content": "TD-PS11-content-owner",
+    "oracle": "TD-PS11-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS11.json",
+    "prompts/TD-PS11/system-v1.md",
+    "prompts/TD-PS11/task-v1.md",
+    "prompts/TD-PS11/critic-v1.md",
+    "prompts/TD-PS11/manifest.json",
+    "prompts/TD-PS11/mutation.json",
+    "fixtures/TD-PS11-input.json",
+    "schemas/TD-PS11-output.schema.json",
+    "evals/TD-PS11-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS11-ORACLE-01",
+      "statement": "task trace 覆盖 gateway retrieval model tool 和 terminal",
+      "evidence": "TD-PS11-evidence-1.json",
+      "owner": "TD-PS11-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS11-ORACLE-02",
+      "statement": "敏感输入不进入默认 telemetry",
+      "evidence": "TD-PS11-evidence-2.json",
+      "owner": "TD-PS11-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS11-ORACLE-03",
+      "statement": "fault start/end 与异常窗口可关联",
+      "evidence": "TD-PS11-evidence-3.json",
+      "owner": "TD-PS11-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS11-ORACLE-04",
+      "statement": "停止回滚后同一切片恢复且无残留",
+      "evidence": "TD-PS11-evidence-4.json",
+      "owner": "TD-PS11-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS11-FAULT-01",
+    "description": "collector 丢 span",
+    "target_oracle": "TD-PS11-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS11.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS11/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS11.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS11/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS11.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS11/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS11.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS11/baseline.json",
+        "evidence/TD-PS11/fault.json",
+        "evidence/TD-PS11/repair.json",
+        "evidence/TD-PS11/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标 collector 采样、生产权限、托管模型内部 span 和真实恢复时间"
+}

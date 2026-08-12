@@ -1,0 +1,14 @@
+{
+  "run_id": "TD-P06-repair",
+  "page_id": "TD-P06",
+  "phase": "repair",
+  "status": "PASS",
+  "finding_id": null,
+  "finding": "approved fixture satisfies the page contract",
+  "prompt_hash": "11ee4d8c724a934fc4ac3420a2ce155819bcc0ace10fa9fb0c8e4ace86c23b06",
+  "input_hash": "f40191af5242ac211979208ecbd93f82ca3e4b898be4bd47c56031c3d1df2b7b",
+  "evidence_status": "fixture-tested",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "boundary": "deterministic offline negative-control fixture; not model, practitioner, integration, live, publication, or production evidence"
+}

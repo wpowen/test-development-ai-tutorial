@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS12",
+  "title": "安全测试：身份、授权、输入、秘密与跨租户副作用",
+  "working_directory": "materials/reliability-chaos-observability",
+  "owners": {
+    "content": "TD-PS12-content-owner",
+    "oracle": "TD-PS12-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS12.json",
+    "prompts/TD-PS12/system-v1.md",
+    "prompts/TD-PS12/task-v1.md",
+    "prompts/TD-PS12/critic-v1.md",
+    "prompts/TD-PS12/manifest.json",
+    "prompts/TD-PS12/mutation.json",
+    "fixtures/TD-PS12-input.json",
+    "schemas/TD-PS12-output.schema.json",
+    "evals/TD-PS12-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS12-ORACLE-01",
+      "statement": "无效过期或错 audience token 被拒绝",
+      "evidence": "TD-PS12-evidence-1.json",
+      "owner": "TD-PS12-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS12-ORACLE-02",
+      "statement": "跨租户对象读取和退款写入均为零",
+      "evidence": "TD-PS12-evidence-2.json",
+      "owner": "TD-PS12-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS12-ORACLE-03",
+      "statement": "Prompt 内容不能扩大工具 allowlist",
+      "evidence": "TD-PS12-evidence-3.json",
+      "owner": "TD-PS12-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS12-ORACLE-04",
+      "statement": "日志报告不含 token PII 或支付秘密",
+      "evidence": "TD-PS12-evidence-4.json",
+      "owner": "TD-PS12-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS12-FAULT-01",
+    "description": "替换 order_id 做 BOLA",
+    "target_oracle": "TD-PS12-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS12.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS12/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS12.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS12/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS12.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS12/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS12.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS12/baseline.json",
+        "evidence/TD-PS12/fault.json",
+        "evidence/TD-PS12/repair.json",
+        "evidence/TD-PS12/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标 IdP 策略、真实密钥管理、渗透授权范围和剩余风险接受人"
+}

@@ -1,0 +1,36 @@
+{
+  "package_id": "ai-quality-benchmark-contract",
+  "version": "1.0.0",
+  "purpose": "classify fixed quality/benchmark evidence; model is not executed",
+  "authority": "candidate-only; cannot approve threshold, waiver, permission, publication, production, or release",
+  "system_prompt": "quality-benchmark-contract.prompt.md",
+  "schema": "output.schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "input_fixture": "../fixtures/cases.json",
+  "model": {
+    "provider": "none",
+    "name": "NOT_RUN",
+    "parameters": {},
+    "seed": "NOT_RUN"
+  },
+  "expected_statuses": [
+    "PASS_SCHEMA",
+    "PASS_SEMANTIC",
+    "FAIL",
+    "BLOCKED",
+    "UNKNOWN",
+    "NOT_RUN"
+  ],
+  "stop_states": [
+    "SOURCE_CONFLICT",
+    "UNSUPPORTED_RULE",
+    "BLOCKED",
+    "UNKNOWN"
+  ],
+  "review_owner": "AI quality lead and domain owner",
+  "limitations": [
+    "No model/provider run",
+    "Fixture-only evidence"
+  ]
+}

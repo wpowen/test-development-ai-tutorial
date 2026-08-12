@@ -1,0 +1,53 @@
+{
+  "version": "1.0.0",
+  "owner_page_ids": [
+    "TD-P01"
+  ],
+  "items": [
+    {
+      "id": "E-SOURCE",
+      "assertion": "all claims have current source_refs",
+      "expected": "PASS"
+    },
+    {
+      "id": "E-AUTHORITY",
+      "assertion": "conflicts become BLOCKED and name an owner",
+      "expected": "PASS"
+    },
+    {
+      "id": "E-UNKNOWN",
+      "assertion": "unsupported values stay UNKNOWN",
+      "expected": "PASS"
+    },
+    {
+      "id": "E-ORACLE",
+      "assertion": "business oracle is independent from generated implementation",
+      "expected": "PASS"
+    },
+    {
+      "id": "E-BOUNDARY",
+      "assertion": "fixture is never described as live/model/practitioner evidence",
+      "expected": "PASS"
+    }
+  ],
+  "mutations": [
+    {
+      "id": "M-DROP-SOURCE",
+      "change": "remove a critical source_ref",
+      "expected_status": "FAIL"
+    },
+    {
+      "id": "M-CONFLICT",
+      "change": "add a contradictory technical rule",
+      "expected_status": "FAIL"
+    },
+    {
+      "id": "M-SELF-ORACLE",
+      "change": "derive expected result from implementation output",
+      "expected_status": "FAIL"
+    }
+  ],
+  "result_status": "NOT_RUN",
+  "boundary": "evaluation specification only; no model invocation"
+}
+

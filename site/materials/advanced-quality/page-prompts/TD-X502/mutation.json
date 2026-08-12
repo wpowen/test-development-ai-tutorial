@@ -1,0 +1,12 @@
+{
+  "topic_id": "TD-X502",
+  "mutations": [
+    {
+      "mutation_id": "locale_accessibility_gap",
+      "description": "关键 locale 缺失、键盘/名称阻断或翻译 Oracle 未确认",
+      "expected_status": "BLOCKED",
+      "must_be_detected": true
+    }
+  ]
+}
+

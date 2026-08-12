@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS07",
+  "title": "iOS 自动化：标识、权限、签名与状态残留",
+  "working_directory": "materials/ui-mobile-automation",
+  "owners": {
+    "content": "TD-PS07-content-owner",
+    "oracle": "TD-PS07-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS07.json",
+    "prompts/TD-PS07/system-v1.md",
+    "prompts/TD-PS07/task-v1.md",
+    "prompts/TD-PS07/critic-v1.md",
+    "prompts/TD-PS07/manifest.json",
+    "prompts/TD-PS07/mutation.json",
+    "fixtures/TD-PS07-input.json",
+    "schemas/TD-PS07-output.schema.json",
+    "evals/TD-PS07-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS07-ORACLE-01",
+      "statement": "稳定 identifier 不依赖本地化文字",
+      "evidence": "TD-PS07-evidence-1.json",
+      "owner": "TD-PS07-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS07-ORACLE-02",
+      "statement": "权限拒绝仍可完成安全替代路径",
+      "evidence": "TD-PS07-evidence-2.json",
+      "owner": "TD-PS07-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS07-ORACLE-03",
+      "statement": "同一预约版本只应用一次改期",
+      "evidence": "TD-PS07-evidence-3.json",
+      "owner": "TD-PS07-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS07-ORACLE-04",
+      "statement": "清理后通知日历 keychain 与后端状态回到基线",
+      "evidence": "TD-PS07-evidence-4.json",
+      "owner": "TD-PS07-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS07-FAULT-01",
+    "description": "动画和异步回调延迟",
+    "target_oracle": "TD-PS07-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS07.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS07/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS07.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS07/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS07.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS07/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS07.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS07/baseline.json",
+        "evidence/TD-PS07/fault.json",
+        "evidence/TD-PS07/repair.json",
+        "evidence/TD-PS07/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标签名配置、真实通知服务和 iOS 版本分布"
+}

@@ -1,17 +1,28 @@
-# Agent 负载与重试风暴离线实验
+# Agent 性能与稳定性：完整离线实验包
 
-这个实验用本地模拟器演示三件事：正常负载能满足 SLO；无边界重试会放大调用量并触发成本、尾延迟和成功率门禁；限制重试、增加退避和并发保护后恢复。
+本包覆盖 TD-AP01～TD-AP08：工作负载模型、指标树、Trace 语义、开放/封闭负载、容量与瓶颈、超时/重试/降级、长稳/泄漏、SLO/告警/事故证据。
 
-不需要 API Key，也不会访问生产服务。
+## 运行
+
+从站点公开材料根目录进入：
 
 ```bash
-python3 agent_load_lab.py --config configs/baseline.json --output reports/baseline
-python3 agent_load_lab.py --config configs/retry-storm.json --output reports/retry-storm
-python3 agent_load_lab.py --config configs/repaired.json --output reports/repaired
+cd materials/agent-load-stability
+python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP01-lab.json --mode cycle
 ```
 
-预期退出码为 `0 / 1 / 0`。不要只看 RPS；同时比较成功任务数、p95、每个成功任务的模型调用数、重试放大系数和预算消耗。
+把 `TD-AP01` 换成 `TD-AP02`～`TD-AP08` 可运行其余专题。每个 cycle 实际执行 baseline、fault、repair，预期阶段退出码为 `0/1/0`，cycle 自身在模式匹配时退出 `0`。
 
-脚本会自动创建每个输出目录，并写入 `summary.json` 与 `traces.jsonl`。
+兼容旧版单场景材料仍保留 `agent_load_lab.py`、`configs/baseline.json`、`configs/retry-storm.json`、`configs/repaired.json`；其独立阶段同样预期 `0 / 1 / 0`。新版八页教学以 `scripts/agent_performance_lab.py` 与逐页 manifest 为准。
 
-教学脚本模拟的是可控依赖，不代表某个模型供应商或真实 Agent 平台的容量。迁移到真实系统时，需要替换请求适配器、工作负载、价格、SLO 和 Trace 采集。
+## 目录
+
+- `profiles/`：版本化 workload、gate 与 mutation。
+- `manifests/`：精确命令、cwd、required files、退出码和工件。
+- `prompts/`：每页 Prompt/Input/Schema/Eval/Mutation v1.0.0；provider=none、model=NOT_RUN。
+- `guides/`：逐页阅读顺序、排错和停止条件。
+- `reports/`：已保存的三阶段 Trace、摘要、cycle 与总 execution evidence。
+
+## 证据边界
+
+这是 deterministic synthetic fixture，只证明本包的采集、故障检测和修复门禁可运行。它没有调用真实模型或生产工具，没有 practitioner review，也不代表生产容量、SLA 或供应商性能。

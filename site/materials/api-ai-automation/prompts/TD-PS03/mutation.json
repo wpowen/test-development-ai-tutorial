@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS03",
+  "mutation_id": "TD-PS03-FAULT-01",
+  "mutation": "删除消费者字段",
+  "expected_detected_by": "provider 变更满足所有活跃消费者",
+  "model_execution": "NOT_RUN"
+}

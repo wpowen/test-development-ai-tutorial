@@ -1,0 +1,67 @@
+{
+  "topic_id": "TD-QP03",
+  "mode": "baseline",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "evidence_hash": "d5db737a9598500fbb8a7b89ce2f02e44fdece20122e2a808587ddb0af7fbdad",
+  "checks": [
+    {
+      "oracle_id": "IDENTITY-SEPARATION",
+      "passed": true
+    },
+    {
+      "oracle_id": "NAMESPACE-OWNERSHIP",
+      "passed": true
+    },
+    {
+      "oracle_id": "LEAST-PRIVILEGE",
+      "passed": true
+    },
+    {
+      "oracle_id": "RESOURCE-AND-NETWORK-CONTROLS",
+      "passed": true
+    },
+    {
+      "oracle_id": "CLEANUP-CLOSED",
+      "passed": true
+    }
+  ],
+  "state": {
+    "identity": {
+      "provisioner": "sa:quality-provisioner",
+      "runner": "sa:test-runner",
+      "cleaner": "sa:quality-cleaner"
+    },
+    "environment": {
+      "id": "env-run-42",
+      "namespace": "quality-run-42",
+      "owner_run": "run-42",
+      "expires_in": 900
+    },
+    "permissions": {
+      "cluster_admin": false,
+      "secret_read": false,
+      "cross_namespace": false
+    },
+    "controls": {
+      "quota": true,
+      "default_deny_network": true,
+      "job_ttl": true
+    },
+    "cleanup": {
+      "requested": true,
+      "deleted_owned": 6,
+      "residual_owned": 0,
+      "audit_recorded": true
+    }
+  },
+  "not_run": [
+    "live Jira tenant",
+    "live GitLab instance",
+    "live Kubernetes cluster",
+    "model provider",
+    "ChatOps delivery"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "bundle_id": "ai-quality-benchmark",
+  "shared": true,
+  "owner_page_ids": [
+    "TD-T20",
+    "TD-T21",
+    "TD-T22",
+    "TD-T23",
+    "TD-T24",
+    "TD-T25",
+    "TD-B01",
+    "TD-B02",
+    "TD-B03",
+    "TD-B04",
+    "TD-B05",
+    "TD-B06"
+  ],
+  "decision_owner": "AI 质量负责人",
+  "artifact_owner": "course factory validation lane",
+  "allowed_authority": "fixture generation and comparison only; no release approval",
+  "limitations": [
+    "Model/integration/practitioner/publication/production NOT_RUN"
+  ]
+}

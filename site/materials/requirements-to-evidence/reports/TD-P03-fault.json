@@ -1,0 +1,14 @@
+{
+  "run_id": "TD-P03-fault",
+  "page_id": "TD-P03",
+  "phase": "fault",
+  "status": "FAIL",
+  "finding_id": "UNOWNED_BLOCKER",
+  "finding": "Review question has no accountable owner or close_with evidence",
+  "prompt_hash": "e3f14d729054e599d08b26c29be86a9a286d3b4b7cf59fc2fa76d9e09d274f4a",
+  "input_hash": "0d7aaa60316f4b2c6278d027b616cb27130a6bfe81a35c6c8d2b9d6a4eb027dc",
+  "evidence_status": "fixture-tested",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "boundary": "deterministic offline negative-control fixture; not model, practitioner, integration, live, publication, or production evidence"
+}

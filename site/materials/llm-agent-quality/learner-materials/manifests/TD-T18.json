@@ -1,0 +1,61 @@
+{
+  "manifest_version": "1.0.0",
+  "topic_id": "TD-T18",
+  "maturity": "fixture-tested",
+  "working_directory": "materials/llm-agent-quality/learner-materials",
+  "required_files": [
+    "scripts/agent_quality_lab.py",
+    "owners.json",
+    "prompts/TD-T18/system.md",
+    "prompts/TD-T18/task.md",
+    "prompts/TD-T18/critic.md",
+    "prompts/TD-T18/input.json",
+    "prompts/TD-T18/output.schema.json",
+    "prompts/TD-T18/eval.json",
+    "prompts/TD-T18/mutation.json",
+    "prompts/TD-T18/manifest.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-T18 --phase baseline --report reports/td-t18/baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-t18/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-T18 --phase fault --report reports/td-t18/fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-t18/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-T18 --phase repair --report reports/td-t18/repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-t18/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-T18 --phase cycle --report-dir reports/td-t18",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-t18/baseline.json",
+        "reports/td-t18/fault.json",
+        "reports/td-t18/repair.json",
+        "reports/td-t18/cycle-summary.json"
+      ]
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "evidence_boundary": "offline deterministic fixture only; live systems NOT_RUN"
+}
