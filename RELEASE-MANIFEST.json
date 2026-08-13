@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3-candidate",
-  "source_commit": "6a3f8363eb5c84a612317404d15fd4e427340829",
+  "source_commit": "52d52ddf66932125a4fb5eccb48e80605c17112b",
   "release_scope": "pilot-path",
   "catalog_complete": false,
   "page_count": 103,
@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:d68b387a304a23383053da11389f235ab5cc83ddda5639b2589c463cf0d9f074",
+  "content_hash": "sha256:67c4045f5c886eb7b11faad0d280c388b2259fd667ad447ccb4303180bed2a95",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
     "github-pages",
