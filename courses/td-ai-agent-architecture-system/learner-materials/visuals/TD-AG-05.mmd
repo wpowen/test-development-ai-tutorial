@@ -1,0 +1,23 @@
+%% TD-AG-05 · 来源：S36 · S38 · S39
+%% Fixture 展示统计语义；真实阈值、样本量和生产可靠性仍由场景 owner 决定。
+flowchart LR
+  tasks["任务集<br/><small>Task / Slice / 版本</small>"]
+  runs["重复运行<br/><small>状态重置 / Seed / Retry</small>"]
+  at["pass@k<br/><small>k 次至少一次成功</small>"]
+  all["pass^k<br/><small>k 次全部成功</small>"]
+  ci["置信区间<br/><small>paired / clustered</small>"]
+  horizon["Horizon<br/><small>按任务时长看衰减</small>"]
+  decision["可靠性决定<br/><small>PASS / FAIL / 不足</small>"]
+  insufficient["证据不足<br/><small>样本量或切片不充分</small>"]
+  tasks -->|分层采样| runs
+  runs -->|聚合| at
+  runs -->|一致性| all
+  at -->|不确定性| ci
+  all -->|不确定性| ci
+  ci -->|按时长分层| horizon
+  horizon -->|门禁| decision
+  ci -->|样本不足| insufficient
+  insufficient -->|EVIDENCE-INSUFFICIENT| decision
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

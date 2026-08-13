@@ -1,0 +1,61 @@
+{
+  "manifest_version": "2.0.0",
+  "topic_id": "TD-QP03",
+  "maturity": "fixture-tested",
+  "working_directory": "materials/quality-platform-integrations/learner-materials",
+  "required_files": [
+    "scripts/ephemeral_namespace_cleanup.py",
+    "scripts/topic_cycle.py",
+    "prompts/td-qp03/task.md",
+    "prompts/td-qp03/system.md",
+    "prompts/td-qp03/critic.md",
+    "prompts/td-qp03/input.json",
+    "prompts/td-qp03/output.schema.json",
+    "prompts/td-qp03/eval.json",
+    "prompts/td-qp03/manifest.json",
+    "manifests/shared-bundle-owners.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "command": "python3 scripts/ephemeral_namespace_cleanup.py baseline --report reports/td-qp03/baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-qp03/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "command": "python3 scripts/ephemeral_namespace_cleanup.py fault --report reports/td-qp03/fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-qp03/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "command": "python3 scripts/ephemeral_namespace_cleanup.py repair --report reports/td-qp03/repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-qp03/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/ephemeral_namespace_cleanup.py cycle --report-dir reports/td-qp03",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-qp03/baseline.json",
+        "reports/td-qp03/fault.json",
+        "reports/td-qp03/repair.json",
+        "reports/td-qp03/cycle-summary.json"
+      ]
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "evidence_boundary": "Offline deterministic fixtures only; no external platform or model call is made."
+}

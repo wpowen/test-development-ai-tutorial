@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "mutations": [
+    {
+      "mutation_id": "TD-T20-fault",
+      "topic_id": "TD-T20",
+      "field": "blocking_exit_propagated",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-T21-fault",
+      "topic_id": "TD-T21",
+      "field": "lineage_complete",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-T22-fault",
+      "topic_id": "TD-T22",
+      "field": "source_trace_linked",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-T23-fault",
+      "topic_id": "TD-T23",
+      "field": "joint_gate_complete",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-T24-fault",
+      "topic_id": "TD-T24",
+      "field": "waiver_has_expiry",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-T25-fault",
+      "topic_id": "TD-T25",
+      "field": "capstone_trace_complete",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-B01-fault",
+      "topic_id": "TD-B01",
+      "field": "pipeline_components_complete",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-B02-fault",
+      "topic_id": "TD-B02",
+      "field": "holdout_sealed",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-B03-fault",
+      "topic_id": "TD-B03",
+      "field": "metric_denominator_declared",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-B04-fault",
+      "topic_id": "TD-B04",
+      "field": "single_variable_isolated",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-B05-fault",
+      "topic_id": "TD-B05",
+      "field": "contamination_audit_present",
+      "expected_kill": "exit 1"
+    },
+    {
+      "mutation_id": "TD-B06-fault",
+      "topic_id": "TD-B06",
+      "field": "enterprise_oracle_linked",
+      "expected_kill": "exit 1"
+    }
+  ]
+}

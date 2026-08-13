@@ -1,0 +1,62 @@
+{
+  "topic_id": "TD-AG-09",
+  "phase": "fault",
+  "maturity": "fixture-tested",
+  "verdict": "FAIL",
+  "expected_exit_code": 1,
+  "failed_oracle_ids": [
+    "HARD-REDLINE"
+  ],
+  "state_hash": "0b07dec4a7be8f0e84a62ec14716013a4c637fa20d480c6323dd0afa550fed38",
+  "checks": [
+    {
+      "oracle_id": "OFFLINE",
+      "passed": true
+    },
+    {
+      "oracle_id": "SANDBOX",
+      "passed": true
+    },
+    {
+      "oracle_id": "UNRUN-BOUNDARY",
+      "passed": true
+    },
+    {
+      "oracle_id": "HARD-REDLINE",
+      "passed": false
+    },
+    {
+      "oracle_id": "STATISTICAL",
+      "passed": true
+    },
+    {
+      "oracle_id": "RISK-ACCEPTANCE",
+      "passed": true
+    },
+    {
+      "oracle_id": "RECEIPT",
+      "passed": true
+    }
+  ],
+  "state": {
+    "rings": {
+      "offline": true,
+      "sandbox": true,
+      "shadow": "NOT_RUN",
+      "online": "NOT_RUN",
+      "hard_redline": false,
+      "statistical_gate": true,
+      "risk_acceptance": true,
+      "receipt_maturity": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

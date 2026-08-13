@@ -8,11 +8,13 @@ career-package/
 ├── tasks.json
 ├── curriculum.json
 ├── course-map.md
+├── solution-architecture.md       # complete-solution design, boundaries and maturity
 ├── human-review/                 # primary interface for user review
 │   ├── README.md
 │   ├── 01-调研思路与主要结论.md
 │   ├── 02-成果清单与课程地图.md
-│   └── 03-细化样课.md
+│   ├── 03-细化样课.md
+│   └── 04-完整方案审计.md
 ├── tutorial/                     # primary learner-facing product
 │   ├── README.md
 │   ├── course-tree.md
@@ -31,9 +33,11 @@ career-package/
 │   ├── learner-signals.csv
 │   ├── technology-radar.json
 │   ├── scenarios.json
+│   ├── solution-architecture.json # dimensions, views, decisions, traceability and gates
 │   ├── evidence-matrix.md
 │   ├── competitor-matrix.csv
 │   └── ai-capability-map.md
+├── architecture/                 # context, component, runtime, deployment, data and security views
 ├── tools/tool-registry.json
 ├── courses/<course-id>/
 │   ├── course-manifest.json

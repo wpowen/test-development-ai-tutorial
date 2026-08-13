@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-R01",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:0289c498b5e30fa07b7bbb84b1dedf159004686d49e19686619c84d178b5be8d",
+  "manifest_sha256": "sha256:9e6ad91dfeb29300b669d4b3254f013ff08b40022b91fb8a842934cc5c29631e",
+  "checks": [
+    {
+      "field": "resource.versioned",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "resource.checked_at_present",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "field": "resource.purpose_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "resource.fallback_defined",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "field": "resource.exit_artifact_defined",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    }
+  ],
+  "unknowns": [
+    "链接可访问性和学习效果仍需复核"
+  ],
+  "boundary": "PASS-FIXTURE only; resource quality and learning effect are not proven"
+}

@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-R01","observation":{"resource":{"versioned":true,"checked_at_present":true,"purpose_defined":true,"fallback_defined":true,"exit_artifact_defined":true}},"unknowns":["链接可访问性和学习效果仍需复核"],"artifact_contract":{"required":["resource","version","checked_at","purpose","limits","fallback","exit_artifact"]}}

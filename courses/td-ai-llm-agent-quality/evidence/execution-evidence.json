@@ -1,0 +1,13 @@
+{
+  "evidence_scope":"TD-T13 deterministic offline Agent version-isolation fixture; no provider, model, browser or network call",
+  "commands":[
+    "python3 scripts/agent_quality_lab.py --topic TD-T13 --phase baseline --report reports/TD-T13/baseline.json",
+    "python3 scripts/agent_quality_lab.py --topic TD-T13 --phase fault --report reports/TD-T13/fault.json",
+    "python3 scripts/agent_quality_lab.py --topic TD-T13 --phase repair --report reports/TD-T13/repair.json"
+  ],
+  "baseline":{"exit_code":0,"verdict":"PASS","report":"learner-materials/reports/TD-T13/baseline.json","stdout":"{\"topic_id\": \"TD-T13\", \"phase\": \"baseline\", \"verdict\": \"PASS\"}"},
+  "mutation":{"exit_code":1,"verdict":"FAIL","report":"learner-materials/reports/TD-T13/fault.json","stdout":"{\"topic_id\": \"TD-T13\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"failed\": [\"SINGLE-VARIABLE\"]}"},
+  "repair":{"exit_code":0,"verdict":"PASS","report":"learner-materials/reports/TD-T13/repair.json","stdout":"{\"topic_id\": \"TD-T13\", \"phase\": \"repair\", \"verdict\": \"PASS\"}"},
+  "environment":{"runtime":"Python standard library","credentials":"none","network":false,"working_directory":"courses/td-ai-llm-agent-quality/learner-materials","model_execution":"NOT_RUN"},
+  "limitations":["Only TD-T13 is executed as the representative package gate; every page has its own prompt/eval/mutation manifest","No live model, browser agent, tool backend, queue or enterprise identity integration","No practitioner review, security red team or production distribution","Fixture proves only the declared mutation is detected"]
+}

@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["page_id","claims","gap_routes","plan_30_60_90","unknowns"],"properties":{"page_id":{"const":"TD-C03"},"claims":{"type":"array"},"gap_routes":{"type":"array"},"plan_30_60_90":{"type":"array"},"unknowns":{"type":"array"}}}

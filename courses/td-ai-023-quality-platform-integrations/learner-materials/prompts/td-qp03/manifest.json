@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "topic_id": "TD-QP03",
+  "system_prompt": "system.md",
+  "task_prompt": "task.md",
+  "critic_prompt": "critic.md",
+  "input_fixture": "input.json",
+  "schema": "output.schema.json",
+  "eval": "eval.json",
+  "model_policy": {
+    "provider": "NOT_RUN",
+    "model": "NOT_RUN",
+    "temperature": 0,
+    "structured_output": true
+  },
+  "content_hash_policy": "SHA-256 all prompt package files before a live model evaluation",
+  "maturity": "static-reviewed"
+}

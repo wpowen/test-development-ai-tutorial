@@ -1,0 +1,144 @@
+{
+  "course_id": "td-ai-serving-career",
+  "materials": [
+    {
+      "material_id": "M-SERVE-01",
+      "path": "materials/quickstart.md",
+      "purpose": "复现逐页 0/1/0 实验",
+      "source_ids": [
+        "S44",
+        "S51"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": [
+        "Wave-3 research synthesis",
+        "scripts/build_assets.py"
+      ],
+      "license_or_usage": "项目原创教学材料，可在内部学习与受控演练中修改复用",
+      "validation_status": "fixture-tested",
+      "validation_evidence": [
+        "evidence/execution-evidence.json"
+      ],
+      "contains_synthetic_data": true,
+      "limitations": "离线 fixture，不含真实服务"
+    },
+    {
+      "material_id": "M-SERVE-02",
+      "path": "materials/reusable-skill.md",
+      "purpose": "迁移控制问题、Oracle 与故障链",
+      "source_ids": [
+        "S44",
+        "S46"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": [
+        "Wave-3 research synthesis",
+        "scripts/build_assets.py"
+      ],
+      "license_or_usage": "项目原创教学材料，可在内部学习与受控演练中修改复用",
+      "validation_status": "static-reviewed",
+      "validation_evidence": [
+        "course.md"
+      ],
+      "contains_synthetic_data": false,
+      "limitations": "真实阈值和 owner 必须重定"
+    },
+    {
+      "material_id": "M-SERVE-03",
+      "path": "materials/sample-input.md",
+      "purpose": "解释有界重试和回退输入",
+      "source_ids": [
+        "S46",
+        "S51"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": [
+        "Wave-3 research synthesis",
+        "scripts/build_assets.py"
+      ],
+      "license_or_usage": "项目原创教学材料，可在内部学习与受控演练中修改复用",
+      "validation_status": "fixture-tested",
+      "validation_evidence": [
+        "evidence/execution-evidence.json"
+      ],
+      "contains_synthetic_data": true,
+      "limitations": "合成输入，不代表供应商配额"
+    },
+    {
+      "material_id": "M-SERVE-04",
+      "path": "materials/expected-output.md",
+      "purpose": "判读机器报告与内部退出码",
+      "source_ids": [
+        "S44",
+        "S51"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": [
+        "Wave-3 research synthesis",
+        "scripts/build_assets.py"
+      ],
+      "license_or_usage": "项目原创教学材料，可在内部学习与受控演练中修改复用",
+      "validation_status": "fixture-tested",
+      "validation_evidence": [
+        "evidence/execution-evidence.json"
+      ],
+      "contains_synthetic_data": true,
+      "limitations": "只证明声明 mutation 的检测力"
+    },
+    {
+      "material_id": "M-SERVE-05",
+      "path": "materials/verification-checklist.md",
+      "purpose": "复核成熟度、容量与职业边界",
+      "source_ids": [
+        "S60",
+        "S64"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": [
+        "Wave-3 research synthesis",
+        "scripts/build_assets.py"
+      ],
+      "license_or_usage": "项目原创教学材料，可在内部学习与受控演练中修改复用",
+      "validation_status": "static-reviewed",
+      "validation_evidence": [
+        "course.md"
+      ],
+      "contains_synthetic_data": false,
+      "limitations": "没有 practitioner 或就业结果验证"
+    },
+    {
+      "material_id": "M-SERVE-06",
+      "path": "learner-materials/README.md",
+      "purpose": "公开实验入口、限制与复跑方法",
+      "source_ids": [
+        "S44",
+        "S51",
+        "S60"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": [
+        "Wave-3 research synthesis",
+        "scripts/build_assets.py"
+      ],
+      "license_or_usage": "项目原创教学材料，可在内部学习与受控演练中修改复用",
+      "validation_status": "fixture-tested",
+      "validation_evidence": [
+        "evidence/execution-evidence.json"
+      ],
+      "contains_synthetic_data": true,
+      "limitations": "模型、GPU、网络和生产流量均 NOT_RUN"
+    }
+  ]
+}

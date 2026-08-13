@@ -1,0 +1,40 @@
+{
+  "page_id": "TD-P04",
+  "status": "ACCEPTED",
+  "risks": [
+    {
+      "risk_id": "RISK-DUPLICATE-REFUND",
+      "failure_cost": "duplicate money movement",
+      "priority": "owner-controlled"
+    }
+  ],
+  "method_decisions": [
+    {
+      "risk_id": "RISK-DUPLICATE-REFUND",
+      "method": "state transition plus fault injection",
+      "rationale": "retry and idempotency are central"
+    }
+  ],
+  "test_level_map": [
+    {
+      "risk_id": "RISK-DUPLICATE-REFUND",
+      "level": "service integration",
+      "oracle": "one refund side effect"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "production payment test",
+      "status": "BLOCKED",
+      "reason": "fixture forbids real payment"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ]
+}

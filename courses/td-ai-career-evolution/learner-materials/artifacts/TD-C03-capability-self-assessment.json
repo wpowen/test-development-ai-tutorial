@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C03",
+  "artifact_mode": "SOURCE-EXAMPLE-FILLED",
+  "learner_profile": "已有传统接口测试经验，首次系统学习 AI Eval；仅为路线示范",
+  "claims": [
+    {
+      "dimension": "traditional-test-analysis",
+      "claim": "能从需求和技术文档提取规则、状态、接口与未知项",
+      "responsibility_state": "independent-scoped-ownership",
+      "evidence_refs": ["materials/requirements-to-evidence/reports/TD-P02-cycle.json", "materials/requirements-to-evidence/reports/TD-P03-cycle.json"],
+      "maturity": "fixture-evidence",
+      "next_artifact": "在一个新的脱敏业务片段上复用 P02/P03，并由独立测试负责人回读"
+    },
+    {
+      "dimension": "prompt-package-engineering",
+      "claim": "能区分 system/task/input/critic/schema/eval/mutation/receipt",
+      "responsibility_state": "guided-execution",
+      "evidence_refs": ["materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json"],
+      "maturity": "static-package-reviewed",
+      "next_artifact": "TD-FP01 适配卡与一次模型运行收据（当前 NOT_RUN）"
+    },
+    {
+      "dimension": "rag-evaluation",
+      "claim": "尚不能用真实向量库区分 retrieval 与 generation failure",
+      "responsibility_state": "UNKNOWN",
+      "evidence_refs": [],
+      "maturity": "UNKNOWN",
+      "next_artifact": "完成 TD-F04 小白边界页与 TD-T09→TD-T12 的合成 RAG 0/1/0 实验"
+    }
+  ],
+  "unknowns": ["真实模型输出遵循度", "真实企业语料 ACL", "独立 practitioner 对当前能力的复评"],
+  "gap_routes": [
+    {"gap": "Prompt 包尚未实际调用模型", "route_page_ids": ["TD-FP01"], "exit_artifact": "脱敏模型运行 receipt + 人工抽样复核"},
+    {"gap": "RAG 只有结构知识", "route_page_ids": ["TD-F04", "TD-T09", "TD-T10", "TD-T11", "TD-T12"], "exit_artifact": "检索/生成分层报告与权限 blocker"},
+    {"gap": "无组织职级依据", "route_page_ids": ["TD-C04"], "exit_artifact": "保持 INTERNAL-UNKNOWN，直到组织 owner 提供 policy"}
+  ],
+  "review_date": "按计划窗口由 learner 与独立 reviewer 共同填写",
+  "employment_guarantee": false,
+  "promotion_guarantee": false,
+  "blank_template_ref": "artifacts/templates/TD-C03-capability-self-assessment.blank.json"
+}

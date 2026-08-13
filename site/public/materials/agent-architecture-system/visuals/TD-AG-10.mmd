@@ -1,0 +1,23 @@
+%% TD-AG-10 · 来源：S07 · S50 · S65
+%% 本图不构成交易授权、合规意见或生产安全证明；所有资金系统均 NOT_RUN。
+flowchart LR
+  fresh["数据时效<br/><small>Timestamp / Freshness Oracle</small>"]
+  advice["建议任务<br/><small>只读 / UNKNOWN / 转人工</small>"]
+  execute["执行任务<br/><small>独立数据集 / 独立 Owner</small>"]
+  sandbox["能力沙箱<br/><small>工具白名单 / Scope</small>"]
+  limit["硬额度<br/><small>工具层限额 / 频率</small>"]
+  approval["人工审批<br/><small>双人确认 / 有效授权</small>"]
+  rollback["回滚 / Kill Switch<br/><small>分钟级停止与恢复</small>"]
+  blocked["BLOCKED<br/><small>陈旧数据或未授权执行</small>"]
+  fresh -->|时效合格| advice
+  fresh -->|过期| blocked
+  advice -->|不得直接相连| execute
+  execute -->|执行入口| sandbox
+  sandbox -->|强制控制| limit
+  limit -->|高危动作| approval
+  approval -->|拒绝/异常| rollback
+  sandbox -->|越权| blocked
+  blocked -->|保持无副作用| rollback
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

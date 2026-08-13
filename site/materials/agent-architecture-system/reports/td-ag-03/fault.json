@@ -1,0 +1,53 @@
+{
+  "topic_id": "TD-AG-03",
+  "phase": "fault",
+  "maturity": "fixture-tested",
+  "verdict": "FAIL",
+  "expected_exit_code": 1,
+  "failed_oracle_ids": [
+    "STOP-REASON"
+  ],
+  "state_hash": "5265b51be506b78840d905b09908a2ecbd90c283eb23c05c10b457d9b338100e",
+  "checks": [
+    {
+      "oracle_id": "HANDOFF",
+      "passed": true
+    },
+    {
+      "oracle_id": "FACT-SURVIVAL",
+      "passed": true
+    },
+    {
+      "oracle_id": "ISOLATION",
+      "passed": true
+    },
+    {
+      "oracle_id": "TRIPLE-BUDGET",
+      "passed": true
+    },
+    {
+      "oracle_id": "STOP-REASON",
+      "passed": false
+    }
+  ],
+  "state": {
+    "orchestration": {
+      "handoff_schema": true,
+      "facts_survive": 5,
+      "isolation": true,
+      "step_limit": 5,
+      "time_limit": true,
+      "cost_limit": true,
+      "stop_reason": null
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

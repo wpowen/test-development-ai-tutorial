@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "privacy": "synthetic-public",
+  "cases": [
+    {
+      "case_id": "td-t20",
+      "topic_id": "TD-T20",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-t21",
+      "topic_id": "TD-T21",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-t22",
+      "topic_id": "TD-T22",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-t23",
+      "topic_id": "TD-T23",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-t24",
+      "topic_id": "TD-T24",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-t25",
+      "topic_id": "TD-T25",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-b01",
+      "topic_id": "TD-B01",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-b02",
+      "topic_id": "TD-B02",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-b03",
+      "topic_id": "TD-B03",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-b04",
+      "topic_id": "TD-B04",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-b05",
+      "topic_id": "TD-B05",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    },
+    {
+      "case_id": "td-b06",
+      "topic_id": "TD-B06",
+      "scenario": "synthetic refund RAG/Agent quality release candidate",
+      "source_refs": [
+        "synthetic-prd-v1",
+        "policy-v2",
+        "trace-fixture-v1"
+      ]
+    }
+  ]
+}

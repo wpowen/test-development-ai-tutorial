@@ -1,0 +1,16 @@
+[
+  {
+    "waiver_id": "W-2026-0812-01",
+    "gate": "Gate-3 / 变异杀死率",
+    "unmet": "退款路径杀死率低于本团队实测基线下沿",
+    "business_reason": "修复窗口不足，本次仅上线只读功能，写路径未变更",
+    "compensating_controls": ["退款入口对新版本关闭", "退款相关生产告警阈值临时收紧", "每日人工抽检退款切片 20 条"],
+    "scope": "仅 refund 模块只读路径",
+    "approved_by": "release-owner-name",
+    "approver_role": "release-owner",
+    "approved_at": "2026-08-12",
+    "expires_at": "2026-09-23",
+    "on_expiry": "自动恢复 Gate-3 变异门禁并阻断发布",
+    "rollback_condition": "出现任一 S1 或 S2 级退款缺陷即回滚"
+  }
+]

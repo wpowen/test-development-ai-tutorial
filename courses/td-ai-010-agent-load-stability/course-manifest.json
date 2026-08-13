@@ -1,32 +1,187 @@
 {
   "course_id": "td-ai-010-agent-load-stability",
   "title": "AI Agent 性能与稳定性工程",
-  "scenario_ids": ["TD-S03"],
+  "scenario_ids": [
+    "TD-S03"
+  ],
   "ai_lane": "test-ai-systems",
   "ai_centrality_score": 5,
   "professional_value_score": 5,
-  "system_under_test": "订单查询与退款工具 Agent 的任务、模型、工具、队列和状态链路",
-  "ai_roles": ["system-under-test", "trace-analyzer"],
-  "learner_artifact": ["metric dictionary", "workload model", "trace schema", "load-test report", "SLO and runbook"],
-  "tool_adapters": ["offline-agent-fixture", "OpenTelemetry-compatible-schema"],
-  "work_domain_ids": ["TD-D03"],
-  "primary_artifact_ids": ["agent-load-stability-gate"],
+  "system_under_test": "订单异常处置 Agent 的任务、模型、工具、队列、状态和稳定性证据链",
+  "ai_roles": [
+    "system-under-test",
+    "trace-analyzer",
+    "load-fixture-evaluator"
+  ],
+  "learner_artifact": [
+    "workload model",
+    "metric dictionary",
+    "trace schema",
+    "open-closed comparison",
+    "synthetic capacity curve",
+    "retry-degrade policy",
+    "soak report",
+    "SLO and incident runbook"
+  ],
+  "tool_adapters": [
+    "offline-agent-fixture",
+    "OpenTelemetry-compatible-schema"
+  ],
+  "work_domain_ids": [
+    "TD-D03"
+  ],
+  "primary_artifact_ids": [
+    "agent-load-stability-gate"
+  ],
   "decision_owner": "客服 Agent 产品与质量负责人",
   "allowed_ai_authority": "在沙箱执行受限工具，不得接触真实资金",
-  "prerequisite_course_ids": ["TD-AI-09"],
+  "prerequisite_course_ids": [
+    "TD-AI-09"
+  ],
   "transfer_target": "把同一指标、Trace、SOP 与 SLO 迁移到另一个有状态工具 Agent",
   "lesson_flow": ["demo", "guided-practice", "failure-injection", "repair", "transfer"],
   "default_path_requires_credentials": false,
   "baseline_comparison": true,
   "failure_injection": true,
   "execution_proof": "evidence/execution-evidence.json",
-  "validation_workdir": ".",
+  "validation_workdir": "lab",
   "validation_steps": [
-    {"name":"baseline","command":["python3","lab/agent_load_lab.py","--config","lab/configs/baseline.json","--output","evidence/baseline"],"expected_exit_code":0},
-    {"name":"retry storm must fail","command":["python3","lab/agent_load_lab.py","--config","lab/configs/retry-storm.json","--output","evidence/retry-storm"],"expected_exit_code":1},
-    {"name":"repaired","command":["python3","lab/agent_load_lab.py","--config","lab/configs/repaired.json","--output","evidence/repaired"],"expected_exit_code":0}
+    {
+      "name": "TD-AP01 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP01-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP01/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP02 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP02-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP02/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP03 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP03-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP03/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP04 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP04-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP04/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP05 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP05-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP05/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP06 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP06-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP06/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP07 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP07-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP07/cycle-summary.json"
+    },
+    {
+      "name": "TD-AP08 baseline-fault-repair cycle",
+      "working_directory": "lab",
+      "command": [
+        "python3",
+        "scripts/agent_performance_lab.py",
+        "--manifest",
+        "manifests/TD-AP08-lab.json",
+        "--mode",
+        "cycle"
+      ],
+      "expected_exit_code": 0,
+      "evidence": "evidence/TD-AP08/cycle-summary.json"
+    }
   ],
   "status": "fixture-tested",
-  "evidence_ids": ["S47", "S48", "S51", "S52", "S57"],
-  "topic_page_ids": ["TD-AP01", "TD-AP02", "TD-AP03", "TD-AP04", "TD-AP05", "TD-AP06", "TD-AP07", "TD-AP08"]
+  "evidence_boundary": "8 个 deterministic synthetic cycle 均为 PASS-FIXTURE；live、practitioner、production capacity 未建立。",
+  "evidence_ids": [
+    "S47",
+    "S48",
+    "S51",
+    "S52",
+    "S57",
+    "S67",
+    "S68",
+    "S69",
+    "S70",
+    "S72",
+    "S75"
+  ],
+  "topic_page_ids": [
+    "TD-AP01",
+    "TD-AP02",
+    "TD-AP03",
+    "TD-AP04",
+    "TD-AP05",
+    "TD-AP06",
+    "TD-AP07",
+    "TD-AP08"
+  ]
 }

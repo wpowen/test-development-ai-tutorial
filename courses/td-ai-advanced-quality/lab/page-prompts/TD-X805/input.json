@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X805",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "分配污染、guardrail 退化或人工样本偏置"
+}
+

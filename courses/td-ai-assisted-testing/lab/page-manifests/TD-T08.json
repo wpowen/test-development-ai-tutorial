@@ -1,0 +1,13 @@
+{
+  "topic_id": "TD-T08",
+  "page_id": "TD-T08",
+  "working_directory": "materials/ai-assisted-testing",
+  "required_files": ["ai_assisted_lab.py", "fixtures/failure-events.json", "page-prompts/TD-T08/manifest.json", "page-prompts/TD-T08/prompt-v1.md", "page-prompts/TD-T08/input.json", "page-prompts/TD-T08/schema.json", "page-prompts/TD-T08/eval.json", "page-prompts/TD-T08/mutation.json"],
+  "steps": [
+    {"step_id":"td-t08-baseline","kind":"baseline","command":"python3 ai_assisted_lab.py run --topic TD-T08 --phase baseline --report reports/td-t08-baseline.json","expected_exit_code":0,"expected_artifacts":["reports/td-t08-baseline.json"]},
+    {"step_id":"td-t08-fault","kind":"fault","command":"python3 ai_assisted_lab.py run --topic TD-T08 --phase fault --report reports/td-t08-fault.json","expected_exit_code":2,"expected_artifacts":["reports/td-t08-fault.json"]},
+    {"step_id":"td-t08-repair","kind":"repair","command":"python3 ai_assisted_lab.py run --topic TD-T08 --phase repair --report reports/td-t08-repair.json","expected_exit_code":0,"expected_artifacts":["reports/td-t08-repair.json"]}
+  ],
+  "failure_cycle": {"baseline_step_id":"td-t08-baseline","fault_step_id":"td-t08-fault","repair_step_id":"td-t08-repair"},
+  "evidence_boundary": "synthetic event correlation and controlled experiment only; enterprise incident accuracy and causal validity NOT_RUN"
+}

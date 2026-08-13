@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://career-ai-course-factory.local/schemas/source-manifest.schema.json",
+  "title": "Test Basis Source Manifest",
+  "type": "object",
+  "required": ["baseline_id", "frozen_at", "owner", "sources", "precedence_rule", "conflicts", "unknowns"],
+  "additionalProperties": false,
+  "properties": {
+    "baseline_id": {"type": "string", "minLength": 1},
+    "frozen_at": {"type": "string", "format": "date"},
+    "owner": {"type": "string", "minLength": 1},
+    "precedence_rule": {"type": "string", "minLength": 20},
+    "escalation_owner": {"type": "string"},
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "owner", "version", "sha256", "precedence", "sensitivity"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "pattern": "^[A-Z][A-Z0-9]*(-[A-Za-z0-9.]+)+$"},
+          "type": {"enum": ["prd", "design", "contract", "state-machine", "glossary", "history", "model", "prompt", "index", "toolset"]},
+          "owner": {"type": "string", "minLength": 1},
+          "version": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "minLength": 1},
+          "precedence": {"type": "integer", "minimum": 1},
+          "sensitivity": {"enum": ["public", "internal", "confidential", "restricted"]},
+          "accessed_at": {"type": "string"},
+          "location": {"type": "string"}
+        }
+      }
+    },
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source_refs", "description", "status", "escalated_to"],
+        "properties": {
+          "id": {"type": "string"},
+          "source_refs": {"type": "array", "minItems": 2, "items": {"type": "string"}},
+          "description": {"type": "string"},
+          "affected_requirements": {"type": "array", "items": {"type": "string"}},
+          "status": {"const": "BLOCKED"},
+          "escalated_to": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "status", "needs_confirmation_from"],
+        "properties": {
+          "id": {"type": "string"},
+          "description": {"type": "string"},
+          "status": {"const": "UNKNOWN"},
+          "needs_confirmation_from": {"type": "string"}
+        }
+      }
+    }
+  }
+}

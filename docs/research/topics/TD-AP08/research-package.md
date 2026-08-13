@@ -1,32 +1,15 @@
-# TD-AP08 · Production stability system
+# TD-AP08 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: how does a one-time load test become ongoing SLO, alert, degradation and incident feedback? Artifact: production stability design and executable Runbook.
+- 主题边界：SLO、告警与事故证据，必须围绕 good-task SLI。
+- 方法：good-task SLI + multi-window burn-rate incident loop；独立 Oracle 重算 numerator/denominator。
+- 必须保留：窗口、burn-rate、owner、止血、恢复和事故样例回流。
 
-## Source pack
+## Boundary and command evidence
 
-- Google SRE service best practices: https://sre.google/sre-book/service-best-practices/ — SLO and production readiness.
-- Google monitoring/overload chapters — symptom signals, saturation and overload controls.
-- OpenTelemetry GenAI observability — cross-model/tool trace linkage; evolving standard limitations.
-- NIST GenAI profile: https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf — risk governance and monitoring context.
-
-## Evidence synthesis
-
-Golden signals prove service health, not answer correctness. Agent SLO therefore uses a user-task numerator combining terminal correctness, latency, cost, policy and side-effect safety. Root-cause metrics belong in diagnosis panels unless they have a direct action.
-
-## Engineering blueprint
-
-Define good-task SLI, error budget and high-risk slices. Page on user symptoms/rapid burn; correlate queue, TTFT, tool, retry and cost. Predefine queue caps, retry budgets, read-only/human degradation, canary recovery and incident-to-workload feedback.
-
-## Manuscript map
-
-TD-AP08 covers multidimensional SLO, alert levels, protections, Runbook and release/production feedback loop.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP08-lab.json --mode cycle`，已记录 0/1/0。provider=none、model=NOT_RUN；组织 SLO 与生产告警策略未知。
 
 ## Editorial review
 
-PASS. Kept the good-task SLI denominator, error-budget logic, high-risk slices, rapid-burn paging and named degradation actions. Sample thresholds remain examples requiring local calibration. The page distinguishes user-symptom alerts from diagnostic metrics and preserves human approval for risky side effects and recovery.
-
-## Validation
-
-PASS: SLO denominator, owner, action, rollback and evidence boundary are explicit; sample thresholds are not universal claims.
+本记录保护 SLI、告警闭环和成熟度边界；不提供分数，不替代独立审计或发布门禁。

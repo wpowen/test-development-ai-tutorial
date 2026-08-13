@@ -1,0 +1,1633 @@
+{
+  "schema_version": "executability-audit.v1",
+  "audit_id": "executability-c9ef1a241fda",
+  "audited_at": "2026-08-13T06:51:13.552Z",
+  "public_page_ids": [
+    "TD-F01",
+    "TD-P01",
+    "TD-P02",
+    "TD-P03",
+    "TD-P04",
+    "TD-P05",
+    "TD-P06",
+    "TD-P07",
+    "TD-P08",
+    "TD-PS01",
+    "TD-PS02",
+    "TD-PS03",
+    "TD-PS04",
+    "TD-PS05",
+    "TD-PS06",
+    "TD-PS07",
+    "TD-PS08",
+    "TD-PS09",
+    "TD-PS10",
+    "TD-PS11",
+    "TD-PS12",
+    "TD-X101",
+    "TD-FP01",
+    "TD-F02",
+    "TD-F03",
+    "TD-F04",
+    "TD-T01",
+    "TD-T02",
+    "TD-T03",
+    "TD-T04",
+    "TD-T05",
+    "TD-T06",
+    "TD-T07",
+    "TD-T08",
+    "TD-A01",
+    "TD-A02",
+    "TD-A03",
+    "TD-A04",
+    "TD-A05",
+    "TD-A06",
+    "TD-T09",
+    "TD-T10",
+    "TD-T11",
+    "TD-T12",
+    "TD-X501",
+    "TD-X502",
+    "TD-T13",
+    "TD-T14",
+    "TD-T15",
+    "TD-T16",
+    "TD-T17",
+    "TD-T18",
+    "TD-T19",
+    "TD-W01",
+    "TD-W02",
+    "TD-W03",
+    "TD-X603",
+    "TD-X604",
+    "TD-X602",
+    "TD-X601",
+    "TD-T20",
+    "TD-T21",
+    "TD-T22",
+    "TD-T23",
+    "TD-T24",
+    "TD-X805",
+    "TD-B01",
+    "TD-B02",
+    "TD-B03",
+    "TD-B04",
+    "TD-B05",
+    "TD-B06",
+    "TD-QP01",
+    "TD-QP02",
+    "TD-QP03",
+    "TD-QP04",
+    "TD-T25",
+    "TD-C01",
+    "TD-C02",
+    "TD-C03",
+    "TD-C04",
+    "TD-F05",
+    "TD-T26",
+    "TD-R01",
+    "TD-AP01",
+    "TD-AP02",
+    "TD-AP03",
+    "TD-AP04",
+    "TD-AP05",
+    "TD-AP06",
+    "TD-AP07",
+    "TD-AP08",
+    "TD-AG-00",
+    "TD-AG-01",
+    "TD-AG-02",
+    "TD-AG-03",
+    "TD-AG-04",
+    "TD-AG-05",
+    "TD-AG-06",
+    "TD-AG-07",
+    "TD-AG-08",
+    "TD-AG-09",
+    "TD-AG-10"
+  ],
+  "source_hashes": {
+    "course": "sha256:1ae4b04bb3186b1a49ff4f2564e4a29149b96d5fca4a19e3ff3090a02ec5305c",
+    "audit_implementation": "sha256:8b502ece5a64c5fdd0cabdcc53f9341de770be884d07d8ec81982beeb84b9a06"
+  },
+  "summary": {
+    "pageCount": 103,
+    "codeBlockCount": 364,
+    "pagesPassing": 103,
+    "pagesFailing": 0,
+    "blocksByKind": {
+      "diagram": 56,
+      "prompt": 104,
+      "command": 133,
+      "config": 31,
+      "pseudocode": 32,
+      "formula": 8
+    },
+    "invalidPublishedCoursePaths": 0,
+    "commandsWithoutWorkingDirectory": 0,
+    "untypedTechnicalBlocks": 0
+  },
+  "pages": [
+    {
+      "page_id": "TD-F01",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "config"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P01",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "pseudocode",
+        "config",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P02",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "config",
+        "pseudocode",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 15,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P03",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "config",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P04",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "config",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P05",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "config",
+        "pseudocode",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P06",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P07",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "config",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-P08",
+      "status": "fixture-tested",
+      "code_block_count": 6,
+      "kinds": [
+        "diagram",
+        "pseudocode",
+        "pseudocode",
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS01",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS02",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS03",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS04",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS05",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS06",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS07",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS08",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS09",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS10",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS11",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-PS12",
+      "status": "desk-researched",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X101",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-FP01",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 9,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-F02",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-F03",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "prompt",
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-F04",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T01",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T02",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T03",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T04",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T05",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T06",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T07",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T08",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-A01",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-A02",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-A03",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-A04",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-A05",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-A06",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T09",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T10",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T11",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T12",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "config",
+        "prompt",
+        "command"
+      ],
+      "material_count": 5,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X501",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X502",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T13",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T14",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T15",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T16",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T17",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T18",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T19",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-W01",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-W02",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-W03",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X603",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X604",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X602",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X601",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T20",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T21",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T22",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T23",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T24",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-X805",
+      "status": "fixture-tested",
+      "code_block_count": 5,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-B01",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-B02",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-B03",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-B04",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-B05",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-B06",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-QP01",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-QP02",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-QP03",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-QP04",
+      "status": "fixture-tested",
+      "code_block_count": 2,
+      "kinds": [
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T25",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "config",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-C01",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "pseudocode",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-C02",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 9,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-C03",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-C04",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-F05",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-T26",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 7,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-R01",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 9,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP01",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP02",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP03",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP04",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP05",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP06",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP07",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AP08",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "formula",
+        "prompt",
+        "command"
+      ],
+      "material_count": 6,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-00",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 14,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-01",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command"
+      ],
+      "material_count": 13,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-02",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-03",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 11,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-04",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 11,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-05",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command"
+      ],
+      "material_count": 13,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-06",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command"
+      ],
+      "material_count": 13,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-07",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-08",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 11,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-09",
+      "status": "fixture-tested",
+      "code_block_count": 4,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command",
+        "command"
+      ],
+      "material_count": 15,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    },
+    {
+      "page_id": "TD-AG-10",
+      "status": "fixture-tested",
+      "code_block_count": 3,
+      "kinds": [
+        "diagram",
+        "prompt",
+        "command"
+      ],
+      "material_count": 12,
+      "finding_count": 0,
+      "findings": [],
+      "verdict": "PASS"
+    }
+  ],
+  "verdict": "PASS",
+  "findings": [],
+  "generated_at": "2026-08-13T06:51:13.552Z"
+}

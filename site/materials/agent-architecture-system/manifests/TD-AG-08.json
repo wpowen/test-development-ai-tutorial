@@ -1,0 +1,24 @@
+{
+  "manifest_version": "1.0.0",
+  "topic_id": "TD-AG-08",
+  "working_directory": "materials/agent-architecture-system",
+  "steps": [
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/agent_architecture_lab.py --topic TD-AG-08 --phase cycle --report-dir reports/td-ag-08",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-ag-08/baseline.json",
+        "reports/td-ag-08/fault.json",
+        "reports/td-ag-08/repair.json",
+        "reports/td-ag-08/cycle-summary.json"
+      ]
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "evidence_boundary": "offline deterministic fixture only; live model/integration/practitioner/learner NOT_RUN"
+}

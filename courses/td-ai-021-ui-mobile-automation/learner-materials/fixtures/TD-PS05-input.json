@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS05",
+  "scenario": "客服工作台在键盘、辅助技术、窄视口和中英文长文本下仍需安全完成退款",
+  "controlling_question": "怎样区分 DOM 规则、键盘旅程、可访问语义和视觉差异，并防止自动更新基线掩盖回归？",
+  "known_rules": [
+    "关键控件 name role value 可编程确定",
+    "完整退款过程键盘可达且焦点可见",
+    "390px 与长文本不遮挡风险和批准控件",
+    "视觉基线变更有设计 owner 审批"
+  ],
+  "faults": [
+    "移除对话框 accessible name",
+    "隐藏焦点样式",
+    "长文本遮挡确认按钮"
+  ],
+  "unknowns": [
+    "真实辅助技术组合、用户研究结果和品牌容差"
+  ],
+  "data_classification": "synthetic"
+}

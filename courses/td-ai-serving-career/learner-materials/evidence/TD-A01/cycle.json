@@ -1,0 +1,21 @@
+{
+  "page_id": "TD-A01",
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "verdict": "PASS",
+  "reports": {
+    "baseline": "/Volumes/MACSSD/owen-home/Documents/workspace/career-ai-course-factory/outputs/test-development-ai-v2/site/public/materials/ai-serving-career/evidence/TD-A01/baseline.json",
+    "fault": "/Volumes/MACSSD/owen-home/Documents/workspace/career-ai-course-factory/outputs/test-development-ai-v2/site/public/materials/ai-serving-career/evidence/TD-A01/fault.json",
+    "repair": "/Volumes/MACSSD/owen-home/Documents/workspace/career-ai-course-factory/outputs/test-development-ai-v2/site/public/materials/ai-serving-career/evidence/TD-A01/baseline.json"
+  },
+  "evidence_level": "PASS-FIXTURE",
+  "model_execution": "NOT_RUN"
+}

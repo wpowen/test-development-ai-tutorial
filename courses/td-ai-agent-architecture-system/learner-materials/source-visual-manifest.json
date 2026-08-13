@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "td-ai-agent-architecture-source-visuals",
+  "source": {
+    "path": "/Users/owen/Downloads/AI agent测试架构.txt",
+    "sha256": "b38274bcc1ba2d8c6e721157765f1b64ae70b0cbc9cc2cdd0a703140a69b2b54",
+    "locators": [
+      "AI agent测试架构.txt:L73-L238",
+      "AI agent测试架构.txt:L238-L494",
+      "AI agent测试架构.txt:L496-L574"
+    ]
+  },
+  "visuals": [
+    {
+      "visual_id": "agent-test-architecture",
+      "kind": "architecture",
+      "purpose": "在选择测试方法前画出 Agent 系统、信任与副作用边界，并连接 D0-D7、护栏、决定和失败反馈。",
+      "alt_text": "AI Agent 测试总架构图，从输入与风险进入 D0 评估可信，再到 D1-D7 行为、协作、可靠性、安全、效率与治理，最后连接四证据环、运行时护栏和决定反馈。",
+      "caption": "测试架构不是维度清单；它把边界、风险、Observable、独立 Oracle、故障、证据、停止动作和 owner 连成系统。",
+      "not_proof": "本图不证明真实 Agent、企业集成、从业者有效性或生产安全，以上保持 NOT_RUN。",
+      "source_refs": [
+        "AI agent测试架构.txt:L73-L238"
+      ],
+      "nodes": [
+        "输入与风险",
+        "D0 评估可信",
+        "D1-D3",
+        "D4-D7",
+        "四证据环",
+        "运行时护栏",
+        "决定与反馈"
+      ],
+      "relationships": [
+        "输入→D0",
+        "D0→D1-D7",
+        "域→证据环",
+        "护栏→停止",
+        "决定→失败回灌"
+      ],
+      "rendered_path": "visuals/AG-DIM-ARCHITECTURE.svg",
+      "editable_path": "visuals/agent-visual-source.json",
+      "sha256": "639667702b6a9fe424bb576b8a891eb4e9d0e2b4d4664f805c04e82a0934ab31"
+    },
+    {
+      "visual_id": "agent-four-evidence-rings",
+      "kind": "four_ring",
+      "purpose": "区分离线 fixture、受控沙箱、影子灰度和在线持续评估能证明什么，并为每环声明 entry、exit 与 rollback。",
+      "alt_text": "四列证据环图分别展示离线 fixture、受控沙箱、影子或灰度、在线持续评估的输入、进入条件、退出条件、硬阻断、owner 和回滚。",
+      "caption": "每次成熟度升级都需要新的真实输入和 owner；当前课程只运行环一，环二至环四保持 NOT_RUN。",
+      "not_proof": "本图不证明沙箱、影子、灰度或在线评估已经执行，它们均为 NOT_RUN。",
+      "source_refs": [
+        "AI agent测试架构.txt:L496-L524"
+      ],
+      "nodes": [
+        "离线 fixture",
+        "受控沙箱",
+        "影子 / 灰度",
+        "在线持续",
+        "参数化门禁"
+      ],
+      "relationships": [
+        "fixture→sandbox",
+        "sandbox→shadow",
+        "shadow→online",
+        "exit failure→rollback",
+        "failure→fixture feedback"
+      ],
+      "rendered_path": "visuals/AG-DIM-FOUR-RINGS.svg",
+      "editable_path": "visuals/agent-visual-source.json",
+      "sha256": "3b14486491c50b2e3c60919638b779d069801bc4ec8631a211549426e759c4d6"
+    },
+    {
+      "visual_id": "agent-three-stage-gate",
+      "kind": "gate",
+      "purpose": "把硬政策、统计证据和具名风险接受分成三个不能互相抵消的决策阶段。",
+      "alt_text": "三段式门禁图先检查由 Metric Card 与 policy 配置的硬红线，再检查区间与样本充分性，最后由具名 owner 决定风险接受、发布或回滚。",
+      "caption": "流水线提供证据和阻断，不自动签署发布决定；固定阈值必须由场景 Metric Card 参数化。",
+      "not_proof": "本图不证明任何真实系统已达到门禁，真实 policy、阈值和 owner 保持 Unknown / NOT_RUN。",
+      "source_refs": [
+        "AI agent测试架构.txt:L525-L574"
+      ],
+      "nodes": [
+        "候选证据包",
+        "硬政策门禁",
+        "统计门禁",
+        "风险接受",
+        "阻断与回滚"
+      ],
+      "relationships": [
+        "证据→硬门禁",
+        "硬门禁→统计门禁",
+        "统计门禁→风险接受",
+        "任一失败→阻断",
+        "决定→回灌"
+      ],
+      "rendered_path": "visuals/AG-DIM-GATE.svg",
+      "editable_path": "visuals/agent-visual-source.json",
+      "sha256": "a2828b4be649f40335c3ca4d541629b2652627197b58dcf0448bf172be8a409a"
+    },
+    {
+      "visual_id": "agent-36-dimensions",
+      "kind": "dimensions",
+      "purpose": "逐项保留 D0-D7 共 36 个维度并展示 D0 校准、域间依赖、四环、护栏和决策输出。",
+      "alt_text": "D0-D7 的 36 维全景图，D0 评估可信校准其他域，D1-D7 展示能力、协作、可靠性、安全、效率和治理维度，并连接证据环和护栏。",
+      "caption": "36 维是覆盖清单，不替代场景风险分析；每一维仍须映射到独立 Oracle、case、fault、evidence 与 owner。",
+      "not_proof": "本图不证明 36 维均已在真实项目运行；课程仅提供 fixture 与静态设计证据，live 保持 NOT_RUN。",
+      "source_refs": [
+        "AI agent测试架构.txt:L238-L494"
+      ],
+      "nodes": [
+        "D0",
+        "D1",
+        "D2",
+        "D3",
+        "D4",
+        "D5",
+        "D6",
+        "D7",
+        "四证据环"
+      ],
+      "relationships": [
+        "D0→D1-D7",
+        "D1→D2",
+        "D4→D7",
+        "D5→护栏",
+        "四环→域执行"
+      ],
+      "rendered_path": "visuals/AG-DIM-36.svg",
+      "editable_path": "visuals/agent-visual-source.json",
+      "sha256": "c1c7c88f064c879f6f259211aa788bbc43d2ecc978c64e2a61b3460c6de3aab5"
+    }
+  ],
+  "evidence_boundary": "Static design and fixture evidence only; live model, integration, practitioner and production validation are NOT_RUN."
+}

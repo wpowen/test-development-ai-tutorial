@@ -1,113 +1,186 @@
-# 测试开发 × AI：专业能力迁移课程地图
+# 测试开发 × AI：Canonical 课程地图
 
-本课程不是从热门工具开始，而是从测试职业原有能力出发，逐步进入大模型运行、AI 辅助测试、LLM/RAG/Agent/Workflow 评测、AI 质量工程和 Benchmark。
+更新时间：2026-08-11
 
-完整方法见 `learning-architecture.md`；机器可检查的依赖、阶段和专题见 `research/competency-transition-map.json`。
+本地图只描述内部课程目录和依赖，不声明公开课程已经完成。Canonical 目录包含 117 个主题：105 个既有专业命题，加 12 个主动审计发现的高风险缺口。46 个旧课程合同和 107 个站点 ID 均保留在迁移表中作为 alias，不再作为独立完成事实。
 
-## 总路径
+## 依赖主线
 
-```text
-传统测试基线
-  → 大模型与 AI 系统基础
-  → AI 应用于传统测试
-  → LLM / RAG / 多模态评测
-  → Agent / Worker / Workflow 测试
-  → AI Quality Engineering
-  → Benchmark 与分数工程
-  → AI QE Capstone
-```
+`职业责任 → AI 基础 → 测试生命周期 → Eval 数据/Oracle/统计 → AI 辅助测试 → LLM/RAG → Agent + 安全 → Serving/性能 → 质量平台/生产/Benchmark → Capstone`
 
-学习者可以免修讲解，但不能免交阶段工件。没有证明测试能被真实缺陷变红，就不能直接进入 LLM Judge；没有可信 Scorer 和版本清单，就不能把分数接进 CI。
+任何阶段都必须通过工件退出考核；观看页面、静态渲染、共享 Fixture 或旧 alias 状态不能跳过前置能力。
 
-## Stage 0：传统测试能力基线
+## CAT-00：职业责任、入场检查与路线
 
-| ID | 课题 | 核心问题 | 学员工件 | 退出标准 |
-| --- | --- | --- | --- | --- |
-| TD-BASE-01 | 传统研发测试流程与 AI 变化点 | 需求、开发、测试、发布、生产反馈中，AI 改变了哪些对象和责任？ | 流程与变化地图 | 每个变化点有系统、风险和责任人 |
-| TD-BASE-02 | 测试设计、Oracle 与 Mutation 入场考核 | 你能否把业务规则变成真的会失败的测试？ | 追踪矩阵、测试、Mutation 报告 | 产品缺陷使测试稳定 RED |
-| TD-BASE-03 | 自动化、Trace、CI 与发布基线 | 测试如何可重放、可诊断并支持发布？ | 测试仓库、CI Gate、证据报告 | Commit→执行→报告→阻断闭环 |
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 1 | TD-000 | AI 时代测试开发的责任边界 | — | outlined | fixture-tested |
+| 2 | TD-001 | 测试对象为什么从代码扩展到 AI 系统 | TD-000 | outlined | fixture-tested |
+| 3 | TD-002 | 传统测试能力入场检查 | TD-000 | outlined | fixture-tested |
+| 4 | TD-003 | 三条岗位路线 | TD-001；TD-002 | outlined | fixture-tested |
 
-## Stage 1：大模型与 AI 系统基础
+## CAT-01：AI 系统基础
 
-| ID | 课题 | 测试行业为什么需要 | 学员工件 | 退出标准 |
-| --- | --- | --- | --- | --- |
-| TD-FOUND-01 | 大模型从数据、训练到推理和监控 | 分清训练知识、模型版本、推理配置和线上漂移 | 模型生命周期测试地图 | 每阶段有风险和可观察证据 |
-| TD-FOUND-02 | Token、Attention、Context 与概率生成 | 解释长度、上下文、位置和解码参数为什么改变输出 | 推理变量实验表 | 固定版本并解释输出差异 |
-| TD-FOUND-03 | Embedding、RAG、Tool call 与 Agent loop | 把“AI 答错了”拆成检索、生成、工具和状态问题 | AI 系统结构与 Trace 图 | 症状能映射到首查层 |
-| TD-FOUND-04 | 大模型能力边界与 AI 测试对象 | 为幻觉、拒答、权限、隐私、成本选择 Oracle | 失败分类与 Oracle 决策表 | 高风险 Blocker 不被平均分抵消 |
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 5 | TD-201 | 从训练到推理 | TD-003 | outlined | fixture-tested |
+| 6 | TD-202 | Token、Context 与 Attention | TD-201 | outlined | fixture-tested |
+| 7 | TD-203 | 概率生成与采样 | TD-202 | outlined | fixture-tested |
+| 8 | TD-204 | Prompt 与结构化输出 | TD-203 | planned | unmeasured |
+| 9 | TD-205 | Embedding 与向量检索 | TD-204 | outlined | fixture-tested |
+| 10 | TD-206 | RAG 最小架构 | TD-205 | outlined | fixture-tested |
+| 11 | TD-207 | Tool Calling | TD-206 | outlined | fixture-tested |
+| 12 | TD-208 | Agent、Worker 与 Workflow | TD-207 | outlined | fixture-tested |
+| 13 | TD-209 | Memory、State 与 Trace | TD-208 | outlined | fixture-tested |
+| 14 | TD-210 | AI 能力边界 | TD-209 | outlined | fixture-tested |
+| 15 | TD-X602 | 训练、Fine-tuning 与模型更新质量 | TD-210 | outlined | fixture-tested |
 
-## Stage 2：AI 应用于传统测试
+## CAT-02：测试生命周期与专业基线
 
-| ID | 课题 | 学员工件 | 证伪方式 |
-| --- | --- | --- | --- |
-| TD-AI-01 | 用 AI 从 PRD/代码 Diff 建立风险模型 | 风险矩阵、追踪表 | 注入缺失状态规则 |
-| TD-AI-02 | AI 生成自动化测试，但必须证明它会失败 | 可执行测试、Mutation 报告 | 产品 Mutation 必须 RED |
-| TD-AI-03 | 用 AI 读 Trace/Log/Diff 做失败归因 | 引用式缺陷报告 | 删除证据后置信度下降 |
-| TD-AI-04 | AI 生成属性、边界和 Fuzz 数据 | 数据生成器、最小反例 | 命中并缩小边界缺陷 |
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 16 | TD-101 | 需求可测性与验收条件 | TD-210 | outlined | fixture-tested |
+| 17 | TD-102 | 风险驱动测试策略 | TD-101 | outlined | fixture-tested |
+| 18 | TD-103 | 用例设计与 Oracle | TD-102 | outlined | fixture-tested |
+| 19 | TD-104 | 测试数据与环境 | TD-103 | planned | unmeasured |
+| 20 | TD-105 | 自动化分层 | TD-104 | outlined | fixture-tested |
+| 21 | TD-106 | 执行、证据与缺陷诊断 | TD-105 | outlined | fixture-tested |
+| 22 | TD-107 | 发布、Waiver 与回滚 | TD-106 | outlined | fixture-tested |
+| 23 | TD-108 | 生产质量闭环 | TD-107 | outlined | fixture-tested |
+| 24 | TD-X101 | 静态测试、架构、代码与依赖质量 | TD-108 | outlined | fixture-tested |
+| 25 | TD-X102 | 数据库、数据管道与迁移质量 | TD-X101 | outlined | desk-researched |
+| 26 | TD-X103 | Web 兼容、可访问性与本地化质量 | TD-X102 | outlined | desk-researched |
+| 27 | TD-X104 | Android 质量工程 | TD-X103 | outlined | desk-researched |
+| 28 | TD-X105 | iOS 质量工程 | TD-X104 | outlined | desk-researched |
 
-## Stage 3：测试 LLM、RAG 与多模态系统
+## CAT-03：Evaluation、数据与统计基础
 
-| ID | 课题 | 学员工件 | 证伪方式 |
-| --- | --- | --- | --- |
-| TD-EVAL-01 | Eval Dataset、Dataset card、切片与 Holdout | Eval 数据、数据卡、Holdout 清单 | 重复、污染和切片缺口检测 |
-| TD-EVAL-02 | Scorer、Rubric、LLM Judge 与人工校准 | Rubric、校准报告、分歧集 | Judge 反例与人工分歧 |
-| TD-AI-05 | LLM 评测基础：黄金集、Rubric 与阈值 | Eval cases、门禁阈值 | 低质量 Snapshot 被阻断 |
-| td-ai-006-rag-eval-ci | RAG 分层评测：检索、回答、引用与忠实性 | 可运行 RAG Eval Repo | 幻觉、丢引用、Injection PASS→FAIL→PASS |
-| TD-AI-07 | Prompt/模型/知识库 A/B 与版本回归 | 实验账本、对比报告 | 关键 Slice 触发回归 |
-| TD-AI-09 | LLM/RAG/Agent 安全红队 | Attack set、红队报告 | 注入、泄露和越权阻断 |
-| TD-AI-10 | 多模态文档与截图评测 | 多模态数据集、切片报告 | OCR 和视觉幻觉 Mutation |
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 29 | TD-1001 | 从业务风险到 Eval Task | TD-X105 | outlined | fixture-tested |
+| 30 | TD-1002 | 数据采样与代表性 | TD-1001 | outlined | fixture-tested |
+| 31 | TD-1003 | 标注与冲突处理 | TD-1002 | outlined | fixture-tested |
+| 32 | TD-1004 | Dev、Regression 与 Holdout | TD-1003 | outlined | fixture-tested |
+| 33 | TD-1005 | Scorer 与聚合 | TD-1004 | outlined | fixture-tested |
+| 34 | TD-1006 | 不确定性与显著性 | TD-1005 | outlined | fixture-tested |
+| 35 | TD-1007 | 污染与泄漏 | TD-1006 | outlined | fixture-tested |
+| 36 | TD-1008 | Harness 与协议敏感性 | TD-1007 | outlined | fixture-tested |
 
-## Stage 4：测试 Agent、Worker 与 Workflow
+## CAT-04：AI 辅助测试全生命周期
 
-| ID | 课题 | 学员工件 | 证伪方式 |
-| --- | --- | --- | --- |
-| TD-AI-08 | 最终结果、单步动作与完整轨迹 | Trajectory cases、Agent report | 错工具、错参数和伪成功 |
-| TD-AI-11 | Playwright Planner/Generator/Healer | Seed、Specs、Tests、Trace | Healer 后产品 Mutation 仍 RED |
-| TD-AI-12 | Browser/API Agent 沙箱、工具与权限 | Policy、Agent Trace | 越权副作用被阻断 |
-| TD-AI-13 | 自愈测试反作弊门禁 | Healer policy、Semantic diff | 删除断言和放宽等待被拒绝 |
-| TD-AI-14 | Worker Workflow 与多 Agent 流水线 | Handoff contract、Verifier report | 独立 Verifier 拒绝伪成功，并与单 Agent 同预算对照 |
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 37 | TD-301 | AI 解析 PRD | TD-1004 | outlined | fixture-tested |
+| 38 | TD-302 | AI 审查架构与代码 Diff | TD-301 | outlined | fixture-tested |
+| 39 | TD-303 | AI 生成测试场景 | TD-302 | outlined | fixture-tested |
+| 40 | TD-304 | AI 生成边界、组合与 Fuzz 数据 | TD-303 | outlined | fixture-tested |
+| 41 | TD-305 | AI 生成单元与组件测试 | TD-304 | outlined | fixture-tested |
+| 42 | TD-306 | AI 生成 API/契约测试 | TD-305 | outlined | fixture-tested |
+| 43 | TD-307 | AI 生成 UI/E2E 测试 | TD-306 | outlined | fixture-tested |
+| 44 | TD-308 | AI 测试 Agent | TD-307 | outlined | fixture-tested |
+| 45 | TD-309 | AI 分析失败与日志 | TD-308 | outlined | fixture-tested |
+| 46 | TD-310 | AI 生成发布报告 | TD-309 | outlined | fixture-tested |
 
-这里明确区分：Workflow 是代码预先规定的路径；Agent 会动态决定步骤和工具；Worker 是承担一个有边界任务的执行单元。测试时既要看业务终态，也要看中间状态、工具、权限、重试、预算、超时、Handoff 和副作用。
+## CAT-05：LLM、RAG 与多模态质量
 
-## Stage 5：AI Quality Engineering
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 47 | TD-401 | LLM 测试任务定义 | TD-1008 | outlined | fixture-tested |
+| 48 | TD-402 | 确定性与语义 Oracle | TD-401 | outlined | fixture-tested |
+| 49 | TD-403 | 事实性、相关性与完整性 | TD-402 | outlined | fixture-tested |
+| 50 | TD-404 | 拒答与安全边界 | TD-403 | outlined | fixture-tested |
+| 51 | TD-405 | Prompt/模型 A/B | TD-404 | outlined | fixture-tested |
+| 52 | TD-406 | 多轮与长上下文 | TD-405 | planned | unmeasured |
+| 53 | TD-407 | LLM-as-Judge 校准 | TD-406 | outlined | fixture-tested |
+| 54 | TD-408 | 非确定性与统计结论 | TD-407 | outlined | fixture-tested |
+| 55 | TD-501 | 知识库数据质量 | TD-206；TD-408 | outlined | fixture-tested |
+| 56 | TD-502 | 检索召回 | TD-501 | outlined | fixture-tested |
+| 57 | TD-503 | 重排与上下文选择 | TD-502 | outlined | fixture-tested |
+| 58 | TD-504 | 回答忠实性与引用 | TD-503 | outlined | fixture-tested |
+| 59 | TD-505 | 无答案与冲突知识 | TD-504 | outlined | fixture-tested |
+| 60 | TD-506 | 多租户与权限过滤 | TD-505 | outlined | fixture-tested |
+| 61 | TD-507 | RAG 性能与成本 | TD-506 | outlined | fixture-tested |
+| 62 | TD-508 | RAG 回归与线上反馈 | TD-507 | outlined | fixture-tested |
+| 63 | TD-X501 | 多模态 AI 评测 | TD-408 | outlined | fixture-tested |
+| 64 | TD-X502 | 多语言、可访问性与包容性 AI 评测 | TD-X501 | outlined | fixture-tested |
 
-| ID | 课题 | 学员工件 | 证伪方式 |
-| --- | --- | --- | --- |
-| TD-AI-15 | 评测集、Prompt、模型与工具版本管理 | Experiment ledger、Version manifest | 历史实验可重放 |
-| TD-AI-16 | 把 AI 评测接进 CI/CD | Quality Gate、Waiver 模板 | 已知回归非零退出并阻断 |
-| TD-AI-17 | Trace、线上反馈与回归集闭环 | Feedback-to-eval 流水线 | 脱敏失败带 Lineage 入库 |
-| TD-AI-18 | 质量、成本、延迟与稳定性联合评估 | Pareto 报告 | 单一高分不能掩盖成本/延迟退化 |
-| TD-AI-19 | 漂移、告警、Waiver、回滚与事故演练 | Runbook、事故时间线 | 漂移触发告警和回滚 |
+## CAT-06：Agent、Workflow 与安全
 
-## Stage 6：Benchmark 与分数工程
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 65 | TD-601 | Agent 测试分层 | TD-208；TD-408 | outlined | fixture-tested |
+| 66 | TD-602 | 工具选择与参数 | TD-601 | outlined | fixture-tested |
+| 67 | TD-901 | AI 威胁建模 | TD-602 | outlined | fixture-tested |
+| 68 | TD-902 | Prompt Injection | TD-901 | outlined | fixture-tested |
+| 69 | TD-903 | 数据泄露与隐私 | TD-901 | outlined | fixture-tested |
+| 70 | TD-904 | Excessive Agency | TD-901 | outlined | fixture-tested |
+| 71 | TD-905 | 多租户隔离 | TD-903；TD-904 | planned | unmeasured |
+| 72 | TD-906 | 供应链与模型依赖 | TD-901 | planned | unmeasured |
+| 73 | TD-907 | 安全评测与红队 | TD-902；TD-903；TD-904；TD-906 | outlined | fixture-tested |
+| 74 | TD-908 | 混沌、降级与灾备 | TD-907 | outlined | fixture-tested |
+| 75 | TD-603 | 权限与副作用 | TD-602；TD-901 | outlined | fixture-tested |
+| 76 | TD-604 | 状态与并发隔离 | TD-603 | outlined | fixture-tested |
+| 77 | TD-605 | 循环、重试与终止 | TD-604 | outlined | fixture-tested |
+| 78 | TD-606 | Handoff 与多 Agent | TD-605 | outlined | fixture-tested |
+| 79 | TD-607 | Human-in-the-loop | TD-606 | outlined | fixture-tested |
+| 80 | TD-608 | Agent 安全 | TD-907 | planned | unmeasured |
+| 81 | TD-609 | Browser/Computer-use Agent | TD-603；TD-605；TD-608 | outlined | fixture-tested |
+| 82 | TD-610 | Agent 回归与 Benchmark | TD-609 | outlined | fixture-tested |
+| 83 | TD-X601 | 公平性、伤害与人类监督有效性 | TD-907 | outlined | fixture-tested |
+| 84 | TD-X603 | 长期 Memory、个性化与语义缓存质量 | TD-604；TD-903 | outlined | fixture-tested |
+| 85 | TD-X604 | 模型路由、Provider Fallback 与工具协议漂移 | TD-602；TD-906；TD-908 | outlined | fixture-tested |
 
-| ID | 课题 | 必须讲清楚 | 学员工件 |
-| --- | --- | --- | --- |
-| TD-BENCH-01 | Benchmark 数据如何构造 | 任务、来源、采样、标注、Split、Holdout、污染 | Benchmark spec、Dataset card |
-| TD-BENCH-02 | 分数如何产生 | Harness、Prompt、权限、重复运行、Scorer、Accuracy/Pass@k/Resolved rate/Judge score | Harness config、Metric card、复现报告 |
-| TD-BENCH-03 | 分数是否可信 | 样本数、方差、置信区间、污染、隐藏测试、版本可比性 | 不确定性报告、污染审计 |
-| TD-BENCH-04 | 从公开榜单到内部 Benchmark | 公开任务与真实业务分布的差异、线上失败回流、维护政策 | Internal benchmark repo |
+## CAT-07：Serving、性能与稳定性
 
-Benchmark 课程不背模型排名。学习者必须复现一个小型分数，改变 Prompt、Scorer 或数据变量，然后解释为什么分数变化。SWE-bench、AgentBench、HELM 和 lm-evaluation-harness 作为“分数条件”的案例，而不是永不过时的排行榜。
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 86 | TD-701 | AI API 协议特点 | TD-207；TD-408；TD-X604 | outlined | fixture-tested |
+| 87 | TD-702 | TTFT、ITL/TPOT 与 E2E | TD-701 | outlined | fixture-tested |
+| 88 | TD-703 | Token 与请求吞吐 | TD-702 | outlined | fixture-tested |
+| 89 | TD-704 | Prefill、Decode、Batch 与 KV Cache | TD-703 | outlined | fixture-tested |
+| 90 | TD-705 | 工作负载建模 | TD-704 | outlined | fixture-tested |
+| 91 | TD-706 | LLM Serving 压测工具 | TD-705 | outlined | fixture-tested |
+| 92 | TD-707 | 容量、Goodput 与成本 | TD-706 | outlined | fixture-tested |
+| 93 | TD-708 | 限流、超时、重试和降级 | TD-707 | outlined | fixture-tested |
+| 94 | TD-AP01 | 为什么 Agent 压测不是 API 压测 | TD-610；TD-708 | outlined | fixture-tested |
+| 95 | TD-AP02 | Agent 指标体系 | TD-AP01 | outlined | fixture-tested |
+| 96 | TD-AP03 | Agent 负载模型与数据集 | TD-AP02 | outlined | fixture-tested |
+| 97 | TD-AP04 | Trace 与可观测数据结构 | TD-AP03 | outlined | fixture-tested |
+| 98 | TD-AP05 | 压测系统架构与工具选型 | TD-AP04 | outlined | fixture-tested |
+| 99 | TD-AP06 | Agent 压测 SOP | TD-AP05 | outlined | fixture-tested |
+| 100 | TD-AP07 | 诊断队列、重试与成本放大 | TD-AP06 | outlined | fixture-tested |
+| 101 | TD-AP08 | 线上 SLO、告警与稳定性 Runbook | TD-AP07 | outlined | fixture-tested |
 
-## Stage 7：AI QE Capstone
+## CAT-08：质量平台、Benchmark 与生产运营
 
-| ID | 课题 | 交付 |
-| --- | --- | --- |
-| TD-AI-20 | AI QE 平台 Capstone | Commit→Eval→CI→Trace→Regression→Waiver/回滚的端到端仓库 |
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 102 | TD-1101 | AI 版本与 Lineage | TD-508；TD-610；TD-708 | outlined | fixture-tested |
+| 103 | TD-1102 | Eval 接入 CI/CD | TD-1101 | outlined | fixture-tested |
+| 104 | TD-1103 | 质量—延迟—成本联合门禁 | TD-1102 | outlined | fixture-tested |
+| 105 | TD-1104 | AI Trace 与生产反馈 | TD-1103 | outlined | fixture-tested |
+| 106 | TD-1105 | 在线质量监控与漂移 | TD-1104 | outlined | fixture-tested |
+| 107 | TD-1106 | 告警、Waiver 与回滚 | TD-1105 | outlined | fixture-tested |
+| 108 | TD-1107 | 评测平台数据模型 | TD-1106 | outlined | fixture-tested |
+| 109 | TD-1108 | 质量治理与审计 | TD-1107 | outlined | fixture-tested |
+| 110 | TD-1009 | 公共 Benchmark 解读 | TD-1105；TD-1008 | outlined | fixture-tested |
+| 111 | TD-1010 | 企业内部 Benchmark | TD-1009 | outlined | fixture-tested |
+| 112 | TD-X805 | 在线实验、Canary 与人工抽样评审 | TD-1105；TD-1006 | outlined | fixture-tested |
 
-Capstone 必须组合注入检索、生成、工具、权限、成本或漂移事故，并证明系统会阻断、诊断、修复和保留证据边界。
+## CAT-09：Capstone、作品集与职业迁移
 
-## 专题路线
+| 顺序 | Canonical ID | 主题 | 前置 | Delivery | Evidence maturity |
+| ---: | --- | --- | --- | --- | --- |
+| 113 | TD-1201 | AI 辅助测试项目 | TD-310；TD-1106 | planned | unmeasured |
+| 114 | TD-1202 | RAG 质量项目 | TD-508；TD-1106 | planned | unmeasured |
+| 115 | TD-1203 | Agent 质量项目 | TD-610；TD-AP08；TD-1106 | planned | unmeasured |
+| 116 | TD-1204 | AI 质量平台项目 | TD-1010；TD-X805 | outlined | fixture-tested |
+| 117 | TD-1205 | 岗位能力与作品集 | TD-1201；TD-1202；TD-1203；TD-1204 | outlined | fixture-tested |
 
-- 自动化测试开发：Stage 0 → 1 → 2 → Agent/Healer 专题 → CI。
-- AI 应用质量工程师：Stage 0–7 全部完成，重点是 LLM、RAG、Agent、Workflow 和 Benchmark。
-- 测试平台工程师：Stage 0–3 基础 + Stage 5–7 深入，重点是版本、可观测性、门禁、漂移和治理。
-- 安全测试：Stage 0–3 基础 + Agent 沙箱 + 红队 + 事故治理。
+## 状态边界
 
-## 当前交付状态
-
-- 已有可运行样例：`td-ai-006-rag-eval-ci`，离线 Fixture 已完成 PASS→FAIL→PASS。
-- 已有 52/52 页完整可读路径：传统测试、大模型基础、AI 辅助测试、AI 系统评测、Agent/Workflow、质量系统、Benchmark、Capstone 与职业演进。
-- 所有页面均已达到正文交付门禁；除 RAG 离线 Fixture 外，多数专题仍需真实系统实验和从业者评审。
-- 尚未证明：真实模型效果、真实企业数据适配、目标学员学习增益和生产有效性。
+- `planned`：有 canonical 学习合同，但没有独立正文。
+- `outlined`：存在旧页面或别名材料，但 canonical topic 的九文件研究包和页面门禁尚未通过。
+- `gap`：证据显示能力可能重要，但尚未完成研究裁决。
+- `fixture-tested` 只描述指定 alias 的离线执行证据，不升级 canonical topic 的内容完成度。
+- 当前 117 个 canonical topic 的 `content_gate` 全部保持 `blocked`；TD-P02 的 Fixture 证据单独保留，不外推到 TD-301 全命题或整课。

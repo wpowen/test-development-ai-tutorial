@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C01",
+  "topic_id": "TD-C01",
+  "title": "职业能力迁移：岗位路径、自评证据与作品集边界",
+  "working_directory": "materials/ai-serving-career",
+  "input_fixture": "fixtures/TD-C01-input.json",
+  "expected": {
+    "career.employment_guarantee": false,
+    "career.evidence_refs_complete": true,
+    "career.role_boundary_complete": true
+  },
+  "fault_patch": {
+    "career.employment_guarantee": true,
+    "career.evidence_refs_complete": false
+  },
+  "oracle": "岗位负责/协作/禁止边界清楚；自评分有 evidence_ref 或 UNKNOWN；90 天计划含 baseline-fault-repair；employment_guarantee=false。",
+  "required_files": [
+    "owners.json",
+    "scripts/serving_lab.py",
+    "fixtures/TD-C01-input.json",
+    "prompts/TD-C01/system-v1.md",
+    "prompts/TD-C01/task-v1.md",
+    "prompts/TD-C01/critic-v1.md",
+    "prompts/TD-C01/manifest.json",
+    "prompts/TD-C01/mutation.json",
+    "schemas/TD-C01-output.schema.json",
+    "evals/TD-C01-eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-C01.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-C01/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-C01.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-C01/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-C01.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-C01/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-C01.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-C01/baseline.json",
+        "evidence/TD-C01/fault.json",
+        "evidence/TD-C01/repair.json",
+        "evidence/TD-C01/cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "owners": {
+    "content": "TD-C01-content-owner",
+    "oracle": "TD-C01-oracle-owner",
+    "release": "ai-serving-career-release-owner"
+  },
+  "unknowns": [
+    "课程不能证明招聘需求、薪资、晋升、地区机会或个体适配。"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

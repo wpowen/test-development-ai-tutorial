@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A02",
+  "mutation_id": "MUT-TD-A02-01",
+  "description": "模拟断流重试后再次执行同一工具，使 side_effect_count 从 1 变成 2。",
+  "fault_patch": {
+    "tool.side_effect_count": 2
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

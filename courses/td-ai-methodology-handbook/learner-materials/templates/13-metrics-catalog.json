@@ -1,0 +1,67 @@
+{
+  "catalog_version": "1.0.0",
+  "note": "所有 threshold 字段为占位 null。填写前必须先采集 3-5 个稳定周期的实测分布（见方法论 08.6）。",
+  "groups": [
+    {
+      "group": "A-检测力",
+      "metrics": [
+        {"id": "mutation_kill_rate", "name": "变异杀死率", "formula": "killed / (killed + survived)", "excludes": ["no-coverage"], "decision": "AI 生成用例是否有检测力", "owner": null, "threshold": null, "on_breach": "拒绝合并生成用例", "anti_cheat": "变异集不得由被考核方单独定义"},
+        {"id": "risk_coverage", "name": "风险覆盖率", "formula": "已有测试的风险数 / 登记风险数，按 RPN 档位分别计算", "decision": "策略是否落地", "owner": null, "threshold": null, "on_breach": "补测或走降档记录", "anti_cheat": "风险登记数须由独立方抽查"},
+        {"id": "fault_injection_pass", "name": "故障注入通过率", "formula": "0/1/0 三段全部符合的用例 / 总注入用例", "decision": "门禁是否有牙齿", "owner": null, "threshold": null, "on_breach": "修复门禁", "anti_cheat": "禁止注入无害故障"},
+        {"id": "escape_intercept_rate", "name": "逃逸拦截率", "formula": "本应被现有门禁拦下的逃逸 / 全部逃逸", "decision": "门禁配置问题还是覆盖问题", "owner": null, "threshold": null, "on_breach": "门禁复审", "anti_cheat": "归因需第二人复核"}
+      ]
+    },
+    {
+      "group": "B-AI质量",
+      "metrics": [
+        {"id": "schema_pass_rate", "name": "Schema 通过率", "formula": "结构合法样本 / 总样本", "decision": "传输契约是否成立", "owner": null, "threshold": null, "on_breach": "阻断", "anti_cheat": "禁止放宽 Schema 换取通过"},
+        {"id": "citation_existence", "name": "引用存在率", "formula": "可在证据中找到的引用 / 总引用", "decision": "RAG 可信度", "owner": null, "threshold": null, "on_breach": "阻断", "anti_cheat": "抽检引用是否只覆盖固定文档"},
+        {"id": "faithfulness", "name": "忠实度", "formula": "被证据支持的事实点 / 总事实点", "decision": "RAG 核心质量", "owner": null, "threshold": null, "on_breach": "阻断", "anti_cheat": "不得用生成模型自评"},
+        {"id": "slice_blocker_rate", "name": "切片 blocker 失败率", "formula": "各 blocker 切片的失败样本 / 该切片样本", "decision": "发布决定", "owner": null, "threshold": null, "on_breach": "阻断发布（无论总分）", "anti_cheat": "切片定义变更须评审"},
+        {"id": "pass_at_k", "name": "pass@k", "formula": "k 次采样中至少一次成功的估计", "decision": "能力上限", "owner": null, "threshold": null, "on_breach": null, "anti_cheat": "不得用它替代可靠性承诺"},
+        {"id": "pass_pow_k", "name": "pass^k", "formula": "k 次采样全部成功的估计", "decision": "对用户的可靠性承诺", "owner": null, "threshold": null, "on_breach": "阻断", "anti_cheat": "报告中必须与 pass@k 分开标注"},
+        {"id": "refusal_correctness", "name": "拒答正确率", "formula": "期望拒答集上的正确拒答 / 期望拒答样本", "decision": "安全与体验", "owner": null, "threshold": null, "on_breach": "阻断", "anti_cheat": "必须建期望拒答集"},
+        {"id": "nondeterminism_spread", "name": "非确定性幅度", "formula": "重复运行结果的标准差或区间宽度", "decision": "是否可上线", "owner": null, "threshold": null, "on_breach": "阻断", "anti_cheat": "禁止只跑一次"},
+        {"id": "drift", "name": "漂移幅度", "formula": "相对发布基线在同数据集上的偏移", "decision": "是否重训或回滚", "owner": null, "threshold": null, "on_breach": "调查", "anti_cheat": "基线更新须记录 run_id 与批准人"}
+      ]
+    },
+    {
+      "group": "C-效率与经济性",
+      "metrics": [
+        {"id": "feedback_latency", "name": "反馈时延", "formula": "提交时间 → 质量结论时间", "decision": "门禁分层是否合理", "owner": null, "threshold": null, "on_breach": "重排门禁层"},
+        {"id": "triage_time", "name": "定位时长", "formula": "失败时间 → 定位到层的时间", "decision": "可观测性投入是否有效", "owner": null, "threshold": null, "on_breach": "补可观测性"},
+        {"id": "unit_success_cost", "name": "单位成功成本", "formula": "(模型费 + 工具费 + 人工复核费) / 成功任务数", "decision": "架构与模型选型", "owner": null, "threshold": null, "on_breach": "架构复评"},
+        {"id": "p95_latency", "name": "p95 延迟", "formula": "分位统计", "decision": "SLO", "owner": null, "threshold": null, "on_breach": "阻断"},
+        {"id": "goodput", "name": "Goodput", "formula": "满足 SLO 前提下的成功吞吐", "decision": "容量规划", "owner": null, "threshold": null, "on_breach": "扩容或降级"},
+        {"id": "env_cost", "name": "环境成本", "formula": "测试环境月度支出", "decision": "临时环境回收策略", "owner": null, "threshold": null, "on_breach": "回收策略复审"}
+      ]
+    },
+    {
+      "group": "D-流程健康度",
+      "metrics": [
+        {"id": "escape_rate", "name": "缺陷逃逸率", "formula": "生产发现 / (生产 + 发布前)", "decision": "门禁是否有效", "owner": null, "threshold": null, "on_breach": "门禁复审"},
+        {"id": "waiver_expired", "name": "超期 Waiver 数", "formula": "已过期未处理的 Waiver 计数", "decision": "是否阻断发布", "owner": null, "threshold": 0, "on_breach": "阻断发布"},
+        {"id": "waiver_streak", "name": "同门禁连续 Waiver 次数", "formula": "计数", "decision": "门禁本身是否需重新评审", "owner": null, "threshold": 3, "on_breach": "门禁重新评审"},
+        {"id": "flaky_count", "name": "Flaky 用例数", "formula": "quarantine 集合大小", "decision": "环境或同步问题", "owner": null, "threshold": null, "on_breach": "停下来治理"},
+        {"id": "unknown_backlog", "name": "UNKNOWN 桶滞留数", "formula": "未归因失败计数", "decision": "可观测性缺口", "owner": null, "threshold": null, "on_breach": "补可观测性"},
+        {"id": "regression_closure", "name": "回归回灌闭环率", "formula": "已闭环逃逸 / 全部逃逸", "decision": "是否列入下迭代", "owner": null, "threshold": 1.0, "on_breach": "列入下迭代"}
+      ]
+    }
+  ],
+  "invalid_metrics": [
+    {"name": "用例总数", "why": "数量与检测力无关", "use_instead": "mutation_kill_rate"},
+    {"name": "自动化率", "why": "自动化了错的东西更糟", "use_instead": "高风险自动化覆盖率"},
+    {"name": "代码行覆盖率", "why": "执行过不等于会被发现", "use_instead": "mutation_kill_rate + risk_coverage"},
+    {"name": "缺陷总数", "why": "受投入与阶段影响", "use_instead": "escape_rate"},
+    {"name": "评测平均分", "why": "掩盖高风险切片", "use_instead": "slice_blocker_rate"},
+    {"name": "单次通过率", "why": "非确定性系统上无意义", "use_instead": "nondeterminism_spread"}
+  ],
+  "anti_gaming_rules": [
+    "任何比率必须同时展示分子、分母与排除项",
+    "变异集不可由被考核方单独定义",
+    "切片定义变更需评审",
+    "漂移基线更新必须有 run_id 与批准人",
+    "holdout 开封次数需计数，超约定即作废重建",
+    "质量指标不得单独用于个人绩效"
+  ]
+}

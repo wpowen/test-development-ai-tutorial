@@ -1,0 +1,30 @@
+{
+  "schema_version": "agent-performance-cycle.v2",
+  "page_id": "TD-AP01",
+  "observed_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "expected_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "cycle_pass": true,
+  "fault_detected_by": [
+    "workload_slice_coverage",
+    "business_oracle_rate"
+  ],
+  "repair_comparison": {
+    "workload_slice_coverage": {
+      "fault": 0.5,
+      "repair": 1.0
+    },
+    "business_oracle_rate": {
+      "fault": 0.5,
+      "repair": 1.0
+    }
+  },
+  "evidence_boundary": "Fixture-tested only; no live model, practitioner review, or production capacity evidence."
+}

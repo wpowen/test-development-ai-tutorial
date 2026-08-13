@@ -1,0 +1,1 @@
+{"mutations":[{"id":"M-INVERT-ACTIVATED-GUARD","fault":"invert activated-digital guard","expected_status":"KILLED"},{"id":"M-DROP-AUDIT-ASSERTION","fault":"remove audit side-effect assertion","expected_status":"SURVIVED"},{"id":"M-SELF-APPROVE-ORACLE","fault":"replace expected with actual response","expected_status":"BLOCKED"}]}

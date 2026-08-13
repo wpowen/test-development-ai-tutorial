@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_mode": "BLANK-TEMPLATE",
+  "page_id": "TD-C03",
+  "learner_profile": "UNKNOWN",
+  "claims": [],
+  "unknowns": [],
+  "gap_routes": [],
+  "review_date": "UNKNOWN",
+  "employment_guarantee": false,
+  "promotion_guarantee": false
+}

@@ -89,6 +89,8 @@ Each promised topic must add `## Editorial review` to its research package and r
 - commands and examples re-run or linked to execution evidence;
 - reviewer score and unresolved issues.
 
+The page's `promotion-receipt.json` records the editorial score, boundary-preservation score, current executability-audit hash, exact ten-file research inventory including `projection-ledger.json`, and learner-material hashes. It is a promotion receipt, not permission to rewrite the protected-item inventory. Any protected-item change returns to technical review and must not be hidden by regenerating hashes.
+
 Publication requires all hard gates plus an editorial score of at least 90/100, with full marks for boundary preservation. A lower score keeps the page `outlined`.
 
 The governing rule is: expression may become shorter; information cannot become smaller, and the applicability boundary cannot become wider.

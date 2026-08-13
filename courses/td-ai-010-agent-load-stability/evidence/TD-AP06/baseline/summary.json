@@ -1,0 +1,54 @@
+{
+  "schema_version": "agent-performance-run.v2",
+  "page_id": "TD-AP06",
+  "phase": "baseline",
+  "fixture": true,
+  "workload_version": "td-ap06-workload-v1",
+  "prompt_package_version": "1.0.0",
+  "metrics": {
+    "workload_slice_coverage": 1.0,
+    "business_oracle_rate": 1.0,
+    "ttft_p95_ms": 134.078,
+    "tpot_p95_ms": 4.81875,
+    "queue_p95_ms": 0.0,
+    "retry_p95": 1.0,
+    "step_p95": 5.0,
+    "trace_complete_rate": 1.0,
+    "arrival_rate_fidelity": 0.96997,
+    "coordinated_omission_detected": 1.0,
+    "goodput_tasks_per_s": 5.38875,
+    "bottleneck_attributed": 1.0,
+    "timeout_budget_valid": 1.0,
+    "degrade_safe_rate": 0.0,
+    "memory_growth_mb_per_task": 0.01,
+    "cleanup_success_rate": 1.0,
+    "good_task_rate": 1.0,
+    "alert_actionability": 1.0,
+    "incident_evidence_complete": 1.0,
+    "task_success_rate": 1.0,
+    "e2e_p95_ms": 542.47985,
+    "observed_rate_tasks_per_s": 5.38875
+  },
+  "gates": {
+    "timeout_budget_valid": {
+      "operator": "min",
+      "value": 1
+    },
+    "retry_p95": {
+      "operator": "max",
+      "value": 1
+    },
+    "task_success_rate": {
+      "operator": "min",
+      "value": 0.9
+    }
+  },
+  "checks": {
+    "timeout_budget_valid": true,
+    "retry_p95": true,
+    "task_success_rate": true
+  },
+  "gate_pass": true,
+  "configuration_hash": "17a8ded9e6d3eda88d241606f4c1a45e30166fed2d98ca4aeb5bbd6823cc1bbb",
+  "evidence_boundary": "Deterministic synthetic load fixture; this is not a production capacity claim."
+}

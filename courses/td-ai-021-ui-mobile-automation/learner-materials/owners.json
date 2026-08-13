@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "bundle": "ui-mobile-automation",
+  "bundle_owner": "traditional-testing-wave-1",
+  "shared_runner_owner": "course-factory-engineering",
+  "pages": {
+    "TD-PS04": {
+      "content_owner": "TD-PS04-content-owner",
+      "oracle_owner": "TD-PS04-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS04.json"
+    },
+    "TD-PS05": {
+      "content_owner": "TD-PS05-content-owner",
+      "oracle_owner": "TD-PS05-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS05.json"
+    },
+    "TD-PS06": {
+      "content_owner": "TD-PS06-content-owner",
+      "oracle_owner": "TD-PS06-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS06.json"
+    },
+    "TD-PS07": {
+      "content_owner": "TD-PS07-content-owner",
+      "oracle_owner": "TD-PS07-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS07.json"
+    }
+  },
+  "boundary": "Shared code provides mechanics only; page manifests own business rules and maturity."
+}

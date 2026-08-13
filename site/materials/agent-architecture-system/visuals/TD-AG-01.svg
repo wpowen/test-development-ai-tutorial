@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+  <title id="title">D0 Judge 校准与停用闭环</title>
+  <desc id="desc">评估器也是被测系统：先建立金标和人工分歧，再决定 Judge 能自动评什么。 Fixture 只验证合同和故障检测；真实模型 Judge、标注员和业务金标仍需独立运行。</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#0b3b32"/><stop offset="1" stop-color="#176b5b"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#176b5b"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#12372f" flood-opacity=".12"/></filter>
+  </defs>
+  <style>
+    .bg{fill:#f7faf8}.header{fill:url(#header)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;fill:#bfe9dc}.title{font:800 28px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:white}.subtitle{font:450 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#d7eee7}.source{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6c7c76}.node rect{fill:white;stroke:#b7d0c7;stroke-width:1.5;filter:url(#shadow)}.node:nth-of-type(3n+1) rect{fill:#eef8f4;stroke:#86b9a8}.node:nth-of-type(3n+2) rect{fill:#f6f8e9;stroke:#c4ce87}.node-index{font:700 10px ui-monospace,monospace;fill:#7c8b85}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#123f34}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#5a6b64}.edge path{fill:none;stroke:#176b5b;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#557168;paint-order:stroke;stroke:#f7faf8;stroke-width:4px}.callout{fill:#fff3db;stroke:#e2b260;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,monospace;fill:#8a5610}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62430f}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62716b}
+  </style>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
+  <text class="eyebrow" x="34" y="29">D0 · EVALUATOR TRUST</text>
+  <text class="title" x="34" y="61">D0 Judge 校准与停用闭环</text>
+  <text class="subtitle" x="600" y="31">评估器也是被测系统：先建立金标和人工分歧，再决定 Judge 能自动评什么。</text>
+  <text class="source" x="34" y="111">来源：S05 · S23 · S40</text>
+  <g class="edge"><path d="M 234 174 C 258 174, 258 174, 274 174" marker-end="url(#arrow)"/><text x="258" y="184">独立标注</text></g>
+<g class="edge"><path d="M 482 174 C 506 174, 506 174, 522 174" marker-end="url(#arrow)"/><text x="506" y="166">争议塑造规则</text></g>
+<g class="edge"><path d="M 730 174 C 754 174, 754 174, 770 174" marker-end="url(#arrow)"/><text x="754" y="184">版本化执行</text></g>
+<g class="edge"><path d="M 978 174 C 1030 466, 230 466, 274 370" marker-end="url(#arrow)"/><text x="630" y="264">反偏差测试</text></g>
+<g class="edge"><path d="M 482 370 C 506 370, 506 370, 522 370" marker-end="url(#arrow)"/><text x="506" y="380">保留不一致</text></g>
+<g class="edge"><path d="M 730 370 C 754 370, 754 370, 770 370" marker-end="url(#arrow)"/><text x="754" y="362">按风险分流</text></g>
+<g class="edge"><path d="M 730 370 C 782 670, 478 670, 522 572" marker-end="url(#arrow)"/><text x="630" y="481">超出适用域</text></g>
+<g class="edge"><path d="M 778 572 C 830 670, 478 670, 522 174" marker-end="url(#arrow)"/><text x="654" y="365">修订后重跑</text></g>
+<g class="edge"><path d="M 778 572 C 778 572, 778 174, 770 174" marker-end="url(#arrow)"/><text x="778" y="383">换版桥接</text></g>
+  
+    <g class="node gold">
+      <rect x="34" y="130" width="200" height="88" rx="15"/>
+      <text class="node-index" x="50" y="153">01</text>
+      <text class="node-title" x="50" y="178">金标样本</text>
+      <text class="node-detail" x="50" y="200">版本、切片、来源</text>
+    </g>
+    <g class="node human">
+      <rect x="282" y="130" width="200" height="88" rx="15"/>
+      <text class="node-index" x="298" y="153">02</text>
+      <text class="node-title" x="298" y="178">人工标注</text>
+      <text class="node-detail" x="298" y="200">盲法双标 / 仲裁</text>
+    </g>
+    <g class="node rubric">
+      <rect x="530" y="130" width="200" height="88" rx="15"/>
+      <text class="node-index" x="546" y="153">03</text>
+      <text class="node-title" x="546" y="178">Rubric</text>
+      <text class="node-detail" x="546" y="200">构念、尺度、拒判</text>
+    </g>
+    <g class="node judge">
+      <rect x="778" y="130" width="200" height="88" rx="15"/>
+      <text class="node-index" x="794" y="153">04</text>
+      <text class="node-title" x="794" y="178">Judge</text>
+      <text class="node-detail" x="794" y="200">版本、Prompt、输出</text>
+    </g>
+    <g class="node probe">
+      <rect x="282" y="326" width="200" height="88" rx="15"/>
+      <text class="node-index" x="298" y="349">05</text>
+      <text class="node-title" x="298" y="374">偏差探针</text>
+      <text class="node-detail" x="298" y="396">顺序 / 长度 / 自偏好</text>
+    </g>
+    <g class="node disagree">
+      <rect x="530" y="326" width="200" height="88" rx="15"/>
+      <text class="node-index" x="546" y="349">06</text>
+      <text class="node-title" x="546" y="374">分歧矩阵</text>
+      <text class="node-detail" x="546" y="396">人人 / 人机 / Slice</text>
+    </g>
+    <g class="node route">
+      <rect x="778" y="326" width="200" height="88" rx="15"/>
+      <text class="node-index" x="794" y="349">07</text>
+      <text class="node-title" x="794" y="374">自动 / 抽检 / 人审</text>
+      <text class="node-detail" x="794" y="396">按风险选择路径</text>
+    </g>
+    <g class="node stop">
+      <rect x="530" y="526" width="248" height="92" rx="15"/>
+      <text class="node-index" x="546" y="549">08</text>
+      <text class="node-title" x="546" y="574">停用与重校准</text>
+      <text class="node-detail" x="546" y="596">FAIL → 修 Rubric / 换 Judge</text>
+    </g>
+  <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
+  <text class="callout-title" x="52" y="678">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">Judge 不得审批自己的 Oracle；分歧样本不能被删除来制造一致。</text>
+  <text class="footer" x="34" y="735">Fixture 只验证合同和故障检测；真实模型 Judge、标注员和业务金标仍需独立运行。</text>
+</svg>

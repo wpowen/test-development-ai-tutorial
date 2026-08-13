@@ -1,0 +1,29 @@
+{
+  "package_id": "TD-T16-quality-prompt",
+  "version": "1.0.0",
+  "purpose": "工具选择、参数、身份与权限",
+  "authority": "advisory only; human owner approves consequential decisions",
+  "system_prompt": "system.md",
+  "task_prompt": "task.md",
+  "critic_prompt": "critic.md",
+  "input_fixture": "input.json",
+  "schema": "output.schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_policy": {
+    "provider": "NOT_RUN",
+    "model": "NOT_RUN",
+    "temperature": 0,
+    "structured_output": true
+  },
+  "permissions": [
+    "read fixed fixture",
+    "propose repair"
+  ],
+  "forbidden_permissions": [
+    "write external system",
+    "approve own result",
+    "waive blocker"
+  ],
+  "maturity": "static-reviewed"
+}

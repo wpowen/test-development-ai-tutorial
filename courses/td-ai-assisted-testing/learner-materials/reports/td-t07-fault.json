@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-T07",
+  "phase": "fault",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_package": {
+    "version": "1.0.0",
+    "manifest_hash": "sha256:21e73d7109a23a256535644d49c87d8574e86ca7507f60b2e0f25e77a3a3b53d"
+  },
+  "basis_hash": "sha256:e4592e25a925e638a6b1b64cc6c50dd43a30b09d167d5b343bc6ba03709757dd",
+  "oracle_hash": "sha256:0d6210b21a490d1626e2d765cc147a9eb73dc6aec299b5c7723eb2b33eb0aeaf",
+  "oracle_authority": "frozen approved basis; independent from candidate generator",
+  "human_decision_required": true,
+  "status": "FAIL",
+  "seed": 20260811,
+  "method_selection": [
+    "boundary-value",
+    "decision-table",
+    "property-based"
+  ],
+  "rejected_method": {
+    "method": "unconstrained-random-fuzz",
+    "reason": "cannot preserve business-valid states or a stable Oracle"
+  },
+  "generated_count": 25,
+  "failure_count": 9,
+  "minimal_counterexample": {
+    "idempotency_key": "idem-a",
+    "repeat": 2
+  },
+  "replay": {
+    "seed": 20260811,
+    "system_version": "refund-fixture-v1",
+    "reproduced": true
+  },
+  "decision": "ADD_MINIMAL_REGRESSION_AND_REJECT"
+}

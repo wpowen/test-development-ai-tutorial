@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+  <title id="title">四证据环与三段式质量门禁</title>
+  <desc id="desc">证据从离线 CI 升级到沙箱、影子和在线；每一环都需要新的输入、责任和回滚。 当前课程只运行离线/沙箱式 fixture；影子与在线环保持 NOT_RUN。</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#0b3b32"/><stop offset="1" stop-color="#176b5b"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#176b5b"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#12372f" flood-opacity=".12"/></filter>
+  </defs>
+  <style>
+    .bg{fill:#f7faf8}.header{fill:url(#header)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;fill:#bfe9dc}.title{font:800 28px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:white}.subtitle{font:450 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#d7eee7}.source{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6c7c76}.node rect{fill:white;stroke:#b7d0c7;stroke-width:1.5;filter:url(#shadow)}.node:nth-of-type(3n+1) rect{fill:#eef8f4;stroke:#86b9a8}.node:nth-of-type(3n+2) rect{fill:#f6f8e9;stroke:#c4ce87}.node-index{font:700 10px ui-monospace,monospace;fill:#7c8b85}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#123f34}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#5a6b64}.edge path{fill:none;stroke:#176b5b;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#557168;paint-order:stroke;stroke:#f7faf8;stroke-width:4px}.callout{fill:#fff3db;stroke:#e2b260;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,monospace;fill:#8a5610}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62430f}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62716b}
+  </style>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
+  <text class="eyebrow" x="34" y="29">FOUR EVIDENCE RINGS</text>
+  <text class="title" x="34" y="61">四证据环与三段式质量门禁</text>
+  <text class="subtitle" x="600" y="31">证据从离线 CI 升级到沙箱、影子和在线；每一环都需要新的输入、责任和回滚。</text>
+  <text class="source" x="34" y="111">来源：S07 · S24 · S65</text>
+  <g class="edge"><path d="M 244 172 C 264 172, 264 172, 276 172" marker-end="url(#arrow)"/><text x="264" y="182">entry/exit</text></g>
+<g class="edge"><path d="M 494 172 C 514 172, 514 172, 526 172" marker-end="url(#arrow)"/><text x="514" y="164">真实集成</text></g>
+<g class="edge"><path d="M 744 172 C 764 172, 764 172, 776 172" marker-end="url(#arrow)"/><text x="764" y="182">受控升级</text></g>
+<g class="edge"><path d="M 244 172 C 264 172, 264 384, 276 384" marker-end="url(#arrow)"/><text x="264" y="270">提交级阻断</text></g>
+<g class="edge"><path d="M 494 172 C 546 482, 232 482, 276 384" marker-end="url(#arrow)"/><text x="389" y="288">副作用阻断</text></g>
+<g class="edge"><path d="M 744 172 C 796 482, 482 482, 526 384" marker-end="url(#arrow)"/><text x="639" y="270">配对比较</text></g>
+<g class="edge"><path d="M 994 172 C 1046 482, 482 482, 526 384" marker-end="url(#arrow)"/><text x="764" y="288">线上切片</text></g>
+<g class="edge"><path d="M 494 384 C 546 692, 432 692, 476 594" marker-end="url(#arrow)"/><text x="489" y="481">任一红线</text></g>
+<g class="edge"><path d="M 744 384 C 764 384, 764 384, 776 384" marker-end="url(#arrow)"/><text x="764" y="394">证据充分后</text></g>
+<g class="edge"><path d="M 744 384 C 796 692, 432 692, 476 594" marker-end="url(#arrow)"/><text x="614" y="481">证据不足</text></g>
+<g class="edge"><path d="M 994 384 C 1046 692, 432 692, 476 594" marker-end="url(#arrow)"/><text x="739" y="499">拒绝或过期</text></g>
+  
+    <g class="node ci">
+      <rect x="34" y="126" width="210" height="92" rx="15"/>
+      <text class="node-index" x="50" y="149">01</text>
+      <text class="node-title" x="50" y="174">离线 CI</text>
+      <text class="node-detail" x="50" y="196">确定性规则 / 小型 Eval</text>
+    </g>
+    <g class="node sandbox">
+      <rect x="284" y="126" width="210" height="92" rx="15"/>
+      <text class="node-index" x="300" y="149">02</text>
+      <text class="node-title" x="300" y="174">沙箱回放</text>
+      <text class="node-detail" x="300" y="196">轨迹 / 故障注入 / 无副作用</text>
+    </g>
+    <g class="node shadow">
+      <rect x="534" y="126" width="210" height="92" rx="15"/>
+      <text class="node-index" x="550" y="149">03</text>
+      <text class="node-title" x="550" y="174">影子 / 灰度</text>
+      <text class="node-detail" x="550" y="196">真实流量但不生效</text>
+    </g>
+    <g class="node online">
+      <rect x="784" y="126" width="210" height="92" rx="15"/>
+      <text class="node-index" x="800" y="149">04</text>
+      <text class="node-title" x="800" y="174">在线持续</text>
+      <text class="node-detail" x="800" y="196">采样 / 高危全量 / 漂移</text>
+    </g>
+    <g class="node hard">
+      <rect x="284" y="338" width="210" height="92" rx="15"/>
+      <text class="node-index" x="300" y="361">05</text>
+      <text class="node-title" x="300" y="386">硬红线</text>
+      <text class="node-detail" x="300" y="408">安全 / 业务 / D0 失效</text>
+    </g>
+    <g class="node stat">
+      <rect x="534" y="338" width="210" height="92" rx="15"/>
+      <text class="node-index" x="550" y="361">06</text>
+      <text class="node-title" x="550" y="386">统计门禁</text>
+      <text class="node-detail" x="550" y="408">区间 / Slice / 样本量</text>
+    </g>
+    <g class="node risk">
+      <rect x="784" y="338" width="210" height="92" rx="15"/>
+      <text class="node-index" x="800" y="361">07</text>
+      <text class="node-title" x="800" y="386">风险接受</text>
+      <text class="node-detail" x="800" y="408">Owner / Expiry / 补偿 / 回滚</text>
+    </g>
+    <g class="node blocked">
+      <rect x="484" y="548" width="260" height="92" rx="15"/>
+      <text class="node-index" x="500" y="571">08</text>
+      <text class="node-title" x="500" y="596">BLOCKED / NOT_RUN</text>
+      <text class="node-detail" x="500" y="618">缺一环证据不得升级</text>
+    </g>
+  <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
+  <text class="callout-title" x="52" y="678">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">离线 0/1/0 不能写成线上 PASS；不得用总分抵消安全 blocker。</text>
+  <text class="footer" x="34" y="735">当前课程只运行离线/沙箱式 fixture；影子与在线环保持 NOT_RUN。</text>
+</svg>

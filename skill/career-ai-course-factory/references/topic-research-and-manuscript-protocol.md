@@ -27,20 +27,26 @@ The full topic system may be large. It remains `planned` or `outlined` until eac
 
 ### Stage B: research and write one topic
 
-Create `research/topics/<topic-id>/research-package.md` with six mandatory sections:
+Create an independent directory for every promised topic. The split files are mandatory for public work:
 
 ```text
-## Research brief
-## Source pack
-## Evidence synthesis
-## Engineering blueprint
-## Manuscript map
-## Validation
+research/topics/<topic-id>/
+├── research-brief.md
+├── source-pack.csv
+├── research-runs.json
+├── evidence-synthesis.md
+├── engineering-blueprint.md
+├── manuscript.md
+├── comparison.md
+├── lab-manifest.json
+└── validation.md
 ```
 
-The sections may be split into the six same-named files when a topic becomes large. The single-file form is the minimum auditable unit and must preserve source URLs, claim support, limitations, blueprint fields, manuscript mapping, and validation results; it is not permission to collapse several topics into one generic package.
+`research-package.md` may exist only as an index. It cannot replace the split records. A generated summary, a short source list, or a manuscript-shaped page does not count as research.
 
 Do not batch-generate several manuscripts from one short record. Research may run in parallel by evidence lane, but synthesis and publication approval happen one topic at a time.
+
+Record at least two independent research runs in `research-runs.json`. They must use different evidence lanes or independent contexts. A separate comparator reads both outputs, records agreements, disagreements, source-hierarchy decisions, rejected claims, and remaining unknowns in `comparison.md`. A draft agent cannot approve its own result.
 
 ## Research brief
 
@@ -68,6 +74,8 @@ Select the lanes needed by the topic. A professional engineering topic normally 
 7. practitioner workflow or public case when professional realism is claimed.
 
 Every selected source must be opened. Store the exact URL, access date, source family, supported claim, unsupported claim, version/date, and limitation in `source-pack.csv`. Search snippets and generated answers remain leads.
+
+A public engineering topic needs at least ten opened sources, five evidence lanes, five independent source families, and four source types. The pack must include primary or official evidence, implementation evidence, practitioner failure or issue evidence, and existing learning supply. Source count is a floor, not a substitute for relevance or independence.
 
 ## Evidence synthesis
 
@@ -134,6 +142,8 @@ Require definitions, formula or exact semantics where applicable, unit, aggregat
 
 Require prepared input, exact commands/actions, expected output after meaningful steps, saved artifact, meaningful mutation, expected red result, repair/reset, expected green result, and troubleshooting.
 
+Every runnable or inspectable page also carries `lab-manifest.json`. It pins the working directory, repository-owned files, step kind, exact command or action, expected exit code, expected artifacts, baseline/fault/repair linkage, and evidence boundary. Validation resolves every referenced path from the declared working directory. A command that only works in an unpublished authoring tree fails.
+
 ### Diagnostic
 
 Require symptoms, ordered decision tree, competing hypotheses, confirming/disconfirming evidence, misleading fixes, safe repair, regression check, and escalation boundary.
@@ -156,6 +166,20 @@ Require business brief, constraints, architecture, data contract, deliverables, 
 - Does the page contain repeated generic prose that could be pasted into another profession or topic?
 
 Any “no” blocks publication. Set the page to `outlined` until repaired.
+
+## Code and copy affordance contract
+
+Do not store every technical block in one undifferentiated `code` field. Each block declares one kind:
+
+- `command`: copy-paste runnable from the declared working directory;
+- `source-file`: exact excerpt from a linked repository file;
+- `config`: valid JSON, YAML, TOML, SQL, or other named format with its consumer;
+- `prompt`: versioned prompt file with fixed input fixture, output schema, evaluation set, model/config manifest, and boundary;
+- `formula`: definition with variables, units, dimensions, aggregation, and worked values;
+- `diagram`: architecture or sequence view, not executable code;
+- `pseudocode`: explicitly non-runnable explanation linked to a real implementation or removed.
+
+The viewer must label the kind. Only `command`, `source-file`, `config`, and a fully packaged `prompt` may show a copy-for-use affordance. Diagrams, formulas, and pseudocode must never be presented as runnable implementation. A page fails when the displayed command differs from the command rerun by validation.
 
 ## Model and agent routing
 

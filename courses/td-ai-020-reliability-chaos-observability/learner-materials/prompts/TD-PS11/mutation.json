@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS11",
+  "mutation_id": "TD-PS11-FAULT-01",
+  "mutation": "collector 丢 span",
+  "expected_detected_by": "task trace 覆盖 gateway retrieval model tool 和 terminal",
+  "model_execution": "NOT_RUN"
+}

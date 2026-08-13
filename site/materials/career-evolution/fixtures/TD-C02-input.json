@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-C02","observation":{"career":{"responsibility_states_complete":true,"evidence_refs_complete":true,"decision_rights_complete":true,"years_only":false}},"unknowns":["组织 band 和晋升 policy 未提供"],"artifact_contract":{"required":["state","decision_rights","failure_cost","artifact","evidence_refs","reviewer"]}}

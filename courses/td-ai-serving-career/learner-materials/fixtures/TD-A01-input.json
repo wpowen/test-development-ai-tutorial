@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A01",
+  "approved_at": "2026-08-11",
+  "evidence_level": "fixture-only",
+  "observation": {
+    "request_id": "req-fixture-001",
+    "model": {
+      "internal_version": "UNKNOWN"
+    },
+    "error": {
+      "retryable": false
+    }
+  }
+}

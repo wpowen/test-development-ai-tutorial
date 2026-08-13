@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x101-supply-chain",
+  "topic_id": "TD-X101",
+  "version": "1.0.0",
+  "purpose": "把架构边界、静态发现、SBOM、签名与例外 owner 连接成合并门禁",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "SBOM_MISSING",
+    "SIGNATURE_INVALID",
+    "CRITICAL_FINDING",
+    "BLOCKED"
+  ]
+}
+

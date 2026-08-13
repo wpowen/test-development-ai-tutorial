@@ -1,0 +1,12 @@
+{
+  "schema_version": "agent-performance-prompt-input.v1",
+  "page_id": "TD-AP02",
+  "run_refs": [
+    "reports/TD-AP02/baseline/summary.json",
+    "reports/TD-AP02/fault/summary.json",
+    "reports/TD-AP02/repair/summary.json",
+    "reports/TD-AP02/cycle-summary.json"
+  ],
+  "question": "Does the TTFT TPOT queue retry and step metrics baseline-fault-repair cycle demonstrate detection and repair?",
+  "boundary": "fixture-tested only"
+}

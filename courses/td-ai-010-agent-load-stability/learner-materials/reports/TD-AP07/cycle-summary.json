@@ -1,0 +1,30 @@
+{
+  "schema_version": "agent-performance-cycle.v2",
+  "page_id": "TD-AP07",
+  "observed_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "expected_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "cycle_pass": true,
+  "fault_detected_by": [
+    "memory_growth_mb_per_task",
+    "cleanup_success_rate"
+  ],
+  "repair_comparison": {
+    "memory_growth_mb_per_task": {
+      "fault": 0.8,
+      "repair": 0.01
+    },
+    "cleanup_success_rate": {
+      "fault": 0.79167,
+      "repair": 1.0
+    }
+  },
+  "evidence_boundary": "Fixture-tested only; no live model, practitioner review, or production capacity evidence."
+}

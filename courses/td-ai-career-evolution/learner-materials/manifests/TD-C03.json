@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C03",
+  "input_fixture": "fixtures/TD-C03-input.json",
+  "expected": {
+    "assessment.evidence_refs_complete": true,
+    "assessment.unknowns_preserved": true,
+    "assessment.plan_has_30_60_90": true
+  },
+  "fault_patch": {
+    "assessment.evidence_refs_complete": false,
+    "assessment.unknowns_preserved": false,
+    "assessment.plan_has_30_60_90": false
+  },
+  "unknowns": [
+    "真实学习效果未运行"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; no employment or promotion outcome",
+  "manifest_version": "1.0.0",
+  "working_directory": "materials/career-evolution",
+  "steps": [
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C03.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-C03/baseline.json",
+        "evidence/TD-C03/fault.json",
+        "evidence/TD-C03/repair.json",
+        "evidence/TD-C03/cycle.json"
+      ]
+    }
+  ],
+  "required_files": [
+    "scripts/career_evolution_lab.py",
+    "fixtures/TD-C03-input.json",
+    "manifests/TD-C03.json"
+  ]
+}

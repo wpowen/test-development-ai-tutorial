@@ -1,0 +1,26 @@
+{
+  "schema_version": "prompt-eval.v1",
+  "page_id": "TD-AP04",
+  "prompt_version": "1.0.0",
+  "provider": "none",
+  "model": "NOT_RUN",
+  "fixture_checks": [
+    {
+      "id": "schema",
+      "expected": "valid output schema"
+    },
+    {
+      "id": "red",
+      "expected": "fault rejected"
+    },
+    {
+      "id": "repair",
+      "expected": "repair passes without threshold deletion"
+    },
+    {
+      "id": "boundary",
+      "expected": "synthetic fixture; not production capacity"
+    }
+  ],
+  "status": "NOT_RUN"
+}

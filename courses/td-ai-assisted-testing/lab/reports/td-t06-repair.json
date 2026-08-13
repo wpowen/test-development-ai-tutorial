@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-T06",
+  "phase": "repair",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_package": {
+    "version": "1.0.0",
+    "manifest_hash": "sha256:f2166bbc4670e176e8f450a4be05a06d31aaa1b16b6fa7463da26d44bb3c290d"
+  },
+  "basis_hash": "sha256:e4592e25a925e638a6b1b64cc6c50dd43a30b09d167d5b343bc6ba03709757dd",
+  "oracle_hash": "sha256:0d6210b21a490d1626e2d765cc147a9eb73dc6aec299b5c7723eb2b33eb0aeaf",
+  "oracle_authority": "frozen approved basis; independent from candidate generator",
+  "human_decision_required": true,
+  "status": "PASS",
+  "mutation_id": null,
+  "mutation_outcome": "NOT_APPLIED",
+  "results": [
+    {
+      "case_id": "C-ACTIVATED",
+      "oracle_source": "PRD-v4#R12",
+      "actual": {
+        "decision": "MANUAL_REVIEW",
+        "audit_events": 1
+      },
+      "expected": {
+        "decision": "MANUAL_REVIEW",
+        "audit_events": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "case_id": "C-NOT-ACTIVATED",
+      "oracle_source": "PRD-v4#R12",
+      "actual": {
+        "decision": "AUTO_REFUND",
+        "audit_events": 1
+      },
+      "expected": {
+        "decision": "AUTO_REFUND",
+        "audit_events": 1
+      },
+      "status": "PASS"
+    }
+  ],
+  "failed_cases": [],
+  "decision": "BASELINE_ACCEPTED"
+}

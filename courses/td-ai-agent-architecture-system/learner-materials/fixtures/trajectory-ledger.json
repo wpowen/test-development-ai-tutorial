@@ -1,0 +1,181 @@
+{
+  "fixture_id": "trajectory-ledger-v1",
+  "description": "5 条合成轨迹的 span 台账：四类标签 + 授权标记；用于首错位置、步骤效率比、无效循环率。",
+  "traces": [
+    {
+      "trace_id": "t-001",
+      "optimal_steps": 3,
+      "succeeded": true,
+      "spans": [
+        {
+          "span": 1,
+          "tool": "get_order",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 2,
+          "tool": "search_policy",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 3,
+          "tool": "handoff_human",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        }
+      ]
+    },
+    {
+      "trace_id": "t-002",
+      "optimal_steps": 3,
+      "succeeded": false,
+      "spans": [
+        {
+          "span": 1,
+          "tool": "get_order",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 2,
+          "tool": "search_policy",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "曲解",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 3,
+          "tool": "handoff_human",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        }
+      ]
+    },
+    {
+      "trace_id": "t-003",
+      "optimal_steps": 3,
+      "succeeded": false,
+      "spans": [
+        {
+          "span": 1,
+          "tool": "get_order",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 2,
+          "tool": "search_policy",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "曲解",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 3,
+          "tool": "handoff_human",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        }
+      ]
+    },
+    {
+      "trace_id": "t-004",
+      "optimal_steps": 2,
+      "succeeded": true,
+      "spans": [
+        {
+          "span": 1,
+          "tool": "get_order",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 2,
+          "tool": "handoff_human",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        }
+      ]
+    },
+    {
+      "trace_id": "t-005",
+      "optimal_steps": 3,
+      "succeeded": false,
+      "spans": [
+        {
+          "span": 1,
+          "tool": "get_order",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 2,
+          "tool": "search_policy",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        },
+        {
+          "span": 3,
+          "tool": "search_policy",
+          "tool_choice": "多余",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "冗余",
+          "authorized": true
+        },
+        {
+          "span": 4,
+          "tool": "handoff_human",
+          "tool_choice": "正确",
+          "param_build": "正确",
+          "observation_use": "正确利用",
+          "necessity": "有效",
+          "authorized": true
+        }
+      ]
+    }
+  ],
+  "thresholds": {
+    "step_efficiency_min": 0.7,
+    "invalid_loop_rate_max": 0.2
+  },
+  "note": "步骤效率比与无效循环率必须声明分母与任务范围，不能跨系统比较。"
+}

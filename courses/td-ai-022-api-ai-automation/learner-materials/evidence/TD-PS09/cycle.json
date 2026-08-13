@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS09",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标模型硬件、provider 内部队列、真实流量分布和价格"
+}

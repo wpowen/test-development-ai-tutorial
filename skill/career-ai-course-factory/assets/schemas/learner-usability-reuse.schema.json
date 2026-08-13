@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LearnerUsabilityReuse",
+  "type": "object",
+  "required": ["schema_version", "pages", "learner_evidence_boundary", "verdict"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "learner_evidence_boundary": {"type": "object"},
+    "verdict": {"enum": ["PASS-DESIGN", "PASS-LEARNER", "FAIL", "BLOCKED"]},
+    "pages": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["page_id", "display_number", "prerequisite_ids", "assumed_knowledge", "terms_introduced", "terms_used", "mental_model", "worked_example", "counterexample", "learner_action", "failure_diagnosis", "comprehension_checks", "reusable_artifacts"],
+        "properties": {
+          "page_id": {"type": "string", "minLength": 1},
+          "display_number": {"type": "integer", "minimum": 1},
+          "prerequisite_ids": {"type": "array", "items": {"type": "string"}},
+          "assumed_knowledge": {"type": "array", "items": {"type": "string"}},
+          "terms_introduced": {"type": "array", "items": {"$ref": "#/$defs/term"}},
+          "terms_used": {"type": "array", "items": {"type": "string"}},
+          "mental_model": {"type": "string", "minLength": 1},
+          "worked_example": {"type": "object"},
+          "counterexample": {"type": "object"},
+          "learner_action": {"type": "object"},
+          "failure_diagnosis": {"type": "object"},
+          "comprehension_checks": {"type": "array", "minItems": 1},
+          "reusable_artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "term": {
+      "type": "object",
+      "required": ["term", "plain_definition", "first_use_ref"],
+      "properties": {
+        "term": {"type": "string", "minLength": 1},
+        "plain_definition": {"type": "string", "minLength": 1},
+        "first_use_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "required": ["artifact_id", "path", "purpose", "inputs", "editable_fields", "outputs", "adaptation_steps", "validation", "limitations", "owner"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "path": {"type": "string", "minLength": 1},
+        "purpose": {"type": "string", "minLength": 1},
+        "inputs": {"type": "array", "minItems": 1},
+        "editable_fields": {"type": "array", "minItems": 1},
+        "outputs": {"type": "array", "minItems": 1},
+        "adaptation_steps": {"type": "array", "minItems": 2},
+        "validation": {"type": "object"},
+        "limitations": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

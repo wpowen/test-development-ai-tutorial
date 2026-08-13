@@ -1,0 +1,1 @@
+{"mutations":[{"id":"M-T05-DROP-DIFF-REF","fault":"remove diff_ref from one risk","expected_status":"BLOCKED"},{"id":"M-T05-INVENT-SLA","fault":"add an unsupported refund SLA","expected_status":"BLOCKED"},{"id":"M-T05-SELF-ORACLE","fault":"derive expected result from changed code","expected_status":"BLOCKED"}]}

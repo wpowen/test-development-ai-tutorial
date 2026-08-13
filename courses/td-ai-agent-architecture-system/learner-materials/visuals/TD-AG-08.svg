@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+  <title id="title">D7 业务规则、四维版本、审计与风险接受</title>
+  <desc id="desc">模型、Prompt、工具和 Memory 任一变化都可能改变 Agent；业务规则与发布责任必须独立。 Fixture 只验证 lineage 与门禁字段；真实组织责任、ROI 和审批仍为 Unknown/NOT_RUN。</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#0b3b32"/><stop offset="1" stop-color="#176b5b"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#176b5b"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#12372f" flood-opacity=".12"/></filter>
+  </defs>
+  <style>
+    .bg{fill:#f7faf8}.header{fill:url(#header)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;fill:#bfe9dc}.title{font:800 28px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:white}.subtitle{font:450 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#d7eee7}.source{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6c7c76}.node rect{fill:white;stroke:#b7d0c7;stroke-width:1.5;filter:url(#shadow)}.node:nth-of-type(3n+1) rect{fill:#eef8f4;stroke:#86b9a8}.node:nth-of-type(3n+2) rect{fill:#f6f8e9;stroke:#c4ce87}.node-index{font:700 10px ui-monospace,monospace;fill:#7c8b85}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#123f34}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#5a6b64}.edge path{fill:none;stroke:#176b5b;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#557168;paint-order:stroke;stroke:#f7faf8;stroke-width:4px}.callout{fill:#fff3db;stroke:#e2b260;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,monospace;fill:#8a5610}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62430f}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62716b}
+  </style>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
+  <text class="eyebrow" x="34" y="29">D7 · GOVERNANCE</text>
+  <text class="title" x="34" y="61">D7 业务规则、四维版本、审计与风险接受</text>
+  <text class="subtitle" x="600" y="31">模型、Prompt、工具和 Memory 任一变化都可能改变 Agent；业务规则与发布责任必须独立。</text>
+  <text class="source" x="34" y="111">来源：S24 · S64 · S65</text>
+  <g class="edge"><path d="M 224 171 C 245 171, 245 171, 258 171" marker-end="url(#arrow)"/><text x="245" y="181">约束版本</text></g>
+<g class="edge"><path d="M 476 171 C 496 171, 496 171, 508 171" marker-end="url(#arrow)"/><text x="496" y="163">运行身份</text></g>
+<g class="edge"><path d="M 706 171 C 726 171, 726 171, 738 171" marker-end="url(#arrow)"/><text x="726" y="181">受限授权</text></g>
+<g class="edge"><path d="M 936 171 C 988 464, 464 464, 508 369" marker-end="url(#arrow)"/><text x="726" y="262">留下链路</text></g>
+<g class="edge"><path d="M 706 369 C 726 369, 726 369, 738 369" marker-end="url(#arrow)"/><text x="726" y="379">呈现剩余风险</text></g>
+<g class="edge"><path d="M 956 369 C 976 369, 976 369, 988 369" marker-end="url(#arrow)"/><text x="976" y="361">拒绝或回退</text></g>
+<g class="edge"><path d="M 224 171 C 245 171, 245 572, 258 572" marker-end="url(#arrow)"/><text x="245" y="381.5">规则冲突</text></g>
+<g class="edge"><path d="M 706 369 C 758 670, 214 670, 258 572" marker-end="url(#arrow)"/><text x="486" y="462.5">证据缺失</text></g>
+<g class="edge"><path d="M 526 572 C 761 572, 761 369, 988 369" marker-end="url(#arrow)"/><text x="761" y="480.5">安全终态</text></g>
+  
+    <g class="node rule">
+      <rect x="34" y="128" width="190" height="86" rx="15"/>
+      <text class="node-index" x="50" y="151">01</text>
+      <text class="node-title" x="50" y="176">业务规则</text>
+      <text class="node-detail" x="50" y="198">硬规则 / 失败成本 / Owner</text>
+    </g>
+    <g class="node version">
+      <rect x="266" y="128" width="210" height="86" rx="15"/>
+      <text class="node-index" x="282" y="151">02</text>
+      <text class="node-title" x="282" y="176">四维版本</text>
+      <text class="node-detail" x="282" y="198">Model / Prompt / Tools / Memory</text>
+    </g>
+    <g class="node delegate">
+      <rect x="516" y="128" width="190" height="86" rx="15"/>
+      <text class="node-index" x="532" y="151">03</text>
+      <text class="node-title" x="532" y="176">用户委托</text>
+      <text class="node-detail" x="532" y="198">身份 / Scope / Expiry</text>
+    </g>
+    <g class="node action">
+      <rect x="746" y="128" width="190" height="86" rx="15"/>
+      <text class="node-index" x="762" y="151">04</text>
+      <text class="node-title" x="762" y="176">工具动作</text>
+      <text class="node-detail" x="762" y="198">输入 / 输出 / 副作用</text>
+    </g>
+    <g class="node audit">
+      <rect x="516" y="326" width="190" height="86" rx="15"/>
+      <text class="node-index" x="532" y="349">05</text>
+      <text class="node-title" x="532" y="374">审计证据</text>
+      <text class="node-detail" x="532" y="396">人、Agent、依据、时间</text>
+    </g>
+    <g class="node accept">
+      <rect x="746" y="326" width="210" height="86" rx="15"/>
+      <text class="node-index" x="762" y="349">06</text>
+      <text class="node-title" x="762" y="374">风险接受</text>
+      <text class="node-detail" x="762" y="396">补偿控制 / Expiry / 签字</text>
+    </g>
+    <g class="node rollback">
+      <rect x="996" y="326" width="170" height="86" rx="15"/>
+      <text class="node-index" x="1012" y="349">07</text>
+      <text class="node-title" x="1012" y="374">回滚</text>
+      <text class="node-detail" x="1012" y="396">版本与恢复目标</text>
+    </g>
+    <g class="node blocked">
+      <rect x="266" y="526" width="260" height="92" rx="15"/>
+      <text class="node-index" x="282" y="549">08</text>
+      <text class="node-title" x="282" y="574">BLOCKED</text>
+      <text class="node-detail" x="282" y="596">规则冲突或证据缺失</text>
+    </g>
+  <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
+  <text class="callout-title" x="52" y="678">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">平均质量分不能抵消业务硬规则；AI 不得批准 waiver 或签署风险接受。</text>
+  <text class="footer" x="34" y="735">Fixture 只验证 lineage 与门禁字段；真实组织责任、ROI 和审批仍为 Unknown/NOT_RUN。</text>
+</svg>

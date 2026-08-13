@@ -1,0 +1,47 @@
+{
+  "page_id": "TD-P06",
+  "status": "ACCEPTED",
+  "review_findings": [
+    {
+      "case_id": "T-CANCEL-SHIPPED-01",
+      "verdict": "ACCEPTED",
+      "reason": "independent oracle and trace are present"
+    }
+  ],
+  "adapter_contracts": [
+    {
+      "adapter": "CancelApiAdapter",
+      "input": "order_id and buyer token",
+      "output": "status and side-effect evidence"
+    }
+  ],
+  "commands": [
+    {
+      "cwd": "materials/requirements-to-evidence",
+      "command": "python3 pipeline.py page-cycle --page TD-P06 --report reports/TD-P06-cycle.json",
+      "expected_exit": 0
+    }
+  ],
+  "trace_links": [
+    {
+      "source_ref": "PRD-v3#R17",
+      "case_id": "T-CANCEL-SHIPPED-01",
+      "evidence": "reports/TD-P06-cycle.json"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "production payment test",
+      "status": "BLOCKED",
+      "reason": "fixture forbids real payment"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ]
+}

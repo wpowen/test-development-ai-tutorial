@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X501",
+  "phase": "fault",
+  "status": "FAIL",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:b0822eb4657a56d9d5fcabd206cc33c030d11759c9ede272a4c36211a705ad8a",
+  "checks": {
+    "all_modalities_present": true,
+    "cross_modal_alignment": false,
+    "oracle_independent": false,
+    "counterexample_preserved": true
+  },
+  "failed_checks": [
+    "cross_modal_alignment",
+    "oracle_independent"
+  ],
+  "fault_id": "cross_modal_mismatch",
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

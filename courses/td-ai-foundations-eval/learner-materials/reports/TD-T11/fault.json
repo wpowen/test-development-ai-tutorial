@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T11",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "回答中的关键声明必须被当前检索证据支持，并保留 citation 对齐。",
+  "checks": [
+    {
+      "field": "claims_supported",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "citation_resolves",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "conflict_flagged",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "id": "unsupported-refund-promise",
+    "field": "claims_supported",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "自动 faithfulness scorer 未与人工校准",
+    "未执行真实生成模型"
+  ]
+}

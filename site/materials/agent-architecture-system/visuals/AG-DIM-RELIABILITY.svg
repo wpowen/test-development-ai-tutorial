@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 620" width="1080" height="620" role="img" aria-labelledby="t d">
+<title id="t">pass@k 与 pass^k 的差距及区间口径</title>
+<desc id="d">同一份 15 任务 × 5 次重复的运行台账，按「至少一次成功」与「每次都成功」两种口径得到完全不同的结论；右侧展示按任务时长分桶的 horizon 衰减，底部展示聚类区间与逐 run 展开的差别。</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5a6b86"/></marker>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b04a2e"/></marker>
+<style>
+.bg{fill:#f7f8fb}
+.node rect{stroke-width:1.5}
+.io rect{fill:#eceef1;stroke:#4a5666}
+.ok rect{fill:#e6f2e9;stroke:#2f7a4d}
+.warn rect{fill:#fdf3d9;stroke:#9a7412}
+.bad rect{fill:#fbe6e2;stroke:#b04a2e}
+.info rect{fill:#e5eefb;stroke:#2a5da8}
+.h{font:700 14px system-ui,"PingFang SC",sans-serif;fill:#171c24}
+.s{font:600 12px system-ui,"PingFang SC",sans-serif;fill:#2c3542}
+.m{font:11.5px system-ui,"PingFang SC",sans-serif;fill:#3d4855}
+.tiny{font:10.5px system-ui,"PingFang SC",sans-serif;fill:#5a6675}
+.num{font:700 20px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#171c24}
+.badge{font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#b04a2e}
+.good{font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2f7a4d}
+.edge{stroke:#5a6b86;stroke-width:1.6;fill:none;marker-end:url(#a)}
+.edge.stop{stroke:#b04a2e;stroke-width:2;marker-end:url(#ar)}
+.bar{fill:#2a5da8}
+.bar2{fill:#b04a2e}
+.axis{stroke:#8b95a3;stroke-width:1}
+</style>
+</defs>
+<rect class="bg" x="0" y="0" width="1080" height="620"/>
+
+<g class="node io"><rect x="24" y="24" width="260" height="120" rx="4"/></g>
+<text class="h" x="38" y="47">任务集与重复运行</text>
+<text class="m" x="38" y="70">15 个任务 × 每任务重复 5 次</text>
+<text class="m" x="38" y="90">固定 temperature 与版本并记录</text>
+<text class="m" x="38" y="110">保留全部 raw run（失败不得删除）</text>
+<text class="tiny" x="38" y="130">重置规则：每次 run 前回到同一快照</text>
+
+<g class="node ok"><rect x="340" y="24" width="290" height="112" rx="4"/></g>
+<text class="h" x="354" y="47">口径 A：pass@k　至少一次成功</text>
+<text class="num" x="354" y="80">14 / 15 = 93.3%</text>
+<text class="m" x="354" y="102">回答的问题：它「能不能」做对</text>
+<text class="good" x="354" y="124">用途：判断能力上限，不能作为承诺</text>
+
+<g class="node bad"><rect x="340" y="156" width="290" height="132" rx="4"/></g>
+<text class="h" x="354" y="179">口径 B：pass^k　每次都成功</text>
+<text class="num" x="354" y="212">7 / 15 = 46.7%</text>
+<text class="m" x="354" y="234">回答的问题：它「能不能每次都」做对</text>
+<text class="badge" x="354" y="256">这才是你对用户的承诺</text>
+<text class="tiny" x="354" y="276">同一份数据，两个口径差 46.6 个百分点</text>
+
+<g class="node info"><rect x="340" y="308" width="290" height="122" rx="4"/></g>
+<text class="h" x="354" y="331">区间：以任务为聚类单位</text>
+<text class="m" x="354" y="354">Wilson 95% CI = [0.246, 0.699]</text>
+<text class="m" x="354" y="374">n = 15（任务数），不是 75</text>
+<text class="badge" x="354" y="396">把 n×k=75 当独立样本会严重低估不确定性</text>
+<text class="tiny" x="354" y="416">同一任务的 5 次运行高度相关</text>
+
+<g class="node warn"><rect x="686" y="24" width="360" height="264" rx="4"/></g>
+<text class="h" x="700" y="47">horizon 衰减：按任务时长分桶</text>
+<text class="tiny" x="700" y="65">纵轴 pass^k，横轴任务预期时长桶</text>
+<line class="axis" x1="716" y1="240" x2="1020" y2="240"/>
+<line class="axis" x1="716" y1="80" x2="716" y2="240"/>
+<rect class="bar" x="740" y="120" width="46" height="120"/>
+<rect class="bar" x="810" y="140" width="46" height="100"/>
+<rect class="bar" x="880" y="200" width="46" height="40"/>
+<rect class="bar2" x="950" y="220" width="46" height="20"/>
+<text class="tiny" x="742" y="256">&lt;5min</text>
+<text class="tiny" x="808" y="256">5–30min</text>
+<text class="tiny" x="874" y="256">30min–2h</text>
+<text class="tiny" x="956" y="256">&gt;2h</text>
+<text class="s" x="740" y="112">75%</text>
+<text class="s" x="810" y="132">75%</text>
+<text class="s" x="880" y="192">33%</text>
+<text class="s" x="950" y="212">25%</text>
+<text class="m" x="700" y="280">结论直接变成两条产品规则：自主时长上限 + 强制检查点间隔</text>
+
+<g class="node bad"><rect x="686" y="308" width="360" height="122" rx="4"/></g>
+<text class="h" x="700" y="331">三种统计结论，不是两种</text>
+<text class="m" x="700" y="354">PASS：CI 下界 ≥ 阈值</text>
+<text class="m" x="700" y="374">FAIL：CI 上界 &lt; 阈值，或与旧版 CI 不重叠且更差</text>
+<text class="badge" x="700" y="396">EVIDENCE-INSUFFICIENT：样本不足 → 不是「通过」</text>
+<text class="tiny" x="700" y="416">非重叠 CI 才算真回归；点估计的涨跌大多是噪声</text>
+
+<g class="node io"><rect x="24" y="452" width="1022" height="66" rx="4"/></g>
+<text class="h" x="38" y="475">Metric Card 必填：口径（经验/解析）· 分子分母 · k · 状态重置规则 · 区间方法与聚类单位 · 样本量理由 · 时长桶 · 切片 · 四维版本 · owner · 失败动作</text>
+<text class="tiny" x="38" y="500">缺任一项，这个 pass^k 数字不可复用，也不能进发布决定书</text>
+
+<path class="edge" d="M284 70 L340 70"/>
+<path class="edge" d="M284 100 L340 200"/>
+<path class="edge" d="M485 288 L485 308"/>
+<path class="edge" d="M630 80 L686 80"/>
+<path class="edge" d="M630 220 L686 200"/>
+<path class="edge" d="M630 370 L686 370"/>
+<path class="edge" d="M485 430 L485 452"/>
+<path class="edge stop" d="M866 430 L866 452"/>
+<path class="edge stop" d="M1010 288 C1060 300 1060 340 1046 360"/>
+
+<text class="tiny" x="24" y="546">数值来自本仓库夹具 fixtures/run-ledger.json，用于演示口径差异；不是任何真实系统的性能指标。</text>
+<text class="badge" x="24" y="566">阈值均为结构占位；成熟度 fixture-tested，真实模型与生产效果 NOT_RUN。</text>
+<text class="tiny" x="24" y="586">τ-bench 公开观测：pass@1 = 61% 而 pass^8 = 25%，说明两个口径可以差得极远——但那是来源观测，不是你系统的预期值。</text>
+</svg>

@@ -1,0 +1,14 @@
+{
+  "evidence_scope": "TD-F01 deterministic profession responsibility contract",
+  "commands": [
+    "python3 profession_self_check.py phase --phase baseline --report reports/TD-F01-baseline.json",
+    "python3 profession_self_check.py phase --phase fault --report reports/TD-F01-fault.json",
+    "python3 profession_self_check.py phase --phase repair --report reports/TD-F01-repair.json",
+    "python3 profession_self_check.py cycle --report reports/TD-F01-cycle.json"
+  ],
+  "baseline": {"exit_code": 0, "verdict": "PASS", "report": "learner-materials/reports/TD-F01-baseline.json"},
+  "mutation": {"exit_code": 1, "verdict": "FAIL", "report": "learner-materials/reports/TD-F01-fault.json"},
+  "repair": {"exit_code": 0, "verdict": "PASS", "report": "learner-materials/reports/TD-F01-repair.json"},
+  "environment": {"runtime": "Python standard library", "credentials": "none", "provider": "none", "model_execution": "NOT_RUN"},
+  "limitations": ["No live provider or real model execution", "No practitioner or production review", "No employment, salary, promotion or role-availability guarantee", "Synthetic脱敏 inputs only"]
+}

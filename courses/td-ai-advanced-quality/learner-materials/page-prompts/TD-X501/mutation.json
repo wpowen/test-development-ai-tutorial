@@ -1,0 +1,12 @@
+{
+  "topic_id": "TD-X501",
+  "mutations": [
+    {
+      "mutation_id": "cross_modal_mismatch",
+      "description": "图文错配、缺少模态或跨模态 Oracle 冲突",
+      "expected_status": "BLOCKED",
+      "must_be_detected": true
+    }
+  ]
+}
+

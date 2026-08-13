@@ -1,0 +1,26 @@
+{
+  "bundle_id": "llm-agent-quality-fixture-v1",
+  "ownership_mode": "exact-page-id",
+  "exact_owner_page_ids": [
+    "TD-T13",
+    "TD-T14",
+    "TD-T15",
+    "TD-T16",
+    "TD-T17",
+    "TD-T18",
+    "TD-T19",
+    "TD-W01",
+    "TD-W02",
+    "TD-W03"
+  ],
+  "shared": true,
+  "applicability": "All ten pages share the deterministic runner and archive; every page keeps its own state, Oracle, manifest, Prompt package and reports. Prefix inheritance is forbidden.",
+  "maturity": "fixture-tested",
+  "not_run": [
+    "live model",
+    "live browser",
+    "live tools",
+    "live queue",
+    "practitioner review"
+  ]
+}

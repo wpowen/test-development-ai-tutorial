@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0.0",
+  "materials": [
+    {
+      "material_id": "QUALITY-BENCH-01",
+      "path": "materials/quickstart.md",
+      "purpose": "Quickstart",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S36",
+        "S37",
+        "S38",
+        "S40"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": "Wave-3 research and fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model, enterprise integration, practitioner, publication or production proof"
+    },
+    {
+      "material_id": "QUALITY-BENCH-02",
+      "path": "materials/reusable-skill.md",
+      "purpose": "Reusable quality-system skill",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S36",
+        "S37",
+        "S38",
+        "S40"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": "Wave-3 research and fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model, enterprise integration, practitioner, publication or production proof"
+    },
+    {
+      "material_id": "QUALITY-BENCH-03",
+      "path": "materials/sample-input.md",
+      "purpose": "Synthetic input",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S36",
+        "S37",
+        "S38",
+        "S40"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": "Wave-3 research and fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model, enterprise integration, practitioner, publication or production proof"
+    },
+    {
+      "material_id": "QUALITY-BENCH-04",
+      "path": "materials/expected-output.md",
+      "purpose": "Expected output",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S36",
+        "S37",
+        "S38",
+        "S40"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": "Wave-3 research and fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model, enterprise integration, practitioner, publication or production proof"
+    },
+    {
+      "material_id": "QUALITY-BENCH-05",
+      "path": "materials/verification-checklist.md",
+      "purpose": "Verification checklist",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S36",
+        "S37",
+        "S38",
+        "S40"
+      ],
+      "scenario_ids": [
+        "TD-S07"
+      ],
+      "generated_from": "Wave-3 research and fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model, enterprise integration, practitioner, publication or production proof"
+    }
+  ]
+}

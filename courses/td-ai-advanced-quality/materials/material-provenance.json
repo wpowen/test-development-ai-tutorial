@@ -1,0 +1,12 @@
+{
+  "course_id":"td-ai-advanced-quality",
+  "generated_at":"2026-08-11T00:00:00+08:00",
+  "materials":[
+    {"material_id":"M01","path":"materials/quickstart.md","purpose":"重放八页 0/1/0","source_ids":["S23","S40","S65"],"scenario_ids":["TD-S07"],"generated_from":["execution contract","saved reports"],"license_or_usage":"项目原创","validation_status":"fixture-tested","validation_evidence":["evidence/execution-evidence.json"],"contains_synthetic_data":true,"limitations":"仅离线 fixture"},
+    {"material_id":"M02","path":"materials/reusable-skill.md","purpose":"迁移版本化评测和负控制","source_ids":["S07","S23","S49","S65"],"scenario_ids":["TD-S07"],"generated_from":["eight research comparisons"],"license_or_usage":"项目原创","validation_status":"static-reviewed","validation_evidence":["research/topics/TD-X602/validation.md","research/topics/TD-X805/validation.md"],"contains_synthetic_data":false,"limitations":"未从业者评审"},
+    {"material_id":"M03","path":"materials/sample-input.md","purpose":"解释八类合成 fixture","source_ids":["S23","S24","S49"],"scenario_ids":["TD-S07"],"generated_from":["page prompt inputs"],"license_or_usage":"原创合成数据","validation_status":"fixture-tested","validation_evidence":["lab/page-prompts"],"contains_synthetic_data":true,"limitations":"不代表真实分布"},
+    {"material_id":"M04","path":"materials/expected-output.md","purpose":"解释 PASS/FAIL/UNKNOWN","source_ids":["S07","S40","S65"],"scenario_ids":["TD-S07"],"generated_from":["saved reports"],"license_or_usage":"项目原创","validation_status":"fixture-tested","validation_evidence":["evidence/execution-evidence.json"],"contains_synthetic_data":true,"limitations":"不证明真实模型"},
+    {"material_id":"M05","path":"materials/verification-checklist.md","purpose":"校验研究、实验和声明边界","source_ids":["S23","S40","S49","S65","S66"],"scenario_ids":["TD-S07"],"generated_from":["course gates"],"license_or_usage":"项目原创","validation_status":"static-reviewed","validation_evidence":["research/topics/TD-X101/validation.md","research/topics/TD-X601/validation.md"],"contains_synthetic_data":false,"limitations":"未安全、公平或法务审核"}
+  ]
+}
+

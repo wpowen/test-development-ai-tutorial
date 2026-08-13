@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A01",
+  "phase": "baseline",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "evidence_level": "PASS-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:9f57f189f33824791b32e8a9fe76bee809ab9f1eb7126153d3818753e8ef19ce",
+  "manifest_sha256": "sha256:e9cf2dfa58a214880048a686daa30a6f15152f65dcd900675ac15b6d0a2ef89e",
+  "checks": [
+    {
+      "field": "request_id",
+      "expected": "req-fixture-001",
+      "actual": "req-fixture-001",
+      "pass": true
+    },
+    {
+      "field": "model.internal_version",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    },
+    {
+      "field": "error.retryable",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "供应商内部模型修订、路由、限额和区域实现没有公开可观察证据。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

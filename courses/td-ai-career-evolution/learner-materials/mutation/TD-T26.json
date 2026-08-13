@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-T26","fault_patch":{"productivity.mutation_detected":false,"productivity.independent_oracle":false,"productivity.accepted_test_count":6},"expected_fault_verdict":"FAIL","independent_oracle":true}

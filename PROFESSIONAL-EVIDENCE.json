@@ -1,0 +1,3095 @@
+{
+  "schema_version": "1.0.0",
+  "pages": [
+    {
+      "page_id": "TD-F01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P07",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-P08",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS07",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS08",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS09",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS10",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS11",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-PS12",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X101",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-FP01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-F02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-F03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-F04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T07",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T08",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-A01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-A02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-A03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-A04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-A05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-A06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T09",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T10",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T11",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T12",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X501",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X502",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T13",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T14",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T15",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T16",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T17",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T18",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T19",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-W01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-W02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-W03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X603",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X604",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X602",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X601",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T20",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T21",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T22",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T23",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T24",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-X805",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-B01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-B02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-B03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-B04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-B05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-B06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-QP01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-QP02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-QP03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-QP04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T25",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-C01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-C02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-C03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-C04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-F05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-T26",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-R01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP07",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AP08",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-00",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-01",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-02",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-03",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-04",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-05",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-06",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-07",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-08",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-09",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    },
+    {
+      "page_id": "TD-AG-10",
+      "maturity_claim": "desk-researched",
+      "model": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有真实模型/provider 重复运行证据；版本化 Prompt 不等于模型执行。",
+        "provider": "none"
+      },
+      "integration": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有目标企业系统、认证、清理和回滚运行证据。"
+      },
+      "clean_room": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "课程侧 executability/fixture 另有收据；专业证据合同不在此伪造 clean-room PASS。"
+      },
+      "practitioner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有具名测试开发从业者评审收据。"
+      },
+      "learner": {
+        "status": "NOT_RUN",
+        "receipt_refs": [],
+        "limitations": "没有至少五名目标学员的理解、完成与迁移观察。"
+      }
+    }
+  ]
+}

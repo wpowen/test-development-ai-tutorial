@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-T26",
+  "phase": "baseline",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "evidence_level": "PASS-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:ef5f7659b57b939e5a6971b87e3400846799d2f9b1ae7a79e696079b4becbd2d",
+  "manifest_sha256": "sha256:d9166b590013f741494fa77d3f356ebfb09df6f137f9c6c100ccbb6efe258dc6",
+  "checks": [
+    {
+      "field": "productivity.baseline_control_same",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "productivity.mutation_detected",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "productivity.independent_oracle",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "productivity.accepted_test_count",
+      "expected": 2,
+      "actual": 2,
+      "pass": true
+    },
+    {
+      "field": "productivity.defect_yield_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "真实团队效率和生产缺陷收益未运行"
+  ],
+  "boundary": "PASS-FIXTURE only; candidate count is not productivity"
+}

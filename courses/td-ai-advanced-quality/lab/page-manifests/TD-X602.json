@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-X602",
+  "page_id": "TD-X602",
+  "working_directory": "materials/advanced-quality",
+  "required_files": [
+    "advanced_quality_lab.py",
+    "owners.json",
+    "page-prompts/TD-X602/manifest.json",
+    "page-prompts/TD-X602/prompt-v1.md",
+    "page-prompts/TD-X602/input.json",
+    "page-prompts/TD-X602/schema.json",
+    "page-prompts/TD-X602/eval.json",
+    "page-prompts/TD-X602/mutation.json"
+  ],
+  "steps": [
+    {
+      "step_id": "td-x602-baseline",
+      "kind": "baseline",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X602 --phase baseline --report reports/td-x602-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x602-baseline.json"
+      ]
+    },
+    {
+      "step_id": "td-x602-fault",
+      "kind": "fault",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X602 --phase fault --report reports/td-x602-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-x602-fault.json"
+      ]
+    },
+    {
+      "step_id": "td-x602-repair",
+      "kind": "repair",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X602 --phase repair --report reports/td-x602-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x602-repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "td-x602-baseline",
+    "fault_step_id": "td-x602-fault",
+    "repair_step_id": "td-x602-repair"
+  },
+  "evidence_boundary": "deterministic offline fixture; real systems, practitioner review and production NOT_RUN"
+}

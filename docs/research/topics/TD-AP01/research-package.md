@@ -1,31 +1,15 @@
-# TD-AP01 · Why Agent load is not API concurrency
+# TD-AP01 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: what is the correct work unit and failure model for Agent load testing? The learner is a test developer who knows API testing. The decision is whether a load result proves user-task capacity. The artifact is a task/request/model/tool boundary map. Excludes detailed metric thresholds, which belong to TD-AP02.
+- 主题边界：工作负载模型与任务终态，不外推生产容量。
+- 方法：workload modeling + task-oracle decomposition；独立 Oracle 不读取 evaluator verdict。
+- 必须保留：task 分母、tool path、allowed terminal state、Evidence/Inference/Unknown 分类。
 
-## Source pack
+## Boundary and command evidence
 
-- Google SRE monitoring and cascading failures: https://sre.google/sre-book/monitoring-distributed-systems/ and https://sre.google/sre-book/addressing-cascading-failures/ — supports golden signals, queue/retry feedback loops; does not define Agent task success.
-- k6 scenarios: https://grafana.com/docs/k6/latest/using-k6/scenarios/ — supports open/closed workload models; does not provide Agent business oracle.
-- OpenAI Agents tracing: https://openai.github.io/openai-agents-python/tracing/ — supports model/tool/handoff spans; product capability is not production efficacy.
-
-## Evidence synthesis
-
-Fact: entry acceptance, Agent terminal state, model generation and tool call are different observation layers. Synthesis: the denominator must be admitted user tasks, while internal call counts quantify dynamic amplification. Unknown: the target system's path distribution and capacity.
-
-## Engineering blueprint
-
-Root object is `task_run`; children are queue, generation, tool, handoff and state operations. Compare open-loop arrival rate with closed-loop concurrency. Track task success, terminal state, call amplification, retry amplification and duplicate side effects.
-
-## Manuscript map
-
-Site page TD-AP01 covers work unit, dynamic amplification, load models and the shared order-exception scenario.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP01-lab.json --mode cycle`，已记录 baseline/fault/repair=0/1/0。provider=none、model=NOT_RUN；live、practitioner、production capacity 均未知。
 
 ## Editorial review
 
-PASS. Preserved the distinction among admitted tasks, HTTP requests, model calls and tool calls; kept open-loop, closed-loop and coordinated-omission terminology tied to their engineering consequences. Removed any suggestion that one concurrency number proves Agent capacity. The page still requires a task-level business oracle and labels the target path distribution as unknown.
-
-## Validation
-
-PASS: the page distinguishes all denominators, explains coordinated omission risk, includes a counterexample, and labels production capacity unknown.
+本记录只保护主题专属性、方法理由、命令可复现性和成熟度边界；不提供分数，不替代独立审计或发布门禁。

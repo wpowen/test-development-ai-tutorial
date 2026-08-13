@@ -1,0 +1,283 @@
+{
+  "schema_version": "1.0.0",
+  "package_id": "td-ai-career-evolution-source-visuals",
+  "status": "SOURCE-EXAMPLE",
+  "source": {
+    "path": "/Users/owen/Downloads/AI测试工程师发展.md",
+    "sha256": "d6df309516b91cb5c7e68ce2f69eb817c2bed7798f80ab9005627097dbc8416c",
+    "locators": [
+      "AI测试工程师发展.md:L1256-L1288",
+      "AI测试工程师发展.md:L1335-L1490",
+      "AI测试工程师发展.md:L1355-L1393",
+      "AI测试工程师发展.md:L18-L70",
+      "AI测试工程师发展.md:L210-L218",
+      "AI测试工程师发展.md:L552-L857",
+      "AI测试工程师发展.md:L584-L630",
+      "AI测试工程师发展.md:L78-L218",
+      "AI测试工程师发展.md:L858-L1250"
+    ]
+  },
+  "policy": {
+    "organization_level_status": "INTERNAL-UNKNOWN",
+    "weights_and_years": "parameterized",
+    "parameter_owner": "organization_level_adapter.owner",
+    "failure_action": "block promotion conclusions until owner and internal source are supplied"
+  },
+  "visuals": [
+    {
+      "visual_id": "career-role-comparison",
+      "kind": "comparison",
+      "purpose": "帮助学习者判断一个任务的主责任、共同责任与不可由 AI 自动接管的发布责任。",
+      "rendered_path": "visuals/career-role-comparison.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "1631d74b34d4651a9722aac9d35e57e1bc1d261017ca218bde59b576684ec22f",
+      "alt_text": "三列职责对比图：传统软件测试聚焦确定性行为与系统风险，AI 测试开发增加数据、模型、评测与 Agent 风险，AI 开发负责能力实现；三者共享工程底座，最终发布决定仍由具名责任人作出。",
+      "caption": "先按风险和证据划分责任，再选工具；岗位名称可以变化，业务规则和风险接受的决定权不能消失。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L18-L70"
+      ],
+      "nodes": [
+        "传统软件测试",
+        "AI 测试开发",
+        "AI 开发",
+        "共同工程底座",
+        "发布责任人"
+      ],
+      "relationships": [
+        "传统测试→确定性软件风险",
+        "AI 测试→数据/模型/Agent 风险",
+        "AI 开发→能力实现",
+        "三者→共同工程底座",
+        "证据→发布责任人"
+      ]
+    },
+    {
+      "visual_id": "career-capability-mindmap",
+      "kind": "mindmap",
+      "purpose": "把来源中的五维能力从知识清单改写成可观察工件、故障证据和下游消费者。",
+      "rendered_path": "visuals/career-capability-mindmap.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "9599823194c8e732a53533cff5700ac9fccb95b4efa5617f75c3802f8eb86b4c",
+      "alt_text": "以证据中心为核心的五分支思维导图，分别连接 AI/ML 测试、测试专业、AI 特有测试、技术工程、协作与业务，并要求每一支都有工件、故障和 reviewer。",
+      "caption": "能力不是自我评分的形容词；每个分支都要落到可复核工件、故障检测和真实消费者。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L78-L218"
+      ],
+      "nodes": [
+        "AI/ML 测试",
+        "测试专业",
+        "AI 特有测试",
+        "技术工程",
+        "协作与业务",
+        "证据中心"
+      ],
+      "relationships": [
+        "五维→证据中心",
+        "证据中心→项目决定",
+        "故障注入→能力证明",
+        "Reviewer→边界确认"
+      ]
+    },
+    {
+      "visual_id": "career-capability-allocation",
+      "kind": "pie",
+      "purpose": "保留来源 30/25/25/15/5 的比较功能，同时明确它只是来源示例，不能直接成为组织晋升权重。",
+      "rendered_path": "visuals/career-capability-allocation.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "b52c15fad56cf0500dddb219e52498e312d5c1e6c50b256bebca8ebc05872721",
+      "alt_text": "环形占比图展示来源示例的五项能力权重 30、25、25、15、5；右侧强调组织参数、适用岗位、证据与 owner 未确认前状态为 INTERNAL-UNKNOWN。",
+      "caption": "30/25/25/15/5 仅用于解释来源结构；真实岗位权重必须在 organization_level_adapter 中由 owner 参数化。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L210-L218"
+      ],
+      "nodes": [
+        "AI/ML 30",
+        "测试专业 25",
+        "AI 特有 25",
+        "技术工程 15",
+        "协作业务 5",
+        "组织参数"
+      ],
+      "relationships": [
+        "来源示例→五维分配",
+        "组织参数→重新加权",
+        "owner→审批",
+        "证据→校准"
+      ]
+    },
+    {
+      "visual_id": "career-evidence-lifecycle",
+      "kind": "lifecycle",
+      "purpose": "让学习者把自评变成主张、证据、故障、评审、应用与反馈闭环，而不是一次性打分。",
+      "rendered_path": "visuals/career-evidence-lifecycle.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "6db4d0c196245352f1400e4460b636f2d81edd22c9cb264684b4072bf499bc56",
+      "alt_text": "六步环形生命周期，从能力主张开始，经证据引用、故障或变异、独立评审、工作应用、反馈复评，最后回到下一轮能力主张。",
+      "caption": "没有 evidence_ref 或故障证据时只能记为 Unknown；复评不是晋升承诺，而是更新下一轮学习决策。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L1335-L1490"
+      ],
+      "nodes": [
+        "能力主张",
+        "证据引用",
+        "故障/变异",
+        "独立评审",
+        "工作应用",
+        "反馈复评"
+      ],
+      "relationships": [
+        "主张→证据",
+        "证据→故障验证",
+        "验证→评审",
+        "评审→应用",
+        "应用→反馈",
+        "反馈→新主张"
+      ]
+    },
+    {
+      "visual_id": "career-responsibility-ladder",
+      "kind": "ladder",
+      "purpose": "把 P5-P9 的有用成长方向适配为可迁移的四类责任状态，并保留组织职级映射入口。",
+      "rendered_path": "visuals/career-responsibility-ladder.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "917c4f2f2e90ae269b3cf6c7c591f87b868bd92316aec9a81ace1d62fcc140b1",
+      "alt_text": "四级台阶从指导下完成、独立范围负责、系统与跨团队杠杆到战略治理与培养；旁边的组织职级适配器将公司级别标记为 INTERNAL-UNKNOWN。",
+      "caption": "来源中的 P5-P9 年限不作通用门槛；只有责任范围、决定权、失败代价和可复核证据可以跨组织迁移。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L552-L857"
+      ],
+      "nodes": [
+        "指导下完成",
+        "独立范围负责",
+        "系统与跨团队杠杆",
+        "战略治理与培养",
+        "组织职级适配"
+      ],
+      "relationships": [
+        "任务证据→独立负责",
+        "范围证据→系统杠杆",
+        "组织影响→治理培养",
+        "四态→组织映射"
+      ]
+    },
+    {
+      "visual_id": "career-evidence-radar",
+      "kind": "radar",
+      "purpose": "示范如何用证据成熟度比较当前状态与目标任务，而不把来源 L1-L5 或职级标签当事实。",
+      "rendered_path": "visuals/career-evidence-radar.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "47ae9ccb1317d2141eea9f486b8d8b630fad7a44478fe24da48c09d6b2ed3646",
+      "alt_text": "五轴雷达图比较一份示例的当前证据成熟度与目标任务要求，轴为 AI/ML、测试方法、AI Eval、工程交付和业务协作；数据明确标为示例。",
+      "caption": "雷达值是演示数据，不是能力诊断结果；迁移时必须用 evidence_ref 重算，并由任务 owner 定义目标。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L584-L630"
+      ],
+      "nodes": [
+        "AI/ML",
+        "测试方法",
+        "AI Eval",
+        "工程交付",
+        "业务协作",
+        "当前证据",
+        "任务目标"
+      ],
+      "relationships": [
+        "当前证据↔任务目标",
+        "差距→学习项目",
+        "项目→复评",
+        "owner→目标定义"
+      ]
+    },
+    {
+      "visual_id": "career-evidence-gantt",
+      "kind": "gantt",
+      "purpose": "把来源的固定成长时间线改写为可编辑的三个证据窗口，用交付和复评而非晋升日期收口。",
+      "rendered_path": "visuals/career-evidence-gantt.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "260acfbe75834b95e43d694fa1c52824cf3270a1d0576087004dc6f1b239cd3e",
+      "alt_text": "三段甘特式计划以窗口 A、B、C 表示基线、故障实验和交付复评，默认可示例为 30/60/90 天，但实际时长由 owner 参数化。",
+      "caption": "30/60/90 是规划示例，不是晋升期限；每一段必须以可审计工件和 reviewer 决定是否进入下一段。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L858-L1250"
+      ],
+      "nodes": [
+        "窗口 A 定基线",
+        "窗口 B 做故障",
+        "窗口 C 交付复评",
+        "owner 调整窗口",
+        "证据出口"
+      ],
+      "relationships": [
+        "基线→故障",
+        "故障→交付",
+        "交付→复评",
+        "owner→窗口参数",
+        "证据→下一计划"
+      ]
+    },
+    {
+      "visual_id": "career-background-paths",
+      "kind": "path",
+      "purpose": "保留测试背景、开发背景和零基础的差异化路径，但删除固定几个月即可达标的无依据承诺。",
+      "rendered_path": "visuals/career-background-paths.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "dd7db078182ec43b3c3a8e8a5283b48ff570a534ff8d2bd7250c007dcae6411e",
+      "alt_text": "三条并行学习路线从测试背景、开发背景和零基础出发，先做缺口诊断和不同先修，再汇合到同一个可运行项目与责任证据。",
+      "caption": "起点只改变先修顺序，不改变完成条件；学习时长为 Unknown，不能从来源示例外推到个人。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L1256-L1288"
+      ],
+      "nodes": [
+        "测试背景",
+        "开发背景",
+        "零基础",
+        "各自缺口",
+        "共同项目",
+        "责任证据"
+      ],
+      "relationships": [
+        "起点→缺口诊断",
+        "缺口→先修组合",
+        "先修→共同项目",
+        "共同项目→责任证据"
+      ]
+    },
+    {
+      "visual_id": "career-priority-quadrant",
+      "kind": "quadrant",
+      "purpose": "用任务重要性和当前证据成熟度排序学习投资，并明确每个象限对应的行动而非贴标签。",
+      "rendered_path": "visuals/career-priority-quadrant.svg",
+      "editable_path": "visuals/career-visual-source.json",
+      "sha256": "e6cff707aab62afede567b65f4d2b4afdf51f638edd393aa3fc568d887c7ca05",
+      "alt_text": "二维四象限以任务重要性为纵轴、证据成熟度为横轴，四格分别是优先补齐、保持优势、暂缓、分享与复用。",
+      "caption": "重要性由当前任务 owner 定义，成熟度由证据而非自信定义；象限只决定下一步，不证明职级。",
+      "not_proof": "本图不证明职级、晋升时长、真实学习效果或就业结果；这些保持 NOT_RUN / INTERNAL-UNKNOWN。",
+      "source_refs": [
+        "AI测试工程师发展.md:L1355-L1393"
+      ],
+      "nodes": [
+        "优先补齐",
+        "保持优势",
+        "暂缓",
+        "分享与复用",
+        "任务重要性",
+        "证据成熟度"
+      ],
+      "relationships": [
+        "高重要低证据→优先补齐",
+        "高重要高证据→保持优势",
+        "低重要低证据→暂缓",
+        "低重要高证据→分享复用"
+      ]
+    }
+  ],
+  "evidence_boundary": "Static design evidence only; learner comprehension, practitioner validity, employment and promotion outcomes are NOT_RUN."
+}

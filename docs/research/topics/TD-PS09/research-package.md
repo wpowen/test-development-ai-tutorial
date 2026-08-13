@@ -6,7 +6,7 @@
 
 ## Source pack
 
-- vLLM metrics：<https://docs.vllm.ai/en/latest/design/metrics/>，提供 queue、TTFT、inter-token latency/TPOT、E2E、token 和 cache 指标；版本/硬件会影响定义。
+- vLLM production metrics：<https://docs.vllm.ai/en/stable/usage/metrics/>，提供 queue、TTFT、inter-token latency/TPOT、E2E、token 和 cache 指标；版本/硬件会影响定义。
 - NVIDIA GenAI-Perf metrics：<https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/perf_benchmark/genai-perf-README.html>，支持生成式推理性能指标与负载测量；不提供业务成功 Oracle。
 - k6 scenarios：<https://grafana.com/docs/k6/latest/using-k6/scenarios/>，区分 closed 与 arrival-rate/open workload；入口负载不等于 Agent 任务容量。
 - Prometheus histograms：<https://prometheus.io/docs/practices/histograms/>，支持可聚合分位数；bucket 必须按 SLO 设计。

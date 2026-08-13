@@ -1,0 +1,16 @@
+{
+  "requirement_id": "REQ-CANCEL-001",
+  "status": "ACCEPTED",
+  "statement": "已支付且未发货的订单允许买家取消，并创建一次退款请求",
+  "actors": ["BUYER"],
+  "preconditions": ["payment_status=PAID", "shipment_status=NOT_SHIPPED"],
+  "trigger": "POST /orders/{order_id}/cancel",
+  "state_transitions": ["PAID->CANCEL_PENDING", "CANCEL_PENDING->CANCELLED"],
+  "invariants": ["refund_count<=1", "refund_total<=captured_amount"],
+  "exceptions": ["SHIPPED->409", "non-owner->403"],
+  "side_effects": ["emit refund.requested"],
+  "nfrs": [],
+  "unknowns": ["退款完成时限未定义"],
+  "source_refs": ["PRD-v3#R17", "OPENAPI-v7#/cancel"]
+}
+

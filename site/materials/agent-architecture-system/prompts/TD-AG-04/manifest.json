@@ -1,0 +1,30 @@
+{
+  "package_id": "TD-AG-04-agent-architecture",
+  "version": "1.0.0",
+  "topic_id": "TD-AG-04",
+  "purpose": "D3 人机协同：中断、接管与确认疲劳",
+  "authority": "advisory only; human owner approves consequential decisions",
+  "system_prompt": "system.md",
+  "task_prompt": "task.md",
+  "input_fixture": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_policy": {
+    "provider": "NOT_RUN",
+    "model": "NOT_RUN",
+    "temperature": 0,
+    "structured_output": true
+  },
+  "permissions": [
+    "read fixed fixture",
+    "propose evidence summary",
+    "propose repair"
+  ],
+  "forbidden_permissions": [
+    "write external system",
+    "approve own result",
+    "waive blocker"
+  ],
+  "maturity": "static-reviewed"
+}

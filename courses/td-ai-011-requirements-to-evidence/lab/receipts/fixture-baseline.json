@@ -1,0 +1,11 @@
+{
+  "receipt_type": "deterministic-fixture",
+  "status": "PASS_FIXTURE",
+  "command": "python3 pipeline.py page-cycle --page TD-P08 --report reports/TD-P08-cycle.json",
+  "expected_exit_code": 0,
+  "report_ref": "reports/TD-P08-cycle.json",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "evidence_status": "fixture-tested",
+  "boundary": "deterministic offline fixture only; not a model, API, practitioner, integration, live, publication, or production pass"
+}

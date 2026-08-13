@@ -1,61 +1,48 @@
 # 测试开发 × AI v2 验证报告
 
-Verdict: `PASS-FIXTURE`，不等于 `PASS-LIVE` 或 `PASS-PRACTITIONER`。
+Verdict: `PASS-FIXTURE / PASS-LOCAL-COURSE`。不等于 `PASS-LIVE`、`PASS-PRACTITIONER`、`PASS-PUBLICATION` 或 `PASS-PRODUCTION`。
 
 ## Evidence
 
-- 研究账本包含 66 个来源，新增完整测试流程、接口契约、性能容量、可靠性安全、AI serving 指标、AI API 和职业演进的一手资料；能力声明优先使用官方文档、标准、原始论文和主仓库。
-- 职业地图将测试开发拆为角色变体、5 个工作域、业务事件、业务产物、系统、决策责任和失败成本；每个场景只归属一个主工作域。
-- 5 条原始招聘页来自 5 个雇主，只作为当前任务语言和需求信号，不作为市场规模证明。
-- 两个 GitHub 候选已固定 commit、时间和许可证，但未作为本课实验运行，因此保持 `metadata-only`。
-- 竞品矩阵包含 10 个直接供给，覆盖 DeepLearning.AI、Coursera、Ministry of Testing、Bilibili、知乎、慧测网和 Playwright Docs。
-- 课程单元扩展了需求追踪、风险策略、数据环境、接口集成、UI/兼容、性能容量、稳定性安全、AI API、TTFT/TPOT/Goodput、AI 容量诊断和职业迁移，并覆盖 `use-ai-for-work`、`test-ai-systems`、`agentize-work`、`build-ai-quality-system` 四条线。
-- 新增专业能力迁移架构、32 单元覆盖矩阵和六个独立专家视角；传统测试基线、大模型基础、LLM/RAG/Agent/Workflow/Benchmark 专题与 Capstone 均有明确工件和退出考核。
-- 首课 AI centrality 5/5；被测对象为 RAG/LLM/Tool Agent，移除 AI 后课程不成立。
-- 离线 lab 实际运行三次：baseline PASS/exit 0；注入回归 FAIL/exit 1；reset 后 repair PASS/exit 0。
-- Mutation 检测到退款幻觉、丢引用、拒答失守、Prompt injection、身份绕过、错误破坏性工具、延迟与成本回归。
-- 新版 package validator 已用 `--run-labs` 实际执行 manifest 中 7 个步骤并通过；其中已知回归步骤按契约返回 exit 1。
-- evaluator 的 10 个对抗回归测试全部通过，覆盖恶意引用、危险工具、中文提示词泄露、单次高成本、额外 candidate、负 telemetry、空答案、检索污染和过度拒答。
-- Skill validator 自身 47 个 fail-closed 回归测试通过；任何公开发布模式都禁止混入 planned、outlined、blocked、未承诺页面或空模块，公开页面 ID 必须与 `promised_page_ids` 完全一致。
-- 回归测试还包含来源集中度加 filler、渠道借用、GitHub 报告冒用、职业地图漏场景、占位课程、空迁移标签、不存在 URL、缺少教程查看器、计划页冒充已交付页、缺少学习层和缺少专家角色。
-- 内部课程目录保留 65 个站点命题位置；公开教程只投影 17 个通过逐题研究、正文、编辑与验证门禁的页面，分属 2 个非空模块。其余 48 个未完成命题不会进入公开 HTML、JSON、导航、搜索或发布承诺。
-- 站点内容门禁、TypeScript 类型检查、vinext 生产构建、服务端 HTML 测试、同源 GitHub Pages 静态导出与静态安全测试全部通过；静态测试新增浏览器脚本语法解析，防止 GitHub Pages 因非法内联 JavaScript 卡在 loading。
-- GitHub 公开仓库提交 `4bf127a` 的 `rag-eval-gate` 运行 `31366782842` 成功，覆盖 40 个 Skill 回归、职业课程包验证、站点构建、10 个 evaluator 对抗测试、良好候选通过和已知回归被拒绝。
-- GitHub Pages 运行 `31367062592` 成功完成 build 与 deploy；公开 URL 匿名请求返回 200，并包含需求流程、AI 性能与职业演进章节。
-- ChatGPT Site 版本 3 已从提交 `68004b0` 部署成功并开放公共访问；匿名 HTTP 请求返回 200，页面包含新增 AI 性能与职业演进章节。
-- 先前选择 S01、S05、S32 三个高优先来源执行实时重开并通过；这不是 40 个来源的全量当前可达性证明。S33–S40 已在本轮检索中打开并登记，但未执行同一批次全量 URL 验证。
-- 独立 reviewer 首轮发现 evaluator 假阳性、CI 只跑好快照和 RAG 检索未入执行路径三个阻断项；修复后复审 verdict 为 PASS，确认原 adversarial probes 全部被拒绝、根目录 CI 本地等价命令通过、7 个 manifest runtime steps 达到预期 exit code。
+- 公共课程为 85 页、12 个模块；另有 4 个未完成命题保留在内部目录，不进入导航、搜索、静态站或发布承诺。
+- canonical 目录包含 117 个职业命题，89 个站点命题映射，85 个公共页面；12 个高风险补充缺口全部有映射，117 个 content gate 仍保持 blocked，防止目录存在被解释为成熟度通过。
+- 每个公共页面都有九件独立研究包：brief、source pack、research runs、synthesis、blueprint、manuscript、comparison、lab manifest、validation。每页至少两次研究运行并有独立比较。
+- 独立编辑审计 `research/editorial-review-2026-08-11-final.json`：85/85 页面 editorial score ≥90，85/85 boundary preservation=100；旧失败审计通过 SHA-256 superseded chain 保留。
+- 执行性审计：85/85 页面 PASS；293 个 typed technical blocks，包括 109 command、83 versioned prompt、30 config、37 diagram、26 pseudocode、8 formula；0 个 untyped block、0 个未发布 `courses/` 路径、0 个隐含工作目录。
+- 13 个动态发现的学习材料包通过 canonical→public→static→ZIP 双向成员与 SHA-256 闭包。
+- 工厂 validator 与 `--run-labs` 均通过。实验真实执行 baseline、fault、repair；fault 按合同返回非零，修复后恢复为 0。T05/T08 的故障结果保留 `BLOCKED`/`UNKNOWN`，没有被改写成伪 PASS。
+- 解决方案架构以六个 solution unit 覆盖并追踪全部 85 页；设计、真实集成、从业者与外部 publication maturity 继续保持 partial/internal/NOT_RUN。
+- 站点 `validate:release`、材料验证、TypeScript、ESLint、vinext build、SSR、静态导出、静态脚本、材料闭包测试全部通过。
+- Playwright 在 390×844 视口遍历 85 页，全部无 document-level 横向溢出。
+- 教程投影完整保留 85 页内容、typed technical metadata、材料和 source/material hash；`sync-tutorial-package.mjs --check` 通过。
+- 通用 factory Skill 的 validator/public-release 回归 100/100 PASS，源码与 `/Users/owen/.codex/skills/career-ai-course-factory` 安装目录一致，Skill 自检通过。
 
 ## Inference
 
-- “离线可复现 + 可选 live adapter”能降低小白首次成功成本，同时维持证据边界。
-- 以故障注入和工程门禁作为每课公共骨架，比按工具品牌组织课程更耐更新。
-- 公开供给中可见“全套教程”和广泛模块，但完整红绿证据常未在课程页展示；这可以成为内容差异化假设。
+- 当前产物已经达到“可供小白本地学习、跟做离线实验、观察故障与修复、理解证据边界”的完整课程候选状态。
+- 将问题、方法、独立 Oracle、Prompt、Eval、Mutation 和 0→1→0 收据绑定到每页，比共享模板和工具清单更能迁移到其他职业课程。
+- 真实模型和企业系统可能暴露新的工具权限、数据隐私、Judge 偏差、成本与非确定性问题；这些不能从 fixture 结果推断。
 
 ## Unknown
 
-- 未获得真实企业 RAG/Agent 项目数据、真实测试开发从业者评审和学员完成数据。
-- 未验证课程的播放、转化、留资或付费表现。
-- 未比较不同 live model/provider 的当前质量和成本。
-- 竞品的真实内部作业、完成率和教学效果通常不可见。
-- 未完成全部 40 个 URL 的同一次 `--verify-sources` 全量审计；部分招聘和社区页面可能受反爬或登录影响。
+- 未运行真实 LLM/provider 的 85 页全套 Prompt；provider/model/参数表现未知。
+- 未连接真实 Jira、GitLab、Kubernetes、浏览器/移动设备、模型服务、队列、观测后端和生产数据。
+- 未完成测试开发从业者盲评、初学者可用性测试、学习完成率、迁移效果或商业转化验证。
+- 未部署当前 85 页版本，也没有线上 hash 与匿名访问回读；旧部署记录不能替代当前版本发布证据。
 
 ## Professional utility verdict
 
-八门专业价值门禁自评：AI 中心性 2/2、职业真实性 2/2、可运行证明 2/2、测试敏感性 2/2、复用资产 2/2、证据质量 2/2、小白迁移 2/2、维护性 2/2，总分 16/16。该评分只针对交付结构和本地 fixture 证据；不能替代从业者评审。
+本地课程与 fixture 证据通过。外部职业有效性仍须由具名测试开发从业者、初学者任务表现和真实系统收据共同裁决；AI 和课程作者自评不能替代这些门禁。
 
 ## Not tested
 
-- 真实 LLM/RAG provider 调用；
-- 真实 retriever 的 context precision/recall 与 faithfulness judge；
-- GitHub Actions 的持续稳定性和 pull request 场景；
-- 分销转化、长期访问稳定性和真实学员体验；
-- 企业隐私、权限、SLO 和阈值校准；
-- 测试开发从业者 blind review；
-- 视频成片、平台分发和市场转化。
+- live model/provider；
+- enterprise integration；
+- practitioner blind review；
+- beginner usability and learning outcome；
+- external publication readback；
+- production safety, reliability, cost and effectiveness。
 
-## Risks
+## Superseded evidence
 
-- 当前确定性关键词 scorer 是教学工具，会误伤同义表达；真实项目需引入语义 scorer 和人工校准。
-- 8 条样例只能展示机制，不能代表生产分布。
-- 工具文档和 AI 框架更新快，使用前必须按 tool registry 重查版本并重跑最小验收。
+历史 17 页报告、33 页分发说明、6 PASS / 27 FAIL 执行性审计和 293 条工厂错误均描述修复前状态。它们保留用于解释缺陷演进，但不再代表当前产物。

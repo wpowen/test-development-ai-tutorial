@@ -1,0 +1,24 @@
+{
+  "schema_version": "publication-blockers.v1",
+  "blockers": [
+    {
+      "blocker_id": "EXTERNAL-VALIDATION-NOT-RUN",
+      "status": "BLOCKED-HIGHER-MATURITY",
+      "evidence": {
+        "practitioner_review_statuses": [
+          "not-reviewed"
+        ],
+        "publication_statuses": [
+          "internal"
+        ]
+      },
+      "closure_required": [
+        "real model/provider receipts",
+        "controlled integration evidence",
+        "named practitioner approval",
+        "beginner usability evidence",
+        "post-deploy online readback"
+      ]
+    }
+  ]
+}

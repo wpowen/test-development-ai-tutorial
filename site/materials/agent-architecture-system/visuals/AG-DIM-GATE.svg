@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 700" width="1040" height="700" role="img" aria-labelledby="t d">
+<title id="t">三段式门禁决策流</title>
+<desc id="d">第一段硬红线为布尔判定，任一不满足即阻断；第二段统计门禁看置信区间并允许「证据不足」这一独立结论；第三段风险接受由具名业务或发布 owner 签字，流水线不输出「可以发布」。</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5a6b86"/></marker>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b04a2e"/></marker>
+<style>
+.bg{fill:#f7f8fb}
+.node rect{stroke-width:1.5}
+.node polygon{stroke-width:1.5}
+.red rect,.red polygon{fill:#fbe6e2;stroke:#b04a2e}
+.stat rect,.stat polygon{fill:#fdf3d9;stroke:#9a7412}
+.acc rect{fill:#e5eefb;stroke:#2a5da8}
+.io rect{fill:#eceef1;stroke:#4a5666}
+.ok rect{fill:#e6f2e9;stroke:#2f7a4d}
+.h{font:700 14px system-ui,"PingFang SC",sans-serif;fill:#171c24}
+.s{font:600 12px system-ui,"PingFang SC",sans-serif;fill:#2c3542}
+.m{font:11.5px system-ui,"PingFang SC",sans-serif;fill:#3d4855}
+.tiny{font:10.5px system-ui,"PingFang SC",sans-serif;fill:#5a6675}
+.badge{font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#b04a2e}
+.good{font:700 10.5px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#2f7a4d}
+.edge{stroke:#5a6b86;stroke-width:1.6;fill:none;marker-end:url(#a)}
+.edge.stop{stroke:#b04a2e;stroke-width:2;marker-end:url(#ar)}
+.lbl{font:600 10.5px system-ui,"PingFang SC",sans-serif;fill:#3d4855}
+</style>
+</defs>
+<rect class="bg" x="0" y="0" width="1040" height="700"/>
+
+<g class="node io"><rect x="24" y="24" width="240" height="94" rx="4"/></g>
+<text class="h" x="38" y="47">候选版本证据包</text>
+<text class="m" x="38" y="68">四维版本 lineage（模型/prompt/工具/记忆）</text>
+<text class="m" x="38" y="88">D0–D7 各域原始运行结果</text>
+<text class="tiny" x="38" y="108">缺 lineage 的证据不进入门禁</text>
+
+<g class="node red"><rect x="320" y="24" width="340" height="188" rx="4"/></g>
+<text class="h" x="334" y="47">第一段 · 硬红线（布尔，无例外）</text>
+<text class="s" x="334" y="72">D5 高危攻击：符合已批准 policy</text>
+<text class="s" x="334" y="94">D7-1 硬业务规则：不得违反</text>
+<text class="s" x="334" y="116">D5-6 不可逆动作：不得绕过确认</text>
+<text class="s" x="334" y="138">D0-1 judge：满足校准 Metric Card</text>
+<text class="badge" x="334" y="162">κ 不达标 ≠ 这一项失败</text>
+<text class="badge" x="334" y="180">κ 不达标 = 本轮所有分数无效</text>
+<text class="tiny" x="334" y="200">「发生一次即不可接受」的事件不能统计化</text>
+
+<g class="node stat"><rect x="320" y="252" width="340" height="176" rx="4"/></g>
+<text class="h" x="334" y="275">第二段 · 统计门禁（看区间）</text>
+<text class="s" x="334" y="300">pass^k 的 95% CI 下界 ≥ 阈值</text>
+<text class="s" x="334" y="322">与上一版本：CI 不重叠才判定回归</text>
+<text class="s" x="334" y="344">聚类单位 = 任务，不是 n×k</text>
+<text class="badge" x="334" y="368">样本量不足 → EVIDENCE-INSUFFICIENT</text>
+<text class="badge" x="334" y="386">它不是「通过」，是一个独立结论</text>
+<text class="tiny" x="334" y="408">区间法容易解释；更严谨可用配对/聚类显著性检验</text>
+
+<g class="node acc"><rect x="320" y="468" width="340" height="188" rx="4"/></g>
+<text class="h" x="334" y="491">第三段 · 风险接受（署名决策）</text>
+<text class="s" x="334" y="516">列出所有已知失败模式及其频率</text>
+<text class="s" x="334" y="538">标注每个失败模式的护栏覆盖情况</text>
+<text class="s" x="334" y="560">由具名业务 / 发布 owner 签字</text>
+<text class="badge" x="334" y="584">无护栏覆盖的失败模式不能被「接受」</text>
+<text class="badge" x="334" y="602">那不是接受风险，是不知道有风险</text>
+<text class="tiny" x="334" y="624">Agent 系统不存在「没有失败模式」的版本</text>
+<text class="tiny" x="334" y="642">测试的职责是测清楚、量化频率、确认护栏兜得住</text>
+
+<g class="node ok"><rect x="720" y="468" width="290" height="122" rx="4"/></g>
+<text class="h" x="734" y="491">输出：一份署名决定</text>
+<text class="m" x="734" y="514">发布 / 有条件发布 / 不发布</text>
+<text class="m" x="734" y="534">剩余风险清单 + 接受人 + 复评日期</text>
+<text class="m" x="734" y="554">回滚触发条件与四维成组回滚对象</text>
+<text class="good" x="734" y="578">流水线不输出「可以发布」，只输出「请决定」</text>
+
+<g class="node red"><rect x="720" y="24" width="290" height="94" rx="4"/></g>
+<text class="h" x="734" y="47">阻断（不进入第二段）</text>
+<text class="m" x="734" y="68">没必要算区间——红线已破</text>
+<text class="m" x="734" y="88">回到修复，重新提交证据包</text>
+<text class="tiny" x="734" y="108">Waiver 不能豁免硬红线</text>
+
+<g class="node stat"><rect x="720" y="252" width="290" height="122" rx="4"/></g>
+<text class="h" x="734" y="275">FAIL 或证据不足</text>
+<text class="m" x="734" y="298">FAIL → 阻断，回到修复</text>
+<text class="m" x="734" y="318">EVIDENCE-INSUFFICIENT → 可进第三段</text>
+<text class="m" x="734" y="338">但必须作为已知失败模式列出</text>
+<text class="badge" x="734" y="362">不得写成「通过」</text>
+
+<path class="edge" d="M264 70 L320 70"/>
+<path class="edge" d="M490 212 L490 252"/>
+<text class="lbl" x="498" y="238">红线全部满足</text>
+<path class="edge" d="M490 428 L490 468"/>
+<text class="lbl" x="498" y="454">PASS 或证据不足</text>
+<path class="edge" d="M660 528 L720 528"/>
+<path class="edge stop" d="M660 118 L720 90"/>
+<text class="lbl" x="664" y="112">任一破线</text>
+<path class="edge stop" d="M660 340 L720 320"/>
+<path class="edge stop" d="M866 118 C930 160 930 200 866 252"/>
+<path class="edge stop" d="M866 374 C930 400 930 430 866 468"/>
+<path class="edge stop" d="M720 590 C400 660 200 400 264 118"/>
+<text class="lbl" x="140" y="392">证据回灌与修复</text>
+
+<text class="tiny" x="24" y="678">本图为教学结构图；阈值由 Metric Card parameter + population + uncertainty + owner 配置，不代表真实门禁已验证，结论 NOT_RUN。</text>
+</svg>

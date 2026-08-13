@@ -1,0 +1,37 @@
+{
+  "eval_version": "1.0.0",
+  "topic_id": "TD-QP01",
+  "provider": "NOT_RUN",
+  "execution": "static fixture evaluation only",
+  "input_fixture": "input.json",
+  "schema": "output.schema.json",
+  "gates": [
+    {
+      "id": "schema-valid",
+      "method": "JSON Schema validation",
+      "required": true
+    },
+    {
+      "id": "source-bound",
+      "method": "Every factual assertion maps to fixture evidence_refs",
+      "required": true
+    },
+    {
+      "id": "fail-closed",
+      "method": "Injected fault 'required Jira acceptance field is absent' cannot produce PASS",
+      "required": true
+    },
+    {
+      "id": "human-boundary",
+      "method": "human_decision_required remains true for approval/waiver",
+      "required": true
+    },
+    {
+      "id": "truthful-maturity",
+      "method": "evidence_boundary remains fixture-tested and live NOT_RUN",
+      "required": true
+    }
+  ],
+  "result": "NOT_RUN",
+  "reason": "No model call is bundled; this file defines the repeatable evaluation contract."
+}

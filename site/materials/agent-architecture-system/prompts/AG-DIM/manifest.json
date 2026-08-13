@@ -1,0 +1,41 @@
+{
+  "manifest_version": "1.0.0",
+  "prompt_id": "AG-DIM",
+  "title": "Agent 测试架构 D0–D7 证据整理 Prompt 包",
+  "files": {
+    "system": "system-v1.md",
+    "task": "task-v1.md",
+    "critic": "critic-v1.md",
+    "input": "input.json",
+    "schema": "schema.json",
+    "eval": "eval.json",
+    "mutation": "mutation.json"
+  },
+  "hashes": {
+    "system-v1.md": "sha256:f208877d591005abf47d1c9d88195925aa5bcba038c0a6764052715641595db7",
+    "task-v1.md": "sha256:72efce2f272e20c902ee450240ab0d99ad5ecc444e7404c5ca2f19cf8a20c355",
+    "critic-v1.md": "sha256:d731f5a890652258c180e21c5565da864ca11ebfcaf2cf532f107a7570cd41cd",
+    "input.json": "sha256:f7ad5e7edaa9d1770ee4bcff0cb7b2c398c9331bb5eda238428a65b973a0882f",
+    "schema.json": "sha256:af37794515152cac4a9d798833578d752a21e0bec0caabecf6c460c7d4eea1e9",
+    "eval.json": "sha256:0b76edc19ec73f05586aacf59d21f83d974415be7ecfb162bedf1557d3b23796",
+    "mutation.json": "sha256:46f72176dd562da9d3545ffd998e86870848dc226180bfc9bdacc5976ed7745f"
+  },
+  "model": {
+    "provider": "none",
+    "id": "offline-deterministic",
+    "params": {
+      "temperature": 0
+    },
+    "status": "NOT_RUN"
+  },
+  "authority": "整理证据与结构化；不得评分自证、不得裁决业务规则、不得批准 waiver 或发布",
+  "failure_semantics": [
+    "ACCEPTED",
+    "UNKNOWN",
+    "BLOCKED",
+    "EVIDENCE-INSUFFICIENT",
+    "NOT_RUN"
+  ],
+  "maturity": "static-reviewed",
+  "evidence_boundary": "Prompt 包已做静态契约审查与 mutation 设计；真实模型执行 NOT_RUN，不得据此声称模型准确或企业可用。"
+}

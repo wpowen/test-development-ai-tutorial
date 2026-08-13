@@ -1,0 +1,52 @@
+{
+  "topic_id": "TD-AG-08",
+  "phase": "baseline",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "state_hash": "de79990a31230f3100f0d87afbef5761dda0fef685015ed54c6990d88b6c2b8a",
+  "checks": [
+    {
+      "oracle_id": "BUSINESS-RULES",
+      "passed": true
+    },
+    {
+      "oracle_id": "AUDIT",
+      "passed": true
+    },
+    {
+      "oracle_id": "FOUR-VERSION",
+      "passed": true
+    },
+    {
+      "oracle_id": "OWNER",
+      "passed": true
+    },
+    {
+      "oracle_id": "ROLLBACK",
+      "passed": true
+    }
+  ],
+  "state": {
+    "governance": {
+      "business_rules": true,
+      "audit_chain": true,
+      "model_version": true,
+      "prompt_version": true,
+      "tool_version": true,
+      "memory_version": true,
+      "human_owner": true,
+      "rollback": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

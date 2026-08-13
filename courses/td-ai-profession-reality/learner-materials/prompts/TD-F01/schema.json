@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "responsibility_statement", "lifecycle", "document_reading", "method_and_oracle", "artifacts", "release_boundary", "ai_migration", "learning_route", "unknowns"],
+  "properties": {
+    "status": {"enum": ["READY", "BLOCKED"]},
+    "responsibility_statement": {"type": "string", "minLength": 20},
+    "lifecycle": {"type": "array", "minItems": 9, "items": {"type": "object", "required": ["stage", "actor", "input", "artifact", "oracle", "decision", "consumer"], "additionalProperties": true}},
+    "document_reading": {"type": "object", "required": ["requirements", "technical_design", "conflict_action"], "additionalProperties": true},
+    "method_and_oracle": {"type": "object", "required": ["risk", "method", "independent_oracle"], "additionalProperties": true},
+    "artifacts": {"type": "array", "minItems": 6, "items": {"type": "object", "required": ["name", "owner", "version", "source", "acceptance", "consumer"], "additionalProperties": true}},
+    "release_boundary": {"type": "object", "required": ["ai_permission", "human_decider", "waiver_owner", "rollback_owner"], "additionalProperties": true},
+    "ai_migration": {"type": "array", "minItems": 5, "items": {"type": "object", "required": ["traditional_capability", "ai_quality_capability", "new_failure", "evidence"], "additionalProperties": true}},
+    "learning_route": {"type": "array", "minItems": 3, "items": {"type": "object", "required": ["step", "artifact", "gate"], "additionalProperties": true}},
+    "unknowns": {"type": "array", "items": {"type": "object", "required": ["item", "label", "resolution"], "additionalProperties": true}}
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A06",
+  "version": "1.0.0",
+  "model_execution": "NOT_RUN",
+  "deterministic_fixture_eval": {
+    "expected": {
+      "retry.attempts": 3,
+      "retry.respected_retry_after": true,
+      "fallback.quality_gate": true,
+      "tool.side_effect_count": 1
+    },
+    "fault_patch": {
+      "retry.attempts": 8,
+      "retry.respected_retry_after": false,
+      "fallback.quality_gate": false
+    },
+    "required_exit_codes": [
+      0,
+      1,
+      0
+    ]
+  },
+  "professional_oracle": "429 尊重 Retry-After；attempt/time/cost 均不超预算；同一幂等键副作用至多一；fallback quality gate 通过才可使用。",
+  "boundary": "真实供应商配额、Retry-After、fallback 模型质量和生产恢复没有运行。"
+}

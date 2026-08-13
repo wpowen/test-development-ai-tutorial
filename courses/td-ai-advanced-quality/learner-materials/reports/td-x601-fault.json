@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X601",
+  "phase": "fault",
+  "status": "FAIL",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:ee8dbf9d88e2fad03745081cf62feaa023ea2bd0adfc4e3ee1ff44ef623f954b",
+  "checks": {
+    "group_slices_reported": false,
+    "harm_blockers_separate": false,
+    "independent_human_sample": false,
+    "disagreement_preserved": true
+  },
+  "failed_checks": [
+    "group_slices_reported",
+    "harm_blockers_separate",
+    "independent_human_sample"
+  ],
+  "fault_id": "aggregate_only_self_judge",
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

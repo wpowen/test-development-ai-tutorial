@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_mode": "BLANK-TEMPLATE",
+  "page_id": "TD-C02",
+  "scenario": "UNKNOWN",
+  "state": "UNKNOWN",
+  "decision_rights": {"can_decide": [], "must_escalate": []},
+  "failure_cost": "UNKNOWN",
+  "artifact": "UNKNOWN",
+  "evidence_refs": [],
+  "failure_probe": "UNKNOWN",
+  "reviewer": "UNKNOWN",
+  "unknowns": [],
+  "not_proof": ["不证明学员职级、就业、晋升或生产效果"]
+}

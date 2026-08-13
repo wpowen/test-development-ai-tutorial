@@ -36,6 +36,8 @@ The internal knowledge tree must include:
 
 The internal tree may contain `planned`, `outlined`, and `blocked` records so curriculum gaps remain visible to maintainers. These records must not be serialized into any learner-facing navigation, HTML payload, public JSON, sitemap, search index, or release archive. A title in an internal tree is not a delivered tutorial page.
 
+The public projection must also be covered by `research/solution-architecture.json` as defined in `complete-solution-contract.md`. Page-level architecture is necessary but insufficient: every public page belongs to a pilot or public solution unit with complete design, exact traceability, owned decisions, acceptance gates, and evidence maturity that meets the publication level. A navigation tree cannot substitute for a deployment view, threat model, operational design, rollback path, or execution receipt.
+
 ## Minimum distributable learning path
 
 A complete knowledge tree is not yet a distributable product. Before a public or paid release, require at least one end-to-end learner path that:
@@ -64,6 +66,10 @@ Every generated tutorial and release manifest must declare one release scope. Sc
 
 The manifest records `mode`, `promised_page_ids`, `catalog_complete`, and `validated_at`. For every public release, `promised_page_ids` must exactly equal the public page-ID set. Validators must fail when a public page is missing, incomplete, unpromised, has unresolved prerequisites, lacks required teaching blocks/actions/checks/sources, or is absent from a publication target. Public modules with no public page are forbidden. For `complete-catalog`, the public page set must also equal the internal catalog and `catalog_complete` must be true.
 
+The assembled release also includes `SOLUTION-MANIFEST.json`, a public-safe projection of the canonical complete-solution contract. It records the exact pages covered by each solution unit, separate design/execution/review/publication maturity, all six architecture-view kinds, acceptance status, execution-receipt paths, and residual-risk count. `RELEASE-MANIFEST.json` pins its hash. Every public page must be covered by a pilot or public solution unit; a release without this closure fails even when its HTML builds.
+
+Use `catalog-promotion-and-publication-integrity-contract.md` for the machine gate. The internal catalog must come from one ordered `research/catalog-manifest.json`; a complete catalog is an exact ordered equality check, not a minimum page count. A public-set shrink requires an approved scope-change record. Every public page also needs its own promotion receipt and a current executability `PASS` with zero findings.
+
 Content completeness and evidence strength are independent. A `desk-researched` page can be complete instructional content while still being unverified in production; the interface must preserve that evidence boundary. Never upgrade `desk-researched` to `fixture-tested`, `live-tested`, or `practitioner-reviewed` merely because the page is fully written.
 
 Reject words such as “完整课程”, “全量”, “全部完成”, or equivalent public claims whenever the release-scope gate does not pass. A page title, outline, JSON record, or navigation item never counts as completed instruction.
@@ -77,7 +83,9 @@ GitHub and OpenAI Sites are publication targets, not separate course authoring s
 - Generated HTML, navigation manifests, and release summaries must not become independent manually edited truth.
 - Public outputs include only sanitized tutorials, fixtures, source notes, and declared evidence. Keep credentials, production data, private research notes, and unapproved reviews out of public artifacts.
 - Record `content_version`, source commit, build ID, content hash, validation verdict, and publication targets in each release manifest.
+- Pin the public catalog, promotion, executability, and artifact-closure manifest hashes in `RELEASE-MANIFEST.json`.
 - The final public archive records the exact ordered public page IDs and learner-artifact roots. Recompute the content hash after assembly, then validate the assembled archive. Validating the authoring package alone is insufficient.
+- For every learner-material link, compare the authoring source, static-export file, and ZIP member against one declared SHA-256 value; missing, extra, unsafe, or divergent archive members fail.
 - Keep the internal authoring package, planned curriculum records, private topic backlog, and maintainer-only research outside public distribution archives. Publish only validated tutorial data, learner pages, sanitized evidence, labs, and the reusable Skill implementation.
 
 ## Five page types

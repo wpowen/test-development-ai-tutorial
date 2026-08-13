@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A04",
+  "approved_at": "2026-08-11",
+  "evidence_level": "fixture-only",
+  "observation": {
+    "arrivals": {
+      "planned": 10,
+      "accounted": 10
+    },
+    "capacity": {
+      "evidence_level": "fixture-only"
+    }
+  }
+}

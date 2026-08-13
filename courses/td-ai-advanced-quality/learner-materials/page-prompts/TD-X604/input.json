@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X604",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "fallback 不满足能力、工具 schema 漂移或副作用策略丢失"
+}
+

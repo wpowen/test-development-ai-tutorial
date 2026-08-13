@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SoftwareTestingCareerAgentAdapter",
+  "type": "object",
+  "required": ["schema_version", "responsibility_states", "self_assessment", "organization_level_adapter", "agent_domains", "evidence_rings", "domain_test_mappings", "statistical_semantics", "metric_card_policy", "owners", "evidence_refs", "maturity_boundary"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "responsibility_states": {"type": "array", "minItems": 4},
+    "self_assessment": {"type": "array", "minItems": 1},
+    "organization_level_adapter": {"type": "object"},
+    "agent_domains": {"type": "array", "minItems": 8},
+    "evidence_rings": {"type": "array", "minItems": 4},
+    "domain_test_mappings": {"type": "array", "minItems": 8},
+    "statistical_semantics": {"type": "object"},
+    "metric_card_policy": {"type": "object"},
+    "owners": {"type": "array", "minItems": 1},
+    "evidence_refs": {"type": "array", "minItems": 1},
+    "maturity_boundary": {"type": "string", "minLength": 1}
+  }
+}

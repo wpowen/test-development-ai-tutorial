@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS09",
+  "scenario": "客服 Agent 同时处理 FAQ 和高风险退款长对话，包含检索和工具 fan-out",
+  "controlling_question": "怎样在不发生 coordinated omission 的前提下测量队列、TTFT、TPOT、E2E、任务质量与成本，并给出容量而非单次速度？",
+  "known_rules": [
+    "到达率与 dropped iterations 可核对",
+    "每任务阶段时间相加可解释 E2E",
+    "只有质量安全延迟同时合格进入 Goodput",
+    "失败重试和工具调用计入 cost_per_success"
+  ],
+  "faults": [
+    "工具 fan-out 翻倍",
+    "队列饱和并丢迭代",
+    "重试掩盖失败并放大成本"
+  ],
+  "unknowns": [
+    "目标模型硬件、provider 内部队列、真实流量分布和价格"
+  ],
+  "data_classification": "synthetic"
+}

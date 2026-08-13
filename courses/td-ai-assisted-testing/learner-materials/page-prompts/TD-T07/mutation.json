@@ -1,0 +1,1 @@
+{"mutations":[{"id":"M-DISABLE-IDEMPOTENCY","fault":"allow duplicate refund for same idempotency key","expected_status":"FAIL"},{"id":"M-DROP-SEED","fault":"omit seed and system version","expected_status":"NON_REPRODUCIBLE"},{"id":"M-INVENT-DOMAIN","fault":"add unsupported currency precision","expected_status":"BLOCKED"}]}

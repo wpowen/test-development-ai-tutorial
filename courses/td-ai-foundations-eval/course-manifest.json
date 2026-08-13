@@ -1,0 +1,119 @@
+{
+  "course_id": "td-ai-foundations-eval",
+  "title": "测试开发的 AI 基础与 Eval 基础",
+  "page_ids": [
+    "TD-FP01",
+    "TD-F02",
+    "TD-F03",
+    "TD-F04",
+    "TD-T01",
+    "TD-T02",
+    "TD-T03",
+    "TD-T04",
+    "TD-T09",
+    "TD-T10",
+    "TD-T11",
+    "TD-T12"
+  ],
+  "scenario_ids": [
+    "TD-S01"
+  ],
+  "ai_lane": "test-ai-systems",
+  "ai_lanes": [
+    "test-ai-systems",
+    "build-ai-quality-system"
+  ],
+  "ai_centrality_score": 5,
+  "professional_value_score": 5,
+  "system_under_test": "版本化 LLM/RAG 质量合同与离线确定性评测 Fixture",
+  "ai_roles": [
+    "system-under-test",
+    "candidate-generator",
+    "judge-dependency"
+  ],
+  "learner_artifact": [
+    "Eval Contract",
+    "dataset card",
+    "composite Oracle",
+    "RAG gate",
+    "red-green receipts"
+  ],
+  "tool_adapters": [
+    "python-stdlib-offline-contract",
+    "optional-live-model-NOT_RUN"
+  ],
+  "work_domain_ids": [
+    "TD-D01"
+  ],
+  "primary_artifact_ids": [
+    "ai-foundation-eval-contract"
+  ],
+  "decision_owner": "AI 质量负责人",
+  "allowed_ai_authority": "运行评测并给出证据，不得独立放行",
+  "prerequisite_course_ids": [
+    "td-ai-011-requirements-to-evidence"
+  ],
+  "transfer_target": "将同一评测合同迁移到内部事故总结助手和新的证据、权限与风险切片",
+  "lesson_flow": [
+    "demo",
+    "guided-practice",
+    "failure-injection",
+    "repair",
+    "transfer"
+  ],
+  "default_path_requires_credentials": false,
+  "baseline_comparison": true,
+  "failure_injection": true,
+  "execution_proof": "evidence/execution-evidence.json",
+  "validation_workdir": "lab",
+  "validation_steps": [
+    {
+      "name": "TD-T12 baseline",
+      "command": [
+        "python3",
+        "scripts/run_lab.py",
+        "--topic",
+        "TD-T12",
+        "--phase",
+        "baseline"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "TD-T12 permission fault must fail",
+      "command": [
+        "python3",
+        "scripts/run_lab.py",
+        "--topic",
+        "TD-T12",
+        "--phase",
+        "fault"
+      ],
+      "expected_exit_code": 1
+    },
+    {
+      "name": "TD-T12 repair",
+      "command": [
+        "python3",
+        "scripts/run_lab.py",
+        "--topic",
+        "TD-T12",
+        "--phase",
+        "repair"
+      ],
+      "expected_exit_code": 0
+    }
+  ],
+  "status": "fixture-tested",
+  "evidence_ids": [
+    "S05",
+    "S09",
+    "S23",
+    "S24",
+    "S33",
+    "S34",
+    "S65",
+    "S66"
+  ],
+  "evidence_boundary": "Offline deterministic fixture; model/provider/live/practitioner/production NOT_RUN"
+}

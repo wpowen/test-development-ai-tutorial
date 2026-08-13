@@ -1,0 +1,16 @@
+{
+  "basis_id": "digital-refund-v4",
+  "status": "ACCEPTED",
+  "authority": {"policy": "No implicit precedence; PRD and implementation claims have separate owners", "product_owner": "product-refund", "technical_owner": "tech-refund", "test_owner": "qa-refund"},
+  "requirements": [
+    {"source_ref": "PRD-v4#R12", "kind": "requirement", "statement": "已激活数字商品不得自动退款，必须进入人工复核", "owner": "product-refund"},
+    {"source_ref": "PRD-v4#R13", "kind": "requirement", "statement": "同一幂等键最多创建一次退款与一次审计事件", "owner": "product-refund"}
+  ],
+  "diff": [
+    {"source_ref": "refund.py#L18-L24", "kind": "implementation", "change": "退款资格 guard 调整", "owner": "tech-refund"},
+    {"source_ref": "events.py#L9-L16", "kind": "implementation", "change": "审计事件去重逻辑调整", "owner": "tech-refund"}
+  ],
+  "accepted_oracle_ids": ["O-ACTIVATED-BLOCK", "O-AUDIT-ONCE"],
+  "unknowns": ["真实生产的人工复核 SLA 未提供"],
+  "privacy": "synthetic"
+}

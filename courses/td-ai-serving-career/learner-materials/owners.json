@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "bundle_owner": "ai-serving-career-wave-3",
+  "runner_owner": "course-lab-engineering",
+  "release_owner": "ai-serving-career-release-owner",
+  "page_owners": {
+    "TD-A01": {
+      "content": "TD-A01-content-owner",
+      "oracle": "TD-A01-oracle-owner",
+      "prompt": "TD-A01-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    },
+    "TD-A02": {
+      "content": "TD-A02-content-owner",
+      "oracle": "TD-A02-oracle-owner",
+      "prompt": "TD-A02-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    },
+    "TD-A03": {
+      "content": "TD-A03-content-owner",
+      "oracle": "TD-A03-oracle-owner",
+      "prompt": "TD-A03-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    },
+    "TD-A04": {
+      "content": "TD-A04-content-owner",
+      "oracle": "TD-A04-oracle-owner",
+      "prompt": "TD-A04-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    },
+    "TD-A05": {
+      "content": "TD-A05-content-owner",
+      "oracle": "TD-A05-oracle-owner",
+      "prompt": "TD-A05-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    },
+    "TD-A06": {
+      "content": "TD-A06-content-owner",
+      "oracle": "TD-A06-oracle-owner",
+      "prompt": "TD-A06-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    },
+    "TD-C01": {
+      "content": "TD-C01-content-owner",
+      "oracle": "TD-C01-oracle-owner",
+      "prompt": "TD-C01-prompt-owner",
+      "release": "ai-serving-career-release-owner"
+    }
+  }
+}

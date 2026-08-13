@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "events": [
+    {"event_id":"EV-001","test_id":"refund-api-1","trace_id":"trace-pool-7","timestamp":"2026-08-11T08:00:01Z","commit":"abc123","environment":"fixture-a","raw_error":"dependency timeout","evidence_path":"raw/EV-001.json"},
+    {"event_id":"EV-002","test_id":"refund-ui-4","trace_id":"trace-pool-7","timestamp":"2026-08-11T08:00:02Z","commit":"abc123","environment":"fixture-a","raw_error":"HTTP 502 after pool wait","evidence_path":"raw/EV-002.json"},
+    {"event_id":"EV-003","test_id":"refund-worker-2","trace_id":"trace-pool-7","timestamp":"2026-08-11T08:00:03Z","commit":"abc123","environment":"fixture-a","raw_error":"pool acquire timeout","evidence_path":"raw/EV-003.json"}
+  ]
+}

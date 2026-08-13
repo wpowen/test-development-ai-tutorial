@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-R01",
+  "artifact_mode": "SOURCE-EXAMPLE-FILLED",
+  "resources": [
+    {
+      "resource_id": "course-prompt-package-starter",
+      "resource": "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md",
+      "version": "TD-P01..P08 package v1.2.0",
+      "checked_at": "2026-08-13",
+      "level": "小白：会复制文件并能阅读 JSON",
+      "purpose": "学会从需求评审到报告协同的八阶段 Prompt 使用顺序，以及什么时候必须 BLOCKED",
+      "limits": ["真实模型调用 NOT_RUN", "不能替业务 owner 裁决规则", "静态包不证明生成质量"],
+      "fallback": "先读 TD-FP01 页面，只运行离线 page-cycle，再接通用 AI Agent",
+      "exit_artifact": "一份填写完成的 adaptation-card + 一份脱敏输入 + 人工回读记录"
+    },
+    {
+      "resource_id": "course-rag-foundation",
+      "resource": "materials/ai-foundations-eval/README.md",
+      "version": "course bundle generated 2026-08-13",
+      "checked_at": "2026-08-13",
+      "level": "完成 TD-F02、TD-F03、TD-F04",
+      "purpose": "把 RAG 拆成 corpus、retrieval、generation、citation、no-answer 和 ACL，并运行 TD-T09→TD-T12",
+      "limits": ["真实 embedding/vector DB/model 未连接", "只证明 deterministic fixture 检出指定故障"],
+      "fallback": "先在 TD-F04 画出 SUT 边界，手工完成检索漏召回与生成无依据两张失败卡",
+      "exit_artifact": "四阶段 RAG 报告、检索/生成归因与权限 blocker"
+    },
+    {
+      "resource_id": "course-agent-architecture",
+      "resource": "materials/agent-architecture-system/docs/README.md",
+      "version": "source-bound learner package 2026-08-13",
+      "checked_at": "2026-08-13",
+      "level": "完成 RAG 小白入口并能读 Trace",
+      "purpose": "学习 D0-D7、四证据环、三段门禁、Agent 轨迹/权限/可靠性/成本的测试架构",
+      "limits": ["沙箱、影子、在线环 NOT_RUN", "所有阈值需 Metric Card owner 参数化"],
+      "fallback": "只读 AG-DIM-ARCHITECTURE.svg 和 TD-AG-00，再选择一个维度做离线 fixture",
+      "exit_artifact": "dimension-register、four-ring-plan、一次 0/1/0 fixture receipt"
+    },
+    {
+      "resource_id": "course-career-evidence-route",
+      "resource": "materials/career-evolution/artifacts/README.md",
+      "version": "career learner package 2026-08-13",
+      "checked_at": "2026-08-13",
+      "level": "任何背景；先填写起点与 Unknown",
+      "purpose": "用责任证据、自评、差距路由和证据窗口制定学习路线，不用年限或头衔猜职级",
+      "limits": ["不保证就业、薪资或晋升", "组织 band 与内部 policy 为 INTERNAL-UNKNOWN"],
+      "fallback": "复制空白模板，只填一个真实工件和一个独立 reviewer 后再扩展",
+      "exit_artifact": "responsibility-map、自评、gap routes 和下一窗口证据计划"
+    }
+  ],
+  "checked_at": "2026-08-13（只检查仓库本地入口；外部链接可达性 NOT_RUN）",
+  "purpose": "按能力缺口选择本课程内可直接运行或复用的学习入口",
+  "limits": ["资源质量与个人学习效果未做 practitioner/longitudinal 验证", "更新日期不等于生产适用性"],
+  "fallback": "主资源不可用时转到对应课程页正文和同目录空白模板；仍缺前置时保持 BLOCKED",
+  "exit_artifact": "一条带 version、checked_at、purpose、limits、fallback 和真实工件的个人资源路线",
+  "blank_template_ref": "artifacts/templates/TD-R01-resource-index.blank.json"
+}

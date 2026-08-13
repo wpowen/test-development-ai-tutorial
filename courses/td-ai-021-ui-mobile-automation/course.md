@@ -91,3 +91,45 @@ locator 解决“去哪里交互”；oracle 解决“交互后什么才算完�
 ## Evidence status
 
 `fixture-tested` 仅适用于本目录 Python 标准库离线验证。Web 浏览器、Android emulator/device、iOS Simulator/device、Maestro CLI、Appium server/driver、Espresso instrumentation、Xcode build 和任何 AI/MCP 运行均为 `NOT_RUN/static-reviewed`。官方资料支持 API/架构/边界，不支持本项目的 flake rate、ROI 或 AI 生产级结论。研究输入为 `research-redesign/20-ui-mobile-automation.md`，来源清单与 URL 见 `materials/source-ledger.md`。
+
+<!-- WAVE1-SPECIALTIES-START -->
+## Wave 1 独立专业专项
+
+### TD-PS04 · Web UI 关键旅程：隔离、定位器、网络控制与跨浏览器
+
+- 控制问题：怎样让 UI 测试等待业务终态、隔离数据并保存可诊断 Trace，而不是靠 sleep 和文本出现判绿？
+- 方法选择：用户感知 locator 与显式 test id 负责定位，auto-wait 负责 actionability，API/账本负责业务 Oracle，独立上下文负责隔离，Trace 负责诊断
+- 独立 Oracle：批准控件角色名称与权限一致；重复点击只产生一次退款意图；UI 终态与订单 API 和审计记录一致；失败包含 DOM 网络控制台和 trace
+- Prompt：读取旅程、角色、网络契约和风险矩阵，输出 locator 选择、等待信号、隔离数据、业务 Oracle 与失败证据；不得生成 fixed sleep
+- Failure cycle：baseline → 退款 API 延迟后返回 500 → repair
+- Unknown：目标浏览器流量占比、第三方沙箱稳定性和真实页面可访问名称
+
+### TD-PS05 · Web UI 无障碍、兼容性与视觉回归
+
+- 控制问题：怎样区分 DOM 规则、键盘旅程、可访问语义和视觉差异，并防止自动更新基线掩盖回归？
+- 方法选择：WCAG/ARIA 定义控制问题，自动规则找常见缺陷，键盘与读屏旅程验证过程，风险矩阵裁剪环境，人工审批视觉基线
+- 独立 Oracle：关键控件 name role value 可编程确定；完整退款过程键盘可达且焦点可见；390px 与长文本不遮挡风险和批准控件；视觉基线变更有设计 owner 审批
+- Prompt：从 WCAG 条款、旅程和视口矩阵生成分层检查与人工复核清单；明确自动扫描未覆盖项，禁止自动批准截图基线
+- Failure cycle：baseline → 移除对话框 accessible name → repair
+- Unknown：真实辅助技术组合、用户研究结果和品牌容差
+
+### TD-PS06 · Android 自动化：生命周期、同步、权限与设备矩阵
+
+- 控制问题：怎样证明移动生命周期恢复不丢扫描状态也不重复入账，并区分应用、设备和服务端失败？
+- 方法选择：ViewModel/组件测试覆盖状态，Espresso idling 覆盖同步，UI Automator 覆盖系统权限，设备矩阵覆盖风险切片，服务端幂等账本提供独立 Oracle
+- 独立 Oracle：权限拒绝不创建收货记录；旋转后台与恢复保留可解释扫描状态；同一 receipt_id 只入账一次；失败包关联 logcat 设备状态和服务 trace
+- Prompt：读取 Android 生命周期、权限、设备矩阵和库存契约，输出分层测试、同步信号、状态恢复与服务端 Oracle；未运行设备写 NOT_RUN
+- Failure cycle：baseline → 扫描后进程被杀 → repair
+- Unknown：OEM 定制行为、目标 API level 分布和真机资源限制
+
+### TD-PS07 · iOS 自动化：标识、权限、签名与状态残留
+
+- 控制问题：怎样区分 XCUITest 可见状态、系统权限、签名环境与服务端预约结果，并确保测试后无状态残留？
+- 方法选择：accessibility identifier 保持定位契约，launch arguments 注入可控状态，XCTest expectation 等待业务信号，环境 manifest 固定签名和设备，后端预约版本作 Oracle
+- 独立 Oracle：稳定 identifier 不依赖本地化文字；权限拒绝仍可完成安全替代路径；同一预约版本只应用一次改期；清理后通知日历 keychain 与后端状态回到基线
+- Prompt：读取预约状态机、XCUITest preflight、权限与环境清单，生成 launch state、等待条件、清理和后端 Oracle；不得把模拟器通过写成真机通过
+- Failure cycle：baseline → 动画和异步回调延迟 → repair
+- Unknown：目标签名配置、真实通知服务和 iOS 版本分布
+
+共享 bundle 只复用 runner；页级 manifest、owner、Oracle、Prompt、fault 和证据互不继承。
+<!-- WAVE1-SPECIALTIES-END -->

@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-X604",
+  "page_id": "TD-X604",
+  "working_directory": "materials/advanced-quality",
+  "required_files": [
+    "advanced_quality_lab.py",
+    "owners.json",
+    "page-prompts/TD-X604/manifest.json",
+    "page-prompts/TD-X604/prompt-v1.md",
+    "page-prompts/TD-X604/input.json",
+    "page-prompts/TD-X604/schema.json",
+    "page-prompts/TD-X604/eval.json",
+    "page-prompts/TD-X604/mutation.json"
+  ],
+  "steps": [
+    {
+      "step_id": "td-x604-baseline",
+      "kind": "baseline",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X604 --phase baseline --report reports/td-x604-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x604-baseline.json"
+      ]
+    },
+    {
+      "step_id": "td-x604-fault",
+      "kind": "fault",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X604 --phase fault --report reports/td-x604-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-x604-fault.json"
+      ]
+    },
+    {
+      "step_id": "td-x604-repair",
+      "kind": "repair",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X604 --phase repair --report reports/td-x604-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x604-repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "td-x604-baseline",
+    "fault_step_id": "td-x604-fault",
+    "repair_step_id": "td-x604-repair"
+  },
+  "evidence_boundary": "deterministic offline fixture; real systems, practitioner review and production NOT_RUN"
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "professional-prompt-package.v1",
+  "page_id": "TD-AP01",
+  "version": "1.0.0",
+  "task_prompt": "prompt-v1.md",
+  "input_fixture": "input-v1.json",
+  "schema": "output-schema-v1.json",
+  "eval": "eval-v1.json",
+  "mutation": "mutation-v1.json",
+  "provider": "none",
+  "model": "NOT_RUN",
+  "permissions": {
+    "network": false,
+    "filesystem_write": "reports only",
+    "external_side_effects": false
+  },
+  "stop_states": [
+    "schema_missing",
+    "fault_not_detected",
+    "repair_failed",
+    "boundary_missing"
+  ],
+  "content_hashes_sha256": {
+    "prompt-v1.md": "9d6a27ad642ce451ee405b9f4369f671c113d189437efa09887ae43d899e4d38",
+    "input-v1.json": "175f549c2292f64619e8e1c39329c2912fec9b649af09e31204631a5d6609d03",
+    "output-schema-v1.json": "390517ba6c205239f7af8d37c618a102ce4cc30310020b34ef0befbae9f463da",
+    "eval-v1.json": "a9487af85e51f0e2b29f641f4e428649e687eaa9892adcf0e846cef49435d1c8",
+    "mutation-v1.json": "98e07269a9920b3288a6e931e9bbb2d36f0fc85db08a15d339e4062bd13d4ecd"
+  },
+  "status": "fixture-defined"
+}

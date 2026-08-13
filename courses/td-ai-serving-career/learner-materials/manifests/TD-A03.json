@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A03",
+  "topic_id": "TD-A03",
+  "title": "AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本",
+  "working_directory": "materials/ai-serving-career",
+  "input_fixture": "fixtures/TD-A03-input.json",
+  "expected": {
+    "metrics.goodput_requests": 2,
+    "metrics.total_arrivals": 3,
+    "metrics.cost_per_success": 0.09
+  },
+  "fault_patch": {
+    "metrics.goodput_requests": 3,
+    "metrics.cost_per_success": 0.04
+  },
+  "oracle": "TTFT、TPOT、ITL 可由原始事件重算；Goodput 分母含所有到达；单位成功成本含失败和重试。",
+  "required_files": [
+    "owners.json",
+    "scripts/serving_lab.py",
+    "fixtures/TD-A03-input.json",
+    "prompts/TD-A03/system-v1.md",
+    "prompts/TD-A03/task-v1.md",
+    "prompts/TD-A03/critic-v1.md",
+    "prompts/TD-A03/manifest.json",
+    "prompts/TD-A03/mutation.json",
+    "schemas/TD-A03-output.schema.json",
+    "evals/TD-A03-eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A03.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A03/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A03.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-A03/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A03.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A03/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A03.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A03/baseline.json",
+        "evidence/TD-A03/fault.json",
+        "evidence/TD-A03/repair.json",
+        "evidence/TD-A03/cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "owners": {
+    "content": "TD-A03-content-owner",
+    "oracle": "TD-A03-oracle-owner",
+    "release": "ai-serving-career-release-owner"
+  },
+  "unknowns": [
+    "fixture 时间戳和成本不代表任何模型、GPU、地区或供应商。"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

@@ -1,0 +1,32 @@
+{
+  "run_id": "TD-P08-cycle",
+  "page_id": "TD-P08",
+  "status": "PASS",
+  "phases": [
+    {
+      "phase": "baseline",
+      "status": "PASS",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "report": "reports/TD-P08-baseline.json"
+    },
+    {
+      "phase": "fault",
+      "status": "FAIL",
+      "expected_exit_code": 1,
+      "actual_exit_code": 1,
+      "report": "reports/TD-P08-fault.json"
+    },
+    {
+      "phase": "repair",
+      "status": "PASS",
+      "expected_exit_code": 0,
+      "actual_exit_code": 0,
+      "report": "reports/TD-P08-repair.json"
+    }
+  ],
+  "evidence_status": "fixture-tested",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "boundary": "0/1/0 deterministic teaching cycle only; no model/API, practitioner, integration, live, publication, or production claim"
+}

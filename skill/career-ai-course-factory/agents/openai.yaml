@@ -1,4 +1,4 @@
 interface:
   display_name: "Career AI Course Factory"
-  short_description: "多渠道调研并生成可验证、可迁移的AI职业课程"
-  default_prompt: "Use $career-ai-course-factory to build a source-family-aware profession evidence graph across official sources, GitHub, forums, jobs, courses, practitioner failures, and counterevidence; decompose the profession into work domains and business events; reject generic prompt-only topics; audit selected repositories; and produce progressive runnable lessons with guided practice, failure diagnosis, transfer challenges, material provenance, and honest validation status."
+  short_description: "专业级AI职业课程的来源保真、教学、复用、实证与发布门禁"
+  default_prompt: "Use $career-ai-course-factory to assimilate every supplied source without silent omission, build a beginner-comprehensible and directly reusable AI-native profession course with topic-specific visuals and continuous sequencing, and validate exact capability, evidence, clean-room, learner, and publication gates fail-closed."

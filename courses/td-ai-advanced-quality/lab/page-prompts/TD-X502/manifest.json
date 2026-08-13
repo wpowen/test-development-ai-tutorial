@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x502-inclusive-ai",
+  "topic_id": "TD-X502",
+  "version": "1.0.0",
+  "purpose": "按 locale、脚本、读写方向、辅助技术与任务切片评估可达性",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "LOCALE_MISSING",
+    "ACCESSIBILITY_BLOCKER",
+    "TRANSLATION_UNKNOWN",
+    "BLOCKED"
+  ]
+}
+

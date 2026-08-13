@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-T26",
+  "input_fixture": "fixtures/TD-T26-input.json",
+  "expected": {
+    "productivity.baseline_control_same": true,
+    "productivity.mutation_detected": true,
+    "productivity.independent_oracle": true,
+    "productivity.accepted_test_count": 2,
+    "productivity.defect_yield_defined": true
+  },
+  "fault_patch": {
+    "productivity.mutation_detected": false,
+    "productivity.independent_oracle": false,
+    "productivity.accepted_test_count": 6
+  },
+  "unknowns": [
+    "真实团队效率和生产缺陷收益未运行"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; candidate count is not productivity",
+  "manifest_version": "1.0.0",
+  "working_directory": "materials/career-evolution",
+  "steps": [
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/career_evolution_lab.py --manifest manifests/TD-T26.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-T26/baseline.json",
+        "evidence/TD-T26/fault.json",
+        "evidence/TD-T26/repair.json",
+        "evidence/TD-T26/cycle.json"
+      ]
+    }
+  ],
+  "required_files": [
+    "scripts/career_evolution_lab.py",
+    "fixtures/TD-T26-input.json",
+    "manifests/TD-T26.json"
+  ]
+}

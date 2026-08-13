@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C01",
+  "mutation_id": "MUT-TD-C01-01",
+  "description": "把证书数量当能力证据，并加入完成课程即可就业的承诺。",
+  "fault_patch": {
+    "career.employment_guarantee": true,
+    "career.evidence_refs_complete": false
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

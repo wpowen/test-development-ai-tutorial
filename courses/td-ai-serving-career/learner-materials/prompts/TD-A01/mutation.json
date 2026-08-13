@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A01",
+  "mutation_id": "MUT-TD-A01-01",
+  "description": "删除 request_id，并把不可见内部模型版本伪造为固定值。",
+  "fault_patch": {
+    "request_id": "",
+    "model.internal_version": "invented-2026-08-11"
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

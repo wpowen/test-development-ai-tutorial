@@ -1,0 +1,113 @@
+{
+  "fixture_id": "cost-ledger-v1",
+  "description": "20 次运行的延迟与成本台账，含一条长尾样本用于演示 P99 与均值的差异。",
+  "runs": [
+    {
+      "latency_ms": 1200,
+      "cost": 0.01,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1350,
+      "cost": 0.011,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1180,
+      "cost": 0.009,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1420,
+      "cost": 0.012,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1260,
+      "cost": 0.01,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1500,
+      "cost": 0.013,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1310,
+      "cost": 0.011,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1240,
+      "cost": 0.01,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1600,
+      "cost": 0.014,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1380,
+      "cost": 0.012,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1290,
+      "cost": 0.011,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1220,
+      "cost": 0.01,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1470,
+      "cost": 0.013,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1400,
+      "cost": 0.012,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1330,
+      "cost": 0.011,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1250,
+      "cost": 0.01,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1750,
+      "cost": 0.015,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1410,
+      "cost": 0.012,
+      "succeeded": true
+    },
+    {
+      "latency_ms": 1360,
+      "cost": 0.011,
+      "succeeded": false
+    },
+    {
+      "latency_ms": 4200,
+      "cost": 0.048,
+      "succeeded": true
+    }
+  ],
+  "budget": {
+    "per_task_cap": 0.05,
+    "hard_cap_enforced": true,
+    "truncation_verified": true,
+    "cost_cv_max": 0.8
+  },
+  "note": "价格与上限必须按你的模型定价与业务预算重设。"
+}

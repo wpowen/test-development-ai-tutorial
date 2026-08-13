@@ -1,0 +1,61 @@
+{
+  "manifest_version": "1.0.0",
+  "topic_id": "TD-W01",
+  "maturity": "fixture-tested",
+  "working_directory": "materials/llm-agent-quality/learner-materials",
+  "required_files": [
+    "scripts/agent_quality_lab.py",
+    "owners.json",
+    "prompts/TD-W01/system.md",
+    "prompts/TD-W01/task.md",
+    "prompts/TD-W01/critic.md",
+    "prompts/TD-W01/input.json",
+    "prompts/TD-W01/output.schema.json",
+    "prompts/TD-W01/eval.json",
+    "prompts/TD-W01/mutation.json",
+    "prompts/TD-W01/manifest.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-W01 --phase baseline --report reports/td-w01/baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-w01/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-W01 --phase fault --report reports/td-w01/fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-w01/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-W01 --phase repair --report reports/td-w01/repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-w01/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/agent_quality_lab.py --topic TD-W01 --phase cycle --report-dir reports/td-w01",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-w01/baseline.json",
+        "reports/td-w01/fault.json",
+        "reports/td-w01/repair.json",
+        "reports/td-w01/cycle-summary.json"
+      ]
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "evidence_boundary": "offline deterministic fixture only; live systems NOT_RUN"
+}

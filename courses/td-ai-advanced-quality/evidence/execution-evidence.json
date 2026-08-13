@@ -1,0 +1,21 @@
+{
+  "schema_version":"1.0",
+  "recorded_at":"2026-08-11T00:00:00+08:00",
+  "status":"fixture-tested",
+  "evidence_scope":"deterministic offline synthetic fixtures",
+  "model_evidence":"NOT_RUN",
+  "environment":{"runtime":"python3","dependencies":"stdlib-only","working_directory":"courses/td-ai-advanced-quality/lab"},
+  "baseline":{"command":"python3 advanced_quality_lab.py suite --phase baseline","exit_code":0,"verdict":"PASS","evidence":["lab/reports/td-x602-baseline.json","lab/reports/td-x101-baseline.json","lab/reports/td-x501-baseline.json","lab/reports/td-x502-baseline.json","lab/reports/td-x601-baseline.json","lab/reports/td-x603-baseline.json","lab/reports/td-x604-baseline.json","lab/reports/td-x805-baseline.json"]},
+  "mutation":{"command":"python3 advanced_quality_lab.py suite --phase fault","exit_code":1,"verdict":"FAIL","evidence":["lab/reports/td-x602-fault.json","lab/reports/td-x101-fault.json","lab/reports/td-x501-fault.json","lab/reports/td-x502-fault.json","lab/reports/td-x601-fault.json","lab/reports/td-x603-fault.json","lab/reports/td-x604-fault.json","lab/reports/td-x805-fault.json"]},
+  "repair":{"command":"python3 advanced_quality_lab.py suite --phase repair","exit_code":0,"verdict":"PASS","evidence":["lab/reports/td-x602-repair.json","lab/reports/td-x101-repair.json","lab/reports/td-x501-repair.json","lab/reports/td-x502-repair.json","lab/reports/td-x601-repair.json","lab/reports/td-x603-repair.json","lab/reports/td-x604-repair.json","lab/reports/td-x805-repair.json"]},
+  "integrity":{"runner_sha256":"f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295","owners_sha256":"620b992da5910f8f4b8eb91e46b7c44cc937220a6690f6ad333689ed20fc6bf4","oracle_authority":"owners registry outside generator prompt packages"},
+  "commands":[
+    {"command":"python3 advanced_quality_lab.py verify-packages","expected_exit_code":0,"observed_exit_code":0,"result":"PASS"},
+    {"command":"python3 advanced_quality_lab.py suite --phase baseline","expected_exit_code":0,"observed_exit_code":0,"result":"PASS"},
+    {"command":"python3 advanced_quality_lab.py suite --phase fault","expected_exit_code":1,"observed_exit_code":1,"result":"EXPECTED_FAULTS_DETECTED"},
+    {"command":"python3 advanced_quality_lab.py suite --phase repair","expected_exit_code":0,"observed_exit_code":0,"result":"PASS"}
+  ],
+  "not_run":["real model or training","real repository and supply chain","real users or assistive technology","fairness, harm, safety, privacy or legal review","provider/MCP integration","online experiment","practitioner review","production validation"],
+  "limitations":["synthetic deterministic fixtures","no external services","no production data","fixture-tested only"]
+}
+

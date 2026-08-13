@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 760" width="1180" height="760" role="img" aria-labelledby="t d">
+<title id="t">Agent 测试架构 8 域 36 维全景图</title>
+<desc id="d">D0 评估可信层校准所有其他域；D1 到 D7 按依赖顺序排列，共 36 个维度；四证据环横向驱动 D1、D4、D5、D6；运行时护栏由 D5 输出作为兜底；决策输出含风险接受与回灌。图为教学结构图，不代表任何真实系统拓扑。</desc>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5a6b86"/></marker>
+<marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#b04a2e"/></marker>
+<style>
+.bg{fill:#f7f8fb}
+.node rect{stroke-width:1.5}
+.d0 rect{fill:#ece7f8;stroke:#5b3fa8}
+.cap rect{fill:#e6f2e9;stroke:#2f7a4d}
+.orch rect{fill:#e2f2f5;stroke:#1c7285}
+.inter rect{fill:#e5eefb;stroke:#2a5da8}
+.rel rect{fill:#fdf3d9;stroke:#9a7412}
+.sec rect{fill:#fbe6e2;stroke:#b04a2e}
+.eff rect{fill:#fbe6ef;stroke:#a83464}
+.biz rect{fill:#efe9e5;stroke:#6b503f}
+.ring rect{fill:#eef6e4;stroke:#5b8035}
+.guard rect{fill:#fdf0e0;stroke:#b3711f}
+.io rect{fill:#eceef1;stroke:#4a5666}
+.h{font:700 14px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#171c24}
+.s{font:600 11.5px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#2c3542}
+.m{font:11px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#3d4855}
+.tiny{font:10px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#5a6675}
+.cap-t{font:italic 11px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#5a6675}
+.edge{stroke:#5a6b86;stroke-width:1.6;fill:none;marker-end:url(#a)}
+.edge.dash{stroke-dasharray:5 4}
+.edge.stop{stroke:#b04a2e;stroke-width:2;marker-end:url(#ar)}
+.badge{font:700 10px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#b04a2e}
+</style>
+</defs>
+<rect class="bg" x="0" y="0" width="1180" height="760"/>
+
+<g class="node io"><rect x="24" y="24" width="250" height="86" rx="4"/></g>
+<text class="h" x="38" y="46">输入与风险</text>
+<text class="m" x="38" y="66">需求与风险登记册</text>
+<text class="m" x="38" y="83">生产流量回放集</text>
+<text class="m" x="38" y="100">红队攻击语料</text>
+
+<g class="node d0"><rect x="24" y="140" width="250" height="150" rx="4"/></g>
+<text class="h" x="38" y="163">D0 评估可信（4 维）</text>
+<text class="tiny" x="38" y="180">测量「测量系统」本身</text>
+<text class="s" x="38" y="203">D0-1 Judge 校准与元评估</text>
+<text class="s" x="38" y="223">D0-2 评估集卫生</text>
+<text class="s" x="38" y="243">D0-3 指标构念效度</text>
+<text class="s" x="38" y="263">D0-4 人审闭环与标注一致性</text>
+<text class="badge" x="38" y="283">κ 达不到 → 本轮所有分数无效</text>
+
+<g class="node cap"><rect x="330" y="24" width="270" height="152" rx="4"/></g>
+<text class="h" x="344" y="47">D1 单体能力（5 维）</text>
+<text class="s" x="344" y="70">D1-1 意图理解</text>
+<text class="s" x="344" y="90">D1-2 工具选择与参数</text>
+<text class="s" x="344" y="110">D1-3 轨迹质量（span 级）</text>
+<text class="s" x="344" y="130">D1-4 记忆读写与检索</text>
+<text class="s" x="344" y="150">D1-5 规划与自我修正</text>
+<text class="tiny" x="344" y="168">参数错误比工具错误更危险</text>
+
+<g class="node orch"><rect x="330" y="196" width="270" height="132" rx="4"/></g>
+<text class="h" x="344" y="219">D2 编排协作（4 维）</text>
+<text class="s" x="344" y="242">D2-1 交接与职责边界</text>
+<text class="s" x="344" y="262">D2-2 子 Agent 上下文隔离</text>
+<text class="s" x="344" y="282">D2-3 级联失败与熔断</text>
+<text class="s" x="344" y="302">D2-4 上下文工程</text>
+<text class="tiny" x="344" y="320">每一次 handoff 都是新断点</text>
+
+<g class="node inter"><rect x="330" y="348" width="270" height="132" rx="4"/></g>
+<text class="h" x="344" y="371">D3 人机协同（4 维）</text>
+<text class="s" x="344" y="394">D3-1 多轮交互与上下文保持</text>
+<text class="s" x="344" y="414">D3-2 多模态理解</text>
+<text class="s" x="344" y="434">D3-3 中断 · 接管 · 授权确认</text>
+<text class="s" x="344" y="454">D3-4 可解释性与体验</text>
+<text class="tiny" x="344" y="472">弹窗多不等于人有控制权</text>
+
+<g class="node rel"><rect x="330" y="500" width="270" height="152" rx="4"/></g>
+<text class="h" x="344" y="523">D4 鲁棒可靠（5 维）</text>
+<text class="s" x="344" y="546">D4-1 可靠性分布 pass^k · CI</text>
+<text class="s" x="344" y="566">D4-2 长时程降级 horizon</text>
+<text class="s" x="344" y="586">D4-3 输入与 Prompt 稳定性</text>
+<text class="s" x="344" y="606">D4-4 异常处理与自恢复</text>
+<text class="s" x="344" y="626">D4-5 统计回归 分布对比</text>
+<text class="badge" x="344" y="645">样本不足 → 证据不足，不是通过</text>
+
+<g class="node sec"><rect x="640" y="24" width="270" height="172" rx="4"/></g>
+<text class="h" x="654" y="47">D5 安全对抗（6 维）</text>
+<text class="s" x="654" y="70">D5-1 直接与间接提示注入</text>
+<text class="s" x="654" y="90">D5-2 工具投毒与 MCP 供应链</text>
+<text class="s" x="654" y="110">D5-3 身份与委托链越权</text>
+<text class="s" x="654" y="130">D5-4 记忆投毒与持久污染</text>
+<text class="s" x="654" y="150">D5-5 代码执行与沙箱逃逸</text>
+<text class="s" x="654" y="170">D5-6 不可逆动作与爆炸半径</text>
+<text class="badge" x="654" y="189">授权在工具边界，不在提示词里</text>
+
+<g class="node eff"><rect x="640" y="216" width="270" height="132" rx="4"/></g>
+<text class="h" x="654" y="239">D6 效率经济（4 维）</text>
+<text class="s" x="654" y="262">D6-1 延迟与吞吐</text>
+<text class="s" x="654" y="282">D6-2 Token 与成本经济学</text>
+<text class="s" x="654" y="302">D6-3 并发与资源隔离</text>
+<text class="s" x="654" y="322">D6-4 可观测性与可复现</text>
+<text class="tiny" x="654" y="340">成本是长尾，报 P99 不报均值</text>
+
+<g class="node biz"><rect x="640" y="368" width="270" height="132" rx="4"/></g>
+<text class="h" x="654" y="391">D7 业务治理（4 维）</text>
+<text class="s" x="654" y="414">D7-1 业务规则与决策正确性</text>
+<text class="s" x="654" y="434">D7-2 合规与审计证据链</text>
+<text class="s" x="654" y="454">D7-3 变更治理 四维版本</text>
+<text class="s" x="654" y="474">D7-4 业务价值与 ROI</text>
+<text class="tiny" x="654" y="492">模型名没变，系统可能已经变了</text>
+
+<g class="node ring"><rect x="24" y="330" width="250" height="150" rx="4"/></g>
+<text class="h" x="38" y="353">四证据环</text>
+<text class="s" x="38" y="376">环 1 离线 CI · 每提交 · 硬门禁</text>
+<text class="s" x="38" y="396">环 2 沙箱回放 · 每日 · 硬门禁</text>
+<text class="s" x="38" y="416">环 3 影子灰度 · 真流量不生效</text>
+<text class="s" x="38" y="436">环 4 在线持续 · 7×24 采样</text>
+<text class="badge" x="38" y="458">环 3 / 环 4 本项目 NOT_RUN</text>
+<text class="tiny" x="38" y="474">环间不得互相冒充成熟度</text>
+
+<g class="node guard"><rect x="24" y="500" width="250" height="132" rx="4"/></g>
+<text class="h" x="38" y="523">运行时护栏</text>
+<text class="s" x="38" y="546">策略引擎与工具白名单</text>
+<text class="s" x="38" y="566">人工确认检查点</text>
+<text class="s" x="38" y="586">熔断与 Kill Switch</text>
+<text class="s" x="38" y="606">短时效凭证与最小权限</text>
+<text class="tiny" x="38" y="624">护栏是 D5 的输出，不是独立功能</text>
+
+<g class="node io"><rect x="950" y="216" width="206" height="212" rx="4"/></g>
+<text class="h" x="964" y="239">决策与反馈</text>
+<text class="s" x="964" y="262">可靠性记分卡</text>
+<text class="tiny" x="964" y="279">带置信区间，不是点估计</text>
+<text class="s" x="964" y="302">风险接受决策</text>
+<text class="tiny" x="964" y="319">具名 owner 签字</text>
+<text class="s" x="964" y="342">失败归因与改进项</text>
+<text class="tiny" x="964" y="359">首错位置 → 具体薄弱环节</text>
+<text class="badge" x="964" y="386">高危 blocker 一票阻断</text>
+<text class="badge" x="964" y="404">不得用总分抵消</text>
+<text class="tiny" x="964" y="421">回滚：模型/prompt/工具/记忆 成组</text>
+
+<path class="edge" d="M149 110 L149 140"/>
+<path class="edge" d="M274 90 L330 90"/>
+<path class="edge" d="M465 176 L465 196"/>
+<path class="edge" d="M465 328 L465 348"/>
+<path class="edge" d="M465 480 L465 500"/>
+<path class="edge" d="M600 100 L640 100"/>
+<path class="edge" d="M775 196 L775 216"/>
+<path class="edge" d="M775 348 L775 368"/>
+<path class="edge" d="M910 300 L950 300"/>
+<path class="edge dash" d="M274 200 C300 200 306 100 330 100"/>
+<path class="edge dash" d="M274 240 C300 240 306 560 330 560"/>
+<path class="edge dash" d="M274 265 C300 265 610 120 640 120"/>
+<path class="edge dash" d="M274 285 C300 285 610 430 640 430"/>
+<path class="edge dash" d="M274 380 C306 380 306 140 330 140"/>
+<path class="edge dash" d="M274 420 C306 420 306 580 330 580"/>
+<path class="edge dash" d="M274 440 C300 440 610 280 640 280"/>
+<path class="edge stop" d="M700 196 C700 480 200 480 149 500"/>
+<path class="edge stop" d="M149 632 C149 700 900 700 1000 428"/>
+<path class="edge stop" d="M1053 216 C1053 120 300 8 149 24"/>
+<path class="edge stop" d="M1000 216 C900 150 300 130 149 140"/>
+
+<text class="cap-t" x="330" y="676">实线 = 证据主链　虚线 = D0 校准与四环驱动　橙线 = 停止 / 兜底 / 回灌路径</text>
+<text class="cap-t" x="330" y="696">D0 决定所有分数的准确性上限；D5 触发护栏；决策输出回灌输入并触发 judge 重校准</text>
+<text class="cap-t" x="330" y="716">本图是教学用测试架构结构图，不代表任何真实系统的部署拓扑或生产就绪状态</text>
+<text class="badge" x="330" y="738">成熟度 fixture-tested；真实模型 / 集成 / 影子 / 在线 / 从业者 / 生产均 NOT_RUN</text>
+</svg>

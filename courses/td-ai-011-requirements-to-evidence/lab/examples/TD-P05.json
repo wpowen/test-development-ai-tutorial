@@ -1,0 +1,15 @@
+{
+  "test_id": "T-CANCEL-IDEMPOTENT-01",
+  "requirement_ids": ["REQ-CANCEL-001"],
+  "risk_ids": ["RISK-REFUND-DUPLICATE"],
+  "fixture": {"order":"PAID_NOT_SHIPPED", "idempotency_key":"idem-001"},
+  "actions": ["POST cancel", "POST cancel with same key"],
+  "oracles": [
+    "response[0].status=202",
+    "response[1].refund_id=response[0].refund_id",
+    "refund_operation_count(order_id)=1",
+    "refund_total=captured_amount"
+  ],
+  "evidence": ["responses", "ledger_rows", "events", "trace_id"]
+}
+

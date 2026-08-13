@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS04",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标浏览器流量占比、第三方沙箱稳定性和真实页面可访问名称"
+}

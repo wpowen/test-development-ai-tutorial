@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS06",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: OEM 定制行为、目标 API level 分布和真机资源限制"
+}

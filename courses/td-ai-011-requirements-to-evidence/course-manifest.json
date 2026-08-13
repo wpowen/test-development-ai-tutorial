@@ -21,6 +21,8 @@
   "failure_injection": true,
   "execution_proof": "evidence/execution-evidence.json",
   "validation_workdir": "lab",
+  "material_archive": "site/public/materials/requirements-to-evidence.zip",
+  "artifact_transformation": {"capability":"artifact-transformation","topic":"TD-P02","status":"fixture-tested","model_evidence":"NOT_RUN"},
   "validation_steps": [
     {"name":"baseline","command":["python3","pipeline.py","reset"],"expected_exit_code":0},
     {"name":"baseline run","command":["python3","pipeline.py","all","--report","reports/baseline.json"],"expected_exit_code":0},

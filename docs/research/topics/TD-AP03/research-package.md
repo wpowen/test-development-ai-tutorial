@@ -1,31 +1,15 @@
-# TD-AP03 · Workload model
+# TD-AP03 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: how should real Agent traffic become a replayable workload rather than repeated identical prompts? Artifact: versioned task/path/input/failure distribution.
+- 主题边界：Trace 语义与因果证据，必须覆盖 task root、generation、tool、attempt、handoff、finalize。
+- 方法：causal trace reconstruction + schema-closure audit；独立 Oracle 检查 root closure。
+- 必须保留：parent_id、schema version、脱敏状态和缺证据原因。
 
-## Source pack
+## Boundary and command evidence
 
-- NVIDIA arrival patterns: https://docs.nvidia.com/aiperf/dev/tutorials/load-patterns-scheduling/arrival-patterns-simulating-realistic-traffic — request-rate, concurrency and burst patterns.
-- k6 scenarios: https://grafana.com/docs/k6/latest/using-k6/scenarios/ — scenario executors and independent workloads.
-- Google SRE handling overload: https://sre.google/sre-book/handling-overload/ — overload, queues and graceful rejection.
-
-## Evidence synthesis
-
-Fact: input/output length and arrival pattern materially change latency. Inference: Agent workload must add task type, tool fan-out, expected terminal state and dependency failures. Unknown: future peak mix; record forecasts separately from observed traffic.
-
-## Engineering blueprint
-
-Use task slices and joint distributions for token length, step count, tools, cache state and dependency behavior. Run baseline, capacity, burst, soak and fault scenarios. Store fixture version and provenance; remove PII.
-
-## Manuscript map
-
-TD-AP03 teaches slicing, four variable families, five test shapes and a replay record.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP03-lab.json --mode cycle`，已记录 0/1/0。provider=none、model=NOT_RUN；provider 默认 trace 完整性未知。
 
 ## Editorial review
 
-PASS. Retained the distinction between observed traffic, forecast traffic and synthetic fault cases. The replay schema keeps task type, token bucket, expected tools, allowed terminal states, budgets and fixture version. Wording does not imply that an average prompt or one traffic trace represents production; privacy and provenance controls remain explicit.
-
-## Validation
-
-PASS: workload is not an average prompt; it includes allowed terminal states, budgets and evidence limitations.
+本记录保护 Trace 因果链、隐私边界和方法理由；不提供分数，不替代独立审计或发布门禁。

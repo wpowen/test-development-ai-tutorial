@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "page_id": "TD-PS05",
+  "owner": "TD-PS05-content-owner",
+  "system_prompt": "system-v1.md",
+  "task_prompt": "task-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "schema": "../../schemas/TD-PS05-output.schema.json",
+  "eval": "../../evals/TD-PS05-eval.json",
+  "mutation": "mutation.json",
+  "input_fixture": "../../fixtures/TD-PS05-input.json",
+  "evidence_boundary": "Versioned prompt package; model NOT_RUN."
+}

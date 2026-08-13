@@ -1,0 +1,1 @@
+Extract typed RequirementContract records from the frozen input documents. Every accepted claim must cite stable source_refs. Preserve unknowns and conflicts. This prompt is versioned teaching material; no model run is claimed.

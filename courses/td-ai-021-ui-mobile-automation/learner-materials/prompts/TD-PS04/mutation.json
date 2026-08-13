@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS04",
+  "mutation_id": "TD-PS04-FAULT-01",
+  "mutation": "退款 API 延迟后返回 500",
+  "expected_detected_by": "批准控件角色名称与权限一致",
+  "model_execution": "NOT_RUN"
+}

@@ -1,0 +1,7 @@
+{
+  "run_id": "agent-repaired-v1", "seed": 42, "tasks": 120, "workers": 12,
+  "arrival_interval_ms": 120, "model_ms": 210, "tool_ms": 110,
+  "model_failure_rate": 0.0, "tool_failure_rate": 0.03, "max_tool_attempts": 2,
+  "backoff_ms": 80, "model_call_cost": 0.012, "tool_call_cost": 0.001,
+  "thresholds": {"task_success_rate": 0.96, "e2e_p95_ms": 1800, "queue_p95_ms": 250, "retry_amplification": 1.08, "cost_per_success": 0.03}
+}

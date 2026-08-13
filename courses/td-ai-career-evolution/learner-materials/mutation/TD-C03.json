@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-C03","fault_patch":{"assessment.evidence_refs_complete":false,"assessment.unknowns_preserved":false,"assessment.plan_has_30_60_90":false},"expected_fault_verdict":"FAIL","independent_oracle":true}

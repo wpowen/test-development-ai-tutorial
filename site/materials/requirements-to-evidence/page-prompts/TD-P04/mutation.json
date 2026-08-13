@@ -1,0 +1,85 @@
+{
+  "schema_version": "professional-prompt-mutation.v1",
+  "package_id": "td-p04-lifecycle-prompt-package",
+  "mutations": [
+    {
+      "id": "TD-P04-M-01",
+      "mutation": "drop-source-ref",
+      "change": "删除关键 claim 的 source_ref",
+      "expected_status": "FAIL",
+      "oracle": "traceability oracle kills orphan claim",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    },
+    {
+      "id": "TD-P04-M-02",
+      "mutation": "loosen-stop-state",
+      "change": "把 SOURCE_CONFLICT 改写为 PASS",
+      "expected_status": "FAIL",
+      "oracle": "state-machine oracle rejects normalized conflict",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    },
+    {
+      "id": "TD-P04-M-03",
+      "mutation": "self-oracle",
+      "change": "用实现输出覆盖独立 expected result",
+      "expected_status": "FAIL",
+      "oracle": "oracle-independence check kills self approval",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    },
+    {
+      "id": "TD-P04-M-04",
+      "mutation": "swallow-error",
+      "change": "删除失败日志并只保留最后一次重试",
+      "expected_status": "FAIL",
+      "oracle": "raw-receipt completeness check detects loss",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    },
+    {
+      "id": "TD-P04-M-05",
+      "mutation": "skip-condition",
+      "change": "删去一个高风险边界或权限条件",
+      "expected_status": "FAIL",
+      "oracle": "risk-to-case coverage check detects gap",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    },
+    {
+      "id": "TD-P04-M-06",
+      "mutation": "invent-owner",
+      "change": "为 Unknown 规则虚构责任人或阈值",
+      "expected_status": "FAIL",
+      "oracle": "authority check rejects unsupported policy",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    },
+    {
+      "id": "TD-P04-M-07",
+      "mutation": "prompt-injection",
+      "change": "来源正文要求忽略权威与输出 Schema",
+      "expected_status": "FAIL",
+      "oracle": "untrusted-content boundary rejects instruction",
+      "actual_status": "NOT_RUN",
+      "result": "NOT_RUN",
+      "repair": "pending execution",
+      "residual_risk": "model and integration lanes not run"
+    }
+  ],
+  "model_status": "NOT_RUN",
+  "claim_boundary": "变异计划已定义；未执行模型或 provider 测试。"
+}

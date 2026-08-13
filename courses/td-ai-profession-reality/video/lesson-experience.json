@@ -1,0 +1,28 @@
+{
+  "lesson_id": "TD-F01-video",
+  "target_learner": "第一次接触测试开发与 AI 质量的学习者",
+  "level": "beginner",
+  "estimated_minutes": 12,
+  "job_result": "能把需求和技术文档转成有风险、方法、独立 Oracle、证据与人类发布责任的职业工作链",
+  "artifact": "一张职业责任地图和一份 TD-F01 红绿修复报告",
+  "stages": [
+    {"stage_id":"cold-open-failure","instructor_action":"展示需求要求人工审批而技术设计却自动合并的假通过","learner_action":"指出这不是可接受的发布证据并暂停决定","expected_observation":"学员看到最终状态绿不等于依据和责任正确","debrief":"先找失败影响和决策 owner，再讨论工具","artifact_or_assessment":"标出冲突双方和 BLOCKED 状态"},
+    {"stage_id":"stakes-and-promise","instructor_action":"说明测试开发把质量风险变成可验证、可复现、可决定的证据","learner_action":"用自己的话复述不能承诺零缺陷或匿名放行","expected_observation":"学习者区分测试价值与用例数量","debrief":"职业基线决定后续 AI 能力迁移","artifact_or_assessment":"写一句 responsibility_statement"},
+    {"stage_id":"before-after","instructor_action":"对照只读技术设计、复制实现输出当 Oracle 与完整双文档责任链","learner_action":"在对照表中补需求依据、独立 Oracle 和发布 owner","expected_observation":"缺失字段和共同失败风险可见","debrief":"before 是流程捷径，after 是可审计工作链","artifact_or_assessment":"完成需求/技术双栏阅读表"},
+    {"stage_id":"plain-mental-model","instructor_action":"用九站图解释需求、设计、风险、方法、Oracle、准备、执行、发布、反馈","learner_action":"为每站写 input、artifact、decision、consumer","expected_observation":"每站问题不同且前后有传递关系","debrief":"完整流程不是开发后的一个测试阶段","artifact_or_assessment":"提交九站生命周期图"},
+    {"stage_id":"guided-demo","instructor_action":"运行 TD-F01 baseline 并展示 Prompt、Input、Schema、Eval 与 Mutation 的绑定","learner_action":"跟着命令读取报告和 evidence boundary","expected_observation":"provider=none、model_status=NOT_RUN 且 baseline 退出 0","debrief":"版本完整不代表模型效果已验证","artifact_or_assessment":"保存 baseline 报告路径"},
+    {"stage_id":"failure-diagnosis","instructor_action":"运行 fault，逐项查看责任、Oracle、AI 权限检查变红","learner_action":"按失败字段定位是依据、方法还是决定权错误","expected_observation":"fault 退出 1 且 verdict=FAIL，不是静态红字","debrief":"失败诊断必须说明证据和责任，不甩锅给工具","artifact_or_assessment":"写出一条失败字段与修复理由"},
+    {"stage_id":"learner-practice","instructor_action":"给出新的脱敏 AI 发布场景和文档冲突","learner_action":"独立生成风险—方法—Oracle—工件表并把冲突标 BLOCKED","expected_observation":"学员不让模型替代权威裁决或业务 Oracle","debrief":"方法由风险和机制决定，AI 只给候选","artifact_or_assessment":"提交个人责任地图"},
+    {"stage_id":"transfer-challenge","instructor_action":"要求把离线职业责任合同迁移到目标组织的受控 AI 服务","learner_action":"重新确认模型、数据、权限、阈值、owner、waiver 和回滚，至少改两项环境假设","expected_observation":"结构保留但组织规则、工具权限和阈值不会照抄","debrief":"迁移的是证据合同，不是 fixture 数字或就业结论","artifact_or_assessment":"目标组织适配清单","source_context":"离线 TD-F01 职业责任 fixture","target_context":"目标组织的受控 AI 服务","invariant":"需求/技术依据、独立 Oracle、owner、0/1/0 和成熟度边界","must_change":["目标组织权威顺序、数据权限、阈值和发布 owner","模型/Provider、工具权限、waiver 与回滚策略"],"success_criterion":"适配清单保留 BLOCKED、UNKNOWN 和人类门禁；不得宣称 live 或 practitioner 通过"},
+    {"stage_id":"artifact-handoff","instructor_action":"展示修复报告、责任地图和检查表如何交给质量负责人","learner_action":"说明下一位消费者、剩余 UNKNOWN 和需要的访谈/文档","expected_observation":"artifact 有 owner/version/source/acceptance/consumer，结论保持 fixture 边界","debrief":"交付是支持下一项决定，不是把文档堆在目录里","artifact_or_assessment":"运行 repair 与 cycle 并提交最终包"}
+  ],
+  "interaction_prompts": [
+    "哪一条需求或技术依据有权裁决冲突？请给版本和 locator。",
+    "这个风险为什么选该方法？Oracle 如何独立于实现和模型输出？",
+    "AI 可以做哪一步候选工作？哪一步必须由具名人类批准？",
+    "你的目标组织适配中哪些字段仍是 UNKNOWN，下一条证据是什么？"
+  ],
+  "recovery_path": "如果学员无法使 fault 变红，回到 learner-profile-fault.json，逐项比较九个责任检查；如果不能区分需求和技术文档，先完成 sample-input.md 的 BLOCKED 练习，再重跑 cycle。",
+  "evidence_status": "fixture-tested",
+  "limitations": ["视频尚未制作", "provider/model/live/practitioner/production 均 NOT_RUN", "不代表任何组织的招聘、绩效、薪资或晋升结果"]
+}

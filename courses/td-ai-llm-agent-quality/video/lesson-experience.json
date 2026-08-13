@@ -1,0 +1,23 @@
+{
+  "lesson_id":"td-ai-llm-agent-quality-core",
+  "target_learner":"第一次系统学习 LLM Judge 与 Agent 质量工程的测试开发工程师",
+  "level":"L1-guided-fixture",
+  "estimated_minutes":100,
+  "job_result":"能冻结 Agent 质量实验的版本、Oracle、权限和证据边界，并诊断一个会变红的 mutation",
+  "artifact":"版本 manifest、独立 Oracle、权限/轨迹 receipt、0/1/0 报告与迁移清单",
+  "stages":[
+    {"stage_id":"cold-open-failure","instructor_action":"展示模型与 retriever 同时变化后的矛盾 A/B 结果","learner_action":"判断能否归因并写出 blocker","expected_observation":"多变量变化使结论不可解释","debrief":"先锁实验变量，再讨论模型优劣与业务风险","artifact_or_assessment":"风险预测记录与归因阻断理由"},
+    {"stage_id":"stakes-and-promise","instructor_action":"说明越权调用、泄露、重复写和无限循环的代价","learner_action":"选择一个必须由模型外 Gate 阻断的行为","expected_observation":"总分不能覆盖高风险 blocker","debrief":"AI 是候选执行者，不是批准者","artifact_or_assessment":"blocker 与 owner"},
+    {"stage_id":"before-after","instructor_action":"对比随机对话抽查与版本化 Agent manifest","learner_action":"标出缺失的锁、预算和 receipt","expected_observation":"新流程能重放并定位责任层","debrief":"完整证据链比漂亮文本更重要，必须能回到输入与动作","artifact_or_assessment":"before-after 对照表"},
+    {"stage_id":"plain-mental-model","instructor_action":"用 outcome、step、trajectory 三层解释 Oracle","learner_action":"把一个症状映射到首个检查层","expected_observation":"每层有独立输入、阈值和 owner","debrief":"最终答案不是完整安全证据","artifact_or_assessment":"Oracle 映射"},
+    {"stage_id":"guided-demo","instructor_action":"运行 TD-T13 baseline 并打开报告","learner_action":"找到锁、重复次数、hash 和 not_run","expected_observation":"命令 exit 0 且边界诚实","debrief":"先读字段再读 verdict","artifact_or_assessment":"baseline.json"},
+    {"stage_id":"failure-diagnosis","instructor_action":"注入 retriever 变更并保留 model 变更","learner_action":"运行 fault，定位 SINGLE-VARIABLE","expected_observation":"命令 exit 1 且命名 Oracle 明确变红","debrief":"不能靠改阈值或删除检查修绿，必须修复实验隔离","artifact_or_assessment":"fault.json 与根因诊断记录"},
+    {"stage_id":"learner-practice","instructor_action":"提供一个缺少 owner 与 stop state 的合成 case","learner_action":"补齐 receipt 并增加一条会改变决定的 mutation","expected_observation":"新风险能稳定产生可观察红灯","debrief":"学员交付可复跑工件而不是只观看演示","artifact_or_assessment":"新增 case、Oracle 与报告"},
+    {"stage_id":"transfer-challenge","instructor_action":"把退款 Agent 切换为内部事故总结 Agent","learner_action":"替换证据、权限、Oracle 与风险切片","expected_observation":"原则保留但业务内容必须重做并能解释","debrief":"迁移不是替换名词，而是重建专业 Oracle 与权限边界","artifact_or_assessment":"迁移 manifest 与验收报告","source_context":"合成退款 Agent 的版本、工具与轨迹","target_context":"内部事故总结 Agent 的 runbook、telemetry、值班权限与停止策略","invariant":"版本锁、独立 Oracle、人工发布权和 0/1/0 协议保持不变","must_change":["退款业务 Oracle 改为事故严重度与归因 Oracle","资金工具 scope 改为只读 telemetry 与值班 handoff"],"success_criterion":"正常摘要通过；注入无证据归因或越权读取后稳定 exit 1，并保留原始报告"},
+    {"stage_id":"artifact-handoff","instructor_action":"检查 manifest、reports、receipts 与 Unknown","learner_action":"向下一位工程师解释如何复跑和何时阻断发布","expected_observation":"交付包可复现且成熟度声明没有被夸大","debrief":"fixture 绿灯不是 live 或 practitioner 证据，下一阶段必须重新取证","artifact_or_assessment":"最终质量包与下一阶段验证交接"}
+  ],
+  "interaction_prompts":["哪一个变量只能改变？","哪个 Oracle 失败必须立即阻断？","哪些结论仍然 NOT_RUN？"],
+  "recovery_path":"若命令或报告不一致，先回到 manifest、runner 和 working_directory，修复闭包后重跑 0/1/0；不得手改报告冒充运行。",
+  "evidence_status":"fixture-tested",
+  "limitations":["No live model/provider/browser/tool backend","No practitioner review or production validation","Synthetic deterministic data only"]
+}

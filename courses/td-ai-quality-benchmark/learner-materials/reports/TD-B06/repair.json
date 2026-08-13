@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-B06",
+  "phase": "repair",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "内部 Benchmark 必须连接真实决策、领域 Oracle 和具名 owner。",
+  "checks": [
+    {
+      "field": "enterprise_oracle_linked",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "真实企业数据、标注团队、权限和发布连接未建立。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

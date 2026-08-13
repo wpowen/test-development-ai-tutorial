@@ -1,0 +1,13 @@
+{
+  "run_id":"RUN-FIXTURE-001",
+  "code_sha":"fixture-code-sha",
+  "baseline_id":"order-cancel-v2",
+  "test_package_hash":"fixture-test-package-hash",
+  "fixture_hash":"fixture-input-hash",
+  "environment":"local-sandbox",
+  "command":"python3 pipeline.py execute",
+  "retry_policy":"none",
+  "selected_test_ids":["T-CANCEL-SHIPPED-01","T-CANCEL-IDEMPOTENT-01"],
+  "model_status":"NOT_RUN"
+}
+

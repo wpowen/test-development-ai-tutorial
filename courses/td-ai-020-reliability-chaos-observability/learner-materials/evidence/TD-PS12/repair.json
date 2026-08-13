@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS12",
+  "mode": "repair",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "71106b0e42be9518e6dadd0f0544a51e21b1d229b47028ce3d74bfe240f7290e",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS12-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS12-evidence-1.json",
+      "owner": "TD-PS12-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS12-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS12-evidence-2.json",
+      "owner": "TD-PS12-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS12-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS12-evidence-3.json",
+      "owner": "TD-PS12-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS12-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS12-evidence-4.json",
+      "owner": "TD-PS12-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS12-content-owner",
+    "oracle": "TD-PS12-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标 IdP 策略、真实密钥管理、渗透授权范围和剩余风险接受人"
+}

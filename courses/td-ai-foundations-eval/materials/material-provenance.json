@@ -1,0 +1,105 @@
+{
+  "schema_version": "1.0.0",
+  "materials": [
+    {
+      "material_id": "FOUND-EVAL-01",
+      "path": "materials/quickstart.md",
+      "purpose": "Quickstart",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S34",
+        "S65"
+      ],
+      "scenario_ids": [
+        "TD-S01"
+      ],
+      "generated_from": "Wave-2 topic research plus fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model/provider, enterprise integration, practitioner or production proof"
+    },
+    {
+      "material_id": "FOUND-EVAL-02",
+      "path": "materials/reusable-skill.md",
+      "purpose": "Reusable AI eval contract skill",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S34",
+        "S65"
+      ],
+      "scenario_ids": [
+        "TD-S01"
+      ],
+      "generated_from": "Wave-2 topic research plus fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model/provider, enterprise integration, practitioner or production proof"
+    },
+    {
+      "material_id": "FOUND-EVAL-03",
+      "path": "materials/sample-input.md",
+      "purpose": "Synthetic sample input",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S34",
+        "S65"
+      ],
+      "scenario_ids": [
+        "TD-S01"
+      ],
+      "generated_from": "Wave-2 topic research plus fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model/provider, enterprise integration, practitioner or production proof"
+    },
+    {
+      "material_id": "FOUND-EVAL-04",
+      "path": "materials/expected-output.md",
+      "purpose": "Expected output",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S34",
+        "S65"
+      ],
+      "scenario_ids": [
+        "TD-S01"
+      ],
+      "generated_from": "Wave-2 topic research plus fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model/provider, enterprise integration, practitioner or production proof"
+    },
+    {
+      "material_id": "FOUND-EVAL-05",
+      "path": "materials/verification-checklist.md",
+      "purpose": "Verification checklist",
+      "source_ids": [
+        "S23",
+        "S24",
+        "S34",
+        "S65"
+      ],
+      "scenario_ids": [
+        "TD-S01"
+      ],
+      "generated_from": "Wave-2 topic research plus fresh deterministic fixture runs",
+      "license_or_usage": "repository-owned educational material; synthetic public data",
+      "validation_status": "fixture-tested",
+      "validation_evidence": "evidence/execution-evidence.json",
+      "contains_synthetic_data": true,
+      "limitations": "No live model/provider, enterprise integration, practitioner or production proof"
+    }
+  ]
+}

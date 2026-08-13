@@ -1,0 +1,44 @@
+{
+  "page_id": "TD-P05",
+  "status": "ACCEPTED",
+  "oracles": [
+    {
+      "oracle_id": "ORACLE-SHIPPED-409",
+      "source_refs": [
+        "PRD-v3#R17",
+        "OPENAPI-v7#/cancel/responses/409"
+      ],
+      "expected": "HTTP 409 and no cancellation"
+    }
+  ],
+  "test_conditions": [
+    {
+      "condition_id": "COND-SHIPPED",
+      "dimension": "state",
+      "partition": "SHIPPED"
+    }
+  ],
+  "test_cases": [
+    {
+      "case_id": "T-CANCEL-SHIPPED-01",
+      "precondition": "order state SHIPPED",
+      "action": "POST /cancel",
+      "expected": "409 and zero side effects"
+    }
+  ],
+  "blocked_tests": [
+    {
+      "case_id": "T-PROD-PAYMENT",
+      "status": "BLOCKED",
+      "reason": "forbidden real payment side effect"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ]
+}

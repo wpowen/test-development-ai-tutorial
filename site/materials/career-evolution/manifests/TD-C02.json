@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C02",
+  "input_fixture": "fixtures/TD-C02-input.json",
+  "expected": {
+    "career.responsibility_states_complete": true,
+    "career.evidence_refs_complete": true,
+    "career.decision_rights_complete": true,
+    "career.years_only": false
+  },
+  "fault_patch": {
+    "career.evidence_refs_complete": false,
+    "career.years_only": true
+  },
+  "unknowns": [
+    "组织 band 和晋升 policy 未提供"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; responsibility state is not a job-level claim",
+  "manifest_version": "1.0.0",
+  "working_directory": "materials/career-evolution",
+  "steps": [
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C02.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-C02/baseline.json",
+        "evidence/TD-C02/fault.json",
+        "evidence/TD-C02/repair.json",
+        "evidence/TD-C02/cycle.json"
+      ]
+    }
+  ],
+  "required_files": [
+    "scripts/career_evolution_lab.py",
+    "fixtures/TD-C02-input.json",
+    "manifests/TD-C02.json"
+  ]
+}

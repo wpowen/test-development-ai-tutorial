@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-T08",
+  "phase": "repair",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_package": {
+    "version": "1.0.0",
+    "manifest_hash": "sha256:58a21ba68cc2ed7ff383aff1ed990a86d9236f1941e2b91d733e0482db7aca7f"
+  },
+  "basis_hash": "sha256:e4592e25a925e638a6b1b64cc6c50dd43a30b09d167d5b343bc6ba03709757dd",
+  "oracle_hash": "sha256:0d6210b21a490d1626e2d765cc147a9eb73dc6aec299b5c7723eb2b33eb0aeaf",
+  "oracle_authority": "frozen approved basis; independent from candidate generator",
+  "human_decision_required": true,
+  "status": "PASS",
+  "clusters": [
+    {
+      "cluster_id": "trace-pool-7",
+      "raw_event_refs": [
+        "EV-001",
+        "EV-002",
+        "EV-003"
+      ],
+      "symptom": "refund dependency timeout",
+      "hypothesis": "connection pool exhaustion",
+      "cause_status": "VERIFIED_CAUSE",
+      "next_experiment": "pool-size-only-replay",
+      "commit_set": [
+        "abc123"
+      ],
+      "environment_set": [
+        "fixture-a"
+      ]
+    }
+  ],
+  "raw_evidence_preserved": true,
+  "decision": "HAND_OFF_VERIFIED_FIXTURE_CAUSE"
+}

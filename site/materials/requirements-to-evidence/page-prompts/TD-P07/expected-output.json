@@ -1,0 +1,52 @@
+{
+  "page_id": "TD-P07",
+  "status": "ACCEPTED",
+  "run": [
+    {
+      "cwd": "materials/requirements-to-evidence",
+      "command": "python3 pipeline.py page-cycle --page TD-P07 --report reports/TD-P07-cycle.json",
+      "version": "fixture-v1.1"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "T-CANCEL-SHIPPED-01",
+      "status": "PASS",
+      "raw_evidence": "reports/TD-P07-cycle.json"
+    }
+  ],
+  "attributions": [
+    {
+      "case_id": "T-CANCEL-SHIPPED-01",
+      "layer": "product-behavior",
+      "basis": "independent expected result matched"
+    }
+  ],
+  "defects": [
+    {
+      "defect_id": "NONE",
+      "status": "Evidence",
+      "summary": "fixed positive fixture has no product defect"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "production payment test",
+      "status": "BLOCKED",
+      "reason": "fixture forbids real payment"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ],
+  "decision": {
+    "status": "PASS_FIXTURE",
+    "basis": "fixed expected example only",
+    "human_gate": "required before enterprise or release use"
+  }
+}

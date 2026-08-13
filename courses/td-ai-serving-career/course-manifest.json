@@ -1,0 +1,177 @@
+{
+  "course_id": "td-ai-serving-career",
+  "title": "AI API、Serving 质量与职业能力迁移",
+  "scenario_ids": [
+    "TD-S07"
+  ],
+  "ai_lane": "build-ai-quality-system",
+  "ai_centrality_score": 5,
+  "professional_value_score": 5,
+  "system_under_test": "版本化 AI API 协议、Serving 指标/容量/瓶颈/韧性与职业证据合同",
+  "ai_roles": [
+    "system-under-test",
+    "candidate-generator",
+    "serving-dependency"
+  ],
+  "learner_artifact": [
+    "AI API contract",
+    "protocol state machines",
+    "serving metric card",
+    "fixture capacity report",
+    "bottleneck diagnosis",
+    "resilience budget",
+    "career self-assessment and portfolio plan"
+  ],
+  "tool_adapters": [
+    "python-stdlib-offline-fixture",
+    "provider-and-GPU-adapters-NOT_RUN"
+  ],
+  "work_domain_ids": [
+    "TD-D03",
+    "TD-D05"
+  ],
+  "primary_artifact_ids": [
+    "ai-serving-quality-gate",
+    "career-evidence-map"
+  ],
+  "decision_owner": "AI 质量负责人",
+  "allowed_ai_authority": "自动运行和比较评测，不得自动批准例外",
+  "prerequisite_course_ids": [
+    "td-ai-foundations-eval"
+  ],
+  "transfer_target": "将同一版本、协议、测量、韧性和证据合同迁移到目标组织的受控 AI 服务",
+  "lesson_flow": [
+    "demo",
+    "guided-practice",
+    "failure-injection",
+    "repair",
+    "transfer"
+  ],
+  "default_path_requires_credentials": false,
+  "baseline_comparison": true,
+  "failure_injection": true,
+  "execution_proof": "evidence/execution-evidence.json",
+  "learner_materials_root": "learner-materials",
+  "validation_workdir": "learner-materials",
+  "validation_steps": [
+    {
+      "name": "TD-A01 API contract baseline",
+      "command": [
+        "python3",
+        "scripts/serving_lab.py",
+        "--manifest",
+        "manifests/TD-A01.json",
+        "--mode",
+        "baseline"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "TD-A06 retry storm fault",
+      "command": [
+        "python3",
+        "scripts/serving_lab.py",
+        "--manifest",
+        "manifests/TD-A06.json",
+        "--mode",
+        "fault"
+      ],
+      "expected_exit_code": 1
+    },
+    {
+      "name": "TD-C01 career boundary repair",
+      "command": [
+        "python3",
+        "scripts/serving_lab.py",
+        "--manifest",
+        "manifests/TD-C01.json",
+        "--mode",
+        "repair"
+      ],
+      "expected_exit_code": 0
+    }
+  ],
+  "status": "fixture-tested",
+  "evidence_ids": [
+    "S44",
+    "S46",
+    "S51",
+    "S52",
+    "S53",
+    "S54",
+    "S56",
+    "S57",
+    "S60",
+    "S62",
+    "S64"
+  ],
+  "topic_page_ids": [
+    "TD-A01",
+    "TD-A02",
+    "TD-A03",
+    "TD-A04",
+    "TD-A05",
+    "TD-A06",
+    "TD-C01"
+  ],
+  "human_gate": "AI 质量负责人确认发布问题、阈值依据和风险；招聘方独立决定岗位与录用",
+  "not_run": [
+    "live provider",
+    "real model",
+    "GPU",
+    "production traffic",
+    "practitioner review",
+    "employment outcome"
+  ],
+  "shared_bundle_owners": {
+    "schema_version": "1.0.0",
+    "bundle_owner": "ai-serving-career-wave-3",
+    "runner_owner": "course-lab-engineering",
+    "release_owner": "ai-serving-career-release-owner",
+    "page_owners": {
+      "TD-A01": {
+        "content": "TD-A01-content-owner",
+        "oracle": "TD-A01-oracle-owner",
+        "prompt": "TD-A01-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      },
+      "TD-A02": {
+        "content": "TD-A02-content-owner",
+        "oracle": "TD-A02-oracle-owner",
+        "prompt": "TD-A02-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      },
+      "TD-A03": {
+        "content": "TD-A03-content-owner",
+        "oracle": "TD-A03-oracle-owner",
+        "prompt": "TD-A03-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      },
+      "TD-A04": {
+        "content": "TD-A04-content-owner",
+        "oracle": "TD-A04-oracle-owner",
+        "prompt": "TD-A04-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      },
+      "TD-A05": {
+        "content": "TD-A05-content-owner",
+        "oracle": "TD-A05-oracle-owner",
+        "prompt": "TD-A05-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      },
+      "TD-A06": {
+        "content": "TD-A06-content-owner",
+        "oracle": "TD-A06-oracle-owner",
+        "prompt": "TD-A06-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      },
+      "TD-C01": {
+        "content": "TD-C01-content-owner",
+        "oracle": "TD-C01-oracle-owner",
+        "prompt": "TD-C01-prompt-owner",
+        "release": "ai-serving-career-release-owner"
+      }
+    }
+  },
+  "evidence_boundary": "PASS-FIXTURE only; capacity fixture-only; no employment promise."
+}

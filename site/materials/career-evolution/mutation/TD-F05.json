@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-F05","fault_patch":{"metric_card.denominator_defined":false,"metric_card.oracle_defined":false,"metric_card.universal_threshold":true},"expected_fault_verdict":"FAIL","independent_oracle":true}

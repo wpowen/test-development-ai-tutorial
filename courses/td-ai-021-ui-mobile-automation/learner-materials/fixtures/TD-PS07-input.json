@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS07",
+  "scenario": "医疗预约改期跨日期控件、通知权限、后台恢复、模拟器/真机和后端预约版本",
+  "controlling_question": "怎样区分 XCUITest 可见状态、系统权限、签名环境与服务端预约结果，并确保测试后无状态残留？",
+  "known_rules": [
+    "稳定 identifier 不依赖本地化文字",
+    "权限拒绝仍可完成安全替代路径",
+    "同一预约版本只应用一次改期",
+    "清理后通知日历 keychain 与后端状态回到基线"
+  ],
+  "faults": [
+    "动画和异步回调延迟",
+    "通知权限拒绝",
+    "测试清理漏掉 keychain 状态"
+  ],
+  "unknowns": [
+    "目标签名配置、真实通知服务和 iOS 版本分布"
+  ],
+  "data_classification": "synthetic"
+}

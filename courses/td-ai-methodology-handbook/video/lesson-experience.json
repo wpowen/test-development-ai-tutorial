@@ -1,0 +1,100 @@
+{
+ "lesson_id": "td-ai-methodology-handbook-l01",
+ "target_learner": "会写自动化用例，但第一次要为团队建立 AI 变更质量门禁的测试开发工程师",
+ "level": "L3-design-workflow",
+ "estimated_minutes": 15,
+ "job_result": "能回答「已知坏版本能否被当前门禁稳定拦下」，并让一个自己业务上的已知缺陷稳定变红",
+ "artifact": "测试策略 + 风险登记册 + Oracle 设计记录 + 三段 Run Receipt + 发布决定书",
+ "stages": [
+  {
+   "stage_id": "cold-open-failure",
+   "instructor_action": "展示一条全绿流水线，然后问它跑的是哪个模型版本、哪份数据集、哪一版 Judge",
+   "learner_action": "尝试回答三个问题，并判断这条绿色能否作为发布证据",
+   "expected_observation": "三个问题都答不上来，绿色不携带任何可追溯信息",
+   "debrief": "没有 Run Receipt 的绿色只是一次被画成绿色的口头承诺",
+   "artifact_or_assessment": "初始发布判断记录"
+  },
+  {
+   "stage_id": "stakes-and-promise",
+   "instructor_action": "引入 PRD 与旧技术方案关于已发货订单能否取消的冲突",
+   "learner_action": "写出产品 owner、研发 owner、测试开发与发布 owner 各自的决定权",
+   "expected_observation": "裁决业务规则是产品 owner 的职权，模型作此判断即为越权",
+   "debrief": "冲突的正确处置是 BLOCKED 加具名升级，不是选一个更合理的说法",
+   "artifact_or_assessment": "含 A 唯一性检查的决定权归属表"
+  },
+  {
+   "stage_id": "before-after",
+   "instructor_action": "对比「一份需求摘要」与六份可被下游消费的工件",
+   "learner_action": "为每个字段标出它支撑哪一项下游能力，删掉它会失去什么",
+   "expected_observation": "删掉 invariants 属性测试失去依据，删掉 side_effects 幂等测试无从设计",
+   "debrief": "字段设计从下游倒推，不是为了让 JSON 看起来专业",
+   "artifact_or_assessment": "字段到下游能力的映射表"
+  },
+  {
+   "stage_id": "plain-mental-model",
+   "instructor_action": "讲解 ACCEPTED、UNKNOWN、BLOCKED 三种状态的来源与传播规则",
+   "learner_action": "给四条候选规则分类，并写出各自是否允许进入下游",
+   "expected_observation": "缺失与冲突不能被强制二值化，状态本身决定下游能否继续",
+   "debrief": "最容易出事的是 BLOCKED 被降级成警告，因为警告不会有人处理",
+   "artifact_or_assessment": "带来源、状态与下游决定的分类结果"
+  },
+  {
+   "stage_id": "guided-demo",
+   "instructor_action": "在 learner-materials 下运行基线命令并逐条打开七道门禁的判定",
+   "learner_action": "核对每道门禁检查的是哪一份工件的哪一个字段",
+   "expected_observation": "退出码为 0，七道门禁全 PASS，末尾打印证据边界声明",
+   "debrief": "先不要接受这个绿色，它可能只是因为检查根本没做",
+   "artifact_or_assessment": "baseline 报告与门禁清单"
+  },
+  {
+   "stage_id": "failure-diagnosis",
+   "instructor_action": "依次注入五类故障，并要求指出每类应该被哪道门禁拦下",
+   "learner_action": "预测被拦门禁与状态词，再运行验证，记录不一致之处",
+   "expected_observation": "五类故障退出码均为 1，且各自被指定的那道门禁指名拦下",
+   "debrief": "若被别的门禁顺带拦下，说明门禁划分有问题，不是学员操作问题",
+   "artifact_or_assessment": "故障到门禁到状态词的对照表"
+  },
+  {
+   "stage_id": "learner-practice",
+   "instructor_action": "提供恢复命令但不预告哪些输出会变化",
+   "learner_action": "先预测再运行 --fault none，比较三段输出差异",
+   "expected_observation": "退出码回到 0，输出与基线一致，0/1/0 三段齐全",
+   "debrief": "修复的是被注入的缺陷，不是调低阈值或删除检查",
+   "artifact_or_assessment": "baseline/fault/repair 三段差异表"
+  },
+  {
+   "stage_id": "transfer-challenge",
+   "instructor_action": "把订单取消的治理链改成金融风控模型发布流程",
+   "learner_action": "重建风险档位、独立 Oracle 来源、审批角色与 Waiver 过期策略",
+   "expected_observation": "门禁语义与状态词不变，但全部业务规则与阈值需要重新确认",
+   "debrief": "可迁移的是门禁语义与证据闭包，不是订单夹具里的具体规则",
+   "artifact_or_assessment": "金融风控模型发布流程的风险登记册与 Waiver 台账",
+   "source_context": "订单取消与退款合成夹具",
+   "target_context": "金融风控模型发布流程",
+   "invariant": "状态词语义、fail-closed、语义层不得单独放行 blocker、Waiver 必须过期",
+   "must_change": [
+    "风险档位边界与打分口径",
+    "独立 Oracle 来源与审批角色",
+    "Waiver 批准人与过期策略"
+   ],
+   "success_criterion": "常规发布路径通过，过期 Waiver 与缺 Oracle 的关键风险稳定阻断并可追溯到具名责任人"
+  },
+  {
+   "stage_id": "artifact-handoff",
+   "instructor_action": "展示 19 份模板、8 份检查单、5 份 Schema 与 6 份样例的位置与使用顺序",
+   "learner_action": "选一份模板填入自己项目的真实内容，并列出仍缺少的证据等级",
+   "expected_observation": "能区分 fixture-tested 与 model-integrated 及以上等级的证据范围",
+   "debrief": "离线夹具是证据链起点，不能被包装成未经现场验证的效果证明",
+   "artifact_or_assessment": "已填写的模板与 NOT_RUN 差距清单"
+  }
+ ],
+ "interaction_prompts": [
+  "这条绿色跑的是哪个模型版本？",
+  "文档冲突时谁有权裁决？",
+  "这个 blocker 为什么不能由语义层放行？",
+  "你的 Waiver 什么时候过期？"
+ ],
+ "recovery_path": "运行 --fault none 恢复基线；若门禁本身异常，保持 NOT_RUN 并保留完整错误输出，不得改写期望",
+ "evidence_status": "fixture-tested",
+ "limitations": "确定性离线夹具；未验证真实模型、企业文档与流水线集成、从业者认可、学习者效果或生产收益"
+}

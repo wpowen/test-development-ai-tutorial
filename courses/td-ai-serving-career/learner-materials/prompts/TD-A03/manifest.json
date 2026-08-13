@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "version": "1.0.0",
+  "page_id": "TD-A03",
+  "provider": "none",
+  "model_execution": "NOT_RUN",
+  "system_prompt": "system-v1.md",
+  "task_prompt": "task-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "../../fixtures/TD-A03-input.json",
+  "schema": "../../schemas/TD-A03-output.schema.json",
+  "eval": "../../evals/TD-A03-eval.json",
+  "mutation": "mutation.json",
+  "stop_states": [
+    "UNKNOWN",
+    "BLOCKED",
+    "NOT_RUN"
+  ],
+  "authority": "candidate generation only; no Gate, production, capacity or employment decision"
+}

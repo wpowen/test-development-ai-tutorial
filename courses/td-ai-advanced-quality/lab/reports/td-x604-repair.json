@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X604",
+  "phase": "repair",
+  "status": "PASS",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:f014f058eff01add6e48a5261e16d28e1c0b4025f0c5cc3b7f70fe1ea4c06229",
+  "checks": {
+    "capability_match": true,
+    "protocol_schema_pinned": true,
+    "fallback_policy_preserved": true,
+    "side_effect_gate": true
+  },
+  "failed_checks": [],
+  "fault_id": null,
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

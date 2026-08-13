@@ -1,0 +1,26 @@
+{
+  "course_id": "td-ai-agent-architecture-system",
+  "evidence_scope": "deterministic offline fixture only",
+  "commands": [
+    "python3 lab/agent_architecture_lab.py --topic TD-AG-00 --phase baseline --report lab/reports/td-ag-00/baseline.json",
+    "python3 lab/agent_architecture_lab.py --topic TD-AG-00 --phase fault --report lab/reports/td-ag-00/fault.json",
+    "python3 lab/agent_architecture_lab.py --topic TD-AG-00 --phase repair --report lab/reports/td-ag-00/repair.json"
+  ],
+  "baseline": {"exit_code": 0, "verdict": "PASS", "report": "lab/reports/td-ag-00/baseline.json"},
+  "mutation": {"exit_code": 1, "verdict": "FAIL", "report": "lab/reports/td-ag-00/fault.json", "failed_oracle_ids": ["OWNER-ORACLE"]},
+  "repair": {"exit_code": 0, "verdict": "PASS", "report": "lab/reports/td-ag-00/repair.json"},
+  "environment": {"python": "3.x standard library", "network": "not used", "provider": "NOT_RUN", "model": "NOT_RUN"},
+  "observed_sequence": [
+    0,
+    1,
+    0
+  ],
+  "maturity": "fixture-tested",
+  "not_run": [
+    "live model",
+    "integration",
+    "practitioner review",
+    "learner transfer"
+  ],
+  "limitations": "只证明确定性本地 fixture 的命名 fault 可被独立 Oracle 检测；不证明真实模型、Agent、工具后端、线上或学习效果。"
+}

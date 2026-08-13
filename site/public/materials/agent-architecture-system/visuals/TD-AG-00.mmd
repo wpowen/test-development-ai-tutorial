@@ -1,0 +1,34 @@
+%% TD-AG-00 · 来源：用户 Agent 架构材料（经审议）· S24 · S39 · S65
+%% 本图是测试边界与证据升级地图，不代表真实 Agent、企业集成或生产效果已验证。
+flowchart LR
+  input["输入与风险<br/><small>任务、数据、权限、失败成本</small>"]
+  d0["D0 评估可信<br/><small>Gold / Rubric / Judge Card</small>"]
+  d1["D1 单体能力<br/><small>Intent / Tool / Span / Memory</small>"]
+  d2["D2 编排协作<br/><small>Handoff / 隔离 / 熔断</small>"]
+  d3["D3 人机协同<br/><small>中断 / 接管 / 确认疲劳</small>"]
+  d4["D4 鲁棒可靠<br/><small>pass^k / Horizon / Recovery</small>"]
+  d5["D5 安全对抗<br/><small>Injection / MCP / Sandbox</small>"]
+  d6["D6 效率经济<br/><small>Latency / Goodput / Cost</small>"]
+  d7["D7 业务治理<br/><small>Rule / Lineage / ROI / Owner</small>"]
+  rings["四证据环<br/><small>离线 CI → 沙箱回放 → 影子 → 在线持续</small>"]
+  guard["运行时护栏<br/><small>最小权限 · 预算 · 幂等 · Kill Switch</small>"]
+  decision["决策与反馈<br/><small>BLOCKED / 证据不足 / 风险接受 / 回滚</small>"]
+  feedback["生产反馈回流<br/><small>事故、漂移与新样例回到 D0–D7</small>"]
+  input -->|先验证评估系统| d0
+  d0 -->|可信 Oracle| d1
+  d1 -->|能力进入协作| d2
+  d0 -->|人审与升级| d3
+  d1 -->|重复运行| d4
+  d2 -->|跨边界攻击面| d5
+  d3 -->|人工与时延成本| d6
+  d4 -->|可靠性进入治理| d7
+  d5 -->|安全硬门禁| rings
+  d6 -->|预算门禁| rings
+  d7 -->|责任与风险| rings
+  guard -->|运行时强制| decision
+  rings -->|逐环证据| decision
+  decision -->|发布/回滚| feedback
+  feedback -->|重新校准| d0
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

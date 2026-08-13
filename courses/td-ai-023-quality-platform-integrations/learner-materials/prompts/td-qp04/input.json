@@ -1,0 +1,15 @@
+{
+  "fixture_id": "td-qp04-input-v1",
+  "topic_id": "TD-QP04",
+  "scenario": "offline_synthetic_fixture",
+  "facts": {
+    "actor": "fixture-actor",
+    "scope": "sandbox",
+    "evidence_refs": [
+      "fixture://event/42",
+      "fixture://artifact/42"
+    ]
+  },
+  "injected_fault": "the same event created two Jira defects",
+  "external_calls": "NOT_RUN"
+}

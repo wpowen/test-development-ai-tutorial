@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+  <title id="title">D3 中断、脏状态、接管与恢复</title>
+  <desc id="desc">确认按钮不是控制权；必须证明人能停止、看见状态、回滚、接管并安全交回。 真实用户的确认疲劳与接管成功率仍需目标学习者/从业者实验。</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#0b3b32"/><stop offset="1" stop-color="#176b5b"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#176b5b"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#12372f" flood-opacity=".12"/></filter>
+  </defs>
+  <style>
+    .bg{fill:#f7faf8}.header{fill:url(#header)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;fill:#bfe9dc}.title{font:800 28px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:white}.subtitle{font:450 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#d7eee7}.source{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6c7c76}.node rect{fill:white;stroke:#b7d0c7;stroke-width:1.5;filter:url(#shadow)}.node:nth-of-type(3n+1) rect{fill:#eef8f4;stroke:#86b9a8}.node:nth-of-type(3n+2) rect{fill:#f6f8e9;stroke:#c4ce87}.node-index{font:700 10px ui-monospace,monospace;fill:#7c8b85}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#123f34}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#5a6b64}.edge path{fill:none;stroke:#176b5b;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#557168;paint-order:stroke;stroke:#f7faf8;stroke-width:4px}.callout{fill:#fff3db;stroke:#e2b260;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,monospace;fill:#8a5610}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62430f}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62716b}
+  </style>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
+  <text class="eyebrow" x="34" y="29">D3 · HUMAN CONTROL</text>
+  <text class="title" x="34" y="61">D3 中断、脏状态、接管与恢复</text>
+  <text class="subtitle" x="600" y="31">确认按钮不是控制权；必须证明人能停止、看见状态、回滚、接管并安全交回。</text>
+  <text class="source" x="34" y="111">来源：S07 · S23 · S65</text>
+  <g class="edge"><path d="M 224 177 C 245 177, 245 177, 258 177" marker-end="url(#arrow)"/><text x="245" y="187">stop signal</text></g>
+<g class="edge"><path d="M 456 177 C 477 177, 477 177, 490 177" marker-end="url(#arrow)"/><text x="477" y="169">冻结并检查</text></g>
+<g class="edge"><path d="M 688 177 C 709 177, 709 177, 722 177" marker-end="url(#arrow)"/><text x="709" y="187">存在副作用</text></g>
+<g class="edge"><path d="M 688 177 C 740 464, 446 464, 490 369" marker-end="url(#arrow)"/><text x="593" y="265">状态可解释</text></g>
+<g class="edge"><path d="M 920 177 C 972 464, 446 464, 490 369" marker-end="url(#arrow)"/><text x="709" y="283">清理后移交</text></g>
+<g class="edge"><path d="M 688 369 C 709 369, 709 369, 722 369" marker-end="url(#arrow)"/><text x="709" y="361">人工决定</text></g>
+<g class="edge"><path d="M 920 369 C 941 369, 941 369, 954 369" marker-end="url(#arrow)"/><text x="941" y="379">记录结果</text></g>
+<g class="edge"><path d="M 688 177 C 740 670, 214 670, 258 572" marker-end="url(#arrow)"/><text x="477" y="366.5">无法确认</text></g>
+<g class="edge"><path d="M 526 572 C 744 572, 744 369, 954 369" marker-end="url(#arrow)"/><text x="744" y="480.5">留下阻断证据</text></g>
+  
+    <g class="node run">
+      <rect x="34" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="50" y="157">01</text>
+      <text class="node-title" x="50" y="182">Agent 运行</text>
+      <text class="node-detail" x="50" y="204">计划 / 状态 / 工具</text>
+    </g>
+    <g class="node interrupt">
+      <rect x="266" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="282" y="157">02</text>
+      <text class="node-title" x="282" y="182">人工中断</text>
+      <text class="node-detail" x="282" y="204">写操作前 / 后</text>
+    </g>
+    <g class="node dirty">
+      <rect x="498" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="514" y="157">03</text>
+      <text class="node-title" x="514" y="182">脏状态检查</text>
+      <text class="node-detail" x="514" y="204">半成品 / 锁 / 队列</text>
+    </g>
+    <g class="node rollback">
+      <rect x="730" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="746" y="157">04</text>
+      <text class="node-title" x="746" y="182">回滚或补偿</text>
+      <text class="node-detail" x="746" y="204">恢复安全终态</text>
+    </g>
+    <g class="node takeover">
+      <rect x="498" y="326" width="190" height="86" rx="15"/>
+      <text class="node-index" x="514" y="349">05</text>
+      <text class="node-title" x="514" y="374">人工接管</text>
+      <text class="node-detail" x="514" y="396">新 owner / 新上下文</text>
+    </g>
+    <g class="node resume">
+      <rect x="730" y="326" width="190" height="86" rx="15"/>
+      <text class="node-index" x="746" y="349">06</text>
+      <text class="node-title" x="746" y="374">安全恢复</text>
+      <text class="node-detail" x="746" y="396">交回或转人工终结</text>
+    </g>
+    <g class="node audit">
+      <rect x="962" y="326" width="200" height="86" rx="15"/>
+      <text class="node-index" x="978" y="349">07</text>
+      <text class="node-title" x="978" y="374">审计证据</text>
+      <text class="node-detail" x="978" y="396">人、时间、决定、状态</text>
+    </g>
+    <g class="node blocked">
+      <rect x="266" y="526" width="260" height="92" rx="15"/>
+      <text class="node-index" x="282" y="549">08</text>
+      <text class="node-title" x="282" y="574">停止 / BLOCKED</text>
+      <text class="node-detail" x="282" y="596">无法清理状态则不恢复</text>
+    </g>
+  <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
+  <text class="callout-title" x="52" y="678">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">解释文本不等于可控；点击同意也不自动等于有效授权。</text>
+  <text class="footer" x="34" y="735">真实用户的确认疲劳与接管成功率仍需目标学习者/从业者实验。</text>
+</svg>

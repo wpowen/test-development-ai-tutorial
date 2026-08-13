@@ -1,0 +1,1474 @@
+{
+  "schema_version": "1.0.0",
+  "pages": [
+    {
+      "page_id": "TD-F01",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983037+00:00",
+      "evidence_refs": [
+        "research/topics/TD-F01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983048+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P02",
+      "capabilities": [
+        "profession-baseline",
+        "artifact-transformation"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983050+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983052+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983056+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P05",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983058+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P06",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983059+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P07",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983061+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P07/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-P08",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983062+00:00",
+      "evidence_refs": [
+        "research/topics/TD-P08/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983065+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983066+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983068+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983069+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS05",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983071+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS06",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983072+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS07",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983074+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS07/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS08",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983076+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS08/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS09",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983078+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS09/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS10",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983079+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS10/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS11",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983081+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS11/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-PS12",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983082+00:00",
+      "evidence_refs": [
+        "research/topics/TD-PS12/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X101",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983083+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X101/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-FP01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983086+00:00",
+      "evidence_refs": [
+        "research/topics/TD-FP01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-F02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983088+00:00",
+      "evidence_refs": [
+        "research/topics/TD-F02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-F03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983089+00:00",
+      "evidence_refs": [
+        "research/topics/TD-F03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-F04",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983091+00:00",
+      "evidence_refs": [
+        "research/topics/TD-F04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983092+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983096+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983098+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983099+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T05",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983101+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T06",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983102+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T07",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983104+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T07/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T08",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983105+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T08/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-A01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983107+00:00",
+      "evidence_refs": [
+        "research/topics/TD-A01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-A02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983109+00:00",
+      "evidence_refs": [
+        "research/topics/TD-A02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-A03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983110+00:00",
+      "evidence_refs": [
+        "research/topics/TD-A03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-A04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983112+00:00",
+      "evidence_refs": [
+        "research/topics/TD-A04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-A05",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983113+00:00",
+      "evidence_refs": [
+        "research/topics/TD-A05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-A06",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983115+00:00",
+      "evidence_refs": [
+        "research/topics/TD-A06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T09",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983116+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T09/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T10",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983119+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T10/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T11",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983120+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T11/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T12",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983121+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T12/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X501",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983123+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X501/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X502",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983139+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X502/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T13",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983141+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T13/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T14",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983142+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T14/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T15",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983145+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T15/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T16",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983146+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T16/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T17",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983148+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T17/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T18",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983149+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T18/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T19",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983150+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T19/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-W01",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983152+00:00",
+      "evidence_refs": [
+        "research/topics/TD-W01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-W02",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983153+00:00",
+      "evidence_refs": [
+        "research/topics/TD-W02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-W03",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983156+00:00",
+      "evidence_refs": [
+        "research/topics/TD-W03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X603",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983157+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X603/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X604",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983159+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X604/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X602",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983160+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X602/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X601",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983162+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X601/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T20",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983164+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T20/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T21",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983165+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T21/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T22",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983167+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T22/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T23",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983168+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T23/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T24",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983171+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T24/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-X805",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983172+00:00",
+      "evidence_refs": [
+        "research/topics/TD-X805/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-B01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983174+00:00",
+      "evidence_refs": [
+        "research/topics/TD-B01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-B02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983175+00:00",
+      "evidence_refs": [
+        "research/topics/TD-B02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-B03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983177+00:00",
+      "evidence_refs": [
+        "research/topics/TD-B03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-B04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983178+00:00",
+      "evidence_refs": [
+        "research/topics/TD-B04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-B05",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983180+00:00",
+      "evidence_refs": [
+        "research/topics/TD-B05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-B06",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983182+00:00",
+      "evidence_refs": [
+        "research/topics/TD-B06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-QP01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983183+00:00",
+      "evidence_refs": [
+        "research/topics/TD-QP01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-QP02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983185+00:00",
+      "evidence_refs": [
+        "research/topics/TD-QP02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-QP03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983186+00:00",
+      "evidence_refs": [
+        "research/topics/TD-QP03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-QP04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983187+00:00",
+      "evidence_refs": [
+        "research/topics/TD-QP04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T25",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983189+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T25/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-C01",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983191+00:00",
+      "evidence_refs": [
+        "research/topics/TD-C01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-C02",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983193+00:00",
+      "evidence_refs": [
+        "research/topics/TD-C02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-C03",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983195+00:00",
+      "evidence_refs": [
+        "research/topics/TD-C03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-C04",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983196+00:00",
+      "evidence_refs": [
+        "research/topics/TD-C04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-F05",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983198+00:00",
+      "evidence_refs": [
+        "research/topics/TD-F05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-T26",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983199+00:00",
+      "evidence_refs": [
+        "research/topics/TD-T26/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-R01",
+      "capabilities": [
+        "profession-baseline",
+        "career-evolution-system"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983201+00:00",
+      "evidence_refs": [
+        "research/topics/TD-R01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP01",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983203+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP02",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983204+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP03",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983206+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP04",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983207+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP05",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983208+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP06",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983211+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP07",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983212+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP07/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AP08",
+      "capabilities": [
+        "profession-baseline"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983214+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AP08/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-00",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983215+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-00/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-01",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983217+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-01/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-02",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983219+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-02/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-03",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983232+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-03/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-04",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983235+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-04/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-05",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983236+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-05/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-06",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983238+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-06/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-07",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983239+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-07/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-08",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983241+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-08/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-09",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983243+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-09/validation.md",
+        "research/executability-audit.json"
+      ]
+    },
+    {
+      "page_id": "TD-AG-10",
+      "capabilities": [
+        "profession-baseline",
+        "agent-architecture-testing"
+      ],
+      "rationale": "页面把一个专业问题转成版本化工件、独立判断、故障证据和下游决定；附加能力按显式课程链声明。",
+      "risk": "缺失来源、Oracle、权限、统计单位或 owner 会制造不可复核结论。",
+      "reviewer": "course evidence owner",
+      "reviewed_at": "2026-08-13T03:58:11.983245+00:00",
+      "evidence_refs": [
+        "research/topics/TD-AG-10/validation.md",
+        "research/executability-audit.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A06",
+  "approved_at": "2026-08-11",
+  "evidence_level": "fixture-only",
+  "observation": {
+    "retry": {
+      "attempts": 3,
+      "respected_retry_after": true
+    },
+    "fallback": {
+      "quality_gate": true
+    },
+    "tool": {
+      "side_effect_count": 1
+    }
+  }
+}

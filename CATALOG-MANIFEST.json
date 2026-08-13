@@ -1,0 +1,1566 @@
+{
+  "schema_version": "public-catalog-projection.v1",
+  "catalog_id": "test-development-ai-v2",
+  "catalog_scope": "pilot-public-projection",
+  "content_version": "sha256:b0d02e968b8b46c8b4aeebcdc99eab846e1f6fc18ec9d21429a9a223deeb133a",
+  "page_ids": [
+    "TD-F01",
+    "TD-P01",
+    "TD-P02",
+    "TD-P03",
+    "TD-P04",
+    "TD-P05",
+    "TD-P06",
+    "TD-P07",
+    "TD-P08",
+    "TD-PS01",
+    "TD-PS02",
+    "TD-PS03",
+    "TD-PS04",
+    "TD-PS05",
+    "TD-PS06",
+    "TD-PS07",
+    "TD-PS08",
+    "TD-PS09",
+    "TD-PS10",
+    "TD-PS11",
+    "TD-PS12",
+    "TD-X101",
+    "TD-FP01",
+    "TD-F02",
+    "TD-F03",
+    "TD-F04",
+    "TD-T01",
+    "TD-T02",
+    "TD-T03",
+    "TD-T04",
+    "TD-T05",
+    "TD-T06",
+    "TD-T07",
+    "TD-T08",
+    "TD-A01",
+    "TD-A02",
+    "TD-A03",
+    "TD-A04",
+    "TD-A05",
+    "TD-A06",
+    "TD-T09",
+    "TD-T10",
+    "TD-T11",
+    "TD-T12",
+    "TD-X501",
+    "TD-X502",
+    "TD-T13",
+    "TD-T14",
+    "TD-T15",
+    "TD-T16",
+    "TD-T17",
+    "TD-T18",
+    "TD-T19",
+    "TD-W01",
+    "TD-W02",
+    "TD-W03",
+    "TD-X603",
+    "TD-X604",
+    "TD-X602",
+    "TD-X601",
+    "TD-T20",
+    "TD-T21",
+    "TD-T22",
+    "TD-T23",
+    "TD-T24",
+    "TD-X805",
+    "TD-B01",
+    "TD-B02",
+    "TD-B03",
+    "TD-B04",
+    "TD-B05",
+    "TD-B06",
+    "TD-QP01",
+    "TD-QP02",
+    "TD-QP03",
+    "TD-QP04",
+    "TD-T25",
+    "TD-C01",
+    "TD-C02",
+    "TD-C03",
+    "TD-C04",
+    "TD-F05",
+    "TD-T26",
+    "TD-R01",
+    "TD-AP01",
+    "TD-AP02",
+    "TD-AP03",
+    "TD-AP04",
+    "TD-AP05",
+    "TD-AP06",
+    "TD-AP07",
+    "TD-AP08",
+    "TD-AG-00",
+    "TD-AG-01",
+    "TD-AG-02",
+    "TD-AG-03",
+    "TD-AG-04",
+    "TD-AG-05",
+    "TD-AG-06",
+    "TD-AG-07",
+    "TD-AG-08",
+    "TD-AG-09",
+    "TD-AG-10"
+  ],
+  "previous_validated_page_ids": [
+    "TD-F01",
+    "TD-P01",
+    "TD-P02",
+    "TD-P03",
+    "TD-P04",
+    "TD-P05",
+    "TD-P06",
+    "TD-P07",
+    "TD-P08",
+    "TD-PS01",
+    "TD-PS02",
+    "TD-PS03",
+    "TD-PS04",
+    "TD-PS05",
+    "TD-PS06",
+    "TD-PS07",
+    "TD-PS08",
+    "TD-PS09",
+    "TD-PS10",
+    "TD-PS11",
+    "TD-PS12",
+    "TD-X101",
+    "TD-FP01",
+    "TD-F02",
+    "TD-F03",
+    "TD-F04",
+    "TD-T01",
+    "TD-T02",
+    "TD-T03",
+    "TD-T04",
+    "TD-T05",
+    "TD-T06",
+    "TD-T07",
+    "TD-T08",
+    "TD-A01",
+    "TD-A02",
+    "TD-A03",
+    "TD-A04",
+    "TD-A05",
+    "TD-A06",
+    "TD-T09",
+    "TD-T10",
+    "TD-T11",
+    "TD-T12",
+    "TD-X501",
+    "TD-X502",
+    "TD-T13",
+    "TD-T14",
+    "TD-T15",
+    "TD-T16",
+    "TD-T17",
+    "TD-T18",
+    "TD-T19",
+    "TD-W01",
+    "TD-W02",
+    "TD-W03",
+    "TD-X603",
+    "TD-X604",
+    "TD-X602",
+    "TD-X601",
+    "TD-T20",
+    "TD-T21",
+    "TD-T22",
+    "TD-T23",
+    "TD-T24",
+    "TD-X805",
+    "TD-B01",
+    "TD-B02",
+    "TD-B03",
+    "TD-B04",
+    "TD-B05",
+    "TD-B06",
+    "TD-QP01",
+    "TD-QP02",
+    "TD-QP03",
+    "TD-QP04",
+    "TD-T25",
+    "TD-C01",
+    "TD-C02",
+    "TD-C03",
+    "TD-C04",
+    "TD-F05",
+    "TD-T26",
+    "TD-R01",
+    "TD-AP01",
+    "TD-AP02",
+    "TD-AP03",
+    "TD-AP04",
+    "TD-AP05",
+    "TD-AP06",
+    "TD-AP07",
+    "TD-AP08",
+    "TD-AG-00",
+    "TD-AG-01",
+    "TD-AG-02",
+    "TD-AG-03",
+    "TD-AG-04",
+    "TD-AG-05",
+    "TD-AG-06",
+    "TD-AG-07",
+    "TD-AG-08",
+    "TD-AG-09",
+    "TD-AG-10"
+  ],
+  "release_scope": {
+    "mode": "pilot-path",
+    "promised_page_ids": [
+      "TD-F01",
+      "TD-P01",
+      "TD-P02",
+      "TD-P03",
+      "TD-P04",
+      "TD-P05",
+      "TD-P06",
+      "TD-P07",
+      "TD-P08",
+      "TD-PS01",
+      "TD-PS02",
+      "TD-PS03",
+      "TD-PS04",
+      "TD-PS05",
+      "TD-PS06",
+      "TD-PS07",
+      "TD-PS08",
+      "TD-PS09",
+      "TD-PS10",
+      "TD-PS11",
+      "TD-PS12",
+      "TD-X101",
+      "TD-FP01",
+      "TD-F02",
+      "TD-F03",
+      "TD-F04",
+      "TD-T01",
+      "TD-T02",
+      "TD-T03",
+      "TD-T04",
+      "TD-T05",
+      "TD-T06",
+      "TD-T07",
+      "TD-T08",
+      "TD-A01",
+      "TD-A02",
+      "TD-A03",
+      "TD-A04",
+      "TD-A05",
+      "TD-A06",
+      "TD-T09",
+      "TD-T10",
+      "TD-T11",
+      "TD-T12",
+      "TD-X501",
+      "TD-X502",
+      "TD-T13",
+      "TD-T14",
+      "TD-T15",
+      "TD-T16",
+      "TD-T17",
+      "TD-T18",
+      "TD-T19",
+      "TD-W01",
+      "TD-W02",
+      "TD-W03",
+      "TD-X603",
+      "TD-X604",
+      "TD-X602",
+      "TD-X601",
+      "TD-T20",
+      "TD-T21",
+      "TD-T22",
+      "TD-T23",
+      "TD-T24",
+      "TD-X805",
+      "TD-B01",
+      "TD-B02",
+      "TD-B03",
+      "TD-B04",
+      "TD-B05",
+      "TD-B06",
+      "TD-QP01",
+      "TD-QP02",
+      "TD-QP03",
+      "TD-QP04",
+      "TD-T25",
+      "TD-C01",
+      "TD-C02",
+      "TD-C03",
+      "TD-C04",
+      "TD-F05",
+      "TD-T26",
+      "TD-R01",
+      "TD-AP01",
+      "TD-AP02",
+      "TD-AP03",
+      "TD-AP04",
+      "TD-AP05",
+      "TD-AP06",
+      "TD-AP07",
+      "TD-AP08",
+      "TD-AG-00",
+      "TD-AG-01",
+      "TD-AG-02",
+      "TD-AG-03",
+      "TD-AG-04",
+      "TD-AG-05",
+      "TD-AG-06",
+      "TD-AG-07",
+      "TD-AG-08",
+      "TD-AG-09",
+      "TD-AG-10"
+    ],
+    "catalog_complete": false,
+    "validated_at": "2026-08-13"
+  },
+  "pages": [
+    {
+      "page_id": "TD-F01",
+      "order": 1,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-000",
+        "TD-002"
+      ],
+      "support_bundle_id": "support-46d51858ba72"
+    },
+    {
+      "page_id": "TD-P01",
+      "order": 2,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-101",
+        "TD-301"
+      ],
+      "support_bundle_id": "support-0b790052e1d1"
+    },
+    {
+      "page_id": "TD-P02",
+      "order": 3,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-301"
+      ],
+      "support_bundle_id": "support-b14126e81871"
+    },
+    {
+      "page_id": "TD-P03",
+      "order": 4,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-101",
+        "TD-301"
+      ],
+      "support_bundle_id": "support-bd7ec381fddc"
+    },
+    {
+      "page_id": "TD-P04",
+      "order": 5,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-102"
+      ],
+      "support_bundle_id": "support-60d7ef49c347"
+    },
+    {
+      "page_id": "TD-P05",
+      "order": 6,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-103",
+        "TD-402"
+      ],
+      "support_bundle_id": "support-23361fa0b5f9"
+    },
+    {
+      "page_id": "TD-P06",
+      "order": 7,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-105",
+        "TD-305",
+        "TD-306",
+        "TD-307"
+      ],
+      "support_bundle_id": "support-e742d15281ed"
+    },
+    {
+      "page_id": "TD-P07",
+      "order": 8,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-106",
+        "TD-309"
+      ],
+      "support_bundle_id": "support-bbaafb91c16f"
+    },
+    {
+      "page_id": "TD-P08",
+      "order": 9,
+      "module_id": "TD-M00",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-107",
+        "TD-108",
+        "TD-310"
+      ],
+      "support_bundle_id": "support-f23280513541"
+    },
+    {
+      "page_id": "TD-PS01",
+      "order": 10,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-306",
+        "TD-701"
+      ],
+      "support_bundle_id": "support-7d0432b9da9e"
+    },
+    {
+      "page_id": "TD-PS02",
+      "order": 11,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-306"
+      ],
+      "support_bundle_id": "support-e508d0fcb217"
+    },
+    {
+      "page_id": "TD-PS03",
+      "order": 12,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-306",
+        "TD-602",
+        "TD-603"
+      ],
+      "support_bundle_id": "support-210dd9b046fb"
+    },
+    {
+      "page_id": "TD-PS04",
+      "order": 13,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X103",
+        "TD-307"
+      ],
+      "support_bundle_id": "support-8d1fa647e653"
+    },
+    {
+      "page_id": "TD-PS05",
+      "order": 14,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X103"
+      ],
+      "support_bundle_id": "support-6beb7c158abc"
+    },
+    {
+      "page_id": "TD-PS06",
+      "order": 15,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X104"
+      ],
+      "support_bundle_id": "support-cbe15c0237ae"
+    },
+    {
+      "page_id": "TD-PS07",
+      "order": 16,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X105"
+      ],
+      "support_bundle_id": "support-5182391f352b"
+    },
+    {
+      "page_id": "TD-PS08",
+      "order": 17,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X102"
+      ],
+      "support_bundle_id": "support-7653fdca9506"
+    },
+    {
+      "page_id": "TD-PS09",
+      "order": 18,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-702",
+        "TD-703",
+        "TD-707"
+      ],
+      "support_bundle_id": "support-e6e0f48c5cb4"
+    },
+    {
+      "page_id": "TD-PS10",
+      "order": 19,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-908",
+        "TD-708"
+      ],
+      "support_bundle_id": "support-a85f812f228f"
+    },
+    {
+      "page_id": "TD-PS11",
+      "order": 20,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1104",
+        "TD-1105"
+      ],
+      "support_bundle_id": "support-5c4216e649de"
+    },
+    {
+      "page_id": "TD-PS12",
+      "order": 21,
+      "module_id": "TD-M08",
+      "delivery_status": "desk-researched",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1106"
+      ],
+      "support_bundle_id": "support-ebb5c8ab92ff"
+    },
+    {
+      "page_id": "TD-QP01",
+      "order": 22,
+      "module_id": "TD-M07",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-301",
+        "TD-1102",
+        "TD-1107"
+      ],
+      "support_bundle_id": "support-50c0f405ff8b"
+    },
+    {
+      "page_id": "TD-QP02",
+      "order": 23,
+      "module_id": "TD-M07",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1102",
+        "TD-1107"
+      ],
+      "support_bundle_id": "support-43cc28703812"
+    },
+    {
+      "page_id": "TD-QP03",
+      "order": 24,
+      "module_id": "TD-M07",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1102",
+        "TD-1108"
+      ],
+      "support_bundle_id": "support-ee15bdcd7322"
+    },
+    {
+      "page_id": "TD-QP04",
+      "order": 25,
+      "module_id": "TD-M07",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1104",
+        "TD-1107"
+      ],
+      "support_bundle_id": "support-f2deb35bd2ff"
+    },
+    {
+      "page_id": "TD-X101",
+      "order": 26,
+      "module_id": "TD-M08",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X101"
+      ],
+      "support_bundle_id": "support-ede25b960928"
+    },
+    {
+      "page_id": "TD-FP01",
+      "order": 31,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-001",
+        "TD-301"
+      ],
+      "support_bundle_id": "support-c65d4fe87ef9"
+    },
+    {
+      "page_id": "TD-F02",
+      "order": 32,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-201"
+      ],
+      "support_bundle_id": "support-517fe7205166"
+    },
+    {
+      "page_id": "TD-F03",
+      "order": 33,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-202",
+        "TD-203"
+      ],
+      "support_bundle_id": "support-0965ead5e637"
+    },
+    {
+      "page_id": "TD-F04",
+      "order": 34,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-205",
+        "TD-206",
+        "TD-207",
+        "TD-208",
+        "TD-209",
+        "TD-210"
+      ],
+      "support_bundle_id": "support-91df60c3e158"
+    },
+    {
+      "page_id": "TD-X602",
+      "order": 35,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X602"
+      ],
+      "support_bundle_id": "support-92a188198b1a"
+    },
+    {
+      "page_id": "TD-A01",
+      "order": 36,
+      "module_id": "TD-M09",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-701"
+      ],
+      "support_bundle_id": "support-adf1d2bcca23"
+    },
+    {
+      "page_id": "TD-A02",
+      "order": 37,
+      "module_id": "TD-M09",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-701"
+      ],
+      "support_bundle_id": "support-c10343062d5b"
+    },
+    {
+      "page_id": "TD-A03",
+      "order": 38,
+      "module_id": "TD-M09",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-702",
+        "TD-703",
+        "TD-707"
+      ],
+      "support_bundle_id": "support-081bccd0fee6"
+    },
+    {
+      "page_id": "TD-A04",
+      "order": 39,
+      "module_id": "TD-M09",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-705",
+        "TD-706",
+        "TD-707"
+      ],
+      "support_bundle_id": "support-63b373afa4f2"
+    },
+    {
+      "page_id": "TD-A05",
+      "order": 40,
+      "module_id": "TD-M09",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-704"
+      ],
+      "support_bundle_id": "support-c53258667414"
+    },
+    {
+      "page_id": "TD-A06",
+      "order": 41,
+      "module_id": "TD-M09",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-708"
+      ],
+      "support_bundle_id": "support-73b1cdb3d809"
+    },
+    {
+      "page_id": "TD-T01",
+      "order": 42,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-001",
+        "TD-210"
+      ],
+      "support_bundle_id": "support-ad598b4fb84f"
+    },
+    {
+      "page_id": "TD-T02",
+      "order": 43,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-206",
+        "TD-208"
+      ],
+      "support_bundle_id": "support-6693d543117f"
+    },
+    {
+      "page_id": "TD-T03",
+      "order": 44,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-402",
+        "TD-408"
+      ],
+      "support_bundle_id": "support-f2253cabd92a"
+    },
+    {
+      "page_id": "TD-T04",
+      "order": 45,
+      "module_id": "TD-M01",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1001",
+        "TD-1002",
+        "TD-1004",
+        "TD-401"
+      ],
+      "support_bundle_id": "support-25a8c221d8b4"
+    },
+    {
+      "page_id": "TD-T05",
+      "order": 46,
+      "module_id": "TD-M02",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-301",
+        "TD-302"
+      ],
+      "support_bundle_id": "support-d529506fbbfb"
+    },
+    {
+      "page_id": "TD-T06",
+      "order": 47,
+      "module_id": "TD-M02",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-303",
+        "TD-305"
+      ],
+      "support_bundle_id": "support-96aa257515fa"
+    },
+    {
+      "page_id": "TD-T07",
+      "order": 48,
+      "module_id": "TD-M02",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-304"
+      ],
+      "support_bundle_id": "support-2f300dc954f4"
+    },
+    {
+      "page_id": "TD-T08",
+      "order": 49,
+      "module_id": "TD-M02",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-309"
+      ],
+      "support_bundle_id": "support-8bbbd09e74a5"
+    },
+    {
+      "page_id": "TD-T09",
+      "order": 50,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-401",
+        "TD-402",
+        "TD-403",
+        "TD-404"
+      ],
+      "support_bundle_id": "support-078f85deede8"
+    },
+    {
+      "page_id": "TD-T10",
+      "order": 51,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-501",
+        "TD-502",
+        "TD-503"
+      ],
+      "support_bundle_id": "support-fdd9c97fe763"
+    },
+    {
+      "page_id": "TD-T11",
+      "order": 52,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-403",
+        "TD-404",
+        "TD-504",
+        "TD-505"
+      ],
+      "support_bundle_id": "support-f89b6efff38f"
+    },
+    {
+      "page_id": "TD-T12",
+      "order": 53,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-501",
+        "TD-502",
+        "TD-503",
+        "TD-504",
+        "TD-505",
+        "TD-506",
+        "TD-507",
+        "TD-508"
+      ],
+      "support_bundle_id": "support-cc866493321b"
+    },
+    {
+      "page_id": "TD-X501",
+      "order": 54,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X501"
+      ],
+      "support_bundle_id": "support-a383b2dcdcc7"
+    },
+    {
+      "page_id": "TD-X502",
+      "order": 55,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X502"
+      ],
+      "support_bundle_id": "support-b573bc7a890d"
+    },
+    {
+      "page_id": "TD-T13",
+      "order": 56,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-405",
+        "TD-508"
+      ],
+      "support_bundle_id": "support-1627ddb0fe08"
+    },
+    {
+      "page_id": "TD-T14",
+      "order": 57,
+      "module_id": "TD-M03",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-407"
+      ],
+      "support_bundle_id": "support-c7f8c2d89d90"
+    },
+    {
+      "page_id": "TD-T15",
+      "order": 58,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-601"
+      ],
+      "support_bundle_id": "support-a5c5889d9768"
+    },
+    {
+      "page_id": "TD-T16",
+      "order": 59,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-602",
+        "TD-603"
+      ],
+      "support_bundle_id": "support-3b84203d2628"
+    },
+    {
+      "page_id": "TD-T17",
+      "order": 60,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-901",
+        "TD-902",
+        "TD-903",
+        "TD-904",
+        "TD-907"
+      ],
+      "support_bundle_id": "support-04e2efb98f7e"
+    },
+    {
+      "page_id": "TD-T18",
+      "order": 61,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-609"
+      ],
+      "support_bundle_id": "support-033391e54787"
+    },
+    {
+      "page_id": "TD-T19",
+      "order": 62,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-305",
+        "TD-308"
+      ],
+      "support_bundle_id": "support-759e736d416e"
+    },
+    {
+      "page_id": "TD-W01",
+      "order": 63,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-208",
+        "TD-601"
+      ],
+      "support_bundle_id": "support-09bd0ffa4dc9"
+    },
+    {
+      "page_id": "TD-W02",
+      "order": 64,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-604",
+        "TD-605",
+        "TD-606",
+        "TD-607"
+      ],
+      "support_bundle_id": "support-3a87ef00e0f1"
+    },
+    {
+      "page_id": "TD-W03",
+      "order": 65,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-606",
+        "TD-610"
+      ],
+      "support_bundle_id": "support-14e3e41f8537"
+    },
+    {
+      "page_id": "TD-X601",
+      "order": 66,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X601"
+      ],
+      "support_bundle_id": "support-c6f552fd2d23"
+    },
+    {
+      "page_id": "TD-X603",
+      "order": 67,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X603"
+      ],
+      "support_bundle_id": "support-7c2252b63ff5"
+    },
+    {
+      "page_id": "TD-X604",
+      "order": 68,
+      "module_id": "TD-M04",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X604"
+      ],
+      "support_bundle_id": "support-1d9e217c004e"
+    },
+    {
+      "page_id": "TD-T20",
+      "order": 69,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1102"
+      ],
+      "support_bundle_id": "support-b28889eb8c25"
+    },
+    {
+      "page_id": "TD-T21",
+      "order": 70,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1101"
+      ],
+      "support_bundle_id": "support-d8151a0508a7"
+    },
+    {
+      "page_id": "TD-T22",
+      "order": 71,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1104",
+        "TD-1105"
+      ],
+      "support_bundle_id": "support-b6394c5ef1e1"
+    },
+    {
+      "page_id": "TD-T23",
+      "order": 72,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1103"
+      ],
+      "support_bundle_id": "support-720d8b77fde5"
+    },
+    {
+      "page_id": "TD-T24",
+      "order": 73,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1105",
+        "TD-1106"
+      ],
+      "support_bundle_id": "support-b0cca69c2e42"
+    },
+    {
+      "page_id": "TD-X805",
+      "order": 74,
+      "module_id": "TD-M05",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-X805"
+      ],
+      "support_bundle_id": "support-b10af65783cb"
+    },
+    {
+      "page_id": "TD-B01",
+      "order": 75,
+      "module_id": "TD-M06",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1001",
+        "TD-1005"
+      ],
+      "support_bundle_id": "support-bf8c948737f9"
+    },
+    {
+      "page_id": "TD-B02",
+      "order": 76,
+      "module_id": "TD-M06",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1002",
+        "TD-1003",
+        "TD-1004"
+      ],
+      "support_bundle_id": "support-c625a79036b9"
+    },
+    {
+      "page_id": "TD-B03",
+      "order": 77,
+      "module_id": "TD-M06",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1005",
+        "TD-1006"
+      ],
+      "support_bundle_id": "support-daef797d2b89"
+    },
+    {
+      "page_id": "TD-B04",
+      "order": 78,
+      "module_id": "TD-M06",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1008"
+      ],
+      "support_bundle_id": "support-8d4a891f2c58"
+    },
+    {
+      "page_id": "TD-B05",
+      "order": 79,
+      "module_id": "TD-M06",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1006",
+        "TD-1007"
+      ],
+      "support_bundle_id": "support-a23ce4530138"
+    },
+    {
+      "page_id": "TD-B06",
+      "order": 80,
+      "module_id": "TD-M06",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1009",
+        "TD-1010"
+      ],
+      "support_bundle_id": "support-4483384f7ba4"
+    },
+    {
+      "page_id": "TD-T25",
+      "order": 81,
+      "module_id": "TD-M07",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1204"
+      ],
+      "support_bundle_id": "support-6dd2308a464a"
+    },
+    {
+      "page_id": "TD-C01",
+      "order": 82,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1205"
+      ],
+      "support_bundle_id": "support-399172575384"
+    },
+    {
+      "page_id": "TD-C02",
+      "order": 83,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-003",
+        "TD-1205"
+      ],
+      "support_bundle_id": "support-a7f11c8439b6"
+    },
+    {
+      "page_id": "TD-C03",
+      "order": 84,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-003",
+        "TD-1205"
+      ],
+      "support_bundle_id": "support-df6d4427a956"
+    },
+    {
+      "page_id": "TD-C04",
+      "order": 85,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-003"
+      ],
+      "support_bundle_id": "support-75e7555702fe"
+    },
+    {
+      "page_id": "TD-F05",
+      "order": 86,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1001",
+        "TD-1002",
+        "TD-1003",
+        "TD-1004"
+      ],
+      "support_bundle_id": "support-443dba803330"
+    },
+    {
+      "page_id": "TD-T26",
+      "order": 87,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-308",
+        "TD-310"
+      ],
+      "support_bundle_id": "support-5c3caee14e34"
+    },
+    {
+      "page_id": "TD-R01",
+      "order": 88,
+      "module_id": "TD-M10",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1205"
+      ],
+      "support_bundle_id": "support-ca7da4672525"
+    },
+    {
+      "page_id": "TD-AP01",
+      "order": 89,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP01"
+      ],
+      "support_bundle_id": "support-930f0d74b3b3"
+    },
+    {
+      "page_id": "TD-AP02",
+      "order": 90,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP02"
+      ],
+      "support_bundle_id": "support-224202ecb055"
+    },
+    {
+      "page_id": "TD-AP03",
+      "order": 91,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP03"
+      ],
+      "support_bundle_id": "support-3375d022120f"
+    },
+    {
+      "page_id": "TD-AP04",
+      "order": 92,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP04"
+      ],
+      "support_bundle_id": "support-dffe412c273a"
+    },
+    {
+      "page_id": "TD-AP05",
+      "order": 93,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP05"
+      ],
+      "support_bundle_id": "support-f3108b2c43ed"
+    },
+    {
+      "page_id": "TD-AP06",
+      "order": 94,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP06"
+      ],
+      "support_bundle_id": "support-a6321246d489"
+    },
+    {
+      "page_id": "TD-AP07",
+      "order": 95,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP07"
+      ],
+      "support_bundle_id": "support-77312fc31837"
+    },
+    {
+      "page_id": "TD-AP08",
+      "order": 96,
+      "module_id": "TD-M11",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-AP08"
+      ],
+      "support_bundle_id": "support-0e1df5b27990"
+    },
+    {
+      "page_id": "TD-AG-00",
+      "order": 97,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-601",
+        "TD-602"
+      ],
+      "support_bundle_id": "support-8e6d7b40f680"
+    },
+    {
+      "page_id": "TD-AG-01",
+      "order": 98,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1005",
+        "TD-407"
+      ],
+      "support_bundle_id": "support-71f9fc618136"
+    },
+    {
+      "page_id": "TD-AG-02",
+      "order": 99,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-601",
+        "TD-602"
+      ],
+      "support_bundle_id": "support-87575329e198"
+    },
+    {
+      "page_id": "TD-AG-03",
+      "order": 100,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-603",
+        "TD-604",
+        "TD-605"
+      ],
+      "support_bundle_id": "support-e21ae1f9f2e2"
+    },
+    {
+      "page_id": "TD-AG-04",
+      "order": 101,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-606",
+        "TD-607"
+      ],
+      "support_bundle_id": "support-0175851528de"
+    },
+    {
+      "page_id": "TD-AG-05",
+      "order": 102,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1006",
+        "TD-610"
+      ],
+      "support_bundle_id": "support-f4e6fe9ba813"
+    },
+    {
+      "page_id": "TD-AG-06",
+      "order": 103,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-901",
+        "TD-902",
+        "TD-903",
+        "TD-904",
+        "TD-907"
+      ],
+      "support_bundle_id": "support-f54ce82549cb"
+    },
+    {
+      "page_id": "TD-AG-07",
+      "order": 104,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-702",
+        "TD-703",
+        "TD-707"
+      ],
+      "support_bundle_id": "support-280aa3f6ce7c"
+    },
+    {
+      "page_id": "TD-AG-08",
+      "order": 105,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1101",
+        "TD-1103",
+        "TD-1104"
+      ],
+      "support_bundle_id": "support-9e2829a53b96"
+    },
+    {
+      "page_id": "TD-AG-09",
+      "order": 106,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-1105",
+        "TD-X805"
+      ],
+      "support_bundle_id": "support-ffc9cb09f8c2"
+    },
+    {
+      "page_id": "TD-AG-10",
+      "order": 107,
+      "module_id": "TD-M12",
+      "delivery_status": "fixture-tested",
+      "public": true,
+      "canonical_topic_ids": [
+        "TD-907",
+        "TD-908"
+      ],
+      "support_bundle_id": "support-92311a3fcb2c"
+    }
+  ],
+  "verdict": "PASS",
+  "findings": [],
+  "generated_at": "2026-08-13T06:51:13.552Z",
+  "source_catalog_ref": "authoring:research/catalog-manifest.json",
+  "source_catalog_hash": "sha256:21ff4d3eba1641a329e297cfda13219755fee31bbc84b472f0a5436f41ca99f4"
+}

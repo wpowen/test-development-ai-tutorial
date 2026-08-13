@@ -1,0 +1,8 @@
+{
+  "topic_id": "TD-AG-07",
+  "source_refs": [
+    "S-USER-AGENT-V2"
+  ],
+  "scenario": "synthetic bounded Agent testing scenario",
+  "status": "fixture"
+}

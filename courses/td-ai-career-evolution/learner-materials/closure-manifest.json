@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "course_id": "td-ai-career-evolution",
+  "page_ids": ["TD-C02", "TD-C03", "TD-C04", "TD-F05", "TD-T26", "TD-R01"],
+  "required_roots": ["fixtures", "manifests", "prompts", "schemas", "evals", "mutation", "diagrams", "visuals", "scripts", "artifacts"],
+  "required_files": ["source-visual-manifest.json", "visuals/career-visual-source.json"],
+  "evidence_boundary": "PASS-FIXTURE only",
+  "model_execution": "NOT_RUN"
+}

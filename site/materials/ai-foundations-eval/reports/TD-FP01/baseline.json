@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-FP01",
+  "phase": "baseline",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "Prompt Package 必须分离 system、task、input/context、critic、schema、eval、mutation 与 receipt。",
+  "checks": [
+    {
+      "field": "roles_separated",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "source_refs_required",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "stop_states_preserved",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "没有运行真实模型或 Provider",
+    "不同平台的 system/instructions 优先级需在目标环境重测"
+  ]
+}

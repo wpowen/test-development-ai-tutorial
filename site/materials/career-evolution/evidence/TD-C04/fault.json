@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C04",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:d8ca450532785dd7557174aeee3452c3d8ece4decf4f032b034c5512ad11bc5f",
+  "manifest_sha256": "sha256:65074e41e2e6f0351d6372b46a010c5c5f4e0226af5b30e91f071a42334457d0",
+  "checks": [
+    {
+      "field": "organization.status",
+      "expected": "INTERNAL-UNKNOWN",
+      "actual": "P6",
+      "pass": false
+    },
+    {
+      "field": "organization.failure_action",
+      "expected": "BLOCK",
+      "actual": "PASS",
+      "pass": false
+    },
+    {
+      "field": "organization.owner_present",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    },
+    {
+      "field": "organization.guess_level",
+      "expected": false,
+      "actual": true,
+      "pass": false
+    }
+  ],
+  "unknowns": [
+    "组织 policy、owner、版本和生效日期未提供"
+  ],
+  "boundary": "PASS-FIXTURE only; organization adapter is unconfigured"
+}

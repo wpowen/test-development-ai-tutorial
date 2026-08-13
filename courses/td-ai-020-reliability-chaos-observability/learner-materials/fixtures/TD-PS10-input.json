@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS10",
+  "scenario": "订单助手依赖模型、检索和退款工具，局部超时可能触发多层重试与队列级联",
+  "controlling_question": "怎样证明每层 deadline 和 retry budget 有界，过载时安全拒绝或只读降级，恢复后不会产生洪峰与重复副作用？",
+  "known_rules": [
+    "端到端 deadline 不小于子调用但总链有界",
+    "call amplification 不超过预算",
+    "过载拒绝不产生退款写操作",
+    "恢复窗口队列与错误率回到基线"
+  ],
+  "faults": [
+    "模型 429 与工具超时叠加",
+    "多层同时重试",
+    "恢复时流量洪峰"
+  ],
+  "unknowns": [
+    "目标供应商 Retry-After、真实队列容量和业务降级文案"
+  ],
+  "data_classification": "synthetic"
+}

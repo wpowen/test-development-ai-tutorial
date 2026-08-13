@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS08",
+  "mode": "repair",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "6e9fcd9a49b38434e6cf6209261d38d81aca3828065dd511b1d795ee0aa8784a",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS08-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS08-evidence-1.json",
+      "owner": "TD-PS08-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS08-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS08-evidence-2.json",
+      "owner": "TD-PS08-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS08-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS08-evidence-3.json",
+      "owner": "TD-PS08-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS08-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS08-evidence-4.json",
+      "owner": "TD-PS08-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS08-content-owner",
+    "oracle": "TD-PS08-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标数据规模、锁等待、复制延迟、业务可接受停机窗口"
+}

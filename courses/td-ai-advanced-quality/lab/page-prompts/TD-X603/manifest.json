@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x603-memory-cache",
+  "topic_id": "TD-X603",
+  "version": "1.0.0",
+  "purpose": "检查写入来源、consent、TTL、删除、用户隔离、缓存版本与失效",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "CONSENT_MISSING",
+    "CROSS_USER_LEAK",
+    "STALE_CACHE",
+    "BLOCKED"
+  ]
+}
+

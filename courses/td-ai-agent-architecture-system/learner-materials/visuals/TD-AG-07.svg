@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+  <title id="title">D6 Task→Step→Tool 的质量、延迟与成本树</title>
+  <desc id="desc">平均延迟和总 QPS 会掩盖长循环、重试放大、低 Goodput 与尾部成本。 图中的数值字段需绑定 workload、价格时间和版本；不提供通用 P95/P99 门槛。</desc>
+  <defs>
+    <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#0b3b32"/><stop offset="1" stop-color="#176b5b"/></linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#176b5b"/></marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#12372f" flood-opacity=".12"/></filter>
+  </defs>
+  <style>
+    .bg{fill:#f7faf8}.header{fill:url(#header)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;fill:#bfe9dc}.title{font:800 28px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:white}.subtitle{font:450 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#d7eee7}.source{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6c7c76}.node rect{fill:white;stroke:#b7d0c7;stroke-width:1.5;filter:url(#shadow)}.node:nth-of-type(3n+1) rect{fill:#eef8f4;stroke:#86b9a8}.node:nth-of-type(3n+2) rect{fill:#f6f8e9;stroke:#c4ce87}.node-index{font:700 10px ui-monospace,monospace;fill:#7c8b85}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#123f34}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#5a6b64}.edge path{fill:none;stroke:#176b5b;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#557168;paint-order:stroke;stroke:#f7faf8;stroke-width:4px}.callout{fill:#fff3db;stroke:#e2b260;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,monospace;fill:#8a5610}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62430f}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62716b}
+  </style>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
+  <text class="eyebrow" x="34" y="29">D6 · ECONOMICS</text>
+  <text class="title" x="34" y="61">D6 Task→Step→Tool 的质量、延迟与成本树</text>
+  <text class="subtitle" x="600" y="31">平均延迟和总 QPS 会掩盖长循环、重试放大、低 Goodput 与尾部成本。</text>
+  <text class="source" x="34" y="111">来源：S51 · S53 · S73</text>
+  <g class="edge"><path d="M 224 177 C 245 177, 245 177, 258 177" marker-end="url(#arrow)"/><text x="245" y="187">施加负载</text></g>
+<g class="edge"><path d="M 456 177 C 477 177, 477 177, 490 177" marker-end="url(#arrow)"/><text x="477" y="169">调度</text></g>
+<g class="edge"><path d="M 688 177 C 709 177, 709 177, 722 177" marker-end="url(#arrow)"/><text x="709" y="187">工具阶段</text></g>
+<g class="edge"><path d="M 688 177 C 740 464, 330 464, 374 369" marker-end="url(#arrow)"/><text x="535" y="265">输出质量</text></g>
+<g class="edge"><path d="M 456 177 C 535 177, 535 369, 606 369" marker-end="url(#arrow)"/><text x="535" y="283">排队贡献</text></g>
+<g class="edge"><path d="M 920 177 C 972 464, 562 464, 606 369" marker-end="url(#arrow)"/><text x="767" y="265">工具贡献</text></g>
+<g class="edge"><path d="M 688 177 C 767 177, 767 369, 838 369" marker-end="url(#arrow)"/><text x="767" y="283">Token 成本</text></g>
+<g class="edge"><path d="M 920 177 C 972 464, 794 464, 838 369" marker-end="url(#arrow)"/><text x="883" y="265">重试成本</text></g>
+<g class="edge"><path d="M 572 369 C 624 670, 446 670, 490 572" marker-end="url(#arrow)"/><text x="535" y="480.5">联合决定</text></g>
+<g class="edge"><path d="M 804 369 C 856 670, 446 670, 490 572" marker-end="url(#arrow)"/><text x="651" y="462.5">超限</text></g>
+<g class="edge"><path d="M 1036 369 C 1088 670, 446 670, 490 572" marker-end="url(#arrow)"/><text x="767" y="480.5">超预算</text></g>
+  
+    <g class="node workload">
+      <rect x="34" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="50" y="157">01</text>
+      <text class="node-title" x="50" y="182">Workload</text>
+      <text class="node-detail" x="50" y="204">任务类型 / 风险 / 到达率</text>
+    </g>
+    <g class="node queue">
+      <rect x="266" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="282" y="157">02</text>
+      <text class="node-title" x="282" y="182">Queue</text>
+      <text class="node-detail" x="282" y="204">等待 / 并发 / 隔离</text>
+    </g>
+    <g class="node llm">
+      <rect x="498" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="514" y="157">03</text>
+      <text class="node-title" x="514" y="182">LLM Step</text>
+      <text class="node-detail" x="514" y="204">TTFT / TPOT / Token</text>
+    </g>
+    <g class="node tool">
+      <rect x="730" y="134" width="190" height="86" rx="15"/>
+      <text class="node-index" x="746" y="157">04</text>
+      <text class="node-title" x="746" y="182">Tool Attempt</text>
+      <text class="node-detail" x="746" y="204">延迟 / Retry / Error</text>
+    </g>
+    <g class="node quality">
+      <rect x="382" y="326" width="190" height="86" rx="15"/>
+      <text class="node-index" x="398" y="349">05</text>
+      <text class="node-title" x="398" y="374">Quality / Goodput</text>
+      <text class="node-detail" x="398" y="396">满足质量与时限</text>
+    </g>
+    <g class="node latency">
+      <rect x="614" y="326" width="190" height="86" rx="15"/>
+      <text class="node-index" x="630" y="349">06</text>
+      <text class="node-title" x="630" y="374">延迟尾部</text>
+      <text class="node-detail" x="630" y="396">P95 / P99 / Timeout</text>
+    </g>
+    <g class="node cost">
+      <rect x="846" y="326" width="190" height="86" rx="15"/>
+      <text class="node-index" x="862" y="349">07</text>
+      <text class="node-title" x="862" y="374">成本尾部</text>
+      <text class="node-detail" x="862" y="396">模型 / 工具 / Judge / 人审</text>
+    </g>
+    <g class="node budget">
+      <rect x="498" y="526" width="260" height="92" rx="15"/>
+      <text class="node-index" x="514" y="549">08</text>
+      <text class="node-title" x="514" y="574">预算门禁 / 停止</text>
+      <text class="node-detail" x="514" y="596">Token / 时间 / 步数 / 金钱</text>
+    </g>
+  <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
+  <text class="callout-title" x="52" y="678">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">增加预算或重试不能当作默认修复；必须联合看质量、尾延迟、成本与副作用。</text>
+  <text class="footer" x="34" y="735">图中的数值字段需绑定 workload、价格时间和版本；不提供通用 P95/P99 门槛。</text>
+</svg>

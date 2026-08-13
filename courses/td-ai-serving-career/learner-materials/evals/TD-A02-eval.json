@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A02",
+  "version": "1.0.0",
+  "model_execution": "NOT_RUN",
+  "deterministic_fixture_eval": {
+    "expected": {
+      "stream.terminal_count": 1,
+      "structured.semantic_pass": true,
+      "tool.side_effect_count": 1,
+      "async.terminal": "completed"
+    },
+    "fault_patch": {
+      "tool.side_effect_count": 2
+    },
+    "required_exit_codes": [
+      0,
+      1,
+      0
+    ]
+  },
+  "professional_oracle": "事件顺序合法且唯一终态；Schema 与业务语义均通过；工具副作用至多一次；异步部分失败不得汇总为完成。",
+  "boundary": "真实代理缓冲、网络分片、工具服务和任务队列没有运行。"
+}

@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS01",
+  "title": "API 业务契约：从 HTTP 结果到可验证副作用",
+  "working_directory": "materials/api-ai-automation",
+  "owners": {
+    "content": "TD-PS01-content-owner",
+    "oracle": "TD-PS01-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS01.json",
+    "prompts/TD-PS01/system-v1.md",
+    "prompts/TD-PS01/task-v1.md",
+    "prompts/TD-PS01/critic-v1.md",
+    "prompts/TD-PS01/manifest.json",
+    "prompts/TD-PS01/mutation.json",
+    "fixtures/TD-PS01-input.json",
+    "schemas/TD-PS01-output.schema.json",
+    "evals/TD-PS01-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS01-ORACLE-01",
+      "statement": "响应错误模型与状态码一致",
+      "evidence": "TD-PS01-evidence-1.json",
+      "owner": "TD-PS01-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS01-ORACLE-02",
+      "statement": "非法状态和非 owner 请求零副作用",
+      "evidence": "TD-PS01-evidence-2.json",
+      "owner": "TD-PS01-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS01-ORACLE-03",
+      "statement": "同一 Idempotency-Key 的退款计数增量最多一",
+      "evidence": "TD-PS01-evidence-3.json",
+      "owner": "TD-PS01-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS01-ORACLE-04",
+      "statement": "request trace event ledger 可关联",
+      "evidence": "TD-PS01-evidence-4.json",
+      "owner": "TD-PS01-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS01-FAULT-01",
+    "description": "服务端提交后客户端超时",
+    "target_oracle": "TD-PS01-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS01.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS01/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS01.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS01/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS01.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS01/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS01.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS01/baseline.json",
+        "evidence/TD-PS01/fault.json",
+        "evidence/TD-PS01/repair.json",
+        "evidence/TD-PS01/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标支付网关幂等窗口、真实账本可查询性和业务延迟阈值"
+}
