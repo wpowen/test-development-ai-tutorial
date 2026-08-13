@@ -1,115 +1,150 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
   <title id="title">D0–D7 Agent 测试架构总览</title>
   <desc id="desc">先校准评估系统，再检查能力、协作、可靠性、安全、经济性与治理；最后按四证据环升级。 本图是测试边界与证据升级地图，不代表真实 Agent、企业集成或生产效果已验证。</desc>
+  
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+  
   <defs>
-    <linearGradient id="header" x1="0" x2="1"><stop offset="0" stop-color="#0b3b32"/><stop offset="1" stop-color="#176b5b"/></linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#176b5b"/></marker>
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#12372f" flood-opacity=".12"/></filter>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/>
+    </marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/>
+    </marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/>
+    </marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#85908a"/>
+    </marker>
   </defs>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0e3026" flood-opacity=".10"/></filter>
   <style>
-    .bg{fill:#f7faf8}.header{fill:url(#header)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;fill:#bfe9dc}.title{font:800 28px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:white}.subtitle{font:450 14px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#d7eee7}.source{font:500 11px ui-monospace,SFMono-Regular,Menlo,monospace;fill:#6c7c76}.node rect{fill:white;stroke:#b7d0c7;stroke-width:1.5;filter:url(#shadow)}.node:nth-of-type(3n+1) rect{fill:#eef8f4;stroke:#86b9a8}.node:nth-of-type(3n+2) rect{fill:#f6f8e9;stroke:#c4ce87}.node-index{font:700 10px ui-monospace,monospace;fill:#7c8b85}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#123f34}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#5a6b64}.edge path{fill:none;stroke:#176b5b;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#557168;paint-order:stroke;stroke:#f7faf8;stroke-width:4px}.callout{fill:#fff3db;stroke:#e2b260;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,monospace;fill:#8a5610}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62430f}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;fill:#62716b}
+    .bg{fill:#fbfaf6}.header{fill:url(#ds-header-grad)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;fill:#93bd2c}.title{font:800 28px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:white}.subtitle{font:450 13px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#d9e8e0}.source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}.node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#1c2924}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#5f6c66}.edge path{fill:none;stroke:#174a3a;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}.callout{fill:#fdf1d8;stroke:#e3c07b;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#1c2924}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#5f6c66}
   </style>
   <rect class="bg" width="1200" height="760" rx="24"/>
   <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
-  <text class="eyebrow" x="34" y="29">AGENT TEST ARCHITECTURE · OVERVIEW</text>
-  <text class="title" x="34" y="61">D0–D7 Agent 测试架构总览</text>
-  <text class="subtitle" x="600" y="31">先校准评估系统，再检查能力、协作、可靠性、安全、经济性与治理；最后按四证据环升级。</text>
+  <text class="eyebrow" x="34" y="30">AGENT TEST ARCHITECTURE · OVERVIEW</text>
+  <text class="title" x="34" y="62">D0–D7 Agent 测试架构总览</text>
+  <text class="subtitle" x="1166" y="30" text-anchor="end">先校准评估系统，再检查能力、协作、可靠性、安全、经济性与治理；最后按四证据环升级。</text>
   <text class="source" x="34" y="111">来源：用户 Agent 架构材料（经审议）· S24 · S39 · S65</text>
-  <g class="edge"><path d="M 254 159 C 276 159, 276 159, 290 159" marker-end="url(#arrow)"/><text x="276" y="169">先验证评估系统</text></g>
-<g class="edge"><path d="M 508 159 C 530 159, 530 159, 544 159" marker-end="url(#arrow)"/><text x="530" y="151">可信 Oracle</text></g>
-<g class="edge"><path d="M 762 159 C 784 159, 784 159, 798 159" marker-end="url(#arrow)"/><text x="784" y="169">能力进入协作</text></g>
-<g class="edge"><path d="M 508 159 C 560 392, 246 392, 290 297" marker-end="url(#arrow)"/><text x="403" y="220">人审与升级</text></g>
-<g class="edge"><path d="M 762 159 C 814 392, 500 392, 544 297" marker-end="url(#arrow)"/><text x="657" y="238">重复运行</text></g>
-<g class="edge"><path d="M 1016 159 C 1068 392, 754 392, 798 297" marker-end="url(#arrow)"/><text x="911" y="220">跨边界攻击面</text></g>
-<g class="edge"><path d="M 508 297 C 560 530, 246 530, 290 435" marker-end="url(#arrow)"/><text x="403" y="376">人工与时延成本</text></g>
-<g class="edge"><path d="M 762 297 C 814 530, 500 530, 544 435" marker-end="url(#arrow)"/><text x="657" y="358">可靠性进入治理</text></g>
-<g class="edge"><path d="M 1016 297 C 1068 530, 754 530, 798 435" marker-end="url(#arrow)"/><text x="911" y="376">安全硬门禁</text></g>
-<g class="edge"><path d="M 508 435 C 657 435, 657 435, 798 435" marker-end="url(#arrow)"/><text x="657" y="427">预算门禁</text></g>
-<g class="edge"><path d="M 762 435 C 784 435, 784 435, 798 435" marker-end="url(#arrow)"/><text x="784" y="445">责任与风险</text></g>
-<g class="edge"><path d="M 364 576 C 398 576, 398 576, 424 576" marker-end="url(#arrow)"/><text x="398" y="568">运行时强制</text></g>
-<g class="edge"><path d="M 1136 435 C 1188 674, 380 674, 424 576" marker-end="url(#arrow)"/><text x="784" y="515.5">逐环证据</text></g>
-<g class="edge"><path d="M 762 576 C 796 576, 796 576, 822 576" marker-end="url(#arrow)"/><text x="796" y="568">发布/回滚</text></g>
-<g class="edge"><path d="M 1136 576 C 1188 674, 246 674, 290 159" marker-end="url(#arrow)"/><text x="717" y="377.5">重新校准</text></g>
+  <g class="edge"><path d="M 254 159 C 276 159, 276 159, 290 159" marker-end="url(#ds-arw-forest)"/><text x="276" y="169">先验证评估系统</text></g>
+<g class="edge"><path d="M 508 159 C 530 159, 530 159, 544 159" marker-end="url(#ds-arw-forest)"/><text x="530" y="151">可信 Oracle</text></g>
+<g class="edge"><path d="M 762 159 C 784 159, 784 159, 798 159" marker-end="url(#ds-arw-forest)"/><text x="784" y="169">能力进入协作</text></g>
+<g class="edge"><path d="M 508 159 C 560 392, 246 392, 290 297" marker-end="url(#ds-arw-forest)"/><text x="403" y="220">人审与升级</text></g>
+<g class="edge"><path d="M 762 159 C 814 392, 500 392, 544 297" marker-end="url(#ds-arw-forest)"/><text x="657" y="238">重复运行</text></g>
+<g class="edge"><path d="M 1016 159 C 1068 392, 754 392, 798 297" marker-end="url(#ds-arw-forest)"/><text x="911" y="220">跨边界攻击面</text></g>
+<g class="edge"><path d="M 508 297 C 560 530, 246 530, 290 435" marker-end="url(#ds-arw-forest)"/><text x="403" y="376">人工与时延成本</text></g>
+<g class="edge"><path d="M 762 297 C 814 530, 500 530, 544 435" marker-end="url(#ds-arw-forest)"/><text x="657" y="358">可靠性进入治理</text></g>
+<g class="edge"><path d="M 1016 297 C 1068 530, 754 530, 798 435" marker-end="url(#ds-arw-forest)"/><text x="911" y="376">安全硬门禁</text></g>
+<g class="edge"><path d="M 508 435 C 657 435, 657 435, 798 435" marker-end="url(#ds-arw-forest)"/><text x="657" y="427">预算门禁</text></g>
+<g class="edge"><path d="M 762 435 C 784 435, 784 435, 798 435" marker-end="url(#ds-arw-forest)"/><text x="784" y="445">责任与风险</text></g>
+<g class="edge"><path d="M 364 576 C 398 576, 398 576, 424 576" marker-end="url(#ds-arw-forest)"/><text x="398" y="568">运行时强制</text></g>
+<g class="edge"><path d="M 1136 435 C 1188 674, 380 674, 424 576" marker-end="url(#ds-arw-forest)"/><text x="784" y="515.5">逐环证据</text></g>
+<g class="edge"><path d="M 762 576 C 796 576, 796 576, 822 576" marker-end="url(#ds-arw-forest)"/><text x="796" y="568">发布/回滚</text></g>
+<g class="edge"><path d="M 1136 576 C 1188 674, 246 674, 290 159" marker-end="url(#ds-arw-forest)"/><text x="717" y="377.5">重新校准</text></g>
   
     <g class="node input">
-      <rect x="34" y="116" width="220" height="86" rx="15"/>
-      <text class="node-index" x="50" y="139">01</text>
-      <text class="node-title" x="50" y="164">输入与风险</text>
-      <text class="node-detail" x="50" y="186">任务、数据、权限、失败成本</text>
+      <rect x="34" y="116" width="220" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="34" y="116" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="54" y="139">01</text>
+      <text class="node-title" x="54" y="164">输入与风险</text>
+      <text class="node-detail" x="54" y="186">任务、数据、权限、失败成本</text>
     </g>
     <g class="node d0">
-      <rect x="298" y="116" width="210" height="86" rx="15"/>
-      <text class="node-index" x="314" y="139">02</text>
-      <text class="node-title" x="314" y="164">D0 评估可信</text>
-      <text class="node-detail" x="314" y="186">Gold / Rubric / Judge Card</text>
+      <rect x="298" y="116" width="210" height="86" rx="15" fill="#f0ecfb" stroke="#c9b8ea" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="298" y="116" width="5" height="86" rx="2.5" fill="#c9b8ea"/>
+      <text class="node-index" x="318" y="139">02</text>
+      <text class="node-title" x="318" y="164">D0 评估可信</text>
+      <text class="node-detail" x="318" y="186">Gold / Rubric / Judge Card</text>
     </g>
     <g class="node d1">
-      <rect x="552" y="116" width="210" height="86" rx="15"/>
-      <text class="node-index" x="568" y="139">03</text>
-      <text class="node-title" x="568" y="164">D1 单体能力</text>
-      <text class="node-detail" x="568" y="186">Intent / Tool / Span / Memory</text>
+      <rect x="552" y="116" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="552" y="116" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="572" y="139">03</text>
+      <text class="node-title" x="572" y="164">D1 单体能力</text>
+      <text class="node-detail" x="572" y="186">Intent / Tool / Span / Memory</text>
     </g>
     <g class="node d2">
-      <rect x="806" y="116" width="210" height="86" rx="15"/>
-      <text class="node-index" x="822" y="139">04</text>
-      <text class="node-title" x="822" y="164">D2 编排协作</text>
-      <text class="node-detail" x="822" y="186">Handoff / 隔离 / 熔断</text>
+      <rect x="806" y="116" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="806" y="116" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="826" y="139">04</text>
+      <text class="node-title" x="826" y="164">D2 编排协作</text>
+      <text class="node-detail" x="826" y="186">Handoff / 隔离 / 熔断</text>
     </g>
     <g class="node d3">
-      <rect x="298" y="254" width="210" height="86" rx="15"/>
-      <text class="node-index" x="314" y="277">05</text>
-      <text class="node-title" x="314" y="302">D3 人机协同</text>
-      <text class="node-detail" x="314" y="324">中断 / 接管 / 确认疲劳</text>
+      <rect x="298" y="254" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="298" y="254" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="318" y="277">05</text>
+      <text class="node-title" x="318" y="302">D3 人机协同</text>
+      <text class="node-detail" x="318" y="324">中断 / 接管 / 确认疲劳</text>
     </g>
     <g class="node d4">
-      <rect x="552" y="254" width="210" height="86" rx="15"/>
-      <text class="node-index" x="568" y="277">06</text>
-      <text class="node-title" x="568" y="302">D4 鲁棒可靠</text>
-      <text class="node-detail" x="568" y="324">pass^k / Horizon / Recovery</text>
+      <rect x="552" y="254" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="552" y="254" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="572" y="277">06</text>
+      <text class="node-title" x="572" y="302">D4 鲁棒可靠</text>
+      <text class="node-detail" x="572" y="324">pass^k / Horizon / Recovery</text>
     </g>
     <g class="node d5">
-      <rect x="806" y="254" width="210" height="86" rx="15"/>
-      <text class="node-index" x="822" y="277">07</text>
-      <text class="node-title" x="822" y="302">D5 安全对抗</text>
-      <text class="node-detail" x="822" y="324">Injection / MCP / Sandbox</text>
+      <rect x="806" y="254" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="806" y="254" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="826" y="277">07</text>
+      <text class="node-title" x="826" y="302">D5 安全对抗</text>
+      <text class="node-detail" x="826" y="324">Injection / MCP / Sandbox</text>
     </g>
     <g class="node d6">
-      <rect x="298" y="392" width="210" height="86" rx="15"/>
-      <text class="node-index" x="314" y="415">08</text>
-      <text class="node-title" x="314" y="440">D6 效率经济</text>
-      <text class="node-detail" x="314" y="462">Latency / Goodput / Cost</text>
+      <rect x="298" y="392" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="298" y="392" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="318" y="415">08</text>
+      <text class="node-title" x="318" y="440">D6 效率经济</text>
+      <text class="node-detail" x="318" y="462">Latency / Goodput / Cost</text>
     </g>
     <g class="node d7">
-      <rect x="552" y="392" width="210" height="86" rx="15"/>
-      <text class="node-index" x="568" y="415">09</text>
-      <text class="node-title" x="568" y="440">D7 业务治理</text>
-      <text class="node-detail" x="568" y="462">Rule / Lineage / ROI / Owner</text>
+      <rect x="552" y="392" width="210" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="552" y="392" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="572" y="415">09</text>
+      <text class="node-title" x="572" y="440">D7 业务治理</text>
+      <text class="node-detail" x="572" y="462">Rule / Lineage / ROI / Owner</text>
     </g>
     <g class="node rings">
-      <rect x="806" y="392" width="330" height="86" rx="15"/>
-      <text class="node-index" x="822" y="415">10</text>
-      <text class="node-title" x="822" y="440">四证据环</text>
-      <text class="node-detail" x="822" y="462">离线 CI → 沙箱回放 → 影子 → 在线持续</text>
+      <rect x="806" y="392" width="330" height="86" rx="15" fill="#edf5f0" stroke="#93bd2c" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="806" y="392" width="5" height="86" rx="2.5" fill="#93bd2c"/>
+      <text class="node-index" x="826" y="415">10</text>
+      <text class="node-title" x="826" y="440">四证据环</text>
+      <text class="node-detail" x="826" y="462">离线 CI → 沙箱回放 → 影子 → 在线持续</text>
     </g>
     <g class="node guard">
-      <rect x="34" y="530" width="330" height="92" rx="15"/>
-      <text class="node-index" x="50" y="553">11</text>
-      <text class="node-title" x="50" y="578">运行时护栏</text>
-      <text class="node-detail" x="50" y="600">最小权限 · 预算 · 幂等 · Kill Switch</text>
+      <rect x="34" y="530" width="330" height="92" rx="15" fill="#fdf1d8" stroke="#e0b76a" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="34" y="530" width="5" height="92" rx="2.5" fill="#e0b76a"/>
+      <text class="node-index" x="54" y="553">11</text>
+      <text class="node-title" x="54" y="578">运行时护栏</text>
+      <text class="node-detail" x="54" y="600">最小权限 · 预算 · 幂等 · Kill Switch</text>
     </g>
     <g class="node decision">
-      <rect x="432" y="530" width="330" height="92" rx="15"/>
-      <text class="node-index" x="448" y="553">12</text>
-      <text class="node-title" x="448" y="578">决策与反馈</text>
-      <text class="node-detail" x="448" y="600">BLOCKED / 证据不足 / 风险接受 / 回滚</text>
+      <rect x="432" y="530" width="330" height="92" rx="15" fill="#fdf1d8" stroke="#e0b76a" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="432" y="530" width="5" height="92" rx="2.5" fill="#e0b76a"/>
+      <text class="node-index" x="452" y="553">12</text>
+      <text class="node-title" x="452" y="578">决策与反馈</text>
+      <text class="node-detail" x="452" y="600">BLOCKED / 证据不足 / 风险接受 / 回滚</text>
     </g>
     <g class="node feedback">
-      <rect x="830" y="530" width="306" height="92" rx="15"/>
-      <text class="node-index" x="846" y="553">13</text>
-      <text class="node-title" x="846" y="578">生产反馈回流</text>
-      <text class="node-detail" x="846" y="600">事故、漂移与新样例回到 D0–D7</text>
+      <rect x="830" y="530" width="306" height="92" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="830" y="530" width="5" height="92" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="850" y="553">13</text>
+      <text class="node-title" x="850" y="578">生产反馈回流</text>
+      <text class="node-detail" x="850" y="600">事故、漂移与新样例回到 D0–D7</text>
     </g>
   <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
-  <text class="callout-title" x="52" y="678">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">高危 blocker 不得用总分抵消；任何一环未运行都必须保持 NOT_RUN。</text>
+  <text class="callout-title" x="52" y="679">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">高危 blocker 不得用总分抵消；任何一环未运行都必须保持 NOT_RUN。</text>
   <text class="footer" x="34" y="735">本图是测试边界与证据升级地图，不代表真实 Agent、企业集成或生产效果已验证。</text>
 </svg>

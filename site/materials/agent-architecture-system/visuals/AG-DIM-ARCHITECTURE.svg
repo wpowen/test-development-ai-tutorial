@@ -1,19 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 820" width="1200" height="820">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1240 880" width="1240" height="880">
 <title id="title">AI Agent 测试总架构：边界、D0–D7、证据与反馈</title>
 <desc id="desc">从输入与风险进入架构边界，D0 先校准评估系统，D1 到 D7 分别检查能力、编排、人机协同、可靠性、安全、效率和治理；四证据环承载执行，运行时护栏强制停止，决定与反馈回到测试资产。本图不代表真实 Agent、企业集成或生产效果已验证。</desc>
-<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0f766e"/></marker><marker id="r" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#b91c1c"/></marker></defs>
-<style>.bg{fill:#f7f8fb}.node rect{stroke-width:1.7}.io rect{fill:#f1f5f9;stroke:#475569}.trust rect{fill:#ede9fe;stroke:#6d28d9}.domain rect{fill:#ecfdf5;stroke:#0f766e}.risk rect{fill:#fff7ed;stroke:#c2410c}.guard rect{fill:#fef2f2;stroke:#b91c1c}.h{font:700 14px system-ui,"PingFang SC",sans-serif;fill:#0f172a}.m{font:11.5px system-ui,"PingFang SC",sans-serif;fill:#334155}.tiny{font:10.5px system-ui,"PingFang SC",sans-serif;fill:#64748b}.badge{font:700 10.5px ui-monospace,monospace;fill:#b91c1c}.edge{fill:none;stroke:#0f766e;stroke-width:1.8;marker-end:url(#a)}.stop{fill:none;stroke:#b91c1c;stroke-width:2;marker-end:url(#r)}.dash{stroke-dasharray:6 4}</style>
-<rect class="bg" width="1200" height="820"/><g data-source-ref="AI agent测试架构.txt:L73-L238"><text class="h" x="36" y="38" style="font-size:26px">AI Agent 测试总架构</text><text class="m" x="36" y="64">先画系统与信任边界，再选择测试；D0 的可信度决定其他数字的上限。</text></g>
-<g class="node io"><rect x="36" y="100" width="220" height="118" rx="12"/></g><text class="h" x="54" y="130">输入与风险</text><text class="m" x="54" y="156">任务 / 数据 / 权限 / 工具</text><text class="m" x="54" y="180">失败成本 / 副作用 / owner</text><text class="badge" x="54" y="204">先定义 system-under-test</text>
-<g class="node trust"><rect x="310" y="90" width="250" height="138" rx="12"/></g><text class="h" x="328" y="120">D0 评估可信</text><text class="m" x="328" y="146">Gold / Rubric / Judge / 人审</text><text class="m" x="328" y="170">偏差 / 漂移 / 分歧 / 构念效度</text><text class="badge" x="328" y="198">D0 FAIL → 所有分数无效</text>
-<g class="node domain"><rect x="610" y="90" width="250" height="138" rx="12"/></g><text class="h" x="628" y="120">D1–D3 行为与协作</text><text class="m" x="628" y="146">D1 单体能力与轨迹</text><text class="m" x="628" y="170">D2 编排交接与隔离</text><text class="m" x="628" y="194">D3 中断 / 接管 / 人机权威</text>
-<g class="node domain"><rect x="910" y="90" width="250" height="138" rx="12"/></g><text class="h" x="928" y="120">D4–D7 系统与治理</text><text class="m" x="928" y="146">D4 可靠性 · D5 安全</text><text class="m" x="928" y="170">D6 效率经济 · D7 业务治理</text><text class="m" x="928" y="194">区间 / 预算 / 规则 / 决定权</text>
-<path class="edge" d="M256 158 L304 158"/><path class="edge" d="M560 158 L604 158"/><path class="edge" d="M860 158 L904 158"/>
-<g class="node risk"><rect x="90" y="300" width="1020" height="154" rx="16"/></g><text class="h" x="116" y="332">架构边界 → 风险 → Observable → Method → 独立 Oracle → Case/Fault → Evidence → Decision</text><text class="m" x="116" y="364">能力边界：任务与工具能做什么　│　信任边界：什么输入与记忆不可信　│　副作用边界：什么动作不可逆</text><text class="m" x="116" y="394">每个 D0–D7 域都必须沿这条链留下证据；只有风险清单、没有 Oracle 和 failure action 的“架构”不可测试。</text><text class="badge" x="116" y="426">固定阈值进入 Metric Card（task / population / slice / uncertainty / owner / failure action），不得从来源直接复制</text>
-<path class="edge dash" d="M435 228 C435 264 260 264 260 294"/><path class="edge dash" d="M735 228 L735 294"/><path class="edge dash" d="M1035 228 C1035 264 940 264 940 294"/>
-<g class="node io"><rect x="90" y="524" width="300" height="132" rx="14"/></g><text class="h" x="112" y="556">四证据环</text><text class="m" x="112" y="582">离线 fixture → 受控沙箱</text><text class="m" x="112" y="606">影子 / 灰度 → 在线持续</text><text class="badge" x="112" y="632">未运行的环 = NOT_RUN</text>
-<g class="node guard"><rect x="450" y="524" width="300" height="132" rx="14"/></g><text class="h" x="472" y="556">运行时护栏</text><text class="m" x="472" y="582">最小权限 / 策略沙箱 / 预算</text><text class="m" x="472" y="606">幂等 / Kill Switch / 回滚</text><text class="badge" x="472" y="632">模型声明不是强制控制</text>
-<g class="node io"><rect x="810" y="524" width="300" height="132" rx="14"/></g><text class="h" x="832" y="556">决策与反馈</text><text class="m" x="832" y="582">PASS / FAIL / BLOCKED / 不足</text><text class="m" x="832" y="606">风险接受 / 回滚 / 新样例</text><text class="badge" x="832" y="632">具名 owner 才能作决定</text>
-<path class="edge" d="M390 590 L444 590"/><path class="edge" d="M750 590 L804 590"/><path class="edge" d="M600 454 L600 518"/><path class="edge" d="M600 454 C600 490 240 490 240 518"/><path class="edge" d="M600 454 C600 490 960 490 960 518"/>
-<path class="stop" d="M960 656 C960 742 180 742 180 218"/><text class="badge" x="420" y="730">失败回灌：事故 / 漂移 / 新攻击 → 更新输入、D0 校准集、故障库与护栏</text>
-<rect class="guard" x="36" y="768" width="1128" height="34" rx="8"/><text class="tiny" x="52" y="790">边界：本图是来源结构的课程适配；真实模型、真实工具、企业权限、从业者评审与生产效果均 NOT_RUN，不证明上线安全。</text></svg>
+
+  <defs>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+  </defs>
+<style>
+    .ds-bg{fill:#fbfaf6}
+    .ds-header{fill:url(#ds-header-grad)}
+    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
+    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
+    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
+    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
+    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
+    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
+    .ds-node rect{stroke-width:1.4}
+    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
+    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
+    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
+    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+</style>
+<rect class="ds-bg" width="1240" height="880" rx="22"/>
+
+  <rect class="ds-header" x="0" y="0" width="1240" height="118" rx="22"/>
+  <rect class="ds-header" x="0" y="96" width="1240" height="22"/>
+  <text class="ds-eyebrow" x="36" y="32">AGENT · 测试总架构</text>
+  <text class="ds-subtitle" x="1204" y="32" text-anchor="end">先画系统与信任边界，再选择测试；D0 的可信度决定其他数字的上限。</text>
+  <text class="ds-title" x="36" y="74">AI Agent 测试总架构：边界、D0–D7、证据与反馈</text>
+  <text class="ds-source" x="36" y="140">source · AI agent测试架构.txt:L73-L238</text>
+<g data-source-ref="AI agent测试架构.txt:L73-L238">
+<g filter="url(#ds-soft)"><rect x="40" y="168" width="270" height="128" rx="14" fill="#eaf1fa" stroke="#355f96" stroke-width="1.5"/></g><rect x="40" y="168" width="6" height="128" rx="3" fill="#355f96"/><text x="64" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">输入与风险</text><text x="64" y="224" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">任务 / 数据 / 权限 / 工具</text><text x="64" y="245" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">失败成本 / 副作用 / owner</text>
+<g filter="url(#ds-soft)"><rect x="336" y="168" width="270" height="128" rx="14" fill="#f0ecfb" stroke="#6a49a8" stroke-width="1.5"/></g><rect x="336" y="168" width="6" height="128" rx="3" fill="#6a49a8"/><text x="360" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">D0 评估可信</text><text x="360" y="224" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">Gold / Rubric / Judge / 人审</text><text x="360" y="245" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">偏差 / 漂移 / 分歧 / 构念效度</text>
+<g filter="url(#ds-soft)"><rect x="632" y="168" width="270" height="128" rx="14" fill="#edf5f0" stroke="#174a3a" stroke-width="1.5"/></g><rect x="632" y="168" width="6" height="128" rx="3" fill="#174a3a"/><text x="656" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">D1–D3 行为与协作</text><text x="656" y="224" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">D1 单体能力与轨迹</text><text x="656" y="245" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">D2 编排交接与隔离</text><text x="656" y="266" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">D3 中断 / 接管 / 人机权威</text>
+<g filter="url(#ds-soft)"><rect x="928" y="168" width="270" height="128" rx="14" fill="#edf5f0" stroke="#174a3a" stroke-width="1.5"/></g><rect x="928" y="168" width="6" height="128" rx="3" fill="#174a3a"/><text x="952" y="198" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">D4–D7 系统与治理</text><text x="952" y="224" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">D4 可靠性 · D5 安全</text><text x="952" y="245" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">D6 效率经济 · D7 业务治理</text><text x="952" y="266" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">区间 / 预算 / 规则 / 决定权</text>
+<path d="M 310 232 L 330 232" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<path d="M 606 232 L 626 232" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<path d="M 902 232 L 922 232" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<g filter="url(#ds-strong)"><rect x="40" y="330" width="1160" height="108" rx="16" fill="#fdf1d8" stroke="#e0b76a" stroke-width="1.5"/></g>
+<rect x="40" y="330" width="6" height="108" rx="3" fill="#a96a18"/>
+<text x="64" y="360" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" font-weight="800" fill="#1c2924">边界 → 风险 → Observable → Method → 独立 Oracle → Case / Fault → Evidence → Decision</text>
+<text x="64" y="386" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">能力边界：任务与工具能做什么　│　信任边界：什么输入与记忆不可信　│　副作用边界：什么动作不可逆</text>
+<text x="64" y="410" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">每个 D0–D7 域都必须沿这条链留下证据；只有风险清单、没有 Oracle 和 failure action 的架构不可测试。</text>
+<text x="64" y="431" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="10.5" font-weight="700" fill="#a96a18">固定阈值进入 Metric Card（task / population / slice / uncertainty / owner / failure action），不得从来源直接复制</text>
+<path d="M 235 296 L 175 324" fill="none" stroke="#174a3a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-forest)"/>
+<path d="M 735 296 L 735 324" fill="none" stroke="#174a3a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-forest)"/>
+<path d="M 1035 296 L 990 324" fill="none" stroke="#174a3a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-forest)"/>
+<g filter="url(#ds-soft)"><rect x="40" y="480" width="360" height="132" rx="14" fill="#edf5f0" stroke="#174a3a" stroke-width="1.5"/></g><rect x="40" y="480" width="6" height="132" rx="3" fill="#174a3a"/><text x="64" y="510" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">四证据环</text><text x="64" y="536" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">离线 fixture → 受控沙箱</text><text x="64" y="557" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">影子 / 灰度 → 在线持续</text><text x="64" y="578" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">未运行的环 = NOT_RUN</text>
+<g filter="url(#ds-soft)"><rect x="440" y="480" width="360" height="132" rx="14" fill="#fbe9e5" stroke="#b2402f" stroke-width="1.5"/></g><rect x="440" y="480" width="6" height="132" rx="3" fill="#b2402f"/><text x="464" y="510" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">运行时护栏</text><text x="464" y="536" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">最小权限 / 策略沙箱 / 预算</text><text x="464" y="557" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">幂等 / Kill Switch / 回滚</text><text x="464" y="578" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">模型声明不是强制控制</text>
+<g filter="url(#ds-soft)"><rect x="840" y="480" width="360" height="132" rx="14" fill="#fdf1d8" stroke="#a96a18" stroke-width="1.5"/></g><rect x="840" y="480" width="6" height="132" rx="3" fill="#a96a18"/><text x="864" y="510" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="15" font-weight="800" fill="#1c2924">决策与反馈</text><text x="864" y="536" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">PASS / FAIL / BLOCKED / 不足</text><text x="864" y="557" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">风险接受 / 回滚 / 新样例</text><text x="864" y="578" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">具名 owner 才能作决定</text>
+<path d="M 400 546 L 434 546" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<path d="M 800 546 L 834 546" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<path d="M 620 438 L 620 474" fill="none" stroke="#174a3a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-forest)"/>
+<path d="M 620 438 L 220 474" fill="none" stroke="#174a3a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-forest)"/>
+<path d="M 620 438 L 1020 474" fill="none" stroke="#174a3a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-forest)"/>
+<path d="M1020 612 C1020 720 180 720 180 232" fill="none" stroke="#b2402f" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ds-arw-red)"/>
+<text x="410" y="726" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="700" fill="#b2402f">失败回灌：事故 / 漂移 / 新攻击 → 更新输入、D0 校准集、故障库与护栏</text>
+</g>
+
+  <rect x="28" y="806" width="1184" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
+  <text class="ds-footbadge" x="46" y="832">证据边界</text>
+  <text class="ds-foot" x="46" y="854">本图是来源结构的课程适配；真实模型、真实工具、企业权限、从业者评审与生产效果均 NOT_RUN，不证明上线安全。</text>
+</svg>

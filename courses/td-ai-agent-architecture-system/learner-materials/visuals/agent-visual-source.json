@@ -117,6 +117,33 @@
         "D5→护栏",
         "四环→域执行"
       ]
+    },
+    {
+      "visual_id": "agent-reliability",
+      "kind": "reliability",
+      "file": "AG-DIM-RELIABILITY.svg",
+      "purpose": "用同一份运行台账对比 pass@k 与 pass^k 两种口径，说明聚类区间与 horizon 衰减如何改变发布承诺。",
+      "alt_text": "可靠性口径对比图，左侧任务集与重复运行，中间 pass@k 与 pass^k 两个口径及 Wilson 聚类区间，右侧 horizon 时长桶衰减柱状图与三种统计结论，底部是 Metric Card 必填字段。",
+      "caption": "同一份数据可以同时回答「能不能做对」和「能不能每次都做对」；口径、聚类单位与时长桶决定数字能否进发布决定书。",
+      "not_proof": "本图数值来自仓库夹具，只演示口径差异，不代表任何真实系统性能；真实模型与生产效果 NOT_RUN。",
+      "source_refs": [
+        "AI agent测试架构.txt:L438-L494"
+      ],
+      "nodes": [
+        "任务集",
+        "pass@k",
+        "pass^k",
+        "聚类区间",
+        "horizon 衰减",
+        "三种统计结论"
+      ],
+      "relationships": [
+        "任务集→pass@k",
+        "任务集→pass^k",
+        "pass^k→聚类区间",
+        "口径→horizon",
+        "结论→Metric Card"
+      ]
     }
   ]
 }

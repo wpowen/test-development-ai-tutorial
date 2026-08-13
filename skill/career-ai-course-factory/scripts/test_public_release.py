@@ -295,6 +295,14 @@ class PublicReleaseTests(unittest.TestCase):
         self.write("courses/catalog.md", "---\ndelivery_status: blocked\n---\n")
         self.assertTrue(any("courses/catalog.md" in error and "blocked" in error for error in validate_release(self.root)))
 
+    def test_markdown_prompt_example_may_teach_blocked_stop_state(self) -> None:
+        self.write(
+            "site/materials/prompt.md",
+            "# Conflict-aware prompt\n\n```json\n{\"status\": \"BLOCKED\", \"reason\": \"source conflict\"}\n```\n",
+        )
+        self.refresh_hash()
+        self.assertEqual(validate_release(self.root), [])
+
     def test_course_tree_placeholder_fails(self) -> None:
         self.write("tutorial/course-tree.md", "# Tree\n\n仅保留知识位置\n")
         self.refresh_hash()

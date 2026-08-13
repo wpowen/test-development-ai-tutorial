@@ -102,6 +102,11 @@ def find_incomplete_text(text: str) -> list[str]:
     return findings
 
 
+def strip_markdown_code_fences(text: str) -> str:
+    """Exclude fenced examples while retaining frontmatter and learner-facing prose."""
+    return re.sub(r"(?ms)^\s*(```|~~~).*?^\s*\1\s*$", "", text)
+
+
 def validate_release(root: Path) -> list[str]:
     errors: list[str] = []
     if not root.is_dir():
@@ -670,7 +675,8 @@ def validate_release(root: Path) -> list[str]:
         text = path.read_text(encoding="utf-8", errors="replace")
         if any(marker in text for marker in PLACEHOLDERS):
             errors.append(f"public artifact exposes placeholder copy: {relative}")
-        for finding in find_incomplete_text(text):
+        state_text = strip_markdown_code_fences(text) if path.suffix.lower() == ".md" else text
+        for finding in find_incomplete_text(state_text):
             errors.append(f"public artifact {relative} {finding}")
         if path.suffix.lower() in {".html", ".htm"}:
             for attribute in ("data-page-id", "data-id", "data-go"):

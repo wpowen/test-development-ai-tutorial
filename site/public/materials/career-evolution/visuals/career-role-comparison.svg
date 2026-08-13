@@ -1,18 +1,110 @@
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1240 860" width="1240" height="860">
 <title id="title">传统软件测试、AI 测试与 AI 开发的责任边界</title>
-<desc id="desc">三列职责对比图：传统软件测试聚焦确定性行为与系统风险，AI 测试开发增加数据、模型、评测与 Agent 风险，AI 开发负责能力实现；三者共享工程底座，最终发布决定仍由具名责任人作出。 SOURCE-EXAMPLE · 组织职级/年限/权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</desc>
-<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0f766e"/></marker><marker id="arrow2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#64748b"/></marker></defs>
+<desc id="desc">三列职责对比图：传统软件测试聚焦确定性行为与系统风险，AI 测试开发增加数据、模型、评测与 Agent 风险，AI 开发负责能力实现；三者共享工程底座，最终发布决定仍由具名责任人作出。 SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</desc>
 
+  <defs>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+  </defs>
 <style>
-.bg{fill:#f7f8fb}.panel{fill:#fff;stroke:#cbd5e1;stroke-width:1.5}.primary{fill:#e0f2f1;stroke:#0f766e;stroke-width:2}.secondary{fill:#eef2ff;stroke:#4f46e5;stroke-width:1.7}.warn{fill:#fff7ed;stroke:#c2410c;stroke-width:1.7}.unknown{fill:#fef2f2;stroke:#b91c1c;stroke-width:1.7}.title{font:700 28px system-ui,"PingFang SC",sans-serif;fill:#0f172a}.sub{font:14px system-ui,"PingFang SC",sans-serif;fill:#475569}.h{font:700 15px system-ui,"PingFang SC",sans-serif;fill:#0f172a}.m{font:12px system-ui,"PingFang SC",sans-serif;fill:#334155}.tiny{font:11px system-ui,"PingFang SC",sans-serif;fill:#64748b}.badge{font:700 11px ui-monospace,monospace;fill:#b91c1c}.edge{fill:none;stroke:#0f766e;stroke-width:2;marker-end:url(#arrow)}.dash{fill:none;stroke:#64748b;stroke-width:1.5;stroke-dasharray:5 4;marker-end:url(#arrow2)}
+    .ds-bg{fill:#fbfaf6}
+    .ds-header{fill:url(#ds-header-grad)}
+    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
+    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
+    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
+    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
+    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
+    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
+    .ds-node rect{stroke-width:1.4}
+    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
+    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
+    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
+    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+
+.cc-title{font:800 18px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+.cc-label{font:800 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#85908a}
+.cc-value{font:500 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+.cc-note{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
 </style>
-<rect class="bg" width="1200" height="760"/>
-<g data-source-ref="AI测试工程师发展.md:L18-L70"><text class="title" x="40" y="54">传统软件测试、AI 测试与 AI 开发的责任边界</text><text class="sub" x="40" y="82">帮助学习者判断一个任务的主责任、共同责任与不可由 AI 自动接管的发布责任。</text></g>
-<g><rect class="panel" x="40" y="116" width="1120" height="518" rx="18"/>
-<rect class="secondary" x="72" y="154" width="300" height="290" rx="14"/><text class="h" x="94" y="188">传统软件测试</text><text class="m" x="94" y="220">确定性行为 · 状态 · 接口 · 性能</text><text class="m" x="94" y="248">方法：边界 / 状态 / 契约 / 故障</text><text class="m" x="94" y="276">Oracle：业务规则与独立计算</text><text class="m" x="94" y="304">证据：缺陷、Trace、回归资产</text>
-<rect class="primary" x="450" y="136" width="300" height="328" rx="14"/><text class="h" x="472" y="174">AI 测试开发</text><text class="m" x="472" y="206">在传统底座上增加：</text><text class="m" x="472" y="234">数据 / 模型 / RAG / Agent</text><text class="m" x="472" y="262">Eval / Judge 校准 / 统计区间</text><text class="m" x="472" y="290">轨迹 / 权限 / 成本 / 漂移</text><text class="m" x="472" y="318">证据：Dataset、Run、Metric Card</text>
-<rect class="secondary" x="828" y="154" width="300" height="290" rx="14"/><text class="h" x="850" y="188">AI 开发</text><text class="m" x="850" y="220">模型与应用能力实现</text><text class="m" x="850" y="248">数据 / Pipeline / 服务 / 工具</text><text class="m" x="850" y="276">可观测、回滚和故障修复</text><text class="m" x="850" y="304">证据：设计、代码、运行版本</text>
-<path class="edge" d="M372 340 C410 340 412 340 444 340"/><path class="edge" d="M750 340 C788 340 790 340 822 340"/>
-<rect class="warn" x="250" y="500" width="700" height="94" rx="14"/><text class="h" x="274" y="530">共同工程底座：需求依据 → 风险 → 独立 Oracle → 运行证据</text><text class="m" x="274" y="556">测试提出证据与建议；产品裁决规则；发布 owner 接受剩余风险</text><text class="badge" x="274" y="580">AI 不得自动签署 Waiver 或发布决定</text></g>
-<rect class="unknown" x="40" y="676" width="1120" height="52" rx="10"/><text class="badge" x="58" y="698">证据边界</text><text class="m" x="142" y="698">SOURCE-EXAMPLE · 组织职级/年限/权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</text><text class="tiny" x="58" y="717">先按风险和证据划分责任，再选工具；岗位名称可以变化，业务规则和风险接受的决定权不能消失。</text>
+<rect class="ds-bg" width="1240" height="860" rx="22"/>
+
+  <rect class="ds-header" x="0" y="0" width="1240" height="118" rx="22"/>
+  <rect class="ds-header" x="0" y="96" width="1240" height="22"/>
+  <text class="ds-eyebrow" x="36" y="32">CAREER · 责任边界对比</text>
+  <text class="ds-subtitle" x="1204" y="32" text-anchor="end">帮助学习者判断一个任务的主责任、共同责任与不可由 AI 自动接管的发布责任。</text>
+  <text class="ds-title" x="36" y="74">传统软件测试、AI 测试与 AI 开发的责任边界</text>
+  <text class="ds-source" x="36" y="140">source · AI测试工程师发展.md:L18-L70</text>
+<g data-source-ref="AI测试工程师发展.md:L18-L70"><rect x="40" y="146" width="1160" height="512" rx="18" fill="#f3f1e9" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="72" y="178" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="800" fill="#174a3a" text-anchor="start">三个角色的责任边界</text>
+<g filter="url(#ds-strong)"><rect x="64" y="196" width="336" height="360" rx="16" fill="#fff" stroke="#dde3dd" stroke-width="1.2"/></g>
+<rect x="64" y="196" width="336" height="7" rx="3.5" fill="#355f96"/><circle cx="90" cy="232" r="6" fill="#355f96"/>
+<text x="106" y="237" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" font-weight="800" fill="#1c2924" text-anchor="start">传统软件测试</text>
+<rect x="301" y="222" width="58" height="22" rx="11" fill="#eaf1fa"/><text x="330" y="237" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="700" fill="#355f96" text-anchor="middle">确定性工程</text>
+<line x1="88" y1="258" x2="376" y2="258" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="88" y="284" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">聚焦范围</text>
+<text x="88" y="306" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#5f6c66" text-anchor="start">确定性行为 · 状态 · 接口 · 性能</text>
+<text x="88" y="338" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">主责任</text>
+<rect x="88" y="345" width="15" height="15" rx="4.5" fill="#355f96"/><path d="M 91.5 353 L 94 355.5 L 99.5 349" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="111" y="356" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">依据业务规则与独立计算建 Oracle</text>
+<rect x="88" y="368" width="15" height="15" rx="4.5" fill="#355f96"/><path d="M 91.5 376 L 94 378.5 L 99.5 372" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="111" y="379" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">边界 / 状态 / 契约 / 故障注入</text>
+<rect x="88" y="391" width="15" height="15" rx="4.5" fill="#355f96"/><path d="M 91.5 399 L 94 401.5 L 99.5 395" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="111" y="402" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">把缺陷、Trace 固化为回归资产</text>
+<rect x="88" y="414" width="15" height="15" rx="4.5" fill="#355f96"/><path d="M 91.5 422 L 94 424.5 L 99.5 418" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="111" y="425" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">用 Mutation 证明测试检测力</text>
+<line x1="88" y1="448" x2="376" y2="448" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="88" y="474" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">证据产出</text>
+<text x="88" y="500" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#1c2924" text-anchor="start">缺陷报告 · Trace · 回归集</text>
+<g filter="url(#ds-strong)"><rect x="452" y="176" width="336" height="392" rx="16" fill="#fff" stroke="#174a3a" stroke-width="2.2"/></g>
+<rect x="452" y="176" width="336" height="9" rx="4.5" fill="#174a3a"/><circle cx="478" cy="222" r="6" fill="#174a3a"/>
+<text x="494" y="227" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="18" font-weight="800" fill="#1c2924" text-anchor="start">AI 测试开发</text>
+<rect x="699" y="212" width="51" height="22" rx="11" fill="#d7ebd0"/><text x="724" y="227" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="700" fill="#174a3a" text-anchor="middle">课程主线</text>
+<line x1="476" y1="252" x2="764" y2="252" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="476" y="278" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">聚焦范围</text>
+<text x="476" y="300" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#1c2924" text-anchor="start">在传统底座上新增模型与数据风险</text>
+<text x="476" y="332" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">主责任</text>
+<rect x="476" y="339" width="15" height="15" rx="4.5" fill="#174a3a"/><path d="M 479.5 347 L 482 349.5 L 487.5 343" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="499" y="350" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">Dataset：采样 / 标签 / Holdout / 泄漏</text>
+<rect x="476" y="362" width="15" height="15" rx="4.5" fill="#174a3a"/><path d="M 479.5 370 L 482 372.5 L 487.5 366" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="499" y="373" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">Eval：Judge 校准 / 统计区间 / 拒答</text>
+<rect x="476" y="385" width="15" height="15" rx="4.5" fill="#174a3a"/><path d="M 479.5 393 L 482 395.5 L 487.5 389" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="499" y="396" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">Trace：权限 / 成本 / 漂移 / 治理</text>
+<rect x="476" y="408" width="15" height="15" rx="4.5" fill="#174a3a"/><path d="M 479.5 416 L 482 418.5 L 487.5 412" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="499" y="419" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">红队：注入 / 越权 / 过度代理</text>
+<line x1="476" y1="442" x2="764" y2="442" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="476" y="468" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">证据产出</text>
+<text x="476" y="494" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#1c2924" text-anchor="start">Dataset · Run Receipt · Metric Card</text>
+<text x="476" y="522" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="600" fill="#174a3a" text-anchor="start">本列是 AI 测试工程师的职业主路径</text>
+<g filter="url(#ds-strong)"><rect x="840" y="196" width="336" height="360" rx="16" fill="#fff" stroke="#dde3dd" stroke-width="1.2"/></g>
+<rect x="840" y="196" width="336" height="7" rx="3.5" fill="#6a49a8"/><circle cx="866" cy="232" r="6" fill="#6a49a8"/>
+<text x="882" y="237" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="17" font-weight="800" fill="#1c2924" text-anchor="start">AI 开发</text>
+<rect x="1081" y="222" width="51" height="22" rx="11" fill="#f0ecfb"/><text x="1106" y="237" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="700" fill="#6a49a8" text-anchor="middle">能力实现</text>
+<line x1="864" y1="258" x2="1152" y2="258" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="864" y="284" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">聚焦范围</text>
+<text x="864" y="306" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#5f6c66" text-anchor="start">模型与应用能力落地</text>
+<text x="864" y="338" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">主责任</text>
+<rect x="864" y="345" width="15" height="15" rx="4.5" fill="#6a49a8"/><path d="M 867.5 353 L 870 355.5 L 875.5 349" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="887" y="356" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">数据 / Pipeline / 服务 / 工具</text>
+<rect x="864" y="368" width="15" height="15" rx="4.5" fill="#6a49a8"/><path d="M 867.5 376 L 870 378.5 L 875.5 372" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="887" y="379" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">可观测、回滚和故障修复</text>
+<rect x="864" y="391" width="15" height="15" rx="4.5" fill="#6a49a8"/><path d="M 867.5 399 L 870 401.5 L 875.5 395" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="887" y="402" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">能力版本与运行证据</text>
+<rect x="864" y="414" width="15" height="15" rx="4.5" fill="#6a49a8"/><path d="M 867.5 422 L 870 424.5 L 875.5 418" stroke="#fff" stroke-width="1.7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><text x="887" y="425" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924">与测试共享工程底座</text>
+<line x1="864" y1="448" x2="1152" y2="448" stroke="#d9ded9" stroke-width="1.2"/>
+<text x="864" y="474" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="10.5" font-weight="800" fill="#85908a" text-anchor="start">证据产出</text>
+<text x="864" y="500" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="600" fill="#1c2924" text-anchor="start">设计 · 代码 · 运行版本</text>
+<g filter="url(#ds-strong)"><rect x="64" y="588" width="1112" height="86" rx="14" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/></g>
+<text x="88" y="616" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="800" fill="#a96a18" text-anchor="start">共同工程底座</text>
+<text x="88" y="640" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924" text-anchor="start">需求依据 → 风险 → 独立 Oracle → 运行证据；测试提出证据与建议，产品裁决规则</text>
+<text x="88" y="662" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="500" fill="#1c2924" text-anchor="start">发布 owner 接受剩余风险</text>
+<text x="1076" y="652" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="800" fill="#b2402f" text-anchor="start">AI 不得代签</text></g>
+<text x="40" y="764" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11px" font-weight="500" fill="#5f6c66">先按风险和证据划分责任，再选工具；岗位名称可以变化，业务规则和风险接受的决定权不能消失。</text>
+
+  <rect x="28" y="786" width="1184" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
+  <text class="ds-footbadge" x="46" y="812">证据边界</text>
+  <text class="ds-foot" x="46" y="834">SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</text>
 </svg>

@@ -8,7 +8,7 @@
   "reviewer_is_independent_of_author": true,
   "scope": {
     "tutorial_ref": "tutorial/tutorial-site.json",
-    "tutorial_sha256": "sha256:696a10cb815f6584560b5f6020098bc9e028aaf90585a62e964638465f035eda",
+    "tutorial_sha256": "sha256:84bfaf73d92ebb1a0690108c2766d865e10921cf0b376d42403da1fd187aca7a",
     "page_ids": [
       "TD-F01",
       "TD-P01",
@@ -124,7 +124,7 @@
     "source_semantic_projection_verdict": "PASS",
     "source_semantic_unit_count": 340,
     "executability_ref": "research/executability-audit.json",
-    "executability_sha256": "sha256:95f32d16762669aaea09f691d85131bcbd119c4ffe0ee68a0cf94e6289b776e7",
+    "executability_sha256": "sha256:06356a16f3a98e4b06499d8fbaa2d5838894c5b7282f8e85a929d86f3c4e42a2",
     "learner_reuse_ref": "research/learner-usability-reuse.json",
     "learner_reuse_sha256": "sha256:508e97c784e93b29a54c3657062a02121911a65efe2f2ae601f03cf611a0bff1"
   },
