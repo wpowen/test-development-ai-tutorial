@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:67c4045f5c886eb7b11faad0d280c388b2259fd667ad447ccb4303180bed2a95",
+  "content_hash": "sha256:0984e57afeecd8f371de13fd07da82a242d4191f0145205c88735109fcdfef9f",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
     "github-pages",
