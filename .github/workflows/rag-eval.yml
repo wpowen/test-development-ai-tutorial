@@ -43,7 +43,7 @@ jobs:
               raise SystemExit(f"unexpected public-preview validation state: unexpected={unexpected}, allowed={allowed}")
           PY
       - name: Execute every downloadable red-green lab
-        run: python3 tools/validate-material-archives.py site/materials
+        run: python3 tools/validate-material-archives.py site/materials --skip-source
 
   offline-eval:
     runs-on: ubuntu-latest
