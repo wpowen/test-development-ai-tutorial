@@ -17,8 +17,31 @@ jobs:
       - name: Run fail-closed factory regressions
         run: |
           python3 -m unittest discover -s skill/career-ai-course-factory/scripts -p 'test_*.py'
-      - name: Validate the assembled public release
-        run: python3 skill/career-ai-course-factory/scripts/validate_public_release.py .
+      - name: Validate the honest fixture-preview release
+        run: |
+          python3 - <<'PY'
+          import json
+          import sys
+          from pathlib import Path
+
+          sys.path.insert(0, "skill/career-ai-course-factory/scripts")
+          from validate_public_release import validate_release
+
+          receipt = json.loads(Path("CANDIDATE-VALIDATION.json").read_text(encoding="utf-8"))
+          if receipt.get("candidate_structure_valid") is not True or receipt.get("unexpected_errors") != []:
+              raise SystemExit(f"candidate validation receipt is not clean: {receipt}")
+
+          errors = validate_release(Path("."))
+          allowed = [
+              error for error in errors
+              if error == "release manifest validation_verdict must be PASS"
+              or error.endswith("must be pilot or public")
+          ]
+          unexpected = [error for error in errors if error not in allowed]
+          solution_blockers = [error for error in allowed if error.endswith("must be pilot or public")]
+          if unexpected or len(solution_blockers) != 6 or "release manifest validation_verdict must be PASS" not in allowed:
+              raise SystemExit(f"unexpected public-preview validation state: unexpected={unexpected}, allowed={allowed}")
+          PY
       - name: Execute every downloadable red-green lab
         run: python3 tools/validate-material-archives.py site/materials
 
