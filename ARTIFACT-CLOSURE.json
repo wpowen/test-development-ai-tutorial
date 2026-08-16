@@ -1,9 +1,9 @@
 {
   "schema_version": "github-candidate-artifact-closure.v1",
   "canonical_catalog_ref": "CATALOG-MANIFEST.json",
-  "canonical_catalog_hash": "sha256:3b17049786eca48aa3f020141308202d826545c48eb6e4d8ecbb7cb967dfa96a",
+  "canonical_catalog_hash": "sha256:8cfe50f36ede569c9cdb64f8f21b5cdb8d60050f7457005c698d0273c5291bb8",
   "tutorial_ref": "tutorial/tutorial-site.json",
-  "tutorial_hash": "sha256:84bfaf73d92ebb1a0690108c2766d865e10921cf0b376d42403da1fd187aca7a",
+  "tutorial_hash": "sha256:bf32d24eee5e9f4b4c8441a3a9a8a21d3303c49822d2c1ee6854b3cc423f8065",
   "archive_ref": "COURSE-RELEASE.zip",
   "material_entries": [
     {
@@ -25,7 +25,7 @@
       "href": "materials/profession-reality.zip",
       "dist_ref": "site/materials/profession-reality.zip",
       "archive_member": "materials/profession-reality.zip",
-      "sha256": "sha256:356e51bdec52ed06404717529233057645221712542a57ed70789dba1072dace"
+      "sha256": "sha256:a236a25c76ead9ee190af3e5b408a5f679593091404f35e15a4d0a08df219814"
     },
     {
       "page_id": "TD-F01",
@@ -74,14 +74,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P01/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P01/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P01/manifest.json",
-      "sha256": "sha256:7327163ec862f06e5cf15d3ccde8e5fe5081421e110609f2ed094646d9ec5359"
+      "sha256": "sha256:4c8a1ef9d9c50051961ddcbd530223b9a7586ed09d747be47534e39ff51f9f49"
     },
     {
       "page_id": "TD-P01",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P01/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P01/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P01/prompt-v1.md",
-      "sha256": "sha256:ce271f46c24e7aa8aec267f42b6f004c7477de8f08f25e958a5ae5f6022fe1eb"
+      "sha256": "sha256:42ee6bb3d4e68f97f2a762ae404aabd7d8791276897075cf7de3d35212a80894"
     },
     {
       "page_id": "TD-P01",
@@ -144,7 +144,7 @@
       "href": "materials/requirements-to-evidence.zip",
       "dist_ref": "site/materials/requirements-to-evidence.zip",
       "archive_member": "materials/requirements-to-evidence.zip",
-      "sha256": "sha256:1cf8998f88a9bac347abd6fa2af5a8d81f662c2f2c945c83234558a7759af9d5"
+      "sha256": "sha256:2f381168665a9a04d88449f069645ff8aafd448062a5c1aaca27c09f78d6700e"
     },
     {
       "page_id": "TD-P02",
@@ -179,14 +179,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
-      "sha256": "sha256:7815b5f8e0eb29453276616417357abd133aca197a876f65a64e6b4740cacdc6"
+      "sha256": "sha256:6f980d5872afa91590d2b18f34ec8a390b8ccc74c54c59eaee204043ed365f0f"
     },
     {
       "page_id": "TD-P02",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md",
-      "sha256": "sha256:b5bc26ce73b8dc4df2dd34852893a0886bf4ac79bc2e37180fcce681b16d7e27"
+      "sha256": "sha256:ed09f89c0c326085f0b1c8676cfbe1336095670ad459d34ccc2f998ff3f0f086"
     },
     {
       "page_id": "TD-P02",
@@ -263,14 +263,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P03/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P03/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P03/manifest.json",
-      "sha256": "sha256:f5fb13f61c87e884f808ac64af7c37fbedd45b607e4cc76645615ae6324d76d4"
+      "sha256": "sha256:bffe63347e5cc2b57131359ca155dc841ddf5d30b70157cecf548708ec863082"
     },
     {
       "page_id": "TD-P03",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P03/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P03/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P03/prompt-v1.md",
-      "sha256": "sha256:e1eb817572e72d88d6db52724a5f8603e2136ec50245cf53d98aa0726bfda6ff"
+      "sha256": "sha256:0f25482edcf6e44afb206de0ea562995e661fbe04ea6c2484bd16c06aae148e7"
     },
     {
       "page_id": "TD-P03",
@@ -347,14 +347,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P04/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P04/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P04/manifest.json",
-      "sha256": "sha256:d1ea5ec7364e418c242da0a3937474c7033a0a28ea2c89d85149e75d809913c1"
+      "sha256": "sha256:d4e9b68a88aa6111d57704812f082f609ee500a7a9205208b93268bf4f1bc7f7"
     },
     {
       "page_id": "TD-P04",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P04/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P04/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P04/prompt-v1.md",
-      "sha256": "sha256:cc26e31cd368b5f1328bf4c82531849168cdbcb73b2f59a8b4213b873d26a81d"
+      "sha256": "sha256:10f45da3234d43fa562c653cea2a912f33b449700f6b076127d89965152c0ec8"
     },
     {
       "page_id": "TD-P04",
@@ -431,14 +431,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P05/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P05/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P05/manifest.json",
-      "sha256": "sha256:9df8e4dc1ace60806edc5eb0b8c6e1cf5eeca024a4c1caa8fcceb9ef1e0a41a6"
+      "sha256": "sha256:7bf3b7223f57190c0c407667ef727e161b67e865a5e0d1cc7f362b65b9fc272a"
     },
     {
       "page_id": "TD-P05",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P05/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P05/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P05/prompt-v1.md",
-      "sha256": "sha256:d3926a98c1b2ce53e599d8dd2954a1fac9e2162ffc7975dfc4ba0859712cec22"
+      "sha256": "sha256:8a4f2bec317c106dc7ab2042ec5a7817246741d94dce3f1a2652c5d34435bc08"
     },
     {
       "page_id": "TD-P05",
@@ -515,14 +515,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P06/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P06/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P06/manifest.json",
-      "sha256": "sha256:b42d5371ce120ff2df47478468e76703237532a50ed8105fe01106926f396a09"
+      "sha256": "sha256:8941afe379ab4b1732a2339017ed732a09dbb6bbe032f1f76f9402e35f3fc466"
     },
     {
       "page_id": "TD-P06",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P06/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P06/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P06/prompt-v1.md",
-      "sha256": "sha256:cf086ebff0ccd0d17cac4e9a813cbab45068365b1ad4e0bde932e914b5c3c156"
+      "sha256": "sha256:76d4fd5d0c0165023b52b83b54749bfeb316dd99030cbc6145b8dd114d24d567"
     },
     {
       "page_id": "TD-P06",
@@ -599,14 +599,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P07/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P07/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P07/manifest.json",
-      "sha256": "sha256:580a794da852cb039d16b9c801ebad72a66c973886b699be1bd60eb407ab66ab"
+      "sha256": "sha256:014e6e90dfd994bfdd9add77e580d940e0bf9ef989787450310e9f906b2731fd"
     },
     {
       "page_id": "TD-P07",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P07/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P07/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P07/prompt-v1.md",
-      "sha256": "sha256:a05a99bf5939da018e2b6fd68dfbd87bb89f736d11bd992a312031d7f19151b9"
+      "sha256": "sha256:12d54b0de8735b74507e2931120c0927767beaeaf2721ff20861dc550f933d4f"
     },
     {
       "page_id": "TD-P07",
@@ -683,14 +683,14 @@
       "href": "materials/requirements-to-evidence/page-prompts/TD-P08/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P08/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P08/manifest.json",
-      "sha256": "sha256:03b5f8e1e81fde02e145d17b658ec5a8249d14a8dc04ae308df535c43529462f"
+      "sha256": "sha256:cf31080c3a4e36c9fc68fe472c40fb674ce8ee42ab25558d8dc5037c99028ed5"
     },
     {
       "page_id": "TD-P08",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P08/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P08/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P08/prompt-v1.md",
-      "sha256": "sha256:ce5a893bcface99a57cea30ac24cab0a231da671b14f8399375306f414bdcb0e"
+      "sha256": "sha256:7cf90483b8df32b7905f8c21f67851489ee238d7f470cb0179a781a116767e0a"
     },
     {
       "page_id": "TD-P08",
@@ -767,7 +767,7 @@
       "href": "materials/api-ai-automation.zip",
       "dist_ref": "site/materials/api-ai-automation.zip",
       "archive_member": "materials/api-ai-automation.zip",
-      "sha256": "sha256:5700c17493e55c1e214c601c771a4f79eac52bb3620122e0cfb88ac40a928402"
+      "sha256": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3"
     },
     {
       "page_id": "TD-PS01",
@@ -802,7 +802,7 @@
       "href": "materials/api-ai-automation.zip",
       "dist_ref": "site/materials/api-ai-automation.zip",
       "archive_member": "materials/api-ai-automation.zip",
-      "sha256": "sha256:5700c17493e55c1e214c601c771a4f79eac52bb3620122e0cfb88ac40a928402"
+      "sha256": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3"
     },
     {
       "page_id": "TD-PS02",
@@ -837,7 +837,7 @@
       "href": "materials/api-ai-automation.zip",
       "dist_ref": "site/materials/api-ai-automation.zip",
       "archive_member": "materials/api-ai-automation.zip",
-      "sha256": "sha256:5700c17493e55c1e214c601c771a4f79eac52bb3620122e0cfb88ac40a928402"
+      "sha256": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3"
     },
     {
       "page_id": "TD-PS03",
@@ -872,7 +872,7 @@
       "href": "materials/ui-mobile-automation.zip",
       "dist_ref": "site/materials/ui-mobile-automation.zip",
       "archive_member": "materials/ui-mobile-automation.zip",
-      "sha256": "sha256:90ed6829fc7816348fde5d0d7ace3ef4c82c852058c4f9a716611a835e977860"
+      "sha256": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51"
     },
     {
       "page_id": "TD-PS04",
@@ -907,7 +907,7 @@
       "href": "materials/ui-mobile-automation.zip",
       "dist_ref": "site/materials/ui-mobile-automation.zip",
       "archive_member": "materials/ui-mobile-automation.zip",
-      "sha256": "sha256:90ed6829fc7816348fde5d0d7ace3ef4c82c852058c4f9a716611a835e977860"
+      "sha256": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51"
     },
     {
       "page_id": "TD-PS05",
@@ -942,7 +942,7 @@
       "href": "materials/ui-mobile-automation.zip",
       "dist_ref": "site/materials/ui-mobile-automation.zip",
       "archive_member": "materials/ui-mobile-automation.zip",
-      "sha256": "sha256:90ed6829fc7816348fde5d0d7ace3ef4c82c852058c4f9a716611a835e977860"
+      "sha256": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51"
     },
     {
       "page_id": "TD-PS06",
@@ -977,7 +977,7 @@
       "href": "materials/ui-mobile-automation.zip",
       "dist_ref": "site/materials/ui-mobile-automation.zip",
       "archive_member": "materials/ui-mobile-automation.zip",
-      "sha256": "sha256:90ed6829fc7816348fde5d0d7ace3ef4c82c852058c4f9a716611a835e977860"
+      "sha256": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51"
     },
     {
       "page_id": "TD-PS07",
@@ -1012,7 +1012,7 @@
       "href": "materials/api-ai-automation.zip",
       "dist_ref": "site/materials/api-ai-automation.zip",
       "archive_member": "materials/api-ai-automation.zip",
-      "sha256": "sha256:5700c17493e55c1e214c601c771a4f79eac52bb3620122e0cfb88ac40a928402"
+      "sha256": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3"
     },
     {
       "page_id": "TD-PS08",
@@ -1047,7 +1047,7 @@
       "href": "materials/api-ai-automation.zip",
       "dist_ref": "site/materials/api-ai-automation.zip",
       "archive_member": "materials/api-ai-automation.zip",
-      "sha256": "sha256:5700c17493e55c1e214c601c771a4f79eac52bb3620122e0cfb88ac40a928402"
+      "sha256": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3"
     },
     {
       "page_id": "TD-PS09",
@@ -1082,7 +1082,7 @@
       "href": "materials/reliability-chaos-observability.zip",
       "dist_ref": "site/materials/reliability-chaos-observability.zip",
       "archive_member": "materials/reliability-chaos-observability.zip",
-      "sha256": "sha256:e26b779f2be16a8e316fac14d9786d7490359258cb70e7896ea3502f20e06c06"
+      "sha256": "sha256:756f4ece1099dbd716cfff1859ec71f181eabb9b395be7e79034ea9df3f6a045"
     },
     {
       "page_id": "TD-PS10",
@@ -1117,7 +1117,7 @@
       "href": "materials/reliability-chaos-observability.zip",
       "dist_ref": "site/materials/reliability-chaos-observability.zip",
       "archive_member": "materials/reliability-chaos-observability.zip",
-      "sha256": "sha256:e26b779f2be16a8e316fac14d9786d7490359258cb70e7896ea3502f20e06c06"
+      "sha256": "sha256:756f4ece1099dbd716cfff1859ec71f181eabb9b395be7e79034ea9df3f6a045"
     },
     {
       "page_id": "TD-PS11",
@@ -1152,7 +1152,7 @@
       "href": "materials/reliability-chaos-observability.zip",
       "dist_ref": "site/materials/reliability-chaos-observability.zip",
       "archive_member": "materials/reliability-chaos-observability.zip",
-      "sha256": "sha256:e26b779f2be16a8e316fac14d9786d7490359258cb70e7896ea3502f20e06c06"
+      "sha256": "sha256:756f4ece1099dbd716cfff1859ec71f181eabb9b395be7e79034ea9df3f6a045"
     },
     {
       "page_id": "TD-PS12",
@@ -1173,7 +1173,7 @@
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X101",
@@ -1243,21 +1243,21 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-FP01",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md",
-      "sha256": "sha256:b5bc26ce73b8dc4df2dd34852893a0886bf4ac79bc2e37180fcce681b16d7e27"
+      "sha256": "sha256:ed09f89c0c326085f0b1c8676cfbe1336095670ad459d34ccc2f998ff3f0f086"
     },
     {
       "page_id": "TD-FP01",
       "href": "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
       "dist_ref": "site/materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
       "archive_member": "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
-      "sha256": "sha256:7815b5f8e0eb29453276616417357abd133aca197a876f65a64e6b4740cacdc6"
+      "sha256": "sha256:6f980d5872afa91590d2b18f34ec8a390b8ccc74c54c59eaee204043ed365f0f"
     },
     {
       "page_id": "TD-FP01",
@@ -1306,7 +1306,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-F03",
@@ -1341,7 +1341,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-F04",
@@ -1376,7 +1376,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T01",
@@ -1411,7 +1411,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T02",
@@ -1446,7 +1446,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T03",
@@ -1481,7 +1481,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T04",
@@ -1516,14 +1516,14 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T05",
       "href": "materials/ai-assisted-testing.zip",
       "dist_ref": "site/materials/ai-assisted-testing.zip",
       "archive_member": "materials/ai-assisted-testing.zip",
-      "sha256": "sha256:9a17917cb9bee6dd2c65bebd90085cf9a1d2ac44c0b5840c975e6db5858162b7"
+      "sha256": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a"
     },
     {
       "page_id": "TD-T05",
@@ -1565,7 +1565,7 @@
       "href": "materials/ai-assisted-testing.zip",
       "dist_ref": "site/materials/ai-assisted-testing.zip",
       "archive_member": "materials/ai-assisted-testing.zip",
-      "sha256": "sha256:9a17917cb9bee6dd2c65bebd90085cf9a1d2ac44c0b5840c975e6db5858162b7"
+      "sha256": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a"
     },
     {
       "page_id": "TD-T06",
@@ -1607,7 +1607,7 @@
       "href": "materials/ai-assisted-testing.zip",
       "dist_ref": "site/materials/ai-assisted-testing.zip",
       "archive_member": "materials/ai-assisted-testing.zip",
-      "sha256": "sha256:9a17917cb9bee6dd2c65bebd90085cf9a1d2ac44c0b5840c975e6db5858162b7"
+      "sha256": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a"
     },
     {
       "page_id": "TD-T07",
@@ -1649,7 +1649,7 @@
       "href": "materials/ai-assisted-testing.zip",
       "dist_ref": "site/materials/ai-assisted-testing.zip",
       "archive_member": "materials/ai-assisted-testing.zip",
-      "sha256": "sha256:9a17917cb9bee6dd2c65bebd90085cf9a1d2ac44c0b5840c975e6db5858162b7"
+      "sha256": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a"
     },
     {
       "page_id": "TD-T08",
@@ -1705,7 +1705,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-A01",
@@ -1747,7 +1747,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-A02",
@@ -1789,7 +1789,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-A03",
@@ -1831,7 +1831,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-A04",
@@ -1873,7 +1873,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-A05",
@@ -1915,7 +1915,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-A06",
@@ -1971,7 +1971,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T10",
@@ -2006,7 +2006,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T11",
@@ -2041,7 +2041,7 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-T12",
@@ -2076,14 +2076,14 @@
       "href": "materials/ai-foundations-eval.zip",
       "dist_ref": "site/materials/ai-foundations-eval.zip",
       "archive_member": "materials/ai-foundations-eval.zip",
-      "sha256": "sha256:a18f14c749ca5216415559afca8ff4dd4dda651ba0e70dd6ddfe84394548dbb1"
+      "sha256": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
     },
     {
       "page_id": "TD-X501",
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X501",
@@ -2125,7 +2125,7 @@
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X502",
@@ -2202,7 +2202,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-T14",
@@ -2244,7 +2244,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-T15",
@@ -2286,7 +2286,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-T16",
@@ -2328,7 +2328,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-T17",
@@ -2370,7 +2370,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-T18",
@@ -2412,7 +2412,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-T19",
@@ -2454,7 +2454,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-W01",
@@ -2496,7 +2496,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-W02",
@@ -2538,7 +2538,7 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-W03",
@@ -2580,14 +2580,14 @@
       "href": "materials/llm-agent-quality.zip",
       "dist_ref": "site/materials/llm-agent-quality.zip",
       "archive_member": "materials/llm-agent-quality.zip",
-      "sha256": "sha256:7eabd75d665b52c76edf9be5547bd588afc07403eaf19938efbd3f3b2deb7a21"
+      "sha256": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
     },
     {
       "page_id": "TD-X603",
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X603",
@@ -2629,7 +2629,7 @@
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X604",
@@ -2671,7 +2671,7 @@
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X602",
@@ -2713,7 +2713,7 @@
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X601",
@@ -2790,7 +2790,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-T21",
@@ -2832,7 +2832,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-T22",
@@ -2874,7 +2874,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-T23",
@@ -2916,7 +2916,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-T24",
@@ -2958,14 +2958,14 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-X805",
       "href": "materials/advanced-quality.zip",
       "dist_ref": "site/materials/advanced-quality.zip",
       "archive_member": "materials/advanced-quality.zip",
-      "sha256": "sha256:53f70b54488a334f1145203726e2a93e4f7d0c4fef622f87d886c0f8a8b59880"
+      "sha256": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d"
     },
     {
       "page_id": "TD-X805",
@@ -3042,7 +3042,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-B02",
@@ -3084,7 +3084,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-B03",
@@ -3126,7 +3126,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-B04",
@@ -3168,7 +3168,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-B05",
@@ -3210,7 +3210,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-B06",
@@ -3252,7 +3252,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-QP01",
@@ -3287,7 +3287,7 @@
       "href": "materials/quality-platform-integrations.zip",
       "dist_ref": "site/materials/quality-platform-integrations.zip",
       "archive_member": "materials/quality-platform-integrations.zip",
-      "sha256": "sha256:fd2f7928a35555c84c5bf15ef94a9bc9eb6ccbbb3de941015b17967a4c162a1e"
+      "sha256": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff"
     },
     {
       "page_id": "TD-QP01",
@@ -3336,7 +3336,7 @@
       "href": "materials/quality-platform-integrations.zip",
       "dist_ref": "site/materials/quality-platform-integrations.zip",
       "archive_member": "materials/quality-platform-integrations.zip",
-      "sha256": "sha256:fd2f7928a35555c84c5bf15ef94a9bc9eb6ccbbb3de941015b17967a4c162a1e"
+      "sha256": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff"
     },
     {
       "page_id": "TD-QP02",
@@ -3385,7 +3385,7 @@
       "href": "materials/quality-platform-integrations.zip",
       "dist_ref": "site/materials/quality-platform-integrations.zip",
       "archive_member": "materials/quality-platform-integrations.zip",
-      "sha256": "sha256:fd2f7928a35555c84c5bf15ef94a9bc9eb6ccbbb3de941015b17967a4c162a1e"
+      "sha256": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff"
     },
     {
       "page_id": "TD-QP03",
@@ -3434,7 +3434,7 @@
       "href": "materials/quality-platform-integrations.zip",
       "dist_ref": "site/materials/quality-platform-integrations.zip",
       "archive_member": "materials/quality-platform-integrations.zip",
-      "sha256": "sha256:fd2f7928a35555c84c5bf15ef94a9bc9eb6ccbbb3de941015b17967a4c162a1e"
+      "sha256": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff"
     },
     {
       "page_id": "TD-QP04",
@@ -3490,7 +3490,7 @@
       "href": "materials/ai-quality-benchmark.zip",
       "dist_ref": "site/materials/ai-quality-benchmark.zip",
       "archive_member": "materials/ai-quality-benchmark.zip",
-      "sha256": "sha256:b3c2b744f40d3886663fd0b96081b9827e1650ff4e884d3040b5bfe83569c846"
+      "sha256": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
     },
     {
       "page_id": "TD-C01",
@@ -3511,7 +3511,7 @@
       "href": "materials/ai-serving-career.zip",
       "dist_ref": "site/materials/ai-serving-career.zip",
       "archive_member": "materials/ai-serving-career.zip",
-      "sha256": "sha256:da4bac2f09ce4bae41c53e73a3716dc7e7df79814d7132fb88f9b458f3b712e9"
+      "sha256": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389"
     },
     {
       "page_id": "TD-C01",
@@ -3588,7 +3588,7 @@
       "href": "materials/career-evolution.zip",
       "dist_ref": "site/materials/career-evolution.zip",
       "archive_member": "materials/career-evolution.zip",
-      "sha256": "sha256:3333478a6fa64a847148b04b25c550f410cd0ba10876f50d3eafab1e0c22dc59"
+      "sha256": "sha256:2004786e621d6de3dc47482def95d4ad9a94ab66f1a35b05c7c461d37b84eafc"
     },
     {
       "page_id": "TD-C02",
@@ -3672,7 +3672,7 @@
       "href": "materials/career-evolution.zip",
       "dist_ref": "site/materials/career-evolution.zip",
       "archive_member": "materials/career-evolution.zip",
-      "sha256": "sha256:3333478a6fa64a847148b04b25c550f410cd0ba10876f50d3eafab1e0c22dc59"
+      "sha256": "sha256:2004786e621d6de3dc47482def95d4ad9a94ab66f1a35b05c7c461d37b84eafc"
     },
     {
       "page_id": "TD-C03",
@@ -3721,7 +3721,7 @@
       "href": "materials/career-evolution.zip",
       "dist_ref": "site/materials/career-evolution.zip",
       "archive_member": "materials/career-evolution.zip",
-      "sha256": "sha256:3333478a6fa64a847148b04b25c550f410cd0ba10876f50d3eafab1e0c22dc59"
+      "sha256": "sha256:2004786e621d6de3dc47482def95d4ad9a94ab66f1a35b05c7c461d37b84eafc"
     },
     {
       "page_id": "TD-C04",
@@ -3770,7 +3770,7 @@
       "href": "materials/career-evolution.zip",
       "dist_ref": "site/materials/career-evolution.zip",
       "archive_member": "materials/career-evolution.zip",
-      "sha256": "sha256:3333478a6fa64a847148b04b25c550f410cd0ba10876f50d3eafab1e0c22dc59"
+      "sha256": "sha256:2004786e621d6de3dc47482def95d4ad9a94ab66f1a35b05c7c461d37b84eafc"
     },
     {
       "page_id": "TD-F05",
@@ -3819,7 +3819,7 @@
       "href": "materials/career-evolution.zip",
       "dist_ref": "site/materials/career-evolution.zip",
       "archive_member": "materials/career-evolution.zip",
-      "sha256": "sha256:3333478a6fa64a847148b04b25c550f410cd0ba10876f50d3eafab1e0c22dc59"
+      "sha256": "sha256:2004786e621d6de3dc47482def95d4ad9a94ab66f1a35b05c7c461d37b84eafc"
     },
     {
       "page_id": "TD-T26",
@@ -3882,7 +3882,7 @@
       "href": "materials/career-evolution.zip",
       "dist_ref": "site/materials/career-evolution.zip",
       "archive_member": "materials/career-evolution.zip",
-      "sha256": "sha256:3333478a6fa64a847148b04b25c550f410cd0ba10876f50d3eafab1e0c22dc59"
+      "sha256": "sha256:2004786e621d6de3dc47482def95d4ad9a94ab66f1a35b05c7c461d37b84eafc"
     },
     {
       "page_id": "TD-R01",
@@ -3896,7 +3896,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP01",
@@ -3938,7 +3938,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP02",
@@ -3980,7 +3980,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP03",
@@ -4022,7 +4022,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP04",
@@ -4064,7 +4064,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP05",
@@ -4106,7 +4106,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP06",
@@ -4148,7 +4148,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP07",
@@ -4190,7 +4190,7 @@
       "href": "materials/agent-load-stability.zip",
       "dist_ref": "site/materials/agent-load-stability.zip",
       "archive_member": "materials/agent-load-stability.zip",
-      "sha256": "sha256:36389d15fa2cc7ec10339deeb81a6be76d5a0d83e93bfcd043db5dfde2ff9c1f"
+      "sha256": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b"
     },
     {
       "page_id": "TD-AP08",
@@ -4288,7 +4288,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-00",
@@ -4372,7 +4372,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-01",
@@ -4463,7 +4463,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-02",
@@ -4547,7 +4547,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-03",
@@ -4624,7 +4624,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-04",
@@ -4701,7 +4701,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-05",
@@ -4792,7 +4792,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-06",
@@ -4883,7 +4883,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-07",
@@ -4967,7 +4967,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-08",
@@ -5058,7 +5058,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-09",
@@ -5149,7 +5149,7 @@
       "href": "materials/agent-architecture-system.zip",
       "dist_ref": "site/materials/agent-architecture-system.zip",
       "archive_member": "materials/agent-architecture-system.zip",
-      "sha256": "sha256:c49df42b4f93d71d59bcc49cb36d032118421a8fcd367bf49e0f2bcd891408dc"
+      "sha256": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a"
     },
     {
       "page_id": "TD-AG-10",

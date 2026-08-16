@@ -1154,6 +1154,23 @@ class ValidatorTests(unittest.TestCase):
         (self.root / "tutorial/index.html").unlink()
         self.assertTrue(any("missing tutorial file: tutorial/index.html" in error for error in validate(self.root)))
 
+    def test_tutorial_embedded_urls_are_not_runtime_dependencies(self) -> None:
+        path = self.root / "tutorial/index.html"
+        html = path.read_text(encoding="utf-8")
+        html = html.replace(
+            "</head>",
+            '<link rel="icon" href="data:,"><script>const documentationUrl = "https://example.org/docs";</script></head>',
+        )
+        path.write_text(html, encoding="utf-8")
+        self.assertFalse(any("remote scripts or styles" in error for error in validate(self.root)))
+
+    def test_tutorial_remote_runtime_dependency_fails(self) -> None:
+        path = self.root / "tutorial/index.html"
+        html = path.read_text(encoding="utf-8")
+        html = html.replace("</head>", '<link rel="stylesheet" href="https://cdn.example.org/site.css"></head>')
+        path.write_text(html, encoding="utf-8")
+        self.assertTrue(any("remote scripts or styles" in error for error in validate(self.root)))
+
     def test_public_tutorial_cannot_contain_incomplete_page(self) -> None:
         path = self.root / "tutorial/tutorial-site.json"
         data = json.loads(path.read_text())

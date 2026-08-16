@@ -1,7 +1,7 @@
 {
   "schema_version": "public-promotion-summary.v1",
   "page_id": "TD-T02",
-  "verdict": "PASS",
+  "verdict": "FAIL",
   "research_package_files": [
     "research-brief.md",
     "source-pack.csv",
@@ -18,7 +18,7 @@
   "editorial_score": 100,
   "boundary_preservation_score": 100,
   "executability_verdict": "PASS",
-  "validated_at": "2026-08-13T09:16:44.995Z",
+  "validated_at": "2026-08-16T16:14:24.578Z",
   "reviewer": "validation-semantic-parity-verifier-2026-08-13",
   "evidence_boundary": "Public-safe gate summary only; detailed research remains in the authoring package."
 }

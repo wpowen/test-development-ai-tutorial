@@ -3213,7 +3213,12 @@ def validate_tutorial(root: Path, errors: list[str]) -> None:
         if marker not in html:
             errors.append(f"tutorial/index.html missing viewer marker: {marker}")
     lowered = html.lower()
-    if "<script src=\"http" in lowered or "<link" in lowered and "href=\"http" in lowered:
+    # Inspect the actual element attributes only. Embedded COURSE_DATA and
+    # learner text may legitimately contain documentation URLs; those are not
+    # remote runtime dependencies.
+    if re.search(r"<script\b[^>]*\bsrc=[\"']https?://", lowered) or re.search(
+        r"<link\b[^>]*\bhref=[\"']https?://", lowered
+    ):
         errors.append("tutorial/index.html must not depend on remote scripts or styles")
     if re.search(r'"(?:status|delivery_status)"\s*:\s*"(?:planned|outlined|blocked)"', html):
         errors.append("tutorial/index.html exposes incomplete public pages")

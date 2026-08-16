@@ -1,4 +1,13 @@
-# 测试开发 × AI 完整方案审计
+---
+status: superseded
+superseded_at: 2026-08-16
+replacement: human-review/11-测试开发专家全量质量审计与修订计划-2026-08-16.md
+reason: 33-page course snapshot; it predates the current 103-page canonical catalog and evidence-governance contract.
+---
+
+> **历史快照（已废弃）**：本文只保留修复前缺口的来历，不得作为当前课程、晋级或发布依据。请读取 [`11-测试开发专家全量质量审计与修订计划-2026-08-16.md`](11-测试开发专家全量质量审计与修订计划-2026-08-16.md)。
+
+# 测试开发 × AI 完整方案审计（历史）
 
 审计结论：不通过“完整方案”门禁。当前内容可以作为内部研究样稿和离线实验集合，不能再以“测试开发 × AI 完整课程”“生产可用质量平台”或“从入门到专业级完整体系”对外承诺。
 

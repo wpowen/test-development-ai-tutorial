@@ -1,6 +1,15 @@
-# 逐命题深研与代码可执行性审计
+---
+status: superseded
+superseded_at: 2026-08-16
+replacement: human-review/11-测试开发专家全量质量审计与修订计划-2026-08-16.md
+reason: 33-page executability snapshot; its former 85-page replacement is also superseded.
+---
 
-> **Superseded historical audit（2026-08-11）**：本文记录 33 页修复前的 5/28 快照，用于解释缺陷来源，不再代表当前课程。当前结论请读取 `06-最终课程验收.md`、`research/executability-audit.json` 和 `research/editorial-review-2026-08-11-final.json`；新鲜结果为 85/85 executability PASS、85/85 editorial PASS。
+> **历史快照（已废弃）**：本文记录 33 页修复前的缺陷来源，不得作为当前课程、晋级或发布依据。当前范围与证据边界请读取 [`11-测试开发专家全量质量审计与修订计划-2026-08-16.md`](11-测试开发专家全量质量审计与修订计划-2026-08-16.md)。
+
+# 逐命题深研与代码可执行性审计（历史）
+
+> 本节的 5/28、33 页、85 页计数均为历史数据；不再引用旧“最终验收”或旧 editorial PASS 作为当前结论。
 
 ## 当前结论
 

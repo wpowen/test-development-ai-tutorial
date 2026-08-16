@@ -454,6 +454,24 @@ for page_id, contract in CONTRACTS.items():
         "tools": [],
         "permissions": ["read sanitized fixed input", "produce draft JSON only"],
         "privacy_level": "synthetic-teaching-fixture",
+        "artifact_ownership": {
+            "learner_one_shot": {
+                "artifact_type": "learner-one-shot",
+                "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+                "consumer": "learner",
+                "immutable_to_other_generators": True,
+                "integrity_manifest": "../../DIRECT-USE-MANIFEST.json",
+                "files": ["prompt-v1.md", "input.json", "schema.json", "eval.json", "mutation.json", "adaptation-card.md", "expected-output.json", "receipt.json"],
+            },
+            "generator_task": {
+                "artifact_type": "generator-task",
+                "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+                "consumer": "prompt-package-assembler",
+                "immutable_to_other_generators": True,
+                "integrity_manifest": "../../DIRECT-USE-MANIFEST.json",
+                "files": ["system-v1.md", "task-v1.md", "critic-v1.md"],
+            },
+        },
         "direct_use": True,
         "copy_target": "generic-ai-agent",
         "assembly_order": [
@@ -515,6 +533,22 @@ direct_use_manifest = {
     "page_ids": list(CONTRACTS),
     "prompt_count": len(CONTRACTS),
     "copy_target": "generic-ai-agent",
+    "artifact_ownership": {
+        "learner_one_shot": {
+            "artifact_type": "learner-one-shot",
+            "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+            "consumer": "learner",
+            "immutable_to_other_generators": True,
+            "hash_field": "file_sha256",
+        },
+        "generator_task": {
+            "artifact_type": "generator-task",
+            "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+            "consumer": "prompt-package-assembler",
+            "immutable_to_other_generators": True,
+            "hash_field": "file_sha256",
+        },
+    },
     "guide": "DIRECT-USE-GUIDE.md",
     "guide_sha256": sha256(ROOT / "DIRECT-USE-GUIDE.md"),
     "adaptation_card": "ADAPTATION-CARD.md",

@@ -9190,7 +9190,7 @@
     "verdict": "PASS"
   },
   "reviewer": "course-source-projection-audit-agent-2026-08-13",
-  "reviewed_at": "2026-08-13T06:51:13.082229+00:00",
+  "reviewed_at": "2026-08-14T07:37:10.070322+00:00",
   "verdict": "PASS",
   "evidence_boundary": "PASS proves exact static semantic projection only. Real-model, practitioner, learner, enterprise-integration, publication and production evidence remain NOT_RUN."
 }

@@ -1,4 +1,13 @@
-# 最终课程验收
+---
+status: superseded
+superseded_at: 2026-08-16
+replacement: human-review/11-测试开发专家全量质量审计与修订计划-2026-08-16.md
+reason: 85-page final-acceptance snapshot is stale; its deterministic editorial evidence lacks a current independent-review attestation and immutable run metadata.
+---
+
+> **历史快照（已废弃）**：本文的“最终”“85 页”“293 blocks”均不是当前结论，不得作为课程晋级、发布或生产判断依据。请读取 [`11-测试开发专家全量质量审计与修订计划-2026-08-16.md`](11-测试开发专家全量质量审计与修订计划-2026-08-16.md)。
+
+# 最终课程验收（历史）
 
 ## 结论
 

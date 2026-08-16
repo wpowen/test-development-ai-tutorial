@@ -31,6 +31,7 @@ REQUIRED_MANIFEST_FIELDS = {
 SOLUTION_VIEW_KINDS = {"context", "building-block", "runtime", "deployment", "data-flow", "security-trust-boundary"}
 EXECUTION_STATUSES = ["not-run", "desk-researched", "fixture-tested", "integration-tested", "live-tested", "production-validated"]
 REVIEW_STATUSES = ["not-reviewed", "reviewed", "approved"]
+INDEPENDENT_ATTESTATION_BLOCKER = "editorial reviewer independence is not attested with pinned evidence"
 
 
 def load_json(path: Path, errors: list[str]) -> Any:
@@ -325,8 +326,15 @@ def validate_release(root: Path) -> list[str]:
         promotion = promotion_by_id.get(page_id)
         if promotion is None:
             continue
-        if str(promotion.get("verdict", "")).upper() != "PASS" or promotion.get("research_package_complete") is not True:
-            errors.append(f"public page {page_id} promotion must PASS with a complete research package")
+        verdict = str(promotion.get("verdict", "")).upper()
+        fixture_preview = (
+            manifest.get("validation_verdict") == "BLOCKED-HIGHER-MATURITY"
+            and verdict == "FAIL"
+            and promotion.get("research_package_complete") is True
+            and promotion.get("higher_maturity_blocker") == [INDEPENDENT_ATTESTATION_BLOCKER]
+        )
+        if (verdict != "PASS" and not fixture_preview) or promotion.get("research_package_complete") is not True:
+            errors.append(f"public page {page_id} promotion must PASS with a complete research package or carry only the pinned independent-attestation blocker")
         if not isinstance(promotion.get("editorial_score"), (int, float)) or promotion.get("editorial_score", 0) < 90:
             errors.append(f"public page {page_id} promotion editorial_score must be at least 90")
         if promotion.get("boundary_preservation_score") != 100:

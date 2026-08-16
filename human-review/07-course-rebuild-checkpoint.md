@@ -1,4 +1,13 @@
-# 102 页课程重建检查点
+---
+status: superseded
+superseded_at: 2026-08-16
+replacement: human-review/11-测试开发专家全量质量审计与修订计划-2026-08-16.md
+reason: 102-page reconstruction checkpoint predates the current 103-page canonical catalog and evidence-governance contract.
+---
+
+> **历史快照（已废弃）**：本文只记录 2026-08-12 的重建阶段，不得作为当前课程、晋级或发布依据。请读取 [`11-测试开发专家全量质量审计与修订计划-2026-08-16.md`](11-测试开发专家全量质量审计与修订计划-2026-08-16.md)。
+
+# 102 页课程重建检查点（历史）
 
 ## 当前结论
 

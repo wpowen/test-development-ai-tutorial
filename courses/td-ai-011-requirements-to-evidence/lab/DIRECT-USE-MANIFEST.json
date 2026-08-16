@@ -14,6 +14,22 @@
   ],
   "prompt_count": 8,
   "copy_target": "generic-ai-agent",
+  "artifact_ownership": {
+    "learner_one_shot": {
+      "artifact_type": "learner-one-shot",
+      "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+      "consumer": "learner",
+      "immutable_to_other_generators": true,
+      "hash_field": "file_sha256"
+    },
+    "generator_task": {
+      "artifact_type": "generator-task",
+      "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+      "consumer": "prompt-package-assembler",
+      "immutable_to_other_generators": true,
+      "hash_field": "file_sha256"
+    }
+  },
   "guide": "DIRECT-USE-GUIDE.md",
   "guide_sha256": "67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
   "adaptation_card": "ADAPTATION-CARD.md",
@@ -55,7 +71,7 @@
         "adaptation-card.md": "708a42be7c7904ae7d7f12ca3997f8ba6112e6eb7e34ea144f24a99ec6d513bd",
         "expected-output.json": "88988cba3756e511484cf3ecf66e784a662f3d65ca67773f92e98dcf09a5b787",
         "receipt.json": "209b6158882a0e089ab872b17bce1a862f2563d355f95126c8164091b667b0ad",
-        "manifest.json": "7327163ec862f06e5cf15d3ccde8e5fe5081421e110609f2ed094646d9ec5359"
+        "manifest.json": "4c8a1ef9d9c50051961ddcbd530223b9a7586ed09d747be47534e39ff51f9f49"
       },
       "model_status": "NOT_RUN"
     },
@@ -95,7 +111,7 @@
         "adaptation-card.md": "35f386d6b6d1acd33f1122c20a851074cf33db1ac0c175b9bd0eb4ada2a70efa",
         "expected-output.json": "f30aea6477c41bf493e23e554d3145991671a21d7ac33d0d03aa195cf83718a8",
         "receipt.json": "d83076e672f70ab96ea9bc70b31dfc42dcf3ecac04127b58324f26a1a1c9cafb",
-        "manifest.json": "7815b5f8e0eb29453276616417357abd133aca197a876f65a64e6b4740cacdc6"
+        "manifest.json": "6f980d5872afa91590d2b18f34ec8a390b8ccc74c54c59eaee204043ed365f0f"
       },
       "model_status": "NOT_RUN"
     },
@@ -135,7 +151,7 @@
         "adaptation-card.md": "e418287aac2a3710422a5424f4d33d618552d819433039f15cd79cdec709b178",
         "expected-output.json": "e1d99785eaaa948a104b1624c98d5439b5b34eafb63b356a97cd32ceeb43f13f",
         "receipt.json": "887f131618d12cfe467502636a6e3953315946315bc8dd15a1fcbdc5627b5c84",
-        "manifest.json": "f5fb13f61c87e884f808ac64af7c37fbedd45b607e4cc76645615ae6324d76d4"
+        "manifest.json": "bffe63347e5cc2b57131359ca155dc841ddf5d30b70157cecf548708ec863082"
       },
       "model_status": "NOT_RUN"
     },
@@ -175,7 +191,7 @@
         "adaptation-card.md": "6f501bd965c42b2671d2a180afc8a4a28b9e6af843d082910bfd134e6adec43f",
         "expected-output.json": "55295b4fb131d4294a92d8923f74a26a55e44328c0bca6eb83435c0f5e40cc90",
         "receipt.json": "78351e583371028fc0d667667137088ace79a2e231f4a13177a7b37255dfe431",
-        "manifest.json": "d1ea5ec7364e418c242da0a3937474c7033a0a28ea2c89d85149e75d809913c1"
+        "manifest.json": "d4e9b68a88aa6111d57704812f082f609ee500a7a9205208b93268bf4f1bc7f7"
       },
       "model_status": "NOT_RUN"
     },
@@ -215,7 +231,7 @@
         "adaptation-card.md": "9cb6cfce8398d1096291979c654fd3c76d714c13e113416a13fa3f41f656b92c",
         "expected-output.json": "083d5843f79ea28582b9f11828a1e2968685c413fb0f3fa5fc7597c07d5d41bc",
         "receipt.json": "832b8510dfeae47c1b1f28b3fe7581b3e2e2b83a34bee21e4eb1e8da2b0891e9",
-        "manifest.json": "9df8e4dc1ace60806edc5eb0b8c6e1cf5eeca024a4c1caa8fcceb9ef1e0a41a6"
+        "manifest.json": "7bf3b7223f57190c0c407667ef727e161b67e865a5e0d1cc7f362b65b9fc272a"
       },
       "model_status": "NOT_RUN"
     },
@@ -255,7 +271,7 @@
         "adaptation-card.md": "a61c77bb81acde9b309c4699f29280ad3fc694f44441b8ea3fc35da688907538",
         "expected-output.json": "761d94900e7ea67ead58522be4a7b27c2a13ab1747b963d07c3643be87893852",
         "receipt.json": "d79271ebcd5c58ba5a6edff7424e2cf9686997ec5a835004ad38c019bdc10a1e",
-        "manifest.json": "b42d5371ce120ff2df47478468e76703237532a50ed8105fe01106926f396a09"
+        "manifest.json": "8941afe379ab4b1732a2339017ed732a09dbb6bbe032f1f76f9402e35f3fc466"
       },
       "model_status": "NOT_RUN"
     },
@@ -295,7 +311,7 @@
         "adaptation-card.md": "12044312714494cd0a95f8809a1cd54a71c57575395c570a1b054d75b8e6b535",
         "expected-output.json": "d1f223f8c2c17bf7579824d1f5316eb0e920c5d64b9ffb6af885099d89d4e9d0",
         "receipt.json": "58865fe3ff6692883873b2e3aa5b1274ec97ccc520b02f924837346cc6e6964c",
-        "manifest.json": "580a794da852cb039d16b9c801ebad72a66c973886b699be1bd60eb407ab66ab"
+        "manifest.json": "014e6e90dfd994bfdd9add77e580d940e0bf9ef989787450310e9f906b2731fd"
       },
       "model_status": "NOT_RUN"
     },
@@ -335,7 +351,7 @@
         "adaptation-card.md": "49ad2791278e2aa223d3d41c78de21a82aba2807276e118d86abbe4c571509b3",
         "expected-output.json": "e26a182694511bdcd59ddcd90a599c029460a7726a56e1325ab1d96dbadb05c5",
         "receipt.json": "2fcb78d284d2bd3c005b02aaa77f8e260698255e5e1802452778c0c1d443a0d5",
-        "manifest.json": "03b5f8e1e81fde02e145d17b658ec5a8249d14a8dc04ae308df535c43529462f"
+        "manifest.json": "cf31080c3a4e36c9fc68fe472c40fb674ce8ee42ab25558d8dc5037c99028ed5"
       },
       "model_status": "NOT_RUN"
     }

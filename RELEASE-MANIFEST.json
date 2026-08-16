@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3-candidate",
-  "source_commit": "52d52ddf66932125a4fb5eccb48e80605c17112b",
+  "source_commit": "95e17d79c95c05cda569389370254f4af3361e53",
   "release_scope": "pilot-path",
   "catalog_complete": false,
   "page_count": 103,
@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:0984e57afeecd8f371de13fd07da82a242d4191f0145205c88735109fcdfef9f",
+  "content_hash": "sha256:c31d37a67810562ef2ff37af8eee375c00d6b65ae6b5f9d19234f85d1236af13",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
     "github-pages",
@@ -123,15 +123,15 @@
   "evidence_level": "fixture-tested local candidate; not practitioner-reviewed; not published",
   "publication_blockers_ref": "PUBLICATION-BLOCKERS.json",
   "solution_manifest_hash": "sha256:d1d458cfb7698cee5ebbb3f1ce2e94af4bbe9ed7383db31e1926bea1846d20af",
-  "catalog_manifest_hash": "sha256:3b17049786eca48aa3f020141308202d826545c48eb6e4d8ecbb7cb967dfa96a",
-  "promotion_manifest_hash": "sha256:2b56652e8c4f3d11eaeb8b9a1fe886d32d79bb1cc979147215579c205af4822f",
-  "executability_manifest_hash": "sha256:8adc2e2e49c6729da296644e658e4e00ca8e20032336f85f089b1b1a0f10a904",
-  "artifact_closure_hash": "sha256:d22c681138dfef1804168a4ac7f59a8e7a828c38e14f7e3793e3f6bdbdd10eb4",
+  "catalog_manifest_hash": "sha256:8cfe50f36ede569c9cdb64f8f21b5cdb8d60050f7457005c698d0273c5291bb8",
+  "promotion_manifest_hash": "sha256:290cace287524b193b0db7d868dad786187ee42e9ad537b67e4177c920a70120",
+  "executability_manifest_hash": "sha256:1e9c3c3caba3c17e6918534b7bcbbab3183db4d3a647da26707ea0903b98801e",
+  "artifact_closure_hash": "sha256:9d3f579defd29e3fe59074d85ae6e817840783e0447531f151882da4cb0583c0",
   "capability_profiles_hash": "sha256:f4eb0cfbbc437576e86e8233d3638e3f3b5f84a4760327bde8be231d206d7afc",
   "professional_evidence_hash": "sha256:db1c664ca3667fe49417582945babddf85bd27daa9052e380bd5171c73ee52b5",
-  "status_registry_hash": "sha256:86eb90982f9753b0e6ea666217e2a216dfacebe30c056e7051a763ad5a99c201",
+  "status_registry_hash": "sha256:40febf335cb5a989158493ffe1ce9a262b5c501c1a8660dae572b87aa7d1ca19",
   "source_assimilation_hash": "sha256:8c45e43c1e20273d1e23ec9ad12fbaac48878862515fbfb5ff27edab21f024b3",
-  "source_semantic_projection_hash": "sha256:06456fdb601dfdbd8805e39bad8a284f726fafe167be0c422aa1ba0b4b83eb3f",
+  "source_semantic_projection_hash": "sha256:af08e6a39fe0d14e91d4c623a5e97d4f4ef3b999695dd3019727765abf7c6ea7",
   "learner_usability_reuse_hash": "sha256:508e97c784e93b29a54c3657062a02121911a65efe2f2ae601f03cf611a0bff1",
   "visual_sequence_hash": "sha256:428eb2317c7bfc5db6ced61d362f8dd5de94da761c06913c3fbb8bd04f82ad72"
 }
