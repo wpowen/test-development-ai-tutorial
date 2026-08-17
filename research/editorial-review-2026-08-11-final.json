@@ -1,13 +1,13 @@
 {
   "schema_version": "editorial-review-contract.v3",
   "review_id": "deterministic-editorial-review-2026-08-16-semantic-contract",
-  "generated_at": "2026-08-16T16:14:22.979Z",
+  "generated_at": "2026-08-17T11:25:08.538Z",
   "evidence_run": {
     "schema_version": "evidence-run.v1",
-    "run_id": "editorial-2026-08-16T16-14-22-979Z-c2c34cba",
+    "run_id": "editorial-2026-08-17T11-25-08-538Z-be50e91e",
     "command": "node scripts/build-independent-editorial-review.mjs",
-    "started_at": "2026-08-16T16:14:22.477Z",
-    "finished_at": "2026-08-16T16:14:22.979Z",
+    "started_at": "2026-08-17T11:25:08.023Z",
+    "finished_at": "2026-08-17T11:25:08.538Z",
     "exit_code": 0,
     "validator": {
       "path": "scripts/build-independent-editorial-review.mjs",
@@ -15,7 +15,7 @@
     },
     "input_hashes": {
       "course": "sha256:630e9af78378326947d9a515bf9b38c5cce32c5ba190c20ac3db3e8d3e2a5749",
-      "tutorial": "sha256:bf32d24eee5e9f4b4c8441a3a9a8a21d3303c49822d2c1ee6854b3cc423f8065"
+      "tutorial": "sha256:7be5d210eed2eed45fdfad040c76fdbe7971ef2441464b81555545593e2a9a5e"
     }
   },
   "lane": "validation",
@@ -31,7 +31,7 @@
   "reviewer_is_independent_of_author": false,
   "scope": {
     "tutorial_ref": "tutorial/tutorial-site.json",
-    "tutorial_sha256": "sha256:bf32d24eee5e9f4b4c8441a3a9a8a21d3303c49822d2c1ee6854b3cc423f8065",
+    "tutorial_sha256": "sha256:7be5d210eed2eed45fdfad040c76fdbe7971ef2441464b81555545593e2a9a5e",
     "page_ids": [
       "TD-F01",
       "TD-P01",
@@ -147,14 +147,14 @@
     "source_semantic_projection_verdict": "PASS",
     "source_semantic_unit_count": 340,
     "executability_ref": "research/executability-audit.json",
-    "executability_sha256": "sha256:17936abad75f052aad7fc20f93ab56609110a2e5a889fe937ef3455b70c8a873",
+    "executability_sha256": "sha256:20873daf78df938bfc87bcaf82fe656ab6f1993b1d4bfe2f58bf1a1755c4a5ec",
     "learner_reuse_ref": "research/learner-usability-reuse.json",
     "learner_reuse_sha256": "sha256:508e97c784e93b29a54c3657062a02121911a65efe2f2ae601f03cf611a0bff1"
   },
   "supersedes": [
     {
       "path": "research/editorial-review-2026-08-11-final.json",
-      "sha256": "sha256:8d9e65600505ecc26d44e03cfbec3d0a46360af73f0f657c30d14090e39de60d",
+      "sha256": "sha256:b72caf34029b1cd4dbff04c87163cce767110df205ef6ab7252e7a0eebff0950",
       "reason": "old PASS scope/records lacked current page hashes and covered 102 pages; replaced by this independent 103-page fail-closed audit"
     }
   ],
@@ -238,11 +238,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:e6589597de3ec27f6806aa806bf700e887ed2f25961f124672b7207492f40933",
-        "learner_content_sections_hash": "sha256:7ba705f2e5deaff91d4f111bb36fce6ace3472e3000a622a454c96effd5d3f58",
+        "tutorial_page_content_hash": "sha256:d07620983aa7e8beda5a990f8da1968c7a5c721162047e2b0ad52487b6428342",
+        "learner_content_sections_hash": "sha256:807c9fb29b8f23a45aae0a990c023f390ff868eb7c611a7bd09e286a636ff8d4",
         "manuscript_sha256": "sha256:6fb18553ebdf504ddf495d4bd604a9b332328583e4762d782c3f779df0c679a0",
-        "projection_ledger_sha256": "sha256:4a686350bc0dafb0421b358db64b2ff6cddd8d7d3ba672b585f0c65603f2af19",
-        "ledger_declared_page_content_sha256": "sha256:7ba705f2e5deaff91d4f111bb36fce6ace3472e3000a622a454c96effd5d3f58",
+        "projection_ledger_sha256": "sha256:1711744bdff8af05e4b152926fe8407d53078563f28085de63ad4b3153c17b4d",
+        "ledger_declared_page_content_sha256": "sha256:807c9fb29b8f23a45aae0a990c023f390ff868eb7c611a7bd09e286a636ff8d4",
         "ledger_declared_manuscript_sha256": "sha256:6fb18553ebdf504ddf495d4bd604a9b332328583e4762d782c3f779df0c679a0",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -269,7 +269,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 7348,
+        "learner_prose_cjk": 7312,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 14,
@@ -290,7 +290,7 @@
         "sentence_duplication": {
           "rate": 0,
           "duplicated": 0,
-          "total": 158,
+          "total": 156,
           "compared_page_ids": [
             "TD-P01",
             "TD-P02",
@@ -335,11 +335,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:b139a15cfdce2a511a9c980a1fa337ab79e48c641f06a2f3cc4827ef9bb700f7",
-        "learner_content_sections_hash": "sha256:c193fd03ec43a244bec1a55977e695afbdb20a56a2b276d7097604fa486adef1",
+        "tutorial_page_content_hash": "sha256:6de0b8c78194283e61a0b47f0496439a28184387b43e4c8d65ed912e452c1c19",
+        "learner_content_sections_hash": "sha256:2e8c670ed00b3ac930f9e1f1fe10f8eb0d8b0cf6bab2618d617cb1ae231f7d7f",
         "manuscript_sha256": "sha256:ccf47a07e578cf4a8ffcc4d32058f8e08bfad7af943bde0bc276cc5034dff614",
-        "projection_ledger_sha256": "sha256:186a694eee62b1d83dea274e106d20a9222ceb95422098811b9d4fa39f7efc0a",
-        "ledger_declared_page_content_sha256": "sha256:c193fd03ec43a244bec1a55977e695afbdb20a56a2b276d7097604fa486adef1",
+        "projection_ledger_sha256": "sha256:0e51998920693f9d4158624d0322da6d7ed6edeedcee3663eb967860791ac074",
+        "ledger_declared_page_content_sha256": "sha256:2e8c670ed00b3ac930f9e1f1fe10f8eb0d8b0cf6bab2618d617cb1ae231f7d7f",
         "ledger_declared_manuscript_sha256": "sha256:ccf47a07e578cf4a8ffcc4d32058f8e08bfad7af943bde0bc276cc5034dff614",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -366,7 +366,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 7325,
+        "learner_prose_cjk": 7299,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 15,
@@ -388,9 +388,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0657,
+          "rate": 0.0663,
           "duplicated": 13,
-          "total": 198,
+          "total": 196,
           "compared_page_ids": [
             "TD-F01",
             "TD-P02",
@@ -435,11 +435,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:104f91d2ab80449c3d548f0b85a837ed7182c97cc35fa37d37d46aa72acaae45",
-        "learner_content_sections_hash": "sha256:5557014faeb4d06cf9f9669d4e8ecd2c9ed4d43907416c43ea8d7129d777bb9f",
+        "tutorial_page_content_hash": "sha256:55cbab6f21f1ed93ecf6630597ea0058ff01e316769256515c0a4e9ea132f032",
+        "learner_content_sections_hash": "sha256:350948cf5914ad3212e3410f9f31bf669a27d1d4f4a9972001d97a53d1949a02",
         "manuscript_sha256": "sha256:e34895421d3fa1f6edad82ca4a1fe5faca1f727bc7edeca5728bb2d58cbd51ec",
-        "projection_ledger_sha256": "sha256:ad3acd3554be900b9f26f7b06fc3d4bf9087c6966b5e4107b247f91ca1dafb1f",
-        "ledger_declared_page_content_sha256": "sha256:5557014faeb4d06cf9f9669d4e8ecd2c9ed4d43907416c43ea8d7129d777bb9f",
+        "projection_ledger_sha256": "sha256:0cef462affd4d774bbcc3cc7b1912713ade4933850f9ea01a65a5abc3eb3e333",
+        "ledger_declared_page_content_sha256": "sha256:350948cf5914ad3212e3410f9f31bf669a27d1d4f4a9972001d97a53d1949a02",
         "ledger_declared_manuscript_sha256": "sha256:e34895421d3fa1f6edad82ca4a1fe5faca1f727bc7edeca5728bb2d58cbd51ec",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -466,7 +466,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6668,
+        "learner_prose_cjk": 6642,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 14,
@@ -487,9 +487,9 @@
         "page_specific_material_count": 15,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0747,
+          "rate": 0.0756,
           "duplicated": 13,
-          "total": 174,
+          "total": 172,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -534,11 +534,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:a24b8b5df639cca4ba16ef4fb4a12e61cdb0ddbd488c3c43538f0174e635bf45",
-        "learner_content_sections_hash": "sha256:f4ee3e2702c7a4efdebf436e9fca8c07c34b95df75c7f6173dfc9244b5ede6d1",
+        "tutorial_page_content_hash": "sha256:58e3ea3364d13f39effce5dfa0fb3482889aab12b5576537235a38f4a04a2860",
+        "learner_content_sections_hash": "sha256:d354dbb5ebbae0e8dce20d4a8fcdc7cb8ee6d80af7bee08816465eaf73a880ec",
         "manuscript_sha256": "sha256:55c6f9eaf44483b2d0d7fa788843b862e4b834b5cb0c854c6abfda0fe5193a90",
-        "projection_ledger_sha256": "sha256:9295f47874513d8bf5405701cb047fbacc90456b430f94d4bad8a027f753e79c",
-        "ledger_declared_page_content_sha256": "sha256:f4ee3e2702c7a4efdebf436e9fca8c07c34b95df75c7f6173dfc9244b5ede6d1",
+        "projection_ledger_sha256": "sha256:ba3168132d32ed45ffc5bbeeaa5bd50b7d6aeff9e5705a8aaa726ca36209e9a5",
+        "ledger_declared_page_content_sha256": "sha256:d354dbb5ebbae0e8dce20d4a8fcdc7cb8ee6d80af7bee08816465eaf73a880ec",
         "ledger_declared_manuscript_sha256": "sha256:55c6f9eaf44483b2d0d7fa788843b862e4b834b5cb0c854c6abfda0fe5193a90",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -565,7 +565,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6861,
+        "learner_prose_cjk": 6833,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 15,
@@ -585,9 +585,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0829,
+          "rate": 0.0838,
           "duplicated": 15,
-          "total": 181,
+          "total": 179,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -632,11 +632,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:38de7f542ca01aec9ffb9c57b71b85903e8d27245033c2680837a5874d472160",
-        "learner_content_sections_hash": "sha256:8ca5ad818aecabb6deff0144f0da35867ee246151aeb2374d946c92d35309aa1",
+        "tutorial_page_content_hash": "sha256:47d17261e2ef5735a9e0f87987b000f8de780a1e40533716d7b18de65dfce8ec",
+        "learner_content_sections_hash": "sha256:866bfb48546ff3f987f993ef41c896ec9992e8bc7aff18476c7d4fd6090a7595",
         "manuscript_sha256": "sha256:7d494f5157ba95fba9f9bde7542f8fd3b39b68b821bce3c6ea502e48c0d22cb6",
-        "projection_ledger_sha256": "sha256:3f9d7de170ea25ff5a2089a642bbcf1f2504d0126299b49b39480d8c6896ed22",
-        "ledger_declared_page_content_sha256": "sha256:8ca5ad818aecabb6deff0144f0da35867ee246151aeb2374d946c92d35309aa1",
+        "projection_ledger_sha256": "sha256:59096e5c93964d30e961da82c21d526cd0a5230c6021042a3be635e781c7e733",
+        "ledger_declared_page_content_sha256": "sha256:866bfb48546ff3f987f993ef41c896ec9992e8bc7aff18476c7d4fd6090a7595",
         "ledger_declared_manuscript_sha256": "sha256:7d494f5157ba95fba9f9bde7542f8fd3b39b68b821bce3c6ea502e48c0d22cb6",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -663,7 +663,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6697,
+        "learner_prose_cjk": 6669,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 14,
@@ -684,9 +684,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0791,
+          "rate": 0.08,
           "duplicated": 14,
-          "total": 177,
+          "total": 175,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -731,11 +731,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:15bc82c8eaef135c8570cc915dfa8f4d64d266d421bfbdf7cc4ce548a83d841f",
-        "learner_content_sections_hash": "sha256:85a549fb0a004852a0f3a3a73909c1931a1030fde79dcd0d0d862a7e659f2888",
+        "tutorial_page_content_hash": "sha256:10d380e8008738b2a0ab4652e1d725e64657a5195e963c9951f0849d95972a87",
+        "learner_content_sections_hash": "sha256:824b42e761f294a9119c5ff7ed2012a814e1e8cfb20dd75627ed70a882759f33",
         "manuscript_sha256": "sha256:8aeeeae6ae0dd3cfba0858afed492e9ab2bcfc4276a755f0766544fab48fbf16",
-        "projection_ledger_sha256": "sha256:6a6cc6ab666e6e0924bf21ffb7725945f6ee62db827a1c8081401dca0f8a24d8",
-        "ledger_declared_page_content_sha256": "sha256:85a549fb0a004852a0f3a3a73909c1931a1030fde79dcd0d0d862a7e659f2888",
+        "projection_ledger_sha256": "sha256:062756be1a8456f4ef92eb3a2e59860f717e92bba970e57b43517358fd32c3bd",
+        "ledger_declared_page_content_sha256": "sha256:824b42e761f294a9119c5ff7ed2012a814e1e8cfb20dd75627ed70a882759f33",
         "ledger_declared_manuscript_sha256": "sha256:8aeeeae6ae0dd3cfba0858afed492e9ab2bcfc4276a755f0766544fab48fbf16",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -762,7 +762,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6396,
+        "learner_prose_cjk": 6364,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 14,
@@ -782,9 +782,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0872,
+          "rate": 0.0882,
           "duplicated": 15,
-          "total": 172,
+          "total": 170,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -829,11 +829,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:8d3e402a731155fe93991973cb4cbe6cf40e5e3c462eaa35f89901fb83770b3f",
-        "learner_content_sections_hash": "sha256:e398c0cbd6f72b74f648f7c0c0010b49e9f5292953c9b0e7f8fbcb275ed222da",
+        "tutorial_page_content_hash": "sha256:7097154b5e1cd796484909a16c558b183ad1f2a195dd58d6c7c2b51a86c84867",
+        "learner_content_sections_hash": "sha256:ea18fada06c7832a3ebe5f6f1dfd7e7f1fb7ebacfbd4b221c257faf210ffea15",
         "manuscript_sha256": "sha256:635f2b7824bc81343458414fb2b6fbff88b428c40509eeafcba2c3aebd56fd73",
-        "projection_ledger_sha256": "sha256:40b653af11985a577621de1f322e6907311738162cb0bcfffed3fcb1e06a3219",
-        "ledger_declared_page_content_sha256": "sha256:e398c0cbd6f72b74f648f7c0c0010b49e9f5292953c9b0e7f8fbcb275ed222da",
+        "projection_ledger_sha256": "sha256:cb57fa82ab16a0a1c8df570f196502322a47bc5f4b6713cf7d6dd9af59f7dd0d",
+        "ledger_declared_page_content_sha256": "sha256:ea18fada06c7832a3ebe5f6f1dfd7e7f1fb7ebacfbd4b221c257faf210ffea15",
         "ledger_declared_manuscript_sha256": "sha256:635f2b7824bc81343458414fb2b6fbff88b428c40509eeafcba2c3aebd56fd73",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -860,7 +860,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6346,
+        "learner_prose_cjk": 6322,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 15,
@@ -880,9 +880,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0877,
+          "rate": 0.0888,
           "duplicated": 15,
-          "total": 171,
+          "total": 169,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -927,11 +927,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:101957fb148853766758c6fdda6a1b65c1a9e8f9ec2304a9b3f69e7fd4c929d0",
-        "learner_content_sections_hash": "sha256:e97d2722e744066085c3a48cac9114998878c4f3a6cbbe02150eb41e1a6c53cb",
+        "tutorial_page_content_hash": "sha256:a11f74cb62e08a8e507641886a0059219e60d9ef5462817a45189eefbaa96ee4",
+        "learner_content_sections_hash": "sha256:7a446b0be64e72bb16bdf5609d7c16723c7960ccb879fad5b1f12830dcc4a603",
         "manuscript_sha256": "sha256:11617658a5dbd468a716f2e4bd7f4363fab07f3fe62c588e65b39246bb84fbe1",
-        "projection_ledger_sha256": "sha256:66bf01e8e1e3bca75f8bf686b367672aea5ffda8be5d613e911e61108ddca086",
-        "ledger_declared_page_content_sha256": "sha256:e97d2722e744066085c3a48cac9114998878c4f3a6cbbe02150eb41e1a6c53cb",
+        "projection_ledger_sha256": "sha256:4de68a5f4bb7d427d61a18171833d63f51dcf9933db849eb0b62f912ee205dc2",
+        "ledger_declared_page_content_sha256": "sha256:7a446b0be64e72bb16bdf5609d7c16723c7960ccb879fad5b1f12830dcc4a603",
         "ledger_declared_manuscript_sha256": "sha256:11617658a5dbd468a716f2e4bd7f4363fab07f3fe62c588e65b39246bb84fbe1",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -958,7 +958,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6107,
+        "learner_prose_cjk": 6081,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 15,
@@ -978,9 +978,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0726,
+          "rate": 0.0734,
           "duplicated": 13,
-          "total": 179,
+          "total": 177,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -1025,11 +1025,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:8a5b1b2ebd351926fa2985a04dbf78926b9345120bceb986cc086c4aefc251ab",
-        "learner_content_sections_hash": "sha256:f62e17b6f253924c13833602e8ce1c242478075c9029892694f6dbac9712fcc9",
+        "tutorial_page_content_hash": "sha256:c1f0336afb2fb5d3331bdf19cc50b18d5b6179a0deff919e422deaadd0492a02",
+        "learner_content_sections_hash": "sha256:f9487df6da9fc6e0043e9cee1ecaa55092aa13ef24f7df9c1d47954af2f1e729",
         "manuscript_sha256": "sha256:d125a68124fb394c30009bef3260b56159d666e70e7290c1ccbba0035f5c09be",
-        "projection_ledger_sha256": "sha256:a656e983158671119f34cdacb6eb2cd658bcac0ba50261c5af5ddf01646008b7",
-        "ledger_declared_page_content_sha256": "sha256:f62e17b6f253924c13833602e8ce1c242478075c9029892694f6dbac9712fcc9",
+        "projection_ledger_sha256": "sha256:b01f7b5b1e1c191f7c16eb42523a0e69dbcceab9fec050ad22b3b6c25857c4b9",
+        "ledger_declared_page_content_sha256": "sha256:f9487df6da9fc6e0043e9cee1ecaa55092aa13ef24f7df9c1d47954af2f1e729",
         "ledger_declared_manuscript_sha256": "sha256:d125a68124fb394c30009bef3260b56159d666e70e7290c1ccbba0035f5c09be",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1056,7 +1056,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6295,
+        "learner_prose_cjk": 6269,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 14,
@@ -1076,9 +1076,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0819,
+          "rate": 0.0828,
           "duplicated": 14,
-          "total": 171,
+          "total": 169,
           "compared_page_ids": [
             "TD-F01",
             "TD-P01",
@@ -1123,11 +1123,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:af17642f6110cb2628c3ae618f238a5f8ddb0e17d46e1e66cd19a955e4c03367",
-        "learner_content_sections_hash": "sha256:2ed386978dd134f2c3338a3dabeb6e7dbdca6f00a0c57c547be288bb52af74d4",
+        "tutorial_page_content_hash": "sha256:c90c54cff13462094d76f3f73167e7bd4e7aa8baed58a701c1e2e54deff31a2f",
+        "learner_content_sections_hash": "sha256:9bc9d1ae523bbc73a09dfe101ae0153fa71e4590bd10069a867ae44dad3074ed",
         "manuscript_sha256": "sha256:7fc0fccc7c861a1800a2bc56df66615b05030f69ff3a0dfdd494bff26e418d2f",
-        "projection_ledger_sha256": "sha256:4df38f9a6608bba7d415baeb8e9bdf94b5e26fcb62575a1b571c3ffa99153997",
-        "ledger_declared_page_content_sha256": "sha256:2ed386978dd134f2c3338a3dabeb6e7dbdca6f00a0c57c547be288bb52af74d4",
+        "projection_ledger_sha256": "sha256:60704e2889e2e22bebc26cb4dc1a7cf28c71b335e9fb17ad7c8c5168f49d066c",
+        "ledger_declared_page_content_sha256": "sha256:9bc9d1ae523bbc73a09dfe101ae0153fa71e4590bd10069a867ae44dad3074ed",
         "ledger_declared_manuscript_sha256": "sha256:7fc0fccc7c861a1800a2bc56df66615b05030f69ff3a0dfdd494bff26e418d2f",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1154,7 +1154,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5509,
+        "learner_prose_cjk": 5462,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -1173,9 +1173,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0526,
+          "rate": 0.0538,
           "duplicated": 7,
-          "total": 133,
+          "total": 130,
           "compared_page_ids": [
             "TD-PS02",
             "TD-PS03",
@@ -1224,11 +1224,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:10a2fcce7de4f9f2928e66ffcbbafc5d03b7c6637fdcb0ebbf2cbde64e443dd2",
-        "learner_content_sections_hash": "sha256:6890f0a7c7826c67b5c7b785d60150d75b8749b4ab68d86ffb38beb02b1ae1c5",
+        "tutorial_page_content_hash": "sha256:e4ea9268be5684d56d655871a257ab6b1761e1a092bcacc3d8947617e8c98b2a",
+        "learner_content_sections_hash": "sha256:ed5ea953e260df513d5e0fb888423a646cdd8e93fd2c1d59a69b4f11fc3c9098",
         "manuscript_sha256": "sha256:16158a04296cc125042776b9826b9fd3752c466fac7dfcf64b18d2e566a472dc",
-        "projection_ledger_sha256": "sha256:6ec2bb96bf967278c9fec3b5efd32da8b63169f7db444898ea769e4a08defed2",
-        "ledger_declared_page_content_sha256": "sha256:6890f0a7c7826c67b5c7b785d60150d75b8749b4ab68d86ffb38beb02b1ae1c5",
+        "projection_ledger_sha256": "sha256:96ba34a5422c74e1afa845aaf73225dcc3809f7131e9add07c6c7e32b6a3bc29",
+        "ledger_declared_page_content_sha256": "sha256:ed5ea953e260df513d5e0fb888423a646cdd8e93fd2c1d59a69b4f11fc3c9098",
         "ledger_declared_manuscript_sha256": "sha256:16158a04296cc125042776b9826b9fd3752c466fac7dfcf64b18d2e566a472dc",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1255,7 +1255,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5107,
+        "learner_prose_cjk": 5075,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -1274,9 +1274,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0598,
+          "rate": 0.0609,
           "duplicated": 7,
-          "total": 117,
+          "total": 115,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS03",
@@ -1325,11 +1325,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:cd3d07b480ccc04720e486c1396e2fd4238c929f9788cee06165c7312355db7e",
-        "learner_content_sections_hash": "sha256:59c48dd0f96fab0efa9450e00a66981106605b7e3dad7e8d6bc0d1f95c7a1e36",
+        "tutorial_page_content_hash": "sha256:83d38531908dc155b306abdd07750fc5fe555ab15548e46eca9c8be9e8137c4f",
+        "learner_content_sections_hash": "sha256:90ffe71c1d1e17c9da3b9f82e6f959d5eaecf81562ecee1dbf7ff337dc40e624",
         "manuscript_sha256": "sha256:ba8dc7dfeef089a19295c2086f5d70d4c787dc08a7a2adcdba53e9d0038dffd9",
-        "projection_ledger_sha256": "sha256:4ee0c5a8074cc43d7b92313a941e54d8073f3068e67e15bac87dc86b70b58ea1",
-        "ledger_declared_page_content_sha256": "sha256:59c48dd0f96fab0efa9450e00a66981106605b7e3dad7e8d6bc0d1f95c7a1e36",
+        "projection_ledger_sha256": "sha256:9bf519ad5d6b630333f3b3c7e97bf71261beda9667617093f452659abe8fddbe",
+        "ledger_declared_page_content_sha256": "sha256:90ffe71c1d1e17c9da3b9f82e6f959d5eaecf81562ecee1dbf7ff337dc40e624",
         "ledger_declared_manuscript_sha256": "sha256:ba8dc7dfeef089a19295c2086f5d70d4c787dc08a7a2adcdba53e9d0038dffd9",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1356,7 +1356,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5384,
+        "learner_prose_cjk": 5350,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -1376,9 +1376,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0588,
+          "rate": 0.0598,
           "duplicated": 7,
-          "total": 119,
+          "total": 117,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -1427,11 +1427,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:a7187992d498bb48a002c589f0a65120004b6325bf4f859273f7229e470aa248",
-        "learner_content_sections_hash": "sha256:fbcf3dc45844f5e92c645db03d755ea1e5b718c079bd1c4ff0a247a8a6545ddb",
+        "tutorial_page_content_hash": "sha256:1cfbbaa6c4d2e7762c99db5c9f15213840d823047bdbd4849c46a0d0db06a463",
+        "learner_content_sections_hash": "sha256:fe9de115b1d9f84f93a2db257b73c3e2da802cbd05737c3a6d19af306e6ed8c1",
         "manuscript_sha256": "sha256:ea1a16fbd31a5cc8a6e10cb7f428f1df5460681fdfe0401d0a70300b17ab2e6d",
-        "projection_ledger_sha256": "sha256:266b0c49b5049fba7b748c522a57d23f1ea5080137549a0479e5327f6f83475e",
-        "ledger_declared_page_content_sha256": "sha256:fbcf3dc45844f5e92c645db03d755ea1e5b718c079bd1c4ff0a247a8a6545ddb",
+        "projection_ledger_sha256": "sha256:fe0860cdb2af4be5f482ee58d3479d1be14e092ffdc57a8e84ccde2257f5b0a3",
+        "ledger_declared_page_content_sha256": "sha256:fe9de115b1d9f84f93a2db257b73c3e2da802cbd05737c3a6d19af306e6ed8c1",
         "ledger_declared_manuscript_sha256": "sha256:ea1a16fbd31a5cc8a6e10cb7f428f1df5460681fdfe0401d0a70300b17ab2e6d",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1458,7 +1458,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5273,
+        "learner_prose_cjk": 5239,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -1477,9 +1477,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0588,
+          "rate": 0.0598,
           "duplicated": 7,
-          "total": 119,
+          "total": 117,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -1528,11 +1528,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:16d80d13b10b3d9f0f53c728f68935b6e90c8fe682483770c900e62fc63a1a07",
-        "learner_content_sections_hash": "sha256:feaa87781f133bc4eb56909272546094b4d0c1638db6136e5234424142d2fbd8",
+        "tutorial_page_content_hash": "sha256:3563f6d7f2a5109407621950fbc03755ed36b56c042fe9f7f48397b068336083",
+        "learner_content_sections_hash": "sha256:82df81847ccab64d0db2a74c945a8fc8a37d76ec6d148323bcb47383898972d5",
         "manuscript_sha256": "sha256:0fa89e200555b970dc64de253e3af89d525fc4349a04ced709412abefe2b6212",
-        "projection_ledger_sha256": "sha256:11554f2dfd8cfab290bbe96ed14c57719006056c08bb80c44cf3b80736d292ba",
-        "ledger_declared_page_content_sha256": "sha256:feaa87781f133bc4eb56909272546094b4d0c1638db6136e5234424142d2fbd8",
+        "projection_ledger_sha256": "sha256:551b6a4bc664a1f38960472394957ce283f79c27f441c1917d1de483050259f8",
+        "ledger_declared_page_content_sha256": "sha256:82df81847ccab64d0db2a74c945a8fc8a37d76ec6d148323bcb47383898972d5",
         "ledger_declared_manuscript_sha256": "sha256:0fa89e200555b970dc64de253e3af89d525fc4349a04ced709412abefe2b6212",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1559,7 +1559,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5505,
+        "learner_prose_cjk": 5461,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -1578,9 +1578,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0598,
+          "rate": 0.0609,
           "duplicated": 7,
-          "total": 117,
+          "total": 115,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -1629,11 +1629,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:317ae07093fdb279cdd88b3f23e27297a8be7a22b8a420ed9dd4e6143bf7ea93",
-        "learner_content_sections_hash": "sha256:821640b9727ea8d61d03159c6734db158b67329aa18ac30bc8ee6db5b1e4e1f4",
+        "tutorial_page_content_hash": "sha256:cbdb20bc4bf34b3814956dfee6fcc6ef2b44b434c19c6348bdb00294441ca32a",
+        "learner_content_sections_hash": "sha256:996fe1913a9ff9ce3156cd3faecfb7d5805fde5e6334e8cf057edf3414973776",
         "manuscript_sha256": "sha256:01cf7ac0ad668a3f6ef4271ee2797c21886353513585f396274bd8596b1cdf6c",
-        "projection_ledger_sha256": "sha256:6b2fcadc6c6eea51c3db7402ea7f7338b9500cd4e1cb707748e04b7f135c6e2a",
-        "ledger_declared_page_content_sha256": "sha256:821640b9727ea8d61d03159c6734db158b67329aa18ac30bc8ee6db5b1e4e1f4",
+        "projection_ledger_sha256": "sha256:8f4e184606690af0b8d8e1840a185464b014a3d0b0e76e0716e4d0cdefec762a",
+        "ledger_declared_page_content_sha256": "sha256:996fe1913a9ff9ce3156cd3faecfb7d5805fde5e6334e8cf057edf3414973776",
         "ledger_declared_manuscript_sha256": "sha256:01cf7ac0ad668a3f6ef4271ee2797c21886353513585f396274bd8596b1cdf6c",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1660,7 +1660,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5360,
+        "learner_prose_cjk": 5334,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -1679,9 +1679,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0609,
+          "rate": 0.0619,
           "duplicated": 7,
-          "total": 115,
+          "total": 113,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -1730,11 +1730,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:5e21be904cd3bae857d950d3fc7ca1df31005a0e8c7971e728211fd5ab7180ad",
-        "learner_content_sections_hash": "sha256:ab1bfb71ab2182c769975f88e61ed703420453357c25870844105cca1f2644f2",
+        "tutorial_page_content_hash": "sha256:be2a2f2d55bf16c0b09d63de9379bb000b28a7b02ab4892ff1c3944a51d17d73",
+        "learner_content_sections_hash": "sha256:5c02e8477018407d2b3ef4b971af1142543992af19b92562e3c71e97cb3dba97",
         "manuscript_sha256": "sha256:5bee3852ad63c8bf644da9d1703da71a2aa2e2166bce4767f669abbe9040e9da",
-        "projection_ledger_sha256": "sha256:37ba12d5f0817953e03098d99a2b236340ad58608f4593b0658a1331a05c1313",
-        "ledger_declared_page_content_sha256": "sha256:ab1bfb71ab2182c769975f88e61ed703420453357c25870844105cca1f2644f2",
+        "projection_ledger_sha256": "sha256:3ddf259e4eb64882419944712d1854507773fc218ddd6bc616e7c2a21acf1a3a",
+        "ledger_declared_page_content_sha256": "sha256:5c02e8477018407d2b3ef4b971af1142543992af19b92562e3c71e97cb3dba97",
         "ledger_declared_manuscript_sha256": "sha256:5bee3852ad63c8bf644da9d1703da71a2aa2e2166bce4767f669abbe9040e9da",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1761,7 +1761,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5244,
+        "learner_prose_cjk": 5212,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -1780,9 +1780,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0593,
+          "rate": 0.0603,
           "duplicated": 7,
-          "total": 118,
+          "total": 116,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -1831,11 +1831,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:09ba83c829505f641af832eac2b42782e0176786bd2cd1e35665ae1b1c7b6a9c",
-        "learner_content_sections_hash": "sha256:52e3ae9bd41b4c46246b7701cd922405119964979063e66380ecbcccc2169389",
+        "tutorial_page_content_hash": "sha256:0740d18e93f1d8341eff76a402733d6c3d601c859835cb9524b2d166a731b31d",
+        "learner_content_sections_hash": "sha256:9a2e0b5b3d1f6d2465293439bad4003f32a28371cf8b33b49572026f3b3a812d",
         "manuscript_sha256": "sha256:64faed2698e3e1cdaa0e3d1192280a66d924f3e40c506764c2accf75314d743a",
-        "projection_ledger_sha256": "sha256:89ccfcbf2d651e500946e72d8e2327dfa2e283c14728c21af7905916eb038ef0",
-        "ledger_declared_page_content_sha256": "sha256:52e3ae9bd41b4c46246b7701cd922405119964979063e66380ecbcccc2169389",
+        "projection_ledger_sha256": "sha256:829f4f4d4205bb14ee2dee733896e3a16c94299b11297a0302fa2909fb76069d",
+        "ledger_declared_page_content_sha256": "sha256:9a2e0b5b3d1f6d2465293439bad4003f32a28371cf8b33b49572026f3b3a812d",
         "ledger_declared_manuscript_sha256": "sha256:64faed2698e3e1cdaa0e3d1192280a66d924f3e40c506764c2accf75314d743a",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1862,7 +1862,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5426,
+        "learner_prose_cjk": 5392,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 11,
@@ -1881,9 +1881,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.056,
+          "rate": 0.0569,
           "duplicated": 7,
-          "total": 125,
+          "total": 123,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -1932,11 +1932,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:51018f4d6032e610e2f4d21d6b7a4b9fe51334255238714853b9214760767fe7",
-        "learner_content_sections_hash": "sha256:b81570bfc9fbf7d6b5be776c262853b644fb5b0b78f352ad066b972d96624ae6",
+        "tutorial_page_content_hash": "sha256:174042a8924cd2b6531110b98b953fddd3c4b616549e838cb8f34c9d6997dc02",
+        "learner_content_sections_hash": "sha256:f8bc014784f323008d39c85a31ef61ebd645ce8175d80b86c3d2015facb95723",
         "manuscript_sha256": "sha256:544521db62ed7c8b0b470495561274e726cfeddce315a91c62e6e9976531032d",
-        "projection_ledger_sha256": "sha256:b44884aaffc2b85f20dde1df3c7446841c353c0e2a352df998b16131897de820",
-        "ledger_declared_page_content_sha256": "sha256:b81570bfc9fbf7d6b5be776c262853b644fb5b0b78f352ad066b972d96624ae6",
+        "projection_ledger_sha256": "sha256:20d22c7f81abfb7185c9c4565b2deabfe93f5e71ed9232648cb56185fa9a84c8",
+        "ledger_declared_page_content_sha256": "sha256:f8bc014784f323008d39c85a31ef61ebd645ce8175d80b86c3d2015facb95723",
         "ledger_declared_manuscript_sha256": "sha256:544521db62ed7c8b0b470495561274e726cfeddce315a91c62e6e9976531032d",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -1963,7 +1963,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5021,
+        "learner_prose_cjk": 4989,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -1982,9 +1982,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0588,
+          "rate": 0.0598,
           "duplicated": 7,
-          "total": 119,
+          "total": 117,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -2033,11 +2033,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:28eb0459cec17fa8d9a23b0c8185a13e3eb5811075031dde597adf47c9ce7931",
-        "learner_content_sections_hash": "sha256:3ce7fe1b7711b9385aa2871bdc589a2737108eae0e481ce72bc98d9dab31b674",
+        "tutorial_page_content_hash": "sha256:0b7c589626fa55e802b977a742c68f74a0a81ae5dbc3303ba2f5929ba3676604",
+        "learner_content_sections_hash": "sha256:145238a0cd5a33eafaeb96a68b3e31e7d1430523cd25a9ede4dc37b9f3953307",
         "manuscript_sha256": "sha256:851920c908505bc5b68d33f1fb551e2ea6442b52f5685846c8ada8da6f042871",
-        "projection_ledger_sha256": "sha256:1c2d6e67ee7e31cbb2d766cef88b0d51bd49e452ae5101e354ebac37c6f380b6",
-        "ledger_declared_page_content_sha256": "sha256:3ce7fe1b7711b9385aa2871bdc589a2737108eae0e481ce72bc98d9dab31b674",
+        "projection_ledger_sha256": "sha256:16d86311be176fbc3225d4359d5c6d93219ac201d7001b8e47cee2182616aec9",
+        "ledger_declared_page_content_sha256": "sha256:145238a0cd5a33eafaeb96a68b3e31e7d1430523cd25a9ede4dc37b9f3953307",
         "ledger_declared_manuscript_sha256": "sha256:851920c908505bc5b68d33f1fb551e2ea6442b52f5685846c8ada8da6f042871",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2064,7 +2064,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5375,
+        "learner_prose_cjk": 5349,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -2083,9 +2083,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0588,
+          "rate": 0.0598,
           "duplicated": 7,
-          "total": 119,
+          "total": 117,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -2134,11 +2134,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:9091d534fd566334cee9fec45e4e1748c9290ed4843a9fba57e8855a41815da3",
-        "learner_content_sections_hash": "sha256:976ba1c4c3ad11275329f664fdf9f7975b62e03746aebdabc1699d9c8cc30b9a",
+        "tutorial_page_content_hash": "sha256:5c675e54c99e0f1916f44d0502a92ec82b9cc7508c0925681a7b6363f139b34c",
+        "learner_content_sections_hash": "sha256:2e4690c41820c77f0d8c49f51252bf275885a423ca4aba9dad92dbf5870a6f2f",
         "manuscript_sha256": "sha256:8fd5d49170178ed3812cb4751d8c23653525338306e5ab71bd39340c0edd6bf0",
-        "projection_ledger_sha256": "sha256:9dffc0d612b7dffea8e8ecf188f832e540db39d0ca892b5c9034d5f918eea8d7",
-        "ledger_declared_page_content_sha256": "sha256:976ba1c4c3ad11275329f664fdf9f7975b62e03746aebdabc1699d9c8cc30b9a",
+        "projection_ledger_sha256": "sha256:a7f88a3cbd675ca5a82e23e9f2df4add6cb2aa6670d816016eb0b1a8f5a7173a",
+        "ledger_declared_page_content_sha256": "sha256:2e4690c41820c77f0d8c49f51252bf275885a423ca4aba9dad92dbf5870a6f2f",
         "ledger_declared_manuscript_sha256": "sha256:8fd5d49170178ed3812cb4751d8c23653525338306e5ab71bd39340c0edd6bf0",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2165,7 +2165,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5233,
+        "learner_prose_cjk": 5207,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 10,
@@ -2184,9 +2184,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0654,
+          "rate": 0.0667,
           "duplicated": 7,
-          "total": 107,
+          "total": 105,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -2235,11 +2235,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f0544e3df97d014881ea545c8b3cab36875d2dfec0026de789178a583d619f69",
-        "learner_content_sections_hash": "sha256:b25a4de8e1e767f690b70c15eadc23b38e0dc496b327cb4d589d5ea3981c6028",
+        "tutorial_page_content_hash": "sha256:aef38aa433aca355c85d9f0507db7d30ded1ef5e20d37ad4b1915a3351777e17",
+        "learner_content_sections_hash": "sha256:0560289b8175bb2dccb499ed7dfe729cfcc2cd9a2159aa827454adf70d6a6631",
         "manuscript_sha256": "sha256:c51c1c81cff5c2fc6e9d913fd5d871d73010c56ec6d4ccf0b7b763e79e694086",
-        "projection_ledger_sha256": "sha256:3340d67c47e50d1688b3c7fe501a87b80fc4291a7cfcef310b89ef09235eebf5",
-        "ledger_declared_page_content_sha256": "sha256:b25a4de8e1e767f690b70c15eadc23b38e0dc496b327cb4d589d5ea3981c6028",
+        "projection_ledger_sha256": "sha256:35dad9a1fad497d94ffabc2ce29976d8a9454b153bec9badd1482f097306c1f8",
+        "ledger_declared_page_content_sha256": "sha256:0560289b8175bb2dccb499ed7dfe729cfcc2cd9a2159aa827454adf70d6a6631",
         "ledger_declared_manuscript_sha256": "sha256:c51c1c81cff5c2fc6e9d913fd5d871d73010c56ec6d4ccf0b7b763e79e694086",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2266,7 +2266,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5622,
+        "learner_prose_cjk": 5592,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -2285,9 +2285,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0574,
+          "rate": 0.0583,
           "duplicated": 7,
-          "total": 122,
+          "total": 120,
           "compared_page_ids": [
             "TD-PS01",
             "TD-PS02",
@@ -2336,11 +2336,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:b11f61fb28162bd7cf343397352becee3d5f0c181fa033ce204f34536524fa7a",
-        "learner_content_sections_hash": "sha256:e7fcc8787bcd86a33cd2e797946d989fad9b19c23645b24b38edb3dcf7bf2aab",
+        "tutorial_page_content_hash": "sha256:09b0b9c1947851f7643f4975968d7519742e217c728074ae3e4d52ea10d2e607",
+        "learner_content_sections_hash": "sha256:2d39fc16b3b08b9aea3124602bf5e624a0d90af41066cd07ad7dc6f31755e947",
         "manuscript_sha256": "sha256:3bc56cddae6f0409b1007f33c2c34ac3937e19a0ac0b3887435cb349bff0004e",
-        "projection_ledger_sha256": "sha256:d7588dc9bbe8f47eb23b5f2fb4a098f9a8d2aa0d8bf0416696a5a591ae0993ce",
-        "ledger_declared_page_content_sha256": "sha256:e7fcc8787bcd86a33cd2e797946d989fad9b19c23645b24b38edb3dcf7bf2aab",
+        "projection_ledger_sha256": "sha256:20d5ac78ff3dc91658dd65e8c63884282346287c127990a91dcb93e7f52732ea",
+        "ledger_declared_page_content_sha256": "sha256:2d39fc16b3b08b9aea3124602bf5e624a0d90af41066cd07ad7dc6f31755e947",
         "ledger_declared_manuscript_sha256": "sha256:3bc56cddae6f0409b1007f33c2c34ac3937e19a0ac0b3887435cb349bff0004e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2367,7 +2367,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5456,
+        "learner_prose_cjk": 5436,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -2437,11 +2437,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:6cc7adde589592f2867812c9d0d1437f068df50d99e1499a08b17b26e8dd07a3",
-        "learner_content_sections_hash": "sha256:3bd1a5e0b138065a2c527210cebc795809344ac308a99a7f1d45d460e312e0ea",
+        "tutorial_page_content_hash": "sha256:4c810b4e059dc77d40704048e23b392c0f20fa5d2c9363923e7d6e6ee065a74d",
+        "learner_content_sections_hash": "sha256:a48dceea6929ae0dbf3eab1e888714339d492ba61a7022f40fb2c660861446aa",
         "manuscript_sha256": "sha256:6140020cdd2955f80f14131f197728cee5a77a479a0d40472d6895c4d131266e",
-        "projection_ledger_sha256": "sha256:a30634898ca4a4126a8c883057fd4e355333b751cffa5d29b62b6fb961119b78",
-        "ledger_declared_page_content_sha256": "sha256:3bd1a5e0b138065a2c527210cebc795809344ac308a99a7f1d45d460e312e0ea",
+        "projection_ledger_sha256": "sha256:4870c1272e9ef735e691737cb005a866c3f13ca45d143c4c93b82ac75fba3abd",
+        "ledger_declared_page_content_sha256": "sha256:a48dceea6929ae0dbf3eab1e888714339d492ba61a7022f40fb2c660861446aa",
         "ledger_declared_manuscript_sha256": "sha256:6140020cdd2955f80f14131f197728cee5a77a479a0d40472d6895c4d131266e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2468,7 +2468,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 7041,
+        "learner_prose_cjk": 7001,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 12,
@@ -2488,9 +2488,9 @@
         "page_specific_material_count": 9,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0292,
+          "rate": 0.0296,
           "duplicated": 5,
-          "total": 171,
+          "total": 169,
           "compared_page_ids": [
             "TD-F02",
             "TD-F03",
@@ -2534,11 +2534,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:17c5672706f82793aad9f47ca50218ee9f9e7460155c1a15a980f25836afbea2",
-        "learner_content_sections_hash": "sha256:0127f3083fc198523485311b4cbf024805721ee3582ad7f032e58b1ca4ba3b69",
+        "tutorial_page_content_hash": "sha256:3446eeeb2b45ffd3406164716697dd9da56d0d4dc0d903951f656b9057f3a3eb",
+        "learner_content_sections_hash": "sha256:c2dfed576ac729fc731c016fc44f6101075813525ba63de3899a1c93f35a78d4",
         "manuscript_sha256": "sha256:db9fc84cd0776868a8e20431f135ff67275c05c292dd3cb79d32b117ed941e05",
-        "projection_ledger_sha256": "sha256:6e8b5b802dd44ce16833c68a980dcf7c9e90e8569e5436b1d7b9afd06d0fb56f",
-        "ledger_declared_page_content_sha256": "sha256:0127f3083fc198523485311b4cbf024805721ee3582ad7f032e58b1ca4ba3b69",
+        "projection_ledger_sha256": "sha256:a583b255c9c0afe41562a5640675c5e53c7ebb3f9b8555a3edf9dadc2ccf97e3",
+        "ledger_declared_page_content_sha256": "sha256:c2dfed576ac729fc731c016fc44f6101075813525ba63de3899a1c93f35a78d4",
         "ledger_declared_manuscript_sha256": "sha256:db9fc84cd0776868a8e20431f135ff67275c05c292dd3cb79d32b117ed941e05",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2565,7 +2565,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4794,
+        "learner_prose_cjk": 4721,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -2585,9 +2585,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0526,
+          "rate": 0.0545,
           "duplicated": 6,
-          "total": 114,
+          "total": 110,
           "compared_page_ids": [
             "TD-FP01",
             "TD-F03",
@@ -2631,11 +2631,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:ac41b12447f1403893680f0f5a1bd008569ef071847f7bebb0e417f09d552664",
-        "learner_content_sections_hash": "sha256:55280ed653812e9fc6265ecc346b3e9fadedbda2030599dfd3863723ab08d8c0",
+        "tutorial_page_content_hash": "sha256:3796905f58366c82c7be0cd5ec1747579ddd931bd9f7b82bd2c7a4eaa22f8c0e",
+        "learner_content_sections_hash": "sha256:9b254f3eb1361526472ce202e27f3d5e6b6a990a10a3ecb2c7715d7f8d42612c",
         "manuscript_sha256": "sha256:82b4508393dc28d137620ec0bfb5b0d20b132253d2d067b739e2673f4ed2354c",
-        "projection_ledger_sha256": "sha256:8c17c205dd543417ef187dc8f6930b9b87ef7a7e24d8d2c2827819ff8949a51c",
-        "ledger_declared_page_content_sha256": "sha256:55280ed653812e9fc6265ecc346b3e9fadedbda2030599dfd3863723ab08d8c0",
+        "projection_ledger_sha256": "sha256:476d7d5e9ae7fb4436952ab4e11a67c91dac521d67440317ddbf144726e2d863",
+        "ledger_declared_page_content_sha256": "sha256:9b254f3eb1361526472ce202e27f3d5e6b6a990a10a3ecb2c7715d7f8d42612c",
         "ledger_declared_manuscript_sha256": "sha256:82b4508393dc28d137620ec0bfb5b0d20b132253d2d067b739e2673f4ed2354c",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2662,7 +2662,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4734,
+        "learner_prose_cjk": 4684,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -2681,9 +2681,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0508,
+          "rate": 0.0522,
           "duplicated": 6,
-          "total": 118,
+          "total": 115,
           "compared_page_ids": [
             "TD-FP01",
             "TD-F02",
@@ -2727,11 +2727,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:4acefc1494b9e2fd1aed272df8912a9c34dfbb1e84ab5453e1811a20f89cdc54",
-        "learner_content_sections_hash": "sha256:b4a36828775692cc9f75085ecd10415f406f43526039ac35aeec088ec9772893",
+        "tutorial_page_content_hash": "sha256:0ef5d084a26842bf5a4191065b7515ae2f2eea4a2bd5c2b467919b5f469586b2",
+        "learner_content_sections_hash": "sha256:a08f7e6274205d75d23769110d36cb32d601531accfa2f78c8e27c72d3b4f9f9",
         "manuscript_sha256": "sha256:2c88b009fef1c7648ecb1c275f503f90ca7029cc76f778c151a90a0f7a18c24a",
-        "projection_ledger_sha256": "sha256:15ac6ead38b34ca6d07c0b7695f8bd5fe27b5312079f1376e4303a9997dd9654",
-        "ledger_declared_page_content_sha256": "sha256:b4a36828775692cc9f75085ecd10415f406f43526039ac35aeec088ec9772893",
+        "projection_ledger_sha256": "sha256:2701d6cb00e34988ca7d3dc1a540fff0b264b14868e7e2ea93df864aa3007ff8",
+        "ledger_declared_page_content_sha256": "sha256:a08f7e6274205d75d23769110d36cb32d601531accfa2f78c8e27c72d3b4f9f9",
         "ledger_declared_manuscript_sha256": "sha256:2c88b009fef1c7648ecb1c275f503f90ca7029cc76f778c151a90a0f7a18c24a",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2758,7 +2758,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4561,
+        "learner_prose_cjk": 4535,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -2777,9 +2777,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0561,
+          "rate": 0.0571,
           "duplicated": 6,
-          "total": 107,
+          "total": 105,
           "compared_page_ids": [
             "TD-FP01",
             "TD-F02",
@@ -2823,11 +2823,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:e1ecd52a38834fa99523354bbd90de5330de5a4a5fa39c2ad45043fa91c3f933",
-        "learner_content_sections_hash": "sha256:a05adaaba5e223e22b54e99ba854ba3f94f48217ba4a2852f15dc2445ab5cbd3",
+        "tutorial_page_content_hash": "sha256:ec26392ff6fe43d68f0ed9073e7cb8b34e3a148a460d9ad2dbd94a67ca052d9d",
+        "learner_content_sections_hash": "sha256:add6af955d457c3c9065310516f62ca75624602cc37fccbe89f61e6ea348a4af",
         "manuscript_sha256": "sha256:490b0f2a593cbb7c60365b16fab9bb6a9a1ec9e61ecc53fd14da10ca9c264996",
-        "projection_ledger_sha256": "sha256:1851d6672b8fee087ed2d8e2f3140ece5c477787736fac106de529962c2b0d77",
-        "ledger_declared_page_content_sha256": "sha256:a05adaaba5e223e22b54e99ba854ba3f94f48217ba4a2852f15dc2445ab5cbd3",
+        "projection_ledger_sha256": "sha256:341099f81ede488562aa61125ef6a141edc2424f157d41f05bad74f6fa03976f",
+        "ledger_declared_page_content_sha256": "sha256:add6af955d457c3c9065310516f62ca75624602cc37fccbe89f61e6ea348a4af",
         "ledger_declared_manuscript_sha256": "sha256:490b0f2a593cbb7c60365b16fab9bb6a9a1ec9e61ecc53fd14da10ca9c264996",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2854,7 +2854,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4503,
+        "learner_prose_cjk": 4480,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 10,
@@ -2873,9 +2873,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0566,
+          "rate": 0.0571,
           "duplicated": 6,
-          "total": 106,
+          "total": 105,
           "compared_page_ids": [
             "TD-FP01",
             "TD-F02",
@@ -2919,11 +2919,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:c22cb1a4b39007a8a117fa6984c4730e49416423ae1b34ebbccef5693a1af0d3",
-        "learner_content_sections_hash": "sha256:77ab0e1b282878f2815f73e1f9977bdebf9f8d1aa4d0fe93a81868de88676691",
+        "tutorial_page_content_hash": "sha256:c6ea139dc42410363cdc265fa1b31a619f7e4be14a426d764316f5533287f562",
+        "learner_content_sections_hash": "sha256:111ecab04d06abf2e003b1dbe40669a7dfa9ab73eac2fd34a57ae207294d88d3",
         "manuscript_sha256": "sha256:79ec4aa6caf33c79d1b20e900923f772e0b7bc9addbeb7270ac5b56fc17625bd",
-        "projection_ledger_sha256": "sha256:fa6a58e0cd6ece6b54eb685fef85483a83bc83f9dce22ad01dfb2fdca91a483c",
-        "ledger_declared_page_content_sha256": "sha256:77ab0e1b282878f2815f73e1f9977bdebf9f8d1aa4d0fe93a81868de88676691",
+        "projection_ledger_sha256": "sha256:5539ebc1bc18e7438737902220f4247b34065e1b7c3215f41872cf5126f3f90f",
+        "ledger_declared_page_content_sha256": "sha256:111ecab04d06abf2e003b1dbe40669a7dfa9ab73eac2fd34a57ae207294d88d3",
         "ledger_declared_manuscript_sha256": "sha256:79ec4aa6caf33c79d1b20e900923f772e0b7bc9addbeb7270ac5b56fc17625bd",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -2950,7 +2950,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4226,
+        "learner_prose_cjk": 4187,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -3016,11 +3016,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f69bafcc08da48306f07acf559bd7189117c357e2dbcc6599c90aef193a0f0c3",
-        "learner_content_sections_hash": "sha256:322ea292d7cbc6216d4a01abdabb0afe8b6ae809755d973e9d7c6b70ed342942",
+        "tutorial_page_content_hash": "sha256:e1215cb990a1e429a8f41dbfa87882dd8d649f99feadc0b7475a255c2786ddba",
+        "learner_content_sections_hash": "sha256:5fdbf84cd41d83cef0a5b6d80eb1f452dde94ad6509e94ca61d5ae28e9084c52",
         "manuscript_sha256": "sha256:31a36ea9e2000be3604de7b3dd8f97058b56f7485c0c0e7cee48199d97cd43ef",
-        "projection_ledger_sha256": "sha256:0fd5ddee479676503c0adcf436e2b257d25d12e99a1b06bec77f8f33f795f422",
-        "ledger_declared_page_content_sha256": "sha256:322ea292d7cbc6216d4a01abdabb0afe8b6ae809755d973e9d7c6b70ed342942",
+        "projection_ledger_sha256": "sha256:acbe2ff2317b643dd2034d8da3208f83cd07293b11c7f7fe20d5ce16ae0ea2b8",
+        "ledger_declared_page_content_sha256": "sha256:5fdbf84cd41d83cef0a5b6d80eb1f452dde94ad6509e94ca61d5ae28e9084c52",
         "ledger_declared_manuscript_sha256": "sha256:31a36ea9e2000be3604de7b3dd8f97058b56f7485c0c0e7cee48199d97cd43ef",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3047,7 +3047,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4520,
+        "learner_prose_cjk": 4475,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 10,
@@ -3066,9 +3066,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.055,
+          "rate": 0.0566,
           "duplicated": 6,
-          "total": 109,
+          "total": 106,
           "compared_page_ids": [
             "TD-FP01",
             "TD-F02",
@@ -3112,11 +3112,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f6d2220bcbc20ed2d768045e8d127d13586f50cd6c2a0fe86a5ca0846697652b",
-        "learner_content_sections_hash": "sha256:f06566f6b9391eb3399dd2a2bb695a9c9308cfaf9e515d42581ea63d97e27ebb",
+        "tutorial_page_content_hash": "sha256:0d3e76f1b93dd97d191e399a3b7510f3a712332c95b8d5bdf7c2e4f52b4ac622",
+        "learner_content_sections_hash": "sha256:150e4b73470afd39eb1c10210d740b1d50ad2c97bbd1f1710d8d49793ba10a97",
         "manuscript_sha256": "sha256:cc6ad4df70dff4e031d1cd9e031b0320fd25c8fb92ac0e8517931e54dc0a503b",
-        "projection_ledger_sha256": "sha256:6d77cd927ae091781badf5a243b2732748f654890443069a8335652e5d2e5dc0",
-        "ledger_declared_page_content_sha256": "sha256:f06566f6b9391eb3399dd2a2bb695a9c9308cfaf9e515d42581ea63d97e27ebb",
+        "projection_ledger_sha256": "sha256:a85a48503fc3967cac03f4f206ebbbee6d10b68db4a6ae0130d17531258f284c",
+        "ledger_declared_page_content_sha256": "sha256:150e4b73470afd39eb1c10210d740b1d50ad2c97bbd1f1710d8d49793ba10a97",
         "ledger_declared_manuscript_sha256": "sha256:cc6ad4df70dff4e031d1cd9e031b0320fd25c8fb92ac0e8517931e54dc0a503b",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3143,7 +3143,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4453,
+        "learner_prose_cjk": 4411,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 10,
@@ -3162,9 +3162,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0522,
+          "rate": 0.0536,
           "duplicated": 6,
-          "total": 115,
+          "total": 112,
           "compared_page_ids": [
             "TD-FP01",
             "TD-F02",
@@ -3208,11 +3208,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:dc9cd3cce4898bfbe6a7052e187e4a48631a671c6fcbd698ef636cd75ae16801",
-        "learner_content_sections_hash": "sha256:8ede61edf0e8f192370b5a99897c708612aa8086a0f50dcd60953303851272e4",
+        "tutorial_page_content_hash": "sha256:65f489f31e6a60a4ec260808992a51538a37b36baf9ec2ee0958370147fa6c34",
+        "learner_content_sections_hash": "sha256:6734018bffabfc21883d11aabb6d8d0f7a3068150d4b065aa21cc91e1242e951",
         "manuscript_sha256": "sha256:465a6fb280f3e05b066697248ace71ca103ade942d5562033d7d3174d35c2ea2",
-        "projection_ledger_sha256": "sha256:d993a26ae04067779a610d4fc0a5a8aaef778ec15404fc8c2f3c05f390b4b286",
-        "ledger_declared_page_content_sha256": "sha256:8ede61edf0e8f192370b5a99897c708612aa8086a0f50dcd60953303851272e4",
+        "projection_ledger_sha256": "sha256:985acb2bd1bd6875b2541009d7d8b309eff1de035a9c8142ddd61f144b798f33",
+        "ledger_declared_page_content_sha256": "sha256:6734018bffabfc21883d11aabb6d8d0f7a3068150d4b065aa21cc91e1242e951",
         "ledger_declared_manuscript_sha256": "sha256:465a6fb280f3e05b066697248ace71ca103ade942d5562033d7d3174d35c2ea2",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3239,7 +3239,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4638,
+        "learner_prose_cjk": 4606,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -3258,9 +3258,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0275,
+          "rate": 0.028,
           "duplicated": 3,
-          "total": 109,
+          "total": 107,
           "compared_page_ids": [
             "TD-T06",
             "TD-T07",
@@ -3300,11 +3300,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:9f9de7ac42e97154fbd91f7eb849acb51e6eb1f65d36249cc4a4fbc72086aaae",
-        "learner_content_sections_hash": "sha256:c7825387f927d1b9024133df2050e48f7554d548a3c333204e98dcdf56e918ee",
+        "tutorial_page_content_hash": "sha256:057139aa7d0951c46adbebb76eb8a6795c6f76e83c4472b232570ed4953d0e92",
+        "learner_content_sections_hash": "sha256:f05027ee81f0eea229839dc7c732278c32514f99d69ec7a831cad8f5f8dc8df6",
         "manuscript_sha256": "sha256:191580d5dbc2f1eeab58a3fdeeb27f6c75fb5f24a2409f641355728b0495cc59",
-        "projection_ledger_sha256": "sha256:239e3a4dc673de9c18c008d0dee61771bba4edd000bbf37a206bdb3184042056",
-        "ledger_declared_page_content_sha256": "sha256:c7825387f927d1b9024133df2050e48f7554d548a3c333204e98dcdf56e918ee",
+        "projection_ledger_sha256": "sha256:b195827bf51cd5c9be85cc3417700985237b885fb5b3477399c050c8e6a2f419",
+        "ledger_declared_page_content_sha256": "sha256:f05027ee81f0eea229839dc7c732278c32514f99d69ec7a831cad8f5f8dc8df6",
         "ledger_declared_manuscript_sha256": "sha256:191580d5dbc2f1eeab58a3fdeeb27f6c75fb5f24a2409f641355728b0495cc59",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3331,7 +3331,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4762,
+        "learner_prose_cjk": 4726,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -3392,11 +3392,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:9e7b2771f6ef1f02205275aaaae9a44d5bbc877b22d2c144eb08e44ae3242c77",
-        "learner_content_sections_hash": "sha256:1379f4c71e0741267dd49bd75d4fbca5f87db2d345d2bcfb2204063a334a34c4",
+        "tutorial_page_content_hash": "sha256:492a53b176448b38b134866631848ad38ca1c8767af33af232d8e88fe32bb1ac",
+        "learner_content_sections_hash": "sha256:a43809e8bf0aa652b2183c19987cabd8ae897b1df870c2e3638b66e8c2fba540",
         "manuscript_sha256": "sha256:c2321a14377432c1d7705368a45dab5b4cc6e27d803d731298b4d7cfc0184ad2",
-        "projection_ledger_sha256": "sha256:bf04bb0ec38da3182b6639b9301520cbc9c9fac2ac207c111c17d46fdfa5ec5a",
-        "ledger_declared_page_content_sha256": "sha256:1379f4c71e0741267dd49bd75d4fbca5f87db2d345d2bcfb2204063a334a34c4",
+        "projection_ledger_sha256": "sha256:b9526195da05cca304d90e03a1f5dea63a8df93ad1c0b11a369ebdcd80188ac2",
+        "ledger_declared_page_content_sha256": "sha256:a43809e8bf0aa652b2183c19987cabd8ae897b1df870c2e3638b66e8c2fba540",
         "ledger_declared_manuscript_sha256": "sha256:c2321a14377432c1d7705368a45dab5b4cc6e27d803d731298b4d7cfc0184ad2",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3423,7 +3423,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4750,
+        "learner_prose_cjk": 4697,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -3442,9 +3442,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0252,
+          "rate": 0.0259,
           "duplicated": 3,
-          "total": 119,
+          "total": 116,
           "compared_page_ids": [
             "TD-T05",
             "TD-T06",
@@ -3484,11 +3484,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:4c1cbf643077d78be5c6c6dc17403e9773356adec9eddf25e807246f04d076fe",
-        "learner_content_sections_hash": "sha256:53ee783f51e62e1df864be294b7b6d7a53f154c021cd969985f8241642710b88",
+        "tutorial_page_content_hash": "sha256:0863c422812f9ffce312398e2d54f5bf1ae75ffb3617db28f7571c4e7c519616",
+        "learner_content_sections_hash": "sha256:692f1384ad1b8369fe30e29bd4e46c92c9f0efb082ad1f72ed8e09e24cd3bca7",
         "manuscript_sha256": "sha256:ff8c2165c4774b3fe5343632508bb7857e1e770d4ba578169a95fa35fc3d074b",
-        "projection_ledger_sha256": "sha256:9c8e56772085f6ffede089dc96ab1cfadb9697d3d3237b377fa3f89d2561f14d",
-        "ledger_declared_page_content_sha256": "sha256:53ee783f51e62e1df864be294b7b6d7a53f154c021cd969985f8241642710b88",
+        "projection_ledger_sha256": "sha256:12bcc5eee1b55b9ccd15079afb8d76eee18d799c630157d23171098bd66cf4f0",
+        "ledger_declared_page_content_sha256": "sha256:692f1384ad1b8369fe30e29bd4e46c92c9f0efb082ad1f72ed8e09e24cd3bca7",
         "ledger_declared_manuscript_sha256": "sha256:ff8c2165c4774b3fe5343632508bb7857e1e770d4ba578169a95fa35fc3d074b",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3515,7 +3515,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4588,
+        "learner_prose_cjk": 4510,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -3534,9 +3534,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0265,
+          "rate": 0.027,
           "duplicated": 3,
-          "total": 113,
+          "total": 111,
           "compared_page_ids": [
             "TD-T05",
             "TD-T06",
@@ -3576,11 +3576,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:76ef58f630fa5032e46271a162123727c1925550efa4e2e5e606981b7e0a746e",
-        "learner_content_sections_hash": "sha256:96432330935f3dc259d4f29f220ddb1a26169ebfb85e8a2a4df044fba7627040",
+        "tutorial_page_content_hash": "sha256:24f9fc3294f5c8f24db4d945cd78b4bc68fd62710ba80f32ca0879a7a83122b6",
+        "learner_content_sections_hash": "sha256:8d745f9bfed5e2db494d2b491ab10af8a59e62454b7ea71b22e7a3d8af04e2fc",
         "manuscript_sha256": "sha256:2ff93c623c81e8a2290f7f604c6b663f65488d63d5f61beab49b47b96781991e",
-        "projection_ledger_sha256": "sha256:3768d8a85c482cb0ad4730fb961e5aad5faedf67ad86f8b3f88b2c4e8c118f32",
-        "ledger_declared_page_content_sha256": "sha256:96432330935f3dc259d4f29f220ddb1a26169ebfb85e8a2a4df044fba7627040",
+        "projection_ledger_sha256": "sha256:190a76635533e7c04147e0d5734dfe8fe1780f1159a673f0c04bd544d34989ed",
+        "ledger_declared_page_content_sha256": "sha256:8d745f9bfed5e2db494d2b491ab10af8a59e62454b7ea71b22e7a3d8af04e2fc",
         "ledger_declared_manuscript_sha256": "sha256:2ff93c623c81e8a2290f7f604c6b663f65488d63d5f61beab49b47b96781991e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3607,7 +3607,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5761,
+        "learner_prose_cjk": 5741,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -3626,9 +3626,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.102,
+          "rate": 0.1034,
           "duplicated": 15,
-          "total": 147,
+          "total": 145,
           "compared_page_ids": [
             "TD-A02",
             "TD-A03",
@@ -3670,11 +3670,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7a7c26e6c1c1db776028be19d8f4b5c9ff5a63d83fcf7a82f59d0a52ee52e90f",
-        "learner_content_sections_hash": "sha256:9c6586b97be37f38dcf87c6fe544d68aaeed89c2d25c35d6e9e8f415c45a58a4",
+        "tutorial_page_content_hash": "sha256:2ea2174687fa9dcf1715cb552ee5dbd8037659431f9e70b380f022ee72b828ff",
+        "learner_content_sections_hash": "sha256:d57ff6ffc7618673a927d8d332f6ee0559af853946424ed32b85bdb352c5b5b8",
         "manuscript_sha256": "sha256:dc747187cdd6a705f49cf79b9eff1147fd2ee47c891cc5af9d8f2d1533f7a54d",
-        "projection_ledger_sha256": "sha256:0f7a4785c5ea08427e9aee70b5a58e61ca28d783ac0230fb46ded2d57def300a",
-        "ledger_declared_page_content_sha256": "sha256:9c6586b97be37f38dcf87c6fe544d68aaeed89c2d25c35d6e9e8f415c45a58a4",
+        "projection_ledger_sha256": "sha256:86e50f9254f312020453f621aed90f6e7edfac1a829ab0455fc539677213a763",
+        "ledger_declared_page_content_sha256": "sha256:d57ff6ffc7618673a927d8d332f6ee0559af853946424ed32b85bdb352c5b5b8",
         "ledger_declared_manuscript_sha256": "sha256:dc747187cdd6a705f49cf79b9eff1147fd2ee47c891cc5af9d8f2d1533f7a54d",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3701,7 +3701,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6665,
+        "learner_prose_cjk": 6631,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 9,
@@ -3720,9 +3720,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0862,
+          "rate": 0.0872,
           "duplicated": 15,
-          "total": 174,
+          "total": 172,
           "compared_page_ids": [
             "TD-A01",
             "TD-A03",
@@ -3764,11 +3764,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f504a73a6f019bc122bddde5a3569e307f858c7f65a416bbb993bb61987286a4",
-        "learner_content_sections_hash": "sha256:1e386c80a6454072d7fe967a3790aac4de012e88bcdf01522d1652bbfd6eace8",
+        "tutorial_page_content_hash": "sha256:4e639ee34da49fd1828d3b840226a89a650d4852b1290e1b476b6e429999be8f",
+        "learner_content_sections_hash": "sha256:a5621da68bb789df68ba3fe6258cdaf42879c1cfaaf46423affbd57cdb5dd4aa",
         "manuscript_sha256": "sha256:05a3c90903707a34168e2aebb8d84b9562bb31e2bd434850ea530fb287a3c0be",
-        "projection_ledger_sha256": "sha256:b39b07efa541a889167b5c1b9a03a2afe120848cb8d067ba92f0d5c91eaa82d3",
-        "ledger_declared_page_content_sha256": "sha256:1e386c80a6454072d7fe967a3790aac4de012e88bcdf01522d1652bbfd6eace8",
+        "projection_ledger_sha256": "sha256:0116079cef584037dd9954543870c716626e6ac114689830008d2304aef39b0f",
+        "ledger_declared_page_content_sha256": "sha256:a5621da68bb789df68ba3fe6258cdaf42879c1cfaaf46423affbd57cdb5dd4aa",
         "ledger_declared_manuscript_sha256": "sha256:05a3c90903707a34168e2aebb8d84b9562bb31e2bd434850ea530fb287a3c0be",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3795,7 +3795,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6093,
+        "learner_prose_cjk": 6065,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 9,
@@ -3814,9 +3814,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.082,
+          "rate": 0.0829,
           "duplicated": 15,
-          "total": 183,
+          "total": 181,
           "compared_page_ids": [
             "TD-A01",
             "TD-A02",
@@ -3858,11 +3858,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:06c44243a4d02d653761da89d9f9d6c53de568fc922c78f4cee0f62b50b076c3",
-        "learner_content_sections_hash": "sha256:7e6e42cb4612ca152f1a58fd7bbbe704c91fda51f4604159fc8f6ad772e5f9ed",
+        "tutorial_page_content_hash": "sha256:b1bda85c0e6902e8c015b390d8feacac5475aced351484f2751b46ec89da4731",
+        "learner_content_sections_hash": "sha256:8aeff41e352c77f927da49ee3f436275f4007dcb27ec7ed6149d1f2c83e086ae",
         "manuscript_sha256": "sha256:197590b1ea359f05b5632070fc6431646dd43df4b74baa788318eac3a0996613",
-        "projection_ledger_sha256": "sha256:c13ab5d6cede6ff3e3a5c55f2dd6f9819288c214d934d073c1adaf8e19672ae2",
-        "ledger_declared_page_content_sha256": "sha256:7e6e42cb4612ca152f1a58fd7bbbe704c91fda51f4604159fc8f6ad772e5f9ed",
+        "projection_ledger_sha256": "sha256:627ce4a77612a76397a99829af75101f0d1518bf7d8072ad580bc30ca6d57cf0",
+        "ledger_declared_page_content_sha256": "sha256:8aeff41e352c77f927da49ee3f436275f4007dcb27ec7ed6149d1f2c83e086ae",
         "ledger_declared_manuscript_sha256": "sha256:197590b1ea359f05b5632070fc6431646dd43df4b74baa788318eac3a0996613",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3889,7 +3889,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6670,
+        "learner_prose_cjk": 6636,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 9,
@@ -3908,9 +3908,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0843,
+          "rate": 0.0852,
           "duplicated": 15,
-          "total": 178,
+          "total": 176,
           "compared_page_ids": [
             "TD-A01",
             "TD-A02",
@@ -3952,11 +3952,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:19819d03f61243304ed1195314934029b9e1dbe2fdb28dc276bc75e64a2add48",
-        "learner_content_sections_hash": "sha256:4cb732b8d12131a9bf14d50a1a064ebd6b38867718f58c3d0821edd092d7d745",
+        "tutorial_page_content_hash": "sha256:7389d3de854b168ec5f3485ba3c3ef014aa71139d1b4bc5df7e8d4bcf23cea25",
+        "learner_content_sections_hash": "sha256:082ec54d74a240c3be4517df22324bf0ef98d7f5a2c95c832d41004255289f17",
         "manuscript_sha256": "sha256:64bf9f33a39132b2f8a6b7e5656cd8ef3ea342cd7cc77912ff6cd9a5d218fdbe",
-        "projection_ledger_sha256": "sha256:978cd8362487b95eb2215491cb4e08772b77350655f6ba8522204a6bba0e75db",
-        "ledger_declared_page_content_sha256": "sha256:4cb732b8d12131a9bf14d50a1a064ebd6b38867718f58c3d0821edd092d7d745",
+        "projection_ledger_sha256": "sha256:e324fa4bbfaf4cfe64bb2234dd91db44d4a6fed3cdca37c3d1ad3a7b606deeb1",
+        "ledger_declared_page_content_sha256": "sha256:082ec54d74a240c3be4517df22324bf0ef98d7f5a2c95c832d41004255289f17",
         "ledger_declared_manuscript_sha256": "sha256:64bf9f33a39132b2f8a6b7e5656cd8ef3ea342cd7cc77912ff6cd9a5d218fdbe",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -3983,7 +3983,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6179,
+        "learner_prose_cjk": 6149,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -4002,9 +4002,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0702,
+          "rate": 0.071,
           "duplicated": 12,
-          "total": 171,
+          "total": 169,
           "compared_page_ids": [
             "TD-A01",
             "TD-A02",
@@ -4046,11 +4046,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:ac20143efbc65738bac0f01e4e2b9498affa4674d79b17f53e722b137c287510",
-        "learner_content_sections_hash": "sha256:212b77ef1ea5a5df689a7c0af36864dc01d967938cbe4e712364316ef26e3b4b",
+        "tutorial_page_content_hash": "sha256:9abfc6137ca0ef864682a6e8eccbea7153a2fca2bd3e105143bfcb3c0f51e9d3",
+        "learner_content_sections_hash": "sha256:9d6e1292149410f6589f6448f1311aaea2a76703b91a2a0e07d8746ececaf78a",
         "manuscript_sha256": "sha256:bbf9fe3bf95487218605a534105b604aaf9e3cb22d2672ef109b510c27c1be85",
-        "projection_ledger_sha256": "sha256:ee088129ed5f918acc656bd2e0c684b5a5ce0f2b619fcf1a60c8d3479694fded",
-        "ledger_declared_page_content_sha256": "sha256:212b77ef1ea5a5df689a7c0af36864dc01d967938cbe4e712364316ef26e3b4b",
+        "projection_ledger_sha256": "sha256:989faae293f5fbbfe540b8db1347b79e10ac0207799ca8315f6c3198f3355d43",
+        "ledger_declared_page_content_sha256": "sha256:9d6e1292149410f6589f6448f1311aaea2a76703b91a2a0e07d8746ececaf78a",
         "ledger_declared_manuscript_sha256": "sha256:bbf9fe3bf95487218605a534105b604aaf9e3cb22d2672ef109b510c27c1be85",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4077,7 +4077,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6123,
+        "learner_prose_cjk": 6085,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 9,
@@ -4098,9 +4098,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0926,
+          "rate": 0.0938,
           "duplicated": 15,
-          "total": 162,
+          "total": 160,
           "compared_page_ids": [
             "TD-A01",
             "TD-A02",
@@ -4142,11 +4142,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:a4d8d5f6cb975a1d1169d78d3994eb6f5d4b7a79b27105a032739a40f9aded31",
-        "learner_content_sections_hash": "sha256:33affe064fb8bba6a11458aaf72de722706d3fe7104aa56f31ae142a6b85d693",
+        "tutorial_page_content_hash": "sha256:b763d027919207ccc902421bc9d7bdb880aa350a0a7dc67176f5f1ccc715113b",
+        "learner_content_sections_hash": "sha256:47f2066ea702d11cd6c7ec8681dba7e56dd17bcf9ffb522844855a0aae5b5272",
         "manuscript_sha256": "sha256:50cca82620eeec6926dc9160bea2dbd9e1bcfa622f45c7a85a357a036f721de7",
-        "projection_ledger_sha256": "sha256:cd531b8429deea0bd82e772418130ad1e816ae431a509538facfc16740b909ce",
-        "ledger_declared_page_content_sha256": "sha256:33affe064fb8bba6a11458aaf72de722706d3fe7104aa56f31ae142a6b85d693",
+        "projection_ledger_sha256": "sha256:596a270de54e17f30a45b0364d314768c7d7bb19940f174dad9289a00646671e",
+        "ledger_declared_page_content_sha256": "sha256:47f2066ea702d11cd6c7ec8681dba7e56dd17bcf9ffb522844855a0aae5b5272",
         "ledger_declared_manuscript_sha256": "sha256:50cca82620eeec6926dc9160bea2dbd9e1bcfa622f45c7a85a357a036f721de7",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4173,7 +4173,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4397,
+        "learner_prose_cjk": 4343,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 9,
@@ -4192,9 +4192,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.05,
+          "rate": 0.0505,
           "duplicated": 5,
-          "total": 100,
+          "total": 99,
           "compared_page_ids": [
             "TD-T10",
             "TD-T11",
@@ -4238,11 +4238,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:09a44c64f816a849a023e078e409ab85964b904d9492daefda408a01097ff1cd",
-        "learner_content_sections_hash": "sha256:609cc1c3139ef4e346e6f4fa2995fad602afaf8418a32a094cfdafea06f90427",
+        "tutorial_page_content_hash": "sha256:e7707c56a255f131ed49efddc276a03c0b6a6d248b049b2a04ab798551a002c4",
+        "learner_content_sections_hash": "sha256:656ce9b1083aab3cb440cfb93ed26c3ee388714b21d9bba4f0875f638addb1a0",
         "manuscript_sha256": "sha256:3849eb7f53bf22180d1ad30e434e30e5a3d4f9a6bd3a172e09fb329a3e068062",
-        "projection_ledger_sha256": "sha256:8b4d7fb6524e988e32f497e2f36faaee9857e6a6c1385f487370b6253c66c8af",
-        "ledger_declared_page_content_sha256": "sha256:609cc1c3139ef4e346e6f4fa2995fad602afaf8418a32a094cfdafea06f90427",
+        "projection_ledger_sha256": "sha256:388a7037480b50acd84db09d2f05426d31081c46147c6908fa0de3a4e6b893f1",
+        "ledger_declared_page_content_sha256": "sha256:656ce9b1083aab3cb440cfb93ed26c3ee388714b21d9bba4f0875f638addb1a0",
         "ledger_declared_manuscript_sha256": "sha256:3849eb7f53bf22180d1ad30e434e30e5a3d4f9a6bd3a172e09fb329a3e068062",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4269,7 +4269,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4240,
+        "learner_prose_cjk": 4195,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -4288,9 +4288,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0467,
+          "rate": 0.0481,
           "duplicated": 5,
-          "total": 107,
+          "total": 104,
           "compared_page_ids": [
             "TD-T09",
             "TD-T11",
@@ -4334,11 +4334,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:d428682ef8c861ce3ca16c5466806c25db2baa8649edd3f4918332cdf92e46a8",
-        "learner_content_sections_hash": "sha256:53183cda381f8f31b0f457f090ecdf60e8897df52edae59c6f45c72485d9b51e",
+        "tutorial_page_content_hash": "sha256:0e8afb23f3b5e874690d41777698d4f1b008679bca59d9305d0f16246e5dff47",
+        "learner_content_sections_hash": "sha256:8e05111fb8c478df56167b16622a0f03a4aa2769f91ea4177ab7e328ec0c8abc",
         "manuscript_sha256": "sha256:038c59757849a8615428e1ac640f283a3d629ffccffbd09f362e01a2ba7e66ae",
-        "projection_ledger_sha256": "sha256:dc2bda5c96799152c48a10f58f383470f1d7ddabd501e6141596f5c954a616fb",
-        "ledger_declared_page_content_sha256": "sha256:53183cda381f8f31b0f457f090ecdf60e8897df52edae59c6f45c72485d9b51e",
+        "projection_ledger_sha256": "sha256:a19b696dd99d23f90b102a9edcf6bf04f3b894ac47311da5e56d4bcd33edc499",
+        "ledger_declared_page_content_sha256": "sha256:8e05111fb8c478df56167b16622a0f03a4aa2769f91ea4177ab7e328ec0c8abc",
         "ledger_declared_manuscript_sha256": "sha256:038c59757849a8615428e1ac640f283a3d629ffccffbd09f362e01a2ba7e66ae",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4365,7 +4365,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4462,
+        "learner_prose_cjk": 4430,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -4384,9 +4384,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0495,
+          "rate": 0.0505,
           "duplicated": 5,
-          "total": 101,
+          "total": 99,
           "compared_page_ids": [
             "TD-T09",
             "TD-T10",
@@ -4430,11 +4430,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7190a8147a5914fa0d6a167a1b2ee4415676fd81cd27bf66b07bd27bba15a6dd",
-        "learner_content_sections_hash": "sha256:20579055c323fca30c5a15ac20eac609f7a6ab3d38f7a0e428f96cf566b25fcc",
+        "tutorial_page_content_hash": "sha256:7c711ef1c793169e886c332808e541d90441401cabea860c301175d67df290e7",
+        "learner_content_sections_hash": "sha256:9f758220c09dadda0ec96cf3d482bc955ac663a82561c13d07e625a0e74ab4e3",
         "manuscript_sha256": "sha256:47d4636873196ab6590b8ca45c60f5334128e1899e5c2ac990451a92d75954df",
-        "projection_ledger_sha256": "sha256:4d08abbddf47a0282ec76d30c207dacda909aef242a0164f4bd4f9b7c4ce1237",
-        "ledger_declared_page_content_sha256": "sha256:20579055c323fca30c5a15ac20eac609f7a6ab3d38f7a0e428f96cf566b25fcc",
+        "projection_ledger_sha256": "sha256:02a39621687b8f89ca9fa6a00a3c5a4807d219485bde91848fc8c660552898d7",
+        "ledger_declared_page_content_sha256": "sha256:9f758220c09dadda0ec96cf3d482bc955ac663a82561c13d07e625a0e74ab4e3",
         "ledger_declared_manuscript_sha256": "sha256:47d4636873196ab6590b8ca45c60f5334128e1899e5c2ac990451a92d75954df",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4461,7 +4461,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4908,
+        "learner_prose_cjk": 4856,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -4481,9 +4481,9 @@
         "page_specific_material_count": 5,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0455,
+          "rate": 0.0463,
           "duplicated": 5,
-          "total": 110,
+          "total": 108,
           "compared_page_ids": [
             "TD-T09",
             "TD-T10",
@@ -4527,11 +4527,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:3dac2ab98993ec215b9dcb7dc049c5a2b02682bfa0ce9337528bc53b16d1d0b3",
-        "learner_content_sections_hash": "sha256:ac7d09a26b52b0980f5dee5832d877d69772ac6d6fa2f05329e7bfd257500660",
+        "tutorial_page_content_hash": "sha256:581e93cb5befdbd51ab3786f692f42ac202d13f77c8acb56ec1f8c2eb89a5fc7",
+        "learner_content_sections_hash": "sha256:977b3a60ddc2317f85af3cf0314b61e5528380ab56e2f80323c3d49d0fe4cad4",
         "manuscript_sha256": "sha256:aa54389239c3e0e5683e995d9f59f21f00289c2eb8eab87023a7b3301793796d",
-        "projection_ledger_sha256": "sha256:4aa769428ae1643fe78c7de03f564b77d4aa5273f3af9e8c4e7e207a56edee87",
-        "ledger_declared_page_content_sha256": "sha256:ac7d09a26b52b0980f5dee5832d877d69772ac6d6fa2f05329e7bfd257500660",
+        "projection_ledger_sha256": "sha256:4c93129ad8f7783996885b6f9ae8019f9a5a911dfbd169f3838518a1ed8d53df",
+        "ledger_declared_page_content_sha256": "sha256:977b3a60ddc2317f85af3cf0314b61e5528380ab56e2f80323c3d49d0fe4cad4",
         "ledger_declared_manuscript_sha256": "sha256:aa54389239c3e0e5683e995d9f59f21f00289c2eb8eab87023a7b3301793796d",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4558,7 +4558,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4962,
+        "learner_prose_cjk": 4902,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -4578,9 +4578,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0427,
+          "rate": 0.0435,
           "duplicated": 5,
-          "total": 117,
+          "total": 115,
           "compared_page_ids": [
             "TD-T09",
             "TD-T10",
@@ -4624,11 +4624,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:008565679c2772c49b9168e90a13460efa7f29a9c3a60f02afbebd27ac72f0d7",
-        "learner_content_sections_hash": "sha256:6183dd11b9669f42c58ad415a8314b161f69901b25fa6366a938f368f3555501",
+        "tutorial_page_content_hash": "sha256:fbe341d8da83d10d3bd31497cc8ff53e348c7b8b20f9bb7dbd6f08a20ee9f294",
+        "learner_content_sections_hash": "sha256:b1eaa04f52562ab7d36a102a7635a7bf53f160b354fddcb532abe4a3e1165dcd",
         "manuscript_sha256": "sha256:13f6fba0214e9dd4679bf94fef559f1c9769102fc0ea90d10f5ea83d16edf686",
-        "projection_ledger_sha256": "sha256:246bb2c72f2617ea77c5511064957c045a68fd4fc83221ba0a10ae16a390cb72",
-        "ledger_declared_page_content_sha256": "sha256:6183dd11b9669f42c58ad415a8314b161f69901b25fa6366a938f368f3555501",
+        "projection_ledger_sha256": "sha256:f1a7ea7f94a21addd3539e76905dcabd676d5c1f6269abff9034a11c162fdc7f",
+        "ledger_declared_page_content_sha256": "sha256:b1eaa04f52562ab7d36a102a7635a7bf53f160b354fddcb532abe4a3e1165dcd",
         "ledger_declared_manuscript_sha256": "sha256:13f6fba0214e9dd4679bf94fef559f1c9769102fc0ea90d10f5ea83d16edf686",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4655,7 +4655,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4741,
+        "learner_prose_cjk": 4691,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -4720,11 +4720,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:4ba038c6db28a440a5eefb824f79ca25d38fe55a3391affd9438b53b4f4f0dc5",
-        "learner_content_sections_hash": "sha256:21cb9fe164878c0c8d484ae8e5f3b47f70997d8da799a44e1c2a15aba912547c",
+        "tutorial_page_content_hash": "sha256:8549c0cd208b1bc7f06c4bcd18e1f52695bca579e7cc46486c8fe7cad3882cab",
+        "learner_content_sections_hash": "sha256:c90cf606c67899024f19f16970cbc146a17b7f0391c38caeaca3e1235eb456c7",
         "manuscript_sha256": "sha256:c9ddfd4b4c5d2c86d7d87dfbee6ad015e883655fcf663748029356f0bd28f133",
-        "projection_ledger_sha256": "sha256:3d9945aa5934e992f70fb3749594c9bf063aca781db0cc041b81bcb021df9819",
-        "ledger_declared_page_content_sha256": "sha256:21cb9fe164878c0c8d484ae8e5f3b47f70997d8da799a44e1c2a15aba912547c",
+        "projection_ledger_sha256": "sha256:74b95e279cecbc0d10320b6915ad778f5b423fbdeea7507e485986916c3b7075",
+        "ledger_declared_page_content_sha256": "sha256:c90cf606c67899024f19f16970cbc146a17b7f0391c38caeaca3e1235eb456c7",
         "ledger_declared_manuscript_sha256": "sha256:c9ddfd4b4c5d2c86d7d87dfbee6ad015e883655fcf663748029356f0bd28f133",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4751,7 +4751,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5667,
+        "learner_prose_cjk": 5629,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -4770,9 +4770,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0851,
+          "rate": 0.0863,
           "duplicated": 12,
-          "total": 141,
+          "total": 139,
           "compared_page_ids": [
             "TD-T09",
             "TD-T10",
@@ -4816,11 +4816,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:422cb4e52a8d5ecf66066df85d25579b5823e92f10698c986edc0b2c5aa78af7",
-        "learner_content_sections_hash": "sha256:e69a64d25bf1e3e7e518da4f92c994a62bd4aede4b4b771381e9608ddbaf0108",
+        "tutorial_page_content_hash": "sha256:0554ce22926ddec227933c22e91de66372d07a8530dfceb8af0ec3a5915d7410",
+        "learner_content_sections_hash": "sha256:742058375bd10644d5e4e0fa12662d74a8a802d374fba2fb128cbb3de59850e0",
         "manuscript_sha256": "sha256:e99f4d63a460e460a4966fbfcf0521b2a1e3d780e7d4c142dc29a7cb0b8f6d64",
-        "projection_ledger_sha256": "sha256:1ccb3846e9051db4b58bf1a601e3905dec8ddc499833ea01e7ff1578414f2aa8",
-        "ledger_declared_page_content_sha256": "sha256:e69a64d25bf1e3e7e518da4f92c994a62bd4aede4b4b771381e9608ddbaf0108",
+        "projection_ledger_sha256": "sha256:2855007f216a2d4370c5e566d75d7278c126ebdce1a81c6bb117c0e93c278570",
+        "ledger_declared_page_content_sha256": "sha256:742058375bd10644d5e4e0fa12662d74a8a802d374fba2fb128cbb3de59850e0",
         "ledger_declared_manuscript_sha256": "sha256:e99f4d63a460e460a4966fbfcf0521b2a1e3d780e7d4c142dc29a7cb0b8f6d64",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4847,7 +4847,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4554,
+        "learner_prose_cjk": 4522,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -4867,9 +4867,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1071,
+          "rate": 0.1091,
           "duplicated": 12,
-          "total": 112,
+          "total": 110,
           "compared_page_ids": [
             "TD-T09",
             "TD-T10",
@@ -4913,11 +4913,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:4491cae94ce63a33c40a4047985b131231082cab600d9f0ff38a735306bace27",
-        "learner_content_sections_hash": "sha256:5b81fe499aef4b37d08184136d5af86fb867a503cfad3fafd86f45644992c5a8",
+        "tutorial_page_content_hash": "sha256:b29d7fe73cce52995cae729755fd7006cc17cf591167aa1afdbce0cbba2da0e5",
+        "learner_content_sections_hash": "sha256:b57fbd3d2fcfba2a9d6cd175b3a4fc4019e3223d715c31fde5dd0bb68171eda3",
         "manuscript_sha256": "sha256:7b1c5c08c9fa31c32ae9206927682437e41d053b119092f9c3a58e14447388a7",
-        "projection_ledger_sha256": "sha256:f7e173470d7adf2e8e0a8d330e9d4ee5ad08151af310eab1577fa344bd2cf283",
-        "ledger_declared_page_content_sha256": "sha256:5b81fe499aef4b37d08184136d5af86fb867a503cfad3fafd86f45644992c5a8",
+        "projection_ledger_sha256": "sha256:563f025e728304f49eb059709a5e38d49e94bafb743efb8bca5588a11064c8a7",
+        "ledger_declared_page_content_sha256": "sha256:b57fbd3d2fcfba2a9d6cd175b3a4fc4019e3223d715c31fde5dd0bb68171eda3",
         "ledger_declared_manuscript_sha256": "sha256:7b1c5c08c9fa31c32ae9206927682437e41d053b119092f9c3a58e14447388a7",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -4944,7 +4944,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4215,
+        "learner_prose_cjk": 4185,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -5011,11 +5011,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:e5a6fe89540a4da4ed0d544c34fced3f61f170775b5c922783959e09d2e3d1f7",
-        "learner_content_sections_hash": "sha256:d1269eba8d5ba31c6fbdfbe4c2859780315ee53189e66a5332d42ae4b531f4cf",
+        "tutorial_page_content_hash": "sha256:2f78d5336add0db01da6d380d026b2cf5dce3a80745c21171c67dbc6df105b71",
+        "learner_content_sections_hash": "sha256:8183b73f854b30eaa44d4311c2914736fdb9a461592a977d88939451422a6d57",
         "manuscript_sha256": "sha256:e57dac60922d69fa9fbd5aabc4096cdc07012bb782248f2247fb5b992c500b5a",
-        "projection_ledger_sha256": "sha256:f74b4021d0f88bb2c49287289f3ec4033772e55c5e2ccb1b5584d06bcea3e2df",
-        "ledger_declared_page_content_sha256": "sha256:d1269eba8d5ba31c6fbdfbe4c2859780315ee53189e66a5332d42ae4b531f4cf",
+        "projection_ledger_sha256": "sha256:714506a461cc21be60370cd348b7c80a50e33d369785f0baee367cf1cb5888bb",
+        "ledger_declared_page_content_sha256": "sha256:8183b73f854b30eaa44d4311c2914736fdb9a461592a977d88939451422a6d57",
         "ledger_declared_manuscript_sha256": "sha256:e57dac60922d69fa9fbd5aabc4096cdc07012bb782248f2247fb5b992c500b5a",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5042,7 +5042,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5717,
+        "learner_prose_cjk": 5678,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -5061,9 +5061,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0811,
+          "rate": 0.0816,
           "duplicated": 12,
-          "total": 148,
+          "total": 147,
           "compared_page_ids": [
             "TD-T15",
             "TD-T17",
@@ -5109,11 +5109,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7b1a6e927d7bc8f60cb28165bd56f8a57de68927837847acc103f9c454557930",
-        "learner_content_sections_hash": "sha256:1184e9a19e946bf7c248762ab3155223800801fae1311997941abd2b6354c912",
+        "tutorial_page_content_hash": "sha256:bf2814d786de46e84f4f93e631da77f7b66b498c489b850ef674b42853518cdb",
+        "learner_content_sections_hash": "sha256:0227eadae9a068c1e90cee35e61432440fb09e58652a17927d1e3cfff53b994f",
         "manuscript_sha256": "sha256:e760cd3b312ecb2db5e9508455d4f4411fd15c3d3fbb5e3e6e42d36fa33f511c",
-        "projection_ledger_sha256": "sha256:d71d28c6fff760802ce979a290bbc5cd1bc311241fe301a06bff80f1c88bfef0",
-        "ledger_declared_page_content_sha256": "sha256:1184e9a19e946bf7c248762ab3155223800801fae1311997941abd2b6354c912",
+        "projection_ledger_sha256": "sha256:1eba75e148c01b9c124195037ec44eae4d2d5fc71d149c14701b6a7983093f2f",
+        "ledger_declared_page_content_sha256": "sha256:0227eadae9a068c1e90cee35e61432440fb09e58652a17927d1e3cfff53b994f",
         "ledger_declared_manuscript_sha256": "sha256:e760cd3b312ecb2db5e9508455d4f4411fd15c3d3fbb5e3e6e42d36fa33f511c",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5140,7 +5140,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4808,
+        "learner_prose_cjk": 4772,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -5160,9 +5160,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1053,
+          "rate": 0.1071,
           "duplicated": 12,
-          "total": 114,
+          "total": 112,
           "compared_page_ids": [
             "TD-T15",
             "TD-T16",
@@ -5208,11 +5208,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7852567a75d232eb2a7adfb2ee98d31803aa32f7e3afe46354154ef8e64ebb48",
-        "learner_content_sections_hash": "sha256:443978704d5a9803910fde2f9a13758bfa3d32fad1508d5c5b301535b7ca4beb",
+        "tutorial_page_content_hash": "sha256:3357e914d57b9611a79349529d4f7668b1d125bd07f4dc4e749d40e5d4339010",
+        "learner_content_sections_hash": "sha256:49f79f5916d43e864577699e35dfa0115de93285e3c01348c873b9e9cf49fbd3",
         "manuscript_sha256": "sha256:a1e8e235a318bd083003fe7bd354d2f21a3d03ad312ff20ac5748fe8cc1b68fb",
-        "projection_ledger_sha256": "sha256:a464511ee606cc1ac1a96345be8f520fbf70d6afe0e1720921021c05159938c2",
-        "ledger_declared_page_content_sha256": "sha256:443978704d5a9803910fde2f9a13758bfa3d32fad1508d5c5b301535b7ca4beb",
+        "projection_ledger_sha256": "sha256:a8bc1e170f22c3e930711549c430c472d627e35cb4c573bdf2b73f717ef2dadd",
+        "ledger_declared_page_content_sha256": "sha256:49f79f5916d43e864577699e35dfa0115de93285e3c01348c873b9e9cf49fbd3",
         "ledger_declared_manuscript_sha256": "sha256:a1e8e235a318bd083003fe7bd354d2f21a3d03ad312ff20ac5748fe8cc1b68fb",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5239,7 +5239,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5582,
+        "learner_prose_cjk": 5552,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -5258,9 +5258,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0769,
+          "rate": 0.0779,
           "duplicated": 12,
-          "total": 156,
+          "total": 154,
           "compared_page_ids": [
             "TD-T15",
             "TD-T16",
@@ -5306,11 +5306,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f26401e15832bfc7f6a69cb7eeb70df3a97ad79f598e7246bf6558628a779388",
-        "learner_content_sections_hash": "sha256:d515ae648eb8947f244c76773b2832124f063fec04e1b72bce5fb0d6f97d185e",
+        "tutorial_page_content_hash": "sha256:254a38b37a1d6eab5b8fa3b4b891cffe1c71e0e12ef22e8cc703f70e2a4d6867",
+        "learner_content_sections_hash": "sha256:41565388e49078c8e6e9eae33b30598b5d8275bc7a8962eae70912c35302a13e",
         "manuscript_sha256": "sha256:84b8dfbbb46f504512665dc9e92d308d563590b4318bf91e6c3221d9d91cdd03",
-        "projection_ledger_sha256": "sha256:31195ea07dba0b17816035e8b97b1d5bb87fb0c892af31bbe2ad9d3e69f87844",
-        "ledger_declared_page_content_sha256": "sha256:d515ae648eb8947f244c76773b2832124f063fec04e1b72bce5fb0d6f97d185e",
+        "projection_ledger_sha256": "sha256:c9eb4a2b20a06783795293d4c67ef6e9809a9e50540909e25329f44fdd3370bb",
+        "ledger_declared_page_content_sha256": "sha256:41565388e49078c8e6e9eae33b30598b5d8275bc7a8962eae70912c35302a13e",
         "ledger_declared_manuscript_sha256": "sha256:84b8dfbbb46f504512665dc9e92d308d563590b4318bf91e6c3221d9d91cdd03",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5337,7 +5337,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4200,
+        "learner_prose_cjk": 4168,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 9,
@@ -5357,9 +5357,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1111,
+          "rate": 0.1132,
           "duplicated": 12,
-          "total": 108,
+          "total": 106,
           "compared_page_ids": [
             "TD-T15",
             "TD-T16",
@@ -5405,11 +5405,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f8856e4cc39dfdf17f70034688cd4eecaf66929d848a4d67f9cebefd4868cb8f",
-        "learner_content_sections_hash": "sha256:61afd6baa59efbb8b7a5f2d1e88a7321ca9acd5dc6c01f01bcb155cbddbbbdd9",
+        "tutorial_page_content_hash": "sha256:4f58fd0a4a953f3d846675487b3e35de6dd33787541654341680186cd5f36b91",
+        "learner_content_sections_hash": "sha256:0768ed9ec0fbb0d08b94c69db3f38b3d28b3b5bed09bc736b394b02c1283fa0e",
         "manuscript_sha256": "sha256:45da1c58a114ffaf43483f2a5ab244f8cd7bb8163422788b2369385dcea3f9c0",
-        "projection_ledger_sha256": "sha256:1fd75b306a32d79cdc83726d58a9dc5fcde572fc00c538c6dfc31274919c20c5",
-        "ledger_declared_page_content_sha256": "sha256:61afd6baa59efbb8b7a5f2d1e88a7321ca9acd5dc6c01f01bcb155cbddbbbdd9",
+        "projection_ledger_sha256": "sha256:ca8f2a106bea38adfbadd75aeee5e9b82cc9afed8bc88009894d4d49c8744b1c",
+        "ledger_declared_page_content_sha256": "sha256:0768ed9ec0fbb0d08b94c69db3f38b3d28b3b5bed09bc736b394b02c1283fa0e",
         "ledger_declared_manuscript_sha256": "sha256:45da1c58a114ffaf43483f2a5ab244f8cd7bb8163422788b2369385dcea3f9c0",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5436,7 +5436,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 3997,
+        "learner_prose_cjk": 3971,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -5455,9 +5455,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1224,
+          "rate": 0.125,
           "duplicated": 12,
-          "total": 98,
+          "total": 96,
           "compared_page_ids": [
             "TD-T15",
             "TD-T16",
@@ -5503,11 +5503,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:73b968285cc4a400a807615f1ef45782fa7cc39bea1c94c6b22502d5e7e6e242",
-        "learner_content_sections_hash": "sha256:a22e0402755db99108e55055bc92ccb24a4cc08ac6bbd2e55a974ccb8138157b",
+        "tutorial_page_content_hash": "sha256:bfeeac66f6c357db3f86bf1b301d04bd55b93c98d18bacc9c74fa39af7ef264d",
+        "learner_content_sections_hash": "sha256:facde26572ca6082cf1d6aaa4fa5848300e508aec3c3fac685f8728e0dc39342",
         "manuscript_sha256": "sha256:2df1403f700c76c728d7d0ff30e7bd76c556d91b5bd0803a85d3079a6c806634",
-        "projection_ledger_sha256": "sha256:8234acb7b8bee730a081ed6656e5d896ab9ede5d6db034dbbefad492fd8ff860",
-        "ledger_declared_page_content_sha256": "sha256:a22e0402755db99108e55055bc92ccb24a4cc08ac6bbd2e55a974ccb8138157b",
+        "projection_ledger_sha256": "sha256:c51c026eaa4d6fa841ec9b3424cbf1fdd83b096a8cf76e6f3d8af707e839a739",
+        "ledger_declared_page_content_sha256": "sha256:facde26572ca6082cf1d6aaa4fa5848300e508aec3c3fac685f8728e0dc39342",
         "ledger_declared_manuscript_sha256": "sha256:2df1403f700c76c728d7d0ff30e7bd76c556d91b5bd0803a85d3079a6c806634",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5534,7 +5534,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5567,
+        "learner_prose_cjk": 5545,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -5601,11 +5601,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:9e20eff81a3ba33ee871a79d91bfa76f95e1a31586b6a2414aa5ffed9b487830",
-        "learner_content_sections_hash": "sha256:c1f80903a867e6329f997778dc0c9c484f5f60e31ccd8f17ad15f76fe45e5bff",
+        "tutorial_page_content_hash": "sha256:bbb0c0edda6f9721ddca99d571f4f566bdcc6649a62bbf724bc8bbe453c14287",
+        "learner_content_sections_hash": "sha256:d64477fe630b4d754a6b6eec73278abc7a5f38239163fc9369445f6c8156d791",
         "manuscript_sha256": "sha256:84bbf79042a3356fb8053945cef077aab4c0a81f4ec578bae7c2289f9e7b508e",
-        "projection_ledger_sha256": "sha256:f28c225495c58d7281e002deafc97889318692751a96be7589dcf573106fbcf6",
-        "ledger_declared_page_content_sha256": "sha256:c1f80903a867e6329f997778dc0c9c484f5f60e31ccd8f17ad15f76fe45e5bff",
+        "projection_ledger_sha256": "sha256:158ad4f09c8bced7d8bf37a40270d978fcbb60d90d44e85071e29406d2094a11",
+        "ledger_declared_page_content_sha256": "sha256:d64477fe630b4d754a6b6eec73278abc7a5f38239163fc9369445f6c8156d791",
         "ledger_declared_manuscript_sha256": "sha256:84bbf79042a3356fb8053945cef077aab4c0a81f4ec578bae7c2289f9e7b508e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5632,7 +5632,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4539,
+        "learner_prose_cjk": 4501,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -5652,9 +5652,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1071,
+          "rate": 0.1091,
           "duplicated": 12,
-          "total": 112,
+          "total": 110,
           "compared_page_ids": [
             "TD-T15",
             "TD-T16",
@@ -5700,11 +5700,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:d3e429316eb022ba5acc3bc7ce99b1472ae37ab602300e79bb0925aeb1b298c4",
-        "learner_content_sections_hash": "sha256:f261dac3f937ab507513e08bdfd59aba8c081d87f352b696c96ddbf1bfea3a34",
+        "tutorial_page_content_hash": "sha256:51770497358b773d8f634b018e3a4fbb2682f2915357e0a56a9c7cbe518d4a56",
+        "learner_content_sections_hash": "sha256:33cf397d1f49a2205fe93091f9512d95796ee37319ae4897d09eb0eb0ef5c769",
         "manuscript_sha256": "sha256:c2a33770d4f9902d90cbf2a3dd09dea839c595de2e7ea40738fea93db2ad0c8e",
-        "projection_ledger_sha256": "sha256:09a6731fd55669ca28a0e3c6c83af3fdb1e5336c3de32882095e67e2d2984de1",
-        "ledger_declared_page_content_sha256": "sha256:f261dac3f937ab507513e08bdfd59aba8c081d87f352b696c96ddbf1bfea3a34",
+        "projection_ledger_sha256": "sha256:eae1147853ca82a55545dfff944a56e27e1ef3f27f61492d9f6861b8a1a64382",
+        "ledger_declared_page_content_sha256": "sha256:33cf397d1f49a2205fe93091f9512d95796ee37319ae4897d09eb0eb0ef5c769",
         "ledger_declared_manuscript_sha256": "sha256:c2a33770d4f9902d90cbf2a3dd09dea839c595de2e7ea40738fea93db2ad0c8e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5731,7 +5731,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4992,
+        "learner_prose_cjk": 4960,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -5799,11 +5799,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:b027f9a8b3f3d8f73fdcad2ee17deb5cbe480f328bbf6217cb07c5658abcde8a",
-        "learner_content_sections_hash": "sha256:299a35e83ddbc982ff9f0bb4fbfad0fb5638453d174dd397de3569f21f1b4f39",
+        "tutorial_page_content_hash": "sha256:c116705bdcce38f408e5ec210bbc87e77eb90682862acd9304ee754308363378",
+        "learner_content_sections_hash": "sha256:f9e5bad29bbbae754e43a09a6b09d0d65ff3dc2a6714a1788ef3489f3ee56e48",
         "manuscript_sha256": "sha256:7f90cd2a5ca6352642121983f0d8b9281dae1959269daa567821641bf314ee79",
-        "projection_ledger_sha256": "sha256:c1c4383532601fc19c368918a61d71da569f1be28872f95c92a33181e1945f6b",
-        "ledger_declared_page_content_sha256": "sha256:299a35e83ddbc982ff9f0bb4fbfad0fb5638453d174dd397de3569f21f1b4f39",
+        "projection_ledger_sha256": "sha256:7dc7cbf7ae6c9e4d1186418e2530ac3327e27641e96616c6c442d0abd364e070",
+        "ledger_declared_page_content_sha256": "sha256:f9e5bad29bbbae754e43a09a6b09d0d65ff3dc2a6714a1788ef3489f3ee56e48",
         "ledger_declared_manuscript_sha256": "sha256:7f90cd2a5ca6352642121983f0d8b9281dae1959269daa567821641bf314ee79",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5830,7 +5830,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4746,
+        "learner_prose_cjk": 4708,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -5850,9 +5850,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0439,
+          "rate": 0.0446,
           "duplicated": 5,
-          "total": 114,
+          "total": 112,
           "compared_page_ids": [
             "TD-T15",
             "TD-T16",
@@ -5898,11 +5898,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:9ade208509ee46d16fd875ddf62af4dc09981fe7841393e0600410b6c69f80b8",
-        "learner_content_sections_hash": "sha256:ebe46460808ed6cda516ecc9a34e37d087bfe2b6670a0849c808ba2d6e6a156b",
+        "tutorial_page_content_hash": "sha256:46b81f5d94d6f062d24f57898abde92355e061b24adfabfcad0c6170b7d36652",
+        "learner_content_sections_hash": "sha256:e6110f607fb70d4cf3679423dda2246a08729a27ed39272a81ed9126c8d8583e",
         "manuscript_sha256": "sha256:16c4af7889cb29ae00bcbc2ba29139fdb81b7095f42c9f031529aa430f691260",
-        "projection_ledger_sha256": "sha256:2ca7204a0ab2045753f1c12538e0640d9c4d853843455f78680e5151731f878b",
-        "ledger_declared_page_content_sha256": "sha256:ebe46460808ed6cda516ecc9a34e37d087bfe2b6670a0849c808ba2d6e6a156b",
+        "projection_ledger_sha256": "sha256:067d1433e5a0107a7a9aa2d9e7608c9fef301fda3b501a6a70504dd3ffe1b1a9",
+        "ledger_declared_page_content_sha256": "sha256:e6110f607fb70d4cf3679423dda2246a08729a27ed39272a81ed9126c8d8583e",
         "ledger_declared_manuscript_sha256": "sha256:16c4af7889cb29ae00bcbc2ba29139fdb81b7095f42c9f031529aa430f691260",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -5929,7 +5929,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4738,
+        "learner_prose_cjk": 4702,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -5949,9 +5949,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0442,
+          "rate": 0.045,
           "duplicated": 5,
-          "total": 113,
+          "total": 111,
           "compared_page_ids": [
             "TD-X601",
             "TD-T20",
@@ -5995,11 +5995,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:17cf17f0f3f57b29b43cbc9c031165c2214634489ef7de8a2dbaf18533a2c33f",
-        "learner_content_sections_hash": "sha256:cf13e8217fabfd3ca991306c6f146b3cd885768144a61d58eaa9b19f1b4d2f6e",
+        "tutorial_page_content_hash": "sha256:e7d271f156940e9e4281d2ed21798ed68b6322cd3c90908a3e087844ea288fc9",
+        "learner_content_sections_hash": "sha256:d04f1ba96a3ac208e6a4742114eada7dbd29da1f5c9d0f1c2e7b0816f866a866",
         "manuscript_sha256": "sha256:4cb754a1e9fb0d77ff6450f2c19b587b2af25b26f29010f960188d2d74cd76c0",
-        "projection_ledger_sha256": "sha256:b93d79cbee878a1e731ec0978e34a34d029508f526425667e5c668963b11c2d1",
-        "ledger_declared_page_content_sha256": "sha256:cf13e8217fabfd3ca991306c6f146b3cd885768144a61d58eaa9b19f1b4d2f6e",
+        "projection_ledger_sha256": "sha256:0e0f98885b651c049f6154de5643e920a22f08d6677ddc9f31815dcf03748c74",
+        "ledger_declared_page_content_sha256": "sha256:d04f1ba96a3ac208e6a4742114eada7dbd29da1f5c9d0f1c2e7b0816f866a866",
         "ledger_declared_manuscript_sha256": "sha256:4cb754a1e9fb0d77ff6450f2c19b587b2af25b26f29010f960188d2d74cd76c0",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6026,7 +6026,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5069,
+        "learner_prose_cjk": 5023,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -6045,9 +6045,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.04,
+          "rate": 0.0407,
           "duplicated": 5,
-          "total": 125,
+          "total": 123,
           "compared_page_ids": [
             "TD-X602",
             "TD-T20",
@@ -6091,11 +6091,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:3c31ae5bd4aa5960affa53f113549ce8779fd83bbcceb7be7b0812b8c0dfdb93",
-        "learner_content_sections_hash": "sha256:00f1d746432a65a27b74f41ff2c34a146714affebed984dd5b44fea9c45eec12",
+        "tutorial_page_content_hash": "sha256:3a83085ba6bc786e19d732f3ba850b01b2496f2e3c70508539b3f87f1f761ec0",
+        "learner_content_sections_hash": "sha256:ab80e06c096a90710c41f4a5f21bf208eb73478f5aa8985fff8cf7d73e5d00a9",
         "manuscript_sha256": "sha256:c41ebbaa5c803a14d751d0431a14cc17bc906a5abadb215f0a98c49165ff4206",
-        "projection_ledger_sha256": "sha256:59b9758cf2bb5516ed1cf7760a4af3392284868d37aca79e20d120dc95012263",
-        "ledger_declared_page_content_sha256": "sha256:00f1d746432a65a27b74f41ff2c34a146714affebed984dd5b44fea9c45eec12",
+        "projection_ledger_sha256": "sha256:3da2fbc40da8aca0ec8abb673da4a2c3ae2b5a6998fb8308767a225454abf358",
+        "ledger_declared_page_content_sha256": "sha256:ab80e06c096a90710c41f4a5f21bf208eb73478f5aa8985fff8cf7d73e5d00a9",
         "ledger_declared_manuscript_sha256": "sha256:c41ebbaa5c803a14d751d0431a14cc17bc906a5abadb215f0a98c49165ff4206",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6122,7 +6122,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4958,
+        "learner_prose_cjk": 4924,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -6143,9 +6143,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0769,
+          "rate": 0.0781,
           "duplicated": 10,
-          "total": 130,
+          "total": 128,
           "compared_page_ids": [
             "TD-X602",
             "TD-X601",
@@ -6189,11 +6189,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:c5b116157ba6faca336259ffe005f8cccc059e8f026578250db806bc47b91cf3",
-        "learner_content_sections_hash": "sha256:2a523711c6a78d58743f81329f01b88aa4119f5aabc25422280eea1563ae96c6",
+        "tutorial_page_content_hash": "sha256:76ac61d969898c94ce20661aa704dc482ea807f4f3f177c3f6d9d2d5e301cb40",
+        "learner_content_sections_hash": "sha256:ba8ae36ead39557761bde58aca7dd017177dbca6e86cfe5484c36280f20a944f",
         "manuscript_sha256": "sha256:e02cdaa455faeeb115216cf4ff8a7f680c4f835e19256d37efd9260dea305713",
-        "projection_ledger_sha256": "sha256:ddb7d7610825e9f02be08728c0e5402c33049093812a1d120fd306182ab1c871",
-        "ledger_declared_page_content_sha256": "sha256:2a523711c6a78d58743f81329f01b88aa4119f5aabc25422280eea1563ae96c6",
+        "projection_ledger_sha256": "sha256:5aaffd47b40cf8c6f1efaadcd3ef670abda350eb40f6e34e029180b57ad32e5c",
+        "ledger_declared_page_content_sha256": "sha256:ba8ae36ead39557761bde58aca7dd017177dbca6e86cfe5484c36280f20a944f",
         "ledger_declared_manuscript_sha256": "sha256:e02cdaa455faeeb115216cf4ff8a7f680c4f835e19256d37efd9260dea305713",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6220,7 +6220,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 3950,
+        "learner_prose_cjk": 3912,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 9,
@@ -6239,9 +6239,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1031,
+          "rate": 0.1053,
           "duplicated": 10,
-          "total": 97,
+          "total": 95,
           "compared_page_ids": [
             "TD-X602",
             "TD-X601",
@@ -6285,11 +6285,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7d3887ac6fb5d19e81aaa01d6de99da03e129ea45e5358936ff49e49e15a35d3",
-        "learner_content_sections_hash": "sha256:74e5132f500e88e0a8a3a588caf55593a9779f4f8851a91fc392fd6b9083770e",
+        "tutorial_page_content_hash": "sha256:0b00e1d1404a7867446f1772136e10e17b32c8c410aa771384403d61ddd1cbc5",
+        "learner_content_sections_hash": "sha256:60f93d8e28b21068bba7ae1bd3630f1b57e83d50600472d70d24b733ff08a152",
         "manuscript_sha256": "sha256:ff18d3dbe77c318f18ff4e8d2358b9ca2c66ffd31cf3514c5cbe0f72664c65e0",
-        "projection_ledger_sha256": "sha256:23f2c877bc8a63959e43ea8512c8b3c7efb827ccf14a8e1230ad41fa79004104",
-        "ledger_declared_page_content_sha256": "sha256:74e5132f500e88e0a8a3a588caf55593a9779f4f8851a91fc392fd6b9083770e",
+        "projection_ledger_sha256": "sha256:a491710a01e78870f1d5ca78ed54b230823e5272ba0b1271a1cb7e826643318b",
+        "ledger_declared_page_content_sha256": "sha256:60f93d8e28b21068bba7ae1bd3630f1b57e83d50600472d70d24b733ff08a152",
         "ledger_declared_manuscript_sha256": "sha256:ff18d3dbe77c318f18ff4e8d2358b9ca2c66ffd31cf3514c5cbe0f72664c65e0",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6316,7 +6316,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5245,
+        "learner_prose_cjk": 5213,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -6337,9 +6337,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0775,
+          "rate": 0.0787,
           "duplicated": 10,
-          "total": 129,
+          "total": 127,
           "compared_page_ids": [
             "TD-X602",
             "TD-X601",
@@ -6383,11 +6383,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:176ae85f08afdb11cece6ef67e86e5b61add65ae851db76a1117f6331ee3ffab",
-        "learner_content_sections_hash": "sha256:7628e6bb7f4f78a3ee169c1fb738031d8bb21ebad743d265179f77a872ab40f0",
+        "tutorial_page_content_hash": "sha256:3b016fdf01119b54bb73eff9a4deba255e7e7cfe656d6c7591e391d3c12beeba",
+        "learner_content_sections_hash": "sha256:b6732c258ac32cb54c148c8e56b08201eb65719c7fe42e36273605c0399967ba",
         "manuscript_sha256": "sha256:a421040ec38340beef20e0758e2954653cc1f2e87a71e93989c746d5a2f0ed65",
-        "projection_ledger_sha256": "sha256:ac0890d29214af18039eb470945c31f3a7a9c7f22d9b933e4b6b88e8fa711800",
-        "ledger_declared_page_content_sha256": "sha256:7628e6bb7f4f78a3ee169c1fb738031d8bb21ebad743d265179f77a872ab40f0",
+        "projection_ledger_sha256": "sha256:115853b477a0cced6d8f52332ccc0e3a04423de72ee66e01dd86770acdb97541",
+        "ledger_declared_page_content_sha256": "sha256:b6732c258ac32cb54c148c8e56b08201eb65719c7fe42e36273605c0399967ba",
         "ledger_declared_manuscript_sha256": "sha256:a421040ec38340beef20e0758e2954653cc1f2e87a71e93989c746d5a2f0ed65",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6414,7 +6414,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4071,
+        "learner_prose_cjk": 4041,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 9,
@@ -6433,9 +6433,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0971,
+          "rate": 0.099,
           "duplicated": 10,
-          "total": 103,
+          "total": 101,
           "compared_page_ids": [
             "TD-X602",
             "TD-X601",
@@ -6479,11 +6479,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:36419d28850eea11daf1575c52ad8d8a121524f4c4d5952773c71e8295319990",
-        "learner_content_sections_hash": "sha256:498a4552a19c3a98494169703b8d6b42db3b7bcac9fc19bade8b2fbcb83ae6ae",
+        "tutorial_page_content_hash": "sha256:98c30e78bacdebc3f3ef280906059655da51c223cf266838442910cbabad86d4",
+        "learner_content_sections_hash": "sha256:0cea431e7d04adb9ceabbb7f8f5273474d07dab580d6f383b767fd1bf378bc9e",
         "manuscript_sha256": "sha256:b887f5d4359737bb90bafd6237aa9f85d9647be387ecf8bd756ea560be174ced",
-        "projection_ledger_sha256": "sha256:334d2396875e0e345b8e8cbb3f05a3efca996d1a9a4334cfd1f41f0d2a4646c9",
-        "ledger_declared_page_content_sha256": "sha256:498a4552a19c3a98494169703b8d6b42db3b7bcac9fc19bade8b2fbcb83ae6ae",
+        "projection_ledger_sha256": "sha256:479db421d31dbea5e1dfa1df72fae9e28911964c04734d45f8efd684bf123277",
+        "ledger_declared_page_content_sha256": "sha256:0cea431e7d04adb9ceabbb7f8f5273474d07dab580d6f383b767fd1bf378bc9e",
         "ledger_declared_manuscript_sha256": "sha256:b887f5d4359737bb90bafd6237aa9f85d9647be387ecf8bd756ea560be174ced",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6510,7 +6510,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4715,
+        "learner_prose_cjk": 4681,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 11,
@@ -6530,9 +6530,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0847,
+          "rate": 0.0862,
           "duplicated": 10,
-          "total": 118,
+          "total": 116,
           "compared_page_ids": [
             "TD-X602",
             "TD-X601",
@@ -6576,11 +6576,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:bbd0ebf02bb7206becbd49c743674ec591306f7f949690b37ee73184e343d6b2",
-        "learner_content_sections_hash": "sha256:796543a35ed555e9641d8a20538afdf89caa0cb97da833db7d00c7424496c61f",
+        "tutorial_page_content_hash": "sha256:b6906227d6df70700143328906e66a60f4431cc0db7cf009dd4f5aee4601c80a",
+        "learner_content_sections_hash": "sha256:55bae8071832571c926188ed6becbf7daf39b21a5ed4ee5988ccd25732ca8af9",
         "manuscript_sha256": "sha256:b855e35bdf1f2c91f9189fcd7e37189acf6279e8f1ff3cf5017a382b75af7907",
-        "projection_ledger_sha256": "sha256:86d518d061d97b0d3704b3a23a232bc051d8b96ccbb4388a1ac2c540fff0de5c",
-        "ledger_declared_page_content_sha256": "sha256:796543a35ed555e9641d8a20538afdf89caa0cb97da833db7d00c7424496c61f",
+        "projection_ledger_sha256": "sha256:b1c0ad720b6206dd760790f9b3c04ce30a0c6500d720221ada16adc85ec7c297",
+        "ledger_declared_page_content_sha256": "sha256:55bae8071832571c926188ed6becbf7daf39b21a5ed4ee5988ccd25732ca8af9",
         "ledger_declared_manuscript_sha256": "sha256:b855e35bdf1f2c91f9189fcd7e37189acf6279e8f1ff3cf5017a382b75af7907",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6607,7 +6607,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4719,
+        "learner_prose_cjk": 4687,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -6627,9 +6627,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.042,
+          "rate": 0.0427,
           "duplicated": 5,
-          "total": 119,
+          "total": 117,
           "compared_page_ids": [
             "TD-X602",
             "TD-X601",
@@ -6673,11 +6673,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:30aa2e19281f20b43da4de2d6607b15eb2b6ed8cc57395ca0e97e0636f6dfcca",
-        "learner_content_sections_hash": "sha256:1f40989499bfa06bfb122019368a95648491420515a0e1f01634e8178df85eab",
+        "tutorial_page_content_hash": "sha256:766e3de5185497aa4fb0238c60f75342135ffa0c73ec894aa269d6a24811cc3f",
+        "learner_content_sections_hash": "sha256:8e6af7e4abe10da5437cfd7776a3ade8769b92c75583e4e5646854e27f473fa8",
         "manuscript_sha256": "sha256:67fd992b6e267387d62a63c301d0f0b84e88003377f71604c4c37e8b4661abd3",
-        "projection_ledger_sha256": "sha256:7b9782de8934c489a416aae3f6619bc9b3bc028319580d1c652be401be83d778",
-        "ledger_declared_page_content_sha256": "sha256:1f40989499bfa06bfb122019368a95648491420515a0e1f01634e8178df85eab",
+        "projection_ledger_sha256": "sha256:2721d62d32ec9b2336d466031a3af258ce9e68424945b6fb060ba3b4e6769373",
+        "ledger_declared_page_content_sha256": "sha256:8e6af7e4abe10da5437cfd7776a3ade8769b92c75583e4e5646854e27f473fa8",
         "ledger_declared_manuscript_sha256": "sha256:67fd992b6e267387d62a63c301d0f0b84e88003377f71604c4c37e8b4661abd3",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6704,7 +6704,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4526,
+        "learner_prose_cjk": 4492,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 10,
@@ -6723,9 +6723,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.099,
+          "rate": 0.101,
           "duplicated": 10,
-          "total": 101,
+          "total": 99,
           "compared_page_ids": [
             "TD-B02",
             "TD-B03",
@@ -6767,11 +6767,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:346b409de77298521bbb02173be3555eb9345cca8e5de3b7014d4fd7bdccc774",
-        "learner_content_sections_hash": "sha256:ae7a86d29548255c1b6c7542217225e98c44b7750a15b2e0924e9324c030f1f9",
+        "tutorial_page_content_hash": "sha256:a27c9611c74cd5502f3778a9801f13f9f279f047060f2f4d44c34b873e3f9f33",
+        "learner_content_sections_hash": "sha256:009ef9732ce3d215df671bf575d3ca1f831ac6f551a83ac6c9d551ab81659fdb",
         "manuscript_sha256": "sha256:a986ba88b6633f54291c5e7d90420af2089607dbf8fde34a4c0232efbb154062",
-        "projection_ledger_sha256": "sha256:29fdcc24e1beb10f7859184dac06f21dfb417b9780cabff3e218521be61d7a8f",
-        "ledger_declared_page_content_sha256": "sha256:ae7a86d29548255c1b6c7542217225e98c44b7750a15b2e0924e9324c030f1f9",
+        "projection_ledger_sha256": "sha256:0912adf8cdfd3f148cfee903f07339bf18b00ee15d8df6242b9604d7a958cf9e",
+        "ledger_declared_page_content_sha256": "sha256:009ef9732ce3d215df671bf575d3ca1f831ac6f551a83ac6c9d551ab81659fdb",
         "ledger_declared_manuscript_sha256": "sha256:a986ba88b6633f54291c5e7d90420af2089607dbf8fde34a4c0232efbb154062",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6798,7 +6798,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4621,
+        "learner_prose_cjk": 4589,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -6818,9 +6818,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0826,
+          "rate": 0.084,
           "duplicated": 10,
-          "total": 121,
+          "total": 119,
           "compared_page_ids": [
             "TD-B01",
             "TD-B03",
@@ -6862,11 +6862,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:55ad323ba36667cad10d62ede7dd742c09e12a85fbf7d532368f162690bc8a57",
-        "learner_content_sections_hash": "sha256:2ee2a3790e79797f878e24d8243f832e850a6347cf5e429ff2152953412887f3",
+        "tutorial_page_content_hash": "sha256:8fb6fbc83f76503c7be4c4f577b51e71f3ea8ffc459473fd1743e69c6eedc852",
+        "learner_content_sections_hash": "sha256:997f8b1f5f3412e7a1b643822b37233441d1ac38f64c4c504256a378051f6bda",
         "manuscript_sha256": "sha256:d49eadbfdcea514e4757aec57766e59ce7e0f94612cc9f6150eff1e387f54f47",
-        "projection_ledger_sha256": "sha256:6ef98cb92a52ba2d7ecbeacab22f5e3a4483daf12605a93a6e70b517ccdee6ef",
-        "ledger_declared_page_content_sha256": "sha256:2ee2a3790e79797f878e24d8243f832e850a6347cf5e429ff2152953412887f3",
+        "projection_ledger_sha256": "sha256:b9821a2b1a4bc8a04bdcc7465bef34bea21fb97b9a3d7c00228ca183a5546c78",
+        "ledger_declared_page_content_sha256": "sha256:997f8b1f5f3412e7a1b643822b37233441d1ac38f64c4c504256a378051f6bda",
         "ledger_declared_manuscript_sha256": "sha256:d49eadbfdcea514e4757aec57766e59ce7e0f94612cc9f6150eff1e387f54f47",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6893,7 +6893,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4723,
+        "learner_prose_cjk": 4697,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 12,
@@ -6913,9 +6913,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0813,
+          "rate": 0.0826,
           "duplicated": 10,
-          "total": 123,
+          "total": 121,
           "compared_page_ids": [
             "TD-B01",
             "TD-B02",
@@ -6957,11 +6957,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f88556cd519c8c0e302240b6eba9a82aa7df77ef3005f4e04255471bd7c6be27",
-        "learner_content_sections_hash": "sha256:5af811fa178b5b8b36f36c7d2e23bea727eaadfa34bcbd39434a6fb5866c85be",
+        "tutorial_page_content_hash": "sha256:83445e3aa9372ff5acc00f1e13a3b28b94afb137fb02ccde5cb2be66f81fd18b",
+        "learner_content_sections_hash": "sha256:dea085137fd6c726032f220c80f13d7ee2e6e43ed9d62b3df29179d5741e272e",
         "manuscript_sha256": "sha256:78e788b9303d7625680d4be3053f25bc213ad452496f3ac70601af90c789adee",
-        "projection_ledger_sha256": "sha256:bc8a79028fe40aaabfc4657abd0e794f5b7fa58358f67622cab3c963ddcd3724",
-        "ledger_declared_page_content_sha256": "sha256:5af811fa178b5b8b36f36c7d2e23bea727eaadfa34bcbd39434a6fb5866c85be",
+        "projection_ledger_sha256": "sha256:fdd569f847086e03a60293ab533132254ea2fbe2558d1db3ad8e12585e410931",
+        "ledger_declared_page_content_sha256": "sha256:dea085137fd6c726032f220c80f13d7ee2e6e43ed9d62b3df29179d5741e272e",
         "ledger_declared_manuscript_sha256": "sha256:78e788b9303d7625680d4be3053f25bc213ad452496f3ac70601af90c789adee",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -6988,7 +6988,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4363,
+        "learner_prose_cjk": 4325,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 10,
@@ -7007,9 +7007,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1,
+          "rate": 0.102,
           "duplicated": 10,
-          "total": 100,
+          "total": 98,
           "compared_page_ids": [
             "TD-B01",
             "TD-B02",
@@ -7051,11 +7051,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:17055bb967b73b261b62423ce048ecaeb03d008ad5c98c7a736bb0739d777bec",
-        "learner_content_sections_hash": "sha256:5cf0b10cd2845741759baf136247faa71cbb9d5342f2627dfdc7712b88dd44c7",
+        "tutorial_page_content_hash": "sha256:4287bf090b67f4386da057052517d5fe7e68dd05729c68a9247ee0019c9246c2",
+        "learner_content_sections_hash": "sha256:52294e31951ac5a498522b661cd1e323c191b9ecdbd67532e46c5fefff05ef13",
         "manuscript_sha256": "sha256:8b187be0d4039c804e676b2637f8d40832643b57c71c924c179a94befcd073d3",
-        "projection_ledger_sha256": "sha256:1364988a4a976a51c2487ad78f2fa49cd775a699c2d39e8e1cc1393beb918745",
-        "ledger_declared_page_content_sha256": "sha256:5cf0b10cd2845741759baf136247faa71cbb9d5342f2627dfdc7712b88dd44c7",
+        "projection_ledger_sha256": "sha256:ea94dad0567e75606efea51bb1b2b2a59af01dafd3311e5cc9bcdcb3936e0af3",
+        "ledger_declared_page_content_sha256": "sha256:52294e31951ac5a498522b661cd1e323c191b9ecdbd67532e46c5fefff05ef13",
         "ledger_declared_manuscript_sha256": "sha256:8b187be0d4039c804e676b2637f8d40832643b57c71c924c179a94befcd073d3",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -7082,7 +7082,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4216,
+        "learner_prose_cjk": 4174,
         "strict_target_cjk": 3500,
         "depth_pass": true,
         "table_count": 9,
@@ -7101,9 +7101,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1053,
+          "rate": 0.1075,
           "duplicated": 10,
-          "total": 95,
+          "total": 93,
           "compared_page_ids": [
             "TD-B01",
             "TD-B02",
@@ -7145,11 +7145,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:26b9252969eb211ef1cb3471e7632b2523e5214ccb0fdd1f2ebbfc341a5a436b",
-        "learner_content_sections_hash": "sha256:595e1ce9f1f1b3eb639d69349d78bd1519c9fce69447a9b4e15c3db6bd6e7ce4",
+        "tutorial_page_content_hash": "sha256:92b2019b38981b88c54181168e777dd154010a96b0250bd542d7633d2de904a0",
+        "learner_content_sections_hash": "sha256:25dd8d99dc8e86cbe96acd3ebca421e4519be62f2ab729e24fd80b72699bdd7b",
         "manuscript_sha256": "sha256:8662fcff1625f22e89c13e253ba360ffc9bcce949a10d90a677ee01de6c5ed5f",
-        "projection_ledger_sha256": "sha256:517b010c2935a45457cb7400df898bf02c4423bdbe8f6d55e948d97af18fa576",
-        "ledger_declared_page_content_sha256": "sha256:595e1ce9f1f1b3eb639d69349d78bd1519c9fce69447a9b4e15c3db6bd6e7ce4",
+        "projection_ledger_sha256": "sha256:9ef34c657c5efaeaaf067dd8f1cb8ec8e7a9dba1648a8667325f212a101b631e",
+        "ledger_declared_page_content_sha256": "sha256:25dd8d99dc8e86cbe96acd3ebca421e4519be62f2ab729e24fd80b72699bdd7b",
         "ledger_declared_manuscript_sha256": "sha256:8662fcff1625f22e89c13e253ba360ffc9bcce949a10d90a677ee01de6c5ed5f",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -7176,7 +7176,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4903,
+        "learner_prose_cjk": 4865,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 11,
@@ -7196,9 +7196,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0877,
+          "rate": 0.0893,
           "duplicated": 10,
-          "total": 114,
+          "total": 112,
           "compared_page_ids": [
             "TD-B01",
             "TD-B02",
@@ -7619,11 +7619,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:875ac25b1cc455c1fd757442a58c29857407af04125c4886d3b6bb8d9634aa80",
-        "learner_content_sections_hash": "sha256:6f66cff2f265b72cd559126baa0e4ae5334383f61365d841c27d2691c5861b3e",
+        "tutorial_page_content_hash": "sha256:95820aba84f5daafb5442eb6e1baec8b95dcc748e3fa1059a04fc6bed00a8c6e",
+        "learner_content_sections_hash": "sha256:ffdcd7cbab8623f43950031092ef472a62498ef3ec69b8adbfb425c40fb65dde",
         "manuscript_sha256": "sha256:eb361e01c13f35da5dd00687d6ad3af74ad2d1e718e963a0bb30278963bd2ed2",
-        "projection_ledger_sha256": "sha256:5c04aba59ac93c141486126709b304b8e463bc8e38a13ec5223f5d7df121171c",
-        "ledger_declared_page_content_sha256": "sha256:6f66cff2f265b72cd559126baa0e4ae5334383f61365d841c27d2691c5861b3e",
+        "projection_ledger_sha256": "sha256:23273d669832ba893367b7e1848ce9b469ca50409682d9883c07f6b0d3d59a49",
+        "ledger_declared_page_content_sha256": "sha256:ffdcd7cbab8623f43950031092ef472a62498ef3ec69b8adbfb425c40fb65dde",
         "ledger_declared_manuscript_sha256": "sha256:eb361e01c13f35da5dd00687d6ad3af74ad2d1e718e963a0bb30278963bd2ed2",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -7650,7 +7650,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4826,
+        "learner_prose_cjk": 4794,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 13,
@@ -7672,7 +7672,7 @@
         "sentence_duplication": {
           "rate": 0,
           "duplicated": 0,
-          "total": 118,
+          "total": 116,
           "compared_page_ids": [
             "TD-QP01",
             "TD-QP02",
@@ -7713,11 +7713,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:c7562cf0c6f67559743e40a402a13e505d05f2ba7ed63b6f87c53671aba4b75c",
-        "learner_content_sections_hash": "sha256:fe0cac60fe2906e60784dc3f90aba4e4a041f46eee9269deea1ab3fd07dd7bce",
+        "tutorial_page_content_hash": "sha256:37d1624d1a56e1890f7b471591e5d2b6dd01f8f67f44594cce4dea4deb4a17d7",
+        "learner_content_sections_hash": "sha256:81db0e1f9570406ac3e25576fbd353280f2542963d0c3848db89ab0f0c1fcfae",
         "manuscript_sha256": "sha256:891775c1303da6c80a1e4e0d330a0f6ca703f77d0157c8531dacfd85a9447ab6",
-        "projection_ledger_sha256": "sha256:3d18498f62de9131bdf8b61e96adea92d5bb176ea016f395846cff2069ea2c5d",
-        "ledger_declared_page_content_sha256": "sha256:fe0cac60fe2906e60784dc3f90aba4e4a041f46eee9269deea1ab3fd07dd7bce",
+        "projection_ledger_sha256": "sha256:8c1757d113bb8fdee2e247bd47d8d232f3820c0bd12899614a0c0426765be9df",
+        "ledger_declared_page_content_sha256": "sha256:81db0e1f9570406ac3e25576fbd353280f2542963d0c3848db89ab0f0c1fcfae",
         "ledger_declared_manuscript_sha256": "sha256:891775c1303da6c80a1e4e0d330a0f6ca703f77d0157c8531dacfd85a9447ab6",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -7744,7 +7744,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6332,
+        "learner_prose_cjk": 6306,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 9,
@@ -7765,7 +7765,7 @@
         "sentence_duplication": {
           "rate": 0,
           "duplicated": 0,
-          "total": 162,
+          "total": 160,
           "compared_page_ids": [
             "TD-C02",
             "TD-C03",
@@ -7808,11 +7808,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7355e837c379fd4a603f8ee87a25f57eb7edab01d356fb0c656083a47be8fdc9",
-        "learner_content_sections_hash": "sha256:4222e93d2439d92a5942c2936b83df44378e0d78709a22995bed50a15b5ff41a",
+        "tutorial_page_content_hash": "sha256:c4241aca931f67cb83374b749934c37fbbd5f3d2d35afc3f278383d8aed75b91",
+        "learner_content_sections_hash": "sha256:4e3b4aaacd7d909b774ef4ea163f52b456ff769a2b1cdd907aea49d7875bb8bd",
         "manuscript_sha256": "sha256:ca7272a68ab98b9e46b42436dfc0627e27ced3556b8e6f75347c69b67acdc512",
-        "projection_ledger_sha256": "sha256:f0981ecc48a36a2cbac06629ede5ca2906cd84a22faba628e08b00bc2c877ad4",
-        "ledger_declared_page_content_sha256": "sha256:4222e93d2439d92a5942c2936b83df44378e0d78709a22995bed50a15b5ff41a",
+        "projection_ledger_sha256": "sha256:59b7702c086edf8426470451fb19d68bd5799e9c5ef0091a54291c7c42c3932a",
+        "ledger_declared_page_content_sha256": "sha256:4e3b4aaacd7d909b774ef4ea163f52b456ff769a2b1cdd907aea49d7875bb8bd",
         "ledger_declared_manuscript_sha256": "sha256:ca7272a68ab98b9e46b42436dfc0627e27ced3556b8e6f75347c69b67acdc512",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -7839,7 +7839,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5224,
+        "learner_prose_cjk": 5190,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 9,
@@ -7858,9 +7858,9 @@
         "page_specific_material_count": 9,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0714,
+          "rate": 0.0726,
           "duplicated": 9,
-          "total": 126,
+          "total": 124,
           "compared_page_ids": [
             "TD-C01",
             "TD-C03",
@@ -7903,11 +7903,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:d817a1e2e34431ae98ec3f40f686609a8f83abd8537698987bb6e5f3befed7f7",
-        "learner_content_sections_hash": "sha256:dadcaf693b0e027201b5b474fc573f1a1e812631b8525f487696e7fec90e0543",
+        "tutorial_page_content_hash": "sha256:20bc05c711664bc4ac8ed759b7e98774c577a8f8116fe2628243da191631be28",
+        "learner_content_sections_hash": "sha256:138145c1a91ad790c3ed1a8434c459c5e925baf85c059969c2e78ceb6ac9c80d",
         "manuscript_sha256": "sha256:c52519d06d2c2163c0a3c48a20f9415a5bc76813420c2e816f2f933cee97084f",
-        "projection_ledger_sha256": "sha256:83ca9348f700ffd5c50fb19a8279dbc1e4ca5de6ad161edf153651f5a1aaca29",
-        "ledger_declared_page_content_sha256": "sha256:dadcaf693b0e027201b5b474fc573f1a1e812631b8525f487696e7fec90e0543",
+        "projection_ledger_sha256": "sha256:69cbb0044974ab787e1fb246c60a6dec93c2b69684d53dd3d1412f99ac193b98",
+        "ledger_declared_page_content_sha256": "sha256:138145c1a91ad790c3ed1a8434c459c5e925baf85c059969c2e78ceb6ac9c80d",
         "ledger_declared_manuscript_sha256": "sha256:c52519d06d2c2163c0a3c48a20f9415a5bc76813420c2e816f2f933cee97084f",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -7934,7 +7934,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5609,
+        "learner_prose_cjk": 5579,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 9,
@@ -7953,9 +7953,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0596,
+          "rate": 0.0604,
           "duplicated": 9,
-          "total": 151,
+          "total": 149,
           "compared_page_ids": [
             "TD-C01",
             "TD-C02",
@@ -7998,11 +7998,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:8a90db84120c2d035d4729b512fa0a02002c86830ee812e8e6b7ebaf52ef7589",
-        "learner_content_sections_hash": "sha256:3c22191bfa6d913a9a4a4adda655c4fd6257202defaeed0d738bfa0fc0b62838",
+        "tutorial_page_content_hash": "sha256:2f0fa28338383a941584f9428e440120694e745b16f3b28189c11f723fa1ae19",
+        "learner_content_sections_hash": "sha256:f14161cf35cb760a32e1783944c72fd1b746cdd3fb6913fa4e15cf4c9978f321",
         "manuscript_sha256": "sha256:aaaf4bd4adf91ca356879e00ff96a70118daa53ecd870697ce4f99214a851d52",
-        "projection_ledger_sha256": "sha256:753e12d6673321b313afb7e22bd28ab6f0658aa012125bb417a63d6c02148ddb",
-        "ledger_declared_page_content_sha256": "sha256:3c22191bfa6d913a9a4a4adda655c4fd6257202defaeed0d738bfa0fc0b62838",
+        "projection_ledger_sha256": "sha256:9a49d0c71fa87faf4266036d24eddb5285448f7087c5f2c3acd69ccfb7609939",
+        "ledger_declared_page_content_sha256": "sha256:f14161cf35cb760a32e1783944c72fd1b746cdd3fb6913fa4e15cf4c9978f321",
         "ledger_declared_manuscript_sha256": "sha256:aaaf4bd4adf91ca356879e00ff96a70118daa53ecd870697ce4f99214a851d52",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8029,7 +8029,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4238,
+        "learner_prose_cjk": 4214,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 9,
@@ -8048,9 +8048,9 @@
         "page_specific_material_count": 7,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0811,
+          "rate": 0.0826,
           "duplicated": 9,
-          "total": 111,
+          "total": 109,
           "compared_page_ids": [
             "TD-C01",
             "TD-C02",
@@ -8093,11 +8093,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:d4609a8ab2b406d435227ace0f0238a2a92e57a401948f9ec7ebcd913208f7b7",
-        "learner_content_sections_hash": "sha256:66df2690fbd051476ce8215593a12e258b755504a64818f901f5c2f3b44c63c7",
+        "tutorial_page_content_hash": "sha256:1e89a5cb2b8aebd0b25c744cbac49b216b54798c311f397ed05a79964219bfb5",
+        "learner_content_sections_hash": "sha256:f08bd4933cc38364149bb62caba78cb1bb4f73d177703518f4a3028af6f93d05",
         "manuscript_sha256": "sha256:df2096554a95db7839e429ca2dca0a86b3a50b6c9a497f6ded4bf00b16583045",
-        "projection_ledger_sha256": "sha256:229146c6d80417720c41449b7049709906e53c69c8a251ae6e4b7d983ee38c31",
-        "ledger_declared_page_content_sha256": "sha256:66df2690fbd051476ce8215593a12e258b755504a64818f901f5c2f3b44c63c7",
+        "projection_ledger_sha256": "sha256:7405ac83b6845e3d93a6c24dd6777847c06fcb2361c64fe9fc0aa1fab5f8a68c",
+        "ledger_declared_page_content_sha256": "sha256:f08bd4933cc38364149bb62caba78cb1bb4f73d177703518f4a3028af6f93d05",
         "ledger_declared_manuscript_sha256": "sha256:df2096554a95db7839e429ca2dca0a86b3a50b6c9a497f6ded4bf00b16583045",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8124,7 +8124,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4415,
+        "learner_prose_cjk": 4381,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 9,
@@ -8143,9 +8143,9 @@
         "page_specific_material_count": 7,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0744,
+          "rate": 0.0756,
           "duplicated": 9,
-          "total": 121,
+          "total": 119,
           "compared_page_ids": [
             "TD-C01",
             "TD-C02",
@@ -8188,11 +8188,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:eb6a27ff3d6b984b474d3216363fc9b91155666f3c4f8a3a72c51cd820227246",
-        "learner_content_sections_hash": "sha256:d74de2fe689125640ec31c655d396632c9e8e82bf1b2d44a7734fc865418d410",
+        "tutorial_page_content_hash": "sha256:d9aa0810f635df82ad44963af08472f61291ac1bacd11abf2e7201a6a54e0745",
+        "learner_content_sections_hash": "sha256:835c387eb6e257011a914046cc2f89db8f8cd7e7ec532c63054c7a3c178bd4e4",
         "manuscript_sha256": "sha256:b0733c3a085b7e99a0003930ea8d14d3663f4a7174368aad69737848b162bfbb",
-        "projection_ledger_sha256": "sha256:54825b800b1665328777eb2a3c60a86bd53e41f046cb76c8d4044cb0d6778fb9",
-        "ledger_declared_page_content_sha256": "sha256:d74de2fe689125640ec31c655d396632c9e8e82bf1b2d44a7734fc865418d410",
+        "projection_ledger_sha256": "sha256:bc77b56281cd3d42820ed95e70742a978279477576cc74959f1c1314a04dd03f",
+        "ledger_declared_page_content_sha256": "sha256:835c387eb6e257011a914046cc2f89db8f8cd7e7ec532c63054c7a3c178bd4e4",
         "ledger_declared_manuscript_sha256": "sha256:b0733c3a085b7e99a0003930ea8d14d3663f4a7174368aad69737848b162bfbb",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8219,7 +8219,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5464,
+        "learner_prose_cjk": 5428,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 9,
@@ -8238,9 +8238,9 @@
         "page_specific_material_count": 7,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0588,
+          "rate": 0.0596,
           "duplicated": 9,
-          "total": 153,
+          "total": 151,
           "compared_page_ids": [
             "TD-C01",
             "TD-C02",
@@ -8283,11 +8283,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:c7cabbbe0fd78f8658b7ab820703f85f189996fa5c2fcf731ee36f0f7f30a67a",
-        "learner_content_sections_hash": "sha256:a0821e091bd3bb8c5baf470ddc51ba42132cf5638935ea6c69026f9c34af721c",
+        "tutorial_page_content_hash": "sha256:f5217ec30a4e65cf734705584e11947503a475844760118fa2d12e14da4c52a5",
+        "learner_content_sections_hash": "sha256:63022a912dd79beccdecb89dec17b2b9ed4a81978e7a0bc01432f90d1f6223a9",
         "manuscript_sha256": "sha256:5a75bc1de89e961d95a2761436e4db8a27ac0b7c188e33304f6c5ec132282393",
-        "projection_ledger_sha256": "sha256:9918bc7a59b4450adc0600bc74cb61be10b699560eb62547a40fa2d805f9c6c0",
-        "ledger_declared_page_content_sha256": "sha256:a0821e091bd3bb8c5baf470ddc51ba42132cf5638935ea6c69026f9c34af721c",
+        "projection_ledger_sha256": "sha256:752e56c177c5a8c36629af42ad0b2175fef970664676fb80dd3e8c4ef5a047ac",
+        "ledger_declared_page_content_sha256": "sha256:63022a912dd79beccdecb89dec17b2b9ed4a81978e7a0bc01432f90d1f6223a9",
         "ledger_declared_manuscript_sha256": "sha256:5a75bc1de89e961d95a2761436e4db8a27ac0b7c188e33304f6c5ec132282393",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8314,7 +8314,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 4414,
+        "learner_prose_cjk": 4386,
         "strict_target_cjk": 2000,
         "depth_pass": true,
         "table_count": 9,
@@ -8333,9 +8333,9 @@
         "page_specific_material_count": 9,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0763,
+          "rate": 0.0776,
           "duplicated": 9,
-          "total": 118,
+          "total": 116,
           "compared_page_ids": [
             "TD-C01",
             "TD-C02",
@@ -8378,11 +8378,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:ee2fca581116ea00dcb99248edfd1f1b8c8474d1c0417dfff44fc51c36272b3c",
-        "learner_content_sections_hash": "sha256:93ea7e96d95d3f3ac385c107e64519f55b1edad2cd7c5980a61c79bba8192164",
+        "tutorial_page_content_hash": "sha256:921252239322c14a3ae30f76215a713ba1df784e22bb9a722520d943f4825b1b",
+        "learner_content_sections_hash": "sha256:6a74f1801929cb00e58c08c1dff6a2e815f3a9d6b314740214a5c5f191ee0739",
         "manuscript_sha256": "sha256:01a947528df689c8178e9d1234af0935b5198b75e4d5442b46ed2f9e462e573d",
-        "projection_ledger_sha256": "sha256:e9f945d0ae06bc44df405b6764c151a4830deea1b618772ae652330afecda2a5",
-        "ledger_declared_page_content_sha256": "sha256:93ea7e96d95d3f3ac385c107e64519f55b1edad2cd7c5980a61c79bba8192164",
+        "projection_ledger_sha256": "sha256:53577bc704f9fa692ac40e8135d2ef45c9df7d58fe3f41159c49c56fa39dc600",
+        "ledger_declared_page_content_sha256": "sha256:6a74f1801929cb00e58c08c1dff6a2e815f3a9d6b314740214a5c5f191ee0739",
         "ledger_declared_manuscript_sha256": "sha256:01a947528df689c8178e9d1234af0935b5198b75e4d5442b46ed2f9e462e573d",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8409,7 +8409,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6445,
+        "learner_prose_cjk": 6378,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 17,
@@ -8430,9 +8430,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.064,
+          "rate": 0.0647,
           "duplicated": 11,
-          "total": 172,
+          "total": 170,
           "compared_page_ids": [
             "TD-AP02",
             "TD-AP03",
@@ -8476,11 +8476,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:b34dd02d91eab2fab75ba9655276fa3392fe915364f0d3e3f98c7de6c6c63e84",
-        "learner_content_sections_hash": "sha256:c020caa4ada70903847253a87aeedfcf0edf351173e0c33be5c31345a3000d38",
+        "tutorial_page_content_hash": "sha256:10511daba05ce3c8c024eebece22d8ee0df426197dca0329a23aa5dba5b3478c",
+        "learner_content_sections_hash": "sha256:04578c615dd656d210bc1baf1803c27d51bada8fde22f2e8bf49a92cc04bbdfe",
         "manuscript_sha256": "sha256:c08648aeab08d0d0b6cc96e6c5802c6a7408df87a6f3b5e58144ec510b86c297",
-        "projection_ledger_sha256": "sha256:8ff49354e2b4b3c1ab386e904a394bd30d90b2876e711b5792b3d80834611883",
-        "ledger_declared_page_content_sha256": "sha256:c020caa4ada70903847253a87aeedfcf0edf351173e0c33be5c31345a3000d38",
+        "projection_ledger_sha256": "sha256:a756b4280af4b2ff7f15dce1f8bfa9c061f84fe80be36c8b9ed836ead558caa1",
+        "ledger_declared_page_content_sha256": "sha256:04578c615dd656d210bc1baf1803c27d51bada8fde22f2e8bf49a92cc04bbdfe",
         "ledger_declared_manuscript_sha256": "sha256:c08648aeab08d0d0b6cc96e6c5802c6a7408df87a6f3b5e58144ec510b86c297",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8507,7 +8507,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5723,
+        "learner_prose_cjk": 5685,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 17,
@@ -8527,9 +8527,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0733,
+          "rate": 0.0743,
           "duplicated": 11,
-          "total": 150,
+          "total": 148,
           "compared_page_ids": [
             "TD-AP01",
             "TD-AP03",
@@ -8573,11 +8573,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:fda91c59102a03c0b70d7c3b0d323227774bcaf8a3e42db711f9588866baad61",
-        "learner_content_sections_hash": "sha256:85910bb6ca2c96dcb5f562678010dbce23aa5b786e9860333d4efc4f5c5c0cf2",
+        "tutorial_page_content_hash": "sha256:a8e8595ed629f3f7c0c736c8f130bafbc22036c1364cbdcb8e4ecf7015288645",
+        "learner_content_sections_hash": "sha256:68e91da4effe33ee4ea198541a80538a4aeb97aa6005acad3772c414494395f6",
         "manuscript_sha256": "sha256:02597a1da28dd58740056f4a0a8952c14eedc06a25ec7024fadfcdc573836b1e",
-        "projection_ledger_sha256": "sha256:f5b7df4dc1ea5d0c590d58dc53faec9e301d729812a454d54ad189fcca9809a4",
-        "ledger_declared_page_content_sha256": "sha256:85910bb6ca2c96dcb5f562678010dbce23aa5b786e9860333d4efc4f5c5c0cf2",
+        "projection_ledger_sha256": "sha256:f22491aff1e53a744a552db1a84478351c1d5d67be171720604a9640d74aa67e",
+        "ledger_declared_page_content_sha256": "sha256:68e91da4effe33ee4ea198541a80538a4aeb97aa6005acad3772c414494395f6",
         "ledger_declared_manuscript_sha256": "sha256:02597a1da28dd58740056f4a0a8952c14eedc06a25ec7024fadfcdc573836b1e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8604,7 +8604,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5603,
+        "learner_prose_cjk": 5601,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 17,
@@ -8862,11 +8862,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:7c66c6abc75e5fcbeba6f9ed83510e8e5234cb5c581b73f8181418703c693e5b",
-        "learner_content_sections_hash": "sha256:eded867d6a902e24768c26b6b0dd891647563bba73cdc4ff732ec05a1d2f38ef",
+        "tutorial_page_content_hash": "sha256:7e3706ad3e5fee7c7348b13c9643d9da9739bbb00cd3af6e2c74b3d63e70233a",
+        "learner_content_sections_hash": "sha256:5d78aa22cf46a8803b5351d6ce920c21a0119d9120c5aee830d239066ee98b33",
         "manuscript_sha256": "sha256:c09feaef8734a69999c7289c56fccfd4582548be832905f26739dc67e389e80e",
-        "projection_ledger_sha256": "sha256:ba2b54a136d34cba61b8980c7f1276d10633020354db096a825724ef078bc554",
-        "ledger_declared_page_content_sha256": "sha256:eded867d6a902e24768c26b6b0dd891647563bba73cdc4ff732ec05a1d2f38ef",
+        "projection_ledger_sha256": "sha256:13690ddb94b2634a6a2432b18a7a2e3f93d4067666a5b29b1b1c67eb64e41943",
+        "ledger_declared_page_content_sha256": "sha256:5d78aa22cf46a8803b5351d6ce920c21a0119d9120c5aee830d239066ee98b33",
         "ledger_declared_manuscript_sha256": "sha256:c09feaef8734a69999c7289c56fccfd4582548be832905f26739dc67e389e80e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8893,7 +8893,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5745,
+        "learner_prose_cjk": 5761,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 17,
@@ -8958,11 +8958,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:eae78ec949aa06e96bf0faf45d208534973726b394b88dfa1a857f06c3bf515f",
-        "learner_content_sections_hash": "sha256:8a1c9f391a3ef73c611b858698c2d3a6c66250635a4a0bd279a959fe6fa52733",
+        "tutorial_page_content_hash": "sha256:9e19d5f50fe9d9760080e08b793c80f76e78056d5a548df2d3c877cc01912f97",
+        "learner_content_sections_hash": "sha256:18b3264ca58320998bcb7719c38baec2ddc2421f351c07d1f5446ea882559799",
         "manuscript_sha256": "sha256:cbf58375c9db7cb2c8c2d0d3ac5e28621ceacaaa04fb54b9515ac4c56258d71a",
-        "projection_ledger_sha256": "sha256:0459b1f0a0bf479805a11bd05bc1190f8cbd2dd23cd859feb352d8c4e07cb31b",
-        "ledger_declared_page_content_sha256": "sha256:8a1c9f391a3ef73c611b858698c2d3a6c66250635a4a0bd279a959fe6fa52733",
+        "projection_ledger_sha256": "sha256:b73c5b5d626312bc4656bc192c7f4b356f2b3f32ece848027834b62c22231d4a",
+        "ledger_declared_page_content_sha256": "sha256:18b3264ca58320998bcb7719c38baec2ddc2421f351c07d1f5446ea882559799",
         "ledger_declared_manuscript_sha256": "sha256:cbf58375c9db7cb2c8c2d0d3ac5e28621ceacaaa04fb54b9515ac4c56258d71a",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -8989,7 +8989,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5752,
+        "learner_prose_cjk": 5736,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 17,
@@ -9055,11 +9055,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:8f0a5f2d4613e83e7c279fef96d3b4c2b042d714b55e9db0d9021065f73f7504",
-        "learner_content_sections_hash": "sha256:e0087e04b9b61707b3c846749126b355287de95fb7c41a6d00b78906bb87206a",
+        "tutorial_page_content_hash": "sha256:85db139dc94f8ed91d3f19111ac9fee46ccbe6607646164bf83b9e4f0457a229",
+        "learner_content_sections_hash": "sha256:4f95e2d278877833e92651cb082b18f575d47ebe53036635d68d0e91815505d8",
         "manuscript_sha256": "sha256:37fd0ca0eb46a61035908c81d218fb9c059824d53b35d187c70ba8a9c19432c9",
-        "projection_ledger_sha256": "sha256:20d74d954004d9dc5f54c8b1f267ff5809308b1722aef111acf867f4abf5ccc8",
-        "ledger_declared_page_content_sha256": "sha256:e0087e04b9b61707b3c846749126b355287de95fb7c41a6d00b78906bb87206a",
+        "projection_ledger_sha256": "sha256:10cc6ffa2f29de1e64d5517562dca1333832458e05f464e37c8d6ffc024d15c9",
+        "ledger_declared_page_content_sha256": "sha256:4f95e2d278877833e92651cb082b18f575d47ebe53036635d68d0e91815505d8",
         "ledger_declared_manuscript_sha256": "sha256:37fd0ca0eb46a61035908c81d218fb9c059824d53b35d187c70ba8a9c19432c9",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9086,7 +9086,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5462,
+        "learner_prose_cjk": 5420,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 17,
@@ -9106,9 +9106,9 @@
         "page_specific_material_count": 6,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.0748,
+          "rate": 0.0759,
           "duplicated": 11,
-          "total": 147,
+          "total": 145,
           "compared_page_ids": [
             "TD-AP01",
             "TD-AP02",
@@ -9152,11 +9152,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:1e8a56f6cf1a1de131c36c8834c3d67eee683c0c87c79d4a6f610cd1321df464",
-        "learner_content_sections_hash": "sha256:9c122abc27d8e3955c25161cad082dc0ac42d7eeecb99fcc3594405cb3220277",
+        "tutorial_page_content_hash": "sha256:bfe0f944ea92d3426752b269f15153f66c36498fb8253a8999e0dc0891f0b846",
+        "learner_content_sections_hash": "sha256:9b588b10e12bcfeeebd1f3049f605742d1c49eab215a0c39773b01d6ee75c7a4",
         "manuscript_sha256": "sha256:afd549993f417d1831f6fdabca1ed2ff5b1c70ecc1f057af12efeaca1844ad37",
-        "projection_ledger_sha256": "sha256:71701abf57c44905f53f94366d9059195d59be6b0a1df8a02b89a9e373be61e7",
-        "ledger_declared_page_content_sha256": "sha256:9c122abc27d8e3955c25161cad082dc0ac42d7eeecb99fcc3594405cb3220277",
+        "projection_ledger_sha256": "sha256:486522393f63b416b0759218afd2f10855633e08c7b0f36254727af2f026d3aa",
+        "ledger_declared_page_content_sha256": "sha256:9b588b10e12bcfeeebd1f3049f605742d1c49eab215a0c39773b01d6ee75c7a4",
         "ledger_declared_manuscript_sha256": "sha256:afd549993f417d1831f6fdabca1ed2ff5b1c70ecc1f057af12efeaca1844ad37",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9183,7 +9183,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6335,
+        "learner_prose_cjk": 6271,
         "strict_target_cjk": 3000,
         "depth_pass": true,
         "table_count": 10,
@@ -9202,9 +9202,9 @@
         "page_specific_material_count": 14,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1333,
-          "duplicated": 20,
-          "total": 150,
+          "rate": 0.1275,
+          "duplicated": 19,
+          "total": 149,
           "compared_page_ids": [
             "TD-AG-01",
             "TD-AG-02",
@@ -9251,11 +9251,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:1ef519ffd9005d718e5e65d45b9cee026486e2f2375391e160fd86663f2f35d2",
-        "learner_content_sections_hash": "sha256:247e439e33a678ddbaa74a6ef6a0e70feb7440cfdcf5bfb86279b2f3d62fc515",
+        "tutorial_page_content_hash": "sha256:ce9b065add0003d301e33c0781e2912f5b85083cac60dcd4022411f836059fe3",
+        "learner_content_sections_hash": "sha256:b2988e15c759aa60e8a5e830f5c6125164f6d2e464593d204792bb4ec11cfee4",
         "manuscript_sha256": "sha256:49d6e630570d44762d8c7e4b2ba036ed206e83ec8b1a6e194a984aa1f6b7c0b0",
-        "projection_ledger_sha256": "sha256:56e3904d8721ad43e7714babdd6eb13507968948ed74001123c38a5f757834ea",
-        "ledger_declared_page_content_sha256": "sha256:247e439e33a678ddbaa74a6ef6a0e70feb7440cfdcf5bfb86279b2f3d62fc515",
+        "projection_ledger_sha256": "sha256:6f076ed57791d65c041e1bee0d9acd6740f3ac14442a5dfee61ed36a3c9f5a42",
+        "ledger_declared_page_content_sha256": "sha256:b2988e15c759aa60e8a5e830f5c6125164f6d2e464593d204792bb4ec11cfee4",
         "ledger_declared_manuscript_sha256": "sha256:49d6e630570d44762d8c7e4b2ba036ed206e83ec8b1a6e194a984aa1f6b7c0b0",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9282,7 +9282,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5906,
+        "learner_prose_cjk": 5840,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9301,9 +9301,9 @@
         "page_specific_material_count": 13,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1342,
-          "duplicated": 20,
-          "total": 149,
+          "rate": 0.1301,
+          "duplicated": 19,
+          "total": 146,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-02",
@@ -9350,11 +9350,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:0b7d95357e99bea11ff1afd34a181b46c067fc67cd4ba51d1bf78adc7325085a",
-        "learner_content_sections_hash": "sha256:da1d061349e4f3fd3960b3f7b1367576e63e01b90e19495a855eecb780a26b1e",
+        "tutorial_page_content_hash": "sha256:c935b73f1d83ad36791fac3800ff879c6eca181f9601e36c6616dc2b34bdd91a",
+        "learner_content_sections_hash": "sha256:d529c656fa856a4dcf7920f7d4ef3a784a7bb8ef9760caaf2b60163a778b407e",
         "manuscript_sha256": "sha256:a1dfbd41d73feae1620e2958a9354bc032cd599ab509c6fbe34c6a4dafbb6cfb",
-        "projection_ledger_sha256": "sha256:dabcc85de04281ec132d73c5969b5829ee1c48a327e73a58580d26e9c428f1ba",
-        "ledger_declared_page_content_sha256": "sha256:da1d061349e4f3fd3960b3f7b1367576e63e01b90e19495a855eecb780a26b1e",
+        "projection_ledger_sha256": "sha256:b640aeb2bff9e72589a3488a3d7eca3cafbcba642040ce1d4671ef776e658b8e",
+        "ledger_declared_page_content_sha256": "sha256:d529c656fa856a4dcf7920f7d4ef3a784a7bb8ef9760caaf2b60163a778b407e",
         "ledger_declared_manuscript_sha256": "sha256:a1dfbd41d73feae1620e2958a9354bc032cd599ab509c6fbe34c6a4dafbb6cfb",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9381,7 +9381,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5840,
+        "learner_prose_cjk": 5778,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9400,9 +9400,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1389,
-          "duplicated": 20,
-          "total": 144,
+          "rate": 0.1348,
+          "duplicated": 19,
+          "total": 141,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -9449,11 +9449,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:ba95441d0e6d77a5ccc222460154a16aadc63fc1cccd542f46ab7ddd70156c71",
-        "learner_content_sections_hash": "sha256:3996a6c50950f29ed205c51da96e31b3b78894a0fc81ca9f29730c97f1329bc7",
+        "tutorial_page_content_hash": "sha256:1ced4afe0683544852a3c2131c57d1b6ad81e6581a0b7e8a65a1306340134028",
+        "learner_content_sections_hash": "sha256:04c74b29372cc5bd1bc50eab4c308501e11abf38ffcb22c905f55346f8d2cb4d",
         "manuscript_sha256": "sha256:8da93bb0489e5f864a67ea160db8835562ee3ade57d34a8ef8dbcac1f3c3db22",
-        "projection_ledger_sha256": "sha256:08006cda06d32d14d67b049b18ec711539997aa98bf809aabe514081231cd144",
-        "ledger_declared_page_content_sha256": "sha256:3996a6c50950f29ed205c51da96e31b3b78894a0fc81ca9f29730c97f1329bc7",
+        "projection_ledger_sha256": "sha256:4e005d71690f2edceb040f0aecadeeff866950ab9d02b48d0ab74de441ef8a0b",
+        "ledger_declared_page_content_sha256": "sha256:04c74b29372cc5bd1bc50eab4c308501e11abf38ffcb22c905f55346f8d2cb4d",
         "ledger_declared_manuscript_sha256": "sha256:8da93bb0489e5f864a67ea160db8835562ee3ade57d34a8ef8dbcac1f3c3db22",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9480,7 +9480,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6186,
+        "learner_prose_cjk": 6126,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9499,9 +9499,9 @@
         "page_specific_material_count": 11,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1391,
-          "duplicated": 21,
-          "total": 151,
+          "rate": 0.1351,
+          "duplicated": 20,
+          "total": 148,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -9548,11 +9548,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:a065a4e6bef5e516bbe278871d7c87e1534cb792ce2186f1265b9c63e29ad3b4",
-        "learner_content_sections_hash": "sha256:bc8a060d9233eec56aa5bc24ca56e9172fe14fd4cac88dbf96e14274e730e889",
+        "tutorial_page_content_hash": "sha256:abbd804a6695c03588f1cd987c2e1b620bc8dc05b2446dd935627d8ad90b7bde",
+        "learner_content_sections_hash": "sha256:634dc4fff29735af8842385a79d3d12266cdee5e04d6f99b88f886ec4247ec8f",
         "manuscript_sha256": "sha256:b8c1def7e70ff4a6621d26db05bfd1a1da43905761fe3e48914266df393c12b7",
-        "projection_ledger_sha256": "sha256:0de7abba71f43c9f919e08f1a81dcf082c15e94bf2b2f616831b1fa5325ad2ff",
-        "ledger_declared_page_content_sha256": "sha256:bc8a060d9233eec56aa5bc24ca56e9172fe14fd4cac88dbf96e14274e730e889",
+        "projection_ledger_sha256": "sha256:7a4b4664f3ef3db5aeac8685fbc983e3d82e9a13217e8e3e11dca639507a747a",
+        "ledger_declared_page_content_sha256": "sha256:634dc4fff29735af8842385a79d3d12266cdee5e04d6f99b88f886ec4247ec8f",
         "ledger_declared_manuscript_sha256": "sha256:b8c1def7e70ff4a6621d26db05bfd1a1da43905761fe3e48914266df393c12b7",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9579,7 +9579,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5880,
+        "learner_prose_cjk": 5814,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9598,9 +9598,9 @@
         "page_specific_material_count": 11,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1458,
-          "duplicated": 21,
-          "total": 144,
+          "rate": 0.1399,
+          "duplicated": 20,
+          "total": 143,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -9647,11 +9647,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:2b4fb94027e7b894c28ed7aa394295852f8e1c42e52686c42223cd567738c1ed",
-        "learner_content_sections_hash": "sha256:887dd389a5a63d22a0517f0bd8beacfddc0a814894d6f8b4b5d0f22a9838d034",
+        "tutorial_page_content_hash": "sha256:d16af02bf892765996dc4fac08dcf531967dc56dbcf7a5922c0fff735358bfdf",
+        "learner_content_sections_hash": "sha256:97c76fb5e8ae1f8d806e717404fc9ffb030307cbff724349cb1c080c6d33df46",
         "manuscript_sha256": "sha256:4c6eeb2f260643fbd0768c9ddcc0f2295379071d8390b1d713ba58dafb530cc1",
-        "projection_ledger_sha256": "sha256:ed4f69cbf740a154104baa1f60592074cf6ab62024e782f55c3f4a0cc833e544",
-        "ledger_declared_page_content_sha256": "sha256:887dd389a5a63d22a0517f0bd8beacfddc0a814894d6f8b4b5d0f22a9838d034",
+        "projection_ledger_sha256": "sha256:8d7cdfa57769a042895bf021b203b5549ae3dcfc0e746a7df125dd97b61c0b34",
+        "ledger_declared_page_content_sha256": "sha256:97c76fb5e8ae1f8d806e717404fc9ffb030307cbff724349cb1c080c6d33df46",
         "ledger_declared_manuscript_sha256": "sha256:4c6eeb2f260643fbd0768c9ddcc0f2295379071d8390b1d713ba58dafb530cc1",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9678,7 +9678,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6093,
+        "learner_prose_cjk": 6029,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9698,9 +9698,9 @@
         "page_specific_material_count": 13,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1258,
-          "duplicated": 20,
-          "total": 159,
+          "rate": 0.1218,
+          "duplicated": 19,
+          "total": 156,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -9747,11 +9747,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:342c496fecdc165a4761ab1515ff4f7e747bcd0d4a1c188ae06e2312b5b20715",
-        "learner_content_sections_hash": "sha256:9f7dd0f61d443aa2d92c275175538f590c8e9413ebbb0c41d9cfac362a92c2e2",
+        "tutorial_page_content_hash": "sha256:41edba7d8599fb7da18ab2805fb1d8c5133c262c6a5ef6d5bfa1b7567611b762",
+        "learner_content_sections_hash": "sha256:789f8f064cc3f6845f11fc388c2c4ef52b992ab28d3396490933daea1ef63ce6",
         "manuscript_sha256": "sha256:33d732ace807426089c72d0ca1ba9c9cf5153d073304f941004a565df4fa2216",
-        "projection_ledger_sha256": "sha256:0e03c9d09799965b89fcb7243d6199b8aa07f643051b7fb22dd94faf61587493",
-        "ledger_declared_page_content_sha256": "sha256:9f7dd0f61d443aa2d92c275175538f590c8e9413ebbb0c41d9cfac362a92c2e2",
+        "projection_ledger_sha256": "sha256:d7dd55693b70323bafc69698351c96a25e69c2e4a197096579e1864ec3a83bd3",
+        "ledger_declared_page_content_sha256": "sha256:789f8f064cc3f6845f11fc388c2c4ef52b992ab28d3396490933daea1ef63ce6",
         "ledger_declared_manuscript_sha256": "sha256:33d732ace807426089c72d0ca1ba9c9cf5153d073304f941004a565df4fa2216",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9778,7 +9778,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5986,
+        "learner_prose_cjk": 5922,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9797,9 +9797,9 @@
         "page_specific_material_count": 13,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1379,
-          "duplicated": 20,
-          "total": 145,
+          "rate": 0.1338,
+          "duplicated": 19,
+          "total": 142,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -9846,11 +9846,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:f45bfbbcf5a14a86245e7f61fe5609e465f114cfdf7a6f727682aa4d3fac1e41",
-        "learner_content_sections_hash": "sha256:7660fdbcd1ff1cb38c53cf8c98eb77d26d896c425d5c084c88b720744318417a",
+        "tutorial_page_content_hash": "sha256:9febd44ffe9719096cb4e14c2d7233fe9f61542a14e5a23892a70b4b631ea9b1",
+        "learner_content_sections_hash": "sha256:b5a10b567e59e3d340a66e7fa2b7ec68b2ca2123242d30b1416c7c451715d740",
         "manuscript_sha256": "sha256:ac4b3c71169bba3d0f919911d13580c527895b9108385f82ca4f744d628b8174",
-        "projection_ledger_sha256": "sha256:b4c10ce60451cc49420aa01b9e206a4404544f5663f986309b367655dfdf5390",
-        "ledger_declared_page_content_sha256": "sha256:7660fdbcd1ff1cb38c53cf8c98eb77d26d896c425d5c084c88b720744318417a",
+        "projection_ledger_sha256": "sha256:2c889b3a7f8dce8fd4eedbb33ae946389c910c6afc64c6da278064623b3659e4",
+        "ledger_declared_page_content_sha256": "sha256:b5a10b567e59e3d340a66e7fa2b7ec68b2ca2123242d30b1416c7c451715d740",
         "ledger_declared_manuscript_sha256": "sha256:ac4b3c71169bba3d0f919911d13580c527895b9108385f82ca4f744d628b8174",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9877,7 +9877,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5705,
+        "learner_prose_cjk": 5639,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9896,9 +9896,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1361,
-          "duplicated": 20,
-          "total": 147,
+          "rate": 0.1319,
+          "duplicated": 19,
+          "total": 144,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -9945,11 +9945,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:248afd024a9b0a1abb750cd06612f0c8fb6fa77ad5b9b9cf9653ad98c289ea65",
-        "learner_content_sections_hash": "sha256:ccc8254291b47cfb8b0ec30c8b336043a96d8050f3e445b590d05fcc951e247a",
+        "tutorial_page_content_hash": "sha256:897d32f8e4bf1de567fcc6afdf0a195771142f3e0ba5d1722452aa4a9573284e",
+        "learner_content_sections_hash": "sha256:1b81fac3c46b5cea5ff7e9e1e404177f65b6ad88e10359f05570a8d98dcc9bf0",
         "manuscript_sha256": "sha256:beb7fc7e7eae6a29859febb29e683c017863011e83d298d17888b82fb5d2735e",
-        "projection_ledger_sha256": "sha256:7622c213f49273a3afe45778c0e71d5988f4582b525772e8c4e55720af61633e",
-        "ledger_declared_page_content_sha256": "sha256:ccc8254291b47cfb8b0ec30c8b336043a96d8050f3e445b590d05fcc951e247a",
+        "projection_ledger_sha256": "sha256:dd70ba69bfe870db4be110725b65752c114e98b2970213128c5b98fe3d8967b4",
+        "ledger_declared_page_content_sha256": "sha256:1b81fac3c46b5cea5ff7e9e1e404177f65b6ad88e10359f05570a8d98dcc9bf0",
         "ledger_declared_manuscript_sha256": "sha256:beb7fc7e7eae6a29859febb29e683c017863011e83d298d17888b82fb5d2735e",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -9976,7 +9976,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6000,
+        "learner_prose_cjk": 5942,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -9995,9 +9995,9 @@
         "page_specific_material_count": 11,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1373,
-          "duplicated": 21,
-          "total": 153,
+          "rate": 0.1333,
+          "duplicated": 20,
+          "total": 150,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -10044,11 +10044,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:b05737727007484abceb83abe5e53975c83ba0a98dff9363aee81611975dffe2",
-        "learner_content_sections_hash": "sha256:1a0d70f9d798a809e84a4c05525591e32175f1ec100eec3e77008ea3860dbf9e",
+        "tutorial_page_content_hash": "sha256:442c3640c906d599c3ea80c036e3e00068027465dbafd4a7568309531adf3c8f",
+        "learner_content_sections_hash": "sha256:70cdc9e08ee44fd8354ccbf3452f8e5e8d992b9a2e201219e36403812f616143",
         "manuscript_sha256": "sha256:30674bf683ffe8e94adb35a68bb7392ff3b4939680d503b67e0664cf4dfe70dd",
-        "projection_ledger_sha256": "sha256:f37b446d9183fd59a7fd09314630a9165038428e4f52a2ecd8576853277b550f",
-        "ledger_declared_page_content_sha256": "sha256:1a0d70f9d798a809e84a4c05525591e32175f1ec100eec3e77008ea3860dbf9e",
+        "projection_ledger_sha256": "sha256:3502074698c7c34e6a39b05778b8649c5fe89539e509981d06eb73687a17ea43",
+        "ledger_declared_page_content_sha256": "sha256:70cdc9e08ee44fd8354ccbf3452f8e5e8d992b9a2e201219e36403812f616143",
         "ledger_declared_manuscript_sha256": "sha256:30674bf683ffe8e94adb35a68bb7392ff3b4939680d503b67e0664cf4dfe70dd",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -10075,7 +10075,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 5765,
+        "learner_prose_cjk": 5701,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -10094,9 +10094,9 @@
         "page_specific_material_count": 15,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1299,
-          "duplicated": 20,
-          "total": 154,
+          "rate": 0.1258,
+          "duplicated": 19,
+          "total": 151,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
@@ -10143,11 +10143,11 @@
       "author_id": "course-page-projection-author-2026-08-13",
       "reviewer_id": "validation-semantic-parity-verifier-2026-08-13",
       "hashes": {
-        "tutorial_page_content_hash": "sha256:d0694afcaa2b7b3cb7e5461d46104757bef107efc2e3d0c78345f62f33c451ba",
-        "learner_content_sections_hash": "sha256:c8bac19ea21bc39b62b3aed2848e97f6a36bd62c210268969b8bdc86a288f030",
+        "tutorial_page_content_hash": "sha256:f839c50e0768f36089f7e2799a03c9cac8832637981e06874db28f96a750945d",
+        "learner_content_sections_hash": "sha256:3e2123c7fec501309bf1aa52dc416b793da32f301b71cad674d71a037332e89e",
         "manuscript_sha256": "sha256:b1cacb2544ef4c28d21b8176f02c05bbce210a422a61ad4269c3ea996fe8f3cf",
-        "projection_ledger_sha256": "sha256:9c19535a6a9d184dc6e91250d93e3b79778a642c21e36c2abc7920edbec33c98",
-        "ledger_declared_page_content_sha256": "sha256:c8bac19ea21bc39b62b3aed2848e97f6a36bd62c210268969b8bdc86a288f030",
+        "projection_ledger_sha256": "sha256:26bdedf1f3549bee5e06d14afb1d402fc1526cb4b64de3e4856b4abe8ef428c7",
+        "ledger_declared_page_content_sha256": "sha256:3e2123c7fec501309bf1aa52dc416b793da32f301b71cad674d71a037332e89e",
         "ledger_declared_manuscript_sha256": "sha256:b1cacb2544ef4c28d21b8176f02c05bbce210a422a61ad4269c3ea996fe8f3cf",
         "ledger_content_sections_binding": true,
         "full_page_hash_is_receipt_binding": true
@@ -10174,7 +10174,7 @@
         "record_present": true
       },
       "editorial_evidence": {
-        "learner_prose_cjk": 6103,
+        "learner_prose_cjk": 6041,
         "strict_target_cjk": 4000,
         "depth_pass": true,
         "table_count": 10,
@@ -10193,9 +10193,9 @@
         "page_specific_material_count": 12,
         "plain_language_model": true,
         "sentence_duplication": {
-          "rate": 0.1379,
-          "duplicated": 20,
-          "total": 145,
+          "rate": 0.1319,
+          "duplicated": 19,
+          "total": 144,
           "compared_page_ids": [
             "TD-AG-00",
             "TD-AG-01",
