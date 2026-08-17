@@ -173,6 +173,24 @@ class PublicReleaseTests(unittest.TestCase):
     def test_valid_public_release_passes(self) -> None:
         self.assertEqual(validate_release(self.root), [])
 
+    def test_release_accepts_split_static_course_projection(self) -> None:
+        """The small static shell must validate the same full course as inline data."""
+        html = (self.root / "site/index.html").read_text(encoding="utf-8")
+        embedded = json.loads(html.split("const COURSE_DATA=", 1)[1].split(";const DATA", 1)[0])
+        self.write_json("site/course-index.json", {
+            "firstUsablePath": ["P0"],
+            "modules": embedded["modules"],
+            "pages": embedded["pages"],
+            "releaseScope": {"promisedPageIds": [page["id"] for page in embedded["pages"]]},
+            "sourceNotes": {},
+            "moduleOverviews": [],
+        })
+        self.write_json("site/glossary.json", {"glossary": [], "glossaryCategories": []})
+        self.write_json("site/course-modules/M1.json", {"pages": embedded["pages"]})
+        self.write("site/index.html", "<html><script>const COURSE_INDEX={};</script></html>")
+        self.refresh_hash()
+        self.assertEqual(validate_release(self.root), [])
+
     def test_release_accepts_source_triggered_career_and_agent_capabilities(self) -> None:
         path = self.root / "CAPABILITY-PROFILES.json"
         data = json.loads(path.read_text())

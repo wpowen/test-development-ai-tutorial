@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:59d9e11dc0c6a597686e8cfcb531e78a3db43a6f6a6b94029859fa4238743666",
+  "content_hash": "sha256:4122183e30830773087772b19a87723d2ec0a9b68330b2dfc3d21f7b6dce0bd7",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
     "github-pages",
@@ -123,10 +123,10 @@
   "evidence_level": "fixture-tested local candidate; not practitioner-reviewed; not published",
   "publication_blockers_ref": "PUBLICATION-BLOCKERS.json",
   "solution_manifest_hash": "sha256:d1d458cfb7698cee5ebbb3f1ce2e94af4bbe9ed7383db31e1926bea1846d20af",
-  "catalog_manifest_hash": "sha256:de7ebd0bbb9f494ab4cfa2eb968de9607f002929126afed7b3650c10b5d1cc0b",
-  "promotion_manifest_hash": "sha256:3aae3cffd4be5a76e6673395215b0c0dcb0a31c6cd976eea4db5a55a1a504ea8",
-  "executability_manifest_hash": "sha256:9040ee841831f93f6a85154a60d23e2b5247457fa16d298430384a967f79a44a",
-  "artifact_closure_hash": "sha256:cbdea45bc92d2432e15f89689854c7281f396eb54652816e39a181bae7efb404",
+  "catalog_manifest_hash": "sha256:b86f85dbf472ba8dc706aed85cbff8db9e197c1182393176b21f6ae49933e098",
+  "promotion_manifest_hash": "sha256:a73f9db379a0037f8576d97a990798b7fa0f02e51d7195621f415807d28ee2bd",
+  "executability_manifest_hash": "sha256:93d9461cc3291a54e0815879b1350724025519714ca65d96a41a54c776988ede",
+  "artifact_closure_hash": "sha256:8a0ca01169be546fc84de11c1355a326869e7531e7e8b1321283cb224ace61b4",
   "capability_profiles_hash": "sha256:f4eb0cfbbc437576e86e8233d3638e3f3b5f84a4760327bde8be231d206d7afc",
   "professional_evidence_hash": "sha256:db1c664ca3667fe49417582945babddf85bd27daa9052e380bd5171c73ee52b5",
   "status_registry_hash": "sha256:e9f3d0c283b543855727626e21453fe32af9945dd6c3c1c257f8bf9d6332ff00",

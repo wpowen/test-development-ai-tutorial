@@ -1,7 +1,7 @@
 {
   "schema_version": "executability-audit.v1",
   "audit_id": "executability-c9ef1a241fda",
-  "audited_at": "2026-08-17T11:25:09.917Z",
+  "audited_at": "2026-08-17T13:19:39.490Z",
   "public_page_ids": [
     "TD-F01",
     "TD-P01",
@@ -1629,13 +1629,13 @@
   ],
   "verdict": "PASS",
   "findings": [],
-  "generated_at": "2026-08-17T11:25:09.917Z",
+  "generated_at": "2026-08-17T13:19:39.490Z",
   "evidence_run": {
     "schema_version": "evidence-run.v1",
-    "run_id": "integrity-2026-08-17T11-25-57-810Z-a58824e5",
+    "run_id": "integrity-2026-08-17T13-20-25-500Z-9bead9f1",
     "command": "node scripts/generate-course-integrity-manifests.mjs --write",
-    "started_at": "2026-08-17T11:25:09.782Z",
-    "finished_at": "2026-08-17T11:25:57.811Z",
+    "started_at": "2026-08-17T13:19:39.339Z",
+    "finished_at": "2026-08-17T13:20:25.501Z",
     "exit_code": 0,
     "validator": {
       "path": "scripts/generate-course-integrity-manifests.mjs",

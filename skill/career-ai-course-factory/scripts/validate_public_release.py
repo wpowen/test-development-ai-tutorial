@@ -108,6 +108,60 @@ def strip_markdown_code_fences(text: str) -> str:
     return re.sub(r"(?ms)^\s*(```|~~~).*?^\s*\1\s*$", "", text)
 
 
+def load_static_course_data(root: Path, html: str, errors: list[str]) -> tuple[Any | None, list[str] | None]:
+    """Read either the legacy inline payload or the split static projection.
+
+    The public site deliberately keeps the HTML shell small.  The shell exposes
+    navigation/module-overview data in ``course-index.json`` and loads each
+    module's lesson payload on demand.  Release validation must validate the
+    same complete logical course, rather than requiring the old multi-megabyte
+    inline representation.
+    """
+    match = re.search(r"const COURSE_DATA=(\{.*?\});const DATA=COURSE_DATA", html, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group(1)), None
+        except json.JSONDecodeError as exc:
+            errors.append(f"site/index.html COURSE_DATA is invalid JSON: {exc}")
+            return None, None
+
+    index_path = root / "site" / "course-index.json"
+    glossary_path = root / "site" / "glossary.json"
+    index = load_json(index_path, errors)
+    glossary = load_json(glossary_path, errors)
+    if not isinstance(index, dict) or not isinstance(glossary, dict):
+        errors.append("site/index.html lacks parseable embedded COURSE_DATA or split static course data")
+        return None, None
+
+    modules = index.get("modules")
+    index_pages = index.get("pages")
+    if not isinstance(modules, list) or not isinstance(index_pages, list):
+        errors.append("site/course-index.json requires modules and pages lists")
+        return None, None
+
+    pages: list[Any] = []
+    for module in modules:
+        if not isinstance(module, dict) or not isinstance(module.get("id"), str) or not module["id"]:
+            errors.append("site/course-index.json contains an invalid module record")
+            continue
+        module_data = load_json(root / "site" / "course-modules" / f"{module['id']}.json", errors)
+        if not isinstance(module_data, dict) or not isinstance(module_data.get("pages"), list):
+            errors.append(f"site/course-modules/{module['id']}.json requires a pages list")
+            continue
+        pages.extend(module_data["pages"])
+
+    return {
+        "firstUsablePath": index.get("firstUsablePath"),
+        "modules": modules,
+        "pages": pages,
+        "releaseScope": index.get("releaseScope"),
+        "sourceNotes": index.get("sourceNotes", {}),
+        "moduleOverviews": index.get("moduleOverviews", []),
+        "glossary": glossary.get("glossary", []),
+        "glossaryCategories": glossary.get("glossaryCategories", []),
+    }, [str(page.get("id", "")) for page in index_pages if isinstance(page, dict)]
+
+
 def validate_release(root: Path) -> list[str]:
     errors: list[str] = []
     if not root.is_dir():
@@ -624,23 +678,18 @@ def validate_release(root: Path) -> list[str]:
         errors.append(f"public pages reference unknown modules: {', '.join(sorted(used_modules - module_ids))}")
 
     html = html_path.read_text(encoding="utf-8")
-    match = re.search(r"const COURSE_DATA=(\{.*?\});const DATA=COURSE_DATA", html, re.DOTALL)
-    if not match:
-        errors.append("site/index.html lacks parseable embedded COURSE_DATA")
-    else:
-        try:
-            embedded = json.loads(match.group(1))
-        except json.JSONDecodeError as exc:
-            errors.append(f"site/index.html COURSE_DATA is invalid JSON: {exc}")
-        else:
-            embedded_ids = [str(page.get("id", "")) for page in embedded.get("pages", []) if isinstance(page, dict)]
-            if embedded_ids != page_ids:
-                errors.append("site/index.html page IDs differ from tutorial/tutorial-site.json")
-            embedded_modules = {str(module.get("id", "")) for module in embedded.get("modules", []) if isinstance(module, dict)}
-            if embedded_modules != module_ids:
-                errors.append("site/index.html module IDs differ from tutorial/tutorial-site.json")
-            for problem in find_incomplete_records(embedded, "COURSE_DATA"):
-                errors.append(f"site/index.html {problem}")
+    embedded, static_index_ids = load_static_course_data(root, html, errors)
+    if isinstance(embedded, dict):
+        embedded_ids = [str(page.get("id", "")) for page in embedded.get("pages", []) if isinstance(page, dict)]
+        if embedded_ids != page_ids:
+            errors.append("site static course page IDs differ from tutorial/tutorial-site.json")
+        if static_index_ids is not None and static_index_ids != page_ids:
+            errors.append("site/course-index.json page IDs differ from tutorial/tutorial-site.json")
+        embedded_modules = {str(module.get("id", "")) for module in embedded.get("modules", []) if isinstance(module, dict)}
+        if embedded_modules != module_ids:
+            errors.append("site static course module IDs differ from tutorial/tutorial-site.json")
+        for problem in find_incomplete_records(embedded, "COURSE_DATA"):
+            errors.append(f"site static course {problem}")
 
     for attribute in ("data-page-id", "data-id", "data-go"):
         for value in re.findall(rf'{attribute}=["\']([^"\']+)["\']', html):
