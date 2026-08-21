@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Install factory test dependencies
+        run: python3 -m pip install jsonschema
       - name: Compile factory scripts
         run: python3 -m py_compile skill/career-ai-course-factory/scripts/*.py
       - name: Run fail-closed factory regressions
