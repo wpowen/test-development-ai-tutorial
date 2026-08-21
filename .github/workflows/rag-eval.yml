@@ -32,14 +32,10 @@ jobs:
               raise SystemExit(f"candidate validation receipt is not clean: {receipt}")
 
           errors = validate_release(Path("."))
-          allowed = [
-              error for error in errors
-              if error == "release manifest validation_verdict must be PASS"
-              or error.endswith("must be pilot or public")
-          ]
+          allowed = [error for error in errors if error.endswith("must be pilot or public")]
           unexpected = [error for error in errors if error not in allowed]
           solution_blockers = [error for error in allowed if error.endswith("must be pilot or public")]
-          if unexpected or len(solution_blockers) != 6 or "release manifest validation_verdict must be PASS" not in allowed:
+          if unexpected or len(solution_blockers) != 6:
               raise SystemExit(f"unexpected public-preview validation state: unexpected={unexpected}, allowed={allowed}")
           PY
       - name: Execute every downloadable red-green lab
