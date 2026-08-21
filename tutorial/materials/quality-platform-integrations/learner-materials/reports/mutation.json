@@ -1,0 +1,91 @@
+{
+  "mode": "mutation",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "failed_oracle_ids": [
+    "SHA-BINDING"
+  ],
+  "checks": [
+    {
+      "oracle_id": "WEBHOOK-SIGNATURE",
+      "passed": true
+    },
+    {
+      "oracle_id": "INBOX-DEDUPE",
+      "passed": true
+    },
+    {
+      "oracle_id": "AI-HUMAN-BOUNDARY",
+      "passed": true
+    },
+    {
+      "oracle_id": "SHA-BINDING",
+      "passed": false
+    },
+    {
+      "oracle_id": "JUNIT-COMPLETE",
+      "passed": true
+    },
+    {
+      "oracle_id": "K8S-BOUNDARY",
+      "passed": true
+    },
+    {
+      "oracle_id": "WRITEBACK-IDEMPOTENCY",
+      "passed": true
+    },
+    {
+      "oracle_id": "NOTIFICATION-REDACTION",
+      "passed": true
+    },
+    {
+      "oracle_id": "AUDIT-CHAIN",
+      "passed": true
+    }
+  ],
+  "state": {
+    "webhook": {
+      "verified": true
+    },
+    "inbox": {
+      "accepted": 1,
+      "duplicates": 1
+    },
+    "candidate": {
+      "approved": true,
+      "auto": false
+    },
+    "run": {
+      "sha": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    },
+    "gitlab": {
+      "head": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "junit": {
+      "present": true,
+      "failed": 0
+    },
+    "k8s": {
+      "namespace": "quality-run-42",
+      "roles": [
+        "namespace-job-runner"
+      ],
+      "ttl": 900
+    },
+    "writeback": {
+      "jira": 1,
+      "gitlab": 1
+    },
+    "notice": "PROJ-42 sha aaaaaaaa PASS artifact://junit/run-42",
+    "audit": {
+      "previous": "genesis",
+      "event": "gate:PASS",
+      "hash": "f969dba1705e6c181571c9a03e0cfee2103c1b7cbb00edbdbc49c6148b6168a5"
+    }
+  },
+  "not_run": [
+    "live Jira/GitLab/K8s/ChatOps",
+    "real model",
+    "tier/version compatibility"
+  ]
+}

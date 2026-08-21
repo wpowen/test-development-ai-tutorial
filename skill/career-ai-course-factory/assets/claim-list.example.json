@@ -1,0 +1,25 @@
+{
+  "schema_version": "claim-list.v1",
+  "topic_id": "replace-topic-id",
+  "reviewed_by": "replace-independent-auditor-id",
+  "unmapped_propositions": 0,
+  "claims": [
+    {
+      "claim_id": "C-01",
+      "statement": "Replace with one independently checkable proposition.",
+      "claim_type": "mechanism",
+      "risk": "high",
+      "scope": "Replace with population, environment, version, and time boundary.",
+      "source_locations": [
+        "manuscript.md#replace-heading"
+      ],
+      "required_dimensions": [
+        "terminology-boundary",
+        "professional-workflow",
+        "implementation-reproducibility",
+        "counterevidence"
+      ],
+      "proposed_disposition": "SCOPED"
+    }
+  ]
+}

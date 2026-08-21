@@ -1,0 +1,9 @@
+{
+  "scenario_id": "ORDER-CANCEL-ENTRY",
+  "recent_work": "订单取消需求评审与上线前测试",
+  "public_source_ids": ["S32", "S82", "S90"],
+  "available_documents": ["PRD-v3", "technical-design-a13f", "OpenAPI-v7"],
+  "known_conflict": "PRD 允许已支付未发货订单取消，技术设计仅实现未支付取消",
+  "internal_unknowns": ["最终规则裁决人", "目标公司发布审批", "绩效权重"],
+  "learner_baseline": {"can_read_requirement": true, "can_read_design": true, "can_define_independent_oracle": false, "can_name_release_owner": false}
+}

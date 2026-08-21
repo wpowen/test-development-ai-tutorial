@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A05",
+  "topic_id": "TD-A05",
+  "title": "AI Serving 瓶颈：Queue、GPU、KV Cache 与阶段诊断",
+  "working_directory": "materials/ai-serving-career",
+  "input_fixture": "fixtures/TD-A05-input.json",
+  "expected": {
+    "diagnosis.root_cause": "queue",
+    "diagnosis.single_variable_confirmed": true,
+    "managed_internal_metrics": "UNKNOWN"
+  },
+  "fault_patch": {
+    "diagnosis.root_cause": "gpu",
+    "diagnosis.single_variable_confirmed": false
+  },
+  "oracle": "高 TTFT 且 queue 占主要比例指向排队；KV 高必须伴随 eviction/preemption 或对照实验；不可见指标为 UNKNOWN。",
+  "required_files": [
+    "owners.json",
+    "scripts/serving_lab.py",
+    "fixtures/TD-A05-input.json",
+    "prompts/TD-A05/system-v1.md",
+    "prompts/TD-A05/task-v1.md",
+    "prompts/TD-A05/critic-v1.md",
+    "prompts/TD-A05/manifest.json",
+    "prompts/TD-A05/mutation.json",
+    "schemas/TD-A05-output.schema.json",
+    "evals/TD-A05-eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A05.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A05/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A05.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-A05/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A05.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A05/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A05.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A05/baseline.json",
+        "evidence/TD-A05/fault.json",
+        "evidence/TD-A05/repair.json",
+        "evidence/TD-A05/cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "owners": {
+    "content": "TD-A05-content-owner",
+    "oracle": "TD-A05-oracle-owner",
+    "release": "ai-serving-career-release-owner"
+  },
+  "unknowns": [
+    "托管服务内部队列、GPU profiler 和真实 KV cache eviction 不可见。"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

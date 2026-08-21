@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS06",
+  "title": "Android 自动化：生命周期、同步、权限与设备矩阵",
+  "working_directory": "materials/ui-mobile-automation",
+  "owners": {
+    "content": "TD-PS06-content-owner",
+    "oracle": "TD-PS06-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS06.json",
+    "prompts/TD-PS06/system-v1.md",
+    "prompts/TD-PS06/task-v1.md",
+    "prompts/TD-PS06/critic-v1.md",
+    "prompts/TD-PS06/manifest.json",
+    "prompts/TD-PS06/mutation.json",
+    "fixtures/TD-PS06-input.json",
+    "schemas/TD-PS06-output.schema.json",
+    "evals/TD-PS06-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS06-ORACLE-01",
+      "statement": "权限拒绝不创建收货记录",
+      "evidence": "TD-PS06-evidence-1.json",
+      "owner": "TD-PS06-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS06-ORACLE-02",
+      "statement": "旋转后台与恢复保留可解释扫描状态",
+      "evidence": "TD-PS06-evidence-2.json",
+      "owner": "TD-PS06-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS06-ORACLE-03",
+      "statement": "同一 receipt_id 只入账一次",
+      "evidence": "TD-PS06-evidence-3.json",
+      "owner": "TD-PS06-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS06-ORACLE-04",
+      "statement": "失败包关联 logcat 设备状态和服务 trace",
+      "evidence": "TD-PS06-evidence-4.json",
+      "owner": "TD-PS06-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS06-FAULT-01",
+    "description": "扫描后进程被杀",
+    "target_oracle": "TD-PS06-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS06.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS06/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS06.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS06/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS06.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS06/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS06.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS06/baseline.json",
+        "evidence/TD-PS06/fault.json",
+        "evidence/TD-PS06/repair.json",
+        "evidence/TD-PS06/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: OEM 定制行为、目标 API level 分布和真机资源限制"
+}

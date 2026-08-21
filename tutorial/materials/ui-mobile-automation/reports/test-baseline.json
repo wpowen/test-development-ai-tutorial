@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "oracle_pass": true,
+  "missing_contracts": [],
+  "execution": "offline-standard-library"
+}

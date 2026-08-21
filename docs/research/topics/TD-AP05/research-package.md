@@ -1,31 +1,15 @@
-# TD-AP05 · Load-test architecture and tools
+# TD-AP05 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: which system architecture and tool combination can generate load, observe internals and decide business success? Artifact: four-layer design and tool matrix.
+- 主题边界：容量曲线与瓶颈归因，只形成 synthetic capacity curve。
+- 方法：step-load experiment + first-failing-gate attribution；独立 Oracle 重算首个失效级别。
+- 必须保留：固定步长、queue/prefill/decode/tool/retry 切片、阈值和控制变量。
 
-## Source pack
+## Boundary and command evidence
 
-- k6 scenarios: https://grafana.com/docs/k6/latest/using-k6/scenarios/ — API load and thresholds.
-- NVIDIA GenAI-Perf: https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/perf_benchmark/genai-perf-README.html — model endpoint benchmarking.
-- Phoenix: https://github.com/arize-ai/phoenix and Langfuse: https://langfuse.com/handbook/chapters/open-source — trace/evaluation products; capability only.
-
-## Evidence synthesis
-
-No single tool covers arrival control, model token metrics, Agent business oracle, trace diagnosis and production SLO. A composable architecture is required. Tool documentation supports interfaces, not scale or production suitability.
-
-## Engineering blueprint
-
-Separate workload driver, SUT/fixtures, telemetry, and evaluator/gate. Correlate with run/task/version IDs. Sandbox writes, enforce idempotency and cost/time limits. Save a run manifest.
-
-## Manuscript map
-
-TD-AP05 maps tasks to tool candidates, blind spots, side-effect controls and the required Manifest.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP05-lab.json --mode cycle`，已记录 0/1/0。provider=none、model=NOT_RUN；不得声明生产容量。
 
 ## Editorial review
 
-PASS. Tool names remain examples within four responsibilities—load generation, SUT/fixtures, telemetry and evaluation—not endorsements or an all-in-one claim. Preserved each tool's blind spot, the run/task/version correlation fields, sandbox and idempotency controls, and the warning that product documentation does not prove scale suitability.
-
-## Validation
-
-PASS: selection is by responsibility and limitation, not a generic best-tool list.
+本记录保护瓶颈归因、控制变量和 synthetic 边界；不提供分数，不替代独立审计或发布门禁。

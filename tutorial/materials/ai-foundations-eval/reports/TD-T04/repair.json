@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T04",
+  "phase": "repair",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "报告重复运行分布与不确定性，不从一次成功推导稳定。",
+  "checks": [
+    {
+      "field": "runs_per_case",
+      "expected": 5,
+      "actual": 5,
+      "status": "PASS"
+    },
+    {
+      "field": "report_distribution",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "blocker_separate",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "五次运行仅用于教学",
+    "生产样本量需按估计目标重新设计"
+  ]
+}

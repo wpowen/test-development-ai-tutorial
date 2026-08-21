@@ -1,0 +1,52 @@
+{
+  "topic_id": "TD-AG-04",
+  "phase": "fault",
+  "maturity": "fixture-tested",
+  "verdict": "FAIL",
+  "expected_exit_code": 1,
+  "failed_oracle_ids": [
+    "ROLLBACK"
+  ],
+  "state_hash": "a3d1a9ae1ff112c8c5f31e71d8f74a861ef6c3851ae4c575cc556f255dac1402",
+  "checks": [
+    {
+      "oracle_id": "INTERRUPT",
+      "passed": true
+    },
+    {
+      "oracle_id": "NO-DIRTY-STATE",
+      "passed": true
+    },
+    {
+      "oracle_id": "ROLLBACK",
+      "passed": false
+    },
+    {
+      "oracle_id": "TAKEOVER",
+      "passed": true
+    },
+    {
+      "oracle_id": "APPROVAL-OWNER",
+      "passed": true
+    }
+  ],
+  "state": {
+    "human": {
+      "interrupt_step": 2,
+      "dirty_state": false,
+      "rollback": false,
+      "takeover": true,
+      "approval": true,
+      "owner": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

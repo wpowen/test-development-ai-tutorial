@@ -1,0 +1,60 @@
+{
+  "course_id": "td-ai-methodology-handbook",
+  "evidence_scope": "deterministic offline governance-gate fixture over the order-cancellation artifact closure; in-memory fault injection only, no file writes",
+  "commands": [
+    "python3 scripts/validate_handbook.py all",
+    "python3 scripts/validate_handbook.py all --fault doc-conflict",
+    "python3 scripts/validate_handbook.py all --fault unsupported-rule",
+    "python3 scripts/validate_handbook.py all --fault missing-oracle",
+    "python3 scripts/validate_handbook.py all --fault expired-waiver",
+    "python3 scripts/validate_handbook.py all --fault judge-self-approval",
+    "python3 scripts/validate_handbook.py all --fault none"
+  ],
+  "run_at": "2026-08-12T18:00:00+08:00",
+  "workdir": "learner-materials",
+  "baseline": {
+    "command": "python3 scripts/validate_handbook.py all",
+    "exit_code": 0,
+    "verdict": "PASS",
+    "gate_count": 7,
+    "problem_count": 0,
+    "evidence_path": "materials/expected-output.md"
+  },
+  "mutation": {
+    "command": "python3 scripts/validate_handbook.py all --fault doc-conflict",
+    "exit_code": 1,
+    "verdict": "FAIL",
+    "failed_gate": "S1 依据冻结",
+    "failed_test_ids": ["CONF-INJECTED"],
+    "finding": "冲突 CONF-INJECTED 未指定升级责任人，下游生成必须停止",
+    "evidence_path": "materials/expected-output.md"
+  },
+  "repair": {
+    "command": "python3 scripts/validate_handbook.py all --fault none",
+    "exit_code": 0,
+    "verdict": "PASS",
+    "gate_count": 7,
+    "problem_count": 0,
+    "evidence_path": "materials/expected-output.md"
+  },
+  "additional_negative_controls": [
+    {"fault": "unsupported-rule", "exit_code": 1, "verdict": "FAIL", "failed_gate": "S2 需求契约", "finding": "UNSUPPORTED_RULE：refund_timeout_hours 没有来源支持"},
+    {"fault": "missing-oracle", "exit_code": 1, "verdict": "FAIL", "failed_gate": "S5 Oracle 设计", "finding": "关键风险 R-001 没有 Oracle 设计记录"},
+    {"fault": "expired-waiver", "exit_code": 1, "verdict": "FAIL", "failed_gate": "S9 发布判断", "finding": "Waiver W-2026-0812-01 已过期，发布必须阻断"},
+    {"fault": "judge-self-approval", "exit_code": 1, "verdict": "FAIL", "failed_gate": "S5 Oracle 设计", "finding": "blocker 只用了语义层，必须含 L4 规则或 L6 人工"}
+  ],
+  "environment": {
+    "runtime": "Python standard library",
+    "credentials": false,
+    "external_network": false,
+    "file_writes": false,
+    "data": "synthetic order-cancellation artifact closure",
+    "model": {"provider": "none", "id": "offline-deterministic", "status": "NOT_RUN"}
+  },
+  "limitations": [
+    "deterministic offline fixture only",
+    "no live model, enterprise document, or pipeline integration",
+    "all numeric thresholds in the handbook are structural placeholders and are not evaluated by this fixture",
+    "no practitioner review, no learner trial, no production validation"
+  ]
+}

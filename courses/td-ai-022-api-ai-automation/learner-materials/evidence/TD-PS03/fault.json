@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS03",
+  "mode": "fault",
+  "status": "FAIL",
+  "exit_code": 1,
+  "manifest_sha256": "631f5b24458d0662e3c50dcdb92a0537c29e183095e45020821685bcc04d970a",
+  "missing_files": [],
+  "fault_id": "TD-PS03-FAULT-01",
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS03-ORACLE-01",
+      "passed": false,
+      "evidence": "TD-PS03-evidence-1.json",
+      "owner": "TD-PS03-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS03-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS03-evidence-2.json",
+      "owner": "TD-PS03-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS03-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS03-evidence-3.json",
+      "owner": "TD-PS03-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS03-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS03-evidence-4.json",
+      "owner": "TD-PS03-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS03-content-owner",
+    "oracle": "TD-PS03-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标 broker 投递保证、策略引擎版本和补偿 owner"
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C01",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:658d9ed8047cb5716f92b727b6f997e92ecffc855a51f8762e74045b993be932",
+  "manifest_sha256": "sha256:5b2fe67f1b3e74554b9aa6a38531d9bf0c37c2c24af022370cf8be8a6f15bd27",
+  "checks": [
+    {
+      "field": "career.employment_guarantee",
+      "expected": false,
+      "actual": true,
+      "pass": false
+    },
+    {
+      "field": "career.evidence_refs_complete",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "field": "career.role_boundary_complete",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "课程不能证明招聘需求、薪资、晋升、地区机会或个体适配。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

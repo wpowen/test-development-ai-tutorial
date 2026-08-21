@@ -1,0 +1,19 @@
+{
+  "baseline_id": "order-cancel-2026-08-12",
+  "frozen_at": "2026-08-12",
+  "owner": "test-dev-lead",
+  "escalation_owner": "product-a",
+  "precedence_rule": "业务语义由已批准 PRD 决定；实现细节由当前技术方案与接口契约决定；任意语义冲突必须进入评审，不得自动覆盖。",
+  "sources": [
+    {"id": "PRD-v3", "type": "prd", "owner": "product-a", "version": "3.0", "sha256": "0000000000000000000000000000000000000000000000000000000000000001", "precedence": 1, "sensitivity": "internal", "accessed_at": "2026-08-12", "location": "docs/prd/order-cancel-v3.md"},
+    {"id": "TECH-a13f", "type": "design", "owner": "tech-b", "version": "a13f", "sha256": "0000000000000000000000000000000000000000000000000000000000000002", "precedence": 2, "sensitivity": "internal", "accessed_at": "2026-08-12", "location": "docs/design/order-cancel.md"},
+    {"id": "OPENAPI-v7", "type": "contract", "owner": "service-c", "version": "7.0", "sha256": "0000000000000000000000000000000000000000000000000000000000000003", "precedence": 3, "sensitivity": "internal", "accessed_at": "2026-08-12", "location": "contracts/openapi-v7.yaml"},
+    {"id": "STATE-v2", "type": "state-machine", "owner": "tech-b", "version": "2.0", "sha256": "0000000000000000000000000000000000000000000000000000000000000004", "precedence": 4, "sensitivity": "internal", "accessed_at": "2026-08-12", "location": "docs/design/order-state-v2.md"},
+    {"id": "MODEL-offline", "type": "model", "owner": "test-dev-lead", "version": "offline-deterministic", "sha256": "0000000000000000000000000000000000000000000000000000000000000005", "precedence": 5, "sensitivity": "internal", "accessed_at": "2026-08-12", "location": "fixtures/model-manifest.json"}
+  ],
+  "conflicts": [],
+  "unknowns": [
+    {"id": "UNK-001", "description": "退款完成时限未在任何来源中定义", "status": "UNKNOWN", "needs_confirmation_from": "product-a"},
+    {"id": "UNK-002", "description": "publisher retry 耗尽后的 safe terminal 状态未定义", "status": "UNKNOWN", "needs_confirmation_from": "tech-b"}
+  ]
+}

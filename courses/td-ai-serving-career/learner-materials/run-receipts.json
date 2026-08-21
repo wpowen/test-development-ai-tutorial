@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_level": "PASS-FIXTURE",
+  "python": "3.9.6",
+  "runs": [
+    {
+      "page_id": "TD-A01",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-A01.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-A01/cycle.json",
+      "cycle_sha256": "sha256:210711c704dce272e33c20bda3c0afdb83a18a2c65f582827549818afc776dc5",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "page_id": "TD-A02",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-A02.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-A02/cycle.json",
+      "cycle_sha256": "sha256:8a91b5143abb7e32d09ba92aa5c3f218c2cb6bfcd0c30379d637fb779ab622bb",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "page_id": "TD-A03",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-A03.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-A03/cycle.json",
+      "cycle_sha256": "sha256:6e16046240146e737ac06e0bf4928cb3c38ddfd43f10ee5d996d3e8d6a021b59",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "page_id": "TD-A04",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-A04.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-A04/cycle.json",
+      "cycle_sha256": "sha256:326b28fd6925ba228ab9a1df680b3287974669b423abaeb1761e9085539101b5",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "page_id": "TD-A05",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-A05.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-A05/cycle.json",
+      "cycle_sha256": "sha256:d5d3805ab4db171a86218f0932b08a9fcc4ae887dc9d70af61263df4af229d6b",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "page_id": "TD-A06",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-A06.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-A06/cycle.json",
+      "cycle_sha256": "sha256:42673b1860e462ca0829b07a1e6359d17616f09a12965b94d60f227bd33e42c3",
+      "model_execution": "NOT_RUN"
+    },
+    {
+      "page_id": "TD-C01",
+      "command": "scripts/serving_lab.py --manifest manifests/TD-C01.json --mode cycle",
+      "exit_code": 0,
+      "actual_exit_codes": [
+        0,
+        1,
+        0
+      ],
+      "cycle_report": "evidence/TD-C01/cycle.json",
+      "cycle_sha256": "sha256:471734237043dbb2aba9715de060546727365adf4b71698eb51dfaeeb2da7b8e",
+      "model_execution": "NOT_RUN"
+    }
+  ],
+  "limitations": [
+    "No model/provider/GPU/network call",
+    "No practitioner/live/production or employment validation"
+  ]
+}

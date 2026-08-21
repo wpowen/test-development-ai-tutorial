@@ -1,0 +1,88 @@
+{
+  "schema_version": "prompt-artifact-ownership.v1",
+  "artifact_types": {
+    "learner-one-shot": {
+      "description": "A learner copies this artifact directly into an AI tool. Its wording, layout, and byte-level receipt are part of the learning contract.",
+      "default_consumer": "learner",
+      "immutable_to_other_generators": true
+    },
+    "generator-task": {
+      "description": "A structured engineering task prompt projected from a prompt specification and package anchors.",
+      "default_consumer": "prompt-package-generator",
+      "immutable_to_other_generators": false
+    }
+  },
+  "artifacts": [
+    {
+      "id": "requirements-to-evidence-learner-one-shot",
+      "artifact_type": "learner-one-shot",
+      "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+      "consumer": "learner",
+      "canonical_directory": "courses/td-ai-011-requirements-to-evidence/lab/page-prompts",
+      "integrity_manifest": "courses/td-ai-011-requirements-to-evidence/lab/DIRECT-USE-MANIFEST.json",
+      "topic_ids": [
+        "TD-P01",
+        "TD-P02",
+        "TD-P03",
+        "TD-P04",
+        "TD-P05",
+        "TD-P06",
+        "TD-P07",
+        "TD-P08"
+      ],
+      "immutable_to_other_generators": true,
+      "hash_field": "file_sha256",
+      "ownership_key": "learner_one_shot",
+      "files": [
+        "prompt-v1.md",
+        "input.json",
+        "schema.json",
+        "eval.json",
+        "mutation.json",
+        "adaptation-card.md",
+        "expected-output.json",
+        "receipt.json"
+      ]
+    },
+    {
+      "id": "requirements-to-evidence-generator-task",
+      "artifact_type": "generator-task",
+      "owner_generator": "courses/td-ai-011-requirements-to-evidence/lab/build_direct_use_contracts.py",
+      "consumer": "prompt-package-assembler",
+      "canonical_directory": "courses/td-ai-011-requirements-to-evidence/lab/page-prompts",
+      "integrity_manifest": "courses/td-ai-011-requirements-to-evidence/lab/DIRECT-USE-MANIFEST.json",
+      "topic_ids": [
+        "TD-P01",
+        "TD-P02",
+        "TD-P03",
+        "TD-P04",
+        "TD-P05",
+        "TD-P06",
+        "TD-P07",
+        "TD-P08"
+      ],
+      "immutable_to_other_generators": true,
+      "hash_field": "file_sha256",
+      "ownership_key": "generator_task",
+      "files": [
+        "system-v1.md",
+        "task-v1.md",
+        "critic-v1.md"
+      ]
+    }
+  ],
+  "generator_defaults": [
+    {
+      "artifact_type": "generator-task",
+      "owner_generator": "scripts/build-prompt-packages.py",
+      "consumer": "prompt-package-generator",
+      "source_spec": "methodology/prompt-specs.json"
+    },
+    {
+      "artifact_type": "generator-task",
+      "owner_generator": "scripts/build-page-prompt-packages.py",
+      "consumer": "prompt-package-generator",
+      "source_spec": "methodology/page-prompt-specs.json"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "page_id": "TD-F01",
+  "owner_page_ids": ["TD-F01"],
+  "working_directory": "materials/profession-reality",
+  "required_files": [
+    "profession_self_check.py",
+    "inputs/learner-profile.json",
+    "inputs/learner-profile-fault.json",
+    "inputs/learner-profile-repair.json",
+    "prompts/TD-F01/manifest.json",
+    "prompts/TD-F01/prompt-v1.md",
+    "prompts/TD-F01/input.json",
+    "prompts/TD-F01/schema.json",
+    "prompts/TD-F01/eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 profession_self_check.py phase --phase baseline --report reports/TD-F01-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": ["reports/TD-F01-baseline.json"]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 profession_self_check.py phase --phase fault --report reports/TD-F01-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": ["reports/TD-F01-fault.json"]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 profession_self_check.py phase --phase repair --report reports/TD-F01-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": ["reports/TD-F01-repair.json"]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "verification",
+      "command": "python3 profession_self_check.py cycle --report reports/TD-F01-cycle.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": ["reports/TD-F01-cycle.json", "reports/TD-F01-baseline.json", "reports/TD-F01-fault.json", "reports/TD-F01-repair.json"]
+    }
+  ],
+  "page_command_step_id": "cycle",
+  "failure_cycle": {"baseline_step_id": "baseline", "fault_step_id": "fault", "repair_step_id": "repair"},
+  "evidence_boundary": "fixture-tested only; provider none and model NOT_RUN; no practitioner, integration, live, publication, or production evidence"
+}

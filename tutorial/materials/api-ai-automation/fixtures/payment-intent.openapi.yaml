@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Synthetic Payment Intent API
+  version: 1.0.0
+  description: Public teaching fixture for idempotency, authorization, and async event checks.
+servers:
+  - url: https://sandbox.invalid
+paths:
+  /payment-intents:
+    post:
+      operationId: createPaymentIntent
+      security:
+        - serviceToken: []
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+            minLength: 8
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePaymentIntentRequest'
+      responses:
+        '201':
+          description: Payment intent created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntent'
+        '400':
+          description: Invalid amount or currency.
+        '403':
+          description: Merchant account is not authorized.
+  /payment-intents/{intent_id}/confirm:
+    post:
+      operationId: confirmPaymentIntent
+      security:
+        - serviceToken: []
+      parameters:
+        - name: intent_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Confirmation accepted; consume events for terminal outcome.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentIntent'
+        '409':
+          description: Intent is already terminal or cannot be confirmed.
+  /payment-intents/{intent_id}/events:
+    get:
+      operationId: streamPaymentIntentEvents
+      security:
+        - serviceToken: []
+      responses:
+        '200':
+          description: Payment intent lifecycle as server-sent events.
+          content:
+            text/event-stream:
+              schema:
+                type: string
+components:
+  securitySchemes:
+    serviceToken:
+      type: http
+      scheme: bearer
+  schemas:
+    CreatePaymentIntentRequest:
+      type: object
+      additionalProperties: false
+      required: [merchant_id, order_id, amount_minor, currency]
+      properties:
+        merchant_id:
+          type: string
+        order_id:
+          type: string
+        amount_minor:
+          type: integer
+          minimum: 1
+        currency:
+          type: string
+          pattern: '^[A-Z]{3}$'
+    PaymentIntent:
+      type: object
+      additionalProperties: false
+      required: [intent_id, order_id, amount_minor, currency, status]
+      properties:
+        intent_id:
+          type: string
+        order_id:
+          type: string
+        amount_minor:
+          type: integer
+        currency:
+          type: string
+        status:
+          type: string
+          enum: [REQUIRES_CONFIRMATION, PROCESSING, SUCCEEDED, FAILED, CANCELLED]

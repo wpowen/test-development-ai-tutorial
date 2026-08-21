@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent D0-D7 候选评估工件",
+  "type": "object",
+  "required": [
+    "trajectory",
+    "reliability",
+    "security",
+    "economics",
+    "governance",
+    "gate_candidate",
+    "unknowns",
+    "evidence_boundary"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "trajectory": {
+      "type": "object",
+      "required": [
+        "first_error_distribution",
+        "step_efficiency_mean",
+        "invalid_loop_rate",
+        "unauthorized_calls"
+      ],
+      "properties": {
+        "first_error_distribution": {
+          "type": "object"
+        },
+        "step_efficiency_mean": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "invalid_loop_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "unauthorized_calls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "reliability": {
+      "type": "object",
+      "required": [
+        "convention",
+        "pass_at_k",
+        "pass_pow_k",
+        "k",
+        "cluster_unit",
+        "sample_size",
+        "verdict"
+      ],
+      "properties": {
+        "convention": {
+          "enum": [
+            "empirical",
+            "analytic"
+          ]
+        },
+        "pass_at_k": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "pass_pow_k": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "k": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "cluster_unit": {
+          "const": "task"
+        },
+        "ci95": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number"
+          }
+        },
+        "sample_size": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "verdict": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "EVIDENCE-INSUFFICIENT",
+            "BLOCKED"
+          ]
+        }
+      }
+    },
+    "security": {
+      "type": "object",
+      "required": [
+        "blocked_by_layer",
+        "model_refusal_count",
+        "authorization_layer_count",
+        "attack_success_ids",
+        "missing_surfaces",
+        "population_note"
+      ],
+      "properties": {
+        "blocked_by_layer": {
+          "type": "object"
+        },
+        "model_refusal_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "authorization_layer_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "attack_success_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missing_surfaces": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "population_note": {
+          "type": "string",
+          "minLength": 10
+        }
+      }
+    },
+    "economics": {
+      "type": "object",
+      "required": [
+        "latency_p95",
+        "latency_p99",
+        "cost_p99",
+        "unit_success_cost",
+        "over_budget_runs"
+      ],
+      "properties": {
+        "latency_p95": {
+          "type": "number"
+        },
+        "latency_p99": {
+          "type": "number"
+        },
+        "cost_p99": {
+          "type": "number"
+        },
+        "unit_success_cost": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "over_budget_runs": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "governance": {
+      "type": "object",
+      "required": [
+        "four_dim_version_complete",
+        "hard_rule_violations"
+      ],
+      "properties": {
+        "four_dim_version_complete": {
+          "type": "boolean"
+        },
+        "missing_version_dims": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "model",
+              "prompt",
+              "tools",
+              "memory"
+            ]
+          }
+        },
+        "hard_rule_violations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "gate_candidate": {
+      "type": "object",
+      "required": [
+        "redlines",
+        "statistical_verdict",
+        "failure_modes_for_human"
+      ],
+      "properties": {
+        "redlines": {
+          "type": "object"
+        },
+        "statistical_verdict": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "EVIDENCE-INSUFFICIENT"
+          ]
+        },
+        "failure_modes_for_human": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "description",
+              "frequency",
+              "guardrail_covered"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "frequency": {
+                "type": "string"
+              },
+              "guardrail_covered": {
+                "type": "boolean"
+              },
+              "guardrail": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "thresholds_used": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "value",
+          "source",
+          "needs_calibration"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {},
+          "source": {
+            "enum": [
+              "observed",
+              "placeholder"
+            ]
+          },
+          "needs_calibration": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "evidence_boundary": {
+      "type": "string",
+      "minLength": 30
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "page_id": "TD-P01",
+  "status": "ACCEPTED",
+  "sources": [
+    {
+      "source_ref": "PRD-v3#R17",
+      "status": "Evidence",
+      "summary": "买家仅可取消未发货订单"
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLM-CANCEL-ELIGIBLE",
+      "source_refs": [
+        "PRD-v3#R17"
+      ],
+      "status": "Evidence",
+      "summary": "SHIPPED 状态不可取消"
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "CONFLICT-NONE",
+      "status": "Evidence",
+      "summary": "固定样例未发现未关闭冲突"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ],
+  "owner_questions": [
+    {
+      "owner": "operations-owner",
+      "status": "Unknown",
+      "question": "确认审计日志保留和脱敏规则"
+    }
+  ],
+  "downstream_artifacts": [
+    {
+      "artifact": "Requirement Contract",
+      "entry_gate": "无 SOURCE_CONFLICT",
+      "consumer": "TD-P02"
+    }
+  ]
+}

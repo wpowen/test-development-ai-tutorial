@@ -1,0 +1,25 @@
+%% TD-AG-07 · 来源：S51 · S53 · S73
+%% 图中的数值字段需绑定 workload、价格时间和版本；不提供通用 P95/P99 门槛。
+flowchart LR
+  workload["Workload<br/><small>任务类型 / 风险 / 到达率</small>"]
+  queue["Queue<br/><small>等待 / 并发 / 隔离</small>"]
+  llm["LLM Step<br/><small>TTFT / TPOT / Token</small>"]
+  tool["Tool Attempt<br/><small>延迟 / Retry / Error</small>"]
+  quality["Quality / Goodput<br/><small>满足质量与时限</small>"]
+  latency["延迟尾部<br/><small>P95 / P99 / Timeout</small>"]
+  cost["成本尾部<br/><small>模型 / 工具 / Judge / 人审</small>"]
+  budget["预算门禁 / 停止<br/><small>Token / 时间 / 步数 / 金钱</small>"]
+  workload -->|施加负载| queue
+  queue -->|调度| llm
+  llm -->|工具阶段| tool
+  llm -->|输出质量| quality
+  queue -->|排队贡献| latency
+  tool -->|工具贡献| latency
+  llm -->|Token 成本| cost
+  tool -->|重试成本| cost
+  quality -->|联合决定| budget
+  latency -->|超限| budget
+  cost -->|超预算| budget
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

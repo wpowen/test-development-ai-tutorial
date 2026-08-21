@@ -1,0 +1,57 @@
+{
+  "topic_id": "TD-AG-07",
+  "phase": "fault",
+  "maturity": "fixture-tested",
+  "verdict": "FAIL",
+  "expected_exit_code": 1,
+  "failed_oracle_ids": [
+    "HARD-BUDGET"
+  ],
+  "state_hash": "9b0f3b6fbeb62e2d550c0b2058ed134c1218554afa6df15683dfb2acf799d30e",
+  "checks": [
+    {
+      "oracle_id": "TASK-TRACE",
+      "passed": true
+    },
+    {
+      "oracle_id": "TAILS",
+      "passed": true
+    },
+    {
+      "oracle_id": "GOODPUT",
+      "passed": true
+    },
+    {
+      "oracle_id": "COST-TAIL",
+      "passed": true
+    },
+    {
+      "oracle_id": "HARD-BUDGET",
+      "passed": false
+    },
+    {
+      "oracle_id": "RESOURCE-ISOLATION",
+      "passed": true
+    }
+  ],
+  "state": {
+    "economics": {
+      "task_trace": true,
+      "p95": true,
+      "p99": true,
+      "goodput": true,
+      "cost_tail": true,
+      "hard_budget": false,
+      "resource_isolation": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

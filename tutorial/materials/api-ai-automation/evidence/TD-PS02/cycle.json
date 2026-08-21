@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS02",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标生成器对 OAS dialect 的实现差异和生产商户配置"
+}

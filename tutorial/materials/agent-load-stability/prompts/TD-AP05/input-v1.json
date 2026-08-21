@@ -1,0 +1,12 @@
+{
+  "schema_version": "agent-performance-prompt-input.v1",
+  "page_id": "TD-AP05",
+  "run_refs": [
+    "reports/TD-AP05/baseline/summary.json",
+    "reports/TD-AP05/fault/summary.json",
+    "reports/TD-AP05/repair/summary.json",
+    "reports/TD-AP05/cycle-summary.json"
+  ],
+  "question": "Does the capacity and bottleneck attribution baseline-fault-repair cycle demonstrate detection and repair?",
+  "boundary": "fixture-tested only"
+}

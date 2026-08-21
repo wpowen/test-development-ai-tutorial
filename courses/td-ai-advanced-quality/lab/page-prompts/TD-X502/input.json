@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X502",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "关键 locale 缺失、键盘/名称阻断或翻译 Oracle 未确认"
+}
+

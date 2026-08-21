@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-B04",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "一次只归因一个协议变量；多变量变化输出 CONFOUNDED。",
+  "checks": [
+    {
+      "field": "single_variable_isolated",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "mutation_id": "TD-B04-fault",
+    "field": "single_variable_isolated",
+    "fault_value": false,
+    "professional_consequence": "同时开放工具、延长超时和改 system prompt 后，把提升归因给模型。"
+  },
+  "remaining_unknowns": [
+    "公开 Harness 与真实模型适配器均未运行。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

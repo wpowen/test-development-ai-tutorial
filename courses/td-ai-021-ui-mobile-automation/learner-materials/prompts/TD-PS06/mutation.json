@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS06",
+  "mutation_id": "TD-PS06-FAULT-01",
+  "mutation": "扫描后进程被杀",
+  "expected_detected_by": "权限拒绝不创建收货记录",
+  "model_execution": "NOT_RUN"
+}

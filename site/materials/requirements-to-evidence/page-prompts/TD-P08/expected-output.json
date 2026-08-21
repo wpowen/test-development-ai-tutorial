@@ -1,0 +1,51 @@
+{
+  "page_id": "TD-P08",
+  "status": "ACCEPTED",
+  "change_set": [
+    {
+      "change_id": "CHG-409-CONTRACT",
+      "before": "legacy response",
+      "after": "409 for shipped cancellation"
+    }
+  ],
+  "impact_set": [
+    {
+      "node": "cancel API consumers",
+      "reason": "response contract changed",
+      "trace_ref": "traceability.json"
+    }
+  ],
+  "regression_set": [
+    {
+      "case_id": "T-CANCEL-SHIPPED-01",
+      "selection_reason": "covers changed state and response"
+    }
+  ],
+  "evidence_pack": [
+    {
+      "artifact": "TD-P08 cycle receipt",
+      "path": "reports/TD-P08-cycle.json",
+      "status": "PASS_FIXTURE"
+    }
+  ],
+  "residual_risks": [
+    {
+      "risk": "enterprise integration not run",
+      "status": "Unknown",
+      "owner": "release-owner"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ],
+  "decision": {
+    "status": "PASS_FIXTURE",
+    "basis": "fixed expected example only",
+    "human_gate": "required before enterprise or release use"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-R01",
+  "input_fixture": "fixtures/TD-R01-input.json",
+  "expected": {
+    "resource.versioned": true,
+    "resource.checked_at_present": true,
+    "resource.purpose_defined": true,
+    "resource.fallback_defined": true,
+    "resource.exit_artifact_defined": true
+  },
+  "fault_patch": {
+    "resource.checked_at_present": false,
+    "resource.fallback_defined": false,
+    "resource.exit_artifact_defined": false
+  },
+  "unknowns": [
+    "链接可访问性和学习效果仍需复核"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; resource quality and learning effect are not proven",
+  "manifest_version": "1.0.0",
+  "working_directory": "materials/career-evolution",
+  "steps": [
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/career_evolution_lab.py --manifest manifests/TD-R01.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-R01/baseline.json",
+        "evidence/TD-R01/fault.json",
+        "evidence/TD-R01/repair.json",
+        "evidence/TD-R01/cycle.json"
+      ]
+    }
+  ],
+  "required_files": [
+    "scripts/career_evolution_lab.py",
+    "fixtures/TD-R01-input.json",
+    "manifests/TD-R01.json"
+  ]
+}

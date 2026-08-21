@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-F04",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "按控制权和证据链区分 LLM、RAG、Agent 与固定 Workflow。",
+  "checks": [
+    {
+      "field": "retrieval_trace",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "tool_trace",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_gate_before_side_effect",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    }
+  ],
+  "injected_mutation": {
+    "id": "side-effect-without-gate",
+    "field": "human_gate_before_side_effect",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "没有连接真实工具或队列",
+    "框架术语需在目标系统中重新映射"
+  ]
+}

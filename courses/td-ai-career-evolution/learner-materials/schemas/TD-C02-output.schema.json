@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["page_id","responsibility_states","evidence_refs","unknowns"],"properties":{"page_id":{"const":"TD-C02"},"responsibility_states":{"type":"array"},"evidence_refs":{"type":"array"},"unknowns":{"type":"array"}}}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "td-qp03-output-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "environment_verdict",
+    "identity_findings",
+    "isolation_findings",
+    "cleanup_findings",
+    "failed_oracle_ids",
+    "human_decision_required",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "environment_verdict": {},
+    "identity_findings": {},
+    "isolation_findings": {},
+    "cleanup_findings": {},
+    "failed_oracle_ids": {},
+    "human_decision_required": {},
+    "evidence_boundary": {
+      "type": "string",
+      "const": "fixture-tested; live integrations NOT_RUN"
+    }
+  }
+}

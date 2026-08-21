@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://career-ai-course-factory.local/schemas/risk-register.schema.json",
+  "title": "Risk Register Entry",
+  "type": "object",
+  "required": ["risk_id", "title", "source", "impact", "likelihood", "detectability", "rpn", "tier", "layer", "technique", "oracle_source", "owner", "status"],
+  "properties": {
+    "risk_id": {"type": "string", "pattern": "^R-[0-9]{3,}$"},
+    "title": {"type": "string", "minLength": 4},
+    "source": {"enum": ["需求契约", "技术契约", "历史缺陷", "AI特有-非确定性", "AI特有-漂移", "AI特有-注入"]},
+    "requirement_id": {"type": "string"},
+    "impact": {"type": "integer", "minimum": 1, "maximum": 5},
+    "likelihood": {"type": "integer", "minimum": 1, "maximum": 5},
+    "detectability": {"type": "integer", "minimum": 1, "maximum": 5},
+    "rpn": {"type": "integer", "minimum": 1, "maximum": 125},
+    "tier": {"enum": ["关键", "高", "中", "低"]},
+    "layer": {"enum": ["单元", "契约", "集成", "系统", "评测", "性能", "安全", "生产"]},
+    "technique": {"type": "string", "minLength": 2},
+    "oracle_source": {"type": "string", "minLength": 2},
+    "owner": {"type": "string"},
+    "status": {"enum": ["OPEN", "COVERED", "ACCEPTED", "BLOCKED"]},
+    "residual_risk": {"type": "string"},
+    "downgrade": {
+      "type": "object",
+      "required": ["from_tier", "to_tier", "reason", "accepted_by", "review_date"],
+      "properties": {
+        "from_tier": {"type": "string"},
+        "to_tier": {"type": "string"},
+        "reason": {"type": "string", "minLength": 10},
+        "accepted_by": {"type": "string", "minLength": 1},
+        "review_date": {"type": "string"}
+      }
+    }
+  }
+}

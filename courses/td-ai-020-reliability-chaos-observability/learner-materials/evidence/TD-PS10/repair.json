@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS10",
+  "mode": "repair",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "b446b94c79876d9b5f872cfdc83b3183fa42b7f155a7325733d5e9073b3ab5cc",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS10-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS10-evidence-1.json",
+      "owner": "TD-PS10-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS10-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS10-evidence-2.json",
+      "owner": "TD-PS10-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS10-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS10-evidence-3.json",
+      "owner": "TD-PS10-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS10-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS10-evidence-4.json",
+      "owner": "TD-PS10-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS10-content-owner",
+    "oracle": "TD-PS10-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标供应商 Retry-After、真实队列容量和业务降级文案"
+}

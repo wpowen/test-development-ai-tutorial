@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim-inventory.schema.json",
+  "type": "object",
+  "required": ["schema_version", "topic_id", "root_manifest", "extraction", "claims"],
+  "properties": {
+    "schema_version": {"const": "claim-inventory.v1"},
+    "topic_id": {"type": "string", "minLength": 1},
+    "execution_contract": {"enum": ["openai-deep-research.v1", "codex-research.v1"]},
+    "root_manifest": {"$ref": "#/$defs/rootManifest"},
+    "selector_audits": {"type": "object"},
+    "extraction": {
+      "type": "object",
+      "required": ["author_id", "independent_auditor_id", "source_files", "source_hashes", "locator_ledger", "unmapped_propositions"],
+      "properties": {
+        "author_id": {"type": "string", "minLength": 1},
+        "independent_auditor_id": {"type": "string", "minLength": 1},
+        "source_files": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[^/\\\\].*"}},
+        "source_hashes": {"type": "object", "minProperties": 1, "additionalProperties": {"pattern": "^sha256:[0-9a-f]{64}$"}},
+        "locator_ledger": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/locator"}},
+        "unmapped_propositions": {"const": 0}
+      },
+      "additionalProperties": true
+    },
+    "claims": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "statement", "claim_type", "risk", "scope", "source_locations", "required_dimensions", "proposed_disposition"],
+        "properties": {
+          "claim_id": {"type": "string", "minLength": 1},
+          "statement": {"type": "string", "minLength": 1},
+          "claim_type": {"type": "string", "minLength": 1},
+          "risk": {"enum": ["low", "medium", "high", "critical"]},
+          "scope": {"type": "string", "minLength": 1},
+          "source_locations": {"type": "array", "minItems": 1, "items": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]*:"}},
+          "required_dimensions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "proposed_disposition": {"enum": ["SUPPORTED", "SCOPED", "UNKNOWN-EXPLICIT", "REJECTED"]}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "$defs": {
+    "rootManifest": {
+      "type": "object",
+      "required": ["schema_version", "package_relative_priority", "roots"],
+      "properties": {
+        "schema_version": {"const": "locator-root-manifest.v1"},
+        "package_relative_priority": {"const": true},
+        "roots": {
+          "type": "object", "minProperties": 2,
+          "additionalProperties": {
+            "type": "object", "required": ["kind", "path"],
+            "properties": {
+              "kind": {"enum": ["topic", "package", "external"]},
+              "path": {"type": "string", "minLength": 1},
+              "self_sufficient": {"type": "boolean"},
+              "requires_runtime_binding": {"type": "boolean"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "locator": {
+      "type": "object",
+      "required": ["locator", "canonical_key", "root_alias", "resolved_path", "sha256", "selector", "selector_kind", "selector_value", "line_start", "line_end", "line_count", "claim_ids"],
+      "properties": {
+        "locator": {"type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_-]*:[^#]+"},
+        "canonical_key": {"type": "string", "minLength": 1},
+        "root_alias": {"type": "string", "minLength": 1},
+        "resolved_path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+        "selector": {"type": ["string", "null"]},
+        "selector_kind": {"type": ["string", "null"]},
+        "selector_value": {"type": ["string", "null"]},
+        "line_start": {"type": ["integer", "null"], "minimum": 1},
+        "line_end": {"type": ["integer", "null"], "minimum": 1},
+        "line_count": {"type": "integer", "minimum": 1},
+        "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}

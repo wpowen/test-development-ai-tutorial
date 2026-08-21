@@ -1,0 +1,40 @@
+{
+  "evidence_scope": "TD-T25 deterministic offline capstone contract sensitivity",
+  "commands": [
+    "python3 scripts/run_lab.py --topic TD-T25 --phase baseline",
+    "python3 scripts/run_lab.py --topic TD-T25 --phase fault",
+    "python3 scripts/run_lab.py --topic TD-T25 --phase repair"
+  ],
+  "baseline": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "reports/TD-T25/baseline.json",
+    "report_sha256": "c8ec8e7656ccef5126b02a78b50629d56be5dcaf6936e4e15bfed0689a043636",
+    "model_execution": "NOT_RUN"
+  },
+  "mutation": {
+    "exit_code": 1,
+    "verdict": "FAIL",
+    "report": "reports/TD-T25/fault.json",
+    "report_sha256": "1e031942e92f81959a3efe2f5329cb9f74f16e1a00b400a1175f16e9118ebfa9",
+    "model_execution": "NOT_RUN"
+  },
+  "repair": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "reports/TD-T25/repair.json",
+    "report_sha256": "cac834c7544ced40e4c46b4c970f367c3b1bc53cd3332657d7e0692a3d1e5624",
+    "model_execution": "NOT_RUN"
+  },
+  "environment": {
+    "runtime": "Python 3.9.6",
+    "credentials": "none",
+    "working_directory": "courses/td-ai-quality-benchmark/lab",
+    "model_execution": "NOT_RUN",
+    "enterprise_integration": "NOT_RUN"
+  },
+  "limitations": [
+    "No model, RAG, Agent, cloud CI or enterprise integration",
+    "No practitioner/publication/production validation"
+  ]
+}

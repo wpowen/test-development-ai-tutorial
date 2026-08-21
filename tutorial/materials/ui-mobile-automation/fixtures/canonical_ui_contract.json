@@ -1,0 +1,5 @@
+{
+  "stable_locator": "data-testid=approval-status",
+  "business_assertion": "approval status == approved",
+  "scenario": "offline-contract-demo"
+}

@@ -1,0 +1,23 @@
+{
+  "lesson_id": "td-ai-agent-architecture-system-l01",
+  "target_learner": "第一次系统学习 Agent 测试、会读 JSON 和命令行的测试开发新人",
+  "level": "L1-guided-fixture",
+  "estimated_minutes": 90,
+  "job_result": "能为一个受限 Agent 画出 D0-D7 边界，运行 0/1/0，并解释哪些证据仍 NOT_RUN",
+  "artifact": "D0-D7 架构图、Metric Card、独立 Oracle、四环清单和迁移报告",
+  "stages": [
+    {"stage_id":"cold-open-failure","instructor_action":"先展示最终文本正确但工具越权的 fault receipt","learner_action":"判断放行、拒绝还是人工复核并写依据","expected_observation":"最终文本不能覆盖禁止副作用","debrief":"结果、过程和权限是不同 Oracle","artifact_or_assessment":"一条带 failed_oracle_ids 的拒绝决定"},
+    {"stage_id":"stakes-and-promise","instructor_action":"解释 D0-D7、四环和课程边界","learner_action":"列出需要的输入、owner、Oracle 和 stop_state","expected_observation":"每个风险都要有证据和责任人","debrief":"课程结果是可复跑证据链，不是模型自评","artifact_or_assessment":"风险到 Oracle 映射表"},
+    {"stage_id":"before-after","instructor_action":"对比只验最终文本和 outcome/step/trajectory trace 流程","learner_action":"指出旧流程的三个证据缺口并写出影响","expected_observation":"新流程能定位具体工具、参数、状态和首错位置","debrief":"最终结果、过程轨迹和权限控制属于不同 Oracle，不能合并成一个总分","artifact_or_assessment":"前后流程证据差异表"},
+    {"stage_id":"plain-mental-model","instructor_action":"把 Agent 比作会调用工具的实习生并逐项解释四个术语","learner_action":"把 trace、Oracle、owner、stop_state 分别映射到实际工作","expected_observation":"小白能用自己的话复述四个概念及其责任","debrief":"先把术语落到可观察工作，再学习指标和架构名词","artifact_or_assessment":"一句话术语卡"},
+    {"stage_id":"guided-demo","instructor_action":"从课程根目录运行 TD-AG-00 baseline 并逐字段打开 JSON","learner_action":"复制命令、核对退出码、状态 hash、Oracle 和 not_run","expected_observation":"baseline 退出 0 且所有关键 Oracle 通过","debrief":"健康基线必须先冻结，后续 fault 才能证明门禁对相关回归敏感","artifact_or_assessment":"baseline.json"},
+    {"stage_id":"failure-diagnosis","instructor_action":"注入 TD-AG-00 单一边界故障并暂停让学习者预测","learner_action":"读取 failed_oracle_ids、状态差异和退出码并回指故障字段","expected_observation":"fault 退出 1，报告明确命名失败 Oracle 而不是泛化成模型不稳定","debrief":"失败必须可解释、可定位、可重放，才能进入修复和责任分派","artifact_or_assessment":"fault.json 与诊断说明"},
+    {"stage_id":"learner-practice","instructor_action":"让学习者恢复 canonical state 并运行 repair，再检查 diff","learner_action":"检查 Oracle 未删除、权限未扩大、stop_state 保留且报告可回放","expected_observation":"repair 退出 0，原有业务合同和独立 Oracle 完整保留","debrief":"修复是恢复同一合同，不是调阈值、删断言或增加无限重试求绿","artifact_or_assessment":"repair.json 与检查单"},
+    {"stage_id":"transfer-challenge","instructor_action":"将退款 Agent 迁移为内部事故总结 Agent","learner_action":"重写 business oracle、风险切片、工具权限、owner 和 rollback","expected_observation":"证据链复用但业务合同必须重做","debrief":"可迁移的是方法而非示例阈值","artifact_or_assessment":"迁移合同提案","source_context":"受限退款 Agent 的 D0-D7 fixture","target_context":"内部事故总结 Agent","invariant":"独立 Oracle、最小权限、0/1/0、Evidence/Inference/Unknown 边界","must_change":["业务终态和风险总体","工具权限与数据边界","owner、阈值和回滚"],"success_criterion":"新场景能在无真实模型凭证下定义可执行 baseline/fault/repair，并列出 live/practitioner/learner 待补证据"},
+    {"stage_id":"artifact-handoff","instructor_action":"展示课程包、研究九件包、visuals、zip 和 NOT_RUN 清单","learner_action":"按检查单复跑并写下一阶段证据","expected_observation":"文件、命令、报告和边界闭合","debrief":"完整交付包括限制和下一位 owner","artifact_or_assessment":"课程包验收单"}
+  ],
+  "interaction_prompts":["最终文本正确但工具越权时为什么必须阻断？","哪个字段能证明 fault 不是模型自报？","迁移到新 Agent 时哪些合同必须重取证？"],
+  "recovery_path":"从课程根目录重跑 repair；若缺输入、owner、Oracle、版本或回滚，保持 BLOCKED/UNKNOWN，不手改 expected。",
+  "evidence_status":"fixture-tested",
+  "limitations":"仅验证标准库离线 fixture；真实模型、Agent、工具后端、线上流量、从业者评审和学习者迁移均 NOT_RUN"
+}

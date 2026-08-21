@@ -1,0 +1,45 @@
+{
+  "topic_id": "TD-AG-02",
+  "phase": "repair",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "state_hash": "8b7163dae985b5233fb699f439c4deaf64c50d748ea41d1640c315259ec7a2df",
+  "checks": [
+    {
+      "oracle_id": "OUTCOME",
+      "passed": true
+    },
+    {
+      "oracle_id": "STEP-SAFETY",
+      "passed": true
+    },
+    {
+      "oracle_id": "TRACE-COMPLETE",
+      "passed": true
+    },
+    {
+      "oracle_id": "FIRST-ERROR",
+      "passed": true
+    }
+  ],
+  "state": {
+    "trace": {
+      "outcome": true,
+      "prohibited_calls": 0,
+      "authorized": true,
+      "complete": true,
+      "first_error": null
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A01",
+  "topic_id": "TD-A01",
+  "title": "普通 API 与 AI API：从确定性响应到版本化生成服务",
+  "working_directory": "materials/ai-serving-career",
+  "input_fixture": "fixtures/TD-A01-input.json",
+  "expected": {
+    "request_id": "req-fixture-001",
+    "model.internal_version": "UNKNOWN",
+    "error.retryable": false
+  },
+  "fault_patch": {
+    "request_id": "",
+    "model.internal_version": "invented-2026-08-11"
+  },
+  "oracle": "request_id 必须存在；公开版本变量齐全；不可见内部版本为 UNKNOWN；错误类别能驱动 retryable 决策。",
+  "required_files": [
+    "owners.json",
+    "scripts/serving_lab.py",
+    "fixtures/TD-A01-input.json",
+    "prompts/TD-A01/system-v1.md",
+    "prompts/TD-A01/task-v1.md",
+    "prompts/TD-A01/critic-v1.md",
+    "prompts/TD-A01/manifest.json",
+    "prompts/TD-A01/mutation.json",
+    "schemas/TD-A01-output.schema.json",
+    "evals/TD-A01-eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A01.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A01/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A01.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-A01/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A01.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A01/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/serving_lab.py --manifest manifests/TD-A01.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-A01/baseline.json",
+        "evidence/TD-A01/fault.json",
+        "evidence/TD-A01/repair.json",
+        "evidence/TD-A01/cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "owners": {
+    "content": "TD-A01-content-owner",
+    "oracle": "TD-A01-oracle-owner",
+    "release": "ai-serving-career-release-owner"
+  },
+  "unknowns": [
+    "供应商内部模型修订、路由、限额和区域实现没有公开可观察证据。"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

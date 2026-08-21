@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X502",
+  "phase": "fault",
+  "status": "FAIL",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:a01c4e1bfc36d7e5e5f2db279fc243f520c945525029684157557554852a05d8",
+  "checks": {
+    "required_locales_covered": false,
+    "keyboard_and_name_gate": false,
+    "rtl_checked": true,
+    "translation_owner": true
+  },
+  "failed_checks": [
+    "required_locales_covered",
+    "keyboard_and_name_gate"
+  ],
+  "fault_id": "locale_accessibility_gap",
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

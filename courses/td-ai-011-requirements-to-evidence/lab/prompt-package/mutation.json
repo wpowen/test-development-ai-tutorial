@@ -1,0 +1,1 @@
+{"mutation_set_id":"td-p02-mutations-v1","items":[{"mutation_id":"MUT-NO-SOURCE","fault":"remove source_ref","expected":"FAIL"},{"mutation_id":"MUT-WRONG-ORACLE","fault":"expect 202 for shipped","expected":"FAIL"},{"mutation_id":"MUT-LOOSE-CONSTRAINT","fault":"allow invented SLA","expected":"FAIL"}]}

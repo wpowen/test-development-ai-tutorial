@@ -1,0 +1,11 @@
+{
+  "eval_version": "1.0.0",
+  "oracle_type": "independent deterministic contract",
+  "checks": [
+    "source_refs_present",
+    "owner_present",
+    "unknowns_preserved",
+    "stop_state_valid"
+  ],
+  "threshold_policy": "scenario-specific metric card; no universal threshold"
+}

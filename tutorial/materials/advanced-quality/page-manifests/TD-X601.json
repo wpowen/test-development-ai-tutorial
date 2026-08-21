@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-X601",
+  "page_id": "TD-X601",
+  "working_directory": "materials/advanced-quality",
+  "required_files": [
+    "advanced_quality_lab.py",
+    "owners.json",
+    "page-prompts/TD-X601/manifest.json",
+    "page-prompts/TD-X601/prompt-v1.md",
+    "page-prompts/TD-X601/input.json",
+    "page-prompts/TD-X601/schema.json",
+    "page-prompts/TD-X601/eval.json",
+    "page-prompts/TD-X601/mutation.json"
+  ],
+  "steps": [
+    {
+      "step_id": "td-x601-baseline",
+      "kind": "baseline",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X601 --phase baseline --report reports/td-x601-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x601-baseline.json"
+      ]
+    },
+    {
+      "step_id": "td-x601-fault",
+      "kind": "fault",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X601 --phase fault --report reports/td-x601-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-x601-fault.json"
+      ]
+    },
+    {
+      "step_id": "td-x601-repair",
+      "kind": "repair",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X601 --phase repair --report reports/td-x601-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x601-repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "td-x601-baseline",
+    "fault_step_id": "td-x601-fault",
+    "repair_step_id": "td-x601-repair"
+  },
+  "evidence_boundary": "deterministic offline fixture; real systems, practitioner review and production NOT_RUN"
+}

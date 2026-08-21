@@ -1,0 +1,51 @@
+{
+  "topic_id": "TD-T23",
+  "page_id": "TD-T23",
+  "working_directory": "materials/ai-quality-benchmark",
+  "required_files": [
+    "scripts/run_lab.py",
+    "configs/topic-contracts.json",
+    "fixtures/cases.json",
+    "prompt-package/manifest.json",
+    "prompt-package/quality-benchmark-contract.prompt.md",
+    "prompt-package/output.schema.json",
+    "prompt-package/eval.json",
+    "prompt-package/mutation.json",
+    "BUNDLE-OWNERS.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/run_lab.py --topic TD-T23 --phase baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-T23/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/run_lab.py --topic TD-T23 --phase fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/TD-T23/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/run_lab.py --topic TD-T23 --phase repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-T23/repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "evidence_boundary": "PASS-FIXTURE only; model, enterprise integration, practitioner review, publication and production are NOT_RUN."
+}

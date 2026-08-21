@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X805",
+  "phase": "repair",
+  "status": "PASS",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:64ef6d5b5e633b1cd42ca3d9007a66518975caa65d6b6dc6e497e9e95b16da59",
+  "checks": {
+    "assignment_integrity": true,
+    "guardrails_pass": true,
+    "human_sample_representative": true,
+    "rollback_ready": true
+  },
+  "failed_checks": [],
+  "fault_id": null,
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

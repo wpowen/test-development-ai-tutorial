@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Prevent a correct-looking curriculum from turning into thin, repetitive pages. A topic title, learning objective, source list, or generated summary is not instructional content. Research and write every promised topic as an independent evidence synthesis before it enters the tutorial.
+Prevent a correct-looking curriculum from turning into thin, repetitive pages. A topic title, learning objective, source list, or generated summary is not instructional content. Research and write every promised topic as an independent route-aware evidence synthesis before it enters the tutorial. Topic independence means each page has its own claims, evidence mapping, adjudication, projection, and validation; it does not require duplicating a canonical external provider report.
 
 ## Two-stage contract
 
@@ -27,20 +27,40 @@ The full topic system may be large. It remains `planned` or `outlined` until eac
 
 ### Stage B: research and write one topic
 
-Create `research/topics/<topic-id>/research-package.md` with six mandatory sections:
+Create an independent directory for every promised topic. The split files are mandatory for public work:
 
 ```text
-## Research brief
-## Source pack
-## Evidence synthesis
-## Engineering blueprint
-## Manuscript map
-## Validation
+research/topics/<topic-id>/
+├── research-brief.md
+├── source-pack.csv
+├── research-runs.json
+├── claim-inventory.json
+├── canonical-packet-refs.json
+├── reuse-decisions.json
+├── local-evidence.json
+├── target-evidence.json
+├── teaching-evidence.json
+├── deep-research-receipts.json OR codex-research-receipts.json (only when this topic owns an approved external anchor/delta run)
+├── contradiction-matrix.md OR codex-contradiction-matrix.md
+├── research-saturation.json OR codex-research-saturation.json
+├── evidence-synthesis.md
+├── engineering-blueprint.md
+├── manuscript.md
+├── comparison.md
+├── lab-manifest.json
+├── projection-ledger.json
+└── validation.md
 ```
 
-The sections may be split into the six same-named files when a topic becomes large. The single-file form is the minimum auditable unit and must preserve source URLs, claim support, limitations, blueprint fields, manuscript mapping, and validation results; it is not permission to collapse several topics into one generic package.
+`research-package.md` may exist only as an index. It cannot replace the split records. A generated summary, a short source list, or a manuscript-shaped page does not count as research. `canonical-packet-refs.json` and `reuse-decisions.json` reference shared external packets without copying receipt/report/saturation; local, target, and teaching evidence remain separate records.
 
-Do not batch-generate several manuscripts from one short record. Research may run in parallel by evidence lane, but synthesis and publication approval happen one topic at a time.
+Before using the source pack or writing the synthesis, follow `claim-level-deep-research-protocol.md`. R0 must classify every atomic proposition and select its evidence route. Only eligible external technical facts and empirical generalizations require a canonical OpenAI/ChatGPT or explicitly selected Codex research contract. A member claim may use `DIRECT-REUSE` or `SOURCE-REUSE-DELTA` only with its own transfer/adjudication/projection record; local, target, and teaching claims require their own evidence or remain blocked/unknown. `research-runs.json` is only an orchestration index and proves neither a provider call nor a Codex runtime trace.
+
+Do not batch-generate several manuscripts from one short record or one generic packet. Research may run in parallel by evidence lane, but synthesis and publication approval happen one topic at a time. A canonical packet may supply a source asset, never a page-specific final conclusion.
+
+Record the applicable independent evidence routes in `research-runs.json` and `comparison.md`. An external canonical anchor normally needs initial and counterevidence/gap-fill runs according to risk; a member needs a transfer comparison even when no new provider run is required; a local/target/teaching claim needs the appropriate artifact, snapshot, or human/design evidence. The comparison must list `DIRECT-REUSE`, `SOURCE-REUSE-DELTA`, `NO-REUSE`, local, target, teaching, and blocked members, with supports/cannot-support boundaries. A draft, Luna integration, or page-writing agent cannot approve its own result.
+
+The topic route is fail-closed and follows `R0 classify/map → R1 canonical external breadth → R2 technical-document reconstruction → R3 counterevidence → R4 gap-fill → R5 local verification → R6 target evidence → R7 independent adjudication/projection`. R0 covers every page and claim without networking; R1–R4 run only for eligible canonical external units; R5–R6 cannot be replaced by web research; R7 must preserve each member's transfer, disposition, and projection. A topic may be content-complete while remaining `BLOCKED`, `UNKNOWN-EXPLICIT`, `NOT-SATURATED`, or `TARGET-REQUIRED`.
 
 ## Research brief
 
@@ -67,7 +87,9 @@ Select the lanes needed by the topic. A professional engineering topic normally 
 6. existing course/tutorial supply when positioning or teaching design is in scope;
 7. practitioner workflow or public case when professional realism is claimed.
 
-Every selected source must be opened. Store the exact URL, access date, source family, supported claim, unsupported claim, version/date, and limitation in `source-pack.csv`. Search snippets and generated answers remain leads.
+Every selected source must be opened. Store the exact URL, access date, source family, supported claim, unsupported claim, version/date, and limitation in `source-pack.csv`. Search snippets and generated answers remain leads. A packet reference does not count as a page-specific conclusion; the page must map each claim to the packet's supports/cannot-support range or to its own local/target/teaching evidence.
+
+When a public engineering topic owns or references an applicable external canonical packet, the combined applicable packet(s) must meet the evidence floor of at least ten opened sources across five evidence lanes, five independent source families, and four source types unless a risk-specific primary-authority exception is independently recorded. The same sources must not be recounted merely because several pages reference them. A topic with only local, target, or teaching claims must not fabricate an external source count; it must close those routes or remain blocked/unknown. Source count is a floor, not a substitute for relevance, independence, scope, or cannot-prove boundaries.
 
 ## Evidence synthesis
 
@@ -134,6 +156,8 @@ Require definitions, formula or exact semantics where applicable, unit, aggregat
 
 Require prepared input, exact commands/actions, expected output after meaningful steps, saved artifact, meaningful mutation, expected red result, repair/reset, expected green result, and troubleshooting.
 
+Every runnable or inspectable page also carries `lab-manifest.json`. It pins the working directory, repository-owned files, step kind, exact command or action, expected exit code, expected artifacts, baseline/fault/repair linkage, and evidence boundary. Validation resolves every referenced path from the declared working directory. A command that only works in an unpublished authoring tree fails.
+
 ### Diagnostic
 
 Require symptoms, ordered decision tree, competing hypotheses, confirming/disconfirming evidence, misleading fixes, safe repair, regression check, and escalation boundary.
@@ -157,8 +181,24 @@ Require business brief, constraints, architecture, data contract, deliverables, 
 
 Any “no” blocks publication. Set the page to `outlined` until repaired.
 
+## Code and copy affordance contract
+
+Do not store every technical block in one undifferentiated `code` field. Each block declares one kind:
+
+- `command`: copy-paste runnable from the declared working directory;
+- `source-file`: exact excerpt from a linked repository file;
+- `config`: valid JSON, YAML, TOML, SQL, or other named format with its consumer;
+- `prompt`: versioned prompt file with fixed input fixture, output schema, evaluation set, model/config manifest, and boundary;
+- `formula`: definition with variables, units, dimensions, aggregation, and worked values;
+- `diagram`: architecture or sequence view, not executable code;
+- `pseudocode`: explicitly non-runnable explanation linked to a real implementation or removed.
+
+The viewer must label the kind. Only `command`, `source-file`, `config`, and a fully packaged `prompt` may show a copy-for-use affordance. Diagrams, formulas, and pseudocode must never be presented as runnable implementation. A page fails when the displayed command differs from the command rerun by validation.
+
 ## Model and agent routing
 
-Use lower-cost agents for independent source discovery, source extraction, competitor scanning, and counterevidence. Do not let a draft agent approve its own page. The integrating model must reopen pivotal sources, reconcile definitions, build the engineering blueprint, and run validation.
+Use Luna or other lower-cost agents for independent source discovery, source extraction, atomic-claim candidates, field normalization, cluster and reuse candidates, competitor scanning, technical-document Markdown organization, gap ranking, cost aggregation, and page integration. Mark these outputs as proposals or integration artifacts. Luna cannot create or complete a provider response ID, raw response, source-opening event, citation trajectory, completed receipt, saturation PASS, target PASS, practitioner PASS, or learner PASS. A Luna conversation is neither an OpenAI Deep Research receipt nor a Codex runtime trace.
 
-Reject agent output when it contains an unopened URL, invented source ID, unsupported threshold, generic page boilerplate, or a tool recommendation without interface and limitation evidence. Cost optimization never weakens the evidence or publication gate.
+Use the official OpenAI/ChatGPT surface for formal external canonical research, or the separate Codex contract only when explicitly selected. The integrating model must reopen pivotal sources, reconcile definitions, build the engineering blueprint, and run validation. It cannot approve its own classification, packet, reuse decision, saturation, page, or promotion; the independent auditor and target owner remain separate.
+
+Reject agent output when it contains an unopened URL, invented source ID, unsupported threshold, generic page boilerplate, a copied anchor disposition, or a tool recommendation without interface and limitation evidence. Cost optimization never weakens the evidence, route, transfer, or publication gate.

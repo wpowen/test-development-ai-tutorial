@@ -1,0 +1,26 @@
+{
+  "schema_version": "prompt-package-receipt.v1",
+  "receipt_type": "static-package-build-receipt",
+  "package_id": "td-p01-lifecycle-prompt-package",
+  "package_version": "1.2.0",
+  "built_on": "2026-08-13",
+  "builder": "build_direct_use_contracts.py",
+  "provider": "none",
+  "model": "offline-deterministic",
+  "model_status": "NOT_RUN",
+  "parameters": {},
+  "seed": null,
+  "retries": 0,
+  "raw_output_refs": [],
+  "raw_output_sha256": [],
+  "cost": null,
+  "latency_ms": null,
+  "static_validation": "PENDING_TEST",
+  "limitations": [
+    "no model invocation",
+    "no enterprise integration",
+    "no practitioner or learner observation"
+  ],
+  "residual_risk": "Prompt structure can be validated statically; semantic performance is unknown until an independent real-model evaluation runs.",
+  "claim_boundary": "本收据仅证明文件由确定性生成器构建；没有调用模型、provider 或企业系统，模型证据为 NOT_RUN。"
+}

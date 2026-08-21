@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-F01",
+  "phase": "repair",
+  "status": "PASS_FIXTURE",
+  "provider": "none",
+  "model_status": "NOT_RUN",
+  "checks": {
+    "responsibility_is_risk_evidence": true,
+    "requirements_and_design_are_both_test_basis": true,
+    "authority_conflicts_block_execution": true,
+    "independent_oracle": true,
+    "method_follows_risk": true,
+    "artifacts_have_owner_and_consumer": true,
+    "human_release_owner": true,
+    "ai_is_bounded": true,
+    "production_feedback_returns_to_assets": true
+  },
+  "failed_checks": [],
+  "evidence_boundary": "deterministic fixture only; no practitioner, integration, live, publication, or production evidence"
+}

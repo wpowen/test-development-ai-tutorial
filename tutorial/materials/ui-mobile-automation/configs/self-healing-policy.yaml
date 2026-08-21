@@ -1,0 +1,12 @@
+schema: ui-self-healing-policy.v1
+mode: recommend-only
+execution_status: NOT_RUN/static-reviewed
+allowed_mutations: [locator, bounded-wait, fixture-selector]
+required_evidence: [original-failure, trace-or-hierarchy, patch-diff, replay-result, business-oracle-result]
+human_gate:
+  required: true
+  approver: ui-quality-owner
+  writeback: explicit-only
+forbidden_actions: [delete-business-assertion, weaken-oracle, force-click, infinite-retry, skip-test, approve-visual-baseline, production-side-effect]
+stop_conditions: [product-assertion-failure, service-500, device-offline, wda-crash, permission-denied, missing-evidence]
+decision_rule: candidate repair is acceptable only when false-repair=0 and business-oracle-pass=true

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "codex-research-receipts.schema.json",
+  "type": "object",
+  "required": ["schema_version", "topic_id", "runs"],
+  "properties": {
+    "schema_version": {"const": "codex-research-receipts.v1"},
+    "topic_id": {"type": "string", "minLength": 1},
+    "runs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["run_id", "claim_ids", "round", "phase", "provider", "surface", "orchestrator_invocation_id", "orchestrator_session_id", "trace_id", "runtime_attestation_key_id", "runtime_attestation_public_key_sha256", "runtime_attestation_payload_sha256", "raw_trace_path", "raw_trace_sha256", "agent_trace_path", "agent_trace_sha256", "source_openings_path", "source_openings_sha256", "citations_path", "citations_sha256", "agent_invocation_ids", "agent_session_ids", "independence_groups", "agent_context_sha256s", "agent_output_sha256s", "input_artifact_sha256s", "integrator_invocation_id", "independent_agent_count", "source_opening_count", "citation_count", "status", "limitations"],
+        "properties": {
+          "provider": {"const": "codex"},
+          "surface": {"const": "codex-research"},
+          "phase": {"enum": ["initial-research", "counterevidence", "gap-fill", "verification"]},
+          "status": {"const": "completed"},
+          "independent_agent_count": {"type": "integer", "minimum": 1},
+          "source_opening_count": {"type": "integer", "minimum": 1},
+          "citation_count": {"type": "integer", "minimum": 1}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": false
+}

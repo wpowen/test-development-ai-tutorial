@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1240 860" width="1240" height="860">
+<title id="title">五维能力证据雷达：示例数据与缺口</title>
+<desc id="desc">五轴雷达图比较一份示例的当前证据成熟度与目标任务要求，轴为 AI/ML、测试方法、AI Eval、工程交付和业务协作；数据明确标为示例。 SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</desc>
+
+  <defs>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+  </defs>
+<style>
+    .ds-bg{fill:#fbfaf6}
+    .ds-header{fill:url(#ds-header-grad)}
+    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
+    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
+    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
+    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
+    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
+    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
+    .ds-node rect{stroke-width:1.4}
+    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
+    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
+    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
+    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+
+.cc-title{font:800 18px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+.cc-label{font:800 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#85908a}
+.cc-value{font:500 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+.cc-note{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+</style>
+<rect class="ds-bg" width="1240" height="860" rx="22"/>
+
+  <rect class="ds-header" x="0" y="0" width="1240" height="118" rx="22"/>
+  <rect class="ds-header" x="0" y="96" width="1240" height="22"/>
+  <text class="ds-eyebrow" x="36" y="32">CAREER · 五维证据雷达</text>
+  <text class="ds-subtitle" x="1204" y="32" text-anchor="end">示范如何用证据成熟度比较当前状态与目标任务，而不把来源 L1-L5 或职级标签当事实。</text>
+  <text class="ds-title" x="36" y="74">五维能力证据雷达：示例数据与缺口</text>
+  <text class="ds-source" x="36" y="140">source · AI测试工程师发展.md:L584-L630</text>
+<g data-source-ref="AI测试工程师发展.md:L584-L630"><rect x="40" y="146" width="1160" height="512" rx="18" fill="#f3f1e9" stroke="#d9ded9" stroke-width="1.2"/>
+<polygon points="420.0,190.0 619.7,335.1 543.4,569.9 296.6,569.9 220.3,335.1" fill="none" stroke="#d9ded9" stroke-width="1.4"/><polygon points="420.0,261.4 551.8,357.2 501.5,512.1 338.5,512.1 288.2,357.2" fill="none" stroke="#d9ded9" stroke-width="1.4"/><polygon points="420.0,330.7 485.9,378.6 460.7,456.1 379.3,456.1 354.1,378.6" fill="none" stroke="#d9ded9" stroke-width="1.4"/><line x1="420" y1="400" x2="420.0" y2="190.0" stroke="#d9ded9" stroke-width="1.4"/><line x1="420" y1="400" x2="619.7218684219822" y2="335.10643118126103" stroke="#d9ded9" stroke-width="1.4"/><line x1="420" y1="400" x2="543.4349029814193" y2="569.8935688187389" stroke="#d9ded9" stroke-width="1.4"/><line x1="420" y1="400" x2="296.5650970185807" y2="569.8935688187389" stroke="#d9ded9" stroke-width="1.4"/><line x1="420" y1="400" x2="220.27813157801774" y2="335.1064311812611" stroke="#d9ded9" stroke-width="1.4"/>
+<polygon points="420.0,248.8 529.8,364.3 479.2,481.5 343.5,505.3 340.1,374.0" fill="#174a3a" fill-opacity=".18" stroke="#174a3a" stroke-width="3"/>
+<polygon points="420.0,211.0 575.8,349.4 521.2,539.3 331.1,522.3 284.2,355.9" fill="#355f96" fill-opacity=".09" stroke="#355f96" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="420.0" y="168.0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">AI/ML</text><text x="644.4493378456563" y="331.0719893275124" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">测试方法</text><text x="558.7173195410237" y="594.9280106724876" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">AI Eval</text><text x="281.28268045897636" y="594.9280106724876" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">工程交付</text><text x="195.55066215434374" y="331.0719893275124" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">业务协作</text>
+<g filter="url(#ds-soft)"><rect x="780" y="186" width="380" height="300" rx="16" fill="#fff" stroke="#d9ded9" stroke-width="1.2"/></g>
+<text x="808" y="220" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="13" font-weight="800" fill="#1c2924" text-anchor="start">示例数据，不是诊断结果</text>
+<text x="808" y="254" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#174a3a" text-anchor="start">实线：当前 evidence_ref 覆盖</text>
+<text x="808" y="284" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="600" fill="#355f96" text-anchor="start">虚线：目标任务所需证据</text>
+<text x="808" y="314" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="500" fill="#5f6c66" text-anchor="start">差距：转成一个可运行项目</text>
+<text x="808" y="344" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="500" fill="#5f6c66" text-anchor="start">复评：故障注入 + 独立 reviewer</text>
+<text x="808" y="384" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="800" fill="#b2402f" text-anchor="start">无 evidence_ref 的轴 = Unknown</text>
+<g filter="url(#ds-soft)"><rect x="780" y="516" width="380" height="72" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/></g>
+<text x="808" y="546" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="700" fill="#a96a18" text-anchor="start">owner 定义目标；示例值不迁移</text>
+<text x="808" y="570" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="600" fill="#5f6c66" text-anchor="start">必须用 evidence_ref 重算</text></g>
+<text x="40" y="764" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11px" font-weight="500" fill="#5f6c66">雷达值是演示数据，不是能力诊断结果；迁移时必须用 evidence_ref 重算，并由任务 owner 定义目标。</text>
+
+  <rect x="28" y="786" width="1184" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
+  <text class="ds-footbadge" x="46" y="812">证据边界</text>
+  <text class="ds-foot" x="46" y="834">SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</text>
+</svg>

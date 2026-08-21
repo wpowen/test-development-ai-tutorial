@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x501-multimodal",
+  "topic_id": "TD-X501",
+  "version": "1.0.0",
+  "purpose": "按文本、图像、音频及跨模态关系建立样例、Oracle 与反例",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "MODALITY_MISSING",
+    "ALIGNMENT_UNKNOWN",
+    "ORACLE_CONFLICT",
+    "BLOCKED"
+  ]
+}
+

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T23",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "先淘汰突破硬底线的候选，再在合格候选中讨论 Pareto 权衡。",
+  "checks": [
+    {
+      "field": "joint_gate_complete",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "mutation_id": "TD-T23-fault",
+    "field": "joint_gate_complete",
+    "fault_value": false,
+    "professional_consequence": "平均延迟下降但高风险正确率、p99 与重试成本恶化。"
+  },
+  "remaining_unknowns": [
+    "真实模型价格、流量、缓存与 SLO 未测。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

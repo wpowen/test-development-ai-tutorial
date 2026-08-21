@@ -1,0 +1,12 @@
+{
+  "risk_id": "RISK-REFUND-DUPLICATE",
+  "requirement_ids": ["REQ-CANCEL-001"],
+  "failure": "重试或并发请求创建两笔退款",
+  "impact": "资金损失与账务对账失败",
+  "severity": "CRITICAL",
+  "test_levels": ["unit", "service-integration", "contract"],
+  "oracles": ["refund_count<=1", "refund_total<=captured_amount"],
+  "monitoring": ["duplicate_refund_block_total", "refund_amount_mismatch_total"],
+  "owner": "payments-quality-owner"
+}
+

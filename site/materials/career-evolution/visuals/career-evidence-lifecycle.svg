@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1240 860" width="1240" height="860">
+<title id="title">能力主张到复评的证据生命周期</title>
+<desc id="desc">六步环形生命周期，从能力主张开始，经证据引用、故障或变异、独立评审、工作应用、反馈复评，最后回到下一轮能力主张。 SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</desc>
+
+  <defs>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+  </defs>
+<style>
+    .ds-bg{fill:#fbfaf6}
+    .ds-header{fill:url(#ds-header-grad)}
+    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
+    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
+    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
+    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
+    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
+    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
+    .ds-node rect{stroke-width:1.4}
+    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
+    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
+    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
+    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+
+.cc-title{font:800 18px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+.cc-label{font:800 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#85908a}
+.cc-value{font:500 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+.cc-note{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+</style>
+<rect class="ds-bg" width="1240" height="860" rx="22"/>
+
+  <rect class="ds-header" x="0" y="0" width="1240" height="118" rx="22"/>
+  <rect class="ds-header" x="0" y="96" width="1240" height="22"/>
+  <text class="ds-eyebrow" x="36" y="32">CAREER · 证据生命周期</text>
+  <text class="ds-subtitle" x="1204" y="32" text-anchor="end">让学习者把自评变成主张、证据、故障、评审、应用与反馈闭环，而不是一次性打分。</text>
+  <text class="ds-title" x="36" y="74">能力主张到复评的证据生命周期</text>
+  <text class="ds-source" x="36" y="140">source · AI测试工程师发展.md:L1335-L1490</text>
+<g data-source-ref="AI测试工程师发展.md:L1335-L1490"><rect x="40" y="146" width="1160" height="512" rx="18" fill="#f3f1e9" stroke="#d9ded9" stroke-width="1.2"/>
+<circle cx="620" cy="400" r="235" fill="none" stroke="#d9ded9" stroke-width="1.5" stroke-dasharray="7 7"/>
+<g filter="url(#ds-soft)"><rect x="538.0" y="135.0" width="164" height="60" rx="30" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g><circle cx="620.0" cy="165.0" r="5" fill="#c2d9cc"/><text x="620.0" y="169.0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">能力主张</text><path d="M 702.0 165.0 Q 620 400 752.5018867790191 323.5" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/><g filter="url(#ds-soft)"><rect x="741.5159698893431" y="252.5" width="164" height="60" rx="30" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g><circle cx="823.5159698893431" cy="282.5" r="5" fill="#c2d9cc"/><text x="823.5159698893431" y="286.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">证据引用</text><path d="M 905.5159698893431 282.5 Q 620 400 752.5018867790191 476.5" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/><g filter="url(#ds-soft)"><rect x="741.5159698893431" y="487.5" width="164" height="60" rx="30" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g><circle cx="823.5159698893431" cy="517.5" r="5" fill="#c2d9cc"/><text x="823.5159698893431" y="521.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">故障 / 变异</text><path d="M 905.5159698893431 517.5 Q 620 400 620.0 553.0" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/><g filter="url(#ds-soft)"><rect x="538.0" y="605.0" width="164" height="60" rx="30" fill="#174a3a" stroke="#174a3a" stroke-width="1.5"/></g><circle cx="620.0" cy="635.0" r="5" fill="#174a3a"/><text x="620.0" y="639.0" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">独立评审</text><path d="M 702.0 635.0 Q 620 400 487.4981132209809 476.5" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/><g filter="url(#ds-soft)"><rect x="334.48403011065693" y="487.5" width="164" height="60" rx="30" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g><circle cx="416.48403011065693" cy="517.5" r="5" fill="#c2d9cc"/><text x="416.48403011065693" y="521.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">工作应用</text><path d="M 498.48403011065693 517.5 Q 620 400 487.4981132209809 323.5" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/><g filter="url(#ds-soft)"><rect x="334.48403011065693" y="252.5" width="164" height="60" rx="30" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g><circle cx="416.48403011065693" cy="282.5" r="5" fill="#c2d9cc"/><text x="416.48403011065693" y="286.5" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12.5" font-weight="800" fill="#1c2924" text-anchor="middle">反馈复评</text><path d="M 498.48403011065693 282.5 Q 620 400 620.0 247.0" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<g filter="url(#ds-strong)"><rect x="472" y="330" width="296" height="132" rx="16" fill="#fff" stroke="#174a3a" stroke-width="1.5"/></g>
+<text x="500" y="364" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="800" fill="#174a3a" text-anchor="start">闭环条件</text>
+<text x="500" y="392" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="600" fill="#1c2924" text-anchor="start">evidence_ref + failure + reviewer</text>
+<text x="500" y="420" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="800" fill="#b2402f" text-anchor="start">缺证据 → Unknown，不升级</text></g>
+<text x="40" y="764" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11px" font-weight="500" fill="#5f6c66">没有 evidence_ref 或故障证据时只能记为 Unknown；复评不是晋升承诺，而是更新下一轮学习决策。</text>
+
+  <rect x="28" y="786" width="1184" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
+  <text class="ds-footbadge" x="46" y="812">证据边界</text>
+  <text class="ds-foot" x="46" y="834">SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</text>
+</svg>

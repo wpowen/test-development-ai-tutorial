@@ -1,0 +1,12 @@
+{
+  "schema_version": "agent-performance-prompt-input.v1",
+  "page_id": "TD-AP01",
+  "run_refs": [
+    "reports/TD-AP01/baseline/summary.json",
+    "reports/TD-AP01/fault/summary.json",
+    "reports/TD-AP01/repair/summary.json",
+    "reports/TD-AP01/cycle-summary.json"
+  ],
+  "question": "Does the workload model and task oracle baseline-fault-repair cycle demonstrate detection and repair?",
+  "boundary": "fixture-tested only"
+}

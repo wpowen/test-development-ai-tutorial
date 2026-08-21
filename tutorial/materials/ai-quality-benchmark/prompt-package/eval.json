@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "deterministic_checks": [
+    "schema valid",
+    "source_refs nonempty",
+    "blocker preserved",
+    "unknowns preserved",
+    "model_execution NOT_RUN"
+  ],
+  "semantic_review": "NOT_RUN",
+  "human_gate": "required before any maturity promotion"
+}

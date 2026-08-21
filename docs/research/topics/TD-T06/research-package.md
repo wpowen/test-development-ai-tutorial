@@ -1,0 +1,16 @@
+# TD-T06 · Editorial research package
+
+## Scope and lineage
+
+本页索引 research-brief、source-pack、evidence-synthesis、engineering-blueprint、manuscript、comparison、research-runs 与 validation。研究事实必须回链打开来源；方法组合属于 Inference；真实仓库、模型或生产结果保持 Unknown/NOT_RUN。
+
+## Editorial review
+
+- 受保护专业细节：批准实现、外部 expected、目标 mutation 与 killed/survived/no-coverage 分类。
+- 方法选择理由：检测力来自错误实现被独立断言打红；代码覆盖率、用例数量和同模型自评都不能替代这一反证。
+- 人工化检查：标题、场景、命令、预期退出码和失败诊断均绑定 TD-T06，没有用“AI 提效”或“自动覆盖”替代专业判断。
+- 证据边界：本页只到 fixture-tested；没有 live 模型、真实项目集成、从业者签字、publication 或 production validation。
+
+## Contract markers
+
+Prompt、Input、Schema、Eval、Mutation 与 Critic 各自版本化；Oracle 位于生成器之外。validation.md 只保留研究覆盖、可追溯、实验、比较和发布裁决合同，不在本记录中推测编辑分数。

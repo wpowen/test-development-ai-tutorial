@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-F05",
+  "phase": "baseline",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "evidence_level": "PASS-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:a7d2ab4982538b391fa775483a5ec9682c25c688b136d89f39b1099e059a3611",
+  "manifest_sha256": "sha256:3c93a112d734771b9528d476724f0d280c618e4a5c27dbf18a74d113cea6b1b7",
+  "checks": [
+    {
+      "field": "metric_card.task_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.population_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.denominator_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.slice_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.oracle_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.owner_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.failure_action_defined",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "metric_card.universal_threshold",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "真实业务阈值未提供"
+  ],
+  "boundary": "PASS-FIXTURE only; metric values are not production thresholds"
+}

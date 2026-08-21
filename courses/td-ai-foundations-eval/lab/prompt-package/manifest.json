@@ -1,0 +1,3 @@
+{
+  "package_id":"ai-quality-contract-classifier","version":"1.0.0","purpose":"把评测案例整理为可审计合同；本仓库不执行模型调用","authority":"candidate-only; cannot approve risk, permission, threshold, or release","system_prompt":"contract-classifier.prompt.md","schema":"output.schema.json","eval":"eval.json","mutation":"mutation.json","input_fixture":"../fixtures/cases.json","model":{"provider":"none","name":"NOT_RUN","parameters":{},"seed":"NOT_RUN"},"privacy_level":"synthetic-public","expected_statuses":["PASS_SCHEMA","PASS_SEMANTIC","FAIL","BLOCKED","NOT_RUN"],"stop_states":["SOURCE_CONFLICT","UNSUPPORTED_RULE","SEMANTIC_UNKNOWN","BLOCKED"],"review_owner":"test-lead-and-business-owner","limitations":["No model/provider run","Fixture results prove only deterministic contract checks"]
+}

@@ -1,0 +1,52 @@
+{
+  "topic_id": "TD-AG-00",
+  "phase": "fault",
+  "maturity": "fixture-tested",
+  "verdict": "FAIL",
+  "expected_exit_code": 1,
+  "failed_oracle_ids": [
+    "OWNER-ORACLE"
+  ],
+  "state_hash": "610aa81135e48de6eaf63de3735c7ab820e689ea29980096a16b4fe85a3f7061",
+  "checks": [
+    {
+      "oracle_id": "INPUTS",
+      "passed": true
+    },
+    {
+      "oracle_id": "D0-D7",
+      "passed": true
+    },
+    {
+      "oracle_id": "FOUR-RINGS",
+      "passed": true
+    },
+    {
+      "oracle_id": "GUARDS",
+      "passed": true
+    },
+    {
+      "oracle_id": "OWNER-ORACLE",
+      "passed": false
+    }
+  ],
+  "state": {
+    "boundary": {
+      "inputs": true,
+      "domains": 8,
+      "rings": 4,
+      "guards": true,
+      "owners": true,
+      "oracles": false
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

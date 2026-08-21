@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS04",
+  "mode": "baseline",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "da3b81c061d24e4b4b72930a3511393d03dd16cd5dd81773e8d38ae332fdf3a5",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS04-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS04-evidence-1.json",
+      "owner": "TD-PS04-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS04-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS04-evidence-2.json",
+      "owner": "TD-PS04-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS04-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS04-evidence-3.json",
+      "owner": "TD-PS04-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS04-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS04-evidence-4.json",
+      "owner": "TD-PS04-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS04-content-owner",
+    "oracle": "TD-PS04-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标浏览器流量占比、第三方沙箱稳定性和真实页面可访问名称"
+}

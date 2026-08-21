@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-B03",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "不可比条件或样本不足时保留不确定，不输出虚假精确排名。",
+  "checks": [
+    {
+      "field": "metric_denominator_declared",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "mutation_id": "TD-B03-fault",
+    "field": "metric_denominator_declared",
+    "fault_value": false,
+    "professional_consequence": "pass@5 很高但单次成功低、成本高，且安全 blocker 被均值掩盖。"
+  },
+  "remaining_unknowns": [
+    "Fixture 没有运行随机模型或真实统计估计。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

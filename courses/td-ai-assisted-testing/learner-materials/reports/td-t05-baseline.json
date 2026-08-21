@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-T05",
+  "phase": "baseline",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_package": {
+    "version": "1.0.0",
+    "manifest_hash": "sha256:6d09d84e31259775a1ecfc27d87c67fdb0f237349e972c69fa6fdd1aff3d89f1"
+  },
+  "basis_hash": "sha256:e4592e25a925e638a6b1b64cc6c50dd43a30b09d167d5b343bc6ba03709757dd",
+  "oracle_hash": "sha256:0d6210b21a490d1626e2d765cc147a9eb73dc6aec299b5c7723eb2b33eb0aeaf",
+  "oracle_authority": "frozen approved basis; independent from candidate generator",
+  "human_decision_required": true,
+  "status": "PASS",
+  "risk_candidates": [
+    {
+      "risk_id": "R-ACTIVATED",
+      "requirement_ref": "PRD-v4#R12",
+      "diff_ref": "refund.py#L18-L24",
+      "oracle_id": "O-ACTIVATED-BLOCK",
+      "owner": "qa-refund",
+      "status": "CANDIDATE"
+    },
+    {
+      "risk_id": "R-AUDIT",
+      "requirement_ref": "PRD-v4#R13",
+      "diff_ref": "events.py#L9-L16",
+      "oracle_id": "O-AUDIT-ONCE",
+      "owner": "qa-refund",
+      "status": "CANDIDATE"
+    }
+  ],
+  "missing_evidence": [],
+  "invalid_oracle_refs": [],
+  "decision": "ACCEPT_CANDIDATES_FOR_HUMAN_REVIEW"
+}

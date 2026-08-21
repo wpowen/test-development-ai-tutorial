@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x602-training-update",
+  "topic_id": "TD-X602",
+  "version": "1.0.0",
+  "purpose": "冻结基座、训练数据 lineage、超参、holdout 与回滚候选；训练/微调只能形成候选模型版本",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "DATA_LINEAGE_MISSING",
+    "HOLDOUT_CONTAMINATION",
+    "BASE_MODEL_DRIFT",
+    "BLOCKED"
+  ]
+}
+

@@ -1,0 +1,98 @@
+{
+  "lesson_id": "td-ai-quality-benchmark-capstone",
+  "target_learner": "已完成 AI/Eval 基础的测试开发",
+  "level": "L1-guided-fixture",
+  "estimated_minutes": 120,
+  "job_result": "能交付可杀死高风险 mutation 的 AI Quality Fixture RC",
+  "artifact": "CI、Lineage、Trace、Benchmark、Rollback 与 closure",
+  "stages": [
+    {
+      "stage_id": "cold-open-failure",
+      "instructor_action": "引导 cold-open-failure 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "stakes-and-promise",
+      "instructor_action": "引导 stakes-and-promise 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "before-after",
+      "instructor_action": "引导 before-after 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "plain-mental-model",
+      "instructor_action": "引导 plain-mental-model 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "guided-demo",
+      "instructor_action": "引导 guided-demo 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "failure-diagnosis",
+      "instructor_action": "引导 failure-diagnosis 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "learner-practice",
+      "instructor_action": "引导 learner-practice 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    },
+    {
+      "stage_id": "transfer-challenge",
+      "instructor_action": "引导 transfer-challenge 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件",
+      "source_context": "合成退款 RAG/Agent 质量系统",
+      "target_context": "将退款助手质量系统迁移到内部事故总结助手，并重新建立证据、权限、风险切片、Benchmark 与回滚合同",
+      "invariant": "版本、独立 Oracle、负控、人工权力和 receipt 不变",
+      "must_change": [
+        "政策证据改为 runbook/telemetry",
+        "租户退款权限改为事故严重度/on-call 权限"
+      ],
+      "success_criterion": "正常摘要通过，无证据归因或越权读取稳定 exit 1"
+    },
+    {
+      "stage_id": "artifact-handoff",
+      "instructor_action": "引导 artifact-handoff 的质量系统证据",
+      "learner_action": "检查版本、风险、负控、报告和 owner",
+      "expected_observation": "证据状态与 0/1/0 可复现",
+      "debrief": "Fixture 只证明 mutation sensitivity",
+      "artifact_or_assessment": "版本化质量工件"
+    }
+  ],
+  "interaction_prompts": [
+    "这个绿灯是否绑定当前版本？",
+    "fault 会在哪个 Gate 变红？",
+    "迁移时哪些专业 Oracle 必须重做？"
+  ],
+  "recovery_path": "恢复 known-good manifest 和 observation，不放宽 expected",
+  "evidence_status": "fixture-tested",
+  "limitations": "无模型、企业、从业者、publication 或 production 证据"
+}

@@ -1,0 +1,12 @@
+{
+  "topic_id": "TD-X601",
+  "mutations": [
+    {
+      "mutation_id": "aggregate_only_self_judge",
+      "description": "只报总体均值、伤害 blocker 被掩盖或同模型自批",
+      "expected_status": "BLOCKED",
+      "must_be_detected": true
+    }
+  ]
+}
+

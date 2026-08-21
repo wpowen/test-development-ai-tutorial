@@ -1,31 +1,15 @@
-# TD-AP07 · Failure diagnosis
+# TD-AP07 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: how can an engineer distinguish queue saturation, long Prefill, slow Decode, tool dependency failure, retry storm and Agent loops? Artifact: evidence-backed diagnosis record.
+- 主题边界：长稳、资源漂移与泄漏，必须区分 warmup、steady、recovery。
+- 方法：windowed soak + snapshot-diff diagnosis；独立 Oracle 检查窗口完整性和资源斜率。
+- 必须保留：资源 slope、cleanup diff、p99、错误重试和 recovery 证据。
 
-## Source pack
+## Boundary and command evidence
 
-- vLLM metrics: https://docs.vllm.ai/en/latest/design/metrics/ — queue, scheduler, TTFT, ITL and cache metrics.
-- NVIDIA metrics/arrival patterns: https://docs.nvidia.com/aiperf/reference/ai-perf-metrics-reference — model metric semantics and load pattern implications.
-- Google cascading failures and OpenAI rate limits — retry feedback and safe retry behavior.
-
-## Evidence synthesis
-
-Correlation narrows candidates but does not prove causality. Compare equal workloads and change one variable. Closed-loop tests can hide overload by lowering arrival rate as latency increases.
-
-## Engineering blueprint
-
-Map symptom combinations to hypotheses, confirming and disconfirming evidence, and a controlled rerun. Stop feedback loops before root-cause work. Retry budgets span gateway, SDK, Agent and tool layers.
-
-## Manuscript map
-
-TD-AP07 includes a symptom matrix, coordinated omission, retry budget and incident repair order.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP07-lab.json --mode cycle`，已记录 0/1/0。provider=none、model=NOT_RUN；真实平台泄漏未知。
 
 ## Editorial review
 
-PASS. Preserved the separation of symptom, hypothesis, confirming evidence, disconfirming evidence and controlled rerun. The page does not equate correlation with causality or recommend deleting thresholds to make a test pass. Retry budgets still span all layers, and emergency feedback-loop controls precede deeper diagnosis.
-
-## Validation
-
-PASS: it separates symptom/hypothesis/test, rejects threshold deletion and preserves quality/cost gates.
+本记录保护分窗 soak、快照差分和稳定性边界；不提供分数，不替代独立审计或发布门禁。

@@ -1,0 +1,18 @@
+scenario_id: android-receiving
+platform: android
+actor: warehouse-receiver
+trigger: inbound shipment is ready for receipt
+input:
+  shipment_id: SHIP-SYN-2001
+  quantity: 3
+flow:
+  - launch_app
+  - tap_resource_id: receiving_tab
+  - input_resource_id: shipment_id
+  - tap_resource_id: confirm_receipt
+business_oracle:
+  receipt_status: received
+  inventory_event: receipt_recorded
+stable_locator:
+  resource_id: com.example.app:id/confirm_receipt
+execution_status: NOT_RUN/static-reviewed

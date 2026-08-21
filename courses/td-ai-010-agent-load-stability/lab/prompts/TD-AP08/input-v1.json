@@ -1,0 +1,12 @@
+{
+  "schema_version": "agent-performance-prompt-input.v1",
+  "page_id": "TD-AP08",
+  "run_refs": [
+    "reports/TD-AP08/baseline/summary.json",
+    "reports/TD-AP08/fault/summary.json",
+    "reports/TD-AP08/repair/summary.json",
+    "reports/TD-AP08/cycle-summary.json"
+  ],
+  "question": "Does the SLO alert and incident evidence baseline-fault-repair cycle demonstrate detection and repair?",
+  "boundary": "fixture-tested only"
+}

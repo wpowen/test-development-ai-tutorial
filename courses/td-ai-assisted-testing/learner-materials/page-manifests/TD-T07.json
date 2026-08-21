@@ -1,0 +1,13 @@
+{
+  "topic_id": "TD-T07",
+  "page_id": "TD-T07",
+  "working_directory": "materials/ai-assisted-testing",
+  "required_files": ["ai_assisted_lab.py", "fixtures/basis.json", "fixtures/oracles.json", "page-prompts/TD-T07/manifest.json", "page-prompts/TD-T07/prompt-v1.md", "page-prompts/TD-T07/input.json", "page-prompts/TD-T07/schema.json", "page-prompts/TD-T07/eval.json", "page-prompts/TD-T07/mutation.json"],
+  "steps": [
+    {"step_id":"td-t07-baseline","kind":"baseline","command":"python3 ai_assisted_lab.py run --topic TD-T07 --phase baseline --report reports/td-t07-baseline.json","expected_exit_code":0,"expected_artifacts":["reports/td-t07-baseline.json"]},
+    {"step_id":"td-t07-fault","kind":"fault","command":"python3 ai_assisted_lab.py run --topic TD-T07 --phase fault --report reports/td-t07-fault.json","expected_exit_code":1,"expected_artifacts":["reports/td-t07-fault.json"]},
+    {"step_id":"td-t07-repair","kind":"repair","command":"python3 ai_assisted_lab.py run --topic TD-T07 --phase repair --report reports/td-t07-repair.json","expected_exit_code":0,"expected_artifacts":["reports/td-t07-repair.json"]}
+  ],
+  "failure_cycle": {"baseline_step_id":"td-t07-baseline","fault_step_id":"td-t07-fault","repair_step_id":"td-t07-repair"},
+  "evidence_boundary": "fixed-seed synthetic generator proves replay and shrink contract only; target system distribution NOT_RUN"
+}

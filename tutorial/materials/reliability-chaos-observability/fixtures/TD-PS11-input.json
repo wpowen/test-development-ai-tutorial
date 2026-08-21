@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS11",
+  "scenario": "生产客服 Agent 质量下降可能来自索引、工具、模型、队列或观测丢失，需要在隔离范围内验证",
+  "controlling_question": "怎样让 symptom、fault event、跨服务 Trace、质量切片和恢复检查属于同一证据链，并在 telemetry 缺失时保持 UNKNOWN？",
+  "known_rules": [
+    "task trace 覆盖 gateway retrieval model tool 和 terminal",
+    "敏感输入不进入默认 telemetry",
+    "fault start/end 与异常窗口可关联",
+    "停止回滚后同一切片恢复且无残留"
+  ],
+  "faults": [
+    "collector 丢 span",
+    "检索网络延迟",
+    "非关键 Pod kill"
+  ],
+  "unknowns": [
+    "目标 collector 采样、生产权限、托管模型内部 span 和真实恢复时间"
+  ],
+  "data_classification": "synthetic"
+}

@@ -1,0 +1,119 @@
+{
+  "run_id": "RUN-20260810T151912Z",
+  "mode": "baseline",
+  "status": "PASS",
+  "exit_code": 0,
+  "evidence_status": "fixture-tested",
+  "runtime": "3.9.6",
+  "workdir_contract": "learner-materials root",
+  "mutation_id": null,
+  "oracle": {
+    "id": "approved-teaching-oracle.v1",
+    "sha256": "8c956e55b3331a5fa060fa7f18392134e35fad9ae6654d6755e3f621c0d11300",
+    "independent_from_service_flags": true
+  },
+  "input_hashes": {
+    "order_openapi": "ccb87df85edb016095e5797cca089d4e43a24c307bc2ec54ab6c790e745e1dfa",
+    "payment_openapi": "264364f2c4dda33af3b083bafa7d8e926755a0951183c316a3767b1f750fa1a7",
+    "checkout_events": "9234d3205b0ccf0cdfb904505405f28d7a4263f4981a071846f0c292f0c03d4c",
+    "schema_mutations": "49e718a027fbd8a0f701b6f17a0704eb24550ab7dc9c93c46a9f8940f8ccd843",
+    "ai_performance_workload": "758b4f2085cf2aad4af80b9e83f7353ab8d2c57e052dd82b107d5cc83c7e5aa6"
+  },
+  "results": [
+    {
+      "case_id": "CONTRACT-ORDER-OPERATIONS",
+      "status": "PASS",
+      "issues": [],
+      "actual": [
+        "cancelOrder",
+        "getCancellationTask",
+        "streamOrderCancellationEvents"
+      ]
+    },
+    {
+      "case_id": "CONTRACT-PAYMENT-OPERATIONS",
+      "status": "PASS",
+      "issues": [],
+      "actual": [
+        "confirmPaymentIntent",
+        "createPaymentIntent",
+        "streamPaymentIntentEvents"
+      ]
+    },
+    {
+      "case_id": "SCHEMA-REQUIRED-SURFACES",
+      "status": "PASS",
+      "issues": [],
+      "actual": {
+        "missing_markers": []
+      }
+    },
+    {
+      "case_id": "BUS-SHIPPED-REJECT",
+      "status": "PASS",
+      "issues": [],
+      "actual": {
+        "status": 409,
+        "state": "SHIPPED",
+        "side_effect_count": 0
+      }
+    },
+    {
+      "case_id": "AUTH-NONOWNER-REJECT",
+      "status": "PASS",
+      "issues": [],
+      "actual": {
+        "status": 403,
+        "state": "PAID_NOT_SHIPPED",
+        "side_effect_count": 0
+      }
+    },
+    {
+      "case_id": "IDEMP-SINGLE-EFFECT",
+      "status": "PASS",
+      "issues": [],
+      "actual": {
+        "status": 202,
+        "state": "CANCEL_PENDING",
+        "side_effect_count": 1
+      }
+    },
+    {
+      "case_id": "ASYNC-LEGAL-TRANSITIONS",
+      "status": "PASS",
+      "issues": [],
+      "actual": [
+        "QUEUED",
+        "CANCEL_PENDING",
+        "COMPLETED"
+      ]
+    },
+    {
+      "case_id": "EVENT-ORDER-TERMINAL-AND-DEDUP",
+      "status": "PASS",
+      "issues": [],
+      "actual": {
+        "stream_count": 2
+      }
+    },
+    {
+      "case_id": "CONFIG-MUTATION-AND-WORKLOAD",
+      "status": "PASS",
+      "issues": [],
+      "actual": {
+        "external_execution": "NOT_RUN"
+      }
+    }
+  ],
+  "failed_case_ids": [],
+  "not_run": [
+    "Schemathesis",
+    "Pact",
+    "k6",
+    "GitLab CI",
+    "live endpoint",
+    "real model",
+    "production traffic"
+  ],
+  "boundary": "Synthetic, offline, standard-library fixture. No external tool or service execution."
+}

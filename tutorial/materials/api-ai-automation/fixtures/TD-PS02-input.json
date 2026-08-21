@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS02",
+  "scenario": "支付意图 amount currency merchant customer 与过期状态形成跨字段约束",
+  "controlling_question": "怎样证明 Schema 生成的用例具备业务检测力，而不是生成大量合法 JSON？",
+  "known_rules": [
+    "amount 必须大于零且币种受商户支持",
+    "客户只能操作自己的支付意图",
+    "过期意图不能确认且状态不变",
+    "删除 required 或放宽金额必须杀死 mutation"
+  ],
+  "faults": [
+    "删除 merchant_id required",
+    "允许 amount 等于零",
+    "改变错误模型"
+  ],
+  "unknowns": [
+    "目标生成器对 OAS dialect 的实现差异和生产商户配置"
+  ],
+  "data_classification": "synthetic"
+}

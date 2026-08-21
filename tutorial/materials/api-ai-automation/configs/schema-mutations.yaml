@@ -1,0 +1,31 @@
+schema_version: schema-mutations.v1
+fixture_scope: synthetic-teaching-only
+mutations:
+  - mutation_id: MUT-ORDER-SHIPPED-ACCEPTED
+    target: cancelOrder
+    class: business-state-contract
+    change: Return 202 and CANCEL_PENDING for an order already in SHIPPED.
+    expected_detector: BUS-SHIPPED-REJECT
+    expected_exit_code: 1
+    repair: Restore the SHIPPED guard; do not change the Oracle.
+  - mutation_id: MUT-CANCEL-RESPONSE-DROP-TASK-ID
+    target: CancellationTask
+    class: response-schema
+    change: Remove required task_id from the 202 response.
+    expected_detector: SCHEMA-CANCEL-TASK
+    expected_exit_code: 1
+    repair: Restore task_id and keep it required in the response contract.
+  - mutation_id: MUT-IDEMPOTENCY-DUPLICATE-REFUND
+    target: cancelOrder
+    class: side-effect-idempotency
+    change: Execute one refund per retry instead of once per idempotency key.
+    expected_detector: IDEMP-SINGLE-EFFECT
+    expected_exit_code: 1
+    repair: Deduplicate before the side effect and preserve the ledger entry.
+  - mutation_id: MUT-SSE-DOUBLE-TERMINAL
+    target: streamOrderCancellationEvents
+    class: event-state-machine
+    change: Emit both order.cancelled and error as terminal events.
+    expected_detector: SSE-ONE-TERMINAL
+    expected_exit_code: 1
+    repair: Emit exactly one terminal event and close the stream.

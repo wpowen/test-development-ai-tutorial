@@ -1,0 +1,112 @@
+{
+  "schema_version": "agent-performance-profile.v2",
+  "page_id": "TD-AP08",
+  "title": "SLO alert and incident evidence",
+  "workload_version": "td-ap08-workload-v1",
+  "seed": 42,
+  "tasks": 48,
+  "task_mix": [
+    "read_order",
+    "classify_exception",
+    "refund_review",
+    "human_handoff"
+  ],
+  "pressure_queue_ms": 300,
+  "good_task_latency_ms": 1600,
+  "good_task_retry_limit": 1,
+  "gates": {
+    "good_task_rate": {
+      "operator": "min",
+      "value": 0.9
+    },
+    "alert_actionability": {
+      "operator": "min",
+      "value": 1
+    },
+    "incident_evidence_complete": {
+      "operator": "min",
+      "value": 1
+    }
+  },
+  "phases": {
+    "baseline": {
+      "workers": 8,
+      "arrival_interval_ms": 180,
+      "load_model": "open",
+      "input_tokens": 800,
+      "output_tokens": 48,
+      "prefill_ms_per_token": 0.04,
+      "ttft_ms": 95,
+      "tpot_ms": 4.4,
+      "tool_ms": 85,
+      "retry_count": 0,
+      "retry_peak": 1,
+      "retry_penalty_ms": 80,
+      "step_count": 4,
+      "failure_rate": 0.01,
+      "trace_gap_rate": 0,
+      "cleanup_failure_rate": 0,
+      "memory_base_mb": 128,
+      "memory_growth_mb_per_task": 0.01,
+      "bottleneck": "queue",
+      "degrade_on_pressure": true,
+      "alert_actionability": 1,
+      "incident_evidence_complete": 1,
+      "represented_slice_rate": 1,
+      "business_oracle_rate": 1
+    },
+    "fault": {
+      "workers": 8,
+      "arrival_interval_ms": 180,
+      "load_model": "open",
+      "input_tokens": 800,
+      "output_tokens": 48,
+      "prefill_ms_per_token": 0.04,
+      "ttft_ms": 95,
+      "tpot_ms": 4.4,
+      "tool_ms": 85,
+      "retry_count": 0,
+      "retry_peak": 1,
+      "retry_penalty_ms": 80,
+      "step_count": 4,
+      "failure_rate": 0.32,
+      "trace_gap_rate": 0,
+      "cleanup_failure_rate": 0,
+      "memory_base_mb": 128,
+      "memory_growth_mb_per_task": 0.01,
+      "bottleneck": "queue",
+      "degrade_on_pressure": true,
+      "alert_actionability": 0,
+      "incident_evidence_complete": 0,
+      "represented_slice_rate": 1,
+      "business_oracle_rate": 1
+    },
+    "repair": {
+      "workers": 10,
+      "arrival_interval_ms": 180,
+      "load_model": "open",
+      "input_tokens": 800,
+      "output_tokens": 48,
+      "prefill_ms_per_token": 0.04,
+      "ttft_ms": 95,
+      "tpot_ms": 4.4,
+      "tool_ms": 85,
+      "retry_count": 0,
+      "retry_peak": 1,
+      "retry_penalty_ms": 80,
+      "step_count": 4,
+      "failure_rate": 0.01,
+      "trace_gap_rate": 0,
+      "cleanup_failure_rate": 0,
+      "memory_base_mb": 128,
+      "memory_growth_mb_per_task": 0.01,
+      "bottleneck": "queue",
+      "degrade_on_pressure": true,
+      "alert_actionability": 1,
+      "incident_evidence_complete": 1,
+      "represented_slice_rate": 1,
+      "business_oracle_rate": 1
+    }
+  },
+  "boundary": "Synthetic deterministic fixture only; do not infer production capacity."
+}

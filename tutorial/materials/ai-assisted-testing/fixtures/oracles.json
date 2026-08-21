@@ -1,0 +1,8 @@
+{
+  "oracle_version": "1.0.0",
+  "authority": "approved basis examples maintained by product owner and test owner; not generated from implementation output",
+  "test_cases": [
+    {"case_id": "C-ACTIVATED", "oracle_source": "PRD-v4#R12", "input": {"activated": true, "product_type": "DIGITAL", "amount_cents": 100}, "expected": {"decision": "MANUAL_REVIEW", "audit_events": 1}},
+    {"case_id": "C-NOT-ACTIVATED", "oracle_source": "PRD-v4#R12", "input": {"activated": false, "product_type": "DIGITAL", "amount_cents": 100}, "expected": {"decision": "AUTO_REFUND", "audit_events": 1}}
+  ]
+}

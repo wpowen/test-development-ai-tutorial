@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T02",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "数据集按风险切片、来源与时间拆分；Holdout 不参与日常调参。",
+  "checks": [
+    {
+      "field": "slice_coverage_complete",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "holdout_sealed",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "duplicate_count",
+      "expected": 0,
+      "actual": 0,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "id": "holdout-leak",
+    "field": "holdout_sealed",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "合成样例不代表生产分布",
+    "未测真实标签一致性"
+  ]
+}

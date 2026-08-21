@@ -1,0 +1,36 @@
+{
+  "page_id": "TD-P02",
+  "status": "ACCEPTED",
+  "requirements": [
+    {
+      "requirement_id": "R-CANCEL-01",
+      "source_refs": [
+        "PRD-v3#R17"
+      ],
+      "rule": "eligible buyer may schedule one cancellation"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "criterion_id": "AC-CANCEL-01",
+      "given": "order is not shipped",
+      "when": "buyer requests cancel",
+      "then": "one cancellation is scheduled"
+    }
+  ],
+  "review_questions": [
+    {
+      "owner": "product-owner",
+      "status": "Unknown",
+      "question": "duplicate request time window is not specified"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+%% TD-AG-03 · 来源：S35 · S48 · S74
+%% 本图只证明编排合同可教学与 fixture 可重放，不证明真实多 Agent 平台已验证。
+flowchart LR
+  a["Agent A<br/><small>来源、事实、owner</small>"]
+  handoff["Handoff Schema<br/><small>必传字段 / 语义约束</small>"]
+  isolate["上下文隔离<br/><small>最小可见 / 秘密隔离</small>"]
+  b["Agent B<br/><small>受限任务 / 工具</small>"]
+  result["返回合同<br/><small>结果 / Unknown / Error</small>"]
+  fault["故障注入<br/><small>超时 / 空结果 / 污染</small>"]
+  breaker["三重熔断<br/><small>步数 / 时间 / 成本</small>"]
+  owner["Owner<br/><small>停止 / 降级 / 修复</small>"]
+  blocked["BLOCKED 安全终态<br/><small>不无限重试，不带病交接</small>"]
+  a -->|结构化交接| handoff
+  handoff -->|最小上下文| isolate
+  isolate -->|授权执行| b
+  b -->|返回| result
+  result -->|受控反馈| a
+  fault -->|注入异常| b
+  b -->|超时/循环| breaker
+  breaker -->|告警与责任| owner
+  breaker -->|预算耗尽| blocked
+  owner -->|决定停止| blocked
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

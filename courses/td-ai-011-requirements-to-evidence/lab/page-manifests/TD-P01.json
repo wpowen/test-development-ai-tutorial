@@ -1,0 +1,61 @@
+{
+  "topic_id": "TD-P01",
+  "page_id": "TD-P01",
+  "owner_page_ids": [
+    "TD-P01"
+  ],
+  "working_directory": "materials/requirements-to-evidence",
+  "required_files": [
+    "pipeline.py",
+    "page-prompts/TD-P01/manifest.json",
+    "page-prompts/TD-P01/prompt-v1.md",
+    "page-prompts/TD-P01/input.json",
+    "page-prompts/TD-P01/schema.json",
+    "page-prompts/TD-P01/eval.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 pipeline.py page-phase --page TD-P01 --phase baseline --report reports/TD-P01-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-P01-baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 pipeline.py page-phase --page TD-P01 --phase fault --report reports/TD-P01-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/TD-P01-fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 pipeline.py page-phase --page TD-P01 --phase repair --report reports/TD-P01-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-P01-repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 pipeline.py page-cycle --page TD-P01 --report reports/TD-P01-cycle.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-P01-cycle.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "evidence_boundary": "fixture-tested only; provider none; model_status NOT_RUN; no practitioner, integration, live or production evidence"
+}
+

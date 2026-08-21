@@ -1,0 +1,18 @@
+{
+  "bundle_id": "quality-platform-integrations-fixture-v2",
+  "exact_owner_page_ids": [
+    "TD-QP01",
+    "TD-QP02",
+    "TD-QP03",
+    "TD-QP04"
+  ],
+  "ownership_rule": "Only the four exact page IDs above may claim this shared archive/README/runner. Prefix or module inheritance is forbidden.",
+  "maturity": "fixture-tested",
+  "not_run": [
+    "live Jira",
+    "live GitLab",
+    "live Kubernetes",
+    "live model",
+    "live ChatOps"
+  ]
+}

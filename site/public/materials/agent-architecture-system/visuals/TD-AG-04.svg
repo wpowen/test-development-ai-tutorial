@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1200 760" width="1200" height="760">
+  <title id="title">D3 中断、脏状态、接管与恢复</title>
+  <desc id="desc">确认按钮不是控制权；必须证明人能停止、看见状态、回滚、接管并安全交回。 真实用户的确认疲劳与接管成功率仍需目标学习者/从业者实验。</desc>
+  
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+  
+  <defs>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/>
+    </marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/>
+    </marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/>
+    </marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#85908a"/>
+    </marker>
+  </defs>
+  <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#0e3026" flood-opacity=".10"/></filter>
+  <style>
+    .bg{fill:#fbfaf6}.header{fill:url(#ds-header-grad)}.eyebrow{font:700 12px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.14em;fill:#93bd2c}.title{font:800 28px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:white}.subtitle{font:450 13px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#d9e8e0}.source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}.node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}.node-title{font:800 15px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#1c2924}.node-detail{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#5f6c66}.edge path{fill:none;stroke:#174a3a;stroke-width:2}.edge text{font:600 9px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}.callout{fill:#fdf1d8;stroke:#e3c07b;stroke-width:1.5}.callout-title{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}.callout-text{font:650 13px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#1c2924}.footer{font:500 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;fill:#5f6c66}
+  </style>
+  <rect class="bg" width="1200" height="760" rx="24"/>
+  <rect class="header" width="1200" height="92" rx="24"/><rect class="header" y="68" width="1200" height="24"/>
+  <text class="eyebrow" x="34" y="30">D3 · HUMAN CONTROL</text>
+  <text class="title" x="34" y="62">D3 中断、脏状态、接管与恢复</text>
+  <text class="subtitle" x="1166" y="30" text-anchor="end">确认按钮不是控制权；必须证明人能停止、看见状态、回滚、接管并安全交回。</text>
+  <text class="source" x="34" y="111">来源：S07 · S23 · S65</text>
+  <g class="edge"><path d="M 224 177 C 245 177, 245 177, 258 177" marker-end="url(#ds-arw-forest)"/><text x="245" y="187">stop signal</text></g>
+<g class="edge"><path d="M 456 177 C 477 177, 477 177, 490 177" marker-end="url(#ds-arw-forest)"/><text x="477" y="169">冻结并检查</text></g>
+<g class="edge"><path d="M 688 177 C 709 177, 709 177, 722 177" marker-end="url(#ds-arw-forest)"/><text x="709" y="187">存在副作用</text></g>
+<g class="edge"><path d="M 688 177 C 740 464, 446 464, 490 369" marker-end="url(#ds-arw-forest)"/><text x="593" y="265">状态可解释</text></g>
+<g class="edge"><path d="M 920 177 C 972 464, 446 464, 490 369" marker-end="url(#ds-arw-forest)"/><text x="709" y="283">清理后移交</text></g>
+<g class="edge"><path d="M 688 369 C 709 369, 709 369, 722 369" marker-end="url(#ds-arw-forest)"/><text x="709" y="361">人工决定</text></g>
+<g class="edge"><path d="M 920 369 C 941 369, 941 369, 954 369" marker-end="url(#ds-arw-forest)"/><text x="941" y="379">记录结果</text></g>
+<g class="edge"><path d="M 688 177 C 740 670, 214 670, 258 572" marker-end="url(#ds-arw-forest)"/><text x="477" y="366.5">无法确认</text></g>
+<g class="edge"><path d="M 526 572 C 744 572, 744 369, 954 369" marker-end="url(#ds-arw-forest)"/><text x="744" y="480.5">留下阻断证据</text></g>
+  
+    <g class="node run">
+      <rect x="34" y="134" width="190" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="34" y="134" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="54" y="157">01</text>
+      <text class="node-title" x="54" y="182">Agent 运行</text>
+      <text class="node-detail" x="54" y="204">计划 / 状态 / 工具</text>
+    </g>
+    <g class="node interrupt">
+      <rect x="266" y="134" width="190" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="266" y="134" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="286" y="157">02</text>
+      <text class="node-title" x="286" y="182">人工中断</text>
+      <text class="node-detail" x="286" y="204">写操作前 / 后</text>
+    </g>
+    <g class="node dirty">
+      <rect x="498" y="134" width="190" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="498" y="134" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="518" y="157">03</text>
+      <text class="node-title" x="518" y="182">脏状态检查</text>
+      <text class="node-detail" x="518" y="204">半成品 / 锁 / 队列</text>
+    </g>
+    <g class="node rollback">
+      <rect x="730" y="134" width="190" height="86" rx="15" fill="#fdf1d8" stroke="#e0b76a" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="730" y="134" width="5" height="86" rx="2.5" fill="#e0b76a"/>
+      <text class="node-index" x="750" y="157">04</text>
+      <text class="node-title" x="750" y="182">回滚或补偿</text>
+      <text class="node-detail" x="750" y="204">恢复安全终态</text>
+    </g>
+    <g class="node takeover">
+      <rect x="498" y="326" width="190" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="498" y="326" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="518" y="349">05</text>
+      <text class="node-title" x="518" y="374">人工接管</text>
+      <text class="node-detail" x="518" y="396">新 owner / 新上下文</text>
+    </g>
+    <g class="node resume">
+      <rect x="730" y="326" width="190" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="730" y="326" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="750" y="349">06</text>
+      <text class="node-title" x="750" y="374">安全恢复</text>
+      <text class="node-detail" x="750" y="396">交回或转人工终结</text>
+    </g>
+    <g class="node audit">
+      <rect x="962" y="326" width="200" height="86" rx="15" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.4" filter="url(#shadow)"/>
+      <rect x="962" y="326" width="5" height="86" rx="2.5" fill="#c2d9cc"/>
+      <text class="node-index" x="982" y="349">07</text>
+      <text class="node-title" x="982" y="374">审计证据</text>
+      <text class="node-detail" x="982" y="396">人、时间、决定、状态</text>
+    </g>
+    <g class="node blocked">
+      <rect x="266" y="526" width="260" height="92" rx="15" fill="#fbe9e5" stroke="#e3a89f" stroke-width="2" filter="url(#shadow)"/>
+      <rect x="266" y="526" width="5" height="92" rx="2.5" fill="#e3a89f"/>
+      <text class="node-index" x="286" y="549">08</text>
+      <text class="node-title" x="286" y="574">停止 / BLOCKED</text>
+      <text class="node-detail" x="286" y="596">无法清理状态则不恢复</text>
+    </g>
+  <rect class="callout" x="34" y="658" width="1132" height="48" rx="12"/>
+  <text class="callout-title" x="52" y="679">FAIL-CLOSED</text><text class="callout-text" x="170" y="681">解释文本不等于可控；点击同意也不自动等于有效授权。</text>
+  <text class="footer" x="34" y="735">真实用户的确认疲劳与接管成功率仍需目标学习者/从业者实验。</text>
+</svg>

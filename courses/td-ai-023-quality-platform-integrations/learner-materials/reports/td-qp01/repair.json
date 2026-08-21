@@ -1,0 +1,65 @@
+{
+  "topic_id": "TD-QP01",
+  "mode": "repair",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "evidence_hash": "4b7741792c0cab740aca1c37bf0bbc9b3a8b39258e7671e887fd361c3e732c2d",
+  "checks": [
+    {
+      "oracle_id": "EVENT-SIGNATURE",
+      "passed": true
+    },
+    {
+      "oracle_id": "EXACT-TENANT-IDENTITY",
+      "passed": true
+    },
+    {
+      "oracle_id": "LEAST-PRIVILEGE-SCOPE",
+      "passed": true
+    },
+    {
+      "oracle_id": "BASIS-COMPLETE",
+      "passed": true
+    },
+    {
+      "oracle_id": "HUMAN-APPROVAL",
+      "passed": true
+    }
+  ],
+  "state": {
+    "event": {
+      "signature_valid": true,
+      "event_id": "jira-evt-42",
+      "duplicate_count": 1
+    },
+    "identity": {
+      "actor": "jira-app:quality-gateway",
+      "tenant": "acme-sandbox",
+      "scopes": [
+        "read:jira-work"
+      ]
+    },
+    "basis": {
+      "issue": "PROJ-42",
+      "revision": 7,
+      "required_fields_present": true,
+      "conflicts": []
+    },
+    "candidate": {
+      "source_refs": [
+        "jira://PROJ-42@7"
+      ],
+      "approved_by": "reviewer:qa-lead",
+      "auto_approved": false
+    }
+  },
+  "not_run": [
+    "live Jira tenant",
+    "live GitLab instance",
+    "live Kubernetes cluster",
+    "model provider",
+    "ChatOps delivery"
+  ]
+}

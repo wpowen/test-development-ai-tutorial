@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A05",
+  "mutation_id": "MUT-TD-A05-01",
+  "description": "忽略 queue_time，仅因 GPU 利用率同步升高便把 root_cause 标为 gpu。",
+  "fault_patch": {
+    "diagnosis.root_cause": "gpu",
+    "diagnosis.single_variable_confirmed": false
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

@@ -1,0 +1,12 @@
+{
+  "topic_id": "TD-X604",
+  "mutations": [
+    {
+      "mutation_id": "fallback_protocol_drift",
+      "description": "fallback 不满足能力、工具 schema 漂移或副作用策略丢失",
+      "expected_status": "BLOCKED",
+      "must_be_detected": true
+    }
+  ]
+}
+

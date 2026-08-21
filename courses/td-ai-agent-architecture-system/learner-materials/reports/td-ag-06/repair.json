@@ -1,0 +1,60 @@
+{
+  "topic_id": "TD-AG-06",
+  "phase": "repair",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "state_hash": "67b4328c86a344b9001a795bae2b4264c57fdae04406c5bbeb93e7916dd3fc64",
+  "checks": [
+    {
+      "oracle_id": "ATTACK-CASES",
+      "passed": true
+    },
+    {
+      "oracle_id": "MANIFEST",
+      "passed": true
+    },
+    {
+      "oracle_id": "TENANT",
+      "passed": true
+    },
+    {
+      "oracle_id": "SCOPE",
+      "passed": true
+    },
+    {
+      "oracle_id": "SANDBOX",
+      "passed": true
+    },
+    {
+      "oracle_id": "NO-SIDE-EFFECT",
+      "passed": true
+    },
+    {
+      "oracle_id": "BLAST-RADIUS",
+      "passed": true
+    }
+  ],
+  "state": {
+    "security": {
+      "attack_cases": 8,
+      "manifest_hash": true,
+      "tenant_isolation": true,
+      "min_scope": true,
+      "sandbox": true,
+      "no_side_effect": true,
+      "blast_radius": true,
+      "owner": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

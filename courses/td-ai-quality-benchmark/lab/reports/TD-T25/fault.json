@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T25",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "release_candidate_level": "fixture-only",
+  "model_execution": "NOT_RUN",
+  "enterprise_integration": "NOT_RUN",
+  "practitioner_review": "NOT_RUN",
+  "publication": "NOT_RUN",
+  "production": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "闭包最多证明 fixture release candidate，不得晋级 publication、production 或 practitioner。",
+  "checks": [
+    {
+      "field": "capstone_trace_complete",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "evidence_boundary_declared",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "human_owner_present",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "mutation_id": "TD-T25-fault",
+    "field": "capstone_trace_complete",
+    "fault_value": false,
+    "professional_consequence": "只交文档、聊天截图或最终绿报告，没有首次红灯、trace、owner 或 hash closure。"
+  },
+  "remaining_unknowns": [
+    "模型、真实 RAG/Agent、企业集成、人审和发布全部 NOT_RUN。",
+    "Model/provider execution NOT_RUN",
+    "Practitioner/publication/production NOT_RUN"
+  ]
+}

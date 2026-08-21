@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://career-ai-course-factory.local/schemas/run-receipt.schema.json",
+  "title": "Run Receipt",
+  "description": "缺少 model、dataset_version、prompt_version 三者之一的收据不得作为发布证据。",
+  "type": "object",
+  "required": ["run_id", "timestamp", "trigger", "code_version", "input_baseline_id", "dataset_version", "dataset_split", "model", "prompt_version", "repetitions", "results", "verdict", "decided_by", "evidence_paths"],
+  "properties": {
+    "run_id": {"type": "string", "minLength": 1},
+    "timestamp": {"type": "string"},
+    "trigger": {"type": "string"},
+    "code_version": {"type": "string", "minLength": 1},
+    "input_baseline_id": {"type": "string", "minLength": 1},
+    "dataset_version": {"type": "string", "minLength": 1},
+    "dataset_split": {"enum": ["dev", "test", "sealed_holdout", "fixture"]},
+    "model": {
+      "type": "object",
+      "required": ["provider", "id", "params", "status"],
+      "properties": {
+        "provider": {"type": "string"},
+        "id": {"type": "string"},
+        "params": {"type": "object"},
+        "status": {"enum": ["RUN", "NOT_RUN"]}
+      }
+    },
+    "prompt_version": {"type": "string", "minLength": 1},
+    "tool_versions": {"type": "object"},
+    "repetitions": {"type": "integer", "minimum": 1},
+    "results": {
+      "type": "object",
+      "required": ["pass", "fail", "blocked", "refused"],
+      "properties": {
+        "pass": {"type": "integer", "minimum": 0},
+        "fail": {"type": "integer", "minimum": 0},
+        "blocked": {"type": "integer", "minimum": 0},
+        "refused": {"type": "integer", "minimum": 0},
+        "incomplete": {"type": "integer", "minimum": 0}
+      }
+    },
+    "slice_results": {"type": "object"},
+    "failed_oracle_ids": {"type": "array", "items": {"type": "string"}},
+    "cost": {"type": "object"},
+    "latency": {"type": "object"},
+    "verdict": {"enum": ["PASS", "FAIL", "BLOCKED", "UNKNOWN"]},
+    "decided_by": {"type": "string", "minLength": 1},
+    "evidence_paths": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "maturity": {"enum": ["desk-researched", "fixture-tested", "model-integrated", "integration-tested", "practitioner-reviewed", "production-validated"]}
+  }
+}

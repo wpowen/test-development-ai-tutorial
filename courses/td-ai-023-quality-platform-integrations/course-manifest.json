@@ -1,5 +1,13 @@
 {
   "course_id": "td-ai-023-quality-platform-integrations",
+  "page_ids": ["TD-QP01", "TD-QP02", "TD-QP03", "TD-QP04"],
+  "shared_bundle_owner_manifest": "learner-materials/manifests/shared-bundle-owners.json",
+  "page_lab_manifests": [
+    "learner-materials/manifests/td-qp01-lab.json",
+    "learner-materials/manifests/td-qp02-lab.json",
+    "learner-materials/manifests/td-qp03-lab.json",
+    "learner-materials/manifests/td-qp04-lab.json"
+  ],
   "title": "质量控制平面：Jira→GitLab→K8s→证据回写→通知",
   "scenario_ids": ["TD-S07"],
   "ai_lane": "build-ai-quality-system",

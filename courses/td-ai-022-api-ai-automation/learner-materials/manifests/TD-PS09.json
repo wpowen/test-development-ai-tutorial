@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS09",
+  "title": "性能与容量：到达率、尾延迟、Goodput 与单位成功成本",
+  "working_directory": "materials/api-ai-automation",
+  "owners": {
+    "content": "TD-PS09-content-owner",
+    "oracle": "TD-PS09-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS09.json",
+    "prompts/TD-PS09/system-v1.md",
+    "prompts/TD-PS09/task-v1.md",
+    "prompts/TD-PS09/critic-v1.md",
+    "prompts/TD-PS09/manifest.json",
+    "prompts/TD-PS09/mutation.json",
+    "fixtures/TD-PS09-input.json",
+    "schemas/TD-PS09-output.schema.json",
+    "evals/TD-PS09-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS09-ORACLE-01",
+      "statement": "到达率与 dropped iterations 可核对",
+      "evidence": "TD-PS09-evidence-1.json",
+      "owner": "TD-PS09-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS09-ORACLE-02",
+      "statement": "每任务阶段时间相加可解释 E2E",
+      "evidence": "TD-PS09-evidence-2.json",
+      "owner": "TD-PS09-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS09-ORACLE-03",
+      "statement": "只有质量安全延迟同时合格进入 Goodput",
+      "evidence": "TD-PS09-evidence-3.json",
+      "owner": "TD-PS09-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS09-ORACLE-04",
+      "statement": "失败重试和工具调用计入 cost_per_success",
+      "evidence": "TD-PS09-evidence-4.json",
+      "owner": "TD-PS09-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS09-FAULT-01",
+    "description": "工具 fan-out 翻倍",
+    "target_oracle": "TD-PS09-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS09.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS09/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS09.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS09/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS09.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS09/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS09.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS09/baseline.json",
+        "evidence/TD-PS09/fault.json",
+        "evidence/TD-PS09/repair.json",
+        "evidence/TD-PS09/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标模型硬件、provider 内部队列、真实流量分布和价格"
+}

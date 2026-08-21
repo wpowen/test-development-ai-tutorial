@@ -1,31 +1,15 @@
-# TD-AP06 · Executable load-test SOP
+# TD-AP06 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: can the learner run a baseline, expose a retry storm and prove repair? Artifact: summaries and JSONL traces with 0/1/0 exit evidence.
+- 主题边界：超时、重试、降级与副作用安全终态。
+- 方法：deadline propagation + retry-budget state machine；独立 Oracle 检查预算、幂等和副作用类别。
+- 必须保留：deadline、attempt budget、read-only/人工/对账终态和 retry-storm mutation。
 
-## Source pack
+## Boundary and command evidence
 
-- Google SRE cascading failures: https://sre.google/sre-book/addressing-cascading-failures/ — queues and retries as overload amplifiers.
-- OpenAI rate limits: https://developers.openai.com/api/docs/guides/rate-limits — Retry-After, bounded retries and exponential backoff with jitter.
-- The local fixture is original executable evidence; it does not establish production performance.
-
-## Evidence synthesis
-
-Fault injection must produce an observable red result. A retry storm may preserve final success while destroying latency and goodput, so the gate must include amplification and queue metrics.
-
-## Engineering blueprint
-
-The standard-library simulator uses open arrivals, bounded workers, deterministic model/tool steps and fixed seed. It writes one trace per task and gates success, p95 E2E, p95 queue, retry amplification and cost per success.
-
-## Manuscript map
-
-TD-AP06 contains exact baseline, mutation and repair commands plus report reading order and troubleshooting boundary.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP06-lab.json --mode cycle`，已记录 0/1/0。provider=none、model=NOT_RUN；真实写操作与生产策略未知。
 
 ## Editorial review
 
-PASS. Rechecked the published commands, exit-code sequence and report names against the deterministic fixture. Kept the meaningful red condition: retry amplification and queue damage can fail the gate even when final task success stays high. The manuscript states that this proves the simulator and gate behavior only, not production capacity.
-
-## Validation
-
-PASS with fresh execution: baseline exit 0, retry-storm exit 1, repaired exit 0. Evidence is stored under the course package.
+本记录保护预算传播、降级边界和人工责任；不提供分数，不替代独立审计或发布门禁。

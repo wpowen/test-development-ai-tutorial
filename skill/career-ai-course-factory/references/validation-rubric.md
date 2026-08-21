@@ -15,6 +15,10 @@ Pass only when all applicable gates hold:
 - privacy and professional human gates are explicit;
 - Evidence, Inference, Unknown, and Vendor Claims remain distinct;
 - the structural validator and runnable lab checks pass.
+- every promised page has an exact professional capability profile and all five evidence lanes;
+- fixture claims pass clean-room execution from the final learner artifact;
+- model, integration, practitioner, learner, and production claims carry their own attributable receipts;
+- human-facing verdicts are hash-pinned and explicitly superseded rather than left contradictory.
 
 ## Status language
 
@@ -29,3 +33,5 @@ Use the status definitions in `professional-utility-gates.md`. Never upgrade sta
 - `PASS-FIXTURE`: research + package + offline/public fixture verified.
 - `PASS-LIVE`: named live tool/model run also verified.
 - `PASS-PRACTITIONER`: relevant practitioner review added.
+- `PASS-INTEGRATION`: controlled target-system behavior, auth, cleanup, and rollback verified in addition to required model evidence.
+- `PASS-LEARNER`: at least five target learners completed the measured task and transfer gate.

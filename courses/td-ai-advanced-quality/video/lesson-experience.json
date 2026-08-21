@@ -1,0 +1,92 @@
+{
+  "lesson_id":"td-ai-advanced-quality-l01",
+  "target_learner":"已掌握 LLM、RAG 和 Agent 基础，需要补齐高级质量门禁的初级测试开发工程师",
+  "level":"L3-integrated-quality",
+  "estimated_minutes":22,
+  "job_result":"能为八类高级 AI 风险建立版本化、可反证、有人负责且保持证据边界的质量门禁",
+  "artifact":"八个 Prompt 包、三阶段运行报告、owner 注册表、哈希闭包和真实项目迁移清单",
+  "stages":[
+    {
+      "stage_id":"cold-open-failure",
+      "instructor_action":"展示总分全绿但训练污染、跨用户缓存和不安全 fallback 均未被发现的发布候选",
+      "learner_action":"逐项写出不能发布的证据缺口、可能伤害和必须负责的专业角色",
+      "expected_observation":"学员发现总体分数无法回答版本、最坏切片、权限、删除和回滚问题",
+      "debrief":"质量判断必须从决定、失败影响、原始证据和具名 owner 开始，不能从绿色仪表盘倒推",
+      "artifact_or_assessment":"初始阻断理由和 Unknown 清单"
+    },
+    {
+      "stage_id":"stakes-and-promise",
+      "instructor_action":"把八类风险连接到真实用户伤害、合并错误、隐私泄露、重复副作用和渐进发布失控",
+      "learner_action":"标出 AI 可以生成的候选、必须由独立人员批准的 Oracle、例外和发布决定",
+      "expected_observation":"学员能区分自动化计算、专业语义判断和不可委托的责任边界",
+      "debrief":"课程承诺建立可反证的工程合同，不承诺离线 fixture 能证明公平、安全或生产效果",
+      "artifact_or_assessment":"AI authority 与 human accountability 矩阵"
+    },
+    {
+      "stage_id":"before-after",
+      "instructor_action":"对比只有总分的旧报告和包含版本、切片、Mutation、owner、停止状态及回滚的新证据包",
+      "learner_action":"按字段找出旧报告无法复查、无法归因、无法拒绝和无法回滚的具体缺口",
+      "expected_observation":"学员看到结构完整并不等于证据闭合，Unknown 与失败反例必须保留",
+      "debrief":"改进目标是让另一个人能从决定回查原始输入和运行收据，而不是让报告更长",
+      "artifact_or_assessment":"旧报告与证据包的逐字段差异表"
+    },
+    {
+      "stage_id":"plain-mental-model",
+      "instructor_action":"讲解 Input、Candidate、Independent Oracle、Mutation、Owner、Decision 和 Rollback 的共同链路",
+      "learner_action":"为训练、供应链、Memory 和 Canary 各画一条具名 owner 的证据流",
+      "expected_observation":"学员理解八个主题共享控制骨架，但业务 Oracle、阈值和责任人不能共用",
+      "debrief":"工具可以替换，输入身份、独立判断、负控制、停止状态和回滚合同不能丢失",
+      "artifact_or_assessment":"四条主题化证据架构图"
+    },
+    {
+      "stage_id":"guided-demo",
+      "instructor_action":"运行 verify-packages 与 baseline，并打开 Prompt、Schema、Eval、Mutation、哈希和 NOT_RUN 字段",
+      "learner_action":"逐页核对版本、八类 eval、独立 owner、工作目录、预期退出码和报告路径",
+      "expected_observation":"八个批准 fixture 在相同合同下全部退出零，但报告仍明确限制真实效果声明",
+      "debrief":"健康 baseline 只是后续 fault 和 repair 的可比较分母，不能替代模型或生产集成",
+      "artifact_or_assessment":"八页 baseline 复核收据"
+    },
+    {
+      "stage_id":"failure-diagnosis",
+      "instructor_action":"运行 fault suite，展示训练污染、未签名依赖、跨模态矛盾、locale 缺口、自评、跨用户缓存、协议漂移和抽样偏差",
+      "learner_action":"把每个非零退出映射到目标 mutation、failed_checks、owner 和正确停止状态",
+      "expected_observation":"八个目标故障都产生退出一，且失败原因能够回到唯一变异而非无关异常",
+      "debrief":"预期 fault 的非零退出是检测力证据；吞掉退出码或修改 expected 会摧毁负控制",
+      "artifact_or_assessment":"八类故障诊断与处置表"
+    },
+    {
+      "stage_id":"learner-practice",
+      "instructor_action":"提供恢复版本、签名、配对、locale、切片、隔离、协议和分流的 repair 输入",
+      "learner_action":"在不修改 Oracle、阈值和断言的前提下预测结果、执行 repair 并比较三阶段报告",
+      "expected_observation":"相同 Prompt manifest 与 fixture 下八页恢复退出零，failed_checks 清空且边界未变化",
+      "debrief":"Repair 必须恢复权威来源或批准实现；不能删除受影响样本、降级阈值或让模型自批",
+      "artifact_or_assessment":"baseline-fault-repair 三阶段差异记录"
+    },
+    {
+      "stage_id":"transfer-challenge",
+      "instructor_action":"把确定性教学 fixture 替换为团队的真实 AI 质量 CI，并要求先捕获 live baseline",
+      "learner_action":"重建真实输入、owner、阈值、工具适配器、隐私授权、回滚和运行后读回，不复制教学通过状态",
+      "expected_observation":"学员能保留版本化证据与负控制，同时明确真实环境新增的 Unknown 和专业审查",
+      "debrief":"迁移的是方法合同，不是合成数据、阈值、owner 或 fixture-tested 成熟度",
+      "artifact_or_assessment":"真实 AI 质量 CI 迁移方案",
+      "source_context":"deterministic advanced-quality fixture",
+      "target_context":"真实 AI 质量 CI",
+      "invariant":"版本化证据、独立 owner、目标 fault 检测、Unknown 保全和 fail-closed",
+      "must_change":["真实输入与数据授权","专业 owner 与阈值","Provider 和工具适配器","回滚与发布后读回"],
+      "success_criterion":"真实 baseline 可重放、目标 fault 被检测、repair 恢复、独立评审留痕且未越界声明"
+    },
+    {
+      "stage_id":"artifact-handoff",
+      "instructor_action":"展示课程包、公开材料、bundle manifest、归档闭包、研究验证和剩余发布门禁",
+      "learner_action":"从公开目录复跑命令，核对哈希和 owner，并列出仍未完成的 live、practitioner 与 production 证据",
+      "expected_observation":"学员能够区分 fixture-tested、真实集成、专业评审、出版闭包和生产验证",
+      "debrief":"可执行离线课程包是高质量起点，但没有独立专业与运行后证据就不能提升成熟度",
+      "artifact_or_assessment":"复跑收据、哈希核对和未完成证据清单"
+    }
+  ],
+  "interaction_prompts":["为什么总体平均不能覆盖最坏切片？","为什么每次 fallback 都必须重新授权？","为什么预期 fault 的非零退出是正确证据？"],
+  "recovery_path":"先运行 verify-packages；若 baseline 异常，核对工作目录、Prompt 包、owner、版本与报告路径，保持 NOT_RUN/UNKNOWN 并禁止继续 fault",
+  "evidence_status":"fixture-tested",
+  "limitations":"真实模型、训练、用户、辅助技术、专业公平/安全/隐私评审、Provider/MCP 集成和生产发布均未验证"
+}
+

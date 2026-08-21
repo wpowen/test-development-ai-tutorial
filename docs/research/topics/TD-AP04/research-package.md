@@ -1,31 +1,15 @@
-# TD-AP04 · Trace and data schema
+# TD-AP04 研究包 Editorial review record
 
-## Research brief
+## Protected items
 
-Question: what telemetry lets an engineer explain one slow or incorrect Agent task? Artifact: task-rooted Trace and storage schema with privacy policy.
+- 主题边界：开放/封闭负载模型与 coordinated omission，不把两种执行器压成一个吞吐数字。
+- 方法：open-vs-closed controlled comparison；独立 Oracle 判断任务终态与 queue evidence。
+- 必须保留：offered rate、achieved rate、queue、p99 和调度器声明。
 
-## Source pack
+## Boundary and command evidence
 
-- OTel GenAI conventions: https://opentelemetry.io/docs/specs/semconv/gen-ai/ and registry https://opentelemetry.io/docs/specs/semconv/registry/attributes/gen-ai/ — standard operations/attributes; conventions remain in development.
-- OpenAI Agents tracing: https://openai.github.io/openai-agents-python/tracing/ — generation, tool, handoff and guardrail traces.
-- OTel 2026 GenAI observability: https://opentelemetry.io/blog/2026/genai-observability/ — agent root and child-span pattern.
-
-## Evidence synthesis
-
-Standard fields cover model, operation, tool and token basics. There is no stable universal field set for task verifier, retry attempt, queue wait, cost, branch and handoff attribution. Do not invent new `gen_ai.*`; use `app.*` extensions and lock the semconv version.
-
-## Engineering blueprint
-
-Root `invoke_agent`/application workflow span; child generation, retrieval, tool, handoff and state spans. Metrics stay low-cardinality; Trace carries task-level dimensions. Compute wall-clock critical path rather than summing parallel children. Redact content by default.
-
-## Manuscript map
-
-TD-AP04 includes span tree, signal responsibility, minimum tables, critical-path diagnosis and privacy controls.
+在 `courses/td-ai-010-agent-load-stability/lab` 执行 `python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP04-lab.json --mode cycle`，已记录 0/1/0。provider=none、model=NOT_RUN；生产负载选择未知。
 
 ## Editorial review
 
-PASS. Protected the cited OpenTelemetry semantic-convention status and separated standard `gen_ai.*` fields from application extensions. Kept wall-clock critical-path analysis instead of adding parallel child durations. The page does not ask learners to log prompts, credentials or PII by default, and it preserves sampling, retention and access controls.
-
-## Validation
-
-PASS: standard and custom fields are separated; evolving semantics and privacy are explicit.
+本记录保护负载模型对比和 omission 边界；不提供分数，不替代独立审计或发布门禁。

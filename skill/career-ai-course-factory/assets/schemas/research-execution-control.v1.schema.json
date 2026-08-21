@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-execution-control.v1.schema.json",
+  "title": "ResearchExecutionControlV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "control_id", "goal_id", "status", "scope", "batch", "counters", "checkpoint", "stop_reason", "next_action"],
+  "properties": {
+    "schema_version": {"const": "research-execution-control.v1"},
+    "control_id": {"type": "string", "pattern": "^control-[A-Za-z0-9._-]+$"},
+    "goal_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["ACTIVE", "COMPLETED-RECEIPT", "BLOCKED-CAPABILITY", "BLOCKED-EVIDENCE", "TIMEOUT", "CANCELLED"]},
+    "scope": {
+      "type": "object", "additionalProperties": false,
+      "required": ["pages_expected", "claims_expected", "release_targets"],
+      "properties": {
+        "pages_expected": {"type": "integer", "minimum": 1},
+        "claims_expected": {"type": "integer", "minimum": 1},
+        "release_targets": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "batch": {
+      "type": "object", "additionalProperties": false,
+      "required": ["index", "claim_ids", "canonical_unit_ids", "phase", "surface", "max_claims", "max_provider_runs", "max_elapsed_minutes", "max_total_tokens"],
+      "properties": {
+        "index": {"type": "integer", "minimum": 1},
+        "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "canonical_unit_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "phase": {"enum": ["classification", "initial-research", "counterevidence", "gap-fill", "verification", "adjudication", "synthesis"]},
+        "surface": {"enum": ["openai-chatgpt", "openai-api", "codex-research", "planner", "luna"]},
+        "max_claims": {"type": "integer", "minimum": 1},
+        "max_provider_runs": {"type": "integer", "minimum": 1},
+        "max_elapsed_minutes": {"type": "integer", "minimum": 1},
+        "max_total_tokens": {"anyOf": [{"const": "UNKNOWN"}, {"type": "integer", "minimum": 1}]}
+      }
+    },
+    "counters": {
+      "type": "object", "additionalProperties": false,
+      "required": ["claims_started", "provider_runs", "elapsed_minutes", "total_tokens", "checkpoints_without_progress"],
+      "properties": {
+        "claims_started": {"type": "integer", "minimum": 0},
+        "provider_runs": {"type": "integer", "minimum": 0},
+        "elapsed_minutes": {"type": "integer", "minimum": 0},
+        "total_tokens": {"anyOf": [{"const": "UNKNOWN"}, {"type": "integer", "minimum": 0}]},
+        "checkpoints_without_progress": {"type": "integer", "minimum": 0}
+      }
+    },
+    "checkpoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["interval_minutes", "last_progress", "progress_artifact_hashes"],
+      "properties": {
+        "interval_minutes": {"type": "integer", "minimum": 1},
+        "last_progress": {"type": "string", "minLength": 1},
+        "progress_artifact_hashes": {"type": "array", "items": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}}
+      }
+    },
+    "stop_reason": {"type": "string", "minLength": 1},
+    "next_action": {"type": "string", "minLength": 1},
+    "output_artifact_hashes": {"type": "array", "items": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  }
+}

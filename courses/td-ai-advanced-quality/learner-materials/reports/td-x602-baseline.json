@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X602",
+  "phase": "baseline",
+  "status": "PASS",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:eb3bb2955389201bdf8c2c1e2e01f711daa5d006e61a5386371d54ad863a7782",
+  "checks": {
+    "versions_pinned": true,
+    "lineage_complete": true,
+    "holdout_sealed": true,
+    "rollback_candidate": true
+  },
+  "failed_checks": [],
+  "fault_id": null,
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

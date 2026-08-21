@@ -1,0 +1,25 @@
+%% TD-AG-09 · 来源：S07 · S24 · S65
+%% 当前课程只运行离线/沙箱式 fixture；影子与在线环保持 NOT_RUN。
+flowchart LR
+  ci["离线 CI<br/><small>确定性规则 / 小型 Eval</small>"]
+  sandbox["沙箱回放<br/><small>轨迹 / 故障注入 / 无副作用</small>"]
+  shadow["影子 / 灰度<br/><small>真实流量但不生效</small>"]
+  online["在线持续<br/><small>采样 / 高危全量 / 漂移</small>"]
+  hard["硬红线<br/><small>安全 / 业务 / D0 失效</small>"]
+  stat["统计门禁<br/><small>区间 / Slice / 样本量</small>"]
+  risk["风险接受<br/><small>Owner / Expiry / 补偿 / 回滚</small>"]
+  blocked["BLOCKED / NOT_RUN<br/><small>缺一环证据不得升级</small>"]
+  ci -->|entry/exit| sandbox
+  sandbox -->|真实集成| shadow
+  shadow -->|受控升级| online
+  ci -->|提交级阻断| hard
+  sandbox -->|副作用阻断| hard
+  shadow -->|配对比较| stat
+  online -->|线上切片| stat
+  hard -->|任一红线| blocked
+  stat -->|证据充分后| risk
+  stat -->|证据不足| blocked
+  risk -->|拒绝或过期| blocked
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

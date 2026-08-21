@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "TD-T19-output-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "topic_id",
+    "verdict",
+    "failed_oracle_ids",
+    "evidence_refs",
+    "repair",
+    "rollback",
+    "human_review_required",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "topic_id": {
+      "type": "string",
+      "const": "TD-T19"
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED",
+        "UNKNOWN"
+      ]
+    },
+    "failed_oracle_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "repair": {
+      "type": "string"
+    },
+    "rollback": {
+      "type": "string"
+    },
+    "human_review_required": {
+      "type": "boolean"
+    },
+    "evidence_boundary": {
+      "type": "string",
+      "const": "fixture-tested; live systems NOT_RUN"
+    }
+  }
+}

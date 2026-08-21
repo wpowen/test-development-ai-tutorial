@@ -1,0 +1,1 @@
+{"environment_id":"env-run-42","namespace":"quality-run-42","owner_run_id":"run-42","expires_at":"2026-08-10T00:15:00Z","roles":["namespace-job-runner"],"forbidden_roles":["cluster-admin"],"ttl_seconds":900,"cleanup_status":"owner+TTL"}

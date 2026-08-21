@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A05",
+  "version": "1.0.0",
+  "model_execution": "NOT_RUN",
+  "deterministic_fixture_eval": {
+    "expected": {
+      "diagnosis.root_cause": "queue",
+      "diagnosis.single_variable_confirmed": true,
+      "managed_internal_metrics": "UNKNOWN"
+    },
+    "fault_patch": {
+      "diagnosis.root_cause": "gpu",
+      "diagnosis.single_variable_confirmed": false
+    },
+    "required_exit_codes": [
+      0,
+      1,
+      0
+    ]
+  },
+  "professional_oracle": "高 TTFT 且 queue 占主要比例指向排队；KV 高必须伴随 eviction/preemption 或对照实验；不可见指标为 UNKNOWN。",
+  "boundary": "托管服务内部队列、GPU profiler 和真实 KV cache eviction 不可见。"
+}

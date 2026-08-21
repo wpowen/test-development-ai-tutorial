@@ -1,0 +1,23 @@
+%% TD-AG-06 · 来源：S07 · S08 · S50
+%% 本图与套件使用合成租户和无真实副作用数据；真实 MCP、密钥和生产权限均 NOT_RUN。
+flowchart LR
+  input["不可信输入<br/><small>直接 / 间接 / 延迟注入</small>"]
+  mcp["MCP / Tool Manifest<br/><small>描述、版本、rug-pull</small>"]
+  memory["记忆污染<br/><small>跨轮 / 跨会话</small>"]
+  delegation["委托链<br/><small>用户 → Agent → 工具</small>"]
+  sandbox["策略沙箱<br/><small>Tenant / Scope / Schema / 额度</small>"]
+  action["不可逆动作<br/><small>写入 / 转账 / 删除 / 外发</small>"]
+  owner["安全 Owner<br/><small>升级与处置</small>"]
+  kill["Kill Switch / BLOCKED<br/><small>立即停止并保留 Trace</small>"]
+  input -->|内容策略| sandbox
+  mcp -->|签名与实际权限| sandbox
+  memory -->|写前验证| sandbox
+  delegation -->|能力 token| sandbox
+  sandbox -->|允许的最小能力| action
+  action -->|高危升级| owner
+  sandbox -->|越权 / 变更 / 超限| kill
+  action -->|异常副作用| kill
+  kill -->|事故证据| owner
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

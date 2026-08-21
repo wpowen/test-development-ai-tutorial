@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T03",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "高风险 Gate 由独立确定性 Oracle 阻断，语义 Judge 不得用平均分覆盖它。",
+  "checks": [
+    {
+      "field": "schema_gate",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "permission_gate",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "independent_oracle",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    }
+  ],
+  "injected_mutation": {
+    "id": "self-judged-permission",
+    "field": "independent_oracle",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "Judge 与领域人工的一致性未校准",
+    "未连接真实权限系统"
+  ]
+}

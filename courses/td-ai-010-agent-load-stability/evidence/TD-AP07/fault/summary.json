@@ -1,0 +1,49 @@
+{
+  "schema_version": "agent-performance-run.v2",
+  "page_id": "TD-AP07",
+  "phase": "fault",
+  "fixture": true,
+  "workload_version": "td-ap07-workload-v1",
+  "prompt_package_version": "1.0.0",
+  "metrics": {
+    "workload_slice_coverage": 1.0,
+    "business_oracle_rate": 1.0,
+    "ttft_p95_ms": 132.766,
+    "tpot_p95_ms": 4.7827,
+    "queue_p95_ms": 0.0,
+    "retry_p95": 1.0,
+    "step_p95": 5.0,
+    "trace_complete_rate": 1.0,
+    "arrival_rate_fidelity": 0.97805,
+    "coordinated_omission_detected": 1.0,
+    "goodput_tasks_per_s": 5.43364,
+    "bottleneck_attributed": 1.0,
+    "timeout_budget_valid": 1.0,
+    "degrade_safe_rate": 0.0,
+    "memory_growth_mb_per_task": 0.8,
+    "cleanup_success_rate": 0.79167,
+    "good_task_rate": 1.0,
+    "alert_actionability": 1.0,
+    "incident_evidence_complete": 1.0,
+    "task_success_rate": 1.0,
+    "e2e_p95_ms": 553.5257,
+    "observed_rate_tasks_per_s": 5.43364
+  },
+  "gates": {
+    "memory_growth_mb_per_task": {
+      "operator": "max",
+      "value": 0.05
+    },
+    "cleanup_success_rate": {
+      "operator": "min",
+      "value": 0.95
+    }
+  },
+  "checks": {
+    "memory_growth_mb_per_task": false,
+    "cleanup_success_rate": false
+  },
+  "gate_pass": false,
+  "configuration_hash": "22a12e708d92288d993702305695e747b95039227d97fffd6fe8321bd7907c0a",
+  "evidence_boundary": "Deterministic synthetic load fixture; this is not a production capacity claim."
+}

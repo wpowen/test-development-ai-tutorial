@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "recorded_at": "2026-08-11T00:00:00+08:00",
+  "status": "fixture-tested",
+  "evidence_scope": "deterministic offline synthetic fixtures",
+  "model_evidence": "NOT_RUN",
+  "environment": {"runtime": "python3", "dependencies": "stdlib-only", "working_directory": "courses/td-ai-assisted-testing/lab"},
+  "baseline": {"command": "python3 ai_assisted_lab.py suite --phase baseline", "exit_code": 0, "verdict": "PASS", "evidence": ["lab/reports/td-t05-baseline.json", "lab/reports/td-t06-baseline.json", "lab/reports/td-t07-baseline.json", "lab/reports/td-t08-baseline.json"]},
+  "mutation": {"command": "python3 ai_assisted_lab.py suite --phase fault", "exit_code": 1, "verdict": "FAIL", "evidence": ["lab/reports/td-t05-fault.json", "lab/reports/td-t06-fault.json", "lab/reports/td-t07-fault.json", "lab/reports/td-t08-fault.json"]},
+  "repair": {"command": "python3 ai_assisted_lab.py suite --phase repair", "exit_code": 0, "verdict": "PASS", "evidence": ["lab/reports/td-t05-repair.json", "lab/reports/td-t06-repair.json", "lab/reports/td-t07-repair.json", "lab/reports/td-t08-repair.json"]},
+  "integrity": {
+    "runner_sha256": "f3692463b13baac9d260db6909b88a9eb24a84f49fc6bacd40159123e1cc009f",
+    "oracle_sha256": "0d6210b21a490d1626e2d765cc147a9eb73dc6aec299b5c7723eb2b33eb0aeaf",
+    "oracle_authority": "frozen independently supplied fixture; outside all generator prompt packages"
+  },
+  "commands": [
+    {"command": "python3 ai_assisted_lab.py verify-packages", "expected_exit_code": 0, "observed_exit_code": 0, "result": "PASS"},
+    {"command": "python3 -m unittest -v test_ai_assisted_lab.py", "expected_exit_code": 0, "observed_exit_code": 0, "result": "PASS"},
+    {"command": "python3 ai_assisted_lab.py suite --phase baseline", "expected_exit_code": 0, "observed_exit_code": 0, "result": "PASS"},
+    {"command": "python3 ai_assisted_lab.py suite --phase fault", "expected_exit_code": 1, "observed_exit_code": 1, "result": "EXPECTED_FAULTS_DETECTED"},
+    {"command": "python3 ai_assisted_lab.py suite --phase repair", "expected_exit_code": 0, "observed_exit_code": 0, "result": "PASS"}
+  ],
+  "topic_outcomes": [
+    {"topic_id": "TD-T05", "baseline": "PASS/0", "fault": "BLOCKED/2", "repair": "PASS/0", "fault_proof": "missing diff reference and invented SLA rejected"},
+    {"topic_id": "TD-T06", "baseline": "PASS/0", "fault": "FAIL/1", "repair": "PASS/0", "fault_proof": "independent Oracle killed inverted authorization guard"},
+    {"topic_id": "TD-T07", "baseline": "PASS/0", "fault": "FAIL/1", "repair": "PASS/0", "fault_proof": "idempotency property produced replayable minimal counterexample"},
+    {"topic_id": "TD-T08", "baseline": "PASS/0", "fault": "UNKNOWN/2", "repair": "PASS/0", "fault_proof": "missing trace and mixed versions prevented causal approval"}
+  ],
+  "not_run": ["real model generation", "real repository integration", "practitioner review", "production validation", "publication deployment"],
+  "limitations": ["synthetic deterministic refund fixture", "no model or external test framework", "no practitioner review", "no production data or publication proof"]
+}

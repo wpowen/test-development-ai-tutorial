@@ -1,0 +1,19 @@
+{
+  "schema_version": "mutation.v1",
+  "page_id": "TD-AP03",
+  "version": "1.0.0",
+  "mutation_name": "td-ap03-detectable-fault",
+  "allowed_changes": [
+    "trace_gap_rate"
+  ],
+  "forbidden_changes": [
+    "gates",
+    "good_task_latency_ms",
+    "evidence_boundary"
+  ],
+  "expected_phase_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  }
+}

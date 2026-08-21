@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dimension-alias-registry.v1.schema.json",
+  "title": "DimensionAliasRegistryV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "registry_id", "input_digest", "output_digest", "generated_by", "reviewed_by", "independent_review", "approved_at", "audit_artifact", "review_status", "entries"],
+  "properties": {
+    "schema_version": {"const": "dimension-alias-registry.v1"},
+    "registry_id": {"type": "string", "minLength": 1},
+    "input_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "output_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "generated_by": {"type": "string", "minLength": 1},
+    "reviewed_by": {"type": "string"},
+    "independent_review": {"type": "boolean"},
+    "approved_at": {"type": "string"},
+    "review_status": {"enum": ["pending", "approved", "rejected"]},
+    "audit_artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"}}
+    },
+    "entries": {"type": "array", "items": {"$ref": "#/$defs/entry"}}
+  },
+  "$defs": {
+    "entry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["legacy_dimension", "canonical_dimensions", "mapping_status", "reason"],
+      "properties": {
+        "legacy_dimension": {"type": "string", "minLength": 1},
+        "canonical_dimensions": {
+          "type": "array", "minItems": 1, "uniqueItems": true,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "mapping_status": {"enum": ["approved", "rejected", "ambiguous"]},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

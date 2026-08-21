@@ -1,0 +1,36 @@
+{
+  "manifest_version": "1.0.0",
+  "lab_id": "reliability-economics",
+  "working_directory": "materials/agent-architecture-system",
+  "steps": [
+    {
+      "step_id": "economics-cycle",
+      "command": "python3 scripts/agent_reliability_lab.py economics --input fixtures/cost-ledger.json\npython3 scripts/agent_reliability_lab.py economics --input fixtures/cost-ledger.json --fault no-hard-budget\npython3 scripts/agent_reliability_lab.py economics --input fixtures/cost-ledger.json --fault none",
+      "expected_exit_code": 0,
+      "expected_artifacts": [],
+      "observed_exit_sequence": [
+        0,
+        1,
+        0
+      ],
+      "expected_failed_oracle": "D6-2/HARD-BUDGET",
+      "note": "三条命令依次执行；退出码序列必须精确为 0/1/0。脚本不写入任何文件，因此没有产出工件。"
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "required_files": [
+    "fixtures/cost-ledger.json",
+    "scripts/agent_reliability_lab.py"
+  ],
+  "writes_files": false,
+  "model": {
+    "provider": "none",
+    "id": "offline-deterministic",
+    "status": "NOT_RUN"
+  },
+  "evidence_boundary": "确定性离线 fixture；真实模型、Agent、工具、影子与在线环、从业者与生产均 NOT_RUN。"
+}

@@ -1,0 +1,2394 @@
+{
+  "schema_version": "page-promotion-manifest.v1",
+  "generated_at": "2026-08-21T03:59:18.380Z",
+  "pages": [
+    {
+      "page_id": "TD-F01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-role-comparison.svg": "sha256:8461e5bb31b6fa658cfd8518020b0f66d27ac926f476323e5fa7e2f015041c4a",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/profession-reality.zip": "sha256:a236a25c76ead9ee190af3e5b408a5f679593091404f35e15a4d0a08df219814",
+        "materials/profession-reality/profession_self_check.py": "sha256:fdd94bf00f21706252abd90079549fa43c537fc34bcc5d32eb5a8c32999bf64a",
+        "materials/profession-reality/manifest.json": "sha256:ed23f707f61bc5b90a9f0babe4da46a572486a5529e99cd7a6d61ad72500b61d",
+        "materials/profession-reality/prompts/TD-F01/manifest.json": "sha256:d54cbf682e5f346689b1b890aff6ca306dbbce9cce58bf6b2daa7096fc8b451b",
+        "materials/profession-reality/reports/TD-F01-cycle.json": "sha256:42dfedf779bd7b01d248551c9593d3822304c596f5a384a1af498e34a1a7986d"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P01.json": "sha256:e6f89fbc370001f8db7e15e64daabb4e4dbe625d90752163c43e7007d4d89b3b",
+        "materials/requirements-to-evidence/page-prompts/TD-P01/manifest.json": "sha256:4c8a1ef9d9c50051961ddcbd530223b9a7586ed09d747be47534e39ff51f9f49",
+        "materials/requirements-to-evidence/page-prompts/TD-P01/prompt-v1.md": "sha256:42ee6bb3d4e68f97f2a762ae404aabd7d8791276897075cf7de3d35212a80894",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P01-cycle.json": "sha256:02108748526ae743ce1c4a9357231ef16d9150b1c31be63b1a333793c9a05e6f",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/03-test-basis-pack.md": "sha256:30a28478dd7298b1549840157192795c29676821d78935c065f823613ae1ab6d",
+        "materials/methodology-handbook/checklists/01-requirements-review.md": "sha256:407bcf183d97f667fad8c0e5eb0f0391b8ca7ff8816c48f80b1a40e34c0dd8e8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence.zip": "sha256:2f381168665a9a04d88449f069645ff8aafd448062a5c1aaca27c09f78d6700e",
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/prompt-package/manifest.json": "sha256:28374a54aed433b1f63f24e4e6f9db130238ee3ebaa7f737629ec4d200d4ba71",
+        "materials/requirements-to-evidence/README.md": "sha256:52dbfc3ce3bc5d148fd25c3a0959fa45d513ccb510639abb153999118e287a42",
+        "materials/requirements-to-evidence/page-manifests/TD-P02.json": "sha256:cfd8588d0cc8052e1c10890c3e8c748e028010d3c752715c59f14c5248087a29",
+        "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json": "sha256:6f980d5872afa91590d2b18f34ec8a390b8ccc74c54c59eaee204043ed365f0f",
+        "materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md": "sha256:ed09f89c0c326085f0b1c8676cfbe1336095670ad459d34ccc2f998ff3f0f086",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P02-cycle.json": "sha256:f0090d4102a4c9ec19f48f702bbeaa372abde152ced65c46e7daad0b151e400c",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/04-requirement-contract-guide.md": "sha256:6518a9ef676fbac30029745f43eb8f7b3bb844335af53dbb37a17aac7c50f367",
+        "materials/methodology-handbook/checklists/01-requirements-review.md": "sha256:407bcf183d97f667fad8c0e5eb0f0391b8ca7ff8816c48f80b1a40e34c0dd8e8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P03.json": "sha256:9a91035acee9b2d32917a2a2da0a9dd696ce4c27dc9ded82ade53220964b1e3b",
+        "materials/requirements-to-evidence/page-prompts/TD-P03/manifest.json": "sha256:bffe63347e5cc2b57131359ca155dc841ddf5d30b70157cecf548708ec863082",
+        "materials/requirements-to-evidence/page-prompts/TD-P03/prompt-v1.md": "sha256:0f25482edcf6e44afb206de0ea562995e661fbe04ea6c2484bd16c06aae148e7",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P03-cycle.json": "sha256:67b6d926175ac45036d866118d2c6268a40237825b6edbd4ca4947799c8afabb",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/11-entry-exit-criteria.md": "sha256:bb3477cc0b46c758d0bc254927672f01daf827fc35f1d12ef5f826e798e6f02b",
+        "materials/methodology-handbook/checklists/02-risk-and-strategy.md": "sha256:0bc48f66782a3cb45d27c526a604b5f69691c560f1aed9c6e0c00611a6dcd9a0"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P04.json": "sha256:1cc9de20c822b3cb2794c541d9aaba7b2b5d2f0843b721d35067ece4b1e7513b",
+        "materials/requirements-to-evidence/page-prompts/TD-P04/manifest.json": "sha256:d4e9b68a88aa6111d57704812f082f609ee500a7a9205208b93268bf4f1bc7f7",
+        "materials/requirements-to-evidence/page-prompts/TD-P04/prompt-v1.md": "sha256:10f45da3234d43fa562c653cea2a912f33b449700f6b076127d89965152c0ec8",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P04-cycle.json": "sha256:69e904a1ea53b81d6cfab5e8af294d620cd7f32920296240dbbdd8153b5482ef",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/06-technique-selection-matrix.md": "sha256:c11e4372a18bcd61b5fd156122479f38fedb5eb15ba75d12473e7f5576289cff",
+        "materials/methodology-handbook/checklists/02-risk-and-strategy.md": "sha256:0bc48f66782a3cb45d27c526a604b5f69691c560f1aed9c6e0c00611a6dcd9a0"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P05.json": "sha256:3b9ddf3168f60693cbd69248f7143d391495c1f9c58e67c3e815e48608b44070",
+        "materials/requirements-to-evidence/page-prompts/TD-P05/manifest.json": "sha256:7bf3b7223f57190c0c407667ef727e161b67e865a5e0d1cc7f362b65b9fc272a",
+        "materials/requirements-to-evidence/page-prompts/TD-P05/prompt-v1.md": "sha256:8a4f2bec317c106dc7ab2042ec5a7817246741d94dce3f1a2652c5d34435bc08",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P05-cycle.json": "sha256:26821f38d30924c68a5f4273a3c4a3da50629baf0cfb55b6df677e5e0910db18",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/07-oracle-design-record.md": "sha256:31867d65880ba2fec0b2a50c0fe7c5da0ef46aed1a3921dd0e00d56b60bd47b6",
+        "materials/methodology-handbook/checklists/03-oracle-and-data.md": "sha256:fb4e5ad2e4b37eb78b727b02c56330151646e9e88c3ec1d743336e374f6e4b73"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P06.json": "sha256:51c30c538a736e27a7ae35a3000f0af5e5b0ef4e660d9042cfcf5c23d7020322",
+        "materials/requirements-to-evidence/page-prompts/TD-P06/manifest.json": "sha256:8941afe379ab4b1732a2339017ed732a09dbb6bbe032f1f76f9402e35f3fc466",
+        "materials/requirements-to-evidence/page-prompts/TD-P06/prompt-v1.md": "sha256:76d4fd5d0c0165023b52b83b54749bfeb316dd99030cbc6145b8dd114d24d567",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P06-cycle.json": "sha256:b238893294cfeb4d85ceff2a4ae8792d41a79e43e9a8dd372c6a0aabc70c619f",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/09-environment-register.md": "sha256:53cd3c50035c2cad851f5f7320f8c04ea228c57a7b84e97d4e8056af8f73f8e9",
+        "materials/methodology-handbook/checklists/04-automation-merge.md": "sha256:2bb318709d338f5b4fa287b676d53cc0ade4f519616040c8819936c1c69595b3"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P07",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P07.json": "sha256:26aaf42224722c502f1ba9f4858712ccf695944981a68f50b419911aade9ae05",
+        "materials/requirements-to-evidence/page-prompts/TD-P07/manifest.json": "sha256:014e6e90dfd994bfdd9add77e580d940e0bf9ef989787450310e9f906b2731fd",
+        "materials/requirements-to-evidence/page-prompts/TD-P07/prompt-v1.md": "sha256:12d54b0de8735b74507e2931120c0927767beaeaf2721ff20861dc550f933d4f",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P07-cycle.json": "sha256:434944a7fa84f68cd1bf0c84883715795b04d54cee3210f9245424ea418b4ca0",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/10-defect-severity-taxonomy.md": "sha256:eddad030fd32e259f52d91f544d00763ee75e323e99e0cf8ba0cac060e6413ad",
+        "materials/methodology-handbook/checklists/08-incident-regression-feedback.md": "sha256:cdc14405c890062984579d1d3a744ee2020a33b4c816f42df0c85edb32bac71c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-P08",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/requirements-to-evidence/pipeline.py": "sha256:b2955f230ed10d60cdc713a078b7dc80ae04b972f8643dc061a7248ca00517dc",
+        "materials/requirements-to-evidence/page-manifests/TD-P08.json": "sha256:c92aaba7d65938a82728815b8a8ac9e6bdfec12c6ee3e2ad642724166122c724",
+        "materials/requirements-to-evidence/page-prompts/TD-P08/manifest.json": "sha256:cf31080c3a4e36c9fc68fe472c40fb674ce8ee42ab25558d8dc5037c99028ed5",
+        "materials/requirements-to-evidence/page-prompts/TD-P08/prompt-v1.md": "sha256:7cf90483b8df32b7905f8c21f67851489ee238d7f470cb0179a781a116767e0a",
+        "materials/requirements-to-evidence/DIRECT-USE-GUIDE.md": "sha256:67af5917b9a37177477bc3db8b677d54ef2a0fe90541a1d950bd0b9fe5551c6c",
+        "materials/requirements-to-evidence/ADAPTATION-CARD.md": "sha256:843a6107a826c9db8510880659ff1ce9d597c34e5e3ac04bc880206bac42f530",
+        "materials/requirements-to-evidence/reports/TD-P08-cycle.json": "sha256:c5d39d70d1bc8acf745b856ed6fb447c545641572000c2fd579ec46e72feb50b",
+        "materials/methodology-handbook/README.md": "sha256:742206af6b900c5a5b1e43880b0872af94f9d371f68ccba0547335d4aa4e65ac",
+        "materials/methodology-handbook/scripts/validate_handbook.py": "sha256:b9b02b6c8aaa286b2e20fdfa7576b0321883a566518631f74163943ed47050d8",
+        "materials/methodology-handbook/examples/source-manifest.json": "sha256:034319eb6e6d13348f8a10535148837adee53adf003b88ef4c7b2ebf8d1fe96d",
+        "materials/methodology-handbook/templates/14-release-decision-record.md": "sha256:fc4a2f27064505d2944668e408eb141511c855e34ab589c2a976ebe9e959a8d9",
+        "materials/methodology-handbook/checklists/06-pre-release.md": "sha256:f1e51c47f7751c676574db4318188dfdb2c029b80b8d067d05ec34b91ffaa521"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/api-ai-automation/fixtures/order-cancel.openapi.yaml": "sha256:ccb87df85edb016095e5797cca089d4e43a24c307bc2ec54ab6c790e745e1dfa",
+        "materials/api-ai-automation/guides/api-run-manifest.md": "sha256:27db9681ab9904ae0162aef533bf06dee790a8028699fd63a042779838e31d04",
+        "materials/api-ai-automation.zip": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3",
+        "materials/api-ai-automation/scripts/api_automation.py": "sha256:4378a765c69ff7b8dbc1504b18988e9cdc204f863262b741c4ee9113eb5e7f79",
+        "materials/api-ai-automation/README.md": "sha256:ee6dfc3217cafe8ccac5a3e9d669b488e2d2a55e33e7089b087606fd21df4cb8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/api-ai-automation/fixtures/payment-intent.openapi.yaml": "sha256:264364f2c4dda33af3b083bafa7d8e926755a0951183c316a3767b1f750fa1a7",
+        "materials/api-ai-automation/configs/schema-mutations.yaml": "sha256:49e718a027fbd8a0f701b6f17a0704eb24550ab7dc9c93c46a9f8940f8ccd843",
+        "materials/api-ai-automation.zip": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3",
+        "materials/api-ai-automation/scripts/api_automation.py": "sha256:4378a765c69ff7b8dbc1504b18988e9cdc204f863262b741c4ee9113eb5e7f79",
+        "materials/api-ai-automation/README.md": "sha256:ee6dfc3217cafe8ccac5a3e9d669b488e2d2a55e33e7089b087606fd21df4cb8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/api-ai-automation/fixtures/checkout-events.json": "sha256:9234d3205b0ccf0cdfb904505405f28d7a4263f4981a071846f0c292f0c03d4c",
+        "materials/api-ai-automation/guides/consumer-compatibility.md": "sha256:4a408ed432520a9b4a8a2b1c261fc54d87dade3985bcfcfeb60e297338bb3672",
+        "materials/api-ai-automation.zip": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3",
+        "materials/api-ai-automation/scripts/api_automation.py": "sha256:4378a765c69ff7b8dbc1504b18988e9cdc204f863262b741c4ee9113eb5e7f79",
+        "materials/api-ai-automation/README.md": "sha256:ee6dfc3217cafe8ccac5a3e9d669b488e2d2a55e33e7089b087606fd21df4cb8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ui-mobile-automation/fixtures/refund-approval.json": "sha256:fd0fcc04755834810dcb5d6d49ae70218156f19439a644823db671760ee4e347",
+        "materials/ui-mobile-automation/guides/web-journey-sop.md": "sha256:6a5ee618732747cd392be4edc9220820b778bd429e64a8d1d952e19a3edc1a76",
+        "materials/ui-mobile-automation.zip": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51",
+        "materials/ui-mobile-automation/scripts/ui_contract_lab.py": "sha256:fc84433464a670362214d6275faac57c73f616097efef17d102f01a82e80009e",
+        "materials/ui-mobile-automation/README.md": "sha256:76752e8d703cf2a53faf584c4c7a4798b7abc35f63d675cfda42a4d7269d98e1"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ui-mobile-automation/configs/web-compatibility-matrix.yaml": "sha256:cfded498d7dd3a6c222e2a98f4b4309278a4391f5cc9876be0eca23fa5dbd7c0",
+        "materials/ui-mobile-automation/guides/a11y-visual-regression.md": "sha256:5df4599eb9ec0d23bc12748e308a606777db4258f86b5df3eadcb49746c7a7bb",
+        "materials/ui-mobile-automation.zip": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51",
+        "materials/ui-mobile-automation/scripts/ui_contract_lab.py": "sha256:fc84433464a670362214d6275faac57c73f616097efef17d102f01a82e80009e",
+        "materials/ui-mobile-automation/README.md": "sha256:76752e8d703cf2a53faf584c4c7a4798b7abc35f63d675cfda42a4d7269d98e1"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ui-mobile-automation/fixtures/android-receiving.yaml": "sha256:c7ff8dc1ba5b126ca7eafa143cb44ba29726b565b92a753f1f092c62b820c251",
+        "materials/ui-mobile-automation/guides/android-device-matrix.md": "sha256:78b2567cde1f441593dd8f0010183e7ccfd0aff2ca7b49db9ea95f41af1b5687",
+        "materials/ui-mobile-automation.zip": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51",
+        "materials/ui-mobile-automation/scripts/ui_contract_lab.py": "sha256:fc84433464a670362214d6275faac57c73f616097efef17d102f01a82e80009e",
+        "materials/ui-mobile-automation/README.md": "sha256:76752e8d703cf2a53faf584c4c7a4798b7abc35f63d675cfda42a4d7269d98e1"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS07",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ui-mobile-automation/fixtures/ios-reschedule.json": "sha256:c872b0f4cdfc204e235114b9386631397fea4deb36d059cc4e5d9bc704f2fb19",
+        "materials/ui-mobile-automation/guides/ios-xcuitest-preflight.md": "sha256:2590c3f7f0c0a0a69da8c17de6fe9875685a2bc8e8a343fd24af2a0f187f2ddd",
+        "materials/ui-mobile-automation.zip": "sha256:9d7f84ee5168e1e5c16831604fda6460a12e0366c89da0285478647aaf8dea51",
+        "materials/ui-mobile-automation/scripts/ui_contract_lab.py": "sha256:fc84433464a670362214d6275faac57c73f616097efef17d102f01a82e80009e",
+        "materials/ui-mobile-automation/README.md": "sha256:76752e8d703cf2a53faf584c4c7a4798b7abc35f63d675cfda42a4d7269d98e1"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS08",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/api-ai-automation/fixtures/TD-PS08-input.json": "sha256:023b3eadbcb40cace32f708464a6b9f1b317e3fd2a7dc5e06376b11793ee4be9",
+        "materials/api-ai-automation/manifests/TD-PS08.json": "sha256:6e9fcd9a49b38434e6cf6209261d38d81aca3828065dd511b1d795ee0aa8784a",
+        "materials/api-ai-automation.zip": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3",
+        "materials/api-ai-automation/scripts/api_automation.py": "sha256:4378a765c69ff7b8dbc1504b18988e9cdc204f863262b741c4ee9113eb5e7f79",
+        "materials/api-ai-automation/README.md": "sha256:ee6dfc3217cafe8ccac5a3e9d669b488e2d2a55e33e7089b087606fd21df4cb8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS09",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/api-ai-automation/configs/ai-performance-workload.yaml": "sha256:758b4f2085cf2aad4af80b9e83f7353ab8d2c57e052dd82b107d5cc83c7e5aa6",
+        "materials/api-ai-automation/guides/ai-performance-metric-card.md": "sha256:f13c370fe288d5ac2820556b161891957f222709c6b4d031428a664925c9d4e7",
+        "materials/api-ai-automation.zip": "sha256:261f8a4bded1f7fb9a576aeb1deb4f76b84acf3abb2119198ba6ddaa5e3936e3",
+        "materials/api-ai-automation/scripts/api_automation.py": "sha256:4378a765c69ff7b8dbc1504b18988e9cdc204f863262b741c4ee9113eb5e7f79",
+        "materials/api-ai-automation/README.md": "sha256:ee6dfc3217cafe8ccac5a3e9d669b488e2d2a55e33e7089b087606fd21df4cb8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS10",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/reliability-chaos-observability/fixtures/order-assistant-chaos.yaml": "sha256:1320118660bf3319870d67d1cc11429abba9b16d22e155db1c16cb1e281cfa79",
+        "materials/reliability-chaos-observability/guides/chaos-experiment-sop.md": "sha256:2b5629d374643c4a2d9a3971c8043cb3d21f544c425a6090e9d34f781f8ce37c",
+        "materials/reliability-chaos-observability.zip": "sha256:756f4ece1099dbd716cfff1859ec71f181eabb9b395be7e79034ea9df3f6a045",
+        "materials/reliability-chaos-observability/scripts/reliability_lab.py": "sha256:6dbedc525aa714bf63e08db10109730e4dbf01431d39a3d092559420a98a2056",
+        "materials/reliability-chaos-observability/README.md": "sha256:a6023bae0eae1d5cc6e0161acc1ca29f2f69be816a3d1e0f98f34c68d9965fce"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS11",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/reliability-chaos-observability/configs/agent-trace-schema.yaml": "sha256:f65080a709e0fecf94665b11cbce1a949e17c76b21c21d4860c75cf8b559da3b",
+        "materials/reliability-chaos-observability/guides/ai-observability-investigation.md": "sha256:46e8cef2d241d450bac9e4e89733989c93c0a0a019060f5eb37e1c1f84201080",
+        "materials/reliability-chaos-observability.zip": "sha256:756f4ece1099dbd716cfff1859ec71f181eabb9b395be7e79034ea9df3f6a045",
+        "materials/reliability-chaos-observability/scripts/reliability_lab.py": "sha256:6dbedc525aa714bf63e08db10109730e4dbf01431d39a3d092559420a98a2056",
+        "materials/reliability-chaos-observability/README.md": "sha256:a6023bae0eae1d5cc6e0161acc1ca29f2f69be816a3d1e0f98f34c68d9965fce"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-PS12",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/reliability-chaos-observability/fixtures/TD-PS12-input.json": "sha256:669cd07823857b67619979e03d9e75b66e36b915b6bd775febcd1807792bbbfd",
+        "materials/reliability-chaos-observability/manifests/TD-PS12.json": "sha256:71106b0e42be9518e6dadd0f0544a51e21b1d229b47028ce3d74bfe240f7290e",
+        "materials/reliability-chaos-observability.zip": "sha256:756f4ece1099dbd716cfff1859ec71f181eabb9b395be7e79034ea9df3f6a045",
+        "materials/reliability-chaos-observability/scripts/reliability_lab.py": "sha256:6dbedc525aa714bf63e08db10109730e4dbf01431d39a3d092559420a98a2056",
+        "materials/reliability-chaos-observability/README.md": "sha256:a6023bae0eae1d5cc6e0161acc1ca29f2f69be816a3d1e0f98f34c68d9965fce"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X101",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X101.json": "sha256:fd4a9a061b4ca9d3d4bce804ac179f8abc78bf407519cad92500953e0e38de80",
+        "materials/advanced-quality/page-prompts/TD-X101/manifest.json": "sha256:24e48ecd3ee6ec9b3c1024c37cbdc7ef5b0fb19deee07e49a2cc2017e4bdcdee",
+        "materials/advanced-quality/reports/td-x101-fault.json": "sha256:6e64ebb468c4fd733d51c9e82ac48f8cf95d70475bb524596492f3d6ffccccd7",
+        "materials/advanced-quality/reports/td-x101-repair.json": "sha256:129f95df4172543983c6cdbfa7699e701be0a446a119eb687263d8d812b69d76"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-FP01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-FP01.json": "sha256:2e4b43523c882238942aab69d5d6e816d20c84e7345d3acafca289913ac7cfdd",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-FP01/fault.json": "sha256:9540cb50e12b8c893abe4dd05400caf144496998ae4daff82b2ac5658e421c1e",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36",
+        "materials/requirements-to-evidence/page-prompts/TD-P02/prompt-v1.md": "sha256:ed09f89c0c326085f0b1c8676cfbe1336095670ad459d34ccc2f998ff3f0f086",
+        "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json": "sha256:6f980d5872afa91590d2b18f34ec8a390b8ccc74c54c59eaee204043ed365f0f",
+        "materials/requirements-to-evidence/page-prompts/TD-P02/adaptation-card.md": "sha256:35f386d6b6d1acd33f1122c20a851074cf33db1ac0c175b9bd0eb4ada2a70efa",
+        "materials/requirements-to-evidence/page-prompts/TD-P02/expected-output.json": "sha256:f30aea6477c41bf493e23e554d3145991671a21d7ac33d0d03aa195cf83718a8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-F02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-F02.json": "sha256:61fe80eda8095bf25e3ed839d7d1883bb5f2b73b2b2e04cd9960bcdcd948c522",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-F02/fault.json": "sha256:1b043b27c501d59cf084791ebddf1bafa5f42e15089dd2eb0cb36c0d18b29dfd",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-F03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-F03.json": "sha256:9ad55daa09d75b141c482ad745bcaec4527ffa984f11242175680ea1bbec1865",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-F03/fault.json": "sha256:fda999415a652f34e1ea033d60065c36a7868d402c6bc0c7115a5fd3993665d2",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-F04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-F04.json": "sha256:6bc63037ffb14d2006b01f9a32a890c4bdfaa54f76824710c2728112e69bc09f",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-F04/fault.json": "sha256:6a5db2f205f3f0fe3f97c14b4aafe5fdb2f06b63cc7a6b0fcdafaaf3d6d0615d",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T01.json": "sha256:cc1df492011d1ff8ab77f05b580ffffe6ddf726674ac528599bfb755aef738c4",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T01/fault.json": "sha256:774d463a95890a592e34a5ebc89583ca91fef7d23fe44d497ba110f2a000519a",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T02.json": "sha256:7c61194a1934e36eaaf218ed5f7ce2a96c6a95adbf327937c8708b49488e79d3",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T02/fault.json": "sha256:37fcdf701156a1a28b1cc8006e32ffed143b1f98c35c62f012de30bb99e4f5de",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T03.json": "sha256:674ffd7a4f8c1f9234b41f81844dcbeef89fd8dbb3a61347075a2a8becaf1685",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T03/fault.json": "sha256:3535df3b19e9c1e81fea9d5be42d19fcefdeae03fe9be91206cb95fb99f139c4",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T04.json": "sha256:5b20668b08363041f1e98a9fbe74f0f6a518c5a269925b2ff916a73ef3a2b3dc",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T04/fault.json": "sha256:c89f8dc3ed48b0aa9620164009789cfa1e602a16fb6654f353ef751e6c42611d",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-assisted-testing.zip": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a",
+        "materials/ai-assisted-testing/ai_assisted_lab.py": "sha256:f3692463b13baac9d260db6909b88a9eb24a84f49fc6bacd40159123e1cc009f",
+        "materials/ai-assisted-testing/page-manifests/TD-T05.json": "sha256:bd86f1b1b2d1c26c2db621c14d1cc2da3810cab396ba708fde040d0569611bd2",
+        "materials/ai-assisted-testing/page-prompts/TD-T05/manifest.json": "sha256:6d09d84e31259775a1ecfc27d87c67fdb0f237349e972c69fa6fdd1aff3d89f1",
+        "materials/ai-assisted-testing/reports/td-t05-fault.json": "sha256:879ae728bc6c1dd0f23e02a5582d96661a94c3bbb676afa8dd163b8e3edbd160",
+        "materials/ai-assisted-testing/reports/td-t05-repair.json": "sha256:aaa63adc1e8192176fa4aaa863d98cfd658331dcf89de28aa6dd6048c7df7c04"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-assisted-testing.zip": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a",
+        "materials/ai-assisted-testing/ai_assisted_lab.py": "sha256:f3692463b13baac9d260db6909b88a9eb24a84f49fc6bacd40159123e1cc009f",
+        "materials/ai-assisted-testing/page-manifests/TD-T06.json": "sha256:579ffe5b69301bd001986089c92ee18631aab54734883c811f60df9a90c879da",
+        "materials/ai-assisted-testing/page-prompts/TD-T06/manifest.json": "sha256:f2166bbc4670e176e8f450a4be05a06d31aaa1b16b6fa7463da26d44bb3c290d",
+        "materials/ai-assisted-testing/reports/td-t06-fault.json": "sha256:31854d22d98e14af5887fb8d3f5b77d5e5aa0423ff9650b9d73b597ee54b4e10",
+        "materials/ai-assisted-testing/reports/td-t06-repair.json": "sha256:b52b1456b31de5ac7f40569387b95289827ab63df9e0adcc20997ee1cdcaf927"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T07",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-assisted-testing.zip": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a",
+        "materials/ai-assisted-testing/ai_assisted_lab.py": "sha256:f3692463b13baac9d260db6909b88a9eb24a84f49fc6bacd40159123e1cc009f",
+        "materials/ai-assisted-testing/page-manifests/TD-T07.json": "sha256:10d79a857f184bfc93c2a8b78f9572c7383cf73cd1d5ea04bcf7c7f973637d52",
+        "materials/ai-assisted-testing/page-prompts/TD-T07/manifest.json": "sha256:21e73d7109a23a256535644d49c87d8574e86ca7507f60b2e0f25e77a3a3b53d",
+        "materials/ai-assisted-testing/reports/td-t07-fault.json": "sha256:7c3e02cd8412ce7346317826dd23003b266742257386a51ca927209e6034a6f4",
+        "materials/ai-assisted-testing/reports/td-t07-repair.json": "sha256:9911e7d1f71dd377b1b31604da274e5b0f3e00df25636cdd30da81d3fe3cba2c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T08",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-assisted-testing.zip": "sha256:0a80626b144755270fbbc9f90324c11c4d612424bdcc6c40707c409bbfc7ef1a",
+        "materials/ai-assisted-testing/ai_assisted_lab.py": "sha256:f3692463b13baac9d260db6909b88a9eb24a84f49fc6bacd40159123e1cc009f",
+        "materials/ai-assisted-testing/page-manifests/TD-T08.json": "sha256:effacdc0ad7b2e5d48594eab2bfd17bae140696381157303e79e68050028aa7f",
+        "materials/ai-assisted-testing/page-prompts/TD-T08/manifest.json": "sha256:58a21ba68cc2ed7ff383aff1ed990a86d9236f1941e2b91d733e0482db7aca7f",
+        "materials/ai-assisted-testing/reports/td-t08-fault.json": "sha256:c54bc47f5c755daa81ccdfd3df25c99936a639de6090df35294baf106f229a13",
+        "materials/ai-assisted-testing/reports/td-t08-repair.json": "sha256:85da055fc6866a4f1977f97f2ba61ea62d7b4412817affaa222d7f03d7319b9f"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-A01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-A01-input.json": "sha256:9f57f189f33824791b32e8a9fe76bee809ab9f1eb7126153d3818753e8ef19ce",
+        "materials/ai-serving-career/manifests/TD-A01.json": "sha256:e9cf2dfa58a214880048a686daa30a6f15152f65dcd900675ac15b6d0a2ef89e",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-A02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-A02-input.json": "sha256:ef5dccc3d3a606d5aa7f740b3691a992ecb5dc8a62d1e65b261ea8a5502e2fa7",
+        "materials/ai-serving-career/manifests/TD-A02.json": "sha256:f3720a1719cc4f42859dd6de3caba85e57b7a4e78fe16aeca4215c9ef98cf687",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-A03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-A03-input.json": "sha256:07e75c27ff4697a760a1e05ab74b9b2fe057c8ad959a3c72f5c02dbe49cec575",
+        "materials/ai-serving-career/manifests/TD-A03.json": "sha256:55ce74df343743a4043cb6285c5224ab29b5590edcdac282829e448792210f1b",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-A04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-A04-input.json": "sha256:e6a0ec0683d353b4978fea26a4d9f569d25c0c1cb794eb47415f58809727822d",
+        "materials/ai-serving-career/manifests/TD-A04.json": "sha256:0d9cc407690151448a3adfe54f0db2aae19416240e79137b6782fbaa1149eb1e",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-A05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-A05-input.json": "sha256:c37fa9e406954c5310aeded7c0e82d65b70af431317790e91713e05be2374c71",
+        "materials/ai-serving-career/manifests/TD-A05.json": "sha256:12d84248c976a5f147367a7adadb1fe787455ce7a98a7f30de438b1d1be5e8b0",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-A06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-A06-input.json": "sha256:cce3ffd0d0834b16f1d3617d2dfd70ad1af8cf9a03b8fba677679f7c8c041f24",
+        "materials/ai-serving-career/manifests/TD-A06.json": "sha256:6d2e347cd26600d1b7da091029d97250ce90623296f3969302a93a0d6733492e",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T09",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T09.json": "sha256:08b346bc2e701ef5bd1b94dab89fb71edd088b61a127f51e4d37f84d2bd419a0",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T09/fault.json": "sha256:9e38944272b17c540604e359da52016b1645ca187497b22c88afe30f82b210a5",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T10",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T10.json": "sha256:8574efa86995d85ec3eba692134e03ed543fbb563a39f3c75133d8921c7bc9bd",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T10/fault.json": "sha256:44f96489ce63d6af96e1ec75ac9282792f55f16fe7ce869db784d38ac2946cb6",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T11",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T11.json": "sha256:9a935cf844f220a622d66d6ddd041a715dc738abab2e3e3e641ea920306fc5d0",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T11/fault.json": "sha256:a889c7cacbf84e03abb5e8b40c733c150414c704276dd615e08f2e7f4f92860e",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T12",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-foundations-eval/manifests/TD-T12.json": "sha256:4debe33cc5863e04519665d484353e20dec178e00013caede17d96299b90f5e0",
+        "materials/ai-foundations-eval/scripts/run_lab.py": "sha256:533e7584066713501765cee3c2257a8aaa7cbdc9ff4c64151c6b48459bfbafbb",
+        "materials/ai-foundations-eval/reports/TD-T12/fault.json": "sha256:c04071097fed02232f153fefe52892dbc87dc3a25db13363574575da543bffa3",
+        "materials/ai-foundations-eval/prompt-package/manifest.json": "sha256:2fcfc28d14789b5085d19e450ce94826ed5e937b0c4cb968cd189e865320e57c",
+        "materials/ai-foundations-eval.zip": "sha256:63970389496b7e907c1f60a12599fad5c4372591cf0040977a2f03356617be36"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X501",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X501.json": "sha256:f7a51fcf1fe8cebc06edbc66278be324748a8e1e10a97bafaf0c9b3c8cb34dca",
+        "materials/advanced-quality/page-prompts/TD-X501/manifest.json": "sha256:b0822eb4657a56d9d5fcabd206cc33c030d11759c9ede272a4c36211a705ad8a",
+        "materials/advanced-quality/reports/td-x501-fault.json": "sha256:491b8042bbb121db5699c0075882b60e1a52da077aa18ef512fd6f6f60b72275",
+        "materials/advanced-quality/reports/td-x501-repair.json": "sha256:92b7ce7fb9e4c5f50fe00256ad1c1b5dde5b84fd360c76283fea1385bf893225"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X502",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X502.json": "sha256:6d744748fff0d4bfc755a21aabd423740d5257a4d74e5a0e7bd169025236ecad",
+        "materials/advanced-quality/page-prompts/TD-X502/manifest.json": "sha256:a01c4e1bfc36d7e5e5f2db279fc243f520c945525029684157557554852a05d8",
+        "materials/advanced-quality/reports/td-x502-fault.json": "sha256:9d3d527b15f21d5571fcbb907d6234e8cb38f74305d6fd87e615c401404bbc8d",
+        "materials/advanced-quality/reports/td-x502-repair.json": "sha256:172b626cf1d518af7c1dba71cfac6a9e22b53cdf722990aa4c253c821df61295"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T13",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T13.json": "sha256:c50413f5ca84a7950e59af88326ef45a139574e0bc2f3c26a0d34ee94fe08182",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T13/manifest.json": "sha256:9c7b32db10b1685cacc3965adfd1d4281f2d472e2873badfe6107c771a825b1c",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T13/mutation.json": "sha256:b0d72381e25be2b3dad9e5fc08af0a2f58d617f124f6dae5a091e6615625e3a7",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T14",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T14.json": "sha256:c4dbbb331c3e06f96e205b66d142be8f8a60fe4ce2837964d64c30cf2ceba0df",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T14/manifest.json": "sha256:591663be83a27f186f9ddd92ead6fa94cf8230aa3d2b5df65cb605b2c3df1640",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T14/mutation.json": "sha256:86515dd5f602f895cdcfb13b7e0f950aba22a851199e6d1c3987108246276d32",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T15",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T15.json": "sha256:77bdf7b1ae82b1d280e54bdba1135ba82a849aaa1f309f103f50a2afe639ef56",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T15/manifest.json": "sha256:47a0a5dd932f3a37454c9457fdf11b95e4f9518f601a33d2a8bb6a13812a4864",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T15/mutation.json": "sha256:0820e8e0fe5f10f48399cd1248ec389681eda738d6c01a81b5a58b939d69c1a7",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T16",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T16.json": "sha256:9df76ed0fd28e870eb6dafacc6e2600eceac57845b4b76a56c4e5940313249ca",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T16/manifest.json": "sha256:996a73b26e7fcc540ee8ec0524c57c2a8edad2912f5ba122ecb6136cd1540a92",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T16/mutation.json": "sha256:5c591362fa6723568519f25821ffa2aca6ce4c1662420082d912a40d8e02c0ae",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T17",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T17.json": "sha256:91d4d41eff5cf48658855a94d797bbbc7cec631fd78d1d824470e2bdaefc7de0",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T17/manifest.json": "sha256:05e34bacf5b02d95186b95de8be25a0fbbc897d90d87d87100fbf6d24a68e46b",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T17/mutation.json": "sha256:6a9483ac1eebcfeed3b3703fe282fc72ae642a88e789ebc6e73a9ff0b230f5aa",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T18",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T18.json": "sha256:214a5b69dd97e08a162de1beadeae072332810bf1b8bc5a60673ec73d1e23e78",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T18/manifest.json": "sha256:585afed71e32ac639d637d396dd459591bac5cc890e0ede5c40e5f4ac12458c9",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T18/mutation.json": "sha256:7141ec644ec9226044eacb5e697e1715e55f2ea4e94372eb1d282b6544f90249",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T19",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-T19.json": "sha256:d9f292c669a0978a15d9567321636d29e501b8458644d7e823b45f89de616b49",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T19/manifest.json": "sha256:ae003613f55290f8c0c9cfacdfed399f59cc10832e14c11ddb617122c14ffeee",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-T19/mutation.json": "sha256:1155f4ed3bc9e54d2929f244ad1ee474d7c83782a7f376060d8aded7e807db6a",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-W01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-W01.json": "sha256:c1747f583848743332e0025929831f16b91ce62982ab1d0077ee47e16b32b038",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-W01/manifest.json": "sha256:fa937cea0d6ce2ca8931708316fdcdc89992c929ab4bc2c3cff26734076c905d",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-W01/mutation.json": "sha256:89e0f9e401185f5f04786d5959585d9d26656f766f7c4c830caa0eb12a5d64a0",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-W02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-W02.json": "sha256:76d85d784bd4fb01d6b9f2098d5cd1a4912d94f49353208ccc5613c00fa2ddbe",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-W02/manifest.json": "sha256:d3844d3d850950f3e02c2137f4a3a9c9828e49e00efb4bde2c6af42aaa2e281c",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-W02/mutation.json": "sha256:d3bfae5658f28bcb8957e134fb47c13df3dd6be7125aeabaf0f78fe9c17e7ee1",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-W03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/llm-agent-quality/learner-materials/scripts/agent_quality_lab.py": "sha256:9374cf1a7c0cc1699595032f45a8138f9b1f43371be9f767dee894a67f2b0317",
+        "materials/llm-agent-quality/learner-materials/manifests/TD-W03.json": "sha256:d45c8d04c101ce2e977fd6d5cc15840abe965391ebe8790c170adf1faba338d4",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-W03/manifest.json": "sha256:41a37c7cac8900fbd01ca5da431351e013a8c4ff0dc6277d7ab4c626d7f6d70b",
+        "materials/llm-agent-quality/learner-materials/prompts/TD-W03/mutation.json": "sha256:8b3b4bf97af3bd39a2171e78b770b04ac7725b08c6219699be74e6d27f9c9cbd",
+        "materials/llm-agent-quality/learner-materials/owners.json": "sha256:4ce9bbdcccfa1d1e1febbb639a630b0e9cc0d2d877a0fd76a664c74b9bb2378e",
+        "materials/llm-agent-quality.zip": "sha256:b278115596706d1c32e5b0d526868e6538f704de01658c70ce21dd83fce64cfe"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X603",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X603.json": "sha256:357e5758a23549ae0084d26c132e78b1333a471e5e6c6343a9a801e2563e4230",
+        "materials/advanced-quality/page-prompts/TD-X603/manifest.json": "sha256:e527264b49e509c89ed7c951dc213e12c9c3bd23bcb4a7a07cc9b73605ed6aee",
+        "materials/advanced-quality/reports/td-x603-fault.json": "sha256:5d40c6189ba6e25c0ac65e06411d2b220a1ce54ea1b6657d6d946724b59a8be2",
+        "materials/advanced-quality/reports/td-x603-repair.json": "sha256:a547ca0b8d2bef192f9a703091b701f92ba107480962bd4be6bc761cd7ebe3c9"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X604",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X604.json": "sha256:75bb915d3be6709b04c6961768a64f0aae21788dd01010a8fd9ee00c5781bca1",
+        "materials/advanced-quality/page-prompts/TD-X604/manifest.json": "sha256:f014f058eff01add6e48a5261e16d28e1c0b4025f0c5cc3b7f70fe1ea4c06229",
+        "materials/advanced-quality/reports/td-x604-fault.json": "sha256:3b644616f5deb38a150536cbea92f8eebd68388853719d6c1ae72508cbe52198",
+        "materials/advanced-quality/reports/td-x604-repair.json": "sha256:63745d652279d04be1c7176c47440a325d67fa52a3e20a7a71fc9c8dddcaa7a8"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X602",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X602.json": "sha256:a8cd29b0295787d8b47534d2e7a40fecd53fe0eeaa3408d0b609c3611bfbe2ee",
+        "materials/advanced-quality/page-prompts/TD-X602/manifest.json": "sha256:eb3bb2955389201bdf8c2c1e2e01f711daa5d006e61a5386371d54ad863a7782",
+        "materials/advanced-quality/reports/td-x602-fault.json": "sha256:4044e99eb290d20d7ffbc685ec944fbd74385682731793f5ac81a82b9f09ac7d",
+        "materials/advanced-quality/reports/td-x602-repair.json": "sha256:0409f68fb132039b35578ee3bf4d136358e86ad8a46c780b62e0fb5fb6a13061"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X601",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X601.json": "sha256:99d4182bdd201633acd1bf91932b2db1378e5fa39dae085b1fe578cf97003325",
+        "materials/advanced-quality/page-prompts/TD-X601/manifest.json": "sha256:ee8dbf9d88e2fad03745081cf62feaa023ea2bd0adfc4e3ee1ff44ef623f954b",
+        "materials/advanced-quality/reports/td-x601-fault.json": "sha256:ce973e95e4935a4b22b9c13d9e21425660f941d30789b1a96c725960acbc8ae0",
+        "materials/advanced-quality/reports/td-x601-repair.json": "sha256:549ae75538e323102d44b13c13d1d1f6ad86b6fd309e9629ea08449b562fa0eb"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T20",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-T20.json": "sha256:48da2eda5cb8845c638fe7196d6fff5ad2840facc2095f8cd5cd4cf164e1c900",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-T20/fault.json": "sha256:ceb2f4479682ffb68026b1777b9540b1ccbf442f8468e4b054f57394637616d3",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T21",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-T21.json": "sha256:c9867212ed28f0b8e4c606cacec5ee60f639d5552dce9e597d469d20ceca461f",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-T21/fault.json": "sha256:2e153c25741cb53cc2fc4baea869f38f4cae5bafe1be41bbf7d81d73365fe719",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T22",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-T22.json": "sha256:a162cb9be59c98273a3534b718b0c6c4199ce357bb0c785b0a1c1e059136c151",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-T22/fault.json": "sha256:ebe79b1007577cc4299aba4aad8e8e4a45de8f4f97a1e47192506491d35e5cef",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T23",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-T23.json": "sha256:26f7eb65d5cfddbb73ca33696aa1ccad7fa7c2b1c3c02310c2a81ac05f3efdb6",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-T23/fault.json": "sha256:a0f89cf579d25ca60c4d842fd998b4e6d8c140e944538bf0a561aaf34b78c5a8",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T24",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-T24.json": "sha256:8b07b69e36ebd792698b640e7aa54afae40f7743920f638005dd4e7c8bd9ae7a",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-T24/fault.json": "sha256:d8a97f831093bd1b932b0e410f9114df547d03fcd55a802a2bbe60f739006319",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-X805",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/advanced-quality.zip": "sha256:af5ab89b3f38980e225d1874d6789a9fa591c42c3a305bcca5ec552d66a6d31d",
+        "materials/advanced-quality/advanced_quality_lab.py": "sha256:f6ddd55f96d8a9f9cf21be3446c834136f96ca3ede778edc1320fb0070a5c295",
+        "materials/advanced-quality/page-manifests/TD-X805.json": "sha256:999020e4f74997912c180d69df3d4939f094bd7ab3844bdf09fef6ce02ec1f4c",
+        "materials/advanced-quality/page-prompts/TD-X805/manifest.json": "sha256:64ef6d5b5e633b1cd42ca3d9007a66518975caa65d6b6dc6e497e9e95b16da59",
+        "materials/advanced-quality/reports/td-x805-fault.json": "sha256:14c8cd306cf0602fe76e8b795131c036e99b7fa07fdbe97c250b992ab60b72cf",
+        "materials/advanced-quality/reports/td-x805-repair.json": "sha256:a5757dc16b2fcf3c8eb22961b6a77a59afabae25d0d2d3086665c6024303f32f"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-B01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-B01.json": "sha256:82af9d01edda248f9c2358aa0ddc30eba6c49ddab7838848835eb01533d65c64",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-B01/fault.json": "sha256:f85a96e2ef35ef43a874f3ea38612ce4c3425a395580317060d57fb31571cf6f",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-B02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-B02.json": "sha256:0142f04f5a5b1b3159a7f1000ae07f7b8a40412b02b23dedaafba4f798f1c7ca",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-B02/fault.json": "sha256:3db547dcd2314de861d3a5eaf337d0661b2a79f1d1d1c32374df4c823d330d40",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-B03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-B03.json": "sha256:104654231e2e6c549b056a6ecae448999a27b4895a89e10912342a3ce0b001f4",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-B03/fault.json": "sha256:243ef410a87dbb3eee6f85b6ebc2bfa2ee5ed0a210565010e11a6fb6d4912842",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-B04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-B04.json": "sha256:9c60a246be0b9db28850e209e23475f5e08639ab86e2637f8c139b8b49176b3f",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-B04/fault.json": "sha256:8b4fbff629176d07881305f0d69b796ef33b1f5e75c1d0912569c5033582b7a7",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-B05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-B05.json": "sha256:33763499c06b1c177d9bf59600d074258fdcb1d4d70797b46677fcaaa684a9ec",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-B05/fault.json": "sha256:84942cb2f9ce5b229cc7e69e514885ac1f7051752ddbadcfa3a789600db97b92",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-B06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-B06.json": "sha256:45b8c21da1f3408428b098519b30a9f8e2c4d9b5ff750a6f9ac550143b7bbbcb",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-B06/fault.json": "sha256:adaad5544802708b1868b30065a105b55c6230ed8e5bae3a004b3dc3c0c17503",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-QP01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/quality-platform-integrations/learner-materials/scripts/basis_gate_and_candidate_review.py": "sha256:28611e6b579b88ad3255b58da071ff0fce1eae3020ef6796b38975a169416a9d",
+        "materials/quality-platform-integrations/learner-materials/configs/jira-basis-gate.yaml": "sha256:c15b83cd6025f1a4ef2d201d8bbecda9bcbcc98493ec2da28caa0812c32c2bb0",
+        "materials/quality-platform-integrations/learner-materials/fixtures/jira-requirement-event.json": "sha256:0cffe9a8e9a08376d540e257a48b46ce92ee480c1422effb6e06a23d806af16c",
+        "materials/quality-platform-integrations/learner-materials/guides/td-qp01-jira-review-sop.md": "sha256:db1e136faa9777cd8d59b56970ab14c6db19ee039dbf12d7ddf25503fc57a18f",
+        "materials/quality-platform-integrations.zip": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff",
+        "materials/quality-platform-integrations/learner-materials/README.md": "sha256:d8b1ca4baa0f90e71716dbb6c90651f992ba3fcdad5892930aa00360af4fe106",
+        "materials/quality-platform-integrations/learner-materials/manifests/shared-bundle-owners.json": "sha256:355fc034f82a0f16464ef225c3774b7c6b677a9b55546204cff89c47ed999793"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-QP02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/quality-platform-integrations/learner-materials/scripts/gitlab_sha_junit_gate.py": "sha256:acb9fe59848ca6d452db90f98b0545487dc94402e0389134dc7932564cc41ac7",
+        "materials/quality-platform-integrations/learner-materials/configs/gitlab-junit-gate.yaml": "sha256:1270910f8018a05d70aee17cdd3f5ccbfe74c0a785a74a347583d37a28982d3e",
+        "materials/quality-platform-integrations/learner-materials/fixtures/mr-pipeline-junit.json": "sha256:4ec1ced3ccf379c25c8db89442405caf597cf7836a538d9bc5edeaef55ea00bd",
+        "materials/quality-platform-integrations/learner-materials/guides/td-qp02-sha-junit-sop.md": "sha256:288d6dac67a80048221de311ffecfc9bb0969aaebab44c0d751abd0ff1022aa1",
+        "materials/quality-platform-integrations.zip": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff",
+        "materials/quality-platform-integrations/learner-materials/README.md": "sha256:d8b1ca4baa0f90e71716dbb6c90651f992ba3fcdad5892930aa00360af4fe106",
+        "materials/quality-platform-integrations/learner-materials/manifests/shared-bundle-owners.json": "sha256:355fc034f82a0f16464ef225c3774b7c6b677a9b55546204cff89c47ed999793"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-QP03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/quality-platform-integrations/learner-materials/scripts/ephemeral_namespace_cleanup.py": "sha256:665ef52a8574e82bf782c989336181cb427107b28a0cba70a0932846ed1b1b78",
+        "materials/quality-platform-integrations/learner-materials/configs/ephemeral-namespace-baseline.yaml": "sha256:3136c3183ee3d6e1b3fa60f35fc6b06185a48ae8dadb65d23de62e9500bd62a8",
+        "materials/quality-platform-integrations/learner-materials/fixtures/k8s-isolation-audit.json": "sha256:7c99bc2ceaa4bb80bf33b61c9d13c43c41b402f8646123f5e33c1ea05dcb8dd5",
+        "materials/quality-platform-integrations/learner-materials/guides/td-qp03-k8s-ephemeral-sop.md": "sha256:763b3c2a05e635db0e38e617572985c2eea10a95f3fc1ca872864b92f33ce1a7",
+        "materials/quality-platform-integrations.zip": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff",
+        "materials/quality-platform-integrations/learner-materials/README.md": "sha256:d8b1ca4baa0f90e71716dbb6c90651f992ba3fcdad5892930aa00360af4fe106",
+        "materials/quality-platform-integrations/learner-materials/manifests/shared-bundle-owners.json": "sha256:355fc034f82a0f16464ef225c3774b7c6b677a9b55546204cff89c47ed999793"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-QP04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/quality-platform-integrations/learner-materials/scripts/event_replay_and_reconcile.py": "sha256:340549ffd64870f0e231b129ebcba7c11d079266bba9308f4ce772a1f847ad1b",
+        "materials/quality-platform-integrations/learner-materials/configs/event-gateway-policy.yaml": "sha256:99f5c28a4a63178ce49b12625573a970eea74d9f8c2329e399a60b0e1d3924f7",
+        "materials/quality-platform-integrations/learner-materials/fixtures/quality-event-envelope.json": "sha256:685a0ad9563816a0ef3747d628641598ac51953a1116e4f096d9dda5a50469f2",
+        "materials/quality-platform-integrations/learner-materials/guides/td-qp04-event-audit-sop.md": "sha256:150f22f5504c2c11296532416c808a235f044d236731fffe72b0d8cdb17488de",
+        "materials/quality-platform-integrations.zip": "sha256:17a7ffd370dcac38627df33f235ede42d034a52e3f5acb23c3738213cbcce0ff",
+        "materials/quality-platform-integrations/learner-materials/README.md": "sha256:d8b1ca4baa0f90e71716dbb6c90651f992ba3fcdad5892930aa00360af4fe106",
+        "materials/quality-platform-integrations/learner-materials/manifests/shared-bundle-owners.json": "sha256:355fc034f82a0f16464ef225c3774b7c6b677a9b55546204cff89c47ed999793"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T25",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-quality-benchmark/manifests/TD-T25.json": "sha256:65249478692afd0b03558713fb14ecbdcb6c3ce79c0bd5f243f01235f2f32c5d",
+        "materials/ai-quality-benchmark/scripts/run_lab.py": "sha256:b2d6607e4b4ce54d381ff21448b40ce8c64fc08d862133ac4760d7bbd2271e5d",
+        "materials/ai-quality-benchmark/reports/TD-T25/fault.json": "sha256:1e031942e92f81959a3efe2f5329cb9f74f16e1a00b400a1175f16e9118ebfa9",
+        "materials/ai-quality-benchmark/prompt-package/manifest.json": "sha256:80aabc956e7ce7dbd765a3d347f4a7e939445813fe374745c5d89cb3ad35d15b",
+        "materials/ai-quality-benchmark/ARTIFACT-CLOSURE.json": "sha256:11d932d5560cae8b6dbd21284c9a333d11a535a04bf1587e7ef04cb549e1d1f5",
+        "materials/ai-quality-benchmark.zip": "sha256:5fa1552ea32a8c13d5717b6e38dcdef10621e950afec9a13bd9d151e84d0d5c5"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-C01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/ai-serving-career/fixtures/TD-C01-input.json": "sha256:658d9ed8047cb5716f92b727b6f997e92ecffc855a51f8762e74045b993be932",
+        "materials/ai-serving-career/manifests/TD-C01.json": "sha256:5b2fe67f1b3e74554b9aa6a38531d9bf0c37c2c24af022370cf8be8a6f15bd27",
+        "materials/ai-serving-career.zip": "sha256:b04b64889b7ef64e62010700227affac4e2186181f231af8d74bff794d9f4389",
+        "materials/ai-serving-career/scripts/serving_lab.py": "sha256:3588451f3a3164ea76ef1f5a0d3ee03169de27202e0b8c7cc01e7e1b57587253",
+        "materials/ai-serving-career/owners.json": "sha256:be08072208b8c187ca21dd99bd36a6386009273ff6ed8beffc65eee1750320d2",
+        "materials/ai-serving-career/closure-manifest.json": "sha256:915cd67c24c595464718af0053668e1015cea263c9c4699002de8a340073b45e"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-C02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-responsibility-ladder.svg": "sha256:25dc2a6e44055b8cdcab1c5724ba330ffb5c6a06b2a85ea9ebcb9515d3099888",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/career-evolution/artifacts/TD-C02-responsibility-map.json": "sha256:4d10b23f88a8ce54552968f87aa90e77280987c09f02c435d8e1c2711ae689dc",
+        "materials/career-evolution/artifacts/templates/TD-C02-responsibility-map.blank.json": "sha256:ac055e16bc1df2933976238983faf404c2dad14f72ec55a719054e2847f5402b",
+        "materials/career-evolution/scripts/career_evolution_lab.py": "sha256:af1bda9d03260eccb8532685cf2ac1e0e8ed1a634b323d87b4afe92de78fde39",
+        "materials/career-evolution/fixtures/TD-C02-input.json": "sha256:9fa9f79dda0fc515bd6b20831387273103e30b2cd669e3a71488fb9630f38f7a",
+        "materials/career-evolution/manifests/TD-C02.json": "sha256:79aece050700873132b120add12cd2302ee827e2538d3809f7ac2ce64989d38e",
+        "materials/career-evolution.zip": "sha256:644f86de01d24639fc654e83aa4ce6c14bbca98b4788e5ef456b24b1515a4ae2",
+        "materials/career-evolution/artifacts/README.md": "sha256:6b13b07d5df08d783554d1fe2168c58b4050124b66cae1b6ea4604c5b007f30c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-C03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-evidence-radar.svg": "sha256:421d73338f405f99e3f98c4c8234ae56199765fda80da8c97517c480a6952d01",
+        "materials/career-evolution/visuals/career-evidence-gantt.svg": "sha256:8444ca5ac47f8f5397598d2ef9275146a3004c4a5741a1d2d226463c27e282a4",
+        "materials/career-evolution/visuals/career-priority-quadrant.svg": "sha256:7b7ceec17a503c2b6a0f34601dbf7717ec954f047437f25f6a47497b990f2c0a",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/career-evolution/artifacts/TD-C03-capability-self-assessment.json": "sha256:3d95fb0d35fde1065d5118cce1d4abe0a256c2bd853eec0dfde05c4aedf385af",
+        "materials/career-evolution/artifacts/templates/TD-C03-capability-self-assessment.blank.json": "sha256:79fab1eecd71cf9522ebdf298cc774ac2418c58adb2f2aae4a51e07de8f851ea",
+        "materials/career-evolution/artifacts/TD-C03-90-day-evidence-plan.md": "sha256:36b4357e0cafa3bdf3b4f91ac80897d46e4a4ca370387612e587755b4970149f",
+        "materials/career-evolution/scripts/career_evolution_lab.py": "sha256:af1bda9d03260eccb8532685cf2ac1e0e8ed1a634b323d87b4afe92de78fde39",
+        "materials/career-evolution/fixtures/TD-C03-input.json": "sha256:20a08e0ac2e88978e056ada1ca2f28798a0ca1c0e13c92cc17a377d9e8dd0193",
+        "materials/career-evolution/manifests/TD-C03.json": "sha256:b2f947c9b5913ca86f9568d5aa30d05e1a196fbb1824c10b4889dcceba3389cc",
+        "materials/career-evolution.zip": "sha256:644f86de01d24639fc654e83aa4ce6c14bbca98b4788e5ef456b24b1515a4ae2",
+        "materials/career-evolution/artifacts/README.md": "sha256:6b13b07d5df08d783554d1fe2168c58b4050124b66cae1b6ea4604c5b007f30c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-C04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-capability-allocation.svg": "sha256:5c2b77ef6c67b102f6528fcdaa310104b735f0de05f77a1b635e74fd40aa9401",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/career-evolution/scripts/career_evolution_lab.py": "sha256:af1bda9d03260eccb8532685cf2ac1e0e8ed1a634b323d87b4afe92de78fde39",
+        "materials/career-evolution/fixtures/TD-C04-input.json": "sha256:d8ca450532785dd7557174aeee3452c3d8ece4decf4f032b034c5512ad11bc5f",
+        "materials/career-evolution/manifests/TD-C04.json": "sha256:65074e41e2e6f0351d6372b46a010c5c5f4e0226af5b30e91f071a42334457d0",
+        "materials/career-evolution.zip": "sha256:644f86de01d24639fc654e83aa4ce6c14bbca98b4788e5ef456b24b1515a4ae2",
+        "materials/career-evolution/artifacts/README.md": "sha256:6b13b07d5df08d783554d1fe2168c58b4050124b66cae1b6ea4604c5b007f30c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-F05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-capability-mindmap.svg": "sha256:04ab3c0fd50c4dd6b3163d21acff9477527a694ce6c8b734ebd0fda2f5d5f817",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/career-evolution/scripts/career_evolution_lab.py": "sha256:af1bda9d03260eccb8532685cf2ac1e0e8ed1a634b323d87b4afe92de78fde39",
+        "materials/career-evolution/fixtures/TD-F05-input.json": "sha256:a7d2ab4982538b391fa775483a5ec9682c25c688b136d89f39b1099e059a3611",
+        "materials/career-evolution/manifests/TD-F05.json": "sha256:3c93a112d734771b9528d476724f0d280c618e4a5c27dbf18a74d113cea6b1b7",
+        "materials/career-evolution.zip": "sha256:644f86de01d24639fc654e83aa4ce6c14bbca98b4788e5ef456b24b1515a4ae2",
+        "materials/career-evolution/artifacts/README.md": "sha256:6b13b07d5df08d783554d1fe2168c58b4050124b66cae1b6ea4604c5b007f30c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-T26",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-evidence-lifecycle.svg": "sha256:79698a6622d55fa79de0bd343fb0ae76d0036c2a0b1206eaf5c8c1db2963cc85",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/career-evolution/scripts/career_evolution_lab.py": "sha256:af1bda9d03260eccb8532685cf2ac1e0e8ed1a634b323d87b4afe92de78fde39",
+        "materials/career-evolution/fixtures/TD-T26-input.json": "sha256:ef5f7659b57b939e5a6971b87e3400846799d2f9b1ae7a79e696079b4becbd2d",
+        "materials/career-evolution/manifests/TD-T26.json": "sha256:d9166b590013f741494fa77d3f356ebfb09df6f137f9c6c100ccbb6efe258dc6",
+        "materials/career-evolution.zip": "sha256:644f86de01d24639fc654e83aa4ce6c14bbca98b4788e5ef456b24b1515a4ae2",
+        "materials/career-evolution/artifacts/README.md": "sha256:6b13b07d5df08d783554d1fe2168c58b4050124b66cae1b6ea4604c5b007f30c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-R01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/career-evolution/visuals/career-background-paths.svg": "sha256:c6ce91b06ef62ccb9facae3499e32b348b10fd0dbded7d5d853eb49e96ba408f",
+        "materials/career-evolution/source-visual-manifest.json": "sha256:2b6edb6a887f372d95617b0e6a348eae51f08c602319e7f6850f6517825d50e0",
+        "materials/career-evolution/artifacts/TD-R01-resource-index.json": "sha256:b7bfdcc13a95564721c886aa88e071a9875a1ab6bd2182141b1d2d56e9a8bd2e",
+        "materials/career-evolution/artifacts/templates/TD-R01-resource-index.blank.json": "sha256:42233c22c778afdc90c5165950a820d0dc9db44d71745e4a92716d6aefc47b40",
+        "materials/career-evolution/scripts/career_evolution_lab.py": "sha256:af1bda9d03260eccb8532685cf2ac1e0e8ed1a634b323d87b4afe92de78fde39",
+        "materials/career-evolution/fixtures/TD-R01-input.json": "sha256:0289c498b5e30fa07b7bbb84b1dedf159004686d49e19686619c84d178b5be8d",
+        "materials/career-evolution/manifests/TD-R01.json": "sha256:9e6ad91dfeb29300b669d4b3254f013ff08b40022b91fb8a842934cc5c29631e",
+        "materials/career-evolution.zip": "sha256:644f86de01d24639fc654e83aa4ce6c14bbca98b4788e5ef456b24b1515a4ae2",
+        "materials/career-evolution/artifacts/README.md": "sha256:6b13b07d5df08d783554d1fe2168c58b4050124b66cae1b6ea4604c5b007f30c"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP01.md": "sha256:d8a1715514ff87a1d9b51423cae3d3c223d98d2ab94eabe7140d7594af9a97f9",
+        "materials/agent-load-stability/manifests/TD-AP01-lab.json": "sha256:fd86dca3da8a24499ce9c8bc0ef877187b0f68baba7f25080cefc88e0a93b66f",
+        "materials/agent-load-stability/profiles/TD-AP01.json": "sha256:baea329071261364fe4292de417949f94354843608cfb9785662c2e6b2081751",
+        "materials/agent-load-stability/reports/TD-AP01/cycle-summary.json": "sha256:edf85b467edf362dcb687b1465701a2677a91eebd685bded4f6fb9579c3612ae",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP02.md": "sha256:711d029693db4914288da860eb39cbab65164459601f58ac742756f714d6ed8d",
+        "materials/agent-load-stability/manifests/TD-AP02-lab.json": "sha256:04fd759cb283f372cced4b241710c7bb07f82aea39ac91446d4c3c023583efa9",
+        "materials/agent-load-stability/profiles/TD-AP02.json": "sha256:2c373a5d4cb3cb67a9ccde67b43aa320a8eb4d12abef12825190f2391907a772",
+        "materials/agent-load-stability/reports/TD-AP02/cycle-summary.json": "sha256:72c098ab49d3c2f87ca09ca51786442f9d79fee31e3c094e6cc40ed32aaae40d",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP03.md": "sha256:297873b304be704bf762d3dd665b8ac1f7d151bfdcb9c3375bba9d92c7a2181a",
+        "materials/agent-load-stability/manifests/TD-AP03-lab.json": "sha256:a0b59d65c1296ed691d12d19103a548a3a8695232dca9de954b5dc1cc3357033",
+        "materials/agent-load-stability/profiles/TD-AP03.json": "sha256:5e87385d0c66ce43f3b4ff814990b8466651da7daf4a0a6d57eb97bd4a30bb3e",
+        "materials/agent-load-stability/reports/TD-AP03/cycle-summary.json": "sha256:f7671e4e2ca71bbb8db175eef5181d79179a0cfc744c2d3dfbd6e88ae63aaf05",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP04.md": "sha256:a1cf32e3febdee9b342b127fa1fe23bb48951d4aa3effcf9f8c968b402e5e8b7",
+        "materials/agent-load-stability/manifests/TD-AP04-lab.json": "sha256:01d542e295c77f2cd122b7f59f9d7e2d4255dfa4c2b9c4f11f6aceaf14ef4c99",
+        "materials/agent-load-stability/profiles/TD-AP04.json": "sha256:3c25da00b918529266ed26d63fee6872c62f8c5f3cc6a699e3de0666885f0050",
+        "materials/agent-load-stability/reports/TD-AP04/cycle-summary.json": "sha256:8a0b48aabd505f3b040485beaec4b2894857fa6b093d7d5c374124ee3b3e5ecf",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP05.md": "sha256:6bcfb39dd1d5e747a59e2ec174b924ba0689364344c19b33918e3591d127b882",
+        "materials/agent-load-stability/manifests/TD-AP05-lab.json": "sha256:4dc2b899feb1f7dee46bafd61c4098d93f8754e8ac77a19faf74385f7f5131a3",
+        "materials/agent-load-stability/profiles/TD-AP05.json": "sha256:ba8410b0b700e9ca0152cce0637ccec3846db8bb3b7e94eccaee6baa5bdca504",
+        "materials/agent-load-stability/reports/TD-AP05/cycle-summary.json": "sha256:0438d65493fa024a8c26881bfdee7e07fb376db872e8f6b9f65a59553b7d16ab",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP06.md": "sha256:4ee564d1449719e32a7b74b2dfd90d8d6131398e557180008c31d1bdb95bf2be",
+        "materials/agent-load-stability/manifests/TD-AP06-lab.json": "sha256:9db26ed3972bb60c6482642baa99ce5739c9a12ff8a75cd996af53ce0694e843",
+        "materials/agent-load-stability/profiles/TD-AP06.json": "sha256:112558f00d1390c724d64145e02a3820ee18ca71e1a91c6bffb41fc522907a49",
+        "materials/agent-load-stability/reports/TD-AP06/cycle-summary.json": "sha256:856749923bd2f3c249d9e3182875388eb818b0bb823bf73e5880cfba7f5b7f38",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP07",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP07.md": "sha256:42897f639e18fff3cb25ba154d2a14375335da48301231260a5db52044adf302",
+        "materials/agent-load-stability/manifests/TD-AP07-lab.json": "sha256:5a7dc67e76e3e918d4be5f467e045b997155cb0a6ada67f56127cb44ffdd573f",
+        "materials/agent-load-stability/profiles/TD-AP07.json": "sha256:84292e0c507000ddfea7f24bb3c75730f30d447cb8a280ee8d4bfb09117eca71",
+        "materials/agent-load-stability/reports/TD-AP07/cycle-summary.json": "sha256:a955c7de30fce4d56592215939fa52f2427529db60e95e2acade65879a1f2318",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AP08",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-load-stability.zip": "sha256:78035283735b08d9f79627bf8208bab0aef3834f34a5ff6230ef9a6bd3cb5a1b",
+        "materials/agent-load-stability/guides/TD-AP08.md": "sha256:d414a220e41da7abd0a5b626971ee47d0a947caf90930191fa3e4443b17fe8b9",
+        "materials/agent-load-stability/manifests/TD-AP08-lab.json": "sha256:ad01f0952d9fde85b92824509f7d0de0b76e114cce51daa3d08333b0a9d4c011",
+        "materials/agent-load-stability/profiles/TD-AP08.json": "sha256:a1cbb01db3fd6f1b9b993286f0e675ea0d491d58ab0c1387857d1dde23303d6d",
+        "materials/agent-load-stability/reports/TD-AP08/cycle-summary.json": "sha256:52daeb1af65c6938f58dafcc6b02b97302cedc341659729e935f981e33f17f9b",
+        "materials/agent-load-stability/scripts/agent_performance_lab.py": "sha256:7f532012a40ffc227d9f3ff8509c990185e00b1232d2dcd98605e632fbee5653"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-00",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/visuals/AG-DIM-ARCHITECTURE.svg": "sha256:b7a45aaeab07e1d5142fe9ea60806c095f3249af7818539ed4554a08590a0c7b",
+        "materials/agent-architecture-system/source-visual-manifest.json": "sha256:79033ae968437641a8e20d12d582fa634de37c12678148d3dd5536c78fec54bd",
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-00.json": "sha256:d43df1673ef4320027a6509fc78b5ee89203c4cd5600db618a1c070c494794d3",
+        "materials/agent-architecture-system/prompts/TD-AG-00/manifest.json": "sha256:68d4c2994d8da65a9ca99129462d69cd60b294b5b2ad3a5ffcef1dd7db512323",
+        "materials/agent-architecture-system/reports/td-ag-00/cycle-summary.json": "sha256:d46bfdbefb8081c10bbeea077e09f2e6dccc2681435dd3866cb6e515dd54bd5b",
+        "materials/agent-architecture-system/visuals/TD-AG-00.svg": "sha256:b142af5bc510376aab60f8c27d91457ea102572d4c1417b36cf9b6825672136a",
+        "materials/agent-architecture-system/visuals/TD-AG-00.mmd": "sha256:568c5e65b63fba43e1de832c806219ab6cd7210fa5d0ed5f3807566dbb05c253",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/templates/dimension-register.md": "sha256:20131028012d111f0306674c45683e572e56d154fe7a3b7a7b1267a08714b008"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-01",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-01.json": "sha256:aaab5c4cdf70c19fe59f6046d054432e5eacd73804b61fe964ba8c4ff21050d1",
+        "materials/agent-architecture-system/prompts/TD-AG-01/manifest.json": "sha256:9b89ac93fe8eba26767d8abaa384a54df8d1b044bafdd364d217648f94ce1b10",
+        "materials/agent-architecture-system/reports/td-ag-01/cycle-summary.json": "sha256:6aaf944b2f56fe3af6dc96d621e0a04c7c2e77ceaed3b1450ea115084d66ab0b",
+        "materials/agent-architecture-system/visuals/TD-AG-01.svg": "sha256:4a559ad9f1bfa69faff9080b1f1590dca1f409898d10f3b403d962b660596c76",
+        "materials/agent-architecture-system/visuals/TD-AG-01.mmd": "sha256:88c07d2fa1246aee2a053cbe39c796c6ba58e98cbb8ffa6e1ed9a7a10d85fe14",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/fixtures/judge-calibration.json": "sha256:04efabae30bcac4e8b6b571f89544a4d52bf304f60b976d7a7ac37a40715ff9a",
+        "materials/agent-architecture-system/templates/judge-card.md": "sha256:33ca0926a01d5765a190013ea4b7fd3914dcc4001b4a1fdfc6924833ea986274"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-02",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-02.json": "sha256:0630de7ca3cc1ebbfb94c41f1e020cd4be7eaceaf27dce50835da5c8d87cd583",
+        "materials/agent-architecture-system/prompts/TD-AG-02/manifest.json": "sha256:3d1cd1e8d8e42a58ae855151758ff50c5b2487cbe9842c7d2649556b48990e02",
+        "materials/agent-architecture-system/reports/td-ag-02/cycle-summary.json": "sha256:6789bb9eb063ec7d1264bdf0b592e6d9afd049ee7368141445acf5d7c2f35e52",
+        "materials/agent-architecture-system/visuals/TD-AG-02.svg": "sha256:ac9c37b1d0623b3583a51a2f9bdd06d6e3b2d46bfe4d02a545109fdfed13968e",
+        "materials/agent-architecture-system/visuals/TD-AG-02.mmd": "sha256:87f913763679d5fff3e6b8661944d646314a4a19a264e5aa4c19fa7b01e94cfb",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/fixtures/trajectory-ledger.json": "sha256:e7e0d7a862639124f7c4a17a89327095004e788c952736c10ac7252ba710ee1a"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-03",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-03.json": "sha256:a707cb4a68f72e6b2fbb55bf9d3124ce4a9405d9eb57ec411acd164f7fe8c290",
+        "materials/agent-architecture-system/prompts/TD-AG-03/manifest.json": "sha256:3088b4452e61bba03d8cb08c8c96a9f21d3e3d47c42c1b9e7d4c2e3582d22d7d",
+        "materials/agent-architecture-system/reports/td-ag-03/cycle-summary.json": "sha256:a076a2c451fd7d1d99f6bdced9b2088681f5a97527b581edcd10a171c96503cb",
+        "materials/agent-architecture-system/visuals/TD-AG-03.svg": "sha256:64683001d001a14d4aeff96b7724e5bd46ef61bd2552275cfb436977e20ae96b",
+        "materials/agent-architecture-system/visuals/TD-AG-03.mmd": "sha256:62ae900e2252c6927994ce761b439427ae36e76e40e7d9b5a3f6e6a4d5e53f85",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-04",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-04.json": "sha256:051db6f22d33bcd9322ad5cc0346ce0d557e01dd0373c53d9d5971c4da1aa0f0",
+        "materials/agent-architecture-system/prompts/TD-AG-04/manifest.json": "sha256:496d700c438ae825a010fda4c36d17a11095f80617028650ec0b1a2648084eac",
+        "materials/agent-architecture-system/reports/td-ag-04/cycle-summary.json": "sha256:5b11e7d9017cc05e0135fcd2bc05cd8a44f9f445dc0418779d027d2edef4e6aa",
+        "materials/agent-architecture-system/visuals/TD-AG-04.svg": "sha256:663c999e50498518097ba18dc9598c83e9a0c117a197e5b3559d9f940dde237c",
+        "materials/agent-architecture-system/visuals/TD-AG-04.mmd": "sha256:cddda5e866ffb8053cf8f979bf534d537531e96a1063a60bd5bce05eebdcbfbe",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-05",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-05.json": "sha256:66654854cd41b59cb76be20f5f681a097b56c8e4e9e1d836630fda46c95bbba0",
+        "materials/agent-architecture-system/prompts/TD-AG-05/manifest.json": "sha256:4edb41ca5c8dbe16ed5f9880ab2b83e85d578ccb4d9cf26d093803e98ba5b83b",
+        "materials/agent-architecture-system/reports/td-ag-05/cycle-summary.json": "sha256:64e8c366156d5224597ee4a0183307b3ed2c0fd41f1b0725ae13f6a3dbf959ea",
+        "materials/agent-architecture-system/visuals/TD-AG-05.svg": "sha256:bf79c9de81a36aaabf240e37679f0c3d4112c57a4bc007d3535a4ac578ee4430",
+        "materials/agent-architecture-system/visuals/TD-AG-05.mmd": "sha256:1c6ba86f7b0789e9eb068b008763bce5cde85fb3470bcb2face6fd47a31cf1b8",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/fixtures/run-ledger.json": "sha256:ff8687e5aa6a4a4991be3ce4454f809cb84c8bde5dce1fd3ab76d9520278d8f3",
+        "materials/agent-architecture-system/templates/reliability-metric-card.md": "sha256:4a04ffb9943b4cfcd1cfbd4490eadf639ef969b50aec04091149164fa3858428"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-06",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-06.json": "sha256:057ec8fbcfb3c61e20b6c7c38db6687b8483f957aa8e0869fab5049bda0c62cc",
+        "materials/agent-architecture-system/prompts/TD-AG-06/manifest.json": "sha256:68b11d7d68e8551c5ac34d9670410788c475a236b5a1fb2082d90a9379cea3cb",
+        "materials/agent-architecture-system/reports/td-ag-06/cycle-summary.json": "sha256:c5f71fcfce8be31388967d4f7dd4e00039a3bd6147674b80aefefe599c72b0c3",
+        "materials/agent-architecture-system/visuals/TD-AG-06.svg": "sha256:1ce378a5c15e24a1b3ab1fe20d006a94fb6bc28cd7ab3c90c8ac955a58e5b890",
+        "materials/agent-architecture-system/visuals/TD-AG-06.mmd": "sha256:eefa2c522573849ce6457a78d6506c3fbadb7973158801d1a60524abe657112f",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/fixtures/attack-suite.json": "sha256:65f92c1172025cf129f9bb36559aadc0933907acb7cf69654df0d7afd1794301",
+        "materials/agent-architecture-system/templates/blast-radius-register.md": "sha256:dd7bd87b359be1ea948c3400f2f90e357a8dcea057623efaceb5fa850733063b"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-07",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-07.json": "sha256:dac2c22c17756f6204967d47be13cbaf93d013a6e1a5db1186dad30aab6cf3f2",
+        "materials/agent-architecture-system/prompts/TD-AG-07/manifest.json": "sha256:7b150a2fd557cec4f2efb94a770c61e15a17e706f7529be046b74a1e7f31f374",
+        "materials/agent-architecture-system/reports/td-ag-07/cycle-summary.json": "sha256:215de6031b6875445b88bfc72e059d80d360e48ddc365cd8b884de843a1ae21e",
+        "materials/agent-architecture-system/visuals/TD-AG-07.svg": "sha256:3f84077d26bd324d96fa6be3c95ca85ef6647e473e2ec5e57516e52b07e85d2f",
+        "materials/agent-architecture-system/visuals/TD-AG-07.mmd": "sha256:620603178b7df43ba504f61b1d16994c9f78f96685322d79ee75f094fb1f98b1",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/fixtures/cost-ledger.json": "sha256:d8311a92b63d919e73d5214fffeade2f6fde1db3f0d91ac1e621b4f4278babea"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-08",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-08.json": "sha256:4505fda73dc7d8310fe81f4882899e0b93f73401f46330b5a63c989361ab81dd",
+        "materials/agent-architecture-system/prompts/TD-AG-08/manifest.json": "sha256:4ece77d94c32b0faab2e63be066e6a96193ae8d045f79acd28aba9117c0ded59",
+        "materials/agent-architecture-system/reports/td-ag-08/cycle-summary.json": "sha256:7410041f6e55b42fb7e68cd8a5c5679f8aaf72435c9623a97426c7847c18a05d",
+        "materials/agent-architecture-system/visuals/TD-AG-08.svg": "sha256:94b6bd60d13b90705e2d0772fd2c1017c9711b8ec47c981fc27216553110573c",
+        "materials/agent-architecture-system/visuals/TD-AG-08.mmd": "sha256:f8d7e95b508b7a3169eefd4ddaa01b59b0246e395bbb7d8f44d13f33a2dc177a",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-09",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/visuals/AG-DIM-FOUR-RINGS.svg": "sha256:35014e6add4e5ede43f7c195579c926c11c150f497e019fe3d955895087ab90b",
+        "materials/agent-architecture-system/visuals/AG-DIM-GATE.svg": "sha256:70c76b6a88857e1d125f01e28b5df5acce630a5101d0d7516f4c41af6cca6a76",
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-09.json": "sha256:ba0dc213a429f45d41e7cee9c8b74b4fc62a3d07908928a885379b5cf3ea26e3",
+        "materials/agent-architecture-system/prompts/TD-AG-09/manifest.json": "sha256:47947816808b52479dbbf1db869bc5e16108ece734511e41f6a2a876d5aeeade",
+        "materials/agent-architecture-system/reports/td-ag-09/cycle-summary.json": "sha256:a119ca69032312ac7f584ea631388068b2438eb151fd2c232064f19ffbbfb257",
+        "materials/agent-architecture-system/visuals/TD-AG-09.svg": "sha256:ba5ca8fb2b15b5141ad04f49323ed57491d66bd5aff78a598179501cebe95046",
+        "materials/agent-architecture-system/visuals/TD-AG-09.mmd": "sha256:a5576ea9f618dc6f757ae46efe5693604cadf84b06b39191466db5ccaf1f3da2",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/fixtures/gate-input.json": "sha256:b291c88e9e983956e4b281edc2a00dec11dd57e19959112e7397b63c0a498015",
+        "materials/agent-architecture-system/templates/four-ring-plan.md": "sha256:4da04c43bd6a8394ba6bde6a23a2be9ba43505f62b55de1eba651f5aa2bb9bc4"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    },
+    {
+      "page_id": "TD-AG-10",
+      "verdict": "FAIL",
+      "higher_maturity_blocker": [
+        "exact fourteen-file research package incomplete",
+        "editorial reviewer independence is not attested with pinned evidence"
+      ],
+      "research_package_complete": false,
+      "editorial_score": 100,
+      "boundary_preservation_score": 100,
+      "executability_verdict": "PASS",
+      "material_hashes": {
+        "materials/agent-architecture-system/scripts/agent_architecture_lab.py": "sha256:202a4312e8ad4d1ab2d27dc9b750642d98ea3647a4a6757dd09cef65814cec29",
+        "materials/agent-architecture-system/manifests/TD-AG-10.json": "sha256:be6bc643d6071e48d84d772c368deadde1e735062bd094582ac1689bbef2a62d",
+        "materials/agent-architecture-system/prompts/TD-AG-10/manifest.json": "sha256:8ed5a821353af0b00f3a06cd66850bbf3f11751b33f89158939e7627810c6808",
+        "materials/agent-architecture-system/reports/td-ag-10/cycle-summary.json": "sha256:4bfc372b7aade5e230438c8a8002a827913fb6b26b2323faa32aa04824c67de2",
+        "materials/agent-architecture-system/visuals/TD-AG-10.svg": "sha256:2f6b3c9fa82054b8dc655227d4ad0034d7e62f847f31bd6983a86b42be6e0bf4",
+        "materials/agent-architecture-system/visuals/TD-AG-10.mmd": "sha256:fbb9e3d54b7c1bc4b8cfa9d16d5f5ee5b037d6e1eb823c56dbda57742e4c4054",
+        "materials/agent-architecture-system.zip": "sha256:b7d02e70805b49267b33f6473263300677cb0b249be7eb9c8e8fa66bbf4e039a",
+        "materials/agent-architecture-system/docs/README.md": "sha256:34c3432322df42aa1e33006bdc6b279e5d9dcd4efd191971f97b025fd90aabaf",
+        "materials/agent-architecture-system/scripts/agent_reliability_lab.py": "sha256:8edd4f02fd75ea98df6431981f76d7150545ae7ed94fb8909dfa549038a07000",
+        "materials/agent-architecture-system/visuals/AG-DIM-36.svg": "sha256:e3e6fd2413b050d09ce0cad09a05d9097c68da6bbda79645dd3bee4b7c427dbe",
+        "materials/agent-architecture-system/prompts/AG-DIM/manifest.json": "sha256:29a3101761bc7f43530b1d4eeb4778b8500f5df9f59d26fe0a319786bcbb80e7",
+        "materials/agent-architecture-system/templates/blast-radius-register.md": "sha256:dd7bd87b359be1ea948c3400f2f90e357a8dcea057623efaceb5fa850733063b"
+      },
+      "validated_at": "2026-08-21T03:59:18.380Z",
+      "reviewer": "validation-semantic-parity-verifier-2026-08-13"
+    }
+  ]
+}

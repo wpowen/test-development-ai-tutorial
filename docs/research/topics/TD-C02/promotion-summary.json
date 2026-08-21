@@ -1,0 +1,28 @@
+{
+  "schema_version": "public-promotion-summary.v1",
+  "page_id": "TD-C02",
+  "verdict": "FAIL",
+  "research_package_files": [
+    "research-brief.md",
+    "source-pack.csv",
+    "research-runs.json",
+    "evidence-synthesis.md",
+    "engineering-blueprint.md",
+    "manuscript.md",
+    "comparison.md",
+    "lab-manifest.json",
+    "validation.md",
+    "projection-ledger.json",
+    "claim-inventory.json",
+    "deep-research-receipts.json",
+    "contradiction-matrix.md",
+    "research-saturation.json"
+  ],
+  "research_package_complete": false,
+  "editorial_score": 100,
+  "boundary_preservation_score": 100,
+  "executability_verdict": "PASS",
+  "validated_at": "2026-08-21T03:59:18.380Z",
+  "reviewer": "validation-semantic-parity-verifier-2026-08-13",
+  "evidence_boundary": "Public-safe gate summary only; detailed research remains in the authoring package."
+}

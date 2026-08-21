@@ -1,0 +1,67 @@
+{
+  "topic_id": "TD-QP04",
+  "mode": "fault",
+  "maturity": "fixture-tested",
+  "verdict": "FAIL",
+  "expected_exit_code": 1,
+  "failed_oracle_ids": [
+    "EXACTLY-ONCE-EFFECT"
+  ],
+  "evidence_hash": "1f33234be14a674c956fc2c8d0a58e39e8ccccdbd9763d49db84999abe013d17",
+  "checks": [
+    {
+      "oracle_id": "EVENT-IDENTITY",
+      "passed": true
+    },
+    {
+      "oracle_id": "TRACE-CONTEXT",
+      "passed": true
+    },
+    {
+      "oracle_id": "IDEMPOTENT-INBOX",
+      "passed": true
+    },
+    {
+      "oracle_id": "EXACTLY-ONCE-EFFECT",
+      "passed": false
+    },
+    {
+      "oracle_id": "AUDIT-ROLLBACK",
+      "passed": true
+    }
+  ],
+  "state": {
+    "event": {
+      "specversion": "1.0",
+      "source": "jira://acme/PROJ-42",
+      "id": "evt-42",
+      "traceparent": "00-4bf92f3577b34da6a3ce929d0e0e4736-00f067aa0ba902b7-01"
+    },
+    "delivery": {
+      "inbox_accepts": 1,
+      "duplicate_suppressed": 1,
+      "outbox_attempts": 2,
+      "dlq": 0
+    },
+    "effects": {
+      "jira_defects": 2,
+      "gitlab_statuses": 1,
+      "k8s_cleanups": 1
+    },
+    "notice": {
+      "sent": true,
+      "contains_secret": false
+    },
+    "audit": {
+      "reconciled": true,
+      "rollback_ready": true
+    }
+  },
+  "not_run": [
+    "live Jira tenant",
+    "live GitLab instance",
+    "live Kubernetes cluster",
+    "model provider",
+    "ChatOps delivery"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS01",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标支付网关幂等窗口、真实账本可查询性和业务延迟阈值"
+}

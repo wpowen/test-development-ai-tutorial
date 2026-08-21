@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-T26",
+  "baseline": {"same_task": true, "accepted_tests": "UNKNOWN"},
+  "candidate": {"generated": "UNKNOWN", "accepted": "UNKNOWN"},
+  "mutation_kill": {"killed": "UNKNOWN", "total": "UNKNOWN"},
+  "time": {"to_accepted_minutes": "UNKNOWN"},
+  "cost": {"per_kill": "UNKNOWN"},
+  "defect_yield": "UNKNOWN",
+  "reviewer": "UNKNOWN",
+  "ai_self_judge": false
+}

@@ -1,0 +1,23 @@
+%% TD-AG-01 · 来源：S05 · S23 · S40
+%% Fixture 只验证合同和故障检测；真实模型 Judge、标注员和业务金标仍需独立运行。
+flowchart LR
+  gold["金标样本<br/><small>版本、切片、来源</small>"]
+  human["人工标注<br/><small>盲法双标 / 仲裁</small>"]
+  rubric["Rubric<br/><small>构念、尺度、拒判</small>"]
+  judge["Judge<br/><small>版本、Prompt、输出</small>"]
+  probe["偏差探针<br/><small>顺序 / 长度 / 自偏好</small>"]
+  disagree["分歧矩阵<br/><small>人人 / 人机 / Slice</small>"]
+  route["自动 / 抽检 / 人审<br/><small>按风险选择路径</small>"]
+  stop["停用与重校准<br/><small>FAIL → 修 Rubric / 换 Judge</small>"]
+  gold -->|独立标注| human
+  human -->|争议塑造规则| rubric
+  rubric -->|版本化执行| judge
+  judge -->|反偏差测试| probe
+  probe -->|保留不一致| disagree
+  disagree -->|按风险分流| route
+  disagree -->|超出适用域| stop
+  stop -->|修订后重跑| rubric
+  stop -->|换版桥接| judge
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

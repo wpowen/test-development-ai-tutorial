@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "deep-research-receipts.schema.json",
+  "type": "object",
+  "required": ["schema_version", "topic_id", "runs"],
+  "properties": {
+    "schema_version": {"const": "deep-research-receipts.v1"},
+    "topic_id": {"type": "string", "minLength": 1},
+    "runs": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["run_id", "claim_ids", "round", "phase", "provider", "surface", "model_or_feature", "response_or_export_id", "started_at", "completed_at", "request_path", "raw_response_path", "report_path", "citations_path", "tool_calls_path", "input_sha256", "output_sha256", "data_sources", "tool_call_count", "citation_count", "opened_source_count", "status", "limitations"],
+        "properties": {
+          "run_id": {"type": "string", "minLength": 1},
+          "claim_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "round": {"type": "integer", "minimum": 1},
+          "phase": {"enum": ["initial-deep-research", "primary-document-reconstruction", "counterevidence", "gap-fill", "verification"]},
+          "provider": {"const": "openai"},
+          "surface": {"enum": ["openai-responses-api", "chatgpt-deep-research"]},
+          "model_or_feature": {"type": "string", "minLength": 1},
+          "response_or_export_id": {"type": "string", "minLength": 1},
+          "started_at": {"type": "string", "minLength": 1},
+          "completed_at": {"type": "string", "minLength": 1},
+          "request_path": {"type": "string", "minLength": 1},
+          "raw_response_path": {"type": "string", "minLength": 1},
+          "report_path": {"type": "string", "minLength": 1},
+          "citations_path": {"type": "string", "minLength": 1},
+          "tool_calls_path": {"type": "string", "minLength": 1},
+          "input_sha256": {"pattern": "^sha256:[0-9a-f]{64}$"},
+          "output_sha256": {"pattern": "^sha256:[0-9a-f]{64}$"},
+          "data_sources": {"type": "array", "minItems": 1, "items": {"enum": ["web_search", "file_search", "remote_mcp", "code_interpreter"]}},
+          "tool_call_count": {"type": "integer", "minimum": 1},
+          "citation_count": {"type": "integer", "minimum": 1},
+          "opened_source_count": {"type": "integer", "minimum": 1},
+          "status": {"const": "completed"},
+          "limitations": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

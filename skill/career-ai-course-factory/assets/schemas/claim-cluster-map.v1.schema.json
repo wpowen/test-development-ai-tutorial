@@ -1,0 +1,155 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim-cluster-map.v1.schema.json",
+  "title": "ClaimClusterMapV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "map_id", "generated_at", "inventory_digest", "cluster_registry_version", "claims"],
+  "properties": {
+    "schema_version": {"const": "claim-cluster-map.v1"},
+    "map_id": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "minLength": 1},
+    "inventory_digest": {"$ref": "#/$defs/digest"},
+    "cluster_registry_version": {"type": "string", "minLength": 1},
+    "page_coverage": {"$ref": "#/$defs/pageCoverage"},
+    "classification_overlay_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "clusters": {"type": "array", "items": {"$ref": "#/$defs/cluster"}},
+    "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "pageCoverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["coverage_source", "catalog_manifest_digest", "page_set_digest", "expected_page_ids", "covered_page_ids", "missing_page_ids", "unexpected_page_ids"],
+      "properties": {
+        "coverage_source": {"enum": ["catalog-manifest", "inventory-derived"]},
+        "catalog_manifest_digest": {"anyOf": [{"$ref": "#/$defs/digest"}, {"type": "null"}]},
+        "page_set_digest": {"$ref": "#/$defs/digest"},
+        "expected_page_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "covered_page_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "missing_page_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "unexpected_page_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "risk": {"enum": ["low", "medium", "high", "critical", "unknown"]},
+    "evidenceClass": {"enum": ["LOCAL-DETERMINISTIC", "STABLE-DEFINITION", "SHARED-MECHANISM", "VENDOR-VERSION", "NUMERIC-STATISTICAL", "SECURITY-AUTHORITY", "FAILURE-OPERATIONS", "TEACHING-PROFESSIONAL", "TARGET-EMPIRICAL", "UNCLASSIFIED"]},
+    "route": {"enum": ["LOCAL-VERIFY", "EXTERNAL-RESEARCH", "TARGET-EVIDENCE", "TEACHING-VALIDATION", "BLOCKED-UNCLASSIFIED"]},
+    "digestSet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["scope_digest", "version_digest", "environment_digest", "region_digest", "risk_digest"],
+      "properties": {
+        "scope_digest": {"$ref": "#/$defs/digest"},
+        "version_digest": {"$ref": "#/$defs/digest"},
+        "environment_digest": {"$ref": "#/$defs/digest"},
+        "region_digest": {"$ref": "#/$defs/digest"},
+        "risk_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "locator": {
+      "type": "object", "additionalProperties": false,
+      "required": ["locator_id", "kind", "uri_or_path", "digest"],
+      "properties": {
+        "locator_id": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["local", "external", "target", "fixture", "projection"]},
+        "uri_or_path": {"type": "string", "minLength": 1},
+        "fragment": {"type": "string"},
+        "digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "origin": {
+      "type": "object", "additionalProperties": false,
+      "required": ["origin_kind", "origin_id", "origin_path", "origin_digest"],
+      "properties": {
+        "origin_kind": {"enum": ["claim-inventory", "deep-research-receipt", "codex-research-receipt", "local-verification", "target-evidence", "teaching-evidence"]},
+        "origin_id": {"type": "string", "minLength": 1},
+        "origin_path": {"type": "string", "minLength": 1},
+        "origin_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "cannotProve": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "cluster": {
+      "type": "object", "additionalProperties": false,
+      "required": ["cluster_id", "canonical_question", "cluster_digest"],
+      "properties": {
+        "cluster_id": {"pattern": "^K[0-9]{2}$"},
+        "canonical_question": {"type": "string", "minLength": 1},
+        "cluster_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": ["claim_id", "statement", "claim_type", "risk", "primary_cluster_id", "evidence_class", "route", "status", "execution_contract", "required_dimensions", "time_boundary", "vendor_or_tool", "identity_fingerprint", "request_fingerprint", "canonical_claim_key", "digests", "source_locators", "origin", "cannot_prove", "invalidation"],
+      "properties": {
+        "claim_id": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "claim_type": {"type": "string", "minLength": 1},
+        "risk": {"$ref": "#/$defs/risk"},
+        "primary_cluster_id": {"pattern": "^K(?:00|0[1-9]|1[0-2])$"},
+        "related_cluster_ids": {"type": "array", "items": {"pattern": "^K[0-9]{2}$"}},
+        "evidence_class": {"$ref": "#/$defs/evidenceClass"},
+        "route": {"$ref": "#/$defs/route"},
+        "status": {"enum": ["MAPPED", "BLOCKED"]},
+        "execution_contract": {"enum": ["openai-deep-research.v1", "codex-research.v1", "not-specified"]},
+        "required_dimensions": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "time_boundary": {"type": "string", "minLength": 1},
+        "vendor_or_tool": {"type": "string", "minLength": 1},
+        "identity_fingerprint": {"$ref": "#/$defs/digest"},
+        "request_fingerprint": {"$ref": "#/$defs/digest"},
+        "canonical_claim_key": {"$ref": "#/$defs/canonicalClaimKey"},
+        "canonical_unit_id": {"type": "string", "minLength": 1},
+        "canonical_unit_role": {"enum": ["anchor", "member"]},
+        "digests": {"$ref": "#/$defs/digestSet"},
+        "source_locators": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/locator"}},
+        "origin": {"$ref": "#/$defs/origin"},
+        "cannot_prove": {"$ref": "#/$defs/cannotProve"},
+        "target_evidence": {"$ref": "#/$defs/targetEvidence"},
+        "invalidation": {"$ref": "#/$defs/invalidation"}
+      },
+      "allOf": [
+        {"if": {"properties": {"route": {"const": "TARGET-EVIDENCE"}}}, "then": {"required": ["target_evidence"]}},
+        {"if": {"properties": {"evidence_class": {"const": "TARGET-EMPIRICAL"}}}, "then": {"properties": {"route": {"const": "TARGET-EVIDENCE"}}}},
+        {"if": {"properties": {"evidence_class": {"enum": ["LOCAL-DETERMINISTIC"]}}}, "then": {"properties": {"route": {"const": "LOCAL-VERIFY"}}}},
+        {"if": {"properties": {"evidence_class": {"enum": ["STABLE-DEFINITION", "SHARED-MECHANISM", "VENDOR-VERSION", "NUMERIC-STATISTICAL", "SECURITY-AUTHORITY", "FAILURE-OPERATIONS"]}}}, "then": {"properties": {"route": {"const": "EXTERNAL-RESEARCH"}}}},
+        {"if": {"properties": {"evidence_class": {"const": "TEACHING-PROFESSIONAL"}}}, "then": {"properties": {"route": {"const": "TEACHING-VALIDATION"}}}},
+        {"if": {"properties": {"evidence_class": {"const": "UNCLASSIFIED"}}}, "then": {"properties": {"route": {"const": "BLOCKED-UNCLASSIFIED"}, "status": {"const": "BLOCKED"}}}},
+        {"if": {"properties": {"route": {"const": "BLOCKED-UNCLASSIFIED"}}}, "then": {"properties": {"status": {"const": "BLOCKED"}}}}
+        ,{"if": {"properties": {"risk": {"const": "unknown"}}}, "then": {"properties": {"evidence_class": {"const": "UNCLASSIFIED"}, "route": {"const": "BLOCKED-UNCLASSIFIED"}, "status": {"const": "BLOCKED"}}}},
+        {"if": {"properties": {"primary_cluster_id": {"const": "K00"}}}, "then": {"properties": {"evidence_class": {"const": "UNCLASSIFIED"}, "route": {"const": "BLOCKED-UNCLASSIFIED"}, "status": {"const": "BLOCKED"}}}}
+      ]
+    },
+    "canonicalClaimKey": {
+      "type": "object", "additionalProperties": false,
+      "required": ["normalized_statement", "normalized_scope", "normalized_version", "normalized_time_boundary", "normalized_vendor", "normalized_environment", "normalized_region", "normalized_risk", "normalized_claim_type", "normalized_population", "normalized_predicate", "normalized_required_dimensions", "normalized_execution_contract", "normalized_cluster", "normalized_evidence_class", "normalized_route", "normalized_source_family_policy", "component_digests", "key_digest"],
+      "properties": {
+        "normalized_statement": {"type": "string", "minLength": 1}, "normalized_scope": {"type": "string", "minLength": 1}, "normalized_version": {"type": "string", "minLength": 1}, "normalized_time_boundary": {"type": "string", "minLength": 1}, "normalized_vendor": {"type": "string", "minLength": 1}, "normalized_environment": {"type": "string", "minLength": 1}, "normalized_region": {"type": "string", "minLength": 1}, "normalized_risk": {"type": "string", "minLength": 1}, "normalized_claim_type": {"type": "string", "minLength": 1}, "normalized_population": {"type": "string", "minLength": 1}, "normalized_predicate": {"type": "string", "minLength": 1}, "normalized_required_dimensions": {"type": "string", "minLength": 1}, "normalized_execution_contract": {"type": "string", "minLength": 1}, "normalized_cluster": {"type": "string", "minLength": 1}, "normalized_evidence_class": {"type": "string", "minLength": 1}, "normalized_route": {"type": "string", "minLength": 1}, "normalized_source_family_policy": {"type": "string", "minLength": 1},
+        "component_digests": {"type": "object", "additionalProperties": false, "required": ["statement", "scope", "version", "time_boundary", "vendor", "environment", "region", "risk", "claim_type", "population", "predicate", "required_dimensions", "execution_contract", "cluster", "evidence_class", "route", "source_family_policy"], "properties": {"statement": {"$ref": "#/$defs/digest"}, "scope": {"$ref": "#/$defs/digest"}, "version": {"$ref": "#/$defs/digest"}, "time_boundary": {"$ref": "#/$defs/digest"}, "vendor": {"$ref": "#/$defs/digest"}, "environment": {"$ref": "#/$defs/digest"}, "region": {"$ref": "#/$defs/digest"}, "risk": {"$ref": "#/$defs/digest"}, "claim_type": {"$ref": "#/$defs/digest"}, "population": {"$ref": "#/$defs/digest"}, "predicate": {"$ref": "#/$defs/digest"}, "required_dimensions": {"$ref": "#/$defs/digest"}, "execution_contract": {"$ref": "#/$defs/digest"}, "cluster": {"$ref": "#/$defs/digest"}, "evidence_class": {"$ref": "#/$defs/digest"}, "route": {"$ref": "#/$defs/digest"}, "source_family_policy": {"$ref": "#/$defs/digest"}}},
+        "key_digest": {"$ref": "#/$defs/digest"}
+      }
+    },
+    "targetEvidence": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required", "status", "evidence_refs", "cannot_substitute_with"],
+      "properties": {
+        "required": {"const": true},
+        "status": {"enum": ["PASS", "FAIL", "UNKNOWN", "NOT_RUN", "BLOCKED"]},
+        "evidence_refs": {"type": "array", "items": {"$ref": "#/$defs/targetLocator"}},
+        "cannot_substitute_with": {"type": "array", "minItems": 1, "items": {"enum": ["external-web", "fixture", "local-static-check", "shared-bundle"]}}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"enum": ["UNKNOWN", "NOT_RUN", "BLOCKED"]}}}, "then": {"properties": {"evidence_refs": {"maxItems": 0}}}},
+        {"if": {"properties": {"status": {"enum": ["PASS", "FAIL"]}}}, "then": {"properties": {"evidence_refs": {"minItems": 1}}}}
+      ]
+    },
+    "targetLocator": {"type": "object", "additionalProperties": false, "required": ["locator_id", "kind", "uri_or_path", "digest"], "properties": {"locator_id": {"type": "string", "minLength": 1}, "kind": {"const": "target"}, "uri_or_path": {"type": "string", "minLength": 1}, "fragment": {"type": "string"}, "digest": {"$ref": "#/$defs/digest"}}},
+    "invalidation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "triggers", "invalidates_node_ids"],
+      "properties": {
+        "status": {"enum": ["current", "superseded", "invalid"]},
+        "triggers": {"type": "array", "minItems": 1, "items": {"enum": ["statement-change", "scope-change", "version-change", "environment-change", "region-change", "risk-change", "source-retraction", "counterevidence-change", "contract-change", "artifact-change", "target-state-change"]}},
+        "invalidates_node_ids": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      },
+      "allOf": [{"if": {"properties": {"status": {"enum": ["superseded", "invalid"]}}}, "then": {"properties": {"invalidates_node_ids": {"minItems": 1}}}}]
+    }
+  }
+}

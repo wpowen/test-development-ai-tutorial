@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StatusSupersessionRegistry",
+  "type": "object",
+  "required": ["schema_version", "records"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["record_id", "artifact_type", "scope_id", "path", "as_of", "scope_hash", "artifact_hash", "status", "supersedes", "evidence_refs"],
+        "properties": {
+          "record_id": {"type": "string", "minLength": 1},
+          "artifact_type": {"type": "string", "minLength": 1},
+          "scope_id": {"type": "string", "minLength": 1},
+          "path": {"type": "string", "minLength": 1},
+          "as_of": {"type": "string", "minLength": 1},
+          "scope_hash": {"pattern": "^sha256:[0-9a-f]{64}$"},
+          "artifact_hash": {"pattern": "^sha256:[0-9a-f]{64}$"},
+          "status": {"enum": ["current", "superseded"]},
+          "supersedes": {"type": "array", "items": {"type": "string"}},
+          "evidence_refs": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+        }
+      }
+    }
+  }
+}

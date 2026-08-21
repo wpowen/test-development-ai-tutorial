@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["page_id","status","source_ref","owner","version","effective_from","mapping"],"properties":{"page_id":{"const":"TD-C04"},"status":{"type":"string"},"source_ref":{"type":"string"},"owner":{"type":"string"},"version":{"type":"string"},"effective_from":{"type":"string"},"mapping":{"type":"array"}}}

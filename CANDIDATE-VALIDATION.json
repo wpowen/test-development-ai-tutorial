@@ -1,0 +1,16 @@
+{
+  "schema_version": "github-candidate-validation.v1",
+  "page_count": 103,
+  "source_gates": "PASS",
+  "candidate_structure_valid": true,
+  "expected_publication_blockers": [
+    "public solution unit 0 must be pilot or public",
+    "public solution unit 1 must be pilot or public",
+    "public solution unit 2 must be pilot or public",
+    "public solution unit 3 must be pilot or public",
+    "public solution unit 4 must be pilot or public",
+    "public solution unit 5 must be pilot or public"
+  ],
+  "unexpected_errors": [],
+  "publication_attempted": false
+}

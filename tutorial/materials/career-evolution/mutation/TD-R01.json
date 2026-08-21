@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-R01","fault_patch":{"resource.checked_at_present":false,"resource.fallback_defined":false,"resource.exit_artifact_defined":false},"expected_fault_verdict":"FAIL","independent_oracle":true}

@@ -1,38 +1,187 @@
 {
   "course_id": "td-ai-021-ui-mobile-automation",
   "title": "Web/Android/iOS UI 自动化与 AI 演进：从稳定断言到受控修复",
-  "scenario_ids": ["TD-S05"],
+  "scenario_ids": [
+    "TD-S05"
+  ],
   "ai_lane": "agentize-work",
   "ai_centrality_score": 5,
   "professional_value_score": 5,
   "system_under_test": "跨平台登录旅程及其 Web/native UI 测试契约",
-  "ai_roles": ["test-authoring-assistant", "failure-diagnostician", "candidate-repairer"],
-  "learner_artifact": ["Playwright spec", "Maestro flow", "Appium JS/Python tests", "Espresso Kotlin test", "XCUITest Swift test", "selection matrix", "diagnostic runbook", "offline mutation report"],
-  "tool_adapters": ["offline-contract-validator", "Playwright", "Maestro", "Appium", "Espresso", "XCUITest"],
-  "work_domain_ids": ["TD-D21"],
-  "primary_artifact_ids": ["cross-platform-ui-quality-gate"],
+  "ai_roles": [
+    "test-authoring-assistant",
+    "failure-diagnostician",
+    "candidate-repairer"
+  ],
+  "learner_artifact": [
+    "Playwright spec",
+    "Maestro flow",
+    "Appium JS/Python tests",
+    "Espresso Kotlin test",
+    "XCUITest Swift test",
+    "selection matrix",
+    "diagnostic runbook",
+    "offline mutation report"
+  ],
+  "tool_adapters": [
+    "offline-contract-validator",
+    "Playwright",
+    "Maestro",
+    "Appium",
+    "Espresso",
+    "XCUITest"
+  ],
+  "work_domain_ids": [
+    "TD-D21"
+  ],
+  "primary_artifact_ids": [
+    "cross-platform-ui-quality-gate"
+  ],
   "decision_owner": "结算测试负责人",
   "allowed_ai_authority": "生成计划和测试并提出修复，不得删除业务 oracle",
-  "prerequisite_course_ids": ["TD-AI-001", "TD-AI-011"],
+  "prerequisite_course_ids": [
+    "TD-AI-001",
+    "TD-AI-011"
+  ],
   "transfer_target": "把同一 UI 契约门禁从 Web 结算登录迁移到 Android 收货与 iOS 改期场景，并重建平台 locator、数据 fixture 和业务 oracle",
-  "lesson_flow": ["demo", "guided-practice", "failure-injection", "repair", "transfer"],
+  "lesson_flow": [
+    "demo",
+    "guided-practice",
+    "failure-injection",
+    "repair",
+    "transfer"
+  ],
   "default_path_requires_credentials": false,
   "baseline_comparison": true,
   "failure_injection": true,
   "execution_proof": "evidence/execution-evidence.json",
   "validation_workdir": ".",
   "validation_steps": [
-    {"name": "package structure and sample paths", "command": ["python3", "lab/scripts/validate_package.py"], "expected_exit_code": 0},
-    {"name": "unittest", "command": ["python3", "-m", "unittest", "discover", "-s", "lab/tests", "-v"], "expected_exit_code": 0},
-    {"name": "baseline", "command": ["python3", "lab/scripts/reset_candidate.py"], "expected_exit_code": 0},
-    {"name": "baseline evaluation", "command": ["python3", "lab/scripts/evaluate.py", "--report", "lab/reports/baseline.json"], "expected_exit_code": 0},
-    {"name": "delete locator and oracle", "command": ["python3", "lab/scripts/inject_regression.py"], "expected_exit_code": 0},
-    {"name": "mutation must fail", "command": ["python3", "lab/scripts/evaluate.py", "--report", "lab/reports/mutation.json"], "expected_exit_code": 1},
-    {"name": "repair", "command": ["python3", "lab/scripts/reset_candidate.py"], "expected_exit_code": 0},
-    {"name": "repair evaluation", "command": ["python3", "lab/scripts/evaluate.py", "--report", "lab/reports/repair.json"], "expected_exit_code": 0},
-    {"name": "learner-materials validation", "command": ["python3", "learner-materials/scripts/ui_contract_lab.py", "validate"], "expected_exit_code": 0}
+    {
+      "name": "package structure and sample paths",
+      "command": [
+        "python3",
+        "lab/scripts/validate_package.py"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "unittest",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "lab/tests",
+        "-v"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "baseline",
+      "command": [
+        "python3",
+        "lab/scripts/reset_candidate.py"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "baseline evaluation",
+      "command": [
+        "python3",
+        "lab/scripts/evaluate.py",
+        "--report",
+        "lab/reports/baseline.json"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "delete locator and oracle",
+      "command": [
+        "python3",
+        "lab/scripts/inject_regression.py"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "mutation must fail",
+      "command": [
+        "python3",
+        "lab/scripts/evaluate.py",
+        "--report",
+        "lab/reports/mutation.json"
+      ],
+      "expected_exit_code": 1
+    },
+    {
+      "name": "repair",
+      "command": [
+        "python3",
+        "lab/scripts/reset_candidate.py"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "repair evaluation",
+      "command": [
+        "python3",
+        "lab/scripts/evaluate.py",
+        "--report",
+        "lab/reports/repair.json"
+      ],
+      "expected_exit_code": 0
+    },
+    {
+      "name": "learner-materials validation",
+      "command": [
+        "python3",
+        "learner-materials/scripts/ui_contract_lab.py",
+        "validate"
+      ],
+      "expected_exit_code": 0
+    }
   ],
   "status": "fixture-tested",
   "device_browser_execution_status": "NOT_RUN/static-reviewed",
-  "evidence_ids": ["S01", "S14", "S18", "S21", "S22", "S23"]
+  "evidence_ids": [
+    "S01",
+    "S14",
+    "S18",
+    "S21",
+    "S22",
+    "S23"
+  ],
+  "wave1_specialty_page_ids": [
+    "TD-PS04",
+    "TD-PS05",
+    "TD-PS06",
+    "TD-PS07"
+  ],
+  "shared_bundle_owners": {
+    "bundle_owner": "traditional-testing-wave-1",
+    "page_owners": {
+      "TD-PS04": {
+        "content": "TD-PS04-content-owner",
+        "oracle": "TD-PS04-oracle-owner",
+        "release": "course-release-owner"
+      },
+      "TD-PS05": {
+        "content": "TD-PS05-content-owner",
+        "oracle": "TD-PS05-oracle-owner",
+        "release": "course-release-owner"
+      },
+      "TD-PS06": {
+        "content": "TD-PS06-content-owner",
+        "oracle": "TD-PS06-oracle-owner",
+        "release": "course-release-owner"
+      },
+      "TD-PS07": {
+        "content": "TD-PS07-content-owner",
+        "oracle": "TD-PS07-oracle-owner",
+        "release": "course-release-owner"
+      }
+    }
+  },
+  "evidence_boundary": "Wave 1 specialty labs are deterministic offline fixtures; no practitioner/live/production evidence."
 }

@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS01",
+  "scenario": "已支付未发货订单取消后异步退款，客户端超时重试不能生成第二笔退款",
+  "controlling_question": "怎样证明 202 响应、订单状态、退款账本和事件消费属于同一次合法取消，而不是只证明 HTTP 成功？",
+  "known_rules": [
+    "响应错误模型与状态码一致",
+    "非法状态和非 owner 请求零副作用",
+    "同一 Idempotency-Key 的退款计数增量最多一",
+    "request trace event ledger 可关联"
+  ],
+  "faults": [
+    "服务端提交后客户端超时",
+    "重复退款事件",
+    "非 owner 取消"
+  ],
+  "unknowns": [
+    "目标支付网关幂等窗口、真实账本可查询性和业务延迟阈值"
+  ],
+  "data_classification": "synthetic"
+}

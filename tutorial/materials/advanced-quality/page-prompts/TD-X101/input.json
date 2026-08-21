@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X101",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "未签名依赖、SBOM 缺项或 critical finding 无 owner"
+}
+

@@ -1,0 +1,1 @@
+{"policy_id":"td-p02-authority-v1","version":"1.0.0","owner":"product-owner-order + test-lead","evidence":"PRD-v3 and OPENAPI-v7 fixture hashes","precedence":{"business_rules":"PRD-v3","transport_schema":"OPENAPI-v7","implementation_context":"TECH-a13f"},"conflict_action":"BLOCKED","status":"ACCEPTED"}

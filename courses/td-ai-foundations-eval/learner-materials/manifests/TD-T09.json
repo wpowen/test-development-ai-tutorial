@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-T09",
+  "page_id": "TD-T09",
+  "working_directory": "materials/ai-foundations-eval",
+  "required_files": [
+    "scripts/run_lab.py",
+    "configs/topic-contracts.json",
+    "fixtures/cases.json",
+    "prompt-package/manifest.json",
+    "prompt-package/contract-classifier.prompt.md",
+    "prompt-package/output.schema.json",
+    "prompt-package/eval.json",
+    "prompt-package/mutation.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/run_lab.py --topic TD-T09 --phase baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-T09/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/run_lab.py --topic TD-T09 --phase fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/TD-T09/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/run_lab.py --topic TD-T09 --phase repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-T09/repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "evidence_boundary": "PASS-FIXTURE only: deterministic offline contracts; no model, provider, enterprise integration, practitioner, live, or production evidence."
+}

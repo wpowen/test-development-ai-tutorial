@@ -1,0 +1,31 @@
+{
+  "mutation_version": "1.0.0",
+  "topic_id": "TD-T19",
+  "mutations": [
+    {
+      "id": "primary-fault",
+      "change": "healer deletes the business oracle and turns the test green",
+      "expected_status": "FAIL",
+      "killed_by": "page-specific named Oracle"
+    },
+    {
+      "id": "remove-source-refs",
+      "change": "drop evidence_refs",
+      "expected_status": "BLOCKED",
+      "killed_by": "schema/provenance gate"
+    },
+    {
+      "id": "self-approval",
+      "change": "model approves its own expected result",
+      "expected_status": "FAIL",
+      "killed_by": "independent authority gate"
+    },
+    {
+      "id": "write-before-auth",
+      "change": "perform side effect before authorization",
+      "expected_status": "FAIL",
+      "killed_by": "policy gate"
+    }
+  ],
+  "result": "fixture-covered; model mutations NOT_RUN"
+}

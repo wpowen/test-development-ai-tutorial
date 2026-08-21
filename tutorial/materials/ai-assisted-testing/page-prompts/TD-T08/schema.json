@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["status","clusters"],"properties":{"status":{"enum":["CANDIDATE","UNKNOWN","BLOCKED"]},"clusters":{"type":"array","items":{"type":"object","required":["cluster_id","raw_event_refs","symptom","hypothesis","cause_status","next_experiment","owner"]}}},"additionalProperties":false}

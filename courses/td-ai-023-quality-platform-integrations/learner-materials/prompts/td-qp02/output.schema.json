@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "td-qp02-output-v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gate_verdict",
+    "commit_sha",
+    "pipeline_id",
+    "suite_evidence",
+    "failed_oracle_ids",
+    "human_decision_required",
+    "evidence_boundary"
+  ],
+  "properties": {
+    "gate_verdict": {},
+    "commit_sha": {},
+    "pipeline_id": {},
+    "suite_evidence": {},
+    "failed_oracle_ids": {},
+    "human_decision_required": {},
+    "evidence_boundary": {
+      "type": "string",
+      "const": "fixture-tested; live integrations NOT_RUN"
+    }
+  }
+}

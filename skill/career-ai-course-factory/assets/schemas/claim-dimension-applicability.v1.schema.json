@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim-dimension-applicability.v1.schema.json",
+  "title": "ClaimDimensionApplicabilityV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "migration_id", "source_inventory", "alias_registry",
+    "generated_by", "review_status", "claims", "counts", "generated_at"
+  ],
+  "properties": {
+    "schema_version": {"const": "claim-dimension-applicability.v1"},
+    "migration_id": {"type": "string", "minLength": 1},
+    "source_inventory": {"$ref": "#/$defs/sourceInventory"},
+    "alias_registry": {"$ref": "#/$defs/aliasRegistry"},
+    "generated_by": {"type": "string", "minLength": 1},
+    "generated_at": {"type": "string", "minLength": 1},
+    "reviewed_by": {"type": "string"},
+    "independent_review": {"type": "boolean"},
+    "review_status": {"enum": ["pending", "approved", "rejected"]},
+    "claims": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim"}},
+    "counts": {"$ref": "#/$defs/counts"}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "sourceInventory": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "digest", "schema_version", "topic_id", "claim_count"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "schema_version": {"type": "string", "minLength": 1},
+        "topic_id": {"type": "string", "minLength": 1},
+        "claim_count": {"type": "integer", "minimum": 1}
+      }
+    },
+    "aliasRegistry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "digest", "schema_version", "registry_id", "input_digest", "output_digest", "review_status", "generated_by", "reviewed_by", "independent_review", "approved_at", "audit_artifact"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "digest": {"$ref": "#/$defs/digest"},
+        "schema_version": {"type": "string", "minLength": 1},
+        "registry_id": {"type": "string", "minLength": 1},
+        "input_digest": {"$ref": "#/$defs/digest"},
+        "output_digest": {"$ref": "#/$defs/digest"},
+        "review_status": {"enum": ["pending", "approved", "rejected"]},
+        "generated_by": {"type": "string", "minLength": 1},
+        "reviewed_by": {"type": "string"},
+        "independent_review": {"type": "boolean"},
+        "approved_at": {"type": "string"},
+        "audit_artifact": {"$ref": "#/$defs/auditArtifact"}
+      }
+    },
+    "auditArtifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/digest"}}
+    },
+    "sourceAnchor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["locator", "sha256"],
+      "properties": {"locator": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/digest"}}
+    },
+    "reason": {
+      "type": "object", "additionalProperties": false,
+      "required": ["text", "source_anchors"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "source_anchors": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sourceAnchor"}},
+        "audit_artifact": {"$ref": "#/$defs/auditArtifact"}
+      }
+    },
+    "coverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "status", "reason"],
+      "properties": {
+        "dimension": {"type": "string", "minLength": 1},
+        "status": {"enum": ["pending", "applicable", "not-applicable"]},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "claim": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "claim_id", "identity_fingerprint", "legacy_dimensions", "legacy_research_coverage",
+        "mapped_dimensions", "unmapped_legacy_dimensions", "dimension_coverage",
+        "migration_status"
+      ],
+      "properties": {
+        "claim_id": {"type": "string", "minLength": 1},
+        "identity_fingerprint": {"$ref": "#/$defs/digest"},
+        "legacy_dimensions": {"type": "array", "items": {"type": "string"}},
+        "legacy_research_coverage": {"type": "array", "items": {"$ref": "#/$defs/legacyCoverage"}},
+        "mapped_dimensions": {"type": "array", "items": {"type": "string"}},
+        "unmapped_legacy_dimensions": {"type": "array", "items": {"type": "string"}},
+        "dimension_coverage": {
+          "type": "array", "minItems": 14, "maxItems": 14,
+          "items": {"$ref": "#/$defs/coverage"}
+        },
+        "migration_status": {"enum": ["PENDING", "BLOCKED-UNMAPPED-LEGACY", "READY"]}
+      }
+    },
+    "legacyCoverage": {
+      "type": "object", "additionalProperties": false,
+      "required": ["dimension", "status", "reason"],
+      "properties": {
+        "dimension": {"type": "string", "minLength": 1},
+        "status": {"enum": ["covered", "applicable", "not-applicable", "not-recorded"]},
+        "reason": {"$ref": "#/$defs/reason"}
+      }
+    },
+    "counts": {
+      "type": "object", "additionalProperties": false,
+      "required": ["claims", "ready", "pending", "blocked_unmapped_legacy", "unmapped_legacy_dimensions"],
+      "properties": {
+        "claims": {"type": "integer", "minimum": 1},
+        "ready": {"type": "integer", "minimum": 0},
+        "pending": {"type": "integer", "minimum": 0},
+        "blocked_unmapped_legacy": {"type": "integer", "minimum": 0},
+        "unmapped_legacy_dimensions": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}

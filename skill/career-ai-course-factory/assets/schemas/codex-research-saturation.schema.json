@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "codex-research-saturation.schema.json",
+  "type": "object",
+  "required": ["schema_version", "topic_id", "author_id", "independent_auditor_id", "claims", "overall_verdict", "deep_research_status"],
+  "properties": {
+    "schema_version": {"const": "codex-research-saturation.v1"},
+    "topic_id": {"type": "string", "minLength": 1},
+    "author_id": {"type": "string", "minLength": 1},
+    "independent_auditor_id": {"type": "string", "minLength": 1},
+    "claims": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "overall_verdict": {"const": "PASS-CODEX-RESEARCH"},
+    "deep_research_status": {"const": "BLOCKED-DEEP-RESEARCH"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X101",
+  "phase": "repair",
+  "status": "PASS",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:24e48ecd3ee6ec9b3c1024c37cbdc7ef5b0fb19deee07e49a2cc2017e4bdcdee",
+  "checks": {
+    "sbom_complete": true,
+    "dependency_signed": true,
+    "critical_findings_owned": true,
+    "architecture_boundary_checked": true
+  },
+  "failed_checks": [],
+  "fault_id": null,
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

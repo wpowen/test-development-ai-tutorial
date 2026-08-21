@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS03",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标 broker 投递保证、策略引擎版本和补偿 owner"
+}

@@ -1,0 +1,98 @@
+{
+  "lesson_id": "td-ai-serving-career-l01",
+  "target_learner": "掌握普通 API 测试、需要进入 AI Serving 质量与职业迁移的测试开发工程师",
+  "level": "L2-guided-workflow",
+  "estimated_minutes": 45,
+  "job_result": "能为 AI API 和 Serving 建立可执行证据链，并产出无就业承诺的能力自评",
+  "artifact": "七页 Prompt/Manifest/Oracle/0-1-0 evidence、容量报告和职业作品计划",
+  "stages": [
+    {
+      "stage_id": "cold-open-failure",
+      "instructor_action": "展示最终回答正常但工具被重复执行的红灯账本",
+      "learner_action": "判断能否发布并写下缺失的过程证据",
+      "expected_observation": "最终文本不能证明副作用只发生一次",
+      "debrief": "过程 Oracle 与结果 Oracle 必须分开",
+      "artifact_or_assessment": "初始发布判断和未知项"
+    },
+    {
+      "stage_id": "stakes-and-promise",
+      "instructor_action": "展示七页工件、0/1/0 和 hash closure",
+      "learner_action": "把每个文件映射到输入、检查、证据或决定",
+      "expected_observation": "可复用结果是一条证据链而不是提示词清单",
+      "debrief": "版本、owner 和失败出口共同构成可审计交付",
+      "artifact_or_assessment": "材料到决策步骤映射表"
+    },
+    {
+      "stage_id": "before-after",
+      "instructor_action": "对比普通 API 断言与 AI API 五层测试面",
+      "learner_action": "标出协议、生成变量、行为、Serving 和可靠性",
+      "expected_observation": "AI API 扩张证据面但不废弃普通 HTTP 合同",
+      "debrief": "共同面和新增面应分别验证",
+      "artifact_or_assessment": "普通 API 与 AI API 对照图"
+    },
+    {
+      "stage_id": "plain-mental-model",
+      "instructor_action": "用排队、首 Token、逐 Token 和终态解释 Serving",
+      "learner_action": "从时间线手算 TTFT、TPOT 和 ITL",
+      "expected_observation": "总延迟不能定位 queue、prefill 与 decode",
+      "debrief": "指标必须能回到原始事件和分母",
+      "artifact_or_assessment": "指标定义卡和手算记录"
+    },
+    {
+      "stage_id": "guided-demo",
+      "instructor_action": "运行 TD-A04 cycle 并打开到达守恒报告",
+      "learner_action": "核对 planned 与 accounted 以及 fixture-only 标签",
+      "expected_observation": "baseline 通过且容量结论没有外推硬件",
+      "debrief": "Goodput 与到达账本共同限制容量解释",
+      "artifact_or_assessment": "经字段核对的 TD-A04 报告"
+    },
+    {
+      "stage_id": "failure-diagnosis",
+      "instructor_action": "运行 TD-A06 fault 展示重试放大与回退质量失败",
+      "learner_action": "沿 attempts、Retry-After、cost 和 quality 字段定位",
+      "expected_observation": "fault 以 exit 1 变红且保留 expected/actual",
+      "debrief": "修复不能靠吞掉错误或放宽 Oracle",
+      "artifact_or_assessment": "韧性 fault 根因记录"
+    },
+    {
+      "stage_id": "learner-practice",
+      "instructor_action": "提供新的 429 与工具超时组合但不提供答案",
+      "learner_action": "设计有界重试、幂等状态查询和安全失败",
+      "expected_observation": "同一副作用至多一次且预算不被突破",
+      "debrief": "四类预算和 fallback Gate 必须同时成立",
+      "artifact_or_assessment": "新增故障矩阵与 repair 报告"
+    },
+    {
+      "stage_id": "transfer-challenge",
+      "instructor_action": "将合成服务替换为目标组织的受控 AI 服务",
+      "learner_action": "重新固定模型、硬件、流量、阈值、owner 和回滚",
+      "expected_observation": "方法保留但 fixture 数字和岗位假设不得复制",
+      "debrief": "迁移的是证据合同而不是教学阈值",
+      "artifact_or_assessment": "真实项目差距与适配清单",
+      "source_context": "离线合成 AI API、Serving 与职业自评 fixture",
+      "target_context": "目标组织的受控 AI 服务",
+      "invariant": "版本化输入、独立 Oracle、0/1/0、owner、hash 和成熟度边界",
+      "must_change": [
+        "目标模型、硬件、流量分布、阈值和发布 owner",
+        "工具权限、数据等级、回滚策略和岗位责任"
+      ],
+      "success_criterion": "健康路径 exit 0，声明 fault exit 1，repair 回到 exit 0，且容量和职业结论不越界"
+    },
+    {
+      "stage_id": "artifact-handoff",
+      "instructor_action": "展示公开包、课程包、owners 与 closure",
+      "learner_action": "独立复跑七页并列出所有 NOT_RUN",
+      "expected_observation": "学员能区分 fixture、live、practitioner 和 production",
+      "debrief": "职业自评只支持学习规划且不承诺就业",
+      "artifact_or_assessment": "复跑证据与 30/60/90 天计划"
+    }
+  ],
+  "interaction_prompts": [
+    "最终文本正确时，哪种过程证据仍可能阻断发布？",
+    "为什么 Goodput 不能只用完成请求作分母？",
+    "迁移到目标组织时哪些合同保留、哪些阈值和责任必须重取证？"
+  ],
+  "recovery_path": "从 learner-materials 根目录重跑 cycle；若 required file、hash 或环境异常，保留 NOT_RUN/BLOCKED，不手改报告",
+  "evidence_status": "fixture-tested",
+  "limitations": "离线合成 fixture 已验证；真实 Provider、模型、GPU、生产流量、学习效果、从业者评审和就业结果均未验证"
+}

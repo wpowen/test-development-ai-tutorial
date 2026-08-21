@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-C04","fault_patch":{"organization.status":"P6","organization.failure_action":"PASS","organization.guess_level":true},"expected_fault_verdict":"FAIL","independent_oracle":true}

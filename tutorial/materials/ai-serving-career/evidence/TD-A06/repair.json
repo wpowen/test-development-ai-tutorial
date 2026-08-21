@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A06",
+  "phase": "baseline",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "evidence_level": "PASS-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:cce3ffd0d0834b16f1d3617d2dfd70ad1af8cf9a03b8fba677679f7c8c041f24",
+  "manifest_sha256": "sha256:6d2e347cd26600d1b7da091029d97250ce90623296f3969302a93a0d6733492e",
+  "checks": [
+    {
+      "field": "retry.attempts",
+      "expected": 3,
+      "actual": 3,
+      "pass": true
+    },
+    {
+      "field": "retry.respected_retry_after",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "fallback.quality_gate",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "tool.side_effect_count",
+      "expected": 1,
+      "actual": 1,
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "真实供应商配额、Retry-After、fallback 模型质量和生产恢复没有运行。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

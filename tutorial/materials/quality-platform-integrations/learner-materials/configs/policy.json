@@ -1,0 +1,1 @@
+{"schema_version":"quality-policy-v1","sha_binding":"project+mr+commit_sha+run_id","namespace_ttl_seconds":900,"allowed_role":"namespace-job-runner","human_gate":"AI质量负责人","ai_authority":"自动运行和比较评测，不得自动批准例外"}

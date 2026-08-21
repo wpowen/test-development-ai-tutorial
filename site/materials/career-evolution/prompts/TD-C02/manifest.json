@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C02",
+  "provider": "none",
+  "model_execution": "NOT_RUN",
+  "input_fixture": "../../fixtures/TD-C02-input.json",
+  "output_schema": "../../schemas/TD-C02-output.schema.json",
+  "evaluation": "../../evals/TD-C02-eval.json",
+  "mutation": "../../mutation/TD-C02.json",
+  "authority": "candidate generation only",
+  "version": "1.0.0",
+  "system_prompt": "system-v1.md",
+  "task_prompt": "task-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "schema": "../../schemas/TD-C02-output.schema.json",
+  "eval": "../../evals/TD-C02-eval.json"
+}

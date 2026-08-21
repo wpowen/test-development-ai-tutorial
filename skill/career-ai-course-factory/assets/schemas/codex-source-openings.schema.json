@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "codex-source-openings.schema.json",
+  "type": "object",
+  "required": ["schema_version", "openings"],
+  "properties": {
+    "schema_version": {"const": "codex-source-openings.v1"},
+    "openings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["event_id", "event_type", "runtime_observed_agent_id", "timestamp", "url", "result", "content_sha256"],
+        "properties": {
+          "event_type": {"const": "source_open"},
+          "result": {"const": "opened"},
+          "content_sha256": {"pattern": "^sha256:[0-9a-f]{64}$"}
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "topic_id": "TD-X602",
+  "version": "1.0.0",
+  "fixture": "synthetic",
+  "decision_owner": "qualified human owner",
+  "model_evidence": "NOT_RUN",
+  "risk_focus": "训练 snapshot 漂移、holdout 污染或回滚候选缺失"
+}
+

@@ -1,0 +1,7 @@
+{
+  "contract": "fixture/ui_contract.json",
+  "missing_contracts": [],
+  "oracle_pass": true,
+  "status": "PASS",
+  "execution": "offline-standard-library"
+}

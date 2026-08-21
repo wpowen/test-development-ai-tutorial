@@ -98,3 +98,54 @@ AI 生成的 case 可能引用不存在的 operationId、从实现反推 expecte
 ## Evidence status
 
 当前课程状态是 `fixture-tested`：Python 标准库公开包已经从 learner-materials 根目录实际跑出 baseline PASS/exit 0、mutation FAIL/exit 1、repair PASS/exit 0，并通过复制隔离测试。Schemathesis、Pact、k6、GitLab CI、live endpoint、真实模型、真实消费者和生产流量均为 `static-reviewed/NOT_RUN`；这些未运行项不会被描述为 live evidence、容量结论或生产安全证明。
+
+<!-- WAVE1-SPECIALTIES-START -->
+## Wave 1 独立专业专项
+
+### TD-PS01 · API 业务契约：从 HTTP 结果到可验证副作用
+
+- 控制问题：怎样证明 202 响应、订单状态、退款账本和事件消费属于同一次合法取消，而不是只证明 HTTP 成功？
+- 方法选择：分层使用 HTTP 语义、OpenAPI Schema、领域状态机、副作用账本和 Trace；因为任一单层都无法证明异步资金结果
+- 独立 Oracle：响应错误模型与状态码一致；非法状态和非 owner 请求零副作用；同一 Idempotency-Key 的退款计数增量最多一；request trace event ledger 可关联
+- Prompt：从 OpenAPI、状态机和账本夹具生成带 source_ref 的四层 API 测试包；未知规则输出 UNKNOWN，冲突输出 BLOCKED
+- Failure cycle：baseline → 服务端提交后客户端超时 → repair
+- Unknown：目标支付网关幂等窗口、真实账本可查询性和业务延迟阈值
+
+### TD-PS02 · OpenAPI Schema 与属性测试：让坏请求和破坏性变更变红
+
+- 控制问题：怎样证明 Schema 生成的用例具备业务检测力，而不是生成大量合法 JSON？
+- 方法选择：Schema 正反例负责结构，属性测试负责不变量，固定 seed 与 shrink 负责复现，mutation 负责检测力；四者职责不能合并
+- 独立 Oracle：amount 必须大于零且币种受商户支持；客户只能操作自己的支付意图；过期意图不能确认且状态不变；删除 required 或放宽金额必须杀死 mutation
+- Prompt：读取 OpenAPI 和历史缺陷，只输出风险约束、最小正反例、固定 seed 与 mutation 映射；不得把 Schema 通过写成业务通过
+- Failure cycle：baseline → 删除 merchant_id required → repair
+- Unknown：目标生成器对 OAS dialect 的实现差异和生产商户配置
+
+### TD-PS03 · 契约与集成：事件兼容、租户边界和补偿
+
+- 控制问题：怎样在部署前证明消费者字段兼容，并在运行时证明租户、幂等、死信和补偿没有静默失败？
+- 方法选择：消费者契约验证使用字段，AsyncAPI/CloudEvents 固定事件 envelope，权限矩阵验证租户，回放器验证重复乱序，Trace 验证补偿
+- 独立 Oracle：provider 变更满足所有活跃消费者；跨租户事件被拒绝且零副作用；重复 event_id 只产生一次支付意图；失败事件进入具名 dead-letter 或补偿终态
+- Prompt：根据消费者读取字段、事件规范和策略夹具生成兼容矩阵与回放序列；禁止自动授予权限或更改事件语义
+- Failure cycle：baseline → 删除消费者字段 → repair
+- Unknown：目标 broker 投递保证、策略引擎版本和补偿 owner
+
+### TD-PS08 · 数据与迁移：Schema 演进、回填、CDC 与回滚对账
+
+- 控制问题：怎样证明迁移前后行数、键、金额、状态语义和 CDC offset 一致，并在部分失败时安全停止或回滚？
+- 方法选择：expand-contract 降低兼容风险，约束与 checksum 验证静态完整性，分片回填和高水位验证进度，CDC 对账处理并发变化，影子读比较语义
+- 独立 Oracle：主键集合与关键行数按分片守恒；金额汇总和状态语义映射一致；CDC 高水位前后的变更无丢失可容忍去重；旧新读路径差异低于零容忍 blocker
+- Prompt：读取 DDL、数据字典、约束、回填计划和 CDC manifest，输出前置检查、分片 Oracle、停机条件、回滚与对账 SQL；不得建议直接 DROP 生产列
+- Failure cycle：baseline → 回填跳过一个分片 → repair
+- Unknown：目标数据规模、锁等待、复制延迟、业务可接受停机窗口
+
+### TD-PS09 · 性能与容量：到达率、尾延迟、Goodput 与单位成功成本
+
+- 控制问题：怎样在不发生 coordinated omission 的前提下测量队列、TTFT、TPOT、E2E、任务质量与成本，并给出容量而非单次速度？
+- 方法选择：open-loop arrival 保持外部到达，closed-loop 诊断单用户上限，分阶段 Trace 定位 queue/model/tool，风险切片阻止均值掩盖，Goodput 将质量安全纳入容量
+- 独立 Oracle：到达率与 dropped iterations 可核对；每任务阶段时间相加可解释 E2E；只有质量安全延迟同时合格进入 Goodput；失败重试和工具调用计入 cost_per_success
+- Prompt：从 workload、任务切片、SLO 和成本模型生成 open/closed 场景、阶段指标和容量判定；禁止发明通用阈值或忽略失败成本
+- Failure cycle：baseline → 工具 fan-out 翻倍 → repair
+- Unknown：目标模型硬件、provider 内部队列、真实流量分布和价格
+
+共享 bundle 只复用 runner；页级 manifest、owner、Oracle、Prompt、fault 和证据互不继承。
+<!-- WAVE1-SPECIALTIES-END -->

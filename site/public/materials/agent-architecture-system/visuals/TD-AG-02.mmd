@@ -1,0 +1,24 @@
+%% TD-AG-02 · 来源：S10 · S70 · S72
+%% 图中轨迹来自合成 fixture，不代表生产调用链已经接入。
+flowchart LR
+  task["Task<br/><small>业务目标 / 禁止动作</small>"]
+  span["Span<br/><small>计划与单步意图</small>"]
+  tool["Tool / Parameter<br/><small>工具、参数、权限</small>"]
+  obs["Observation<br/><small>返回值是否被正确使用</small>"]
+  first["首错位置<br/><small>最早偏离不变量</small>"]
+  outcome["Outcome Oracle<br/><small>终态与业务结果</small>"]
+  trajectory["Trajectory Decision<br/><small>PASS / FAIL / BLOCKED</small>"]
+  stop["副作用阻断<br/><small>禁止工具调用立即 FAIL</small>"]
+  task -->|展开轨迹| span
+  span -->|动作| tool
+  tool -->|工具结果| obs
+  obs -->|继续 / 修正| span
+  tool -->|参数或权限错| first
+  obs -->|曲解观测| first
+  first -->|定位根因| trajectory
+  outcome -->|终态证据| trajectory
+  tool -->|禁止副作用| stop
+  stop -->|硬失败| trajectory
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

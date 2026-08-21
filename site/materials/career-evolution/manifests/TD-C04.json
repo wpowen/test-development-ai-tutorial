@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C04",
+  "input_fixture": "fixtures/TD-C04-input.json",
+  "expected": {
+    "organization.status": "INTERNAL-UNKNOWN",
+    "organization.failure_action": "BLOCK",
+    "organization.owner_present": false,
+    "organization.guess_level": false
+  },
+  "fault_patch": {
+    "organization.status": "P6",
+    "organization.failure_action": "PASS",
+    "organization.guess_level": true
+  },
+  "unknowns": [
+    "组织 policy、owner、版本和生效日期未提供"
+  ],
+  "evidence_boundary": "PASS-FIXTURE only; organization adapter is unconfigured",
+  "manifest_version": "1.0.0",
+  "working_directory": "materials/career-evolution",
+  "steps": [
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C04.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-C04/baseline.json",
+        "evidence/TD-C04/fault.json",
+        "evidence/TD-C04/repair.json",
+        "evidence/TD-C04/cycle.json"
+      ]
+    }
+  ],
+  "required_files": [
+    "scripts/career_evolution_lab.py",
+    "fixtures/TD-C04-input.json",
+    "manifests/TD-C04.json"
+  ]
+}

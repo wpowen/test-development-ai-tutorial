@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS03",
+  "title": "契约与集成：事件兼容、租户边界和补偿",
+  "working_directory": "materials/api-ai-automation",
+  "owners": {
+    "content": "TD-PS03-content-owner",
+    "oracle": "TD-PS03-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS03.json",
+    "prompts/TD-PS03/system-v1.md",
+    "prompts/TD-PS03/task-v1.md",
+    "prompts/TD-PS03/critic-v1.md",
+    "prompts/TD-PS03/manifest.json",
+    "prompts/TD-PS03/mutation.json",
+    "fixtures/TD-PS03-input.json",
+    "schemas/TD-PS03-output.schema.json",
+    "evals/TD-PS03-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS03-ORACLE-01",
+      "statement": "provider 变更满足所有活跃消费者",
+      "evidence": "TD-PS03-evidence-1.json",
+      "owner": "TD-PS03-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS03-ORACLE-02",
+      "statement": "跨租户事件被拒绝且零副作用",
+      "evidence": "TD-PS03-evidence-2.json",
+      "owner": "TD-PS03-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS03-ORACLE-03",
+      "statement": "重复 event_id 只产生一次支付意图",
+      "evidence": "TD-PS03-evidence-3.json",
+      "owner": "TD-PS03-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS03-ORACLE-04",
+      "statement": "失败事件进入具名 dead-letter 或补偿终态",
+      "evidence": "TD-PS03-evidence-4.json",
+      "owner": "TD-PS03-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS03-FAULT-01",
+    "description": "删除消费者字段",
+    "target_oracle": "TD-PS03-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS03.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS03/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS03.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS03/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS03.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS03/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS03.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS03/baseline.json",
+        "evidence/TD-PS03/fault.json",
+        "evidence/TD-PS03/repair.json",
+        "evidence/TD-PS03/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标 broker 投递保证、策略引擎版本和补偿 owner"
+}

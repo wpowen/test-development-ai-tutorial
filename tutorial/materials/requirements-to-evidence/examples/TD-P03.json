@@ -1,0 +1,13 @@
+{
+  "question_id": "RQ-007",
+  "requirement_ids": ["REQ-CANCEL-001"],
+  "type": "SOURCE_CONFLICT",
+  "question": "订单进入 SHIPPED 后是否仍允许取消？",
+  "source_refs": ["PRD-v3#R17", "TECH-a13f#S04"],
+  "impact": "决定 409 拒绝用例、退款副作用与仓配状态回滚",
+  "owner": "product-owner-order",
+  "status": "OPEN",
+  "block_level": "RELEASE_BLOCKER",
+  "close_with": "批准后的 PRD 段落和 Requirement Contract 新版本"
+}
+

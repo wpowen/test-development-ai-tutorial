@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TD-AP02 evidence decision",
+  "type": "object",
+  "required": [
+    "page_id",
+    "status",
+    "evidence",
+    "inference",
+    "unknown",
+    "boundary"
+  ],
+  "properties": {
+    "page_id": {
+      "const": "TD-AP02"
+    },
+    "status": {
+      "enum": [
+        "PASS_FIXTURE",
+        "FAIL",
+        "BLOCKED"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "inference": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "unknown": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "boundary": {
+      "const": "synthetic fixture; not production capacity"
+    }
+  },
+  "additionalProperties": false
+}

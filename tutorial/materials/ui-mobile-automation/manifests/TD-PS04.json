@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS04",
+  "title": "Web UI 关键旅程：隔离、定位器、网络控制与跨浏览器",
+  "working_directory": "materials/ui-mobile-automation",
+  "owners": {
+    "content": "TD-PS04-content-owner",
+    "oracle": "TD-PS04-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "required_files": [
+    "owners.json",
+    "scripts/specialty_lab.py",
+    "manifests/TD-PS04.json",
+    "prompts/TD-PS04/system-v1.md",
+    "prompts/TD-PS04/task-v1.md",
+    "prompts/TD-PS04/critic-v1.md",
+    "prompts/TD-PS04/manifest.json",
+    "prompts/TD-PS04/mutation.json",
+    "fixtures/TD-PS04-input.json",
+    "schemas/TD-PS04-output.schema.json",
+    "evals/TD-PS04-eval.json"
+  ],
+  "oracle_rules": [
+    {
+      "oracle_id": "TD-PS04-ORACLE-01",
+      "statement": "批准控件角色名称与权限一致",
+      "evidence": "TD-PS04-evidence-1.json",
+      "owner": "TD-PS04-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS04-ORACLE-02",
+      "statement": "重复点击只产生一次退款意图",
+      "evidence": "TD-PS04-evidence-2.json",
+      "owner": "TD-PS04-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS04-ORACLE-03",
+      "statement": "UI 终态与订单 API 和审计记录一致",
+      "evidence": "TD-PS04-evidence-3.json",
+      "owner": "TD-PS04-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS04-ORACLE-04",
+      "statement": "失败包含 DOM 网络控制台和 trace",
+      "evidence": "TD-PS04-evidence-4.json",
+      "owner": "TD-PS04-oracle-owner"
+    }
+  ],
+  "fault_injection": {
+    "fault_id": "TD-PS04-FAULT-01",
+    "description": "退款 API 延迟后返回 500",
+    "target_oracle": "TD-PS04-ORACLE-01"
+  },
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS04.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS04/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS04.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "evidence/TD-PS04/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS04.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS04/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/specialty_lab.py --manifest manifests/TD-PS04.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "evidence/TD-PS04/baseline.json",
+        "evidence/TD-PS04/fault.json",
+        "evidence/TD-PS04/repair.json",
+        "evidence/TD-PS04/cycle.json"
+      ]
+    }
+  ],
+  "evidence_boundary": "Deterministic offline fixture only. Unknown: 目标浏览器流量占比、第三方沙箱稳定性和真实页面可访问名称"
+}

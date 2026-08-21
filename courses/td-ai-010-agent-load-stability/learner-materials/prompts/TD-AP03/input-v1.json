@@ -1,0 +1,12 @@
+{
+  "schema_version": "agent-performance-prompt-input.v1",
+  "page_id": "TD-AP03",
+  "run_refs": [
+    "reports/TD-AP03/baseline/summary.json",
+    "reports/TD-AP03/fault/summary.json",
+    "reports/TD-AP03/repair/summary.json",
+    "reports/TD-AP03/cycle-summary.json"
+  ],
+  "question": "Does the task rooted trace semantics baseline-fault-repair cycle demonstrate detection and repair?",
+  "boundary": "fixture-tested only"
+}

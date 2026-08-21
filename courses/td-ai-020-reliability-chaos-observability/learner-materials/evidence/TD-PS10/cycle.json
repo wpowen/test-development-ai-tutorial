@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS10",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标供应商 Retry-After、真实队列容量和业务降级文案"
+}

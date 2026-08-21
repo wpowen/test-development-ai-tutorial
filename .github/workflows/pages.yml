@@ -15,32 +15,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - name: Validate fixture-preview payload
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate honest fixture-preview release
         run: |
           python3 - <<'PY'
           import json
-          import re
+          import sys
           from pathlib import Path
 
-          html = Path("site/index.html").read_text(encoding="utf-8")
-          match = re.search(r"const COURSE_DATA=(.*?);const DATA=COURSE_DATA;", html, re.S)
-          if not match:
-              raise SystemExit("COURSE_DATA is missing from site/index.html")
-          data = json.loads(match.group(1))
-          pages = data.get("pages", [])
-          ids = [page.get("id") for page in pages]
-          if len(pages) != 85 or len(set(ids)) != 85:
-              raise SystemExit(f"expected 85 unique preview pages, got {len(pages)}")
-          required = {"TD-F01", "TD-P02", "TD-T19", "TD-T25", "TD-X805", "TD-AP08"}
-          missing = sorted(required.difference(ids))
-          if missing:
-              raise SystemExit(f"latest preview pages missing: {missing}")
-          allowed = {"desk-researched", "fixture-tested"}
-          invalid = [page["id"] for page in pages if page.get("status") not in allowed]
-          if invalid:
-              raise SystemExit(f"preview contains unsupported maturity states: {invalid}")
-          counts = {status: sum(page.get("status") == status for page in pages) for status in sorted(allowed)}
-          print(f"Preview valid: 85 unique pages; honest maturity counts={counts}.")
+          sys.path.insert(0, "skill/career-ai-course-factory/scripts")
+          from validate_public_release import validate_release
+
+          receipt = json.loads(Path("CANDIDATE-VALIDATION.json").read_text(encoding="utf-8"))
+          if receipt.get("candidate_structure_valid") is not True or receipt.get("unexpected_errors") != []:
+              raise SystemExit(f"candidate validation receipt is not clean: {receipt}")
+
+          errors = validate_release(Path("."))
+          allowed = [
+              error for error in errors
+              if error == "release manifest validation_verdict must be PASS"
+              or error.endswith("must be pilot or public")
+          ]
+          unexpected = [error for error in errors if error not in allowed]
+          solution_blockers = [error for error in allowed if error.endswith("must be pilot or public")]
+          if unexpected or len(solution_blockers) != 6 or "release manifest validation_verdict must be PASS" not in allowed:
+              raise SystemExit(f"unexpected public-preview validation state: unexpected={unexpected}, allowed={allowed}")
+
+          manifest = json.loads(Path("RELEASE-MANIFEST.json").read_text(encoding="utf-8"))
+          if manifest.get("page_count") != 103 or manifest.get("validation_verdict") != "BLOCKED-HIGHER-MATURITY":
+              raise SystemExit(f"fixture-preview maturity boundary drifted: {manifest}")
+          print("Fixture preview valid: 103 pages; structure PASS; practitioner/integration/live maturity remains blocked.")
           PY
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://career-ai-course-factory.local/schemas/waiver.schema.json",
+  "title": "Waiver",
+  "description": "没有 expires_at 或 compensating_controls 的 Waiver 无效。approved_by 不得是测试开发单方。",
+  "type": "object",
+  "required": ["waiver_id", "gate", "unmet", "business_reason", "compensating_controls", "scope", "approved_by", "approved_at", "expires_at", "on_expiry", "rollback_condition"],
+  "additionalProperties": false,
+  "properties": {
+    "waiver_id": {"type": "string", "pattern": "^W-[0-9]{4}-[0-9]{4}-[0-9]{2}$"},
+    "gate": {"type": "string", "minLength": 1},
+    "unmet": {"type": "string", "minLength": 5},
+    "business_reason": {"type": "string", "minLength": 10},
+    "compensating_controls": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 5}},
+    "scope": {"type": "string", "minLength": 3},
+    "approved_by": {"type": "string", "minLength": 1},
+    "approver_role": {"enum": ["release-owner", "security-owner"]},
+    "approved_at": {"type": "string"},
+    "expires_at": {"type": "string"},
+    "on_expiry": {"type": "string", "minLength": 5},
+    "rollback_condition": {"type": "string", "minLength": 5}
+  }
+}

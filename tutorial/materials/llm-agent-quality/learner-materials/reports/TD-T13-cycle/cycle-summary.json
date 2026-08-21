@@ -1,0 +1,15 @@
+{
+  "topic_id": "TD-T13",
+  "observed_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "verdict": "PASS",
+  "maturity": "fixture-tested"
+}

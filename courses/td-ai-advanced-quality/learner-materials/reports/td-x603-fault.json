@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "topic_id": "TD-X603",
+  "phase": "fault",
+  "status": "FAIL",
+  "evidence_scope": "deterministic-offline-fixture",
+  "model_evidence": "NOT_RUN",
+  "prompt_manifest_hash": "sha256:e527264b49e509c89ed7c951dc213e12c9c3bd23bcb4a7a07cc9b73605ed6aee",
+  "checks": {
+    "consent_and_ttl": true,
+    "user_isolation": false,
+    "cache_version_current": false,
+    "deletion_receipt": true
+  },
+  "failed_checks": [
+    "user_isolation",
+    "cache_version_current"
+  ],
+  "fault_id": "cross_user_stale_cache",
+  "human_decision_required": true,
+  "limitations": [
+    "synthetic inputs",
+    "no model/provider/production integration",
+    "no practitioner review"
+  ]
+}

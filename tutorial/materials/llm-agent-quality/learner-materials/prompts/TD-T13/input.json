@@ -1,0 +1,17 @@
+{
+  "fixture_id": "TD-T13-input-v1",
+  "topic_id": "TD-T13",
+  "scenario": "offline_synthetic_fixture",
+  "facts": {
+    "identity": "sandbox-user",
+    "permission": "read-or-propose-only",
+    "tenant": "tenant-a",
+    "version": "v1",
+    "evidence_refs": [
+      "fixture://TD-T13/input",
+      "fixture://TD-T13/trace"
+    ]
+  },
+  "injected_fault": "confounded experiment changes model and retriever together",
+  "external_calls": "NOT_RUN"
+}

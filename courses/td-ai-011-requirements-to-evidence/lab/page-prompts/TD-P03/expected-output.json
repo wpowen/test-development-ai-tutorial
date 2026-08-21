@@ -1,0 +1,66 @@
+{
+  "page_id": "TD-P03",
+  "status": "ACCEPTED",
+  "components": [
+    {
+      "component": "order-service",
+      "responsibility": "validate state and accept cancellation"
+    }
+  ],
+  "interfaces": [
+    {
+      "interface": "POST /cancel",
+      "source_ref": "OPENAPI-v7#/cancel",
+      "contract": "409 for shipped order"
+    }
+  ],
+  "states": [
+    {
+      "state": "SHIPPED",
+      "allowed_action": "reject cancellation",
+      "oracle": "HTTP 409"
+    }
+  ],
+  "failure_modes": [
+    {
+      "failure": "refund worker retry duplicates side effect",
+      "control": "idempotency key",
+      "status": "Inference"
+    }
+  ],
+  "observability": [
+    {
+      "signal": "cancellation_id and order_id correlation",
+      "status": "Unknown",
+      "owner": "operations-owner"
+    }
+  ],
+  "security": [
+    {
+      "control": "buyer ownership authorization",
+      "source_ref": "PRD-v3#R18"
+    }
+  ],
+  "requirement_mapping": [
+    {
+      "requirement_id": "R-CANCEL-01",
+      "component": "order-service",
+      "verification": "state-transition test"
+    }
+  ],
+  "review_questions": [
+    {
+      "owner": "product-owner",
+      "status": "Unknown",
+      "question": "duplicate request time window is not specified"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UNK-OPS-RETENTION",
+      "status": "Unknown",
+      "owner": "operations-owner",
+      "question": "取消审计日志保留多久"
+    }
+  ]
+}

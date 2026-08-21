@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-C04","observation":{"organization":{"status":"INTERNAL-UNKNOWN","failure_action":"BLOCK","owner_present":false,"guess_level":false}},"unknowns":["组织 policy、owner、版本和生效日期未提供"],"artifact_contract":{"required":["organization","source_ref","owner","version","effective_from","mapping","threshold_owner"]}}

@@ -1,0 +1,23 @@
+%% TD-AG-04 · 来源：S07 · S23 · S65
+%% 真实用户的确认疲劳与接管成功率仍需目标学习者/从业者实验。
+flowchart LR
+  run["Agent 运行<br/><small>计划 / 状态 / 工具</small>"]
+  interrupt["人工中断<br/><small>写操作前 / 后</small>"]
+  dirty["脏状态检查<br/><small>半成品 / 锁 / 队列</small>"]
+  rollback["回滚或补偿<br/><small>恢复安全终态</small>"]
+  takeover["人工接管<br/><small>新 owner / 新上下文</small>"]
+  resume["安全恢复<br/><small>交回或转人工终结</small>"]
+  audit["审计证据<br/><small>人、时间、决定、状态</small>"]
+  blocked["停止 / BLOCKED<br/><small>无法清理状态则不恢复</small>"]
+  run -->|stop signal| interrupt
+  interrupt -->|冻结并检查| dirty
+  dirty -->|存在副作用| rollback
+  dirty -->|状态可解释| takeover
+  rollback -->|清理后移交| takeover
+  takeover -->|人工决定| resume
+  resume -->|记录结果| audit
+  dirty -->|无法确认| blocked
+  blocked -->|留下阻断证据| audit
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

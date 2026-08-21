@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS01",
+  "mutation_id": "TD-PS01-FAULT-01",
+  "mutation": "服务端提交后客户端超时",
+  "expected_detected_by": "响应错误模型与状态码一致",
+  "model_execution": "NOT_RUN"
+}

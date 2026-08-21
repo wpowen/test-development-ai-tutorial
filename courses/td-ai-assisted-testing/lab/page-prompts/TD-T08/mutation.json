@@ -1,0 +1,1 @@
+{"mutations":[{"id":"M-DROP-TRACE-REF","fault":"remove trace IDs and raw evidence links","expected_status":"UNKNOWN"},{"id":"M-MIX-COMMITS","fault":"merge failures from different commits","expected_status":"UNKNOWN"},{"id":"M-CLAIM-CAUSE-WITHOUT-EXPERIMENT","fault":"promote similarity to root cause","expected_status":"BLOCKED"}]}

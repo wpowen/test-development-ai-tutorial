@@ -1,0 +1,18 @@
+{
+  "evidence_scope": "PASS-FIXTURE only",
+  "commands": [
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C02.json --mode baseline",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C02.json --mode fault",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C02.json --mode repair",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C03.json --mode cycle",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-C04.json --mode cycle",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-F05.json --mode cycle",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-T26.json --mode cycle",
+    "python3 scripts/career_evolution_lab.py --manifest manifests/TD-R01.json --mode cycle"
+  ],
+  "baseline": {"exit_code": 0, "verdict": "PASS", "pages": ["TD-C02", "TD-C03", "TD-C04", "TD-F05", "TD-T26", "TD-R01"]},
+  "mutation": {"exit_code": 1, "verdict": "FAIL", "pages": ["TD-C02", "TD-C03", "TD-C04", "TD-F05", "TD-T26", "TD-R01"]},
+  "repair": {"exit_code": 0, "verdict": "PASS", "pages": ["TD-C02", "TD-C03", "TD-C04", "TD-F05", "TD-T26", "TD-R01"]},
+  "environment": {"provider": "none", "model_execution": "NOT_RUN", "network": false, "gpu": false},
+  "limitations": "真实模型、组织 policy、从业者评审、生产数据、晋升与就业结果均未运行。"
+}

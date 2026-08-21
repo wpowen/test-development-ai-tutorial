@@ -1,0 +1,18 @@
+{
+  "package_id": "td-t07-data-method-selection",
+  "topic_id": "TD-T07",
+  "version": "1.0.0",
+  "purpose": "按输入形状、交互、状态和不变量选择边界、组合、property 或 fuzz，并保存可重放反例",
+  "authority": "method recommendation only; test owner approves constraints and invariant",
+  "prompt": "prompt-v1.md",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../fixtures/oracles.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": ["CONSTRAINT_UNKNOWN", "ORACLE_UNKNOWN", "NON_REPRODUCIBLE", "BLOCKED"]
+}

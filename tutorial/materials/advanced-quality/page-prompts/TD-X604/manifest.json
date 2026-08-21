@@ -1,0 +1,23 @@
+{
+  "package_id": "td-x604-routing-protocol",
+  "topic_id": "TD-X604",
+  "version": "1.0.0",
+  "purpose": "冻结能力矩阵、路由规则、provider/model/schema 与 MCP/工具协议版本",
+  "authority": "candidate-only; qualified human owner approves",
+  "task_prompt": "prompt-v1.md",
+  "critic_prompt": "critic-v1.md",
+  "input": "input.json",
+  "schema": "schema.json",
+  "eval": "eval.json",
+  "mutation": "mutation.json",
+  "model_config": "model-config.json",
+  "independent_oracle": "../../owners.json",
+  "model_evidence": "NOT_RUN",
+  "stop_states": [
+    "CAPABILITY_MISMATCH",
+    "PROTOCOL_DRIFT",
+    "FALLBACK_UNSAFE",
+    "BLOCKED"
+  ]
+}
+

@@ -1,0 +1,66 @@
+{
+  "topic_id": "TD-AP05",
+  "page_id": "TD-AP05",
+  "working_directory": "materials/agent-load-stability",
+  "profile": "profiles/TD-AP05.json",
+  "required_files": [
+    "scripts/agent_performance_lab.py",
+    "profiles/TD-AP05.json",
+    "prompts/TD-AP05/prompt-v1.md",
+    "prompts/TD-AP05/manifest.json",
+    "prompts/TD-AP05/input-v1.json",
+    "prompts/TD-AP05/output-schema-v1.json",
+    "prompts/TD-AP05/eval-v1.json",
+    "prompts/TD-AP05/mutation-v1.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "kind": "baseline",
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP05-lab.json --mode baseline",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-AP05/baseline/summary.json",
+        "reports/TD-AP05/baseline/traces.jsonl"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "kind": "mutation",
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP05-lab.json --mode fault",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/TD-AP05/fault/summary.json",
+        "reports/TD-AP05/fault/traces.jsonl"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "kind": "repair",
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP05-lab.json --mode repair",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-AP05/repair/summary.json",
+        "reports/TD-AP05/repair/traces.jsonl"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "kind": "cycle",
+      "command": "python3 scripts/agent_performance_lab.py --manifest manifests/TD-AP05-lab.json --mode cycle",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/TD-AP05/baseline/summary.json",
+        "reports/TD-AP05/fault/summary.json",
+        "reports/TD-AP05/repair/summary.json",
+        "reports/TD-AP05/cycle-summary.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "baseline",
+    "fault_step_id": "fault",
+    "repair_step_id": "repair"
+  },
+  "evidence_boundary": "fixture-tested only; no live model, practitioner review, or production capacity evidence."
+}

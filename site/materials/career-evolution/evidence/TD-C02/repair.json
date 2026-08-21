@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C02",
+  "phase": "baseline",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "evidence_level": "PASS-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:9fa9f79dda0fc515bd6b20831387273103e30b2cd669e3a71488fb9630f38f7a",
+  "manifest_sha256": "sha256:79aece050700873132b120add12cd2302ee827e2538d3809f7ac2ce64989d38e",
+  "checks": [
+    {
+      "field": "career.responsibility_states_complete",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "career.evidence_refs_complete",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "career.decision_rights_complete",
+      "expected": true,
+      "actual": true,
+      "pass": true
+    },
+    {
+      "field": "career.years_only",
+      "expected": false,
+      "actual": false,
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "组织 band 和晋升 policy 未提供"
+  ],
+  "boundary": "PASS-FIXTURE only; responsibility state is not a job-level claim"
+}

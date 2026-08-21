@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["page_id","resources","checked_at","fallbacks","exit_artifacts"],"properties":{"page_id":{"const":"TD-R01"},"resources":{"type":"array"},"checked_at":{"type":"string"},"fallbacks":{"type":"array"},"exit_artifacts":{"type":"array"}}}

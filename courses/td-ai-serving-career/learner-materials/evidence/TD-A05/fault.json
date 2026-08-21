@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A05",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:c37fa9e406954c5310aeded7c0e82d65b70af431317790e91713e05be2374c71",
+  "manifest_sha256": "sha256:12d84248c976a5f147367a7adadb1fe787455ce7a98a7f30de438b1d1be5e8b0",
+  "checks": [
+    {
+      "field": "diagnosis.root_cause",
+      "expected": "queue",
+      "actual": "gpu",
+      "pass": false
+    },
+    {
+      "field": "diagnosis.single_variable_confirmed",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "field": "managed_internal_metrics",
+      "expected": "UNKNOWN",
+      "actual": "UNKNOWN",
+      "pass": true
+    }
+  ],
+  "unknowns": [
+    "托管服务内部队列、GPU profiler 和真实 KV cache eviction 不可见。"
+  ],
+  "boundary": "PASS-FIXTURE only; deterministic offline input. No provider/model/GPU/live/practitioner/production evidence; capacity values are fixture-only."
+}

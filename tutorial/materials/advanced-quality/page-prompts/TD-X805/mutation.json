@@ -1,0 +1,12 @@
+{
+  "topic_id": "TD-X805",
+  "mutations": [
+    {
+      "mutation_id": "biased_sample_guardrail_regression",
+      "description": "分配污染、guardrail 退化或人工样本偏置",
+      "expected_status": "BLOCKED",
+      "must_be_detected": true
+    }
+  ]
+}
+

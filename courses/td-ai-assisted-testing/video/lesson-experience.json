@@ -1,0 +1,23 @@
+{
+  "lesson_id": "td-ai-assisted-testing-l01",
+  "target_learner": "会读 PRD、Diff 和基础测试报告的初级测试开发工程师",
+  "level": "L2-guided-engineering",
+  "estimated_minutes": 18,
+  "job_result": "能把 AI 风险、测试、数据和聚类候选变成有独立 Oracle 与故障反证的证据链",
+  "artifact": "risk matrix + prompt packages + baseline/fault/repair reports + transfer checklist",
+  "stages": [
+    {"stage_id":"cold-open-failure","instructor_action":"展示 AI 生成测试全绿但守卫反转仍未被发现","learner_action":"写下是否可发布及缺少的证据","expected_observation":"数量和覆盖不能证明检测力","debrief":"只有受控错误能稳定触发非零退出，才能证明门禁具有反事实检测力","artifact_or_assessment":"初始发布判断与 unknown 列表"},
+    {"stage_id":"stakes-and-promise","instructor_action":"展示弱断言、虚构规则和误归因的业务后果","learner_action":"列出模型禁止拥有的四项权限","expected_observation":"生成效率必须受独立权威约束","debrief":"AI 只生成 candidate","artifact_or_assessment":"AI authority boundary"},
+    {"stage_id":"before-after","instructor_action":"对比普通 AI 清单和带引用/状态/owner 的证据包","learner_action":"逐字段定位缺少来源、版本、Oracle、状态或 owner 的不可审计项目","expected_observation":"可追溯工件能进入下游门禁","debrief":"专业交付必须能从结论反查输入、版本、Oracle、状态与责任人","artifact_or_assessment":"普通清单与证据包的逐字段缺口对照表"},
+    {"stage_id":"plain-mental-model","instructor_action":"解释 basis-diff-candidate-oracle-mutation-evidence-owner 链","learner_action":"画出生成器与审批者分离图","expected_observation":"同一模型不能批准自己的 Oracle","debrief":"把候选计算与业务权威分开，才能发现生成器和评价器共享的系统偏差","artifact_or_assessment":"七节点证据架构"},
+    {"stage_id":"guided-demo","instructor_action":"运行 baseline 并打开哈希、引用和 PASS 状态","learner_action":"检查 Prompt/Input/Schema/Eval/Mutation 版本","expected_observation":"批准 fixture 在相同合同上退出 0","debrief":"健康基线固定输入、Oracle 与环境，后续故障和修复才有可比较分母","artifact_or_assessment":"baseline 检查记录"},
+    {"stage_id":"failure-diagnosis","instructor_action":"运行四页 fault 并解释 BLOCKED/FAIL/UNKNOWN","learner_action":"把每个非零退出映射到目标门禁","expected_observation":"缺引用、错误实现、属性违反和证据缺口均被观察","debrief":"BLOCKED、FAIL 与 UNKNOWN 表示不同专业状态，不能归一成一个红色总分","artifact_or_assessment":"fault 处置表"},
+    {"stage_id":"learner-practice","instructor_action":"提供 repair 输入但不修改 Oracle","learner_action":"预测结果并运行 repair","expected_observation":"相同版本合同恢复退出 0","debrief":"修复来源或实现，不放宽 expected","artifact_or_assessment":"repair 与三阶段差异"},
+    {"stage_id":"transfer-challenge","instructor_action":"把数字商品退款替换为订阅续费","learner_action":"重建 basis、状态、时间边界、幂等和事件字段","expected_observation":"方法保持但业务 Oracle 与阈值全部重建","debrief":"可迁移的是引用、独立 Oracle 和故障反证合同，不是教学 fixture 的业务取值","artifact_or_assessment":"续费场景提案","source_context":"数字商品退款合成 fixture","target_context":"把数字商品退款链迁移到订阅续费，并重建 basis、状态、组合约束、Oracle 和事件证据","invariant":"引用闭合、独立 Oracle、故障反证、UNKNOWN 保全","must_change":["需求与状态机","时间和金额边界","幂等与事件字段","owner 和阈值"],"success_criterion":"正常版本通过、重复扣费故障稳定失败、缺证据项保持 UNKNOWN"},
+    {"stage_id":"artifact-handoff","instructor_action":"展示课程包、研究包、公开实验和验证清单","learner_action":"复跑并列出真实项目仍缺证据","expected_observation":"能区分 fixture-tested 与 live/practitioner/production","debrief":"可执行 fixture 是起点而非发布证明","artifact_or_assessment":"复跑收据与集成差距表"}
+  ],
+  "interaction_prompts": ["风险候选缺 diff 引用时该补写还是阻断？", "为什么 fault 非零是正确证据？", "缺 trace 时能否写根因？"],
+  "recovery_path": "先运行 verify-packages；若 baseline 异常，检查 Python 版本、工作目录、fixture 与 manifest 哈希，并保持 NOT_RUN/UNKNOWN",
+  "evidence_status": "fixture-tested",
+  "limitations": "离线合成 fixture 已验证；真实模型、仓库、从业者学习效果和生产发布未验证"
+}

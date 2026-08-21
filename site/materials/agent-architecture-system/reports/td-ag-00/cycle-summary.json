@@ -1,0 +1,16 @@
+{
+  "topic_id": "TD-AG-00",
+  "observed_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "verdict": "PASS",
+  "maturity": "fixture-tested",
+  "model_evidence": "NOT_RUN"
+}

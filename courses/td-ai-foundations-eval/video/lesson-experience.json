@@ -1,0 +1,98 @@
+{
+  "lesson_id": "td-ai-foundations-eval-capstone",
+  "target_learner": "第一次系统学习 AI Quality 的测试开发",
+  "level": "L1-guided-fixture",
+  "estimated_minutes": 90,
+  "job_result": "能用版本化合同阻断一个 RAG 权限回归并解释证据边界",
+  "artifact": "Eval Contract、RAG Gate、0/1/0 reports 与迁移清单",
+  "stages": [
+    {
+      "stage_id": "cold-open-failure",
+      "instructor_action": "展示跨租户答案与隐藏 ACL 失败",
+      "learner_action": "先判断放行、拒答或转人工并说明风险",
+      "expected_observation": "流畅答案可能同时违反证据和权限",
+      "debrief": "最终文本不是权限与安全的充分证据",
+      "artifact_or_assessment": "学员风险预测记录"
+    },
+    {
+      "stage_id": "stakes-and-promise",
+      "instructor_action": "说明错误政策、泄露与副作用成本",
+      "learner_action": "写出本次必须阻断的一个行为",
+      "expected_observation": "学习目标是可审计 Gate 而非漂亮回答",
+      "debrief": "AI 只能给出候选证据，不能拥有发布权",
+      "artifact_or_assessment": "blocker 与 owner"
+    },
+    {
+      "stage_id": "before-after",
+      "instructor_action": "对比随机对话抽查和版本化 Eval Contract",
+      "learner_action": "圈出旧流程中缺失的版本与分母",
+      "expected_observation": "新流程能重放并定位具体层",
+      "debrief": "旧测试原则保留但证据扩张",
+      "artifact_or_assessment": "before-after 对照表"
+    },
+    {
+      "stage_id": "plain-mental-model",
+      "instructor_action": "用证据链解释 Corpus、ACL、Retrieval 和 Faithfulness",
+      "learner_action": "把一个失败症状映射到首个应检查的系统层",
+      "expected_observation": "每层有独立输入、Oracle 和 owner",
+      "debrief": "一次总分不能替代分层 Gate",
+      "artifact_or_assessment": "风险到 Oracle 映射"
+    },
+    {
+      "stage_id": "guided-demo",
+      "instructor_action": "运行 TD-T12 baseline 并打开报告",
+      "learner_action": "找到 model_execution、checks 和 unknowns",
+      "expected_observation": "命令 exit 0 且报告明确 Fixture 边界",
+      "debrief": "先读逐字段证据再读 verdict",
+      "artifact_or_assessment": "baseline.json 证据"
+    },
+    {
+      "stage_id": "failure-diagnosis",
+      "instructor_action": "注入 acl_denied fault 并暂停预测",
+      "learner_action": "运行 fault，用 expected/actual 定位失败",
+      "expected_observation": "命令 exit 1 且跨租户 blocker 变红",
+      "debrief": "不能通过放宽 expected 修绿",
+      "artifact_or_assessment": "fault.json 与诊断"
+    },
+    {
+      "stage_id": "learner-practice",
+      "instructor_action": "提供缺少 source owner 的合成 case",
+      "learner_action": "补 owner/stop state 并增加一条 mutation",
+      "expected_observation": "新的风险字段能产生可重复红灯",
+      "debrief": "学员必须修改工件而非只观看",
+      "artifact_or_assessment": "新增 case 与报告"
+    },
+    {
+      "stage_id": "transfer-challenge",
+      "instructor_action": "把原退款助手场景切换到内部事故总结助手",
+      "learner_action": "替换证据来源、权限模型与风险切片",
+      "expected_observation": "同一合同形状在新业务产生 0/1/0",
+      "debrief": "迁移保留原则但重做专业内容",
+      "artifact_or_assessment": "事故助手 Eval Contract",
+      "source_context": "合成退款助手的 RAG 语料、证据和租户权限",
+      "target_context": "将同一评测合同迁移到内部事故总结助手和新的证据、权限与风险切片",
+      "invariant": "版本、独立 Oracle、红绿链和人工发布权保持不变",
+      "must_change": [
+        "退款政策证据改为 runbook 与 telemetry",
+        "租户 ACL 改为事故严重度与值班权限"
+      ],
+      "success_criterion": "正常事故摘要通过，注入无证据归因或越权读取后稳定 exit 1，并保留原始报告"
+    },
+    {
+      "stage_id": "artifact-handoff",
+      "instructor_action": "交付 quickstart、Skill、输入、输出和 checklist",
+      "learner_action": "按清单复跑并写三项未验证边界",
+      "expected_observation": "repair 绿且 model/live/practitioner 仍 NOT_RUN",
+      "debrief": "本地可复现仍然不等于生产环境可用",
+      "artifact_or_assessment": "验证过的材料包"
+    }
+  ],
+  "interaction_prompts": [
+    "这条流畅答案应放行、拒答还是人工复核？",
+    "fault 会让哪个字段先变红？",
+    "迁移到事故助手时必须重做哪两项？"
+  ],
+  "recovery_path": "核对 Manifest 和 topic ID，重新运行 repair；不得改 expected 来迁就 fault",
+  "evidence_status": "fixture-tested",
+  "limitations": "未测真实学习者、模型、企业系统、从业者或生产效果"
+}

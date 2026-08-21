@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS05",
+  "mode": "baseline",
+  "status": "PASS",
+  "exit_code": 0,
+  "manifest_sha256": "0361c4615dbea6e773fb84ea931f72fa1a0da1e7a35523dbd2ee7877f1c6c6d2",
+  "missing_files": [],
+  "fault_id": null,
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS05-ORACLE-01",
+      "passed": true,
+      "evidence": "TD-PS05-evidence-1.json",
+      "owner": "TD-PS05-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS05-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS05-evidence-2.json",
+      "owner": "TD-PS05-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS05-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS05-evidence-3.json",
+      "owner": "TD-PS05-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS05-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS05-evidence-4.json",
+      "owner": "TD-PS05-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS05-content-owner",
+    "oracle": "TD-PS05-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 真实辅助技术组合、用户研究结果和品牌容差"
+}

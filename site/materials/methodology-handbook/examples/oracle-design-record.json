@@ -1,0 +1,8 @@
+[
+  {"risk_id": "R-001", "condition_id": "TC-CANCEL-007", "oracle_layers": ["L2", "L4", "L6"], "independent_sources": ["OPENAPI-v7#/cancel", "STATE-v2 状态机", "财务 owner"], "excluded_layers": ["L5"], "excluded_reason": "涉及资金，语义层不得放行", "blocker": true},
+  {"risk_id": "R-002", "condition_id": "TC-CANCEL-011", "oracle_layers": ["L4"], "independent_sources": ["账本不变量 refund_count<=1", "幂等键 receipt"], "excluded_layers": ["L5"], "excluded_reason": "副作用判定必须由规则层完成", "blocker": true},
+  {"risk_id": "R-003", "condition_id": "TC-CANCEL-020", "oracle_layers": ["L1", "L4"], "independent_sources": ["权限矩阵", "OPENAPI-v7 错误契约"], "excluded_layers": [], "excluded_reason": "", "blocker": true},
+  {"risk_id": "R-004", "condition_id": "TC-CANCEL-031", "oracle_layers": ["L3", "L4"], "independent_sources": ["来源优先级规则", "source_refs 存在性校验"], "excluded_layers": ["L5"], "excluded_reason": "冲突裁决不得由模型自评", "blocker": true},
+  {"risk_id": "R-005", "condition_id": "TC-SEC-004", "oracle_layers": ["L4", "L6"], "independent_sources": ["工具授权层 policy receipt", "安全 owner"], "excluded_layers": ["L5"], "excluded_reason": "模型拒绝不等于授权层拒绝", "blocker": true},
+  {"risk_id": "R-006", "condition_id": "TC-DRIFT-001", "oracle_layers": ["L4", "L5", "L6"], "independent_sources": ["发布基线 run_id", "金标集", "每周人工抽检"], "excluded_layers": [], "excluded_reason": "", "blocker": false}
+]

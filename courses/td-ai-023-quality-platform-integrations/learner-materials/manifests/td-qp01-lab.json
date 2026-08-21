@@ -1,0 +1,61 @@
+{
+  "manifest_version": "2.0.0",
+  "topic_id": "TD-QP01",
+  "maturity": "fixture-tested",
+  "working_directory": "materials/quality-platform-integrations/learner-materials",
+  "required_files": [
+    "scripts/basis_gate_and_candidate_review.py",
+    "scripts/topic_cycle.py",
+    "prompts/td-qp01/task.md",
+    "prompts/td-qp01/system.md",
+    "prompts/td-qp01/critic.md",
+    "prompts/td-qp01/input.json",
+    "prompts/td-qp01/output.schema.json",
+    "prompts/td-qp01/eval.json",
+    "prompts/td-qp01/manifest.json",
+    "manifests/shared-bundle-owners.json"
+  ],
+  "steps": [
+    {
+      "step_id": "baseline",
+      "command": "python3 scripts/basis_gate_and_candidate_review.py baseline --report reports/td-qp01/baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-qp01/baseline.json"
+      ]
+    },
+    {
+      "step_id": "fault",
+      "command": "python3 scripts/basis_gate_and_candidate_review.py fault --report reports/td-qp01/fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-qp01/fault.json"
+      ]
+    },
+    {
+      "step_id": "repair",
+      "command": "python3 scripts/basis_gate_and_candidate_review.py repair --report reports/td-qp01/repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-qp01/repair.json"
+      ]
+    },
+    {
+      "step_id": "cycle",
+      "command": "python3 scripts/basis_gate_and_candidate_review.py cycle --report-dir reports/td-qp01",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-qp01/baseline.json",
+        "reports/td-qp01/fault.json",
+        "reports/td-qp01/repair.json",
+        "reports/td-qp01/cycle-summary.json"
+      ]
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "evidence_boundary": "Offline deterministic fixtures only; no external platform or model call is made."
+}

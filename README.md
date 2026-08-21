@@ -1,14 +1,15 @@
 # 测试开发 × AI
 
-一套从职业知识体系出发、逐题调研和验证的 AI 质量工程教程。当前 GitHub Pages 展示的是最新 85 页公开预览，其中 73 页达到 `fixture-tested`，12 页保持 `desk-researched`；不代表真实模型、企业集成、从业者或生产验证已经完成。
+一套从职业知识体系出发、逐题调研和验证的 AI 质量工程教程。
 
 ## 当前真实状态
 
-- 课程目录：89 个站点主题，其中 85 页通过当前预览门禁，4 个未完成主题继续隐藏；
-- 公开内容覆盖职业现实、完整测试生命周期、传统测试专项、AI/LLM/RAG/Agent、质量平台、性能稳定性、Benchmark、Capstone 与高级安全质量专题；
-- 未完成命题只保留在内部研究与课程路线图中，不进入公开导航、HTML、JSON、搜索或发布包；
-- 可运行实验：Agent baseline → retry storm → repair，退出码 `0 → 1 → 0`；
-- 尚未完成：真实模型与企业系统集成、具名从业者评审、初学者可用性研究、生产适用性验证。
+- canonical 命题目录：117 个职业命题；站点目录 89 个命题；
+- 本地站点候选：85 个已通过逐题研究、编辑、执行性与材料闭包门禁的页面，分为 12 个公共模块；
+- 4 个未完成命题只保留在内部目录，不进入导航、HTML、JSON、搜索或候选包；
+- 13 个材料包均有 canonical → public → static → ZIP 闭包；声明的 baseline → fault → repair 实验按契约得到 `0 → 非零 → 0`；
+- 85/85 页面执行性 PASS，独立编辑审计 85/85 PASS；
+- 尚未完成：真实模型/provider、企业系统集成、具名测试开发从业者盲评、初学者学习效果和外部发布回读。
 
 ## 深度样章讲什么
 
@@ -16,8 +17,10 @@
 
 ## 两种阅读方式
 
-- ChatGPT Site：<https://test-development-ai-tutorial.wpowen.chatgpt.site/#TD-AP01>
-- GitHub Pages：<https://wpowen.github.io/test-development-ai-tutorial/#TD-AP01>
+- 本地静态站：`site/index.html`；
+- 本地完整教程投影：`tutorial/index.html`。
+
+历史 ChatGPT Site 与 GitHub Pages 地址没有部署当前 85 页版本，不得作为当前版本证据。
 
 ## 运行 Agent 压测实验
 
@@ -43,3 +46,5 @@ python3 courses/td-ai-010-agent-load-stability/lab/agent_load_lab.py --config co
 ## 证据边界
 
 Agent 实验达到 `fixture-tested`：证明离线采集、聚合、故障注入和门禁逻辑可运行；不证明真实模型、真实工具、生产容量或学习效果。所有生产阈值必须按目标业务重新推导。
+
+本目录是 GitHub 仓库候选包，不是已批准的公开 Release。`RELEASE-MANIFEST.json` 保持 `BLOCKED-HIGHER-MATURITY`；只有真实集成、具名从业者审批和公开发布验证全部通过后，GitHub Pages workflow 才允许部署。

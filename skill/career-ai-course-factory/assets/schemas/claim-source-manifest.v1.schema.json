@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "claim-source-manifest.v1.schema.json",
+  "title": "ClaimSourceManifestV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest_id", "catalog_manifest", "page_count", "pages", "status", "cannot_prove"],
+  "properties": {
+    "schema_version": {"const": "claim-source-manifest.v1"},
+    "manifest_id": {"type": "string", "minLength": 1},
+    "catalog_manifest": {"$ref": "#/$defs/catalog"},
+    "page_count": {"type": "integer", "minimum": 1},
+    "pages": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/page"}},
+    "status": {"const": "READY-SOURCE-MANIFEST"},
+    "cannot_prove": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "catalog": {
+      "type": "object", "additionalProperties": false,
+      "required": ["path", "sha256", "page_ids"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "page_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["root_alias", "path", "sha256", "roles"],
+      "properties": {
+        "root_alias": {"pattern": "^[A-Za-z][A-Za-z0-9_-]*$"},
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"$ref": "#/$defs/digest"},
+        "roles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "page": {
+      "type": "object", "additionalProperties": false,
+      "required": ["page_id", "source_files", "source_count"],
+      "properties": {
+        "page_id": {"type": "string", "minLength": 1},
+        "source_files": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/source"}},
+        "source_count": {"type": "integer", "minimum": 1}
+      }
+    }
+  }
+}

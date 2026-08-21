@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS08",
+  "scenario": "订单表从 status 字符串迁移到 status_code 与状态维表，同时进行双读、回填和 CDC",
+  "controlling_question": "怎样证明迁移前后行数、键、金额、状态语义和 CDC offset 一致，并在部分失败时安全停止或回滚？",
+  "known_rules": [
+    "主键集合与关键行数按分片守恒",
+    "金额汇总和状态语义映射一致",
+    "CDC 高水位前后的变更无丢失可容忍去重",
+    "旧新读路径差异低于零容忍 blocker"
+  ],
+  "faults": [
+    "回填跳过一个分片",
+    "CDC offset 回退产生重复",
+    "旧消费者读取已删除字段"
+  ],
+  "unknowns": [
+    "目标数据规模、锁等待、复制延迟、业务可接受停机窗口"
+  ],
+  "data_classification": "synthetic"
+}

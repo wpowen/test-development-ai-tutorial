@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A02",
+  "approved_at": "2026-08-11",
+  "evidence_level": "fixture-only",
+  "observation": {
+    "stream": {
+      "terminal_count": 1
+    },
+    "structured": {
+      "semantic_pass": true
+    },
+    "tool": {
+      "side_effect_count": 1
+    },
+    "async": {
+      "terminal": "completed"
+    }
+  }
+}

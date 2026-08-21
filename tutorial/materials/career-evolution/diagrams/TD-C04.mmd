@@ -1,0 +1,8 @@
+flowchart LR
+  A[公共责任状态] --> B{组织来源存在?}
+  B -->|否| C[INTERNAL-UNKNOWN / BLOCK]
+  B -->|是| D[Owner 审批]
+  D --> E[生效版本]
+  E --> F[岗位映射]
+  F --> G[Metric Card]
+  G --> H[复审周期]

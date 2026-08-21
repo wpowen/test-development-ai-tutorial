@@ -1,0 +1,71 @@
+{
+  "schema_version": "claim-research-adjudications.v1",
+  "topic_id": "replace-topic-id",
+  "auditor_id": "replace-independent-auditor-id",
+  "claims": [
+    {
+      "claim_id": "C-01",
+      "run_ids": [
+        "replace-initial-run-id",
+        "replace-counterevidence-run-id",
+        "replace-gap-fill-run-id"
+      ],
+      "coverage_dimensions": [
+        {
+          "dimension": "terminology-boundary",
+          "status": "covered",
+          "evidence_or_reason": "Replace with source or run evidence."
+        },
+        {
+          "dimension": "professional-workflow",
+          "status": "covered",
+          "evidence_or_reason": "Replace with source or run evidence."
+        },
+        {
+          "dimension": "implementation-reproducibility",
+          "status": "covered",
+          "evidence_or_reason": "Replace with source or run evidence."
+        },
+        {
+          "dimension": "counterevidence",
+          "status": "covered",
+          "evidence_or_reason": "Replace with source or run evidence."
+        }
+      ],
+      "contradiction_status": "resolved",
+      "contradictions": [
+        {
+          "issue": "Replace with the exact conflicting definition or finding.",
+          "run_ids": [
+            "replace-initial-run-id",
+            "replace-counterevidence-run-id"
+          ],
+          "disposition": "scoped",
+          "rationale": "Replace with the independent adjudication and cannot-prove boundary."
+        }
+      ],
+      "two_consecutive_rounds_without_material_change": true,
+      "conclusive_primary_authority_exception": false,
+      "round_assessments": [
+        {
+          "run_id": "replace-initial-run-id",
+          "material_change": true,
+          "assessment": "Replace with what the initial round changed."
+        },
+        {
+          "run_id": "replace-counterevidence-run-id",
+          "material_change": false,
+          "assessment": "Replace with why the counterevidence round did not change the bounded decision."
+        },
+        {
+          "run_id": "replace-gap-fill-run-id",
+          "material_change": false,
+          "assessment": "Replace with why the gap-fill round did not change the bounded decision."
+        }
+      ],
+      "final_disposition": "SCOPED",
+      "verdict": "SATURATED",
+      "rationale": "Replace with the independent terminal rationale."
+    }
+  ]
+}

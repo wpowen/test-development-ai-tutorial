@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T10",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "检索先按查询与切片测召回，再看排序精度；不能用最终回答替代检索证据。",
+  "checks": [
+    {
+      "field": "relevant_doc_recalled",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "top_k_recorded",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "query_slice_recorded",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "id": "gold-document-missed",
+    "field": "relevant_doc_recalled",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "未运行向量数据库",
+    "合成查询不足以估计线上召回"
+  ]
+}

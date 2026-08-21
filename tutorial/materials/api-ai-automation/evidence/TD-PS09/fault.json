@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "page_id": "TD-PS09",
+  "mode": "fault",
+  "status": "FAIL",
+  "exit_code": 1,
+  "manifest_sha256": "a365ad1ae4470a8710668dd82f9474babf235a3b7962bf2ff7b1e13d10b036f6",
+  "missing_files": [],
+  "fault_id": "TD-PS09-FAULT-01",
+  "oracle_results": [
+    {
+      "oracle_id": "TD-PS09-ORACLE-01",
+      "passed": false,
+      "evidence": "TD-PS09-evidence-1.json",
+      "owner": "TD-PS09-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS09-ORACLE-02",
+      "passed": true,
+      "evidence": "TD-PS09-evidence-2.json",
+      "owner": "TD-PS09-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS09-ORACLE-03",
+      "passed": true,
+      "evidence": "TD-PS09-evidence-3.json",
+      "owner": "TD-PS09-oracle-owner"
+    },
+    {
+      "oracle_id": "TD-PS09-ORACLE-04",
+      "passed": true,
+      "evidence": "TD-PS09-evidence-4.json",
+      "owner": "TD-PS09-oracle-owner"
+    }
+  ],
+  "owners": {
+    "content": "TD-PS09-content-owner",
+    "oracle": "TD-PS09-oracle-owner",
+    "release": "course-release-owner"
+  },
+  "evidence_level": "deterministic-offline-fixture",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标模型硬件、provider 内部队列、真实流量分布和价格"
+}

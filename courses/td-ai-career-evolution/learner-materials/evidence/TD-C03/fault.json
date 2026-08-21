@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C03",
+  "phase": "fault",
+  "verdict": "FAIL",
+  "exit_code": 1,
+  "evidence_level": "FAIL-FIXTURE",
+  "model_execution": "NOT_RUN",
+  "input_sha256": "sha256:20a08e0ac2e88978e056ada1ca2f28798a0ca1c0e13c92cc17a377d9e8dd0193",
+  "manifest_sha256": "sha256:b2f947c9b5913ca86f9568d5aa30d05e1a196fbb1824c10b4889dcceba3389cc",
+  "checks": [
+    {
+      "field": "assessment.evidence_refs_complete",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "field": "assessment.unknowns_preserved",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    },
+    {
+      "field": "assessment.plan_has_30_60_90",
+      "expected": true,
+      "actual": false,
+      "pass": false
+    }
+  ],
+  "unknowns": [
+    "真实学习效果未运行"
+  ],
+  "boundary": "PASS-FIXTURE only; no employment or promotion outcome"
+}

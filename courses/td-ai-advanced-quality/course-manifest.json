@@ -1,0 +1,36 @@
+{
+  "course_id":"td-ai-advanced-quality",
+  "title":"高级 AI 质量缺口：从模型更新到在线发布",
+  "scenario_ids":["TD-S07"],
+  "ai_lane":"build-ai-quality-system",
+  "ai_centrality_score":5,
+  "professional_value_score":5,
+  "system_under_test":"模型更新、依赖供应链、多模态与包容性体验、HITL、Memory/缓存、Provider/工具路由和在线发布流水线",
+  "ai_roles":["candidate-evaluator","evidence-clusterer","policy-check-assistant"],
+  "learner_artifact":["版本化评测 manifest","八页 Prompt/Eval/Mutation 包","baseline/fault/repair 收据","迁移与 UNKNOWN 清单"],
+  "tool_adapters":["offline-deterministic-fixture","python-stdlib-validator"],
+  "work_domain_ids":["TD-D04","TD-D05","TD-D06"],
+  "primary_artifact_ids":["advanced-ai-quality-evidence-chain"],
+  "decision_owner":"AI 质量负责人",
+  "allowed_ai_authority":"自动运行和比较评测，不得自动批准例外",
+  "prerequisite_course_ids":["TD-AI-06","TD-AI-08"],
+  "transfer_target":"替换合成 manifest、owner、阈值和 mutation，在真实 AI 质量 CI 中重建集成与从业者证据",
+  "lesson_flow":["demo","guided-practice","failure-injection","repair","transfer"],
+  "default_path_requires_credentials":false,
+  "baseline_comparison":true,
+  "failure_injection":true,
+  "validation_workdir":"lab",
+  "execution_proof":"evidence/execution-evidence.json",
+  "material_archive":"site/public/materials/advanced-quality.zip",
+  "model_evidence":"NOT_RUN",
+  "validation_steps":[
+    {"name":"verify packages","command":["python3","advanced_quality_lab.py","verify-packages"],"expected_exit_code":0},
+    {"name":"all baseline","command":["python3","advanced_quality_lab.py","suite","--phase","baseline"],"expected_exit_code":0},
+    {"name":"all faults","command":["python3","advanced_quality_lab.py","suite","--phase","fault"],"expected_exit_code":1},
+    {"name":"all repairs","command":["python3","advanced_quality_lab.py","suite","--phase","repair"],"expected_exit_code":0}
+  ],
+  "status":"fixture-tested",
+  "evidence_ids":["S07","S23","S24","S40","S49","S65","S66"],
+  "topic_page_ids":["TD-X602","TD-X101","TD-X501","TD-X502","TD-X601","TD-X603","TD-X604","TD-X805"]
+}
+

@@ -1,0 +1,12 @@
+{
+  "schema_version": "agent-performance-prompt-input.v1",
+  "page_id": "TD-AP06",
+  "run_refs": [
+    "reports/TD-AP06/baseline/summary.json",
+    "reports/TD-AP06/fault/summary.json",
+    "reports/TD-AP06/repair/summary.json",
+    "reports/TD-AP06/cycle-summary.json"
+  ],
+  "question": "Does the timeout retry and safe degradation baseline-fault-repair cycle demonstrate detection and repair?",
+  "boundary": "fixture-tested only"
+}

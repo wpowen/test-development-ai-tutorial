@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A03",
+  "version": "1.0.0",
+  "model_execution": "NOT_RUN",
+  "deterministic_fixture_eval": {
+    "expected": {
+      "metrics.goodput_requests": 2,
+      "metrics.total_arrivals": 3,
+      "metrics.cost_per_success": 0.09
+    },
+    "fault_patch": {
+      "metrics.goodput_requests": 3,
+      "metrics.cost_per_success": 0.04
+    },
+    "required_exit_codes": [
+      0,
+      1,
+      0
+    ]
+  },
+  "professional_oracle": "TTFT、TPOT、ITL 可由原始事件重算；Goodput 分母含所有到达；单位成功成本含失败和重试。",
+  "boundary": "fixture 时间戳和成本不代表任何模型、GPU、地区或供应商。"
+}

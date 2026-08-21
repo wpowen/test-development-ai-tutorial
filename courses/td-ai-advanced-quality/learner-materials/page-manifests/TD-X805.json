@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-X805",
+  "page_id": "TD-X805",
+  "working_directory": "materials/advanced-quality",
+  "required_files": [
+    "advanced_quality_lab.py",
+    "owners.json",
+    "page-prompts/TD-X805/manifest.json",
+    "page-prompts/TD-X805/prompt-v1.md",
+    "page-prompts/TD-X805/input.json",
+    "page-prompts/TD-X805/schema.json",
+    "page-prompts/TD-X805/eval.json",
+    "page-prompts/TD-X805/mutation.json"
+  ],
+  "steps": [
+    {
+      "step_id": "td-x805-baseline",
+      "kind": "baseline",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X805 --phase baseline --report reports/td-x805-baseline.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x805-baseline.json"
+      ]
+    },
+    {
+      "step_id": "td-x805-fault",
+      "kind": "fault",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X805 --phase fault --report reports/td-x805-fault.json",
+      "expected_exit_code": 1,
+      "expected_artifacts": [
+        "reports/td-x805-fault.json"
+      ]
+    },
+    {
+      "step_id": "td-x805-repair",
+      "kind": "repair",
+      "command": "python3 advanced_quality_lab.py run --topic TD-X805 --phase repair --report reports/td-x805-repair.json",
+      "expected_exit_code": 0,
+      "expected_artifacts": [
+        "reports/td-x805-repair.json"
+      ]
+    }
+  ],
+  "failure_cycle": {
+    "baseline_step_id": "td-x805-baseline",
+    "fault_step_id": "td-x805-fault",
+    "repair_step_id": "td-x805-repair"
+  },
+  "evidence_boundary": "deterministic offline fixture; real systems, practitioner review and production NOT_RUN"
+}

@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:career-ai:TD-A06:output:1.0.0",
+  "type": "object",
+  "required": [
+    "page_id",
+    "claims",
+    "unknowns",
+    "decision"
+  ],
+  "properties": {
+    "page_id": {
+      "const": "TD-A06"
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "claim",
+          "source_ref",
+          "status"
+        ],
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "EVIDENCE",
+              "INFERENCE",
+              "UNKNOWN"
+            ]
+          }
+        }
+      }
+    },
+    "unknowns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "decision": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

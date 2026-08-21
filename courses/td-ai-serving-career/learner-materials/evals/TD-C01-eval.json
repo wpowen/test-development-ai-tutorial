@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C01",
+  "version": "1.0.0",
+  "model_execution": "NOT_RUN",
+  "deterministic_fixture_eval": {
+    "expected": {
+      "career.employment_guarantee": false,
+      "career.evidence_refs_complete": true,
+      "career.role_boundary_complete": true
+    },
+    "fault_patch": {
+      "career.employment_guarantee": true,
+      "career.evidence_refs_complete": false
+    },
+    "required_exit_codes": [
+      0,
+      1,
+      0
+    ]
+  },
+  "professional_oracle": "岗位负责/协作/禁止边界清楚；自评分有 evidence_ref 或 UNKNOWN；90 天计划含 baseline-fault-repair；employment_guarantee=false。",
+  "boundary": "课程不能证明招聘需求、薪资、晋升、地区机会或个体适配。"
+}

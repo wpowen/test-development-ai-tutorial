@@ -1,0 +1,42 @@
+schema_version: ai-performance-workload.v1
+status: static-reviewed
+execution_status: NOT_RUN
+system_under_test: tool-using checkout assistant API
+data_boundary: synthetic prompts and fake payment tools only
+arrival_model:
+  type: constant-arrival-rate
+  duration_seconds: 180
+  preallocated_workers: 20
+  scenarios:
+    - scenario_id: lookup-only
+      weight: 60
+      expected_tool_calls: 1
+    - scenario_id: create-and-confirm-payment
+      weight: 30
+      expected_tool_calls: 2
+    - scenario_id: payment-tool-timeout
+      weight: 10
+      expected_tool_calls: 3
+quality_gate:
+  task_success_rate_min: 0.98
+  e2e_p95_ms_max: 4000
+  first_event_p95_ms_max: 1200
+  tool_retry_amplification_max: 1.20
+  duplicate_side_effect_rate_max: 0.0
+  cost_per_success_usd_max: 0.03
+required_dimensions:
+  - model_version
+  - prompt_version
+  - tool_schema_version
+  - workload_version
+  - concurrency
+  - task_outcome
+  - latency_ms
+  - tool_attempts
+  - side_effect_count
+  - token_count
+  - estimated_cost_usd
+decision_owner: AI quality and checkout service owner
+limitations:
+  - Teaching thresholds are illustrative and must be recalibrated from business loss and observed distributions.
+  - No k6 run, live model call, payment call, or production capacity claim is included.

@@ -1,0 +1,45 @@
+{
+  "schema_version": "agent-performance-cycle.v2",
+  "page_id": "TD-AP02",
+  "observed_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "expected_exit_codes": {
+    "baseline": 0,
+    "fault": 1,
+    "repair": 0
+  },
+  "cycle_pass": true,
+  "fault_detected_by": [
+    "ttft_p95_ms",
+    "tpot_p95_ms",
+    "queue_p95_ms",
+    "retry_p95",
+    "step_p95"
+  ],
+  "repair_comparison": {
+    "ttft_p95_ms": {
+      "fault": 4635113608.68175,
+      "repair": 133.946
+    },
+    "tpot_p95_ms": {
+      "fault": 13.0435,
+      "repair": 4.83165
+    },
+    "queue_p95_ms": {
+      "fault": 4635113261.50975,
+      "repair": 0.0
+    },
+    "retry_p95": {
+      "fault": 4.0,
+      "repair": 1.0
+    },
+    "step_p95": {
+      "fault": 8.0,
+      "repair": 5.0
+    }
+  },
+  "evidence_boundary": "Fixture-tested only; no live model, practitioner review, or production capacity evidence."
+}

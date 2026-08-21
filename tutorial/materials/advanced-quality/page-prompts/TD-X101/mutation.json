@@ -1,0 +1,12 @@
+{
+  "topic_id": "TD-X101",
+  "mutations": [
+    {
+      "mutation_id": "unsigned_dependency",
+      "description": "未签名依赖、SBOM 缺项或 critical finding 无 owner",
+      "expected_status": "BLOCKED",
+      "must_be_detected": true
+    }
+  ]
+}
+

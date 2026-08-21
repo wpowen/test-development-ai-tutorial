@@ -1,0 +1,46 @@
+{
+  "topic_id": "TD-X604",
+  "cases": [
+    {
+      "case_id": "TD-X604-E1",
+      "kind": "positive",
+      "expected_status": "CANDIDATE"
+    },
+    {
+      "case_id": "TD-X604-E2",
+      "kind": "boundary",
+      "expected_status": "CANDIDATE"
+    },
+    {
+      "case_id": "TD-X604-E3",
+      "kind": "conflict",
+      "expected_status": "BLOCKED"
+    },
+    {
+      "case_id": "TD-X604-E4",
+      "kind": "missing",
+      "expected_status": "BLOCKED"
+    },
+    {
+      "case_id": "TD-X604-E5",
+      "kind": "unauthorized",
+      "expected_status": "BLOCKED"
+    },
+    {
+      "case_id": "TD-X604-E6",
+      "kind": "refusal",
+      "expected_status": "BLOCKED"
+    },
+    {
+      "case_id": "TD-X604-E7",
+      "kind": "truncation",
+      "expected_status": "BLOCKED"
+    },
+    {
+      "case_id": "TD-X604-E8",
+      "kind": "paraphrase",
+      "expected_status": "BLOCKED"
+    }
+  ]
+}
+

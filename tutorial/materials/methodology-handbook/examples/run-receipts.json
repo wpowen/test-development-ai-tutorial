@@ -1,0 +1,32 @@
+[
+  {
+    "run_id": "run-baseline-0001", "phase": "baseline", "timestamp": "2026-08-12T10:00:00+08:00", "trigger": "manual",
+    "code_version": "a13f2c9", "input_baseline_id": "order-cancel-2026-08-12", "dataset_version": "eval-v3", "dataset_split": "fixture",
+    "model": {"provider": "none", "id": "offline-deterministic", "params": {"temperature": 0}, "status": "NOT_RUN"},
+    "prompt_version": "task-v1.2", "tool_versions": {"retriever": "v7", "scorer": "v2"}, "repetitions": 5,
+    "results": {"pass": 50, "fail": 0, "blocked": 0, "refused": 0, "incomplete": 0},
+    "slice_results": {"shipped_reject": {"pass": 10, "fail": 0, "blocker": true}},
+    "failed_oracle_ids": [], "cost": {"tokens": 0, "usd": 0}, "latency": {"p50_ms": 0, "p95_ms": 0},
+    "verdict": "PASS", "decided_by": "test-dev-lead", "evidence_paths": ["reports/baseline.json"], "maturity": "fixture-tested"
+  },
+  {
+    "run_id": "run-fault-0001", "phase": "fault", "timestamp": "2026-08-12T10:10:00+08:00", "trigger": "manual",
+    "code_version": "a13f2c9+seeded", "input_baseline_id": "order-cancel-2026-08-12", "dataset_version": "eval-v3", "dataset_split": "fixture",
+    "model": {"provider": "none", "id": "offline-deterministic", "params": {"temperature": 0}, "status": "NOT_RUN"},
+    "prompt_version": "task-v1.2", "tool_versions": {"retriever": "v7", "scorer": "v2"}, "repetitions": 5,
+    "results": {"pass": 46, "fail": 4, "blocked": 0, "refused": 0, "incomplete": 0},
+    "slice_results": {"shipped_reject": {"pass": 6, "fail": 4, "blocker": true}},
+    "failed_oracle_ids": ["ORC-CANCEL-004"], "cost": {"tokens": 0, "usd": 0}, "latency": {"p50_ms": 0, "p95_ms": 0},
+    "verdict": "FAIL", "decided_by": "test-dev-lead", "evidence_paths": ["reports/fault.json"], "maturity": "fixture-tested"
+  },
+  {
+    "run_id": "run-repair-0001", "phase": "repair", "timestamp": "2026-08-12T10:20:00+08:00", "trigger": "manual",
+    "code_version": "a13f2c9", "input_baseline_id": "order-cancel-2026-08-12", "dataset_version": "eval-v3", "dataset_split": "fixture",
+    "model": {"provider": "none", "id": "offline-deterministic", "params": {"temperature": 0}, "status": "NOT_RUN"},
+    "prompt_version": "task-v1.2", "tool_versions": {"retriever": "v7", "scorer": "v2"}, "repetitions": 5,
+    "results": {"pass": 50, "fail": 0, "blocked": 0, "refused": 0, "incomplete": 0},
+    "slice_results": {"shipped_reject": {"pass": 10, "fail": 0, "blocker": true}},
+    "failed_oracle_ids": [], "cost": {"tokens": 0, "usd": 0}, "latency": {"p50_ms": 0, "p95_ms": 0},
+    "verdict": "PASS", "decided_by": "test-dev-lead", "evidence_paths": ["reports/repair.json"], "maturity": "fixture-tested"
+  }
+]

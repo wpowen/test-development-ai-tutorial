@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C01",
+  "approved_at": "2026-08-11",
+  "evidence_level": "fixture-only",
+  "observation": {
+    "career": {
+      "employment_guarantee": false,
+      "evidence_refs_complete": true,
+      "role_boundary_complete": true
+    }
+  }
+}

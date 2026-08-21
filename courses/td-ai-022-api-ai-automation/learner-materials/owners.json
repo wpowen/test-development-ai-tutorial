@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0",
+  "bundle": "api-ai-automation",
+  "bundle_owner": "traditional-testing-wave-1",
+  "shared_runner_owner": "course-factory-engineering",
+  "pages": {
+    "TD-PS01": {
+      "content_owner": "TD-PS01-content-owner",
+      "oracle_owner": "TD-PS01-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS01.json"
+    },
+    "TD-PS02": {
+      "content_owner": "TD-PS02-content-owner",
+      "oracle_owner": "TD-PS02-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS02.json"
+    },
+    "TD-PS03": {
+      "content_owner": "TD-PS03-content-owner",
+      "oracle_owner": "TD-PS03-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS03.json"
+    },
+    "TD-PS08": {
+      "content_owner": "TD-PS08-content-owner",
+      "oracle_owner": "TD-PS08-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS08.json"
+    },
+    "TD-PS09": {
+      "content_owner": "TD-PS09-content-owner",
+      "oracle_owner": "TD-PS09-oracle-owner",
+      "release_owner": "course-release-owner",
+      "manifest": "manifests/TD-PS09.json"
+    }
+  },
+  "boundary": "Shared code provides mechanics only; page manifests own business rules and maturity."
+}

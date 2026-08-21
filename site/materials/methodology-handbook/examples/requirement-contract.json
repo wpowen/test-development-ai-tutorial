@@ -1,0 +1,22 @@
+{
+  "requirement_id": "REQ-CANCEL-001",
+  "status": "ACCEPTED",
+  "statement": "已支付且未发货的订单允许买家取消，并创建一次退款请求",
+  "actors": ["BUYER"],
+  "preconditions": ["payment_status=PAID", "shipment_status=NOT_SHIPPED"],
+  "trigger": "POST /orders/{order_id}/cancel",
+  "state_transitions": ["PAID->CANCEL_PENDING", "CANCEL_PENDING->CANCELLED"],
+  "invariants": ["refund_count<=1", "refund_total<=captured_amount"],
+  "exceptions": ["SHIPPED->409", "non-owner->403", "already_cancelled->409"],
+  "side_effects": ["emit refund.requested"],
+  "nfrs": ["取消接口 p95 < 由容量测试确定的阈值（当前为占位，未设定）"],
+  "unknowns": ["退款完成时限未定义（UNK-001）"],
+  "conflicts": [],
+  "source_refs": ["PRD-v3#R17", "OPENAPI-v7#/cancel", "STATE-v2#S01"],
+  "semantic_review": {
+    "verdict": "PASS_SEMANTIC",
+    "reviewer": "product-a",
+    "reviewed_at": "2026-08-12",
+    "notes": "退款金额上限与幂等不变量已逐条确认；退款时限保持 UNKNOWN，不得由模型补写。"
+  }
+}

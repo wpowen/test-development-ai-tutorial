@@ -1,0 +1,36 @@
+{
+  "manifest_version": "1.0.0",
+  "lab_id": "reliability-reliability",
+  "working_directory": "materials/agent-architecture-system",
+  "steps": [
+    {
+      "step_id": "reliability-cycle",
+      "command": "python3 scripts/agent_reliability_lab.py reliability --input fixtures/run-ledger.json\npython3 scripts/agent_reliability_lab.py reliability --input fixtures/run-ledger.json --fault fake-independence\npython3 scripts/agent_reliability_lab.py reliability --input fixtures/run-ledger.json --fault none",
+      "expected_exit_code": 0,
+      "expected_artifacts": [],
+      "observed_exit_sequence": [
+        0,
+        1,
+        0
+      ],
+      "expected_failed_oracle": "D4-1/CLUSTERED-CI",
+      "note": "三条命令依次执行；退出码序列必须精确为 0/1/0。脚本不写入任何文件，因此没有产出工件。"
+    }
+  ],
+  "expected_sequence": [
+    0,
+    1,
+    0
+  ],
+  "required_files": [
+    "fixtures/run-ledger.json",
+    "scripts/agent_reliability_lab.py"
+  ],
+  "writes_files": false,
+  "model": {
+    "provider": "none",
+    "id": "offline-deterministic",
+    "status": "NOT_RUN"
+  },
+  "evidence_boundary": "确定性离线 fixture；真实模型、Agent、工具、影子与在线环、从业者与生产均 NOT_RUN。"
+}

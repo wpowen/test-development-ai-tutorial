@@ -1,0 +1,37 @@
+{
+  "evidence_scope": "Seven deterministic offline AI API/serving/career contracts",
+  "commands": [
+    "scripts/serving_lab.py --manifest manifests/TD-A01.json --mode cycle",
+    "scripts/serving_lab.py --manifest manifests/TD-A02.json --mode cycle",
+    "scripts/serving_lab.py --manifest manifests/TD-A03.json --mode cycle",
+    "scripts/serving_lab.py --manifest manifests/TD-A04.json --mode cycle",
+    "scripts/serving_lab.py --manifest manifests/TD-A05.json --mode cycle",
+    "scripts/serving_lab.py --manifest manifests/TD-A06.json --mode cycle",
+    "scripts/serving_lab.py --manifest manifests/TD-C01.json --mode cycle"
+  ],
+  "baseline": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "learner-materials/evidence/TD-A01/baseline.json"
+  },
+  "mutation": {
+    "exit_code": 1,
+    "verdict": "FAIL",
+    "report": "learner-materials/evidence/TD-A06/fault.json"
+  },
+  "repair": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "learner-materials/evidence/TD-C01/repair.json"
+  },
+  "environment": {
+    "runtime": "Python 3.9.6",
+    "credentials": "none",
+    "model_execution": "NOT_RUN"
+  },
+  "limitations": [
+    "No provider/model/GPU/network/practitioner/production execution",
+    "Capacity numbers are fixture-only",
+    "No employment, salary, promotion or role-availability guarantee"
+  ]
+}

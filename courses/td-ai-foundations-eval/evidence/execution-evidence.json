@@ -1,0 +1,37 @@
+{
+  "evidence_scope": "TD-T12 deterministic offline contract sensitivity; no model/provider/network call",
+  "commands": [
+    "python3 scripts/run_lab.py --topic TD-T12 --phase baseline",
+    "python3 scripts/run_lab.py --topic TD-T12 --phase fault",
+    "python3 scripts/run_lab.py --topic TD-T12 --phase repair"
+  ],
+  "baseline": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "lab/reports/TD-T12/baseline.json",
+    "stdout": "{\"topic_id\": \"TD-T12\", \"phase\": \"baseline\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T12/baseline.json\"}"
+  },
+  "mutation": {
+    "exit_code": 1,
+    "verdict": "FAIL",
+    "report": "lab/reports/TD-T12/fault.json",
+    "stdout": "{\"topic_id\": \"TD-T12\", \"phase\": \"fault\", \"verdict\": \"FAIL\", \"report\": \"reports/TD-T12/fault.json\"}"
+  },
+  "repair": {
+    "exit_code": 0,
+    "verdict": "PASS",
+    "report": "lab/reports/TD-T12/repair.json",
+    "stdout": "{\"topic_id\": \"TD-T12\", \"phase\": \"repair\", \"verdict\": \"PASS\", \"report\": \"reports/TD-T12/repair.json\"}"
+  },
+  "environment": {
+    "runtime": "Python 3.9.6",
+    "credentials": "none",
+    "working_directory": "courses/td-ai-foundations-eval/lab",
+    "model_execution": "NOT_RUN"
+  },
+  "limitations": [
+    "No live model, retriever, identity system or tool integration",
+    "No practitioner review or production distribution",
+    "Fixture proves only the declared mutation is detected"
+  ]
+}

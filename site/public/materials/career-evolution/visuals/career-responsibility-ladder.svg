@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1240 860" width="1240" height="860">
+<title id="title">四态责任阶梯：用证据范围替代固定年限</title>
+<desc id="desc">四级台阶从指导下完成、独立范围负责、系统与跨团队杠杆到战略治理与培养；旁边的组织职级适配器将公司级别标记为 INTERNAL-UNKNOWN。 SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</desc>
+
+  <defs>
+    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
+    </filter>
+    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
+    </filter>
+    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e3026"/>
+      <stop offset="1" stop-color="#174a3a"/>
+    </linearGradient>
+    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
+    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
+    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
+    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+  </defs>
+<style>
+    .ds-bg{fill:#fbfaf6}
+    .ds-header{fill:url(#ds-header-grad)}
+    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
+    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
+    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
+    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
+    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
+    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
+    .ds-node rect{stroke-width:1.4}
+    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
+    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
+    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
+    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+
+.cc-title{font:800 18px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
+.cc-label{font:800 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#85908a}
+.cc-value{font:500 12.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+.cc-note{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
+</style>
+<rect class="ds-bg" width="1240" height="860" rx="22"/>
+
+  <rect class="ds-header" x="0" y="0" width="1240" height="118" rx="22"/>
+  <rect class="ds-header" x="0" y="96" width="1240" height="22"/>
+  <text class="ds-eyebrow" x="36" y="32">CAREER · 责任阶梯</text>
+  <text class="ds-subtitle" x="1204" y="32" text-anchor="end">把 P5-P9 的有用成长方向适配为可迁移的四类责任状态，并保留组织职级映射入口。</text>
+  <text class="ds-title" x="36" y="74">四态责任阶梯：用证据范围替代固定年限</text>
+  <text class="ds-source" x="36" y="140">source · AI测试工程师发展.md:L552-L857</text>
+<g data-source-ref="AI测试工程师发展.md:L552-L857"><rect x="40" y="146" width="1160" height="512" rx="18" fill="#f3f1e9" stroke="#d9ded9" stroke-width="1.2"/>
+<g filter="url(#ds-soft)"><rect x="70" y="520" width="230" height="106" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g>
+<text x="92" y="552" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" font-weight="800" fill="#1c2924">1 指导下完成</text>
+<text x="92" y="578" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">有方法、有复核的单项任务</text>
+<g filter="url(#ds-soft)"><rect x="340" y="432" width="230" height="194" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="1.5"/></g>
+<text x="362" y="464" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14" font-weight="800" fill="#1c2924">2 独立范围负责</text>
+<text x="362" y="490" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">工件 · 风险 · Oracle · 交接</text>
+<text x="362" y="516" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="600" fill="#85908a">失败代价可控且可归因</text>
+<g filter="url(#ds-strong)"><rect x="610" y="332" width="250" height="294" rx="14" fill="#edf5f0" stroke="#174a3a" stroke-width="2"/></g>
+<text x="632" y="364" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14.5" font-weight="800" fill="#1c2924">3 系统与跨团队杠杆</text>
+<text x="632" y="392" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">平台 · 标准 · 复用控制</text>
+<text x="632" y="418" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="600" fill="#85908a">消费者跨团队、收益可验证</text>
+<g filter="url(#ds-strong)"><rect x="900" y="204" width="250" height="422" rx="14" fill="#fdf1d8" stroke="#e0b76a" stroke-width="1.8"/></g>
+<text x="922" y="236" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="14.5" font-weight="800" fill="#1c2924">4 战略治理与培养</text>
+<text x="922" y="264" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11.5" font-weight="500" fill="#5f6c66">风险政策 · 决定权 · 导师制</text>
+<text x="922" y="290" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="600" fill="#85908a">治理反馈改变组织系统</text>
+<path d="M300 570 C320 570 320 530 334 530" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<path d="M570 520 C590 520 590 470 604 470" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<path d="M860 420 C880 420 880 400 894 400" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
+<g filter="url(#ds-soft)"><rect x="70" y="176" width="500" height="76" rx="12" fill="#fbe9e5" stroke="#e3a89f" stroke-width="1.2"/></g>
+<text x="92" y="208" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="12" font-weight="800" fill="#1c2924" text-anchor="start">P5–P9 / 年限 / 晋升周期 → organization_level_adapter</text>
+<text x="92" y="234" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11" font-weight="800" fill="#b2402f" text-anchor="start">owner、内部规则与生效版本未提供：INTERNAL-UNKNOWN</text></g>
+<text x="40" y="764" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="11px" font-weight="500" fill="#5f6c66">来源中的 P5-P9 年限不作通用门槛；只有责任范围、决定权、失败代价和可复核证据可以跨组织迁移。</text>
+
+  <rect x="28" y="786" width="1184" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
+  <text class="ds-footbadge" x="46" y="812">证据边界</text>
+  <text class="ds-foot" x="46" y="834">SOURCE-EXAMPLE · 组织职级 / 年限 / 权重均为 INTERNAL-UNKNOWN · 本图不证明晋升、就业或真实学习效果</text>
+</svg>

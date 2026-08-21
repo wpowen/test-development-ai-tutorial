@@ -1,0 +1,23 @@
+{
+  "lesson_id": "td-ai-career-evolution-l01",
+  "target_learner": "有传统测试经验、第一次系统学习 AI 测试职业证据的小白",
+  "level": "L1-guided-fixture",
+  "estimated_minutes": 315,
+  "job_result": "能产出责任地图、自评计划、组织适配模板、Metric Card、提效实验和资源索引，并解释证据边界",
+  "artifact": "六页 Prompt/Input/Schema/Eval/Mutation、0/1/0 reports、可复用工件和迁移清单",
+  "stages": [
+    {"stage_id":"cold-open-failure","instructor_action":"展示年限直接映射 P6 的错误结论并暂停。","learner_action":"指出缺失的组织来源、owner、版本和责任证据。","expected_observation":"学员把职级主张标记为 UNKNOWN/BLOCK。","debrief":"公共责任状态不能替代内部 policy。","artifact_or_assessment":"TD-C04 失败预测"},
+    {"stage_id":"stakes-and-promise","instructor_action":"说明课程只承诺可复用证据合同，不承诺就业或晋升。","learner_action":"写下一个想证明的能力主张和未知项。","expected_observation":"主张有边界且未知项不被抹掉。","debrief":"先定义可证明范围，再定义练习。","artifact_or_assessment":"能力主张草稿"},
+    {"stage_id":"before-after","instructor_action":"对比“生成数量”与“accepted test + mutation kill”。","learner_action":"选择哪个结果更能支持提效决策，并写出理由。","expected_observation":"学员选择独立 Oracle 和 Mutation 证据。","debrief":"候选数量不是质量分母；必须观察 accepted test、检测力和人工成本。","artifact_or_assessment":"TD-T26 baseline-vs-AI 对照表"},
+    {"stage_id":"plain-mental-model","instructor_action":"画出任务→人口→Oracle→指标→失败动作链。","learner_action":"为分类、RAG、Agent 各说一个不能直接外推的指标。","expected_observation":"学员能区分 F1、ROUGE、QPS 的适用边界。","debrief":"指标必须支持一个明确决定。","artifact_or_assessment":"Metric Card 草稿"},
+    {"stage_id":"guided-demo","instructor_action":"运行 TD-C02、TD-F05 和 TD-T26 的 cycle。","learner_action":"跟读 manifest、fixture、fault_patch 和报告。","expected_observation":"每个 cycle 严格出现 [0,1,0]。","debrief":"红灯证明检测力，绿灯证明修复恢复。","artifact_or_assessment":"六页运行收据"},
+    {"stage_id":"failure-diagnosis","instructor_action":"注入 evidence_refs、denominator、Oracle 和 mutation fault。","learner_action":"根据 expected/actual 定位字段并提出修复。","expected_observation":"不改 expected，不删除检查。","debrief":"诊断要回到字段级 Oracle。","artifact_or_assessment":"fault diagnosis notes"},
+    {"stage_id":"learner-practice","instructor_action":"给出一个新业务的脱敏任务。","learner_action":"复制一个 Metric Card 和责任地图并填写 UNKNOWN。","expected_observation":"工件包含 owner、版本、分母、切片和失败动作。","debrief":"可复用不等于可照抄阈值；每个字段都要能回链并由 owner 复核。","artifact_or_assessment":"responsibility-map 与 Metric Card 迁移工件"},
+    {"stage_id":"transfer-challenge","instructor_action":"把退款助手场景切换为事故总结助手。","learner_action":"说明保留项和至少两项必须重做的适配。","expected_observation":"重新指定组织 owner、数据人口、Oracle 和阈值。","debrief":"迁移必须改变业务上下文而不伪造证据。","artifact_or_assessment":"transfer manifest","source_context":"退款助手测试与职业证据","target_context":"事故总结助手 AI 发布流水线","invariant":"证据、Oracle、人工 Gate 和 UNKNOWN 边界必须保留","must_change":["业务风险与错误成本","数据人口、分母和切片","组织 owner、policy 版本与阈值"],"success_criterion":"新场景仍能通过同结构 0/1/0，且没有猜测内部职级"},
+    {"stage_id":"artifact-handoff","instructor_action":"检查六件工件和运行收据。","learner_action":"提交 artifacts README、cycle 报告和限制声明。","expected_observation":"所有输出可回链且状态为 PASS-FIXTURE/NOT_RUN。","debrief":"课程完成不是生产通过；发布、组织和就业结论仍需外部 owner。","artifact_or_assessment":"handoff checklist 与边界声明"}
+  ],
+  "interaction_prompts": ["年限和头衔缺什么证据才能支持组织级结论？","F1、ROUGE、QPS 分别能支持什么决定、不能证明什么？","哪个 Mutation 会让提效实验变红？","迁移到事故总结助手时哪三项必须重新取证？"],
+  "recovery_path": "从 learner-materials 根目录重跑对应 cycle；保留 UNKNOWN/BLOCKED，不修改 expected 迁就 fault。",
+  "evidence_status": "fixture-tested",
+  "limitations": "未运行真实模型、组织 policy、从业者评审、生产数据、学习效果、晋升或就业结果。"
+}

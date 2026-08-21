@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-A04",
+  "mutation_id": "MUT-TD-A04-01",
+  "description": "删除 dropped arrivals，并只用完成请求作为容量分母。",
+  "fault_patch": {
+    "arrivals.accounted": 8
+  },
+  "expected_detection": "at least one exact-field Oracle fails"
+}

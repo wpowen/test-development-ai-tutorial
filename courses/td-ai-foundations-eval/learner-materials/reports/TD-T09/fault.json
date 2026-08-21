@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-T09",
+  "phase": "fault",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "FAIL",
+  "decision": "RAG 语料必须带来源、版本、权限与生效期，过期文档不能进入当前索引。",
+  "checks": [
+    {
+      "field": "source_versioned",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "effective_date_checked",
+      "expected": true,
+      "actual": false,
+      "status": "FAIL"
+    },
+    {
+      "field": "acl_preserved",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": {
+    "id": "expired-policy-indexed",
+    "field": "effective_date_checked",
+    "fault_value": false
+  },
+  "remaining_unknowns": [
+    "未连接企业文档库",
+    "分块策略只在合成语料检查"
+  ]
+}

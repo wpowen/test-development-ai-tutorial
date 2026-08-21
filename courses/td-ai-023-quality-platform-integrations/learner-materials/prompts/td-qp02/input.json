@@ -1,0 +1,15 @@
+{
+  "fixture_id": "td-qp02-input-v1",
+  "topic_id": "TD-QP02",
+  "scenario": "offline_synthetic_fixture",
+  "facts": {
+    "actor": "fixture-actor",
+    "scope": "sandbox",
+    "evidence_refs": [
+      "fixture://event/42",
+      "fixture://artifact/42"
+    ]
+  },
+  "injected_fault": "MR HEAD differs from the tested commit SHA",
+  "external_calls": "NOT_RUN"
+}

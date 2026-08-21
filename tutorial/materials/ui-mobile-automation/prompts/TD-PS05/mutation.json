@@ -1,0 +1,7 @@
+{
+  "page_id": "TD-PS05",
+  "mutation_id": "TD-PS05-FAULT-01",
+  "mutation": "移除对话框 accessible name",
+  "expected_detected_by": "关键控件 name role value 可编程确定",
+  "model_execution": "NOT_RUN"
+}

@@ -1,0 +1,20 @@
+{
+  "page_id": "TD-PS04",
+  "scenario": "后台退款审批需跨 UI、订单 API、异步状态和审计记录完成",
+  "controlling_question": "怎样让 UI 测试等待业务终态、隔离数据并保存可诊断 Trace，而不是靠 sleep 和文本出现判绿？",
+  "known_rules": [
+    "批准控件角色名称与权限一致",
+    "重复点击只产生一次退款意图",
+    "UI 终态与订单 API 和审计记录一致",
+    "失败包含 DOM 网络控制台和 trace"
+  ],
+  "faults": [
+    "退款 API 延迟后返回 500",
+    "重复点击",
+    "第三方通知失败"
+  ],
+  "unknowns": [
+    "目标浏览器流量占比、第三方沙箱稳定性和真实页面可访问名称"
+  ],
+  "data_classification": "synthetic"
+}

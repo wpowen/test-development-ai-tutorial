@@ -1,0 +1,25 @@
+report_version: "1.0"
+title: AI service stability game day report template
+status: learner-template
+evidence_scope: local deterministic fixture only
+authorization:
+  owner: fill-before-real-experiment
+  environment: isolated namespace or sandbox
+  selector: fill-and-review-before-apply
+  start_end: fill-before-real-experiment
+  rollback: fill-before-real-experiment
+experiment:
+  hypothesis: bounded retries and admission protection preserve good-task SLO
+  fault: provider latency plus transient read-only tool failures
+  blast_radius: one synthetic workload or one approved canary selector
+  automatic_stop: task_success_rate, queue_p95_ms, cost_per_success or telemetry completeness breaches
+observations:
+  baseline_report: evidence/baseline/summary.json
+  fault_report: evidence/fault/summary.json
+  repaired_report: evidence/repaired/summary.json
+  required_comparison: [task_success_rate, e2e_p95_ms, queue_p95_ms, retry_amplification, call_amplification, cost_per_success]
+decision:
+  verdict: PASS-FIXTURE-or-BLOCKED
+  evidence: link-to-reports-and-traces
+  unknowns: real-provider-capacity-and-production-recovery
+production_execution: NOT_RUN

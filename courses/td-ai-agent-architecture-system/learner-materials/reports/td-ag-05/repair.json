@@ -1,0 +1,55 @@
+{
+  "topic_id": "TD-AG-05",
+  "phase": "repair",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "state_hash": "0a45281eea17b6951c1e1ff45fa2c8ec9100e39769fd929bef9affac0b9e433d",
+  "checks": [
+    {
+      "oracle_id": "TASKS",
+      "passed": true
+    },
+    {
+      "oracle_id": "REPEATS",
+      "passed": true
+    },
+    {
+      "oracle_id": "PASS-K-SEPARATE",
+      "passed": true
+    },
+    {
+      "oracle_id": "CLUSTERED-CI",
+      "passed": true
+    },
+    {
+      "oracle_id": "HORIZON",
+      "passed": true
+    },
+    {
+      "oracle_id": "SAMPLE-REASON",
+      "passed": true
+    }
+  ],
+  "state": {
+    "reliability": {
+      "tasks": 12,
+      "runs": 5,
+      "pass_at_k": 0.83,
+      "pass_all_k": 0.75,
+      "clustered_ci": true,
+      "horizon_buckets": true,
+      "sample_reason": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

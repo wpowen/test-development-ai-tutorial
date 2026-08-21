@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "topic_id": "TD-F03",
+  "phase": "repair",
+  "evidence_level": "offline-deterministic-fixture",
+  "model_execution": "NOT_RUN",
+  "verdict": "PASS",
+  "decision": "概率输出用重复运行和分布判断，结构与权限仍用确定性断言。",
+  "checks": [
+    {
+      "field": "context_within_budget",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "single_variable_change",
+      "expected": true,
+      "actual": true,
+      "status": "PASS"
+    },
+    {
+      "field": "repeat_count",
+      "expected": 5,
+      "actual": 5,
+      "status": "PASS"
+    }
+  ],
+  "injected_mutation": null,
+  "remaining_unknowns": [
+    "不同推理后端的确定性差异未实测",
+    "Tokenizer 与服务端调度未连接"
+  ]
+}

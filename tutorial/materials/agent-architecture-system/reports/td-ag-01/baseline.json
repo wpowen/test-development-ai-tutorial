@@ -1,0 +1,50 @@
+{
+  "topic_id": "TD-AG-01",
+  "phase": "baseline",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "state_hash": "1195f7f1aa7b7c6e8eec0e122c4aa6210a9666e84593c1ce41dc25679c14e4e1",
+  "checks": [
+    {
+      "oracle_id": "GOLD",
+      "passed": true
+    },
+    {
+      "oracle_id": "HUMAN-LABELS",
+      "passed": true
+    },
+    {
+      "oracle_id": "ORDER-STABLE",
+      "passed": true
+    },
+    {
+      "oracle_id": "FACT-BLOCKER",
+      "passed": true
+    },
+    {
+      "oracle_id": "JUDGE-CARD",
+      "passed": true
+    }
+  ],
+  "state": {
+    "judge": {
+      "gold": true,
+      "human_labels": true,
+      "order_ab": "A",
+      "order_ba": "A",
+      "fact_blocker": true,
+      "card": true
+    }
+  },
+  "not_run": [
+    "live model",
+    "live agent",
+    "live tools",
+    "live shadow",
+    "online monitoring",
+    "practitioner review",
+    "learner transfer"
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "topic_id": "TD-QP02",
+  "mode": "repair",
+  "maturity": "fixture-tested",
+  "verdict": "PASS",
+  "expected_exit_code": 0,
+  "failed_oracle_ids": [],
+  "evidence_hash": "3d32e9569aaa6150a036e4a02253c8dd7f090ba26b20942075d42ba7f6b96cbc",
+  "checks": [
+    {
+      "oracle_id": "PROJECT-IDENTITY",
+      "passed": true
+    },
+    {
+      "oracle_id": "CURRENT-SHA",
+      "passed": true
+    },
+    {
+      "oracle_id": "PIPELINE-SUCCESS",
+      "passed": true
+    },
+    {
+      "oracle_id": "JUNIT-COMPLETE",
+      "passed": true
+    },
+    {
+      "oracle_id": "JUNIT-CLEAN",
+      "passed": true
+    }
+  ],
+  "state": {
+    "identity": {
+      "actor": "gitlab-project-hook:17",
+      "project_id": 17,
+      "scopes": [
+        "read_api",
+        "status_check:write"
+      ]
+    },
+    "run": {
+      "run_id": "run-42",
+      "mr_iid": 9,
+      "commit_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pipeline_id": 501
+    },
+    "gitlab": {
+      "head_sha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "pipeline_status": "success"
+    },
+    "junit": {
+      "required_suites": [
+        "unit",
+        "contract"
+      ],
+      "present_suites": [
+        "unit",
+        "contract"
+      ],
+      "failed": 0,
+      "artifact_hash_valid": true
+    }
+  },
+  "not_run": [
+    "live Jira tenant",
+    "live GitLab instance",
+    "live Kubernetes cluster",
+    "model provider",
+    "ChatOps delivery"
+  ]
+}

@@ -1,0 +1,4754 @@
+{
+  "schema_version": "visual-sequence-manifest.v1",
+  "generated_from": "tutorial/tutorial-site.json",
+  "generated_at": "2026-08-13",
+  "tutorial_id": "test-development-ai-tutorial-v2",
+  "ordered_page_ids": [
+    "TD-F01",
+    "TD-P01",
+    "TD-P02",
+    "TD-P03",
+    "TD-P04",
+    "TD-P05",
+    "TD-P06",
+    "TD-P07",
+    "TD-P08",
+    "TD-PS01",
+    "TD-PS02",
+    "TD-PS03",
+    "TD-PS04",
+    "TD-PS05",
+    "TD-PS06",
+    "TD-PS07",
+    "TD-PS08",
+    "TD-PS09",
+    "TD-PS10",
+    "TD-PS11",
+    "TD-PS12",
+    "TD-X101",
+    "TD-FP01",
+    "TD-F02",
+    "TD-F03",
+    "TD-F04",
+    "TD-T01",
+    "TD-T02",
+    "TD-T03",
+    "TD-T04",
+    "TD-T05",
+    "TD-T06",
+    "TD-T07",
+    "TD-T08",
+    "TD-A01",
+    "TD-A02",
+    "TD-A03",
+    "TD-A04",
+    "TD-A05",
+    "TD-A06",
+    "TD-T09",
+    "TD-T10",
+    "TD-T11",
+    "TD-T12",
+    "TD-X501",
+    "TD-X502",
+    "TD-T13",
+    "TD-T14",
+    "TD-T15",
+    "TD-T16",
+    "TD-T17",
+    "TD-T18",
+    "TD-T19",
+    "TD-W01",
+    "TD-W02",
+    "TD-W03",
+    "TD-X603",
+    "TD-X604",
+    "TD-X602",
+    "TD-X601",
+    "TD-T20",
+    "TD-T21",
+    "TD-T22",
+    "TD-T23",
+    "TD-T24",
+    "TD-X805",
+    "TD-B01",
+    "TD-B02",
+    "TD-B03",
+    "TD-B04",
+    "TD-B05",
+    "TD-B06",
+    "TD-QP01",
+    "TD-QP02",
+    "TD-QP03",
+    "TD-QP04",
+    "TD-T25",
+    "TD-C01",
+    "TD-C02",
+    "TD-C03",
+    "TD-C04",
+    "TD-F05",
+    "TD-T26",
+    "TD-R01",
+    "TD-AP01",
+    "TD-AP02",
+    "TD-AP03",
+    "TD-AP04",
+    "TD-AP05",
+    "TD-AP06",
+    "TD-AP07",
+    "TD-AP08",
+    "TD-AG-00",
+    "TD-AG-01",
+    "TD-AG-02",
+    "TD-AG-03",
+    "TD-AG-04",
+    "TD-AG-05",
+    "TD-AG-06",
+    "TD-AG-07",
+    "TD-AG-08",
+    "TD-AG-09",
+    "TD-AG-10"
+  ],
+  "pages": [
+    {
+      "page_id": "TD-F01",
+      "display_number": 1,
+      "prerequisite_ids": [],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-role-comparison",
+          "kind": "career",
+          "purpose": "帮助初学者理解“先重建测试开发这份工作，再判断 AI 应该改哪里”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-role-comparison.svg",
+          "source_hash": "sha256:8461e5bb31b6fa658cfd8518020b0f66d27ac926f476323e5fa7e2f015041c4a",
+          "alt_text": "先重建测试开发这份工作，再判断 AI 应该改哪里的career：需求规则、技术设计、权威裁决、风险与方法、独立 Oracle",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "需求规则",
+            "技术设计",
+            "权威裁决",
+            "风险与方法",
+            "独立 Oracle",
+            "TestPackage",
+            "执行与归因",
+            "发布决定",
+            "生产反馈"
+          ],
+          "edges": [
+            "需求规则 → 技术设计",
+            "技术设计 → 权威裁决",
+            "权威裁决 → 风险与方法",
+            "风险与方法 → 独立 Oracle",
+            "独立 Oracle → TestPackage",
+            "TestPackage → 执行与归因",
+            "执行与归因 → 发布决定",
+            "发布决定 → 生产反馈"
+          ],
+          "source_refs": [
+            "S07",
+            "S32",
+            "S44",
+            "S65",
+            "S81"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P01",
+      "display_number": 2,
+      "prerequisite_ids": [
+        "TD-F01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“先冻结测试依据：别让 AI 读一堆互相打架的文档”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P01.svg",
+          "source_hash": "sha256:6225e93db630bbf776c7d41bbdf17771ac18c5ce42cdeec3d04a8f53ffbe7a92",
+          "alt_text": "先冻结测试依据：别让 AI 读一堆互相打架的文档的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S41",
+            "S42",
+            "S81",
+            "S85"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P02",
+      "display_number": 3,
+      "prerequisite_ids": [
+        "TD-P01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“把自然语言变成需求契约：让下游程序能直接消费”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P02.svg",
+          "source_hash": "sha256:a3ac7c1075edaaef8876acaecc9645a941ad1e5cad29a8ba5004d59c13f87e57",
+          "alt_text": "把自然语言变成需求契约：让下游程序能直接消费的flow：PRD/Technical Design/Open…、Authority Policy、Versioned Prompt + Schema、Requirement Contract、Independent Oracle + Eval",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/Technical Design/Open…",
+            "Authority Policy",
+            "Versioned Prompt + Schema",
+            "Requirement Contract",
+            "Independent Oracle + Eval",
+            "Mutation Runner",
+            "Traceability + Run Receipt"
+          ],
+          "edges": [
+            "PRD/Technical Design/Open… → Authority Policy",
+            "Authority Policy → Versioned Prompt + Schema",
+            "Versioned Prompt + Schema → Requirement Contract",
+            "Requirement Contract → Independent Oracle + Eval",
+            "Independent Oracle + Eval → Mutation Runner",
+            "Mutation Runner → Traceability + Run Receipt"
+          ],
+          "source_refs": [
+            "S41",
+            "S66",
+            "S81",
+            "S85"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P03",
+      "display_number": 4,
+      "prerequisite_ids": [
+        "TD-P02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“解析技术文档：把组件、接口、状态与失败恢复变成可测试契约”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P03.svg",
+          "source_hash": "sha256:1664e250a55ce82119186ca8b6938a7eea34f4c0773efb4e4923ee6c853c6683",
+          "alt_text": "解析技术文档：把组件、接口、状态与失败恢复变成可测试契约的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S41",
+            "S42",
+            "S81",
+            "S82"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P04",
+      "display_number": 5,
+      "prerequisite_ids": [
+        "TD-P03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“从需求契约到风险策略：决定测什么、在哪一层测”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P04.svg",
+          "source_hash": "sha256:d84f3cc2a0a2136dd85f9176d3b3c1c3caf9d99dde88dd2964a0182e453aeb08",
+          "alt_text": "从需求契约到风险策略：决定测什么、在哪一层测的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S41",
+            "S43",
+            "S45",
+            "S82"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P05",
+      "display_number": 6,
+      "prerequisite_ids": [
+        "TD-P04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P05",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“生成测试之前先固定 Oracle：否则 AI 只会生成自洽答案”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P05.svg",
+          "source_hash": "sha256:5c1705bf560d2304ae5c3fb836d6ef76822408fbfa0e17c50470765adfcc37ff",
+          "alt_text": "生成测试之前先固定 Oracle：否则 AI 只会生成自洽答案的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S41",
+            "S45",
+            "S87",
+            "S07"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P06",
+      "display_number": 7,
+      "prerequisite_ids": [
+        "TD-P05"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P06",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“把测试包接到自动化：接口、契约、集成和 UI 各自负责什么”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P06.svg",
+          "source_hash": "sha256:b29c9f7d94279a56fffa0881c3f3f3c4850b6ca935c847790a96212648d5874c",
+          "alt_text": "把测试包接到自动化：接口、契约、集成和 UI 各自负责什么的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S01",
+            "S44",
+            "S45",
+            "S85"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P07",
+      "display_number": 8,
+      "prerequisite_ids": [
+        "TD-P06"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P07",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“执行、收集、归因：一次绿色结果需要哪些证据”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P07.svg",
+          "source_hash": "sha256:2323047d4cb90ed636d5f5b11267c89aefd11220ebb85e6bfee018de0e6419d0",
+          "alt_text": "执行、收集、归因：一次绿色结果需要哪些证据的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S01",
+            "S42",
+            "S49",
+            "S89"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-P08",
+      "display_number": 9,
+      "prerequisite_ids": [
+        "TD-P07"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-P08",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“变更回归与发布判断：把整条证据链串起来”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-P08.svg",
+          "source_hash": "sha256:a3e53064d29985b4830753ac7ba3eaff6ec60d3444f2827fe28c47bbbe70b438",
+          "alt_text": "变更回归与发布判断：把整条证据链串起来的flow：PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/技术方案",
+            "Basis Gate",
+            "需求契约",
+            "风险与 TestPackage",
+            "自动化执行",
+            "Run Manifest",
+            "发布证据"
+          ],
+          "edges": [
+            "PRD/技术方案 → Basis Gate",
+            "Basis Gate → 需求契约",
+            "需求契约 → 风险与 TestPackage",
+            "风险与 TestPackage → 自动化执行",
+            "自动化执行 → Run Manifest",
+            "Run Manifest → 发布证据"
+          ],
+          "source_refs": [
+            "S41",
+            "S42",
+            "S66",
+            "S81",
+            "S82"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS01",
+      "display_number": 10,
+      "prerequisite_ids": [
+        "TD-P08"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“API 业务契约：从 HTTP 结果到可验证副作用”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS01.svg",
+          "source_hash": "sha256:4f11398a6ffac028e76a6b675da92276fb18c35098b4b79b63378ceb1083454d",
+          "alt_text": "API 业务契约：从 HTTP 结果到可验证副作用的flow：调用方与幂等键、API Gateway、订单领域服务、订单/退款账本、事件总线与消费者",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "调用方与幂等键",
+            "API Gateway",
+            "订单领域服务",
+            "订单/退款账本",
+            "事件总线与消费者",
+            "Trace/日志/指标",
+            "发布门禁"
+          ],
+          "edges": [
+            "调用方与幂等键 → API Gateway",
+            "API Gateway → 订单领域服务",
+            "订单领域服务 → 订单/退款账本",
+            "订单/退款账本 → 事件总线与消费者",
+            "事件总线与消费者 → Trace/日志/指标",
+            "Trace/日志/指标 → 发布门禁"
+          ],
+          "source_refs": [
+            "S44",
+            "S61",
+            "S45"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS02",
+      "display_number": 11,
+      "prerequisite_ids": [
+        "TD-PS01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“OpenAPI Schema 与属性测试：让坏请求和破坏性变更变红”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS02.svg",
+          "source_hash": "sha256:aa1340e896cfc8290b566ece1ee3e0bac3559b573a747ef38d083203d1453fa6",
+          "alt_text": "OpenAPI Schema 与属性测试：让坏请求和破坏性变更变红的flow：OpenAPI 版本、例生成器、Schema 校验器、业务属性 Oracle、被测 API",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "OpenAPI 版本",
+            "例生成器",
+            "Schema 校验器",
+            "业务属性 Oracle",
+            "被测 API",
+            "Mutation 控制器",
+            "报告与门禁"
+          ],
+          "edges": [
+            "OpenAPI 版本 → 例生成器",
+            "例生成器 → Schema 校验器",
+            "Schema 校验器 → 业务属性 Oracle",
+            "业务属性 Oracle → 被测 API",
+            "被测 API → Mutation 控制器",
+            "Mutation 控制器 → 报告与门禁"
+          ],
+          "source_refs": [
+            "S44",
+            "S61",
+            "S43"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS03",
+      "display_number": 12,
+      "prerequisite_ids": [
+        "TD-PS02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“契约、事件与鉴权：测试跨服务边界的真实兼容性”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS03.svg",
+          "source_hash": "sha256:74fdbd206ff881f62d8e352084d45effff2be9a9d458427b5db82dd4f6aa0ae2",
+          "alt_text": "契约、事件与鉴权：测试跨服务边界的真实兼容性的flow：Checkout API、Auth/租户策略、契约 Broker、事件总线、库存消费者",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Checkout API",
+            "Auth/租户策略",
+            "契约 Broker",
+            "事件总线",
+            "库存消费者",
+            "支付消费者",
+            "死信/补偿与 Trace"
+          ],
+          "edges": [
+            "Checkout API → Auth/租户策略",
+            "Auth/租户策略 → 契约 Broker",
+            "契约 Broker → 事件总线",
+            "事件总线 → 库存消费者",
+            "库存消费者 → 支付消费者",
+            "支付消费者 → 死信/补偿与 Trace"
+          ],
+          "source_refs": [
+            "S45",
+            "S44",
+            "S50"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS04",
+      "display_number": 13,
+      "prerequisite_ids": [
+        "TD-PS03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Web UI 关键旅程：隔离、定位器、网络控制与跨浏览器”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS04.svg",
+          "source_hash": "sha256:fae9be41627f610850efe0b2087e19daa55d939f5892a14294713da2e754aa66",
+          "alt_text": "Web UI 关键旅程：隔离、定位器、网络控制与跨浏览器的flow：测试数据工厂、浏览器上下文、Web UI、订单/退款 API、第三方路由 Stub",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "测试数据工厂",
+            "浏览器上下文",
+            "Web UI",
+            "订单/退款 API",
+            "第三方路由 Stub",
+            "Trace/截图/控制台",
+            "回归门禁"
+          ],
+          "edges": [
+            "测试数据工厂 → 浏览器上下文",
+            "浏览器上下文 → Web UI",
+            "Web UI → 订单/退款 API",
+            "订单/退款 API → 第三方路由 Stub",
+            "第三方路由 Stub → Trace/截图/控制台",
+            "Trace/截图/控制台 → 回归门禁"
+          ],
+          "source_refs": [
+            "S62",
+            "S43",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS05",
+      "display_number": 14,
+      "prerequisite_ids": [
+        "TD-PS04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS05",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Web UI 兼容性、无障碍与视觉回归”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS05.svg",
+          "source_hash": "sha256:3f3f15086e952d2f3c8c281ad38d3ebfad73b714b0c54e892b73c8e26d34ec53",
+          "alt_text": "Web UI 兼容性、无障碍与视觉回归的flow：用户/输入方式、浏览器与视口矩阵、DOM/语义检查、键盘/焦点路径、视觉快照",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "用户/输入方式",
+            "浏览器与视口矩阵",
+            "DOM/语义检查",
+            "键盘/焦点路径",
+            "视觉快照",
+            "差异诊断",
+            "人工批准与门禁"
+          ],
+          "edges": [
+            "用户/输入方式 → 浏览器与视口矩阵",
+            "浏览器与视口矩阵 → DOM/语义检查",
+            "DOM/语义检查 → 键盘/焦点路径",
+            "键盘/焦点路径 → 视觉快照",
+            "视觉快照 → 差异诊断",
+            "差异诊断 → 人工批准与门禁"
+          ],
+          "source_refs": [
+            "S62",
+            "S43",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS06",
+      "display_number": 15,
+      "prerequisite_ids": [
+        "TD-PS05"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS06",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Android 自动化：生命周期、同步、权限与设备矩阵”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS06.svg",
+          "source_hash": "sha256:251bba9b7f0c01db0f1538af4a04efc34a72bbfc8ed9abdff65cf4b9f6900922",
+          "alt_text": "Android 自动化：生命周期、同步、权限与设备矩阵的flow：收货员与设备、Android Activity/Process、扫描与权限层、本地状态/队列、库存 API",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "收货员与设备",
+            "Android Activity/Process",
+            "扫描与权限层",
+            "本地状态/队列",
+            "库存 API",
+            "库存账本",
+            "logcat/Trace/报告"
+          ],
+          "edges": [
+            "收货员与设备 → Android Activity/Process",
+            "Android Activity/Process → 扫描与权限层",
+            "扫描与权限层 → 本地状态/队列",
+            "本地状态/队列 → 库存 API",
+            "库存 API → 库存账本",
+            "库存账本 → logcat/Trace/报告"
+          ],
+          "source_refs": [
+            "S43",
+            "S61",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS07",
+      "display_number": 16,
+      "prerequisite_ids": [
+        "TD-PS06"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS07",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“iOS 自动化：可访问性标识、权限、签名与状态残留”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS07.svg",
+          "source_hash": "sha256:646043fd317ec41f3a7bd82e6bc5edf631cb407f4a3ac24e55ce8d8202b6f6c7",
+          "alt_text": "iOS 自动化：可访问性标识、权限、签名与状态残留的flow：患者与 iOS 设备、XCUITest/Accessibility、系统权限与生命周期、预约 API、Slot 版本/账本",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "患者与 iOS 设备",
+            "XCUITest/Accessibility",
+            "系统权限与生命周期",
+            "预约 API",
+            "Slot 版本/账本",
+            "xcresult/系统日志",
+            "回归门禁"
+          ],
+          "edges": [
+            "患者与 iOS 设备 → XCUITest/Accessibility",
+            "XCUITest/Accessibility → 系统权限与生命周期",
+            "系统权限与生命周期 → 预约 API",
+            "预约 API → Slot 版本/账本",
+            "Slot 版本/账本 → xcresult/系统日志",
+            "xcresult/系统日志 → 回归门禁"
+          ],
+          "source_refs": [
+            "S43",
+            "S62",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS08",
+      "display_number": 17,
+      "prerequisite_ids": [
+        "TD-PS03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS08",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“数据与迁移：Schema 演进、回填、CDC 与回滚对账”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS08.svg",
+          "source_hash": "sha256:01f1e942f1c3c6281a4fac998a346a277451f2d5d8f44ec627ec29498f317285",
+          "alt_text": "数据与迁移：Schema 演进、回填、CDC 与回滚对账的flow：旧/新消费者、Expand Schema、双写/影子读、分片回填、CDC 高水位",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "旧/新消费者",
+            "Expand Schema",
+            "双写/影子读",
+            "分片回填",
+            "CDC 高水位",
+            "守恒对账",
+            "切读与 Contract 门禁"
+          ],
+          "edges": [
+            "旧/新消费者 → Expand Schema",
+            "Expand Schema → 双写/影子读",
+            "双写/影子读 → 分片回填",
+            "分片回填 → CDC 高水位",
+            "CDC 高水位 → 守恒对账",
+            "守恒对账 → 切读与 Contract 门禁"
+          ],
+          "source_refs": [
+            "S44",
+            "S45",
+            "S61"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS09",
+      "display_number": 18,
+      "prerequisite_ids": [
+        "TD-PS03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS09",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“性能与容量：到达率、尾延迟、Goodput 与单位成功成本”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS09.svg",
+          "source_hash": "sha256:571eeea373cb6a619ade5a1ff1072fedda2182ae6ebe8a5e197efef8c85f383d",
+          "alt_text": "性能与容量：到达率、尾延迟、Goodput 与单位成功成本的flow：Workload/到达率、队列与调度、Prefill/TTFT、Decode/TPOT、工具与检索",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Workload/到达率",
+            "队列与调度",
+            "Prefill/TTFT",
+            "Decode/TPOT",
+            "工具与检索",
+            "质量/Goodput",
+            "成本与容量门禁"
+          ],
+          "edges": [
+            "Workload/到达率 → 队列与调度",
+            "队列与调度 → Prefill/TTFT",
+            "Prefill/TTFT → Decode/TPOT",
+            "Decode/TPOT → 工具与检索",
+            "工具与检索 → 质量/Goodput",
+            "质量/Goodput → 成本与容量门禁"
+          ],
+          "source_refs": [
+            "S51",
+            "S52",
+            "S54"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS10",
+      "display_number": 19,
+      "prerequisite_ids": [
+        "TD-PS09"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS10",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“稳定性：超时、重试预算、熔断、限流与降级”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS10.svg",
+          "source_hash": "sha256:bca85d189dc0b7305b9fbad1408f176dd0f3d0a5b6360ff3603452699a9b8791",
+          "alt_text": "稳定性：超时、重试预算、熔断、限流与降级的flow：实验授权/隔离命名空间、注入器、模型/工具/检索依赖、Agent 重试与降级、订单 API/队列",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "实验授权/隔离命名空间",
+            "注入器",
+            "模型/工具/检索依赖",
+            "Agent 重试与降级",
+            "订单 API/队列",
+            "SLI/Trace/副作用",
+            "自动停止与回滚"
+          ],
+          "edges": [
+            "实验授权/隔离命名空间 → 注入器",
+            "注入器 → 模型/工具/检索依赖",
+            "模型/工具/检索依赖 → Agent 重试与降级",
+            "Agent 重试与降级 → 订单 API/队列",
+            "订单 API/队列 → SLI/Trace/副作用",
+            "SLI/Trace/副作用 → 自动停止与回滚"
+          ],
+          "source_refs": [
+            "S48",
+            "S60",
+            "S47"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS11",
+      "display_number": 20,
+      "prerequisite_ids": [
+        "TD-PS10"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS11",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“线上可观测性：把 AI 质量、Trace、成本和 SLO 接成一条链”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS11.svg",
+          "source_hash": "sha256:c794e8e1d46a76239cf2fe5399b60394952dcb76ea12238aba1ea629f159594d",
+          "alt_text": "线上可观测性：把 AI 质量、Trace、成本和 SLO 接成一条链的flow：用户请求/风险切片、Gateway 与 Trace、模型/检索/工具 Span、日志与指标、质量/成本评测",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "用户请求/风险切片",
+            "Gateway 与 Trace",
+            "模型/检索/工具 Span",
+            "日志与指标",
+            "质量/成本评测",
+            "告警与版本冻结",
+            "回归集与发布门禁"
+          ],
+          "edges": [
+            "用户请求/风险切片 → Gateway 与 Trace",
+            "Gateway 与 Trace → 模型/检索/工具 Span",
+            "模型/检索/工具 Span → 日志与指标",
+            "日志与指标 → 质量/成本评测",
+            "质量/成本评测 → 告警与版本冻结",
+            "告警与版本冻结 → 回归集与发布门禁"
+          ],
+          "source_refs": [
+            "S49",
+            "S47",
+            "S51"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-PS12",
+      "display_number": 21,
+      "prerequisite_ids": [
+        "TD-PS03",
+        "TD-PS11"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-PS12",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“安全测试：身份、授权、输入、秘密与跨租户副作用”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-PS12.svg",
+          "source_hash": "sha256:ee1cbe5daac1ecdd76901fa6f8c2b91247baa90e8e04be5d74e3ead1529fb118",
+          "alt_text": "安全测试：身份、授权、输入、秘密与跨租户副作用的flow：用户/token、Gateway 身份校验、Agent/Prompt 非可信输入、对象与功能授权、工具 allowlist/参数校验",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "用户/token",
+            "Gateway 身份校验",
+            "Agent/Prompt 非可信输入",
+            "对象与功能授权",
+            "工具 allowlist/参数校验",
+            "订单/退款账本",
+            "脱敏 Trace 与安全门禁"
+          ],
+          "edges": [
+            "用户/token → Gateway 身份校验",
+            "Gateway 身份校验 → Agent/Prompt 非可信输入",
+            "Agent/Prompt 非可信输入 → 对象与功能授权",
+            "对象与功能授权 → 工具 allowlist/参数校验",
+            "工具 allowlist/参数校验 → 订单/退款账本",
+            "订单/退款账本 → 脱敏 Trace 与安全门禁"
+          ],
+          "source_refs": [
+            "S50",
+            "S45",
+            "S49"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X101",
+      "display_number": 22,
+      "prerequisite_ids": [
+        "TD-PS12"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X101",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“静态、架构、代码与依赖供应链门禁”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X101.svg",
+          "source_hash": "sha256:fd24e7add1d69be75b7805ef1b1d54f92bda4a72bf6d6e26cb2c90f61f4b0ba6",
+          "alt_text": "静态、架构、代码与依赖供应链门禁的flow：Trust Boundary、Commit/Diff、SBOM、Provenance/Signature、静态发现",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Trust Boundary",
+            "Commit/Diff",
+            "SBOM",
+            "Provenance/Signature",
+            "静态发现",
+            "Owner/例外",
+            "合并门禁"
+          ],
+          "edges": [
+            "Trust Boundary → Commit/Diff",
+            "Commit/Diff → SBOM",
+            "SBOM → Provenance/Signature",
+            "Provenance/Signature → 静态发现",
+            "静态发现 → Owner/例外",
+            "Owner/例外 → 合并门禁"
+          ],
+          "source_refs": [
+            "S08",
+            "S41",
+            "S50",
+            "S64"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-FP01",
+      "display_number": 23,
+      "prerequisite_ids": [
+        "TD-F01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-FP01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Prompt 小白第一课：从一句指令到可验证 Prompt Package”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-FP01.svg",
+          "source_hash": "sha256:99df9b17969503481e97b9119090ef4d392dbc5915e06753d0c28890d79a137d",
+          "alt_text": "Prompt 小白第一课：从一句指令到可验证 Prompt Package的flow：业务决策问题、System 权限、Task 目标、Input·Context 证据、Output·Schema",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "业务决策问题",
+            "System 权限",
+            "Task 目标",
+            "Input·Context 证据",
+            "Output·Schema",
+            "Eval·Mutation Oracle",
+            "Manifest·Receipt",
+            "人工 Owner"
+          ],
+          "edges": [
+            "业务决策问题 → System 权限",
+            "System 权限 → Task 目标",
+            "Task 目标 → Input·Context 证据",
+            "Input·Context 证据 → Output·Schema",
+            "Output·Schema → Eval·Mutation Oracle",
+            "Eval·Mutation Oracle → Manifest·Receipt",
+            "Manifest·Receipt → 人工 Owner"
+          ],
+          "source_refs": [
+            "S65",
+            "S66",
+            "S81"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-F02",
+      "display_number": 24,
+      "prerequisite_ids": [
+        "TD-FP01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-F02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“模型生命周期：一次错误究竟来自哪里”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-F02.svg",
+          "source_hash": "sha256:4657b8ab0d7017a91a5f15c09d36a565e1e7dac7a0d49c92c18c762c5f015948",
+          "alt_text": "模型生命周期：一次错误究竟来自哪里的flow：来源与训练边界、模型快照、Prompt·Context、应用编排、工具·检索",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "来源与训练边界",
+            "模型快照",
+            "Prompt·Context",
+            "应用编排",
+            "工具·检索",
+            "Trace 报告",
+            "人工发布 Gate"
+          ],
+          "edges": [
+            "来源与训练边界 → 模型快照",
+            "模型快照 → Prompt·Context",
+            "Prompt·Context → 应用编排",
+            "应用编排 → 工具·检索",
+            "工具·检索 → Trace 报告",
+            "Trace 报告 → 人工发布 Gate"
+          ],
+          "source_refs": [
+            "S33",
+            "S24",
+            "S65",
+            "S66"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-F03",
+      "display_number": 25,
+      "prerequisite_ids": [
+        "TD-F02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-F03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Token、Context 与非确定性：为什么一次 PASS 不够”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-F03.svg",
+          "source_hash": "sha256:3921bfd05c7cf326f2068477bd159ecb43d85b0b8f0e6567eed115f10c3bb922",
+          "alt_text": "Token、Context 与非确定性：为什么一次 PASS 不够的flow：原始输入、Tokenizer、有限 Context、模型 Logits、解码策略",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "原始输入",
+            "Tokenizer",
+            "有限 Context",
+            "模型 Logits",
+            "解码策略",
+            "多次 Raw outputs",
+            "分布与人工 Gate"
+          ],
+          "edges": [
+            "原始输入 → Tokenizer",
+            "Tokenizer → 有限 Context",
+            "有限 Context → 模型 Logits",
+            "模型 Logits → 解码策略",
+            "解码策略 → 多次 Raw outputs",
+            "多次 Raw outputs → 分布与人工 Gate"
+          ],
+          "source_refs": [
+            "S33",
+            "S40",
+            "S65",
+            "S66"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-F04",
+      "display_number": 26,
+      "prerequisite_ids": [
+        "TD-F03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-F04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“从 LLM 到 RAG、Agent 与 Workflow：被测边界如何扩张”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-F04.svg",
+          "source_hash": "sha256:5363afac36fa4018af4e13fb99b91dc8d059fb7baa6dec209e08db07b95c4b1b",
+          "alt_text": "从 LLM 到 RAG、Agent 与 Workflow：被测边界如何扩张的flow：用户目标、检索·Context、模型决策、工具策略 Gate、Worker·队列",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "用户目标",
+            "检索·Context",
+            "模型决策",
+            "工具策略 Gate",
+            "Worker·队列",
+            "业务状态 Verifier",
+            "人工升级·补偿"
+          ],
+          "edges": [
+            "用户目标 → 检索·Context",
+            "检索·Context → 模型决策",
+            "模型决策 → 工具策略 Gate",
+            "工具策略 Gate → Worker·队列",
+            "Worker·队列 → 业务状态 Verifier",
+            "业务状态 Verifier → 人工升级·补偿"
+          ],
+          "source_refs": [
+            "S34",
+            "S35",
+            "S39",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T01",
+      "display_number": 27,
+      "prerequisite_ids": [
+        "TD-F04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Eval Contract：先写发布问题，再选指标”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T01.svg",
+          "source_hash": "sha256:78e69fb59e4d7cce9ef6e31d1c886ca0ec8473eb07d83360c66c686e49ba2518",
+          "alt_text": "Eval Contract：先写发布问题，再选指标的flow：发布问题、风险与 owner、数据与切片、Composite Oracle、指标与阈值",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "发布问题",
+            "风险与 owner",
+            "数据与切片",
+            "Composite Oracle",
+            "指标与阈值",
+            "报告与 stop state",
+            "人工发布决定"
+          ],
+          "edges": [
+            "发布问题 → 风险与 owner",
+            "风险与 owner → 数据与切片",
+            "数据与切片 → Composite Oracle",
+            "Composite Oracle → 指标与阈值",
+            "指标与阈值 → 报告与 stop state",
+            "报告与 stop state → 人工发布决定"
+          ],
+          "source_refs": [
+            "S05",
+            "S23",
+            "S24",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T02",
+      "display_number": 28,
+      "prerequisite_ids": [
+        "TD-T01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Dataset、Slice 与 Holdout：让评测不会越调越假”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T02.svg",
+          "source_hash": "sha256:674fd47424e25254b6aae1bed1813ecf9a63e6e78c7084a34231b321b1c6d27a",
+          "alt_text": "Dataset、Slice 与 Holdout：让评测不会越调越假的flow：失败与风险池、采样/去重、Development set、Validation set、Sealed Holdout",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "失败与风险池",
+            "采样/去重",
+            "Development set",
+            "Validation set",
+            "Sealed Holdout",
+            "切片报告",
+            "Owner adjudication"
+          ],
+          "edges": [
+            "失败与风险池 → 采样/去重",
+            "采样/去重 → Development set",
+            "Development set → Validation set",
+            "Validation set → Sealed Holdout",
+            "Sealed Holdout → 切片报告",
+            "切片报告 → Owner adjudication"
+          ],
+          "source_refs": [
+            "S23",
+            "S24",
+            "S37",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T03",
+      "display_number": 29,
+      "prerequisite_ids": [
+        "TD-T02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Composite Oracle：规则、语义 Judge 与人工如何组合”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T03.svg",
+          "source_hash": "sha256:91425aa963e0c071490798661c1f5d4ca12423a619701a6b393f5ea262a9ccfa",
+          "alt_text": "Composite Oracle：规则、语义 Judge 与人工如何组合的flow：Eval case、Schema Gate、业务规则 Gate、权限·副作用 Gate、语义 Judge",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Eval case",
+            "Schema Gate",
+            "业务规则 Gate",
+            "权限·副作用 Gate",
+            "语义 Judge",
+            "人工校准",
+            "发布/升级决定"
+          ],
+          "edges": [
+            "Eval case → Schema Gate",
+            "Schema Gate → 业务规则 Gate",
+            "业务规则 Gate → 权限·副作用 Gate",
+            "权限·副作用 Gate → 语义 Judge",
+            "语义 Judge → 人工校准",
+            "人工校准 → 发布/升级决定"
+          ],
+          "source_refs": [
+            "S04",
+            "S10",
+            "S23",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T04",
+      "display_number": 30,
+      "prerequisite_ids": [
+        "TD-T03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“重复运行与统计：从一次结果到可解释分布”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T04.svg",
+          "source_hash": "sha256:3fdf0656080a574261401360c45951bccb67ea16384b1a7e030b48472d8aa1c2",
+          "alt_text": "重复运行与统计：从一次结果到可解释分布的flow：版本化 cases、重复采样、Raw run ledger、独立 Scorer、Slice aggregation",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "版本化 cases",
+            "重复采样",
+            "Raw run ledger",
+            "独立 Scorer",
+            "Slice aggregation",
+            "不确定性说明",
+            "Owner decision"
+          ],
+          "edges": [
+            "版本化 cases → 重复采样",
+            "重复采样 → Raw run ledger",
+            "Raw run ledger → 独立 Scorer",
+            "独立 Scorer → Slice aggregation",
+            "Slice aggregation → 不确定性说明",
+            "不确定性说明 → Owner decision"
+          ],
+          "source_refs": [
+            "S37",
+            "S40",
+            "S24",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T05",
+      "display_number": 31,
+      "prerequisite_ids": [
+        "TD-T04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T05",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“从冻结 Basis 与代码 Diff 提取可追溯风险”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T05.svg",
+          "source_hash": "sha256:30dc40122368fdd9d69af0633ec3e9a22b0339ea0b434db6e5596b637d454d2c",
+          "alt_text": "从冻结 Basis 与代码 Diff 提取可追溯风险的flow：冻结需求与设计、独立 Oracle 注册表、版本化代码 Diff、风险候选生成、引用与冲突门禁",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "冻结需求与设计",
+            "独立 Oracle 注册表",
+            "版本化代码 Diff",
+            "风险候选生成",
+            "引用与冲突门禁",
+            "业务 Owner 复核",
+            "测试设计 Backlog"
+          ],
+          "edges": [
+            "冻结需求与设计 → 独立 Oracle 注册表",
+            "独立 Oracle 注册表 → 版本化代码 Diff",
+            "版本化代码 Diff → 风险候选生成",
+            "风险候选生成 → 引用与冲突门禁",
+            "引用与冲突门禁 → 业务 Owner 复核",
+            "业务 Owner 复核 → 测试设计 Backlog"
+          ],
+          "source_refs": [
+            "S14",
+            "S32",
+            "S41"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T06",
+      "display_number": 32,
+      "prerequisite_ids": [
+        "TD-T05"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T06",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI 生成测试候选，用 Mutation 证明检测力”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T06.svg",
+          "source_hash": "sha256:6a62a9c4170f7b8377442409130d78605156493a050df98c1d508435eaa8c466",
+          "alt_text": "AI 生成测试候选，用 Mutation 证明检测力的flow：批准 Basis、独立行为 Oracle、AI 测试候选、Schema 与静态门禁、Baseline Runner",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "批准 Basis",
+            "独立行为 Oracle",
+            "AI 测试候选",
+            "Schema 与静态门禁",
+            "Baseline Runner",
+            "Mutation Runner",
+            "Reviewer 处置",
+            "回归套件"
+          ],
+          "edges": [
+            "批准 Basis → 独立行为 Oracle",
+            "独立行为 Oracle → AI 测试候选",
+            "AI 测试候选 → Schema 与静态门禁",
+            "Schema 与静态门禁 → Baseline Runner",
+            "Baseline Runner → Mutation Runner",
+            "Mutation Runner → Reviewer 处置",
+            "Reviewer 处置 → 回归套件"
+          ],
+          "source_refs": [
+            "S01",
+            "S21",
+            "S23",
+            "S41"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T07",
+      "display_number": 33,
+      "prerequisite_ids": [
+        "TD-T06"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T07",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“按失败模型选择 Boundary、Combination、Property 与 Fuzz”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T07.svg",
+          "source_hash": "sha256:7b72a8a1aad7ea28203fc853da0e69a3c772f1e62c1139d1ee4db4afb6e79ea7",
+          "alt_text": "按失败模型选择 Boundary、Combination、Property 与 Fuzz的flow：批准 Failure Model、合法域与约束、方法选择器、确定性生成、独立 Invariant",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "批准 Failure Model",
+            "合法域与约束",
+            "方法选择器",
+            "确定性生成",
+            "独立 Invariant",
+            "原始失败存储",
+            "Shrink 与 Replay",
+            "固定回归"
+          ],
+          "edges": [
+            "批准 Failure Model → 合法域与约束",
+            "合法域与约束 → 方法选择器",
+            "方法选择器 → 确定性生成",
+            "确定性生成 → 独立 Invariant",
+            "独立 Invariant → 原始失败存储",
+            "原始失败存储 → Shrink 与 Replay",
+            "Shrink 与 Replay → 固定回归"
+          ],
+          "source_refs": [
+            "S01",
+            "S23",
+            "S32",
+            "S41"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T08",
+      "display_number": 34,
+      "prerequisite_ids": [
+        "TD-T07"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T08",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI 聚类失败，但原始证据和 UNKNOWN 不能丢”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T08.svg",
+          "source_hash": "sha256:ea7930774e96fa4efce317fecb77f31f16da3a2e7910f48f4fbe043cf7ef429c",
+          "alt_text": "AI 聚类失败，但原始证据和 UNKNOWN 不能丢的flow：只追加原始事件、Trace 与版本关联、标准化只读视图、候选 Failure Cluster、诊断 Hypothesis",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "只追加原始事件",
+            "Trace 与版本关联",
+            "标准化只读视图",
+            "候选 Failure Cluster",
+            "诊断 Hypothesis",
+            "控制变量实验",
+            "Cause Gate",
+            "修复与回放"
+          ],
+          "edges": [
+            "只追加原始事件 → Trace 与版本关联",
+            "Trace 与版本关联 → 标准化只读视图",
+            "标准化只读视图 → 候选 Failure Cluster",
+            "候选 Failure Cluster → 诊断 Hypothesis",
+            "诊断 Hypothesis → 控制变量实验",
+            "控制变量实验 → Cause Gate",
+            "Cause Gate → 修复与回放"
+          ],
+          "source_refs": [
+            "S14",
+            "S22",
+            "S49",
+            "S41"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-A01",
+      "display_number": 35,
+      "prerequisite_ids": [
+        "TD-F04",
+        "TD-PS01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-A01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“普通 API 与 AI API：从确定性响应到版本化生成服务”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-A01.svg",
+          "source_hash": "sha256:537d3cece904fd33170dbb9b24c95743ed1e04accdea411c4d94c470cdf47423",
+          "alt_text": "普通 API 与 AI API：从确定性响应到版本化生成服务的flow：客户端、HTTP/鉴权、生成 Manifest、模型/Prompt/Tool、Token/成本",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "客户端",
+            "HTTP/鉴权",
+            "生成 Manifest",
+            "模型/Prompt/Tool",
+            "Token/成本",
+            "Telemetry",
+            "错误与发布门禁"
+          ],
+          "edges": [
+            "客户端 → HTTP/鉴权",
+            "HTTP/鉴权 → 生成 Manifest",
+            "生成 Manifest → 模型/Prompt/Tool",
+            "模型/Prompt/Tool → Token/成本",
+            "Token/成本 → Telemetry",
+            "Telemetry → 错误与发布门禁"
+          ],
+          "source_refs": [
+            "S44",
+            "S56",
+            "S57",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-A02",
+      "display_number": 36,
+      "prerequisite_ids": [
+        "TD-A01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-A02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI API 协议：Streaming、Structured、Tool 与 Async”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-A02.svg",
+          "source_hash": "sha256:7c5e7c834e53164392255f01e2ae8bb9c5f6e21e071ebee35f8a8fe0c21c961b",
+          "alt_text": "AI API 协议：Streaming、Structured、Tool 与 Async的flow：请求、SSE reducer、Schema+语义、Tool 权限/幂等、Async 状态机",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "请求",
+            "SSE reducer",
+            "Schema+语义",
+            "Tool 权限/幂等",
+            "Async 状态机",
+            "副作用账本",
+            "协议门禁"
+          ],
+          "edges": [
+            "请求 → SSE reducer",
+            "SSE reducer → Schema+语义",
+            "Schema+语义 → Tool 权限/幂等",
+            "Tool 权限/幂等 → Async 状态机",
+            "Async 状态机 → 副作用账本",
+            "副作用账本 → 协议门禁"
+          ],
+          "source_refs": [
+            "S56",
+            "S57",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-A03",
+      "display_number": 37,
+      "prerequisite_ids": [
+        "TD-A02",
+        "TD-PS09"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-A03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-A03.svg",
+          "source_hash": "sha256:70c1a168391bc4590b6451cf75c98ebf122ae1ba7b49d9ecad62fcbd591ef806",
+          "alt_text": "AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本的flow：到达、Queue、Prefill/首 Token、Decode/ITL、终态/质量",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "到达",
+            "Queue",
+            "Prefill/首 Token",
+            "Decode/ITL",
+            "终态/质量",
+            "Goodput",
+            "成本门禁"
+          ],
+          "edges": [
+            "到达 → Queue",
+            "Queue → Prefill/首 Token",
+            "Prefill/首 Token → Decode/ITL",
+            "Decode/ITL → 终态/质量",
+            "终态/质量 → Goodput",
+            "Goodput → 成本门禁"
+          ],
+          "source_refs": [
+            "S51",
+            "S52",
+            "S53",
+            "S54"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-A04",
+      "display_number": 38,
+      "prerequisite_ids": [
+        "TD-A03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-A04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI Serving 负载与容量：从 Token 分布到 SLO 拐点”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-A04.svg",
+          "source_hash": "sha256:9922a005efeadc45e65e6a9b450a3c82efc88210b4dec983f7e8adaa7046cc79",
+          "alt_text": "AI Serving 负载与容量：从 Token 分布到 SLO 拐点的flow：Workload 分布、Open/Closed 生成器、Serving Queue、Token 执行、SLO/质量",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Workload 分布",
+            "Open/Closed 生成器",
+            "Serving Queue",
+            "Token 执行",
+            "SLO/质量",
+            "Goodput 拐点",
+            "停止/恢复"
+          ],
+          "edges": [
+            "Workload 分布 → Open/Closed 生成器",
+            "Open/Closed 生成器 → Serving Queue",
+            "Serving Queue → Token 执行",
+            "Token 执行 → SLO/质量",
+            "SLO/质量 → Goodput 拐点",
+            "Goodput 拐点 → 停止/恢复"
+          ],
+          "source_refs": [
+            "S51",
+            "S52",
+            "S53"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-A05",
+      "display_number": 39,
+      "prerequisite_ids": [
+        "TD-A04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-A05",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI Serving 瓶颈：Queue、GPU、KV Cache 与阶段诊断”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-A05.svg",
+          "source_hash": "sha256:3587a88ab44cb55a92239ca6c4ffc9d40f68be53190a374476e86166aae863f2",
+          "alt_text": "AI Serving 瓶颈：Queue、GPU、KV Cache 与阶段诊断的flow：用户症状、Request Trace、Queue/Prefill/Decode、GPU/Memory、KV Cache",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "用户症状",
+            "Request Trace",
+            "Queue/Prefill/Decode",
+            "GPU/Memory",
+            "KV Cache",
+            "单变量实验",
+            "诊断结论"
+          ],
+          "edges": [
+            "用户症状 → Request Trace",
+            "Request Trace → Queue/Prefill/Decode",
+            "Queue/Prefill/Decode → GPU/Memory",
+            "GPU/Memory → KV Cache",
+            "KV Cache → 单变量实验",
+            "单变量实验 → 诊断结论"
+          ],
+          "source_refs": [
+            "S51",
+            "S53",
+            "S54",
+            "S55"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-A06",
+      "display_number": 40,
+      "prerequisite_ids": [
+        "TD-A05"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-A06",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“AI Serving 韧性：限流、Timeout、Retry、Fallback 与 Degradation”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-A06.svg",
+          "source_hash": "sha256:36e49d3d62213740f753ce78ff4ae54c9624a2e8ac3d6dbfd84e072387c67ee0",
+          "alt_text": "AI Serving 韧性：限流、Timeout、Retry、Fallback 与 Degradation的flow：错误分类、Deadline、Retry Budget、Backoff/Jitter、幂等账本",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "错误分类",
+            "Deadline",
+            "Retry Budget",
+            "Backoff/Jitter",
+            "幂等账本",
+            "Fallback Gate",
+            "恢复验证"
+          ],
+          "edges": [
+            "错误分类 → Deadline",
+            "Deadline → Retry Budget",
+            "Retry Budget → Backoff/Jitter",
+            "Backoff/Jitter → 幂等账本",
+            "幂等账本 → Fallback Gate",
+            "Fallback Gate → 恢复验证"
+          ],
+          "source_refs": [
+            "S46",
+            "S57",
+            "S59"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T09",
+      "display_number": 41,
+      "prerequisite_ids": [
+        "TD-T04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T09",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“RAG 语料治理：来源、版本、分块与权限”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T09.svg",
+          "source_hash": "sha256:8131b1c48db1be887ea78a39b37e598c7010a282ab989e1b5d709a9ac7dcbd53",
+          "alt_text": "RAG 语料治理：来源、版本、分块与权限的flow：权威文档源、版本/冲突 Gate、分块与 metadata、ACL 过滤、版本化索引",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "权威文档源",
+            "版本/冲突 Gate",
+            "分块与 metadata",
+            "ACL 过滤",
+            "版本化索引",
+            "检索 Trace",
+            "语料 owner"
+          ],
+          "edges": [
+            "权威文档源 → 版本/冲突 Gate",
+            "版本/冲突 Gate → 分块与 metadata",
+            "分块与 metadata → ACL 过滤",
+            "ACL 过滤 → 版本化索引",
+            "版本化索引 → 检索 Trace",
+            "检索 Trace → 语料 owner"
+          ],
+          "source_refs": [
+            "S34",
+            "S09",
+            "S65",
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T10",
+      "display_number": 42,
+      "prerequisite_ids": [
+        "TD-T09"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T10",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“检索评测：Recall、Ranking 与查询切片”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T10.svg",
+          "source_hash": "sha256:f573d047920d4e4c4d29d4f9536ed5cc57078d195139e1ec4d3ae732d9ce7c63",
+          "alt_text": "检索评测：Recall、Ranking 与查询切片的flow：Query slices、Query rewrite、ACL/metadata filter、Retriever、Top-k ranking",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Query slices",
+            "Query rewrite",
+            "ACL/metadata filter",
+            "Retriever",
+            "Top-k ranking",
+            "Gold comparison",
+            "Miss reason/owner"
+          ],
+          "edges": [
+            "Query slices → Query rewrite",
+            "Query rewrite → ACL/metadata filter",
+            "ACL/metadata filter → Retriever",
+            "Retriever → Top-k ranking",
+            "Top-k ranking → Gold comparison",
+            "Gold comparison → Miss reason/owner"
+          ],
+          "source_refs": [
+            "S34",
+            "S09",
+            "S24",
+            "S37"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T11",
+      "display_number": 43,
+      "prerequisite_ids": [
+        "TD-T10"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T11",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Faithfulness 与 Citation：回答真的被证据支持吗”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T11.svg",
+          "source_hash": "sha256:41d9000782964c6c1a8ff2d5abc0286621ba0cff7e021bec0d210ba9cdba8453",
+          "alt_text": "Faithfulness 与 Citation：回答真的被证据支持吗的flow：Retrieved Context、Generated answer、Atomic claims、Evidence spans、Faithfulness scorer",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Retrieved Context",
+            "Generated answer",
+            "Atomic claims",
+            "Evidence spans",
+            "Faithfulness scorer",
+            "Conflict/blocker",
+            "Human policy owner"
+          ],
+          "edges": [
+            "Retrieved Context → Generated answer",
+            "Generated answer → Atomic claims",
+            "Atomic claims → Evidence spans",
+            "Evidence spans → Faithfulness scorer",
+            "Faithfulness scorer → Conflict/blocker",
+            "Conflict/blocker → Human policy owner"
+          ],
+          "source_refs": [
+            "S09",
+            "S34",
+            "S10",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T12",
+      "display_number": 44,
+      "prerequisite_ids": [
+        "TD-T09",
+        "TD-T10",
+        "TD-T11"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T12",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“无答案、权限与端到端 RAG Gate”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T12.svg",
+          "source_hash": "sha256:97e5c4d43becfb3abe5802997116dd363807fe71385a9a3ba8f6f3389332e5b3",
+          "alt_text": "无答案、权限与端到端 RAG Gate的flow：Versioned corpus、Tenant ACL、Retriever/no-result、Generator、Faithfulness·Citation",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Versioned corpus",
+            "Tenant ACL",
+            "Retriever/no-result",
+            "Generator",
+            "Faithfulness·Citation",
+            "Side-effect policy",
+            "Handoff·Human Gate"
+          ],
+          "edges": [
+            "Versioned corpus → Tenant ACL",
+            "Tenant ACL → Retriever/no-result",
+            "Retriever/no-result → Generator",
+            "Generator → Faithfulness·Citation",
+            "Faithfulness·Citation → Side-effect policy",
+            "Side-effect policy → Handoff·Human Gate"
+          ],
+          "source_refs": [
+            "S07",
+            "S08",
+            "S09",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X501",
+      "display_number": 45,
+      "prerequisite_ids": [
+        "TD-T12"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X501",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“多模态关系与独立 Oracle 评测”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X501.svg",
+          "source_hash": "sha256:f470230b7013626dc35206a7a066d5b2380379d703f91cb7263cf068f8d6ba9b",
+          "alt_text": "多模态关系与独立 Oracle 评测的flow：任务/模态合同、配对 Fixture、跨模态关系、独立 Oracle、矛盾注入",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "任务/模态合同",
+            "配对 Fixture",
+            "跨模态关系",
+            "独立 Oracle",
+            "矛盾注入",
+            "切片指标",
+            "人工复核"
+          ],
+          "edges": [
+            "任务/模态合同 → 配对 Fixture",
+            "配对 Fixture → 跨模态关系",
+            "跨模态关系 → 独立 Oracle",
+            "独立 Oracle → 矛盾注入",
+            "矛盾注入 → 切片指标",
+            "切片指标 → 人工复核"
+          ],
+          "source_refs": [
+            "S23",
+            "S36",
+            "S37",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X502",
+      "display_number": 46,
+      "prerequisite_ids": [
+        "TD-X501"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X502",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“多语言、可访问与包容性 AI 任务验收”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X502.svg",
+          "source_hash": "sha256:862b96c7ec15f4e87c36ee6fac992ab456c8d2f86c1da79ee1d012d30e0908d2",
+          "alt_text": "多语言、可访问与包容性 AI 任务验收的flow：用户任务、Locale/Script 矩阵、语义等价、键盘/名称 Oracle、切片运行",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "用户任务",
+            "Locale/Script 矩阵",
+            "语义等价",
+            "键盘/名称 Oracle",
+            "切片运行",
+            "本地化 Owner",
+            "阻断/接受"
+          ],
+          "edges": [
+            "用户任务 → Locale/Script 矩阵",
+            "Locale/Script 矩阵 → 语义等价",
+            "语义等价 → 键盘/名称 Oracle",
+            "键盘/名称 Oracle → 切片运行",
+            "切片运行 → 本地化 Owner",
+            "本地化 Owner → 阻断/接受"
+          ],
+          "source_refs": [
+            "S23",
+            "S62",
+            "S65",
+            "S90"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T13",
+      "display_number": 47,
+      "prerequisite_ids": [
+        "TD-T12"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T13",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Prompt、模型和知识库版本 A/B”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T13.svg",
+          "source_hash": "sha256:de1c50d78838111b0be12b2fd4cf1cb6a78818384009df1b7108502e2eba1bb3",
+          "alt_text": "Prompt、模型和知识库版本 A/B的flow：Versioned A/B manifests、Frozen eval set、Repeated runner、Slice/Blocker Oracle、Cost/Latency ledger",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Versioned A/B manifests",
+            "Frozen eval set",
+            "Repeated runner",
+            "Slice/Blocker Oracle",
+            "Cost/Latency ledger",
+            "Human release gate"
+          ],
+          "edges": [
+            "Versioned A/B manifests → Frozen eval set",
+            "Frozen eval set → Repeated runner",
+            "Repeated runner → Slice/Blocker Oracle",
+            "Slice/Blocker Oracle → Cost/Latency ledger",
+            "Cost/Latency ledger → Human release gate"
+          ],
+          "source_refs": [
+            "S03",
+            "S04",
+            "S12"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T14",
+      "display_number": 48,
+      "prerequisite_ids": [
+        "TD-T13"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T14",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“LLM-as-judge 的校准和反例”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T14.svg",
+          "source_hash": "sha256:d39b9f08b0b9de36437ea3793ef88f10fad4cc8f97df6d546c4ea4be04f808ac",
+          "alt_text": "LLM-as-judge 的校准和反例的flow：Double human labels、Blind pair shuffle、Versioned Judge、Bias probes、Disagreement matrix",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Double human labels",
+            "Blind pair shuffle",
+            "Versioned Judge",
+            "Bias probes",
+            "Disagreement matrix",
+            "Human escalation"
+          ],
+          "edges": [
+            "Double human labels → Blind pair shuffle",
+            "Blind pair shuffle → Versioned Judge",
+            "Versioned Judge → Bias probes",
+            "Bias probes → Disagreement matrix",
+            "Disagreement matrix → Human escalation"
+          ],
+          "source_refs": [
+            "S04",
+            "S10",
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T15",
+      "display_number": 49,
+      "prerequisite_ids": [
+        "TD-T03",
+        "TD-T04"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T15",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“最终结果、单步动作和完整轨迹”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T15.svg",
+          "source_hash": "sha256:ad9cf9ffcee7a18487d9c32ea9a59d332668a01af88c75c04f812a27206fca2a",
+          "alt_text": "最终结果、单步动作和完整轨迹的architecture：Business outcome、Tool step ledger、State snapshots、Trajectory graph、Policy blockers",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Business outcome",
+            "Tool step ledger",
+            "State snapshots",
+            "Trajectory graph",
+            "Policy blockers",
+            "Human decision"
+          ],
+          "edges": [
+            "Business outcome → Tool step ledger",
+            "Tool step ledger → State snapshots",
+            "State snapshots → Trajectory graph",
+            "Trajectory graph → Policy blockers",
+            "Policy blockers → Human decision"
+          ],
+          "source_refs": [
+            "S10",
+            "S23",
+            "S35"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T16",
+      "display_number": 50,
+      "prerequisite_ids": [
+        "TD-T15"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T16",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“工具选择、参数和权限”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T16.svg",
+          "source_hash": "sha256:099fea653240fecf82b259d8fcd76d2af905aebde5f97dd4f9f5faaaddc42dba",
+          "alt_text": "工具选择、参数和权限的architecture：Identity verifier、Tool registry、Policy engine、Sandbox adapter、Idempotency store",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Identity verifier",
+            "Tool registry",
+            "Policy engine",
+            "Sandbox adapter",
+            "Idempotency store",
+            "Human approval"
+          ],
+          "edges": [
+            "Identity verifier → Tool registry",
+            "Tool registry → Policy engine",
+            "Policy engine → Sandbox adapter",
+            "Sandbox adapter → Idempotency store",
+            "Idempotency store → Human approval"
+          ],
+          "source_refs": [
+            "S06",
+            "S10",
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T17",
+      "display_number": 51,
+      "prerequisite_ids": [
+        "TD-T16"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T17",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“Prompt injection、数据泄露和 Excessive Agency”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T17.svg",
+          "source_hash": "sha256:e426213778d8aab1d8ebd648ce6e16046ae1391af2c696963f0abadc2eb7b8f0",
+          "alt_text": "Prompt injection、数据泄露和 Excessive Agency的architecture：Untrusted content、Retrieval isolation、Model boundary、Tool authorization、Output DLP",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Untrusted content",
+            "Retrieval isolation",
+            "Model boundary",
+            "Tool authorization",
+            "Output DLP",
+            "Security review"
+          ],
+          "edges": [
+            "Untrusted content → Retrieval isolation",
+            "Retrieval isolation → Model boundary",
+            "Model boundary → Tool authorization",
+            "Tool authorization → Output DLP",
+            "Output DLP → Security review"
+          ],
+          "source_refs": [
+            "S07",
+            "S08",
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T18",
+      "display_number": 52,
+      "prerequisite_ids": [
+        "TD-T06",
+        "TD-T16"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T18",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“Browser Agent 和 Playwright Test Agents”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T18.svg",
+          "source_hash": "sha256:b0a28d3ee5bc651cc7ae917fcafacb7acc75dfe9f7d11910d15f751bce59c8fc",
+          "alt_text": "Browser Agent 和 Playwright Test Agents的architecture：Risk/PRD、Planner、Generator、Sandbox browser、Business mutation",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Risk/PRD",
+            "Planner",
+            "Generator",
+            "Sandbox browser",
+            "Business mutation",
+            "Human test review"
+          ],
+          "edges": [
+            "Risk/PRD → Planner",
+            "Planner → Generator",
+            "Generator → Sandbox browser",
+            "Sandbox browser → Business mutation",
+            "Business mutation → Human test review"
+          ],
+          "source_refs": [
+            "S01",
+            "S02",
+            "S18"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T19",
+      "display_number": 53,
+      "prerequisite_ids": [
+        "TD-T18"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T19",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“自愈测试为什么会误修绿”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T19.svg",
+          "source_hash": "sha256:ec2e53710dcfde4bdbc0cf277972b2559f813d23ae8e68c550301bfb38d2a3a3",
+          "alt_text": "自愈测试为什么会误修绿的architecture：Failing test、Evidence capture、Healer candidate、Anti-cheat diff、Mutation rerun",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Failing test",
+            "Evidence capture",
+            "Healer candidate",
+            "Anti-cheat diff",
+            "Mutation rerun",
+            "Human merge gate"
+          ],
+          "edges": [
+            "Failing test → Evidence capture",
+            "Evidence capture → Healer candidate",
+            "Healer candidate → Anti-cheat diff",
+            "Anti-cheat diff → Mutation rerun",
+            "Mutation rerun → Human merge gate"
+          ],
+          "source_refs": [
+            "S01",
+            "S21",
+            "S22"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-W01",
+      "display_number": 54,
+      "prerequisite_ids": [
+        "TD-T15"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-W01",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“先区分 Agent、Worker 和固定 Workflow”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-W01.svg",
+          "source_hash": "sha256:0edaffbd092a46c755908f9ef07c681e64b1381155e8dd26c636478ba31b47b6",
+          "alt_text": "先区分 Agent、Worker 和固定 Workflow的architecture：Deterministic router、Autonomous agent loop、Async queue、Worker、State stores",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Deterministic router",
+            "Autonomous agent loop",
+            "Async queue",
+            "Worker",
+            "State stores",
+            "Human owner"
+          ],
+          "edges": [
+            "Deterministic router → Autonomous agent loop",
+            "Autonomous agent loop → Async queue",
+            "Async queue → Worker",
+            "Worker → State stores",
+            "State stores → Human owner"
+          ],
+          "source_refs": [
+            "S10",
+            "S23",
+            "S35"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-W02",
+      "display_number": 55,
+      "prerequisite_ids": [
+        "TD-W01",
+        "TD-T16"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-W02",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“测试状态、循环、重试、Handoff 和终止条件”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-W02.svg",
+          "source_hash": "sha256:5ee4e9f3e0d1a59d3198cc492a9ada3c717f44db9afbc61e4322b68ed5e9ccc7",
+          "alt_text": "测试状态、循环、重试、Handoff 和终止条件的architecture：Workflow state、Checkpoint、Queue delivery、Idempotent worker、Budget guard",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Workflow state",
+            "Checkpoint",
+            "Queue delivery",
+            "Idempotent worker",
+            "Budget guard",
+            "Human handoff"
+          ],
+          "edges": [
+            "Workflow state → Checkpoint",
+            "Checkpoint → Queue delivery",
+            "Queue delivery → Idempotent worker",
+            "Idempotent worker → Budget guard",
+            "Budget guard → Human handoff"
+          ],
+          "source_refs": [
+            "S06",
+            "S10",
+            "S48"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-W03",
+      "display_number": 56,
+      "prerequisite_ids": [
+        "TD-W02"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-W03",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“单 Agent 与多 Agent 的公平对照”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-W03.svg",
+          "source_hash": "sha256:cf186999edaf83e209c7435920e29b3520cb4c782cfe5d9828d1e195ad580709",
+          "alt_text": "单 Agent 与多 Agent 的公平对照的architecture：Frozen task set、Single-agent arm、Multi-agent arm、Shared budget、Repeated trials",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Frozen task set",
+            "Single-agent arm",
+            "Multi-agent arm",
+            "Shared budget",
+            "Repeated trials",
+            "Architecture decision"
+          ],
+          "edges": [
+            "Frozen task set → Single-agent arm",
+            "Single-agent arm → Multi-agent arm",
+            "Multi-agent arm → Shared budget",
+            "Shared budget → Repeated trials",
+            "Repeated trials → Architecture decision"
+          ],
+          "source_refs": [
+            "S10",
+            "S24",
+            "S35"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X603",
+      "display_number": 57,
+      "prerequisite_ids": [
+        "TD-T17"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X603",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“长期 Memory、个性化与语义缓存治理”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X603.svg",
+          "source_hash": "sha256:5838d8c24bdf86350feb682048dce0a0b901601daca59352c5cb6062098bbce9",
+          "alt_text": "长期 Memory、个性化与语义缓存治理的architecture：同意/目的、用户/租户隔离、写入/TTL、检索/缓存版本、冲突/删除",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "同意/目的",
+            "用户/租户隔离",
+            "写入/TTL",
+            "检索/缓存版本",
+            "冲突/删除",
+            "回执",
+            "回归"
+          ],
+          "edges": [
+            "同意/目的 → 用户/租户隔离",
+            "用户/租户隔离 → 写入/TTL",
+            "写入/TTL → 检索/缓存版本",
+            "检索/缓存版本 → 冲突/删除",
+            "冲突/删除 → 回执",
+            "回执 → 回归"
+          ],
+          "source_refs": [
+            "S35",
+            "S49",
+            "S65",
+            "S66"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X604",
+      "display_number": 58,
+      "prerequisite_ids": [
+        "TD-A06",
+        "TD-T19"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X604",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“模型路由、Fallback 与工具协议漂移测试”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X604.svg",
+          "source_hash": "sha256:bc7155bb198063d5f80ef6aeb3f9f654f77a02e83c71f2120a264296bd870b32",
+          "alt_text": "模型路由、Fallback 与工具协议漂移测试的architecture：请求合同、能力/区域/权限、Provider 路由、协议/Schema、Fallback 再授权",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "请求合同",
+            "能力/区域/权限",
+            "Provider 路由",
+            "协议/Schema",
+            "Fallback 再授权",
+            "副作用门禁",
+            "Trace/回滚"
+          ],
+          "edges": [
+            "请求合同 → 能力/区域/权限",
+            "能力/区域/权限 → Provider 路由",
+            "Provider 路由 → 协议/Schema",
+            "协议/Schema → Fallback 再授权",
+            "Fallback 再授权 → 副作用门禁",
+            "副作用门禁 → Trace/回滚"
+          ],
+          "source_refs": [
+            "S39",
+            "S48",
+            "S49",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X602",
+      "display_number": 59,
+      "prerequisite_ids": [
+        "TD-F04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X602",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“训练、Fine-tuning 与模型更新的版本化验收”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X602.svg",
+          "source_hash": "sha256:aaa2d3403bc238e017f89057dd727ce24f70fbfa1b90600aa66ba858df9caf6b",
+          "alt_text": "训练、Fine-tuning 与模型更新的版本化验收的flow：批准目的、数据 lineage、基座/代码/超参快照、封存 Holdout、候选比较",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "批准目的",
+            "数据 lineage",
+            "基座/代码/超参快照",
+            "封存 Holdout",
+            "候选比较",
+            "独立 Owner",
+            "注册或回滚"
+          ],
+          "edges": [
+            "批准目的 → 数据 lineage",
+            "数据 lineage → 基座/代码/超参快照",
+            "基座/代码/超参快照 → 封存 Holdout",
+            "封存 Holdout → 候选比较",
+            "候选比较 → 独立 Owner",
+            "独立 Owner → 注册或回滚"
+          ],
+          "source_refs": [
+            "S24",
+            "S40",
+            "S65",
+            "S66"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X601",
+      "display_number": 60,
+      "prerequisite_ids": [
+        "TD-X502",
+        "TD-T17"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X601",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“公平、伤害与 HITL 有效性门禁”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X601.svg",
+          "source_hash": "sha256:42a67105ac98050d35add72be014056ec6e979e7790fb32394b1aabb2f73999b",
+          "alt_text": "公平、伤害与 HITL 有效性门禁的flow：使用情境/伤害模型、合法切片、分组结果、最坏切片/Blocker、独立人工样本",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "使用情境/伤害模型",
+            "合法切片",
+            "分组结果",
+            "最坏切片/Blocker",
+            "独立人工样本",
+            "分歧/申诉",
+            "具名决定"
+          ],
+          "edges": [
+            "使用情境/伤害模型 → 合法切片",
+            "合法切片 → 分组结果",
+            "分组结果 → 最坏切片/Blocker",
+            "最坏切片/Blocker → 独立人工样本",
+            "独立人工样本 → 分歧/申诉",
+            "分歧/申诉 → 具名决定"
+          ],
+          "source_refs": [
+            "S07",
+            "S23",
+            "S40",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T20",
+      "display_number": 61,
+      "prerequisite_ids": [
+        "TD-T12",
+        "TD-T14"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T20",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“CI 分层门禁：让坏 AI 版本真的停下来”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T20.svg",
+          "source_hash": "sha256:ccaa2d44a73888bb120ccddbcf610f93266cdfe8faabcf158940fbe92435e652",
+          "alt_text": "CI 分层门禁：让坏 AI 版本真的停下来的flow：PR/候选版本、L0 确定性 Gate、L1 高风险 Smoke、L2 Nightly 回归、L3 RC/Holdout",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PR/候选版本",
+            "L0 确定性 Gate",
+            "L1 高风险 Smoke",
+            "L2 Nightly 回归",
+            "L3 RC/Holdout",
+            "Artifact/退出码",
+            "人工发布 Gate"
+          ],
+          "edges": [
+            "PR/候选版本 → L0 确定性 Gate",
+            "L0 确定性 Gate → L1 高风险 Smoke",
+            "L1 高风险 Smoke → L2 Nightly 回归",
+            "L2 Nightly 回归 → L3 RC/Holdout",
+            "L3 RC/Holdout → Artifact/退出码",
+            "Artifact/退出码 → 人工发布 Gate"
+          ],
+          "source_refs": [
+            "S03",
+            "S05",
+            "S23",
+            "S24"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T21",
+      "display_number": 62,
+      "prerequisite_ids": [
+        "TD-T20"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T21",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Lineage：每个分数都能回到当时的版本”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T21.svg",
+          "source_hash": "sha256:04b6931ef831fae8eb673b7bacaf746f534fca2920d8b749f341026023898f65",
+          "alt_text": "Lineage：每个分数都能回到当时的版本的flow：代码 Commit、Prompt/Input/Schema、Dataset/Split、Knowledge/Tool、Model/Runtime",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "代码 Commit",
+            "Prompt/Input/Schema",
+            "Dataset/Split",
+            "Knowledge/Tool",
+            "Model/Runtime",
+            "Scorer/聚合",
+            "Run Manifest/决策"
+          ],
+          "edges": [
+            "代码 Commit → Prompt/Input/Schema",
+            "Prompt/Input/Schema → Dataset/Split",
+            "Dataset/Split → Knowledge/Tool",
+            "Knowledge/Tool → Model/Runtime",
+            "Model/Runtime → Scorer/聚合",
+            "Scorer/聚合 → Run Manifest/决策"
+          ],
+          "source_refs": [
+            "S05",
+            "S24",
+            "S36",
+            "S40"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T22",
+      "display_number": 63,
+      "prerequisite_ids": [
+        "TD-T21"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T22",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Trace-to-Regression：把生产失败变成不会复发的用例”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T22.svg",
+          "source_hash": "sha256:d2f913d446ce5f3193f4b24f9c104e57a12b80b9bc265dc5abc29334ff71d2dc",
+          "alt_text": "Trace-to-Regression：把生产失败变成不会复发的用例的flow：生产 Trace 隔离区、字段分类/脱敏、最小失败抽取、业务/安全 Oracle、Regression Dataset",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "生产 Trace 隔离区",
+            "字段分类/脱敏",
+            "最小失败抽取",
+            "业务/安全 Oracle",
+            "Regression Dataset",
+            "CI 重放",
+            "修复与事件 Closure"
+          ],
+          "edges": [
+            "生产 Trace 隔离区 → 字段分类/脱敏",
+            "字段分类/脱敏 → 最小失败抽取",
+            "最小失败抽取 → 业务/安全 Oracle",
+            "业务/安全 Oracle → Regression Dataset",
+            "Regression Dataset → CI 重放",
+            "CI 重放 → 修复与事件 Closure"
+          ],
+          "source_refs": [
+            "S10",
+            "S28",
+            "S49",
+            "S70"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T23",
+      "display_number": 64,
+      "prerequisite_ids": [
+        "TD-T20",
+        "TD-T21"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T23",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“质量、延迟与成本：联合 Gate 而不是一个综合分”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T23.svg",
+          "source_hash": "sha256:37b2dfd596a5f9f8001c37f0d07d843028683a49a0733f976ea4a765737e38a3",
+          "alt_text": "质量、延迟与成本：联合 Gate 而不是一个综合分的flow：版本化 Workload、模型/路由候选、质量 Scorer、Trace/延迟分解、Token/成本账本",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "版本化 Workload",
+            "模型/路由候选",
+            "质量 Scorer",
+            "Trace/延迟分解",
+            "Token/成本账本",
+            "硬门禁/Pareto",
+            "容量与产品 Owner"
+          ],
+          "edges": [
+            "版本化 Workload → 模型/路由候选",
+            "模型/路由候选 → 质量 Scorer",
+            "质量 Scorer → Trace/延迟分解",
+            "Trace/延迟分解 → Token/成本账本",
+            "Token/成本账本 → 硬门禁/Pareto",
+            "硬门禁/Pareto → 容量与产品 Owner"
+          ],
+          "source_refs": [
+            "S24",
+            "S29",
+            "S31",
+            "S70"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T24",
+      "display_number": 65,
+      "prerequisite_ids": [
+        "TD-T21",
+        "TD-T22",
+        "TD-T23"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T24",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“漂移、Waiver 与回滚：质量系统的恢复闭环”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T24.svg",
+          "source_hash": "sha256:234534ede571138b8c26d1d8e0dd515727ddcc7b51f4aaf476d0cbf2f17e8b0b",
+          "alt_text": "漂移、Waiver 与回滚：质量系统的恢复闭环的flow：版本化基线、多信号监测、漂移诊断树、版本冻结、Waiver/到期 Gate",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "版本化基线",
+            "多信号监测",
+            "漂移诊断树",
+            "版本冻结",
+            "Waiver/到期 Gate",
+            "整包回滚",
+            "Regression/事故 Closure"
+          ],
+          "edges": [
+            "版本化基线 → 多信号监测",
+            "多信号监测 → 漂移诊断树",
+            "漂移诊断树 → 版本冻结",
+            "版本冻结 → Waiver/到期 Gate",
+            "Waiver/到期 Gate → 整包回滚",
+            "整包回滚 → Regression/事故 Closure"
+          ],
+          "source_refs": [
+            "S07",
+            "S23",
+            "S24",
+            "S70"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-X805",
+      "display_number": 66,
+      "prerequisite_ids": [
+        "TD-X604",
+        "TD-T24"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-X805",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“在线实验、Canary 与人工抽样发布门禁”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-X805.svg",
+          "source_hash": "sha256:35949a04522552d4e4b3da6ec96352cd951a34edc24ba33daa96e1d27c41501f",
+          "alt_text": "在线实验、Canary 与人工抽样发布门禁的flow：假设/MDE、稳定分流、离线门禁、小流量 Canary、Guardrail/最坏切片",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "假设/MDE",
+            "稳定分流",
+            "离线门禁",
+            "小流量 Canary",
+            "Guardrail/最坏切片",
+            "人工抽样",
+            "扩量/回滚"
+          ],
+          "edges": [
+            "假设/MDE → 稳定分流",
+            "稳定分流 → 离线门禁",
+            "离线门禁 → 小流量 Canary",
+            "小流量 Canary → Guardrail/最坏切片",
+            "Guardrail/最坏切片 → 人工抽样",
+            "人工抽样 → 扩量/回滚"
+          ],
+          "source_refs": [
+            "S24",
+            "S40",
+            "S47",
+            "S58"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-B01",
+      "display_number": 67,
+      "prerequisite_ids": [
+        "TD-T21"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-B01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Benchmark 流水线：总分背后有七个可变组件”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-B01.svg",
+          "source_hash": "sha256:94473e07a673730144c1a896ed089ef4b1db2e4a94f97cfdf453668424e91690",
+          "alt_text": "Benchmark 流水线：总分背后有七个可变组件的flow：任务定义、Dataset/Split、Prompt/Protocol、Model/Harness、Scorer",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "任务定义",
+            "Dataset/Split",
+            "Prompt/Protocol",
+            "Model/Harness",
+            "Scorer",
+            "Aggregation/CI",
+            "Report/Limitations"
+          ],
+          "edges": [
+            "任务定义 → Dataset/Split",
+            "Dataset/Split → Prompt/Protocol",
+            "Prompt/Protocol → Model/Harness",
+            "Model/Harness → Scorer",
+            "Scorer → Aggregation/CI",
+            "Aggregation/CI → Report/Limitations"
+          ],
+          "source_refs": [
+            "S36",
+            "S37",
+            "S38",
+            "S40"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-B02",
+      "display_number": 68,
+      "prerequisite_ids": [
+        "TD-B01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-B02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Dataset、Split 与 Sealed Holdout：防止越调越假”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-B02.svg",
+          "source_hash": "sha256:7c5c5bb21b90969e7c2c80e1838fbd4f1b372d564070b37e7f17b3120a0b9e03",
+          "alt_text": "Dataset、Split 与 Sealed Holdout：防止越调越假的flow：任务与失败池、采样/去重、Representative、Challenge、Regression",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "任务与失败池",
+            "采样/去重",
+            "Representative",
+            "Challenge",
+            "Regression",
+            "Sealed Holdout",
+            "访问审计/版本"
+          ],
+          "edges": [
+            "任务与失败池 → 采样/去重",
+            "采样/去重 → Representative",
+            "Representative → Challenge",
+            "Challenge → Regression",
+            "Regression → Sealed Holdout",
+            "Sealed Holdout → 访问审计/版本"
+          ],
+          "source_refs": [
+            "S23",
+            "S37",
+            "S38",
+            "S40"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-B03",
+      "display_number": 69,
+      "prerequisite_ids": [
+        "TD-B02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-B03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Metrics 与区间：Accuracy、Pass@k、Resolved Rate 不能混讲”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-B03.svg",
+          "source_hash": "sha256:895aa4cf2b86a2fdefb301b8227b741659e53cdd10ae3adc9a489a83c26ecdf7",
+          "alt_text": "Metrics 与区间：Accuracy、Pass@k、Resolved Rate 不能混讲的flow：逐题多次 Runs、Raw Ledger、确定性 Oracle、Judge/校准、Metric Calculator",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "逐题多次 Runs",
+            "Raw Ledger",
+            "确定性 Oracle",
+            "Judge/校准",
+            "Metric Calculator",
+            "Slice/Confidence",
+            "Decision Gate"
+          ],
+          "edges": [
+            "逐题多次 Runs → Raw Ledger",
+            "Raw Ledger → 确定性 Oracle",
+            "确定性 Oracle → Judge/校准",
+            "Judge/校准 → Metric Calculator",
+            "Metric Calculator → Slice/Confidence",
+            "Slice/Confidence → Decision Gate"
+          ],
+          "source_refs": [
+            "S36",
+            "S38",
+            "S39",
+            "S40"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-B04",
+      "display_number": 70,
+      "prerequisite_ids": [
+        "TD-B03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-B04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Harness 敏感性：固定模型，一次只改一个协议变量”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-B04.svg",
+          "source_hash": "sha256:9c0e0db5b38486f5511a7a190c83855c1a41cf3e0514dc1c311ab2261d3b5089",
+          "alt_text": "Harness 敏感性：固定模型，一次只改一个协议变量的flow：Locked Dataset、Locked Model、Protocol Variant A/B、Harness/Tools、Raw Runs",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Locked Dataset",
+            "Locked Model",
+            "Protocol Variant A/B",
+            "Harness/Tools",
+            "Raw Runs",
+            "Paired Comparison",
+            "有限归因"
+          ],
+          "edges": [
+            "Locked Dataset → Locked Model",
+            "Locked Model → Protocol Variant A/B",
+            "Protocol Variant A/B → Harness/Tools",
+            "Harness/Tools → Raw Runs",
+            "Raw Runs → Paired Comparison",
+            "Paired Comparison → 有限归因"
+          ],
+          "source_refs": [
+            "S36",
+            "S37",
+            "S38",
+            "S39"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-B05",
+      "display_number": 71,
+      "prerequisite_ids": [
+        "TD-B04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-B05",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“污染与不确定性：隐藏测试也不是万能证明”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-B05.svg",
+          "source_hash": "sha256:b50d5b566689919a6fd2ffaeda08160fea354bc3d8b6239234d8886fe760cf6f",
+          "alt_text": "污染与不确定性：隐藏测试也不是万能证明的flow：Candidate Results、Version Compatibility、Duplicate/Exposure Audit、Sealed Canary、Paired Uncertainty",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Candidate Results",
+            "Version Compatibility",
+            "Duplicate/Exposure Audit",
+            "Sealed Canary",
+            "Paired Uncertainty",
+            "可信度分类",
+            "Rebaseline/Owner"
+          ],
+          "edges": [
+            "Candidate Results → Version Compatibility",
+            "Version Compatibility → Duplicate/Exposure Audit",
+            "Duplicate/Exposure Audit → Sealed Canary",
+            "Sealed Canary → Paired Uncertainty",
+            "Paired Uncertainty → 可信度分类",
+            "可信度分类 → Rebaseline/Owner"
+          ],
+          "source_refs": [
+            "S37",
+            "S38",
+            "S40",
+            "S23"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-B06",
+      "display_number": 72,
+      "prerequisite_ids": [
+        "TD-B05",
+        "TD-T22"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-B06",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“公共到企业：把 Benchmark 方法迁移到业务风险”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-B06.svg",
+          "source_hash": "sha256:10984a0d435a01e244a0b752b0ab4d1b7c304be600ab09425d52308a0eb8ff89",
+          "alt_text": "公共到企业：把 Benchmark 方法迁移到业务风险的flow：公共方法参考、业务风险目录、内部四类 Dataset、Candidate Adapters、Composite Scorer",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "公共方法参考",
+            "业务风险目录",
+            "内部四类 Dataset",
+            "Candidate Adapters",
+            "Composite Scorer",
+            "Versioned Report",
+            "Maintenance/Release Owner"
+          ],
+          "edges": [
+            "公共方法参考 → 业务风险目录",
+            "业务风险目录 → 内部四类 Dataset",
+            "内部四类 Dataset → Candidate Adapters",
+            "Candidate Adapters → Composite Scorer",
+            "Composite Scorer → Versioned Report",
+            "Versioned Report → Maintenance/Release Owner"
+          ],
+          "source_refs": [
+            "S37",
+            "S38",
+            "S39",
+            "S40"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-QP01",
+      "display_number": 73,
+      "prerequisite_ids": [
+        "TD-P01",
+        "TD-P02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-QP01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Jira 需求事件：从 Basis Gate 到人工批准”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-QP01.svg",
+          "source_hash": "sha256:db85dc791afe8576304a439f14de53c7f8d22a98dd287513c6be2592398b3cc4",
+          "alt_text": "Jira 需求事件：从 Basis Gate 到人工批准的flow：Jira 需求与变更、Webhook Gateway/Inbox、Jira REST 回读、Basis Gate/Source Pack、AI 候选与 provenance",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Jira 需求与变更",
+            "Webhook Gateway/Inbox",
+            "Jira REST 回读",
+            "Basis Gate/Source Pack",
+            "AI 候选与 provenance",
+            "Review Console/人工批准",
+            "Orchestrator/审计与执行请求"
+          ],
+          "edges": [
+            "Jira 需求与变更 → Webhook Gateway/Inbox",
+            "Webhook Gateway/Inbox → Jira REST 回读",
+            "Jira REST 回读 → Basis Gate/Source Pack",
+            "Basis Gate/Source Pack → AI 候选与 provenance",
+            "AI 候选与 provenance → Review Console/人工批准",
+            "Review Console/人工批准 → Orchestrator/审计与执行请求"
+          ],
+          "source_refs": [
+            "S93",
+            "S94",
+            "S66"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-QP02",
+      "display_number": 74,
+      "prerequisite_ids": [
+        "TD-QP01",
+        "TD-P06"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-QP02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“GitLab MR 与 Pipeline：把 JUnit 证据绑定到当前 SHA”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-QP02.svg",
+          "source_hash": "sha256:5c436ef01ad76c7a6d1f72e5748a447c5036550babbc1bb240eefff1b95f67e9",
+          "alt_text": "GitLab MR 与 Pipeline：把 JUnit 证据绑定到当前 SHA的flow：GitLab MR/当前 HEAD、Project Webhook/Inbox、Pipeline 与 Jobs、JUnit/Artifact Store、确定性聚合器",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "GitLab MR/当前 HEAD",
+            "Project Webhook/Inbox",
+            "Pipeline 与 Jobs",
+            "JUnit/Artifact Store",
+            "确定性聚合器",
+            "SHA-bound Status Check",
+            "MR Approval/Protected Bra…"
+          ],
+          "edges": [
+            "GitLab MR/当前 HEAD → Project Webhook/Inbox",
+            "Project Webhook/Inbox → Pipeline 与 Jobs",
+            "Pipeline 与 Jobs → JUnit/Artifact Store",
+            "JUnit/Artifact Store → 确定性聚合器",
+            "确定性聚合器 → SHA-bound Status Check",
+            "SHA-bound Status Check → MR Approval/Protected Bra…"
+          ],
+          "source_refs": [
+            "S95",
+            "S96",
+            "S97"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-QP03",
+      "display_number": 75,
+      "prerequisite_ids": [
+        "TD-QP02",
+        "TD-PS11"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-QP03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Kubernetes 临时测试环境：隔离、回收与审计”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-QP03.svg",
+          "source_hash": "sha256:95a7505dc81b93d71cc0de4c24beaed056693af6c95068e589b05ac0bcc9aed4",
+          "alt_text": "Kubernetes 临时测试环境：隔离、回收与审计的flow：MR/Run 请求、Namespace Provisioner、Namespace/RBAC/ServiceAcc…、Quota/NetworkPolicy、Test Job/Runner",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "MR/Run 请求",
+            "Namespace Provisioner",
+            "Namespace/RBAC/ServiceAcc…",
+            "Quota/NetworkPolicy",
+            "Test Job/Runner",
+            "TTL/Stop/Cleanup Worker",
+            "K8s Audit/平台审计"
+          ],
+          "edges": [
+            "MR/Run 请求 → Namespace Provisioner",
+            "Namespace Provisioner → Namespace/RBAC/ServiceAcc…",
+            "Namespace/RBAC/ServiceAcc… → Quota/NetworkPolicy",
+            "Quota/NetworkPolicy → Test Job/Runner",
+            "Test Job/Runner → TTL/Stop/Cleanup Worker",
+            "TTL/Stop/Cleanup Worker → K8s Audit/平台审计"
+          ],
+          "source_refs": [
+            "S98",
+            "S99",
+            "S100",
+            "S101"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-QP04",
+      "display_number": 76,
+      "prerequisite_ids": [
+        "TD-QP01",
+        "TD-QP02",
+        "TD-QP03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-QP04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“跨系统事件总线：幂等、重放、脱敏通知与审计闭环”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-QP04.svg",
+          "source_hash": "sha256:af4729aafe114dcaeae3bf7d189b3c2e9e5d2f5ff5ca2934bf5e70716c6b12f1",
+          "alt_text": "跨系统事件总线：幂等、重放、脱敏通知与审计闭环的flow：Jira/GitLab/K8s 上游事件、Event Gateway/验签去重、Inbox/Outbox/DLQ、Quality Orchestrator/状态机、Jira/GitLab/K8s 适配器",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Jira/GitLab/K8s 上游事件",
+            "Event Gateway/验签去重",
+            "Inbox/Outbox/DLQ",
+            "Quality Orchestrator/状态机",
+            "Jira/GitLab/K8s 适配器",
+            "Artifact/脱敏通知",
+            "Reconciliation/Trace/审计 S…"
+          ],
+          "edges": [
+            "Jira/GitLab/K8s 上游事件 → Event Gateway/验签去重",
+            "Event Gateway/验签去重 → Inbox/Outbox/DLQ",
+            "Inbox/Outbox/DLQ → Quality Orchestrator/状态机",
+            "Quality Orchestrator/状态机 → Jira/GitLab/K8s 适配器",
+            "Jira/GitLab/K8s 适配器 → Artifact/脱敏通知",
+            "Artifact/脱敏通知 → Reconciliation/Trace/审计 S…"
+          ],
+          "source_refs": [
+            "S102",
+            "S89",
+            "S93",
+            "S95",
+            "S101"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T25",
+      "display_number": 77,
+      "prerequisite_ids": [
+        "TD-T12",
+        "TD-T17",
+        "TD-T20",
+        "TD-T24",
+        "TD-B06"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-T25",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“Capstone：交付 AI Quality Fixture Release Candidate”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-T25.svg",
+          "source_hash": "sha256:96090d669af1bd299dd07395bf790c194b29603236a49e6f3408b188efe63e24",
+          "alt_text": "Capstone：交付 AI Quality Fixture Release Candidate的flow：PRD/Risk/Owner、Dataset/Split/Trace、Prompt/Input/Schema、Composite Oracle、Benchmark/CI",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "PRD/Risk/Owner",
+            "Dataset/Split/Trace",
+            "Prompt/Input/Schema",
+            "Composite Oracle",
+            "Benchmark/CI",
+            "Performance/Waiver/Rollba…",
+            "Fixture RC/Human Gate"
+          ],
+          "edges": [
+            "PRD/Risk/Owner → Dataset/Split/Trace",
+            "Dataset/Split/Trace → Prompt/Input/Schema",
+            "Prompt/Input/Schema → Composite Oracle",
+            "Composite Oracle → Benchmark/CI",
+            "Benchmark/CI → Performance/Waiver/Rollba…",
+            "Performance/Waiver/Rollba… → Fixture RC/Human Gate"
+          ],
+          "source_refs": [
+            "S05",
+            "S23",
+            "S24",
+            "S37",
+            "S38"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-C01",
+      "display_number": 78,
+      "prerequisite_ids": [
+        "TD-A06",
+        "TD-T12"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-C01",
+          "kind": "career",
+          "purpose": "帮助初学者理解“职业能力迁移：岗位路径、自评证据与作品集边界”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-C01.svg",
+          "source_hash": "sha256:51cc258d3ec5ae3ab836f17b112423d4e9bdcd09a7becb7a5f1feb2a10c08489",
+          "alt_text": "职业能力迁移：岗位路径、自评证据与作品集边界的career：当前能力基线、岗位责任、五维差距、90 天计划、作品集证据",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "当前能力基线",
+            "岗位责任",
+            "五维差距",
+            "90 天计划",
+            "作品集证据",
+            "人工复评",
+            "非就业承诺边界"
+          ],
+          "edges": [
+            "当前能力基线 → 岗位责任",
+            "岗位责任 → 五维差距",
+            "五维差距 → 90 天计划",
+            "90 天计划 → 作品集证据",
+            "作品集证据 → 人工复评",
+            "人工复评 → 非就业承诺边界"
+          ],
+          "source_refs": [
+            "S23",
+            "S60",
+            "S62",
+            "S64"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-C02",
+      "display_number": 79,
+      "prerequisite_ids": [
+        "TD-F01"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-responsibility-ladder",
+          "kind": "career",
+          "purpose": "帮助初学者理解“责任证据梯：从跟做测试到质量治理”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-responsibility-ladder.svg",
+          "source_hash": "sha256:25dc2a6e44055b8cdcab1c5724ba330ffb5c6a06b2a85ea9ebcb9515d3099888",
+          "alt_text": "责任证据梯：从跟做测试到质量治理的career：工作任务、责任状态、决策权、风险与失败代价、可复用工件",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "工作任务",
+            "责任状态",
+            "决策权",
+            "风险与失败代价",
+            "可复用工件",
+            "故障/变异",
+            "Reviewer",
+            "升级或复评"
+          ],
+          "edges": [
+            "工作任务 → 责任状态",
+            "责任状态 → 决策权",
+            "决策权 → 风险与失败代价",
+            "风险与失败代价 → 可复用工件",
+            "可复用工件 → 故障/变异",
+            "故障/变异 → Reviewer",
+            "Reviewer → 升级或复评"
+          ],
+          "source_refs": [
+            "S23",
+            "S60",
+            "S62"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-C03",
+      "display_number": 80,
+      "prerequisite_ids": [
+        "TD-C02"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-evidence-radar",
+          "kind": "career",
+          "purpose": "帮助初学者理解“能力自评与 30/60/90 天证据计划”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-evidence-radar.svg",
+          "source_hash": "sha256:421d73338f405f99e3f98c4c8234ae56199765fda80da8c97517c480a6952d01",
+          "alt_text": "能力自评与 30/60/90 天证据计划的career：当前证据、能力主张、缺口诊断、页面/项目路由、30 天工件",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "当前证据",
+            "能力主张",
+            "缺口诊断",
+            "页面/项目路由",
+            "30 天工件",
+            "60 天故障证据",
+            "90 天复评",
+            "边界声明"
+          ],
+          "edges": [
+            "当前证据 → 能力主张",
+            "能力主张 → 缺口诊断",
+            "缺口诊断 → 页面/项目路由",
+            "页面/项目路由 → 30 天工件",
+            "30 天工件 → 60 天故障证据",
+            "60 天故障证据 → 90 天复评",
+            "90 天复评 → 边界声明"
+          ],
+          "source_refs": [
+            "S60",
+            "S62",
+            "S64"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-C04",
+      "display_number": 81,
+      "prerequisite_ids": [
+        "TD-C03"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-capability-allocation",
+          "kind": "career",
+          "purpose": "帮助初学者理解“组织职级适配器：P5–P9 不能由 Skill 猜”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-capability-allocation.svg",
+          "source_hash": "sha256:5c2b77ef6c67b102f6528fcdaa310104b735f0de05f77a1b635e74fd40aa9401",
+          "alt_text": "组织职级适配器：P5–P9 不能由 Skill 猜的career：公共责任状态、组织来源、Owner 审批、生效版本、岗位映射",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "公共责任状态",
+            "组织来源",
+            "Owner 审批",
+            "生效版本",
+            "岗位映射",
+            "Metric Card",
+            "UNKNOWN/BLOCK",
+            "复审周期"
+          ],
+          "edges": [
+            "公共责任状态 → 组织来源",
+            "组织来源 → Owner 审批",
+            "Owner 审批 → 生效版本",
+            "生效版本 → 岗位映射",
+            "岗位映射 → Metric Card",
+            "Metric Card → UNKNOWN/BLOCK",
+            "UNKNOWN/BLOCK → 复审周期"
+          ],
+          "source_refs": [
+            "S23",
+            "S60",
+            "S62"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-F05",
+      "display_number": 82,
+      "prerequisite_ids": [
+        "TD-F04",
+        "TD-T01"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-capability-mindmap",
+          "kind": "career",
+          "purpose": "帮助初学者理解“AI 任务族与指标选择：先问任务，再选 F1 或 QPS”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-capability-mindmap.svg",
+          "source_hash": "sha256:04ab3c0fd50c4dd6b3163d21acff9477527a694ce6c8b734ebd0fda2f5d5f817",
+          "alt_text": "AI 任务族与指标选择：先问任务，再选 F1 或 QPS的career：业务任务、错误成本、数据人口、风险切片、独立 Oracle",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "业务任务",
+            "错误成本",
+            "数据人口",
+            "风险切片",
+            "独立 Oracle",
+            "指标公式",
+            "不确定性",
+            "发布/调查动作"
+          ],
+          "edges": [
+            "业务任务 → 错误成本",
+            "错误成本 → 数据人口",
+            "数据人口 → 风险切片",
+            "风险切片 → 独立 Oracle",
+            "独立 Oracle → 指标公式",
+            "指标公式 → 不确定性",
+            "不确定性 → 发布/调查动作"
+          ],
+          "source_refs": [
+            "S23",
+            "S51",
+            "S62"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-T26",
+      "display_number": 83,
+      "prerequisite_ids": [
+        "TD-P05",
+        "TD-T06",
+        "TD-F05"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-evidence-lifecycle",
+          "kind": "career",
+          "purpose": "帮助初学者理解“AI 生成测试用例提效：用 Mutation 证明不是批量幻觉”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-evidence-lifecycle.svg",
+          "source_hash": "sha256:79698a6622d55fa79de0bd343fb0ae76d0036c2a0b1206eaf5c8c1db2963cc85",
+          "alt_text": "AI 生成测试用例提效：用 Mutation 证明不是批量幻觉的career：需求 Basis、风险与方法、独立 Oracle、Baseline/AI Candidate、编译与运行",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "需求 Basis",
+            "风险与方法",
+            "独立 Oracle",
+            "Baseline/AI Candidate",
+            "编译与运行",
+            "Mutation Kill",
+            "Reviewer",
+            "提效决策"
+          ],
+          "edges": [
+            "需求 Basis → 风险与方法",
+            "风险与方法 → 独立 Oracle",
+            "独立 Oracle → Baseline/AI Candidate",
+            "Baseline/AI Candidate → 编译与运行",
+            "编译与运行 → Mutation Kill",
+            "Mutation Kill → Reviewer",
+            "Reviewer → 提效决策"
+          ],
+          "source_refs": [
+            "S23",
+            "S60",
+            "S64"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-R01",
+      "display_number": 84,
+      "prerequisite_ids": [
+        "TD-C03"
+      ],
+      "knowledge_relationship": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作",
+      "required_visual_kinds": [
+        "career"
+      ],
+      "visuals": [
+        {
+          "visual_id": "career-background-paths",
+          "kind": "career",
+          "purpose": "帮助初学者理解“资源与学习路线：会更新的索引，不是盲目书单”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/career-evolution/visuals/career-background-paths.svg",
+          "source_hash": "sha256:2a088acb842603215174314783c56af8e301f450cdd5d36e320292f0c6e86599",
+          "alt_text": "资源与学习路线：会更新的索引，不是盲目书单的career：能力缺口、学习背景、资源记录、版本/检查日期、限制",
+          "caption": "概念、证据与决策关系被显式画出，帮助学习者定位下一步动作。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "能力缺口",
+            "学习背景",
+            "资源记录",
+            "版本/检查日期",
+            "限制",
+            "Fallback",
+            "出口工件",
+            "复核更新"
+          ],
+          "edges": [
+            "能力缺口 → 学习背景",
+            "学习背景 → 资源记录",
+            "资源记录 → 版本/检查日期",
+            "版本/检查日期 → 限制",
+            "限制 → Fallback",
+            "Fallback → 出口工件",
+            "出口工件 → 复核更新"
+          ],
+          "source_refs": [
+            "S23",
+            "S60",
+            "S62"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP01",
+      "display_number": 85,
+      "prerequisite_ids": [],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP01",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“先建工作负载模型：Task 不是 HTTP Request”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP01.svg",
+          "source_hash": "sha256:c0120bf7565f0bd25e60a94119b29beae170897591f52b199c5527aa484bd749",
+          "alt_text": "先建工作负载模型：Task 不是 HTTP Request的flow：业务任务与风险切片、版本化 workload fixture、到达调度器、Agent/模型/工具夹具、task 终态 Oracle",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "业务任务与风险切片",
+            "版本化 workload fixture",
+            "到达调度器",
+            "Agent/模型/工具夹具",
+            "task 终态 Oracle",
+            "Gate 与证据卡"
+          ],
+          "edges": [
+            "业务任务与风险切片 → 版本化 workload fixture",
+            "版本化 workload fixture → 到达调度器",
+            "到达调度器 → Agent/模型/工具夹具",
+            "Agent/模型/工具夹具 → task 终态 Oracle",
+            "task 终态 Oracle → Gate 与证据卡"
+          ],
+          "source_refs": [
+            "S47",
+            "S48",
+            "S68",
+            "S72",
+            "S75"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP02",
+      "display_number": 86,
+      "prerequisite_ids": [
+        "TD-AP01"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP02",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“建立指标树：TTFT、TPOT、Queue、Retry、Step”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP02.svg",
+          "source_hash": "sha256:551d33b0d015a3e37342158fc7e1d20a6314413bf3c58641c3b2c66656e1ed77",
+          "alt_text": "建立指标树：TTFT、TPOT、Queue、Retry、Step的flow：计划到达时间、Queue wait、Prefill/TTFT、Decode/TPOT、Tool/Retry/Step",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "计划到达时间",
+            "Queue wait",
+            "Prefill/TTFT",
+            "Decode/TPOT",
+            "Tool/Retry/Step",
+            "Task Goodput Gate"
+          ],
+          "edges": [
+            "计划到达时间 → Queue wait",
+            "Queue wait → Prefill/TTFT",
+            "Prefill/TTFT → Decode/TPOT",
+            "Decode/TPOT → Tool/Retry/Step",
+            "Tool/Retry/Step → Task Goodput Gate"
+          ],
+          "source_refs": [
+            "S47",
+            "S51",
+            "S67",
+            "S69",
+            "S73"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP03",
+      "display_number": 87,
+      "prerequisite_ids": [
+        "TD-AP02"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP03",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“锁定 Trace 语义：从 Task Root 到 Tool Attempt”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP03.svg",
+          "source_hash": "sha256:584ea63dbb46ab18b7cb2a5b021f920e676686039c8c9b2bd25601f80175968a",
+          "alt_text": "锁定 Trace 语义：从 Task Root 到 Tool Attempt的flow：invoke_agent root、queue.wait span、gen_ai generation span、execute_tool attempt span、task.finalize event",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "invoke_agent root",
+            "queue.wait span",
+            "gen_ai generation span",
+            "execute_tool attempt span",
+            "task.finalize event",
+            "Metric/Trace/Log 存储与访问"
+          ],
+          "edges": [
+            "invoke_agent root → queue.wait span",
+            "queue.wait span → gen_ai generation span",
+            "gen_ai generation span → execute_tool attempt span",
+            "execute_tool attempt span → task.finalize event",
+            "task.finalize event → Metric/Trace/Log 存储与访问"
+          ],
+          "source_refs": [
+            "S49",
+            "S70",
+            "S71",
+            "S72",
+            "S80"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP04",
+      "display_number": 88,
+      "prerequisite_ids": [
+        "TD-AP03"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP04",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“对照开放与封闭负载：识别 Coordinated Omission”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP04.svg",
+          "source_hash": "sha256:e7e95b2d3167ec526dc97ddcc7608b377e81fd3e92e31d0dc24c0c631cf9e584",
+          "alt_text": "对照开放与封闭负载：识别 Coordinated Omission的flow：固定 workload、Open arrival scheduler、Closed VU scheduler、同一 Agent fixture、计划/实际到达记录",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "固定 workload",
+            "Open arrival scheduler",
+            "Closed VU scheduler",
+            "同一 Agent fixture",
+            "计划/实际到达记录",
+            "Queue/Goodput 对照"
+          ],
+          "edges": [
+            "固定 workload → Open arrival scheduler",
+            "Open arrival scheduler → Closed VU scheduler",
+            "Closed VU scheduler → 同一 Agent fixture",
+            "同一 Agent fixture → 计划/实际到达记录",
+            "计划/实际到达记录 → Queue/Goodput 对照"
+          ],
+          "source_refs": [
+            "S48",
+            "S68",
+            "S75",
+            "S77"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP05",
+      "display_number": 89,
+      "prerequisite_ids": [
+        "TD-AP04"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP05",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“寻找容量边界并归因瓶颈：只报告 Synthetic Goodput”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP05.svg",
+          "source_hash": "sha256:f13eee3f4d469ef46cefb038c532a0db1f2f978ada7c3b34978fa4eee35b925f",
+          "alt_text": "寻找容量边界并归因瓶颈：只报告 Synthetic Goodput的flow：阶梯到达率、Admission/Queue、Agent Scheduler、Model Prefill/Decode、Tool Dependency",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "阶梯到达率",
+            "Admission/Queue",
+            "Agent Scheduler",
+            "Model Prefill/Decode",
+            "Tool Dependency",
+            "Goodput Gate 与瓶颈对照"
+          ],
+          "edges": [
+            "阶梯到达率 → Admission/Queue",
+            "Admission/Queue → Agent Scheduler",
+            "Agent Scheduler → Model Prefill/Decode",
+            "Model Prefill/Decode → Tool Dependency",
+            "Tool Dependency → Goodput Gate 与瓶颈对照"
+          ],
+          "source_refs": [
+            "S47",
+            "S51",
+            "S67",
+            "S68",
+            "S69"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP06",
+      "display_number": 90,
+      "prerequisite_ids": [
+        "TD-AP05"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP06",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“约束超时与重试：压力下安全降级”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP06.svg",
+          "source_hash": "sha256:52f63622c23969c728df300ee7473a5101691728b7fc4eea4b24dfff00277748",
+          "alt_text": "约束超时与重试：压力下安全降级的flow：Ingress deadline、Agent task budget、Model SDK retry、Tool retry/breaker、Read-only/Human degrade",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Ingress deadline",
+            "Agent task budget",
+            "Model SDK retry",
+            "Tool retry/breaker",
+            "Read-only/Human degrade",
+            "Gate + reconciliation"
+          ],
+          "edges": [
+            "Ingress deadline → Agent task budget",
+            "Agent task budget → Model SDK retry",
+            "Model SDK retry → Tool retry/breaker",
+            "Tool retry/breaker → Read-only/Human degrade",
+            "Read-only/Human degrade → Gate + reconciliation"
+          ],
+          "source_refs": [
+            "S48",
+            "S57",
+            "S67",
+            "S75"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP07",
+      "display_number": 91,
+      "prerequisite_ids": [
+        "TD-AP06"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP07",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“运行长稳测试：识别资源泄漏与漂移”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP07.svg",
+          "source_hash": "sha256:e34f5bc0192cf6092ebbf05f28dccdb8e36d24efe2842cceb45506bad8a26d66",
+          "alt_text": "运行长稳测试：识别资源泄漏与漂移的flow：固定长期 workload、Process/GPU/Cache sampler、Task Trace、Periodic snapshots、Cleanup/Reconciliation",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "固定长期 workload",
+            "Process/GPU/Cache sampler",
+            "Task Trace",
+            "Periodic snapshots",
+            "Cleanup/Reconciliation",
+            "Slope + latency gate"
+          ],
+          "edges": [
+            "固定长期 workload → Process/GPU/Cache sampler",
+            "Process/GPU/Cache sampler → Task Trace",
+            "Task Trace → Periodic snapshots",
+            "Periodic snapshots → Cleanup/Reconciliation",
+            "Cleanup/Reconciliation → Slope + latency gate"
+          ],
+          "source_refs": [
+            "S51",
+            "S67",
+            "S68",
+            "S75"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AP08",
+      "display_number": 92,
+      "prerequisite_ids": [
+        "TD-AP07"
+      ],
+      "knowledge_relationship": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定",
+      "required_visual_kinds": [
+        "flow"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AP08",
+          "kind": "flow",
+          "purpose": "帮助初学者理解“把结果接入 SLO、告警与事故证据”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/visuals/course/TD-AP08.svg",
+          "source_hash": "sha256:925052d3aa2864f52fbdff4f322a576d153d692075b7476fee58f921da142621",
+          "alt_text": "把结果接入 SLO、告警与事故证据的flow：Eligible task stream、Good-task evaluator、SLI/Error budget、Multi-window alert、Runbook mitigation",
+          "caption": "输入沿证据链经过变换、独立判断与门禁，最终形成可复核决定。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Eligible task stream",
+            "Good-task evaluator",
+            "SLI/Error budget",
+            "Multi-window alert",
+            "Runbook mitigation",
+            "Incident-to-workload regr…"
+          ],
+          "edges": [
+            "Eligible task stream → Good-task evaluator",
+            "Good-task evaluator → SLI/Error budget",
+            "SLI/Error budget → Multi-window alert",
+            "Multi-window alert → Runbook mitigation",
+            "Runbook mitigation → Incident-to-workload regr…"
+          ],
+          "source_refs": [
+            "S47",
+            "S48",
+            "S70",
+            "S71",
+            "S75"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-00",
+      "display_number": 93,
+      "prerequisite_ids": [
+        "TD-F04",
+        "TD-T01"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "AG-DIM-ARCHITECTURE",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“Agent 测试架构总览：先画边界，再选测试”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/AG-DIM-ARCHITECTURE.svg",
+          "source_hash": "sha256:b7a45aaeab07e1d5142fe9ea60806c095f3249af7818539ed4554a08590a0c7b",
+          "alt_text": "Agent 测试架构总览：先画边界，再选测试的architecture：需求/风险、D0 评估可信、D1 单体、D2 编排、D3 人机",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "需求/风险",
+            "D0 评估可信",
+            "D1 单体",
+            "D2 编排",
+            "D3 人机",
+            "D4 可靠",
+            "D5 安全",
+            "D6 效率",
+            "D7 治理",
+            "四证据环"
+          ],
+          "edges": [
+            "需求/风险 → D0 评估可信",
+            "D0 评估可信 → D1 单体",
+            "D1 单体 → D2 编排",
+            "D2 编排 → D3 人机",
+            "D3 人机 → D4 可靠",
+            "D4 可靠 → D5 安全",
+            "D5 安全 → D6 效率",
+            "D6 效率 → D7 治理",
+            "D7 治理 → 四证据环"
+          ],
+          "source_refs": [
+            "S24",
+            "S39",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-01",
+      "display_number": 94,
+      "prerequisite_ids": [
+        "TD-AG-00",
+        "TD-T03",
+        "TD-T14"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-01",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D0 评估可信：先测试 Judge，再相信分数”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-01.svg",
+          "source_hash": "sha256:4a559ad9f1bfa69faff9080b1f1590dca1f409898d10f3b403d962b660596c76",
+          "alt_text": "D0 评估可信：先测试 Judge，再相信分数的architecture：Gold Set、人工双标、Rubric、Judge、偏差探针",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Gold Set",
+            "人工双标",
+            "Rubric",
+            "Judge",
+            "偏差探针",
+            "分歧矩阵",
+            "停用/人工回退"
+          ],
+          "edges": [
+            "Gold Set → 人工双标",
+            "人工双标 → Rubric",
+            "Rubric → Judge",
+            "Judge → 偏差探针",
+            "偏差探针 → 分歧矩阵",
+            "分歧矩阵 → 停用/人工回退"
+          ],
+          "source_refs": [
+            "S05",
+            "S23",
+            "S40"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-02",
+      "display_number": 95,
+      "prerequisite_ids": [
+        "TD-AG-00",
+        "TD-T15",
+        "TD-T16"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-02",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D1 轨迹 span：从最终结果追到首个错误”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-02.svg",
+          "source_hash": "sha256:ac9c37b1d0623b3583a51a2f9bdd06d6e3b2d46bfe4d02a545109fdfed13968e",
+          "alt_text": "D1 轨迹 span：从最终结果追到首个错误的architecture：Task、Step/Span、Tool/Parameter、Observation、First Error",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Task",
+            "Step/Span",
+            "Tool/Parameter",
+            "Observation",
+            "First Error",
+            "Outcome Oracle",
+            "Trajectory Decision"
+          ],
+          "edges": [
+            "Task → Step/Span",
+            "Step/Span → Tool/Parameter",
+            "Tool/Parameter → Observation",
+            "Observation → First Error",
+            "First Error → Outcome Oracle",
+            "Outcome Oracle → Trajectory Decision"
+          ],
+          "source_refs": [
+            "S10",
+            "S70",
+            "S72"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-03",
+      "display_number": 96,
+      "prerequisite_ids": [
+        "TD-AG-02",
+        "TD-W01",
+        "TD-W02"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-03",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D2 编排：交接、隔离、级联和熔断”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-03.svg",
+          "source_hash": "sha256:64683001d001a14d4aeff96b7724e5bd46ef61bd2552275cfb436977e20ae96b",
+          "alt_text": "D2 编排：交接、隔离、级联和熔断的architecture：Agent A、Handoff Schema、Context Isolation、Agent B、Failure Injection",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Agent A",
+            "Handoff Schema",
+            "Context Isolation",
+            "Agent B",
+            "Failure Injection",
+            "Circuit Breaker",
+            "Owner"
+          ],
+          "edges": [
+            "Agent A → Handoff Schema",
+            "Handoff Schema → Context Isolation",
+            "Context Isolation → Agent B",
+            "Agent B → Failure Injection",
+            "Failure Injection → Circuit Breaker",
+            "Circuit Breaker → Owner"
+          ],
+          "source_refs": [
+            "S35",
+            "S48",
+            "S74"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-04",
+      "display_number": 97,
+      "prerequisite_ids": [
+        "TD-AG-03",
+        "TD-X601"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-04",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D3 人机协同：中断、接管与确认疲劳”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-04.svg",
+          "source_hash": "sha256:663c999e50498518097ba18dc9598c83e9a0c117a197e5b3559d9f940dde237c",
+          "alt_text": "D3 人机协同：中断、接管与确认疲劳的architecture：Agent Run、Human Interrupt、Dirty State、Rollback、Takeover",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Agent Run",
+            "Human Interrupt",
+            "Dirty State",
+            "Rollback",
+            "Takeover",
+            "Resume",
+            "Audit Owner"
+          ],
+          "edges": [
+            "Agent Run → Human Interrupt",
+            "Human Interrupt → Dirty State",
+            "Dirty State → Rollback",
+            "Rollback → Takeover",
+            "Takeover → Resume",
+            "Resume → Audit Owner"
+          ],
+          "source_refs": [
+            "S07",
+            "S23",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-05",
+      "display_number": 98,
+      "prerequisite_ids": [
+        "TD-AG-02",
+        "TD-T04",
+        "TD-B03"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-05",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D4 可靠性分布：pass@k、pass^k 与长时程衰减”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-05.svg",
+          "source_hash": "sha256:bf79c9de81a36aaabf240e37679f0c3d4112c57a4bc007d3535a4ac578ee4430",
+          "alt_text": "D4 可靠性分布：pass@k、pass^k 与长时程衰减的architecture：Task Set、Repeated Runs、pass@k、pass^k、Clustered CI",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Task Set",
+            "Repeated Runs",
+            "pass@k",
+            "pass^k",
+            "Clustered CI",
+            "Horizon Buckets",
+            "Decision"
+          ],
+          "edges": [
+            "Task Set → Repeated Runs",
+            "Repeated Runs → pass@k",
+            "pass@k → pass^k",
+            "pass^k → Clustered CI",
+            "Clustered CI → Horizon Buckets",
+            "Horizon Buckets → Decision"
+          ],
+          "source_refs": [
+            "S36",
+            "S38",
+            "S39"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-06",
+      "display_number": 99,
+      "prerequisite_ids": [
+        "TD-AG-03",
+        "TD-AG-04",
+        "TD-T17"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-06",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D5 持续安全：注入、MCP 投毒、委托、沙箱与爆炸半径”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-06.svg",
+          "source_hash": "sha256:1ce378a5c15e24a1b3ab1fe20d006a94fb6bc28cd7ab3c90c8ac955a58e5b890",
+          "alt_text": "D5 持续安全：注入、MCP 投毒、委托、沙箱与爆炸半径的architecture：Untrusted Input、Tool/MCP Manifest、Memory、Delegation、Policy/Sandbox",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Untrusted Input",
+            "Tool/MCP Manifest",
+            "Memory",
+            "Delegation",
+            "Policy/Sandbox",
+            "Irreversible Action",
+            "Security Owner"
+          ],
+          "edges": [
+            "Untrusted Input → Tool/MCP Manifest",
+            "Tool/MCP Manifest → Memory",
+            "Memory → Delegation",
+            "Delegation → Policy/Sandbox",
+            "Policy/Sandbox → Irreversible Action",
+            "Irreversible Action → Security Owner"
+          ],
+          "source_refs": [
+            "S07",
+            "S08",
+            "S50"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-07",
+      "display_number": 100,
+      "prerequisite_ids": [
+        "TD-AG-05",
+        "TD-AP01",
+        "TD-AP02"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-07",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D6 经济性：任务、步骤、尾延迟与成本预算”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-07.svg",
+          "source_hash": "sha256:3f84077d26bd324d96fa6be3c95ca85ef6647e473e2ec5e57516e52b07e85d2f",
+          "alt_text": "D6 经济性：任务、步骤、尾延迟与成本预算的architecture：Workload、Task Root、Queue、LLM Step、Tool Attempt",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Workload",
+            "Task Root",
+            "Queue",
+            "LLM Step",
+            "Tool Attempt",
+            "Latency/Cost",
+            "Budget Gate"
+          ],
+          "edges": [
+            "Workload → Task Root",
+            "Task Root → Queue",
+            "Queue → LLM Step",
+            "LLM Step → Tool Attempt",
+            "Tool Attempt → Latency/Cost",
+            "Latency/Cost → Budget Gate"
+          ],
+          "source_refs": [
+            "S51",
+            "S53",
+            "S73"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-08",
+      "display_number": 101,
+      "prerequisite_ids": [
+        "TD-AG-06",
+        "TD-AG-07",
+        "TD-T21",
+        "TD-T23"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-08",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“D7 业务治理：规则、审计、四维版本与 ROI”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-08.svg",
+          "source_hash": "sha256:94b6bd60d13b90705e2d0772fd2c1017c9711b8ec47c981fc27216553110573c",
+          "alt_text": "D7 业务治理：规则、审计、四维版本与 ROI的architecture：Business Rule、Agent Version、User Delegation、Tool Action、Audit Evidence",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Business Rule",
+            "Agent Version",
+            "User Delegation",
+            "Tool Action",
+            "Audit Evidence",
+            "Risk Acceptance",
+            "Rollback"
+          ],
+          "edges": [
+            "Business Rule → Agent Version",
+            "Agent Version → User Delegation",
+            "User Delegation → Tool Action",
+            "Tool Action → Audit Evidence",
+            "Audit Evidence → Risk Acceptance",
+            "Risk Acceptance → Rollback"
+          ],
+          "source_refs": [
+            "S24",
+            "S64",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-09",
+      "display_number": 102,
+      "prerequisite_ids": [
+        "TD-AG-05",
+        "TD-AG-06",
+        "TD-AG-08",
+        "TD-T20",
+        "TD-X805"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "AG-DIM-FOUR-RINGS",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“四证据环与三段门禁：从 CI 走到持续评估”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/AG-DIM-FOUR-RINGS.svg",
+          "source_hash": "sha256:35014e6add4e5ede43f7c195579c926c11c150f497e019fe3d955895087ab90b",
+          "alt_text": "四证据环与三段门禁：从 CI 走到持续评估的architecture：Offline CI、Sandbox Replay、Shadow/Canary、Online Sampling、Hard Redline",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Offline CI",
+            "Sandbox Replay",
+            "Shadow/Canary",
+            "Online Sampling",
+            "Hard Redline",
+            "Statistical Gate",
+            "Risk Acceptance"
+          ],
+          "edges": [
+            "Offline CI → Sandbox Replay",
+            "Sandbox Replay → Shadow/Canary",
+            "Shadow/Canary → Online Sampling",
+            "Online Sampling → Hard Redline",
+            "Hard Redline → Statistical Gate",
+            "Statistical Gate → Risk Acceptance"
+          ],
+          "source_refs": [
+            "S07",
+            "S24",
+            "S65"
+          ]
+        }
+      ]
+    },
+    {
+      "page_id": "TD-AG-10",
+      "display_number": 103,
+      "prerequisite_ids": [
+        "TD-AG-06",
+        "TD-AG-08",
+        "TD-AG-09"
+      ],
+      "knowledge_relationship": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统",
+      "required_visual_kinds": [
+        "architecture"
+      ],
+      "visuals": [
+        {
+          "visual_id": "TD-AG-10",
+          "kind": "architecture",
+          "purpose": "帮助初学者理解“高风险适配器：交易/金融 Agent 的时效、执行与能力沙箱”中的输入、判断、失败和下游决定关系。",
+          "source_path": "site/public/materials/agent-architecture-system/visuals/TD-AG-10.svg",
+          "source_hash": "sha256:2f6b3c9fa82054b8dc655227d4ad0034d7e62f847f31bd6983a86b42be6e0bf4",
+          "alt_text": "高风险适配器：交易/金融 Agent 的时效、执行与能力沙箱的architecture：Market Timestamp、Advice Task、Execution Task、Capability Sandbox、Hard Limit",
+          "caption": "Agent 的输入、模型、工具、状态、权限与观测面共同构成被测系统。本图支持学习者定位下一步证据；不证明真实模型、企业集成或生产效果。",
+          "nodes": [
+            "Market Timestamp",
+            "Advice Task",
+            "Execution Task",
+            "Capability Sandbox",
+            "Hard Limit",
+            "Human Approval",
+            "Kill Switch/Rollback"
+          ],
+          "edges": [
+            "Market Timestamp → Advice Task",
+            "Advice Task → Execution Task",
+            "Execution Task → Capability Sandbox",
+            "Capability Sandbox → Hard Limit",
+            "Hard Limit → Human Approval",
+            "Human Approval → Kill Switch/Rollback"
+          ],
+          "source_refs": [
+            "S07",
+            "S50",
+            "S65"
+          ]
+        }
+      ]
+    }
+  ],
+  "verdict": "PASS"
+}

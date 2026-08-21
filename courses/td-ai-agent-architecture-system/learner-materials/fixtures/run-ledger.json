@@ -1,0 +1,196 @@
+{
+  "fixture_id": "run-ledger-v1",
+  "description": "15 个任务 × 每任务 5 次重复运行的原始 ledger，按时长分 4 桶。",
+  "tasks": [
+    {
+      "task_id": "R-01",
+      "priority": "P0",
+      "duration_bucket": "<5min",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-02",
+      "priority": "P0",
+      "duration_bucket": "<5min",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-03",
+      "priority": "P0",
+      "duration_bucket": "<5min",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-04",
+      "priority": "P0",
+      "duration_bucket": "<5min",
+      "runs": [
+        true,
+        true,
+        false,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-05",
+      "priority": "P0",
+      "duration_bucket": "5-30min",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-06",
+      "priority": "P0",
+      "duration_bucket": "5-30min",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-07",
+      "priority": "P0",
+      "duration_bucket": "5-30min",
+      "runs": [
+        true,
+        true,
+        true,
+        false,
+        true
+      ]
+    },
+    {
+      "task_id": "R-08",
+      "priority": "P0",
+      "duration_bucket": "5-30min",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-09",
+      "priority": "P0",
+      "duration_bucket": "30min-2h",
+      "runs": [
+        true,
+        false,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-10",
+      "priority": "P0",
+      "duration_bucket": "30min-2h",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-11",
+      "priority": "P0",
+      "duration_bucket": "30min-2h",
+      "runs": [
+        true,
+        true,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "task_id": "R-12",
+      "priority": "P0",
+      "duration_bucket": ">2h",
+      "runs": [
+        true,
+        false,
+        false,
+        true,
+        false
+      ]
+    },
+    {
+      "task_id": "R-13",
+      "priority": "P0",
+      "duration_bucket": ">2h",
+      "runs": [
+        false,
+        true,
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "task_id": "R-14",
+      "priority": "P0",
+      "duration_bucket": ">2h",
+      "runs": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task_id": "R-15",
+      "priority": "P0",
+      "duration_bucket": ">2h",
+      "runs": [
+        true,
+        true,
+        false,
+        true,
+        false
+      ]
+    }
+  ],
+  "interval": {
+    "cluster_unit": "task",
+    "min_tasks_for_conclusion": 10,
+    "method": "wilson",
+    "confidence": 0.95
+  },
+  "thresholds": {
+    "pass_pow_k_ci_lower_min": 0.3
+  },
+  "note": "阈值 0.30 是让本夹具在基线上通过的结构占位，不是可靠性建议值。"
+}

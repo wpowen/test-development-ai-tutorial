@@ -1,0 +1,15 @@
+{
+  "page_id": "TD-PS07",
+  "expected_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "actual_exit_codes": [
+    0,
+    1,
+    0
+  ],
+  "status": "PASS",
+  "boundary": "Deterministic offline fixture only. Unknown: 目标签名配置、真实通知服务和 iOS 版本分布"
+}

@@ -1,0 +1,23 @@
+%% TD-AG-08 · 来源：S24 · S64 · S65
+%% Fixture 只验证 lineage 与门禁字段；真实组织责任、ROI 和审批仍为 Unknown/NOT_RUN。
+flowchart LR
+  rule["业务规则<br/><small>硬规则 / 失败成本 / Owner</small>"]
+  version["四维版本<br/><small>Model / Prompt / Tools / Memory</small>"]
+  delegate["用户委托<br/><small>身份 / Scope / Expiry</small>"]
+  action["工具动作<br/><small>输入 / 输出 / 副作用</small>"]
+  audit["审计证据<br/><small>人、Agent、依据、时间</small>"]
+  accept["风险接受<br/><small>补偿控制 / Expiry / 签字</small>"]
+  rollback["回滚<br/><small>版本与恢复目标</small>"]
+  blocked["BLOCKED<br/><small>规则冲突或证据缺失</small>"]
+  rule -->|约束版本| version
+  version -->|运行身份| delegate
+  delegate -->|受限授权| action
+  action -->|留下链路| audit
+  audit -->|呈现剩余风险| accept
+  accept -->|拒绝或回退| rollback
+  rule -->|规则冲突| blocked
+  audit -->|证据缺失| blocked
+  blocked -->|安全终态| rollback
+  classDef default fill:#eef8f4,stroke:#176b5b,color:#123f34;
+  classDef stop fill:#fff3db,stroke:#c87819,color:#62430f;
+  class blocked,stop,kill,insufficient stop;

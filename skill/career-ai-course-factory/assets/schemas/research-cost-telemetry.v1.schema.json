@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research-cost-telemetry.v1.schema.json",
+  "title": "ResearchCostTelemetryV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "telemetry_id", "compiler_version", "source_event_file_digests", "status", "events", "summary", "cost_comparison"],
+  "properties": {
+    "schema_version": {"const": "research-cost-telemetry.v1"},
+    "telemetry_id": {"type": "string", "pattern": "^telemetry-[A-Za-z0-9._-]+$"},
+    "compiler_version": {"const": "research-cost-telemetry.v1"},
+    "source_event_file_digests": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/hash"}},
+    "status": {"enum": ["READY", "BLOCKED"]},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}},
+    "summary": {"$ref": "#/$defs/summary"},
+    "cost_comparison": {"$ref": "#/$defs/costComparison"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "unknownOrString": {"anyOf": [{"const": "UNKNOWN"}, {"type": "string", "minLength": 1}]},
+    "unknownOrNonNegativeInteger": {"anyOf": [{"const": "UNKNOWN"}, {"type": "integer", "minimum": 0}]},
+    "artifactHashes": {"type": "array", "items": {"$ref": "#/$defs/hash"}},
+    "event": {
+      "type": "object", "additionalProperties": false,
+      "required": ["event_id", "event_hash", "task_id", "run_id", "attempt_id", "phase", "model", "surface", "measurement_scope", "tokens", "latency_ms", "status", "retry", "failure", "canonical_unit_ids", "claim_ids", "input_artifact_hashes", "output_artifact_hashes", "reuse_decision", "invalidation_status"],
+      "properties": {
+        "event_id": {"type": "string", "minLength": 1},
+        "event_hash": {"$ref": "#/$defs/hash"},
+        "task_id": {"type": "string", "minLength": 1},
+        "run_id": {"type": "string", "minLength": 1},
+        "attempt_id": {"type": "string", "minLength": 1},
+        "phase": {"enum": ["planning", "classification", "initial-research", "counterevidence", "gap-fill", "verification", "adjudication", "synthesis", "reuse", "invalidation", "other"]},
+        "model": {"$ref": "#/$defs/unknownOrString"},
+        "surface": {"enum": ["planner", "luna", "openai-chatgpt", "openai-api", "codex-research", "other"]},
+        "measurement_scope": {"enum": ["baseline", "current", "neither"]},
+        "tokens": {"type": "object", "additionalProperties": false, "required": ["input", "output", "total"], "properties": {"input": {"$ref": "#/$defs/unknownOrNonNegativeInteger"}, "output": {"$ref": "#/$defs/unknownOrNonNegativeInteger"}, "total": {"$ref": "#/$defs/unknownOrNonNegativeInteger"}}},
+        "latency_ms": {"$ref": "#/$defs/unknownOrNonNegativeInteger"},
+        "status": {"enum": ["started", "completed", "failed", "cancelled", "blocked", "unknown"]},
+        "retry": {"type": "object", "additionalProperties": false, "required": ["is_retry", "retry_index", "retry_of_attempt_id"], "properties": {"is_retry": {"type": "boolean"}, "retry_index": {"type": "integer", "minimum": 0}, "retry_of_attempt_id": {"$ref": "#/$defs/unknownOrString"}}},
+        "failure": {"type": "object", "additionalProperties": false, "required": ["present", "category", "code", "message", "unknown_reason"], "properties": {"present": {"type": "boolean"}, "category": {"$ref": "#/$defs/unknownOrString"}, "code": {"$ref": "#/$defs/unknownOrString"}, "message": {"$ref": "#/$defs/unknownOrString"}, "unknown_reason": {"$ref": "#/$defs/unknownOrString"}}},
+        "canonical_unit_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "claim_ids": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "input_artifact_hashes": {"$ref": "#/$defs/artifactHashes"},
+        "output_artifact_hashes": {"$ref": "#/$defs/artifactHashes"},
+        "reuse_decision": {"enum": ["NOT-APPLICABLE", "DIRECT-REUSE", "SOURCE-REUSE-DELTA", "NO-REUSE", "UNDECIDED"]},
+        "delta_type": {"enum": ["none", "scope", "source", "counterevidence", "invalidation", "other"]},
+        "invalidation_status": {"enum": ["not-applicable", "current", "superseded", "invalid", "unknown"]},
+        "notes": {"type": "string"}
+      }
+    },
+    "summary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["events_total", "tasks_total", "runs_total", "attempts_total", "actual_provider_runs", "completed_provider_runs", "counterevidence_runs", "reuse_decisions", "direct_reuse", "source_reuse_delta", "no_reuse", "invalidation_events", "delta_events", "lower_cost"],
+      "properties": {"events_total": {"type": "integer", "minimum": 0}, "tasks_total": {"type": "integer", "minimum": 0}, "runs_total": {"type": "integer", "minimum": 0}, "attempts_total": {"type": "integer", "minimum": 0}, "actual_provider_runs": {"type": "integer", "minimum": 0}, "completed_provider_runs": {"type": "integer", "minimum": 0}, "counterevidence_runs": {"type": "integer", "minimum": 0}, "reuse_decisions": {"type": "integer", "minimum": 0}, "direct_reuse": {"type": "integer", "minimum": 0}, "source_reuse_delta": {"type": "integer", "minimum": 0}, "no_reuse": {"type": "integer", "minimum": 0}, "invalidation_events": {"type": "integer", "minimum": 0}, "delta_events": {"type": "integer", "minimum": 0}, "lower_cost": {"type": "object", "additionalProperties": false, "required": ["surfaces", "events_total", "known_total_tokens", "unknown_token_events", "status"], "properties": {"surfaces": {"const": ["planner", "luna"]}, "events_total": {"type": "integer", "minimum": 0}, "known_total_tokens": {"$ref": "#/$defs/unknownOrNonNegativeInteger"}, "unknown_token_events": {"type": "integer", "minimum": 0}, "status": {"enum": ["AVAILABLE", "NOT-COMPUTABLE"]}}}}
+    },
+    "costComparison": {
+      "type": "object", "additionalProperties": false,
+      "required": ["baseline_total_tokens", "current_total_tokens", "tokens_saved", "savings_percent", "status", "basis"],
+      "properties": {"baseline_total_tokens": {"$ref": "#/$defs/unknownOrNonNegativeInteger"}, "current_total_tokens": {"$ref": "#/$defs/unknownOrNonNegativeInteger"}, "tokens_saved": {"anyOf": [{"const": "UNKNOWN"}, {"type": "integer"}]}, "savings_percent": {"anyOf": [{"const": "UNKNOWN"}, {"type": "number"}]}, "status": {"enum": ["COMPUTED", "NOT-COMPUTABLE"]}, "basis": {"const": "provider-reported-token-totals-only-and-valid-model-contract"}}
+    }
+  },
+  "allOf": [{"if": {"properties": {"status": {"const": "READY"}}}, "then": {"properties": {"events": {"minItems": 1}}}}]
+}

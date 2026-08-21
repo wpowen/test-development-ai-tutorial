@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "authority": "independent-human-owners",
+  "owners": [
+    {
+      "topic_id": "TD-X602",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X101",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X501",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X502",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X601",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X603",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X604",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    },
+    {
+      "topic_id": "TD-X805",
+      "decision_owner": "qualified domain and quality owner",
+      "oracle_authority": "approved policy, standard, dataset or operational contract",
+      "ai_authority": "candidate-only"
+    }
+  ],
+  "evidence_boundary": "fixture registry; no practitioner signatures"
+}

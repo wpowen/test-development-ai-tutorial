@@ -1,0 +1,9 @@
+{
+  "mutation_version": "1.0.0",
+  "faults": [
+    "remove_owner_oracle",
+    "drop_source_ref",
+    "set_blocker_to_pass"
+  ],
+  "expected": "fault must fail; repair restores same contract"
+}

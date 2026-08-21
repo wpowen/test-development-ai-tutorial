@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "page_id": "TD-C02",
+  "artifact_mode": "SOURCE-EXAMPLE-FILLED",
+  "scenario": "合成退款助手需求评审；用于示范怎样从跟做进入独立范围负责",
+  "state": "independent-scoped-ownership",
+  "decision_rights": {
+    "can_decide": ["选择需求评审检查表", "设计脱敏边界与权限切片", "阻断缺 source_ref 的候选用例"],
+    "must_escalate": ["业务规则冲突", "release threshold", "risk waiver", "生产发布"]
+  },
+  "failure_cost": "错误退款规则可能导致资金或权限风险；本示例不量化真实金额",
+  "artifact": "materials/requirements-to-evidence/page-prompts/TD-P02/expected-output.json",
+  "evidence_refs": [
+    "materials/career-evolution/evidence/TD-C02/cycle.json",
+    "materials/requirements-to-evidence/page-prompts/TD-P02/manifest.json",
+    "materials/career-evolution/visuals/career-responsibility-ladder.svg"
+  ],
+  "failure_probe": "把 evidence_refs_complete 改成 false，并把 years_only 改成 true；cycle 的 fault 必须退出 1",
+  "reviewer": "fixture-course-reviewer; 迁移后替换为独立测试负责人",
+  "unknowns": ["目标组织 band", "真实发布阈值", "真实业务损失与 risk owner"],
+  "not_proof": ["不证明学员职级", "不证明就业或晋升", "不证明生产退款流程可用"],
+  "blank_template_ref": "artifacts/templates/TD-C02-responsibility-map.blank.json"
+}

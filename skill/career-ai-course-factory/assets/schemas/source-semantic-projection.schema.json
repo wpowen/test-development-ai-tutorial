@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceSemanticProjection",
+  "type": "object",
+  "required": ["schema_version", "source_ledger_ref", "source_ledger_sha256", "units", "coverage", "author_id", "reviewer", "reviewed_at", "verdict"],
+  "properties": {
+    "schema_version": {"type": "string", "minLength": 1},
+    "source_ledger_ref": {"const": "research/source-assimilation-ledger.json"},
+    "source_ledger_sha256": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "author_id": {"type": "string", "minLength": 1},
+    "reviewer": {"type": "string", "minLength": 1},
+    "reviewed_at": {"type": "string", "minLength": 1},
+    "verdict": {"const": "PASS"},
+    "units": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["unit_id", "source_item_ids", "function_kind", "protected_function", "page_refs", "visual_refs", "reusable_asset_refs", "exercise_refs", "adaptation", "verification", "owner", "status"],
+        "properties": {
+          "unit_id": {"type": "string", "minLength": 1},
+          "source_item_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+          "function_kind": {"enum": ["concept-model", "comparison", "workflow", "decision-rule", "metric-definition", "threshold-policy", "career-ladder", "self-assessment", "visual", "template", "prompt-package", "checklist", "worked-example", "counterexample", "exercise", "source-resource", "reference-claim", "glossary", "risk-boundary"]},
+          "protected_function": {"type": "string", "minLength": 1},
+          "page_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "visual_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "reusable_asset_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "exercise_refs": {"type": "array", "items": {"type": "string", "minLength": 1}},
+          "adaptation": {"type": "object", "required": ["mode", "scope"], "properties": {"mode": {"type": "string", "minLength": 1}, "scope": {"type": "string", "minLength": 1}}},
+          "verification": {"type": "string", "minLength": 1},
+          "owner": {"type": "string", "minLength": 1},
+          "status": {"enum": ["projected", "adapted", "rejected", "blocked", "superseded"]}
+        }
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "required": ["required_source_item_ids", "covered_source_item_ids", "unaccounted_source_item_ids", "function_counts", "verdict"],
+      "properties": {
+        "required_source_item_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "covered_source_item_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "unaccounted_source_item_ids": {"type": "array", "maxItems": 0},
+        "function_counts": {"type": "object"},
+        "verdict": {"const": "PASS"}
+      }
+    }
+  }
+}

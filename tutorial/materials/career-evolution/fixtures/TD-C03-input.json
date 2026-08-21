@@ -1,0 +1,1 @@
+{"schema_version":"1.0.0","page_id":"TD-C03","observation":{"assessment":{"evidence_refs_complete":true,"unknowns_preserved":true,"plan_has_30_60_90":true}},"unknowns":["真实学习效果未运行"],"artifact_contract":{"required":["claim","evidence_refs_or_unknown","gap_route","next_artifact","review_date"]}}

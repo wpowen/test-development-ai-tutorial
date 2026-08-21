@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "page_id",
+    "status",
+    "tests",
+    "unknowns",
+    "human_gate"
+  ],
+  "properties": {
+    "page_id": {
+      "const": "TD-PS05"
+    },
+    "status": {
+      "enum": [
+        "READY",
+        "BLOCKED"
+      ]
+    },
+    "tests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "risk_id",
+          "source_refs",
+          "method_reason",
+          "oracle_id",
+          "fixture",
+          "expected",
+          "fault",
+          "evidence",
+          "human_gate"
+        ]
+      }
+    },
+    "unknowns": {
+      "type": "array"
+    },
+    "human_gate": {
+      "type": "string"
+    }
+  }
+}

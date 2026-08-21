@@ -1,0 +1,31 @@
+{
+  "type": "object",
+  "required": [
+    "evidence",
+    "inference",
+    "unknowns",
+    "source_refs",
+    "owner",
+    "stop_state"
+  ],
+  "properties": {
+    "evidence": {
+      "type": "array"
+    },
+    "inference": {
+      "type": "array"
+    },
+    "unknowns": {
+      "type": "array"
+    },
+    "source_refs": {
+      "type": "array"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "stop_state": {
+      "type": "string"
+    }
+  }
+}

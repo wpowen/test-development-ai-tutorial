@@ -1,0 +1,13 @@
+{
+  "topic_id": "TD-T06",
+  "page_id": "TD-T06",
+  "working_directory": "materials/ai-assisted-testing",
+  "required_files": ["ai_assisted_lab.py", "fixtures/basis.json", "fixtures/oracles.json", "page-prompts/TD-T06/manifest.json", "page-prompts/TD-T06/prompt-v1.md", "page-prompts/TD-T06/input.json", "page-prompts/TD-T06/schema.json", "page-prompts/TD-T06/eval.json", "page-prompts/TD-T06/mutation.json"],
+  "steps": [
+    {"step_id":"td-t06-baseline","kind":"baseline","command":"python3 ai_assisted_lab.py run --topic TD-T06 --phase baseline --report reports/td-t06-baseline.json","expected_exit_code":0,"expected_artifacts":["reports/td-t06-baseline.json"]},
+    {"step_id":"td-t06-fault","kind":"fault","command":"python3 ai_assisted_lab.py run --topic TD-T06 --phase fault --report reports/td-t06-fault.json","expected_exit_code":1,"expected_artifacts":["reports/td-t06-fault.json"]},
+    {"step_id":"td-t06-repair","kind":"repair","command":"python3 ai_assisted_lab.py run --topic TD-T06 --phase repair --report reports/td-t06-repair.json","expected_exit_code":0,"expected_artifacts":["reports/td-t06-repair.json"]}
+  ],
+  "failure_cycle": {"baseline_step_id":"td-t06-baseline","fault_step_id":"td-t06-fault","repair_step_id":"td-t06-repair"},
+  "evidence_boundary": "mutation is deterministic and Oracle is frozen outside generator; real framework/model integration NOT_RUN"
+}
