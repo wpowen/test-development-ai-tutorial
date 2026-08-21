@@ -1404,6 +1404,13 @@ def validate_claim_deep_research(topic_dir: Path, page_id: str, errors: list[str
             errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} provider must be openai")
         if run.get("surface") not in {"openai-responses-api", "chatgpt-deep-research"}:
             errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} has invalid surface")
+        if run.get("surface") == "openai-responses-api":
+            require_fields(
+                run,
+                ["source_opening_ledger_path", "discovered_source_count", "cited_source_count"],
+                f"tutorial promised page {page_id} OpenAI Responses Deep Research run {run_id}",
+                errors,
+            )
         if run.get("status") != "completed":
             errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} is not completed")
         data_sources = set(map(str, run.get("data_sources", []))) if isinstance(run.get("data_sources"), list) else set()
@@ -1416,7 +1423,10 @@ def validate_claim_deep_research(topic_dir: Path, page_id: str, errors: list[str
 
         resolved_paths: dict[str, Path] = {}
         topic_root = topic_dir.resolve()
-        for path_field in ("request_path", "raw_response_path", "report_path", "citations_path", "tool_calls_path"):
+        path_fields = ["request_path", "raw_response_path", "report_path", "citations_path", "tool_calls_path"]
+        if run.get("surface") == "openai-responses-api":
+            path_fields.append("source_opening_ledger_path")
+        for path_field in path_fields:
             relative_text = str(run.get(path_field, ""))
             candidate = (topic_dir / relative_text).resolve()
             if candidate != topic_root and topic_root not in candidate.parents:
@@ -1449,6 +1459,10 @@ def validate_claim_deep_research(topic_dir: Path, page_id: str, errors: list[str
                     "citation_count": len(raw_artifacts["citations"]),
                     "opened_source_count": raw_artifacts["opened_source_count"],
                 }
+                if "discovered_source_count" in run:
+                    raw_counts["discovered_source_count"] = raw_artifacts["discovered_source_count"]
+                if "cited_source_count" in run:
+                    raw_counts["cited_source_count"] = raw_artifacts["cited_source_count"]
                 for count_field, raw_count in raw_counts.items():
                     if run.get(count_field) != raw_count:
                         label = count_field.replace("_", " ")
@@ -1470,6 +1484,29 @@ def validate_claim_deep_research(topic_dir: Path, page_id: str, errors: list[str
                     saved_calls = calls_doc.get("calls") if isinstance(calls_doc, dict) else None
                     if not isinstance(saved_calls, list) or saved_calls != raw_artifacts["tool_calls"]:
                         errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} tool-call artifact does not match raw response")
+                opening_ledger_path = resolved_paths.get("source_opening_ledger_path")
+                if opening_ledger_path and opening_ledger_path.is_file():
+                    ledger = load_json(opening_ledger_path, errors)
+                    if not isinstance(ledger, dict):
+                        errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} source-opening ledger must be an object")
+                    else:
+                        if ledger.get("schema_version") != "source-opening-ledger.v1":
+                            errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} source-opening ledger schema mismatch")
+                        if ledger.get("run_id") != run_id:
+                            errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} source-opening ledger run_id mismatch")
+                        if ledger.get("response_or_export_id") != run.get("response_or_export_id"):
+                            errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} source-opening ledger response id mismatch")
+                        expected_ledger_fields = {
+                            "discovered_urls": raw_artifacts["discovered_urls"],
+                            "cited_urls": raw_artifacts["cited_urls"],
+                            "opening_events": raw_artifacts["opening_events"],
+                            "discovered_source_count": raw_artifacts["discovered_source_count"],
+                            "cited_source_count": raw_artifacts["cited_source_count"],
+                            "opened_source_count": raw_artifacts["opened_source_count"],
+                        }
+                        for ledger_field, expected_value in expected_ledger_fields.items():
+                            if ledger.get(ledger_field) != expected_value:
+                                errors.append(f"tutorial promised page {page_id} Deep Research run {run_id} source-opening ledger {ledger_field} mismatch")
 
     for claim_id in sorted(claim_ids - initial_claims):
         errors.append(f"tutorial promised page {page_id} claim {claim_id} lacks dedicated initial Deep Research")

@@ -179,6 +179,18 @@ def build_valid(root: Path) -> None:
                 write(run_dir / "report.md", f"Evidence and counterevidence for {claim_id}.\n")
                 dump(run_dir / "citations.json", {"citations":[{"url":"https://example.com/source", "title":"Source", "start_index":0, "end_index":8}]})
                 dump(run_dir / "tool-calls.json", {"calls":[{"type":"web_search_call", "id":f"ws_{run_id}", "status":"completed", "action":{"type":"open_page", "url":"https://example.com/source", "sources":[{"url":"https://example.com/source"}]}}]})
+                dump(run_dir / "source-opening-ledger.json", {
+                    "schema_version":"source-opening-ledger.v1", "run_id":run_id,
+                    "response_or_export_id":f"resp_{run_id}",
+                    "discovered_urls":["https://example.com/source"],
+                    "cited_urls":["https://example.com/source"],
+                    "opening_events":[{
+                        "event_id":f"ws_{run_id}", "tool_call_id":f"ws_{run_id}",
+                        "action_type":"open_page", "timestamp":"", "url":"https://example.com/source",
+                    }],
+                    "discovered_source_count":1, "cited_source_count":1, "opened_source_count":1,
+                    "limitations":[],
+                })
                 deep_runs.append({
                     "run_id":run_id, "claim_ids":[claim_id], "round":round_number, "phase":phase,
                     "provider":"openai", "surface":"openai-responses-api", "model_or_feature":"deep-research-test-model",
@@ -186,8 +198,10 @@ def build_valid(root: Path) -> None:
                     "request_path":f"deep-research/{run_id}/request.md", "raw_response_path":f"deep-research/{run_id}/raw-response.json",
                     "report_path":f"deep-research/{run_id}/report.md", "citations_path":f"deep-research/{run_id}/citations.json",
                     "tool_calls_path":f"deep-research/{run_id}/tool-calls.json",
+                    "source_opening_ledger_path":f"deep-research/{run_id}/source-opening-ledger.json",
                     "input_sha256":sha256(run_dir / "request.md"), "output_sha256":sha256(run_dir / "raw-response.json"),
-                    "data_sources":["web_search"], "tool_call_count":1, "citation_count":1, "opened_source_count":1,
+                    "data_sources":["web_search"], "tool_call_count":1, "citation_count":1,
+                    "discovered_source_count":1, "cited_source_count":1, "opened_source_count":1,
                     "status":"completed", "limitations":["synthetic validator receipt"],
                 })
             saturation_claims.append({
@@ -1401,6 +1415,32 @@ class ValidatorTests(unittest.TestCase):
         run["output_sha256"] = sha256(path)
         dump(receipt_path, receipts)
         self.assertTrue(any("raw response citation count mismatch" in error for error in validate(self.root)))
+
+    def test_search_sources_cannot_be_promoted_to_opened_sources(self) -> None:
+        raw_path = self.root / "research/topics/page-0/deep-research/c-01-r1/raw-response.json"
+        raw = json.loads(raw_path.read_text())
+        raw["output"][0]["action"] = {
+            "type":"search", "query":"bounded claim",
+            "sources":[{"url":"https://example.com/source"}],
+        }
+        dump(raw_path, raw)
+        tool_path = self.root / "research/topics/page-0/deep-research/c-01-r1/tool-calls.json"
+        tools = json.loads(tool_path.read_text())
+        tools["calls"][0]["action"] = raw["output"][0]["action"]
+        dump(tool_path, tools)
+        receipt_path = self.root / "research/topics/page-0/deep-research-receipts.json"
+        receipts = json.loads(receipt_path.read_text())
+        run = next(item for item in receipts["runs"] if item["run_id"] == "c-01-r1")
+        run["output_sha256"] = sha256(raw_path)
+        dump(receipt_path, receipts)
+        self.assertTrue(any("raw response opened source count mismatch" in error for error in validate(self.root)))
+
+    def test_source_opening_ledger_must_match_raw_open_events(self) -> None:
+        path = self.root / "research/topics/page-0/deep-research/c-01-r1/source-opening-ledger.json"
+        data = json.loads(path.read_text())
+        data["opening_events"][0]["url"] = "https://example.com/citation-only"
+        dump(path, data)
+        self.assertTrue(any("source-opening ledger opening_events mismatch" in error for error in validate(self.root)))
 
     def test_deep_research_citation_artifact_must_match_raw_content(self) -> None:
         path = self.root / "research/topics/page-0/deep-research/c-01-r1/citations.json"

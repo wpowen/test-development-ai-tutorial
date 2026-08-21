@@ -1319,8 +1319,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-P01.svg",
-          "alt": "测试依据冻结：来源版本、权威与冲突门禁的需求到发布证据的可执行链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "测试依据冻结：来源版本、权威与冲突门禁的decision-tree：展示PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行之间的数据、控制、证据和反馈关系。",
+          "kind": "decision"
         }
       },
       "materials": [
@@ -1472,7 +1472,7 @@
           "whatItDoesNotProve": "信封统一不代表语义统一。两个系统都发 `deployment.finished`，含义可能完全不同。"
         }
       ],
-      "source_hash": "3db97bf2489498fc91954284575d1a2dd6104f2d99d4430b6a1efc5ad49d9c5d",
+      "source_hash": "6a2c3746d922bb0407a1439768fc1af110f143fff6a0899457ecd702602c770b",
       "reference_hash": "5d08d3b61f1db3a1c9ea10b037d788ae447f7b362ad56e0df4ef67495b5f0cd8",
       "material_hash": "a70b5d4205bacbda392c82d391eb601a2225dbde4422465f646d82d485558a83",
       "previous_page_id": "TD-F01",
@@ -4414,8 +4414,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-P04.svg",
-          "alt": "风险分析与测试层级策略的需求到发布证据的可执行链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "风险分析与测试层级策略的decision-tree：展示PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行之间的数据、控制、证据和反馈关系。",
+          "kind": "decision"
         }
       },
       "materials": [
@@ -4557,7 +4557,7 @@
           "whatItDoesNotProve": "框架不给阈值也不给测试方法；它规定要管什么，不规定管到什么程度算合格。"
         }
       ],
-      "source_hash": "3c88431861b077ec0d01bb2b0316dd51b2ca7766d5c389802b20c251c1757b2c",
+      "source_hash": "1a6e1a3c5a1e6b4ac1ea481559ade3bf0a46293c92afaf2594e54382a314b690",
       "reference_hash": "8198a9d9df066491b30892eed9ea7063c003004b1fad10293d3773695960d2f2",
       "material_hash": "2be638115c5bd456feb7a7d4e3cae766eda749c0c3b0803653ab2fc1de8ece33",
       "previous_page_id": "TD-P03",
@@ -8449,8 +8449,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-P08.svg",
-          "alt": "影响分析、回归选择与发布证据链的需求到发布证据的可执行链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "影响分析、回归选择与发布证据链的evidence-lineage：展示PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行之间的数据、控制、证据和反馈关系。",
+          "kind": "evidence"
         }
       },
       "materials": [
@@ -8597,7 +8597,7 @@
           "whatItDoesNotProve": "分析指标是你写的。指标覆盖不到的质量退化，金丝雀会一路放行到 100%。"
         }
       ],
-      "source_hash": "a11249e5253c1bac80cc5bd640e16d923722deffe789392d4394dd1a8c500fe1",
+      "source_hash": "6373afca7d90f92230ced53d36c5fa2189e8252056d25b04c915fb5413032d74",
       "reference_hash": "9620b47ecef93ff290c8e5e810f825bb607abbcf76532b5bc94ecf5caeed4c74",
       "material_hash": "79cd1eec6884d5f3ed8d5929b45eb72a0801dbba893c6a5b2bb8bf23e43214d2",
       "previous_page_id": "TD-P07",
@@ -17124,8 +17124,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-PS10.svg",
-          "alt": "稳定性：超时、重试预算、熔断、限流与降级的故障传播与停止链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "稳定性：超时、重试预算、熔断、限流与降级的state-machine：展示实验授权/隔离命名空间、注入器、模型/工具/检索依赖、Agent 重试与降级、订单 API/队列之间的数据、控制、证据和反馈关系。",
+          "kind": "state"
         }
       },
       "materials": [
@@ -17294,7 +17294,7 @@
           "whatItDoesNotProve": "平台提供注入能力，不提供假设。没有稳态定义与终止条件的实验，注入再多也不产生结论。"
         }
       ],
-      "source_hash": "8349dd4d72d54790bad533c881e36c02f61d72de95e25cb816536f900f36b1e1",
+      "source_hash": "a685b0ab632af3ff974c6fa5ef7435535058b735a8013e1cfe10596072a82837",
       "reference_hash": "4fcbda0806d59b0e80e6af194d1102439e84dcb05f36a3cb5d50354e7df8ee0d",
       "material_hash": "17873e39116a001ed6a861cbc32aac01321c8a78f402711960437c1e2d51db55",
       "previous_page_id": "TD-PS09",
@@ -23443,8 +23443,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-F04.svg",
-          "alt": "LLM、RAG、Agent 与 Workflow 的测试边界的LLM、RAG、Agent 与 Workflow 的测试边界 的证据与决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "LLM、RAG、Agent 与 Workflow 的测试边界的layered-architecture：展示用户目标、检索·Context、模型决策、工具策略 Gate、Worker·队列之间的数据、控制、证据和反馈关系。",
+          "kind": "architecture"
         }
       },
       "materials": [
@@ -23596,7 +23596,7 @@
           "whatItDoesNotProve": "GenAI 部分的约定仍在演进，字段名可能变更；且约定只规定怎么记，不规定记了之后如何判断质量。"
         }
       ],
-      "source_hash": "6a355dd37d8bee54eaa2abdb76832f0f8cf41cdd2b2a3dedbbeb747a8038d6d1",
+      "source_hash": "20cfb04178d425142e157c7ce41273b088f3dad0c405e015728144c68f6af9ce",
       "reference_hash": "4c7d51b82947093c8eff9728e27164ee8ba5eb22c51411852cf997029570acf9",
       "material_hash": "eb1480359d058af911549842d6fcfc9034081bd23d5bcdb2f974c78056b3a9be",
       "previous_page_id": "TD-F03",
@@ -26062,8 +26062,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T03.svg",
-          "alt": "Composite Oracle：规则、Judge 与人工评审组合的Composite Oracle：规则、Judge 与人工评审组合 的证据与决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Composite Oracle：规则、Judge 与人工评审组合的decision-tree：展示Eval case、Schema Gate、业务规则 Gate、权限·副作用 Gate、语义 Judge之间的数据、控制、证据和反馈关系。",
+          "kind": "decision"
         }
       },
       "materials": [
@@ -26215,7 +26215,7 @@
           "whatItDoesNotProve": "多数指标本身由模型计算，因此指标带有与被测系统同源的误差；未经人工标注校准前，它的绝对值不能当验收线，只能看趋势。"
         }
       ],
-      "source_hash": "af42c9c6da289510428eb357da88b5bbe5344e9376b5004293665327364d6a7a",
+      "source_hash": "a01cf2106084ae8553ddd54736bb0355198d79f34d4c8a1c6b5406289982c344",
       "reference_hash": "d8c1b339c2cc1e0251b47852c985180c08a907134bfa02a4d2229a39484830dd",
       "material_hash": "6970bb82900c6f3c42fb67a1f2cf1ae8d504aea528a699815a8920df6df444f6",
       "previous_page_id": "TD-T02",
@@ -26941,8 +26941,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T04.svg",
-          "alt": "重复运行、统计与结果分布的重复运行、统计与结果分布 的证据与决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "重复运行、统计与结果分布的metric-experiment：展示版本化 cases、重复采样、Raw run ledger、独立 Scorer、Slice aggregation之间的数据、控制、证据和反馈关系。",
+          "kind": "metric"
         }
       },
       "materials": [
@@ -27050,7 +27050,7 @@
           "whatItDoesNotProve": "它保证的是执行可复现，不保证任务本身衡量了你关心的能力，也不检测数据污染。"
         }
       ],
-      "source_hash": "793b6cccbd4a55bd80ae1806c5ba39025f2600717a22a64ce3b122e980d4629e",
+      "source_hash": "32b9d0af8dd618684262afd3032308e4d2b40c5b48ade792b200fe9f8802e7ce",
       "reference_hash": "8a2c0afbfeffae3eeeebe828c6cdc115878916ed447b23dd32ecd7d8fca9c244",
       "material_hash": "c68319b00359dba63d5324ce3fd4f85a8419a91d9f36b978514f7fd9d5647ee4",
       "previous_page_id": "TD-T03",
@@ -32052,8 +32052,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-A02.svg",
-          "alt": "AI API 协议：Streaming、Structured、Tool 与 Async的AI API 协议：Streaming、Structured、Tool 与 Async 证据链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "AI API 协议：Streaming、Structured、Tool 与 Async的state-machine：展示请求、SSE reducer、Schema+语义、Tool 权限/幂等、Async 状态机之间的数据、控制、证据和反馈关系。",
+          "kind": "state"
         }
       },
       "materials": [
@@ -32207,7 +32207,7 @@
           "whatItDoesNotProve": "规范定义的是方法语义的期望，不强制实现遵守。你的 POST 加没加幂等键、加了是否生效，只能靠测试证明。"
         }
       ],
-      "source_hash": "e69ed53739b840fc26b4199723fa3cc621016ae240138e08f0659fc78f4d8471",
+      "source_hash": "cd5cea2b4fd4aca8481e298f56407e05015309a45cd84b420b70d95b09926d17",
       "reference_hash": "4d7ce4a4032ebdbbc8f4f39a66c49687e13c08e46001164feaef8fc9e1b47863",
       "material_hash": "daea70a51266af7dc592004fe8a546e761d67d03767412feef1d392741c72c41",
       "previous_page_id": "TD-A01",
@@ -32891,8 +32891,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-A03.svg",
-          "alt": "AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本的AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本 证据链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本的metric-experiment：展示到达、Queue、Prefill/首 Token、Decode/ITL、终态/质量之间的数据、控制、证据和反馈关系。",
+          "kind": "metric"
         }
       },
       "materials": [
@@ -33029,7 +33029,7 @@
           "whatItDoesNotProve": "指标口径依赖具体后端；不同 backend 的批处理与队列语义不同，跨部署比较数字没有意义。"
         }
       ],
-      "source_hash": "135ddae30ebf54df8c221f315bde38cd8cebc98ad1cf5b6d3ca249715fa9d598",
+      "source_hash": "f6add5f841543d820b62fcd1f61fe6ed3ee0ef9e8b458adcf7cf9ec2680565c7",
       "reference_hash": "db08a7d462418c0f326586de18d5502a4977231ad2f3c5e22c98972359d32ced",
       "material_hash": "df6dcca0b12538a9fcb4836d6106d9fd057cfbf4f75db080b96355d062018949",
       "previous_page_id": "TD-A02",
@@ -37098,8 +37098,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T10.svg",
-          "alt": "检索评测：Recall、Ranking 与查询切片的检索评测：Recall、Ranking 与查询切片 的证据与决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "检索评测：Recall、Ranking 与查询切片的metric-experiment：展示Query slices、Query rewrite、ACL/metadata filter、Retriever、Top-k ranking之间的数据、控制、证据和反馈关系。",
+          "kind": "metric"
         }
       },
       "materials": [
@@ -37229,7 +37229,7 @@
           "whatItDoesNotProve": "框架提供组件，不提供语料治理。切分策略与元数据设计仍是决定检索质量的主要因素，且高度依赖你的文档形态。"
         }
       ],
-      "source_hash": "a9e4c0efc7f2856fc966c1f975fceed710539849acbd6bd128f4bb796c2018ec",
+      "source_hash": "68aeea9372dbfda47599b8809c32ba7157b3952724a826c1f3803ce61f3feb01",
       "reference_hash": "d011392c44cc5830681720aa6f4bf877acbfc180fc8815a0d4faf755cef1a667",
       "material_hash": "04656260e0c8951e1c680cd2498468f9cfb1fc2e6c9e38c197e2427731e8630c",
       "previous_page_id": "TD-T09",
@@ -37949,8 +37949,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T11.svg",
-          "alt": "Faithfulness 与 Citation 评估的Faithfulness 与 Citation 评估 的证据与决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Faithfulness 与 Citation 评估的layered-architecture：展示Retrieved Context、Generated answer、Atomic claims、Evidence spans、Faithfulness scorer之间的数据、控制、证据和反馈关系。",
+          "kind": "architecture"
         }
       },
       "materials": [
@@ -38058,7 +38058,7 @@
           "whatItDoesNotProve": "指标默认阈值是框架给的示例值，不是你业务的验收线。"
         }
       ],
-      "source_hash": "d931dba308b3817a9a5f3d2237c89d918302f6688bc6e630887505df1f3dbffd",
+      "source_hash": "347c19de41c12e912f2ee266e896628f6fa5f76eb285d8dbdd992103fb0c9cd9",
       "reference_hash": "d59988ce2fbd5fe05d4bf3e8b98ae519794e4fc21ff483d818b554c218d9fcb9",
       "material_hash": "f24a3a05625372a576260665cb0e13c1e5adad4dc5d11cccca6627336028235e",
       "previous_page_id": "TD-T10",
@@ -38773,8 +38773,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T12.svg",
-          "alt": "RAG 端到端门禁：无答案与权限的RAG 端到端门禁：无答案与权限 的证据与决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "RAG 端到端门禁：无答案与权限的state-machine：展示Versioned corpus、Tenant ACL、Retriever/no-result、Generator、Faithfulness·Citation之间的数据、控制、证据和反馈关系。",
+          "kind": "state"
         }
       },
       "materials": [
@@ -38899,7 +38899,7 @@
           "whatItDoesNotProve": "多数指标本身由模型计算，因此指标带有与被测系统同源的误差；未经人工标注校准前，它的绝对值不能当验收线，只能看趋势。"
         }
       ],
-      "source_hash": "7ec68d5438d45b7a862979946ee99175e68261c9d9f4eaf9297a0d729e9efb59",
+      "source_hash": "39fadab97689ddb803a208a0ab75617374549187260c5caff7c4b4593a564e40",
       "reference_hash": "ead1506da2a3ffb54013dc5e35301ee98ad186ede5c36d399e47447d97840d34",
       "material_hash": "4a86688598a9d6e0cc5a12063d9d67b8dad413455fe27befbbbca0f22ce4ce45",
       "previous_page_id": "TD-T11",
@@ -39668,8 +39668,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-X501.svg",
-          "alt": "多模态关系与独立 Oracle 评测的多模态关系与独立 Oracle 评测 的证据闭环，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "多模态关系与独立 Oracle 评测的decision-tree：展示任务/模态合同、配对 Fixture、跨模态关系、独立 Oracle、矛盾注入之间的数据、控制、证据和反馈关系。",
+          "kind": "decision"
         }
       },
       "materials": [
@@ -39784,7 +39784,7 @@
           "whatItDoesNotProve": "框架不提供判据。scorer 写得对不对、数据集有没有覆盖你的风险切片，框架一概不管，全绿只说明流程跑通了。"
         }
       ],
-      "source_hash": "c9d61275e02856ae952137ca91e9e4d0a695a16deadbc7433d95e559849a0b6a",
+      "source_hash": "d8b829f5f465fbb78bd9c7d5b03577ecf85a39a71dc766064f47e2d46c8a6c82",
       "reference_hash": "afbf0dfb8c019b6c31cc8c46a54dbef2aeb6601bd60cc834b5956c44d4b97985",
       "material_hash": "bfe5e59f22d2ee03945d80b3e8eb1c57fde2a6849dd09d84e0acd77044c08ea3",
       "previous_page_id": "TD-T12",
@@ -42269,8 +42269,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T14.svg",
-          "alt": "LLM-as-Judge 校准与反例集的Judge 校准、偏差探针与人工升级链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "LLM-as-Judge 校准与反例集的decision-tree：展示Double human labels、Blind pair shuffle、Versioned Judge、Bias probes、Disagreement matrix之间的数据、控制、证据和反馈关系。",
+          "kind": "decision"
         }
       },
       "materials": [
@@ -42385,7 +42385,7 @@
           "whatItDoesNotProve": "框架不提供判据。scorer 写得对不对、数据集有没有覆盖你的风险切片，框架一概不管，全绿只说明流程跑通了。"
         }
       ],
-      "source_hash": "a00924e931e095ab12b3894b870f940ec2ab43ef709ba132d5f40b9bd3e8e9c8",
+      "source_hash": "c5f08c32bd40fc7119eb79198773cd3ae256b07a1de7638844899298f4429943",
       "reference_hash": "5d7fd4b07346763112a37713247564bacf9ef933c8ff7000b829a6262fb0d605",
       "material_hash": "da8a03e8245ab9fc62cf819ef19cd435320b6f4966b4910bbf960743061b7869",
       "previous_page_id": "TD-T13",
@@ -43076,7 +43076,7 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T15.svg",
-          "alt": "Agent 结果、步骤与轨迹评估的Outcome、Step、Trajectory 三层 Oracle，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
+          "alt": "Agent 结果、步骤与轨迹评估的layered-architecture：展示Business outcome、Tool step ledger、State snapshots、Trajectory graph、Policy blockers之间的数据、控制、证据和反馈关系。",
           "kind": "architecture"
         }
       },
@@ -43192,7 +43192,7 @@
           "whatItDoesNotProve": "规范描述接口不描述权限。哪些工具允许被哪个会话调用、不可逆动作要不要二次确认，规范里没有，必须在工具调用层自己实现并验证。"
         }
       ],
-      "source_hash": "1bc0549606f18ed7abee2a32b5c2c79a56ff0a60975d8ac478e86ff75b14179e",
+      "source_hash": "e0be1cd8cfbcaaa908d368c9cf2272b161fb361221415c6ebd15a4e5252911f3",
       "reference_hash": "d9395efa1a414003147bdb245be01bec3715e84b5aef2021df456cf8aeff14c6",
       "material_hash": "96a8f1c90e0c6f3fb033305306e1305bdbe9f3faa49eee728f3f5d8f5939c43b",
       "previous_page_id": "TD-T14",
@@ -47939,8 +47939,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-W02.svg",
-          "alt": "Workflow 状态、循环、重试、Handoff 与终止条件的可恢复 Workflow 的状态、重试与终止链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "architecture"
+          "alt": "Workflow 状态、循环、重试、Handoff 与终止条件的state-machine：展示Workflow state、Checkpoint、Queue delivery、Idempotent worker、Budget guard之间的数据、控制、证据和反馈关系。",
+          "kind": "state"
         }
       },
       "materials": [
@@ -48077,7 +48077,7 @@
           "whatItDoesNotProve": "注入的是网络层症状，不是依赖服务的真实故障语义（如半提交、脏数据）。"
         }
       ],
-      "source_hash": "e89feaa2be737cc0c0ec4d8bbf2a551075adb033f949372000795c62899be69f",
+      "source_hash": "4f940aa18386613b4197cc2315c9c4312fededb2d8ac8e8a1e17df1888369444",
       "reference_hash": "8fef94411e0209ef8477f283ef3b17dfa3ddc1cf6b23e20ef947b199a54f814c",
       "material_hash": "f5ef533c7461eca4dd05888771051f382316076e98118407bd9783144aa95da5",
       "previous_page_id": "TD-W01",
@@ -50573,8 +50573,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-X604.svg",
-          "alt": "模型路由、Fallback 与工具协议漂移测试的模型路由、Fallback 与工具协议漂移测试 的证据闭环，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "architecture"
+          "alt": "模型路由、Fallback 与工具协议漂移测试的state-machine：展示请求合同、能力/区域/权限、Provider 路由、协议/Schema、Fallback 再授权之间的数据、控制、证据和反馈关系。",
+          "kind": "state"
         }
       },
       "materials": [
@@ -50706,7 +50706,7 @@
           "whatItDoesNotProve": "规范描述接口不描述权限。哪些工具允许被哪个会话调用、不可逆动作要不要二次确认，规范里没有，必须在工具调用层自己实现并验证。"
         }
       ],
-      "source_hash": "af1569d3cacdd717a0c8ab88b341ab9aa29d0a7f2b4a0a8bda8c534aa284ed9e",
+      "source_hash": "3097d6bc15ddb6f06e2e1b466d07b7cb3f29779d29fce074fdb427cba518ece9",
       "reference_hash": "1e95883c27b67c10d877575daeea57d69346db3582b0ad672280521fb59db7c6",
       "material_hash": "5a4ebc71de46b5119578d57d7cddb55c775dd73c16c0d325dbe8ac05e62d7f51",
       "previous_page_id": "TD-X603",
@@ -54242,8 +54242,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T21.svg",
-          "alt": "模型与评测 Lineage 追踪的模型与评测 Lineage 追踪 的证据链与人工决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "模型与评测 Lineage 追踪的layered-architecture：展示代码 Commit、Prompt/Input/Schema、Dataset/Split、Knowledge/Tool、Model/Runtime之间的数据、控制、证据和反馈关系。",
+          "kind": "architecture"
         }
       },
       "materials": [
@@ -54380,7 +54380,7 @@
           "whatItDoesNotProve": "漂移不等于质量下降，反之亦然。它是调查触发器，不能直接作为阻断门禁。"
         }
       ],
-      "source_hash": "c2cc5ff312269adce66c9e88b2e210843c7e168ba1a1a79740be9f964be0b5ba",
+      "source_hash": "14041cda4d0c91ffad175c8e5f724f34801e037fd4faa708164a17b36bc010c5",
       "reference_hash": "8d8d7261163a37bd0829b68a5716b9cadf807e4bab426e38d7682c9bea527560",
       "material_hash": "2286d7d88f2753bfb3d33ea66a7a54be8481c45fefba2800a62e422671aa2c87",
       "previous_page_id": "TD-T20",
@@ -55080,8 +55080,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T22.svg",
-          "alt": "Trace-to-Regression：生产失败到回归用例的Trace-to-Regression：生产失败到回归用例 的证据链与人工决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Trace-to-Regression：生产失败到回归用例的evidence-lineage：展示生产 Trace 隔离区、字段分类/脱敏、最小失败抽取、业务/安全 Oracle、Regression Dataset之间的数据、控制、证据和反馈关系。",
+          "kind": "evidence"
         }
       },
       "materials": [
@@ -55240,7 +55240,7 @@
           "whatItDoesNotProve": "漂移不等于质量下降，反之亦然。它是调查触发器，不能直接作为阻断门禁。"
         }
       ],
-      "source_hash": "2ee0914b41c13ca4a0e09cee4ca2db30d9803ed672b6675484ea2ed341c3196f",
+      "source_hash": "b72f9b0fae6a38c6554efdc3ce093f02228b69f4c2cf335d72ed47f1f541cb4d",
       "reference_hash": "003ec3b7657f3bf249138c6ef936da15bcd6ae2154d320485957e1862979c797",
       "material_hash": "cf892a7beae96315ad2d6b73d9999f0ed2ae9ee2a41ea4235642fe2791d58bb4",
       "previous_page_id": "TD-T21",
@@ -56094,8 +56094,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T23.svg",
-          "alt": "质量、延迟与成本联合门禁的质量、延迟与成本联合门禁 的证据链与人工决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "质量、延迟与成本联合门禁的metric-experiment：展示版本化 Workload、模型/路由候选、质量 Scorer、Trace/延迟分解、Token/成本账本之间的数据、控制、证据和反馈关系。",
+          "kind": "metric"
         }
       },
       "materials": [
@@ -56222,7 +56222,7 @@
           "whatItDoesNotProve": "框架不给阈值也不给测试方法；它规定要管什么，不规定管到什么程度算合格。"
         }
       ],
-      "source_hash": "92dcffc8928a346680f842466097baea208c53af95c148d238f5ed0bd53c7a18",
+      "source_hash": "da98a07035b898e8a22b741dc548d7d044e71849f333d8171082c8d52cca024d",
       "reference_hash": "5255abb711c45a8da2f5ec95a99e9267b68810ebf4ee0faa2936d1a5e019d484",
       "material_hash": "c3357cbfa098736fa2184b0d62341891833c174ae39b897d6ced0604888da326",
       "previous_page_id": "TD-T22",
@@ -57805,8 +57805,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-X805.svg",
-          "alt": "在线实验、Canary 与人工抽样发布门禁的在线实验、Canary 与人工抽样发布门禁 的证据闭环，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "在线实验、Canary 与人工抽样发布门禁的decision-tree：展示假设/MDE、稳定分流、离线门禁、小流量 Canary、Guardrail/最坏切片之间的数据、控制、证据和反馈关系。",
+          "kind": "decision"
         }
       },
       "materials": [
@@ -57938,7 +57938,7 @@
           "whatItDoesNotProve": "书里的示例数字是示例。任何直接照抄的 SLO 都没有经过你自己业务成本的校准。"
         }
       ],
-      "source_hash": "27615968f8c2dd226f2e0a1a5606097b5ce4fac2a1732869c29e1ccad82d689f",
+      "source_hash": "f93c2d1069c2493cc95e6309654985e68db5dcedaf822770a58e8e3af86b8e9a",
       "reference_hash": "0289c731b06e43b6282df5b3561240ee134303aa95ad1d87d13632b55cca386b",
       "material_hash": "8d6edfafe7ac4658c689470de70a1809d5bfe12f8709e61a935b9f3ef126c66d",
       "previous_page_id": "TD-T24",
@@ -60454,8 +60454,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-B03.svg",
-          "alt": "Benchmark 指标：Accuracy、Pass@k、Resolved Rate 与置信区间的Benchmark 指标：Accuracy、Pass@k、Resolved Rate 与置信区间 的证据链与人工决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Benchmark 指标：Accuracy、Pass@k、Resolved Rate 与置信区间的metric-experiment：展示逐题多次 Runs、Raw Ledger、确定性 Oracle、Judge/校准、Metric Calculator之间的数据、控制、证据和反馈关系。",
+          "kind": "metric"
         }
       },
       "materials": [
@@ -60570,7 +60570,7 @@
           "whatItDoesNotProve": "指标默认阈值是框架给的示例值，不是你业务的验收线。"
         }
       ],
-      "source_hash": "a08430bba57060e7d6eb58851cb8c65ccd2c978e88881cdad6ddcfb8f8b4139e",
+      "source_hash": "94f070ba93675d540f572c3429735fbde4b4320baa575d08e98d9fa8e7fb886e",
       "reference_hash": "b1d069c1c29467abf6836e6058f739b6e03f3c1c1e7483f79de073d3aa2462ee",
       "material_hash": "abdc9a270b80db1082a73590179f5af2ce86e73b3c385a453a17ede91ea9a5f1",
       "previous_page_id": "TD-B02",
@@ -64985,8 +64985,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-QP02.svg",
-          "alt": "GitLab MR、Pipeline 与证据 SHA 绑定的当前 SHA 的 MR 质量证据链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "GitLab MR、Pipeline 与证据 SHA 绑定的evidence-lineage：展示GitLab MR/当前 HEAD、Project Webhook/Inbox、Pipeline 与 Jobs、JUnit/Artifact Store、确定性聚合器之间的数据、控制、证据和反馈关系。",
+          "kind": "evidence"
         }
       },
       "materials": [
@@ -65108,7 +65108,7 @@
           "whatItDoesNotProve": "等级描述构建过程的可信度，不评价依赖本身是否有漏洞。"
         }
       ],
-      "source_hash": "853dbd50501cda4a4e0a05441a674159bf97ed96e80e16148ac81341ea91d112",
+      "source_hash": "3a614d4da359cc53cdec20ba5c4d7143f56c59f3094b900a7fe95f8f2471de8d",
       "reference_hash": "c94c8b90b0b9e9647a9f1f2c15b588debff75402e83560a68996bc2db120ab0e",
       "material_hash": "53a05e30532dde39b329652630a7b6032f310027ee73c0a59adeb9db0cccbb38",
       "previous_page_id": "TD-QP01",
@@ -67252,8 +67252,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-QP04.svg",
-          "alt": "跨系统事件总线：幂等、重放、脱敏通知与审计闭环的跨系统质量事件的审计闭环，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "跨系统事件总线：幂等、重放、脱敏通知与审计闭环的state-machine：展示Jira/GitLab/K8s 上游事件、Event Gateway/验签去重、Inbox/Outbox/DLQ、Quality Orchestrator/状态机、Jira/GitLab/K8s 适配器之间的数据、控制、证据和反馈关系。",
+          "kind": "state"
         }
       },
       "materials": [
@@ -67397,7 +67397,7 @@
           "whatItDoesNotProve": "桩的行为是你编的。真实依赖的失败形态可能与你的假设完全不同——桩测试通过不代表真实降级路径有效。"
         }
       ],
-      "source_hash": "f2beea8a156173146894bf77d37e04919d1651ee95aaea130c5ec56cb7917711",
+      "source_hash": "379c1a4418ee1bf23c9f67230dc60ab7e4093a5892e92ea802298440d83162d7",
       "reference_hash": "c63644acf91242093c83b7eb4379daea7b21fe90a8502e3bb8c8d52fdacd016e",
       "material_hash": "59ae1fbadc791a33fe3532f2e879440a05d6ef9e346863d53bedec5f9279308f",
       "previous_page_id": "TD-QP03",
@@ -68376,8 +68376,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-T25.svg",
-          "alt": "Capstone：AI Quality Fixture Release Candidate的Capstone：AI Quality Fixture Release Candidate 的证据链与人工决策边界，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Capstone：AI Quality Fixture Release Candidate的evidence-lineage：展示PRD/Risk/Owner、Dataset/Split/Trace、Prompt/Input/Schema、Composite Oracle、Benchmark/CI之间的数据、控制、证据和反馈关系。",
+          "kind": "evidence"
         }
       },
       "materials": [
@@ -68509,7 +68509,7 @@
           "whatItDoesNotProve": "标准正文需付费获取，且它给的是过程框架不是有效性证明；符合标准不代表测试有检测力。本课程只引用其结构，不复制条文。"
         }
       ],
-      "source_hash": "3446bb5a9125ad16b4556edadb22d5ae5c514fb1131598f601c29c34840a77c9",
+      "source_hash": "ca571121f1d06430798f94b4a3776fa8a257582ab47347eaab9b882d5b7f377f",
       "reference_hash": "6727d92fef066c47c3b5dba5dff2434aeba63e562e9adbbd28b21a10c9e9bd92",
       "material_hash": "14a0e9b4cb5e0b7d9ac5da7d5a112350e8b7fe793721d447403a24209fb55a14",
       "previous_page_id": "TD-QP04",
@@ -76130,8 +76130,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-AP02.svg",
-          "alt": "Agent 性能指标树：TTFT、TPOT、Queue、Retry、Step的TD-AP02 证据链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Agent 性能指标树：TTFT、TPOT、Queue、Retry、Step的metric-experiment：展示计划到达时间、Queue wait、Prefill/TTFT、Decode/TPOT、Tool/Retry/Step之间的数据、控制、证据和反馈关系。",
+          "kind": "metric"
         }
       },
       "materials": [
@@ -76263,7 +76263,7 @@
           "whatItDoesNotProve": "书里的示例数字是示例。任何直接照抄的 SLO 都没有经过你自己业务成本的校准。"
         }
       ],
-      "source_hash": "44a9d7c8af4b577ef4e11325f075567b802b509203e15525e06316215d0a964c",
+      "source_hash": "32d28039da5824b0ff3e89e8009940e543d5336d20d7bd18b6a409367fa661c9",
       "reference_hash": "5ce4a2eaa7b51fae0b3f9d6ed148612777fb3add3111721543993946afcd4b48",
       "material_hash": "5bc9c9e9651bbd6d1bf353bb6f5ffe214a81febf671e9ef9091ce1bacbe4c4f6",
       "previous_page_id": "TD-AP01",
@@ -77273,8 +77273,8 @@
         ],
         "visual": {
           "src": "visuals/course/TD-AP03.svg",
-          "alt": "Agent Trace 语义：Task Root 到 Tool Attempt的TD-AP03 证据链，展示从输入、风险与方法到独立 Oracle、执行证据和下一步决定的关系。",
-          "kind": "flow"
+          "alt": "Agent Trace 语义：Task Root 到 Tool Attempt的layered-architecture：展示invoke_agent root、queue.wait span、gen_ai generation span、execute_tool attempt span、task.finalize event之间的数据、控制、证据和反馈关系。",
+          "kind": "architecture"
         }
       },
       "materials": [
@@ -77433,7 +77433,7 @@
           "whatItDoesNotProve": "指标口径依赖具体后端；不同 backend 的批处理与队列语义不同，跨部署比较数字没有意义。"
         }
       ],
-      "source_hash": "90678dbf3973416f2db3161d7a2e431e06059013e9ea211f0280c70cac8bb2c5",
+      "source_hash": "19ca5788e47aafcffc83bf3d3b2bf0eec2529126bf7fdfb01de0aba9a9fd7eda",
       "reference_hash": "f3b4f933772322cc48b14c7f020b9acb75948443e0112ee91c45ea234570c1aa",
       "material_hash": "4820d4316e24c65ba7f27b74876f73c2b38979c6f08c94258e4419f9fd39549c",
       "previous_page_id": "TD-AP02",

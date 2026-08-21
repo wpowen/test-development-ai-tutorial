@@ -944,7 +944,7 @@
         "TD-AG-09",
         "TD-AG-10"
       ],
-      "artifact_hash": "sha256:bf2e821f8e6138d11f8069fd9eac44ff9d3eed7479f4620e38708b7a307bf4c6",
+      "artifact_hash": "sha256:759a68e64975e21ac10f1c695a886d477357fac81b9a47eae586308e7b70fabb",
       "status": "current",
       "supersedes": [
         "course-audit-04",

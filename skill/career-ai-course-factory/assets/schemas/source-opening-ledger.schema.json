@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "source-opening-ledger.schema.json",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "run_id",
+    "response_or_export_id",
+    "discovered_urls",
+    "cited_urls",
+    "opening_events",
+    "discovered_source_count",
+    "cited_source_count",
+    "opened_source_count",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "source-opening-ledger.v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "response_or_export_id": {"type": "string", "minLength": 1},
+    "discovered_urls": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+    "cited_urls": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+    "opening_events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["event_id", "tool_call_id", "action_type", "timestamp", "url"],
+        "properties": {
+          "event_id": {"type": "string", "minLength": 1},
+          "tool_call_id": {"type": "string", "minLength": 1},
+          "action_type": {"enum": ["open_page", "open", "browse"]},
+          "timestamp": {"type": "string"},
+          "url": {"type": "string", "format": "uri"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "discovered_source_count": {"type": "integer", "minimum": 0},
+    "cited_source_count": {"type": "integer", "minimum": 1},
+    "opened_source_count": {"type": "integer", "minimum": 1},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

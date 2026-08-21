@@ -1,101 +1,91 @@
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" viewBox="0 0 1174 368" width="1174" height="368">
-  <title id="t">AI 帮你做传统测试：模块全景</title>
-  <desc id="d">AI 生成的测试要先证明它能发现缺陷，再谈提效。</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <title id="title">AI 帮你做传统测试｜专业关系图</title>
+  <desc id="desc">风险提取、候选生成、Mutation 与人工接受如何证明测试检测力而非生成数量？ 图中区分数据流、控制流、证据流与反馈回路，并显示失败路径、系统边界和责任门禁。</desc>
   <defs>
-    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
-    </filter>
-    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
-    </filter>
-    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0e3026"/>
-      <stop offset="1" stop-color="#174a3a"/>
-    </linearGradient>
-    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
-    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
-    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
-    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f32" flood-opacity="0.12"/></filter>
+    <marker id="arrow-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4f7fb8"/></marker>
+<marker id="arrow-control" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c9852c"/></marker>
+<marker id="arrow-evidence" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#765ca6"/></marker>
+<marker id="arrow-feedback" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2c7b61"/></marker>
   </defs>
-  <style>
-    .ds-bg{fill:#fbfaf6}
-    .ds-header{fill:url(#ds-header-grad)}
-    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
-    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
-    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
-    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
-    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
-    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
-    .ds-node rect{stroke-width:1.4}
-    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
-    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
-    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
-    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
-    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-</style>
-  <rect class="ds-bg" x="0" y="0" width="1174" height="368" rx="22"/>
-
-  <rect class="ds-header" x="0" y="0" width="1174" height="104" rx="22"/>
-  <rect class="ds-header" x="0" y="82" width="1174" height="22"/>
-  <text class="ds-eyebrow" x="36" y="32">TD-M02</text>
-  <text class="ds-subtitle" x="1138" y="32" text-anchor="end">用 AI 提效，但必须证明生成结果有检测力</text>
-  <text class="ds-title" x="36" y="74">AI 帮你做传统测试</text>
-  <text class="ds-source" x="36" y="126">AI 生成的测试要先证明它能发现缺陷，再谈提效。</text>
-
-    <g class="ds-node" filter="url(#ds-strong)">
-      <rect x="32" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="2"/>
-      <rect x="32" y="136" width="6" height="124" rx="3" fill="#93bd2c"/>
-      <circle cx="50" cy="154" r="11" fill="#174a3a" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="50" y="157" text-anchor="middle" fill="#ffffff">01</text>
-      <text class="ds-node-title" x="47" y="184">提取变更风险</text>
-      <text class="ds-node-detail" x="47" y="199">→ 带引用的风险候选包</text>
+  <rect width="1600" height="1000" rx="32" fill="#f4f7f2"/>
+  <rect x="0" y="0" width="1600" height="146" rx="32" fill="#174f3f"/>
+  <text x="72" y="48" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" font-weight="800" fill="#b8dd78">TD-M02 · detection-loop · module-detection-loop</text>
+  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">AI帮你做传统测试｜专业关系图</text>
+  <text x="72" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="600" fill="#d9e9df">风险提取、候选生成、Mutation与人工接受如何证明测试检测力而非生成数量？</text>
+  <rect x="54" y="172" width="1492" height="590" rx="26" fill="#fbfdfb" stroke="#c9d6cf" stroke-width="2"/>
+  <text x="82" y="204" font-size="17" font-weight="800" fill="#52665e">系统边界 · 不覆盖 AI 系统本身的测试，这里 AI 是工具不是被测对象；不承诺提效数字，提效必须用 ba…</text>
+  <path d="M 250 305 C 325 305, 390 305, 465 305" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 625 305 C 700 305, 765 305, 840 305" fill="none" stroke="#c9852c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-control)" opacity="0.92"/>
+<path d="M 1000 305 C 1075 305, 1140 305, 1215 305" fill="none" stroke="#765ca6" stroke-width="4" stroke-dasharray="4 6" marker-end="url(#arrow-evidence)" opacity="0.92"/>
+<path d="M 1375 305 C 1450 305, 15 575, 90 575" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 250 575 C 325 575, 390 575, 465 575" fill="none" stroke="#c9852c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-control)" opacity="0.92"/>
+<path d="M 625 575 C 700 575, 765 575, 840 575" fill="none" stroke="#765ca6" stroke-width="4" stroke-dasharray="4 6" marker-end="url(#arrow-evidence)" opacity="0.92"/>
+<path d="M 1000 575 C 1075 575, 1140 575, 1215 575" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 1375 575 C 1450 575, 390 305, 465 305" fill="none" stroke="#2c7b61" stroke-width="4" stroke-dasharray="14 6" marker-end="url(#arrow-feedback)" opacity="0.92"/>
+  <g filter="url(#shadow)">
+      <rect x="90" y="245" width="320" height="120" rx="22" fill="#ffffff" stroke="#4f7fb8" stroke-width="3"/>
+      <rect x="90" y="245" width="12" height="120" rx="6" fill="#4f7fb8"/>
+      <text x="118" y="273" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#4f7fb8">01</text>
+      <text x="118" y="307" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">提取变更风险→带引用的风险候选包</text>
     </g>
-<text class="ds-node-detail" x="47" y="234" fill="#5f6c66">这次改动的风险面在哪里？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="316" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="334" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="334" y="157" text-anchor="middle" fill="#85908a">02</text>
-      <text class="ds-node-title" x="331" y="184">生成并验证检测力</text>
-      <text class="ds-node-detail" x="331" y="199">→ 候选包与 Mutation 处置报告</text>
+<g filter="url(#shadow)">
+      <rect x="465" y="245" width="320" height="120" rx="22" fill="#ffffff" stroke="#2c7b61" stroke-width="3"/>
+      <rect x="465" y="245" width="12" height="120" rx="6" fill="#2c7b61"/>
+      <text x="493" y="273" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#2c7b61">02</text>
+      <text x="493" y="307" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">生成并验证检测力→候选包与Mutation处</text>
+<text x="493" y="337" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">置报告</text>
     </g>
-<text class="ds-node-detail" x="331" y="234" fill="#5f6c66">这批用例杀掉了几个注入缺陷？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="600" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="618" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="618" y="157" text-anchor="middle" fill="#85908a">03</text>
-      <text class="ds-node-title" x="615" y="184">选择测试方法</text>
-      <text class="ds-node-detail" x="615" y="199">→ 方法决策矩阵与最小反例</text>
+<g filter="url(#shadow)">
+      <rect x="840" y="245" width="320" height="120" rx="22" fill="#ffffff" stroke="#765ca6" stroke-width="3"/>
+      <rect x="840" y="245" width="12" height="120" rx="6" fill="#765ca6"/>
+      <text x="868" y="273" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#765ca6">03</text>
+      <text x="868" y="307" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">选择测试方法→方法决策矩阵与最小反例</text>
     </g>
-<text class="ds-node-detail" x="615" y="234" fill="#5f6c66">边界、组合、属性还是 Fuzz？</text>
-
-    <g class="ds-node" filter="url(#ds-strong)">
-      <rect x="884" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="2"/>
-      <rect x="884" y="136" width="6" height="124" rx="3" fill="#93bd2c"/>
-      <circle cx="902" cy="154" r="11" fill="#174a3a" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="902" y="157" text-anchor="middle" fill="#ffffff">04</text>
-      <text class="ds-node-title" x="899" y="184">归类失败</text>
-      <text class="ds-node-detail" x="899" y="199">→ 失败聚类与假设账本</text>
+<g filter="url(#shadow)">
+      <rect x="1215" y="245" width="320" height="120" rx="22" fill="#ffffff" stroke="#c9852c" stroke-width="3"/>
+      <rect x="1215" y="245" width="12" height="120" rx="6" fill="#c9852c"/>
+      <text x="1243" y="273" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#c9852c">04</text>
+      <text x="1243" y="307" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">归类失败→失败聚类与假设账本</text>
     </g>
-<text class="ds-node-detail" x="899" y="234" fill="#5f6c66">一百个失败是几个原因？</text>
-
-    <path d="M 290 198 L 310 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 574 198 L 594 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 858 198 L 878 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-<circle cx="38" cy="272" r="4" fill="#174a3a"/><text class="ds-legend" x="48" y="276">阶段顺序不可交换</text><circle cx="113" cy="272" r="4" fill="#93bd2c"/><text class="ds-legend" x="123" y="276">→ 后为该段出口工件</text>
-
-  <rect x="28" y="294" width="1118" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
-  <text class="ds-footbadge" x="46" y="320">模块边界</text>
-  <text class="ds-foot" x="46" y="342">不覆盖 AI 系统本身的测试，这里 AI 是工具不是被测对象；不承诺提效数字，提效必须用 baseline 对照实验证明（见 TD-T26）</text>
+<g filter="url(#shadow)">
+      <rect x="90" y="515" width="320" height="120" rx="22" fill="#ffffff" stroke="#4f7fb8" stroke-width="3"/>
+      <rect x="90" y="515" width="12" height="120" rx="6" fill="#4f7fb8"/>
+      <text x="118" y="543" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#4f7fb8">05</text>
+      <text x="118" y="577" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Basis/版本</text>
+    </g>
+<g filter="url(#shadow)">
+      <rect x="465" y="515" width="320" height="120" rx="22" fill="#ffffff" stroke="#2c7b61" stroke-width="3"/>
+      <rect x="465" y="515" width="12" height="120" rx="6" fill="#2c7b61"/>
+      <text x="493" y="543" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#2c7b61">06</text>
+      <text x="493" y="577" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">OwnerGate</text>
+    </g>
+<g filter="url(#shadow)">
+      <rect x="840" y="515" width="320" height="120" rx="22" fill="#ffffff" stroke="#765ca6" stroke-width="3"/>
+      <rect x="840" y="515" width="12" height="120" rx="6" fill="#765ca6"/>
+      <text x="868" y="543" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#765ca6">07</text>
+      <text x="868" y="577" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">FAIL/BLOCKED</text>
+    </g>
+<g filter="url(#shadow)">
+      <rect x="1215" y="515" width="320" height="120" rx="22" fill="#ffffff" stroke="#c9852c" stroke-width="3"/>
+      <rect x="1215" y="515" width="12" height="120" rx="6" fill="#c9852c"/>
+      <text x="1243" y="543" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#c9852c">08</text>
+      <text x="1243" y="577" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">反馈重跑</text>
+    </g>
+  <g transform="translate(70 788)">
+    <rect width="710" height="112" rx="20" fill="#fff4ef" stroke="#e5aaa2" stroke-width="2"/>
+    <text x="24" y="32" font-size="18" font-weight="900" fill="#b84c42">失败路径</text>
+    <text x="24" y="62" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">任一关键输入、权限、Oracle、版本或终态证据缺失时进入</text>
+<text x="24" y="87" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">FAIL/BLOCKED/UNKNOWN，不静默通过。</text>
+  </g>
+  <g transform="translate(820 788)">
+    <rect width="710" height="112" rx="20" fill="#eef8f2" stroke="#9bc6ac" stroke-width="2"/>
+    <text x="24" y="32" font-size="18" font-weight="900" fill="#2c7b61">反馈闭环 · Owner Gate</text>
+    <text x="24" y="62" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">失败证据回到最早分叉点，修复后使用同一版本输入重跑并产生新receipt。业务/</text>
+<text x="24" y="87" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">质量Owner批准判据、风险接受与发布；AI只生成候选和整理证据。</text>
+  </g>
+  <g transform="translate(100 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#4f7fb8" stroke-width="5" stroke-dasharray=""/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">数据流</text></g>
+<g transform="translate(345 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#c9852c" stroke-width="5" stroke-dasharray="10 7"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">控制流</text></g>
+<g transform="translate(590 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#765ca6" stroke-width="5" stroke-dasharray="4 6"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">证据流</text></g>
+<g transform="translate(835 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#2c7b61" stroke-width="5" stroke-dasharray="14 6"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">反馈闭环</text></g>
 </svg>

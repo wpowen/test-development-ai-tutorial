@@ -28,15 +28,24 @@
           "report_path": {"type": "string", "minLength": 1},
           "citations_path": {"type": "string", "minLength": 1},
           "tool_calls_path": {"type": "string", "minLength": 1},
+          "source_opening_ledger_path": {"type": "string", "minLength": 1},
           "input_sha256": {"pattern": "^sha256:[0-9a-f]{64}$"},
           "output_sha256": {"pattern": "^sha256:[0-9a-f]{64}$"},
           "data_sources": {"type": "array", "minItems": 1, "items": {"enum": ["web_search", "file_search", "remote_mcp", "code_interpreter"]}},
           "tool_call_count": {"type": "integer", "minimum": 1},
           "citation_count": {"type": "integer", "minimum": 1},
+          "discovered_source_count": {"type": "integer", "minimum": 0},
+          "cited_source_count": {"type": "integer", "minimum": 1},
           "opened_source_count": {"type": "integer", "minimum": 1},
           "status": {"const": "completed"},
           "limitations": {"type": "array", "items": {"type": "string"}}
         },
+        "allOf": [
+          {
+            "if": {"properties": {"surface": {"const": "openai-responses-api"}}, "required": ["surface"]},
+            "then": {"required": ["source_opening_ledger_path", "discovered_source_count", "cited_source_count"]}
+          }
+        ],
         "additionalProperties": true
       }
     }

@@ -1,114 +1,95 @@
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" viewBox="0 0 1174 538" width="1174" height="538">
-  <title id="t">专业专题与 Capstone：模块全景</title>
-  <desc id="d">把前面所有模块的工件接进真实工程系统，交出一条能审计的完整链路。</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <title id="title">专业专题与 Capstone｜专业关系图</title>
+  <desc id="desc">需求、代码、CI、Kubernetes、事件总线与 Release Candidate 如何连接且可重放？ 图中区分数据流、控制流、证据流与反馈回路，并显示失败路径、系统边界和责任门禁。</desc>
   <defs>
-    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
-    </filter>
-    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
-    </filter>
-    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0e3026"/>
-      <stop offset="1" stop-color="#174a3a"/>
-    </linearGradient>
-    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
-    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
-    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
-    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f32" flood-opacity="0.12"/></filter>
+    <marker id="arrow-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4f7fb8"/></marker>
+<marker id="arrow-control" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c9852c"/></marker>
+<marker id="arrow-evidence" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#765ca6"/></marker>
+<marker id="arrow-feedback" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2c7b61"/></marker>
   </defs>
-  <style>
-    .ds-bg{fill:#fbfaf6}
-    .ds-header{fill:url(#ds-header-grad)}
-    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
-    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
-    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
-    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
-    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
-    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
-    .ds-node rect{stroke-width:1.4}
-    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
-    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
-    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
-    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
-    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-</style>
-  <rect class="ds-bg" x="0" y="0" width="1174" height="538" rx="22"/>
-
-  <rect class="ds-header" x="0" y="0" width="1174" height="104" rx="22"/>
-  <rect class="ds-header" x="0" y="82" width="1174" height="22"/>
-  <text class="ds-eyebrow" x="36" y="32">TD-M07</text>
-  <text class="ds-subtitle" x="1138" y="32" text-anchor="end">按岗位路线组合工件，交付端到端 AI Quality Engineering 系统</text>
-  <text class="ds-title" x="36" y="74">专业专题与 Capstone</text>
-  <text class="ds-source" x="36" y="126">把前面所有模块的工件接进真实工程系统，交出一条能审计的完整链路。</text>
-
-    <g class="ds-node" filter="url(#ds-strong)">
-      <rect x="32" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="2"/>
-      <rect x="32" y="136" width="6" height="124" rx="3" fill="#93bd2c"/>
-      <circle cx="50" cy="154" r="11" fill="#174a3a" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="50" y="157" text-anchor="middle" fill="#ffffff">01</text>
-      <text class="ds-node-title" x="47" y="184">需求侧接入</text>
-      <text class="ds-node-detail" x="47" y="199">→ requirement event 与 Basis Gate 报</text><text class="ds-node-detail" x="47" y="213">告</text>
+  <rect width="1600" height="1000" rx="32" fill="#f4f7f2"/>
+  <rect x="0" y="0" width="1600" height="146" rx="32" fill="#174f3f"/>
+  <text x="72" y="48" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" font-weight="800" fill="#b8dd78">TD-M07 · integration-topology · module-platform-topology</text>
+  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">专业专题与Capstone｜专业关系图</text>
+  <text x="72" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="600" fill="#d9e9df">需求、代码、CI、Kubernetes、事件总线与ReleaseCandidate如何连接且可重放？</text>
+  <rect x="54" y="172" width="1492" height="590" rx="26" fill="#fbfdfb" stroke="#c9d6cf" stroke-width="2"/>
+  <text x="82" y="204" font-size="17" font-weight="800" fill="#52665e">系统边界 · 不覆盖 Jira / GitLab / K8s 的运维与安装；所有集成基于夹具与本地模拟，未接…</text>
+  <path d="M 810 480 C 885 480, 1095 480, 1170 480" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 1330 480 C 1405 480, 899.2146969665414 671.5487132046674, 974.2146969665414 671.5487132046674" fill="none" stroke="#c9852c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-control)" opacity="0.92"/>
+<path d="M 1134.2146969665414 671.5487132046674 C 1209.2146969665414 671.5487132046674, 459.2891143427165 718.8573384845467, 534.2891143427165 718.8573384845467" fill="none" stroke="#765ca6" stroke-width="4" stroke-dasharray="4 6" marker-end="url(#arrow-evidence)" opacity="0.92"/>
+<path d="M 694.2891143427165 718.8573384845467 C 769.2891143427165 718.8573384845467, 106.49618869074209 586.3015160838017, 181.4961886907421 586.3015160838017" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 341.4961886907421 586.3015160838017 C 416.4961886907421 586.3015160838017, 106.49618869074203 373.69848391619826, 181.49618869074203 373.69848391619826" fill="none" stroke="#c9852c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-control)" opacity="0.92"/>
+<path d="M 341.49618869074203 373.69848391619826 C 416.49618869074203 373.69848391619826, 459.2891143427164 241.14266151545323, 534.2891143427164 241.14266151545323" fill="none" stroke="#765ca6" stroke-width="4" stroke-dasharray="4 6" marker-end="url(#arrow-evidence)" opacity="0.92"/>
+<path d="M 694.2891143427164 241.14266151545323 C 769.2891143427164 241.14266151545323, 899.2146969665414 288.45128679533263, 974.2146969665414 288.45128679533263" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 1134.2146969665414 288.45128679533263 C 1209.2146969665414 288.45128679533263, 1095 480, 1170 480" fill="none" stroke="#2c7b61" stroke-width="4" stroke-dasharray="14 6" marker-end="url(#arrow-feedback)" opacity="0.92"/>
+  <g filter="url(#shadow)">
+      <rect x="650" y="420" width="320" height="120" rx="22" fill="#ffffff" stroke="#4f7fb8" stroke-width="3"/>
+      <rect x="650" y="420" width="12" height="120" rx="6" fill="#4f7fb8"/>
+      <text x="678" y="448" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#4f7fb8">01</text>
+      <text x="678" y="482" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">需求侧接入→requirementevent与</text>
+<text x="678" y="512" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Basis…</text>
     </g>
-<text class="ds-node-detail" x="47" y="234" fill="#5f6c66">需求变更怎么触发重新验证？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="316" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="334" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="334" y="157" text-anchor="middle" fill="#85908a">02</text>
-      <text class="ds-node-title" x="331" y="184">代码侧门禁</text>
-      <text class="ds-node-detail" x="331" y="199">→ MR 门禁 Manifest 与 SHA status</text>
+<g filter="url(#shadow)">
+      <rect x="1170" y="420" width="320" height="120" rx="22" fill="#ffffff" stroke="#2c7b61" stroke-width="3"/>
+      <rect x="1170" y="420" width="12" height="120" rx="6" fill="#2c7b61"/>
+      <text x="1198" y="448" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#2c7b61">02</text>
+      <text x="1198" y="482" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">代码侧门禁→MR门禁Manifest与SHAstat</text>
+<text x="1198" y="512" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">…</text>
     </g>
-<text class="ds-node-detail" x="331" y="234" fill="#5f6c66">这份证据属于哪个 commit？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="600" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="618" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="618" y="157" text-anchor="middle" fill="#85908a">03</text>
-      <text class="ds-node-title" x="615" y="184">环境隔离</text>
-      <text class="ds-node-detail" x="615" y="199">→ Ephemeral Environment Manifest</text>
+<g filter="url(#shadow)">
+      <rect x="974.2146969665414" y="611.5487132046674" width="320" height="120" rx="22" fill="#ffffff" stroke="#765ca6" stroke-width="3"/>
+      <rect x="974.2146969665414" y="611.5487132046674" width="12" height="120" rx="6" fill="#765ca6"/>
+      <text x="1002.2146969665414" y="639.5487132046674" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#765ca6">03</text>
+      <text x="1002.2146969665414" y="673.5487132046674" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">环境隔离→EphemeralEnvironmentMani</text>
+<text x="1002.2146969665414" y="703.5487132046674" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">…</text>
     </g>
-<text class="ds-node-detail" x="615" y="234" fill="#5f6c66">并发跑的测试会互相串号吗？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="884" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="902" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="902" y="157" text-anchor="middle" fill="#85908a">04</text>
-      <text class="ds-node-title" x="899" y="184">跨系统事件</text>
-      <text class="ds-node-detail" x="899" y="199">→ 事件包与 Inbox/Outbox/DLQ 记录</text>
+<g filter="url(#shadow)">
+      <rect x="534.2891143427165" y="658.8573384845467" width="320" height="120" rx="22" fill="#ffffff" stroke="#c9852c" stroke-width="3"/>
+      <rect x="534.2891143427165" y="658.8573384845467" width="12" height="120" rx="6" fill="#c9852c"/>
+      <text x="562.2891143427165" y="686.8573384845467" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#c9852c">04</text>
+      <text x="562.2891143427165" y="720.8573384845467" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">跨系统事件→事件包与</text>
+<text x="562.2891143427165" y="750.8573384845467" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Inbox/Outbox/DLQ记录</text>
     </g>
-<text class="ds-node-detail" x="899" y="234" fill="#5f6c66">重复投递会重复执行吗？</text>
-
-    <g class="ds-node" filter="url(#ds-strong)">
-      <rect x="32" y="306" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="2"/>
-      <rect x="32" y="306" width="6" height="124" rx="3" fill="#93bd2c"/>
-      <circle cx="50" cy="324" r="11" fill="#174a3a" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="50" y="327" text-anchor="middle" fill="#ffffff">05</text>
-      <text class="ds-node-title" x="47" y="354">端到端交付</text>
-      <text class="ds-node-detail" x="47" y="369">→ Fixture Release Candidate</text>
+<g filter="url(#shadow)">
+      <rect x="181.4961886907421" y="526.3015160838017" width="320" height="120" rx="22" fill="#ffffff" stroke="#4f7fb8" stroke-width="3"/>
+      <rect x="181.4961886907421" y="526.3015160838017" width="12" height="120" rx="6" fill="#4f7fb8"/>
+      <text x="209.4961886907421" y="554.3015160838017" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#4f7fb8">05</text>
+      <text x="209.4961886907421" y="588.3015160838017" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">端到端交付→FixtureRelease</text>
+<text x="209.4961886907421" y="618.3015160838017" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Candidate</text>
     </g>
-<text class="ds-node-detail" x="47" y="404" fill="#5f6c66">这个版本凭什么可以发？</text>
-
-    <path d="M 290 198 L 310 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 574 198 L 594 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 858 198 L 878 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 1013 260 C 1053 260, 121 300, 161 300" fill="none" stroke="#85908a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-soft)"/>
-    
-<circle cx="38" cy="442" r="4" fill="#174a3a"/><text class="ds-legend" x="48" y="446">阶段顺序不可交换</text><circle cx="113" cy="442" r="4" fill="#93bd2c"/><text class="ds-legend" x="123" y="446">→ 后为该段出口工件</text>
-
-  <rect x="28" y="464" width="1118" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
-  <text class="ds-footbadge" x="46" y="490">模块边界</text>
-  <text class="ds-foot" x="46" y="512">不覆盖 Jira / GitLab / K8s 的运维与安装；所有集成基于夹具与本地模拟，未接入生产实例</text>
+<g filter="url(#shadow)">
+      <rect x="181.49618869074203" y="313.69848391619826" width="320" height="120" rx="22" fill="#ffffff" stroke="#2c7b61" stroke-width="3"/>
+      <rect x="181.49618869074203" y="313.69848391619826" width="12" height="120" rx="6" fill="#2c7b61"/>
+      <text x="209.49618869074203" y="341.69848391619826" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#2c7b61">06</text>
+      <text x="209.49618869074203" y="375.69848391619826" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Basis/版本</text>
+    </g>
+<g filter="url(#shadow)">
+      <rect x="534.2891143427164" y="181.14266151545323" width="320" height="120" rx="22" fill="#ffffff" stroke="#765ca6" stroke-width="3"/>
+      <rect x="534.2891143427164" y="181.14266151545323" width="12" height="120" rx="6" fill="#765ca6"/>
+      <text x="562.2891143427164" y="209.14266151545323" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#765ca6">07</text>
+      <text x="562.2891143427164" y="243.14266151545323" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">OwnerGate</text>
+    </g>
+<g filter="url(#shadow)">
+      <rect x="974.2146969665414" y="228.45128679533266" width="320" height="120" rx="22" fill="#ffffff" stroke="#c9852c" stroke-width="3"/>
+      <rect x="974.2146969665414" y="228.45128679533266" width="12" height="120" rx="6" fill="#c9852c"/>
+      <text x="1002.2146969665414" y="256.45128679533263" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#c9852c">08</text>
+      <text x="1002.2146969665414" y="290.45128679533263" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">FAIL/BLOCKED</text>
+    </g>
+  <g transform="translate(70 788)">
+    <rect width="710" height="112" rx="20" fill="#fff4ef" stroke="#e5aaa2" stroke-width="2"/>
+    <text x="24" y="32" font-size="18" font-weight="900" fill="#b84c42">失败路径</text>
+    <text x="24" y="62" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">任一关键输入、权限、Oracle、版本或终态证据缺失时进入</text>
+<text x="24" y="87" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">FAIL/BLOCKED/UNKNOWN，不静默通过。</text>
+  </g>
+  <g transform="translate(820 788)">
+    <rect width="710" height="112" rx="20" fill="#eef8f2" stroke="#9bc6ac" stroke-width="2"/>
+    <text x="24" y="32" font-size="18" font-weight="900" fill="#2c7b61">反馈闭环 · Owner Gate</text>
+    <text x="24" y="62" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">失败证据回到最早分叉点，修复后使用同一版本输入重跑并产生新receipt。业务/</text>
+<text x="24" y="87" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">质量Owner批准判据、风险接受与发布；AI只生成候选和整理证据。</text>
+  </g>
+  <g transform="translate(100 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#4f7fb8" stroke-width="5" stroke-dasharray=""/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">数据流</text></g>
+<g transform="translate(345 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#c9852c" stroke-width="5" stroke-dasharray="10 7"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">控制流</text></g>
+<g transform="translate(590 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#765ca6" stroke-width="5" stroke-dasharray="4 6"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">证据流</text></g>
+<g transform="translate(835 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#2c7b61" stroke-width="5" stroke-dasharray="14 6"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">反馈闭环</text></g>
 </svg>

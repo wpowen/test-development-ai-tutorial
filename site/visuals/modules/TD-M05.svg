@@ -1,140 +1,93 @@
-<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="t d" viewBox="0 0 1174 538" width="1174" height="538">
-  <title id="t">建设 AI 质量系统：模块全景</title>
-  <desc id="d">评测只有接进 CI 和生产回灌，才会持续有效。</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <title id="title">建设 AI 质量系统｜专业关系图</title>
+  <desc id="desc">离线 Eval、CI、Canary、生产 Trace、回归集与回滚如何形成持续质量闭环？ 图中区分数据流、控制流、证据流与反馈回路，并显示失败路径、系统边界和责任门禁。</desc>
   <defs>
-    <filter id="ds-soft" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0e3026" flood-opacity="0.08"/>
-    </filter>
-    <filter id="ds-strong" x="-20%" y="-20%" width="140%" height="150%">
-      <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="#0e3026" flood-opacity="0.13"/>
-    </filter>
-    <linearGradient id="ds-header-grad" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#0e3026"/>
-      <stop offset="1" stop-color="#174a3a"/>
-    </linearGradient>
-    <marker id="ds-arw-forest" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#174a3a"/></marker>
-    <marker id="ds-arw-amber" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a96a18"/></marker>
-    <marker id="ds-arw-red" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b2402f"/></marker>
-    <marker id="ds-arw-soft" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#85908a"/></marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f32" flood-opacity="0.12"/></filter>
+    <marker id="arrow-data" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4f7fb8"/></marker>
+<marker id="arrow-control" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#c9852c"/></marker>
+<marker id="arrow-evidence" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#765ca6"/></marker>
+<marker id="arrow-feedback" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2c7b61"/></marker>
   </defs>
-  <style>
-    .ds-bg{fill:#fbfaf6}
-    .ds-header{fill:url(#ds-header-grad)}
-    .ds-eyebrow{font:700 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.16em;fill:#93bd2c}
-    .ds-title{font:800 26px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#ffffff}
-    .ds-subtitle{font:500 13px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#d9e8e0}
-    .ds-source{font:500 10.5px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#9db7ab}
-    .ds-section{font:800 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.12em;fill:#174a3a}
-    .ds-foot{font:500 11px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-    .ds-footbadge{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;letter-spacing:.1em;fill:#a96a18}
-    .ds-node rect{stroke-width:1.4}
-    .ds-node-title{font:800 13.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#1c2924}
-    .ds-node-detail{font:500 10.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-    .ds-node-index{font:800 10px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#85908a}
-    .ds-edge{fill:none;stroke:#174a3a;stroke-width:2}
-    .ds-edge-label{font:600 9.5px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66;paint-order:stroke;stroke:#fbfaf6;stroke-width:4px}
-    .ds-legend{font:500 10px -apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;fill:#5f6c66}
-</style>
-  <rect class="ds-bg" x="0" y="0" width="1174" height="538" rx="22"/>
-
-  <rect class="ds-header" x="0" y="0" width="1174" height="104" rx="22"/>
-  <rect class="ds-header" x="0" y="82" width="1174" height="22"/>
-  <text class="ds-eyebrow" x="36" y="32">TD-M05</text>
-  <text class="ds-subtitle" x="1138" y="32" text-anchor="end">把评测接入 CI、生产反馈、版本与回滚体系</text>
-  <text class="ds-title" x="36" y="74">建设 AI 质量系统</text>
-  <text class="ds-source" x="36" y="126">评测只有接进 CI 和生产回灌，才会持续有效。</text>
-
-    <g class="ds-node" filter="url(#ds-strong)">
-      <rect x="32" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="2"/>
-      <rect x="32" y="136" width="6" height="124" rx="3" fill="#93bd2c"/>
-      <circle cx="50" cy="154" r="11" fill="#174a3a" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="50" y="157" text-anchor="middle" fill="#ffffff">01</text>
-      <text class="ds-node-title" x="47" y="184">模型更新验收</text>
-      <text class="ds-node-detail" x="47" y="199">→ 更新 manifest 与污染门禁</text>
+  <rect width="1600" height="1000" rx="32" fill="#f4f7f2"/>
+  <rect x="0" y="0" width="1600" height="146" rx="32" fill="#174f3f"/>
+  <text x="72" y="48" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" font-weight="800" fill="#b8dd78">TD-M05 · feedback-loop · module-quality-feedback</text>
+  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">建设AI质量系统｜专业关系图</text>
+  <text x="72" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="600" fill="#d9e9df">离线Eval、CI、Canary、生产Trace、回归集与回滚如何形成持续质量闭环？</text>
+  <rect x="54" y="172" width="1492" height="590" rx="26" fill="#fbfdfb" stroke="#c9d6cf" stroke-width="2"/>
+  <text x="82" y="204" font-size="17" font-weight="800" fill="#52665e">系统边界 · 不覆盖 MLOps 的训练流水线与特征工程；不覆盖具体 CI 平台的配置语法，给的是分层与门禁…</text>
+  <path d="M 260 310 C 335 310, 395 310, 470 310" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 630 310 C 705 310, 765 310, 840 310" fill="none" stroke="#c9852c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-control)" opacity="0.92"/>
+<path d="M 1000 310 C 1075 310, 1135 310, 1210 310" fill="none" stroke="#765ca6" stroke-width="4" stroke-dasharray="4 6" marker-end="url(#arrow-evidence)" opacity="0.92"/>
+<path d="M 1370 310 C 1445 310, 25 560, 100 560" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 260 560 C 335 560, 395 560, 470 560" fill="none" stroke="#c9852c" stroke-width="4" stroke-dasharray="10 7" marker-end="url(#arrow-control)" opacity="0.92"/>
+<path d="M 630 560 C 705 560, 765 560, 840 560" fill="none" stroke="#765ca6" stroke-width="4" stroke-dasharray="4 6" marker-end="url(#arrow-evidence)" opacity="0.92"/>
+<path d="M 1000 560 C 1075 560, 1135 560, 1210 560" fill="none" stroke="#4f7fb8" stroke-width="4" stroke-dasharray="" marker-end="url(#arrow-data)" opacity="0.92"/>
+<path d="M 1370 560 C 1445 560, 395 310, 470 310" fill="none" stroke="#2c7b61" stroke-width="4" stroke-dasharray="14 6" marker-end="url(#arrow-feedback)" opacity="0.92"/>
+  <g filter="url(#shadow)">
+      <rect x="100" y="250" width="320" height="120" rx="22" fill="#ffffff" stroke="#4f7fb8" stroke-width="3"/>
+      <rect x="100" y="250" width="12" height="120" rx="6" fill="#4f7fb8"/>
+      <text x="128" y="278" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#4f7fb8">01</text>
+      <text x="128" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">模型更新验收→更新manifest与污染门禁</text>
     </g>
-<text class="ds-node-detail" x="47" y="234" fill="#5f6c66">新版本比旧版本好在哪个切片？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="316" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="334" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="334" y="157" text-anchor="middle" fill="#85908a">02</text>
-      <text class="ds-node-title" x="331" y="184">公平与人工介入</text>
-      <text class="ds-node-detail" x="331" y="199">→ 群体切片报告与 override 账本</text>
+<g filter="url(#shadow)">
+      <rect x="470" y="250" width="320" height="120" rx="22" fill="#ffffff" stroke="#2c7b61" stroke-width="3"/>
+      <rect x="470" y="250" width="12" height="120" rx="6" fill="#2c7b61"/>
+      <text x="498" y="278" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#2c7b61">02</text>
+      <text x="498" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">公平与人工介入→群体切片报告与</text>
+<text x="498" y="342" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">override账本</text>
     </g>
-<text class="ds-node-detail" x="331" y="234" fill="#5f6c66">人工复核真的起作用了吗？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="600" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="618" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="618" y="157" text-anchor="middle" fill="#85908a">03</text>
-      <text class="ds-node-title" x="615" y="184">接入 CI</text>
-      <text class="ds-node-detail" x="615" y="199">→ 分层 Quality CI Workflow</text>
+<g filter="url(#shadow)">
+      <rect x="840" y="250" width="320" height="120" rx="22" fill="#ffffff" stroke="#765ca6" stroke-width="3"/>
+      <rect x="840" y="250" width="12" height="120" rx="6" fill="#765ca6"/>
+      <text x="868" y="278" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#765ca6">03</text>
+      <text x="868" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">接入CI→分层QualityCIWorkflow</text>
     </g>
-<text class="ds-node-detail" x="615" y="234" fill="#5f6c66">哪一层该在几分钟内变红？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="884" y="136" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="902" cy="154" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="902" y="157" text-anchor="middle" fill="#85908a">04</text>
-      <text class="ds-node-title" x="899" y="184">版本谱系</text>
-      <text class="ds-node-detail" x="899" y="199">→ Lineage 账本与可比性检查</text>
+<g filter="url(#shadow)">
+      <rect x="1210" y="250" width="320" height="120" rx="22" fill="#ffffff" stroke="#c9852c" stroke-width="3"/>
+      <rect x="1210" y="250" width="12" height="120" rx="6" fill="#c9852c"/>
+      <text x="1238" y="278" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#c9852c">04</text>
+      <text x="1238" y="312" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">版本谱系→Lineage账本与可比性检查</text>
     </g>
-<text class="ds-node-detail" x="899" y="234" fill="#5f6c66">这两个分数可比吗？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="32" y="306" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="50" cy="324" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="50" y="327" text-anchor="middle" fill="#85908a">05</text>
-      <text class="ds-node-title" x="47" y="354">生产回灌</text>
-      <text class="ds-node-detail" x="47" y="369">→ Trace-to-Regression 转换记录</text>
+<g filter="url(#shadow)">
+      <rect x="100" y="500" width="320" height="120" rx="22" fill="#ffffff" stroke="#4f7fb8" stroke-width="3"/>
+      <rect x="100" y="500" width="12" height="120" rx="6" fill="#4f7fb8"/>
+      <text x="128" y="528" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#4f7fb8">05</text>
+      <text x="128" y="562" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">生产回灌→Trace-to-Regression转换</text>
+<text x="128" y="592" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">记录</text>
     </g>
-<text class="ds-node-detail" x="47" y="404" fill="#5f6c66">线上这次失败进回归集了吗？</text>
-
-    <g class="ds-node" filter="url(#ds-soft)">
-      <rect x="316" y="306" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc"/>
-      
-      <circle cx="334" cy="324" r="11" fill="#ffffff" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="334" y="327" text-anchor="middle" fill="#85908a">06</text>
-      <text class="ds-node-title" x="331" y="354">三维联合门禁</text>
-      <text class="ds-node-detail" x="331" y="369">→ 质量—延迟—成本 Pareto</text>
+<g filter="url(#shadow)">
+      <rect x="470" y="500" width="320" height="120" rx="22" fill="#ffffff" stroke="#2c7b61" stroke-width="3"/>
+      <rect x="470" y="500" width="12" height="120" rx="6" fill="#2c7b61"/>
+      <text x="498" y="528" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#2c7b61">06</text>
+      <text x="498" y="562" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">三维联合门禁→质量—延迟—成本Pareto</text>
     </g>
-<text class="ds-node-detail" x="331" y="404" fill="#5f6c66">多花的成本换来了什么？</text>
-
-    <g class="ds-node" filter="url(#ds-strong)">
-      <rect x="600" y="306" width="258" height="124" rx="14" fill="#edf5f0" stroke="#c2d9cc" stroke-width="2"/>
-      <rect x="600" y="306" width="6" height="124" rx="3" fill="#93bd2c"/>
-      <circle cx="618" cy="324" r="11" fill="#174a3a" stroke="#c2d9cc" stroke-width="1.4"/>
-       <text class="ds-node-index" x="618" y="327" text-anchor="middle" fill="#ffffff">07</text>
-      <text class="ds-node-title" x="615" y="354">漂移与回滚</text>
-      <text class="ds-node-detail" x="615" y="369">→ Waiver、Canary 与回滚 Runbook</text>
+<g filter="url(#shadow)">
+      <rect x="840" y="500" width="320" height="120" rx="22" fill="#ffffff" stroke="#765ca6" stroke-width="3"/>
+      <rect x="840" y="500" width="12" height="120" rx="6" fill="#765ca6"/>
+      <text x="868" y="528" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#765ca6">07</text>
+      <text x="868" y="562" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">漂移与回滚→Waiver、Canary与回滚</text>
+<text x="868" y="592" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Runbook</text>
     </g>
-<text class="ds-node-detail" x="615" y="404" fill="#5f6c66">豁免什么时候到期？</text>
-
-    <path d="M 290 198 L 310 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 574 198 L 594 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 858 198 L 878 198" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 1013 260 C 1053 260, 121 300, 161 300" fill="none" stroke="#85908a" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ds-arw-soft)"/>
-    
-
-    <path d="M 290 368 L 310 368" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-
-    <path d="M 574 368 L 594 368" fill="none" stroke="#174a3a" stroke-width="2" marker-end="url(#ds-arw-forest)"/>
-    
-<circle cx="38" cy="442" r="4" fill="#174a3a"/><text class="ds-legend" x="48" y="446">阶段顺序不可交换</text><circle cx="113" cy="442" r="4" fill="#93bd2c"/><text class="ds-legend" x="123" y="446">→ 后为该段出口工件</text>
-
-  <rect x="28" y="464" width="1118" height="46" rx="12" fill="#fdf1d8" stroke="#e3c07b" stroke-width="1.2"/>
-  <text class="ds-footbadge" x="46" y="490">模块边界</text>
-  <text class="ds-foot" x="46" y="512">不覆盖 MLOps 的训练流水线与特征工程；不覆盖具体 CI 平台的配置语法，给的是分层与门禁设计</text>
+<g filter="url(#shadow)">
+      <rect x="1210" y="500" width="320" height="120" rx="22" fill="#ffffff" stroke="#c9852c" stroke-width="3"/>
+      <rect x="1210" y="500" width="12" height="120" rx="6" fill="#c9852c"/>
+      <text x="1238" y="528" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="16" font-weight="800" fill="#c9852c">08</text>
+      <text x="1238" y="562" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="22" font-weight="700" fill="#13261f">Basis/版本</text>
+    </g>
+  <g transform="translate(70 788)">
+    <rect width="710" height="112" rx="20" fill="#fff4ef" stroke="#e5aaa2" stroke-width="2"/>
+    <text x="24" y="32" font-size="18" font-weight="900" fill="#b84c42">失败路径</text>
+    <text x="24" y="62" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">任一关键输入、权限、Oracle、版本或终态证据缺失时进入</text>
+<text x="24" y="87" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">FAIL/BLOCKED/UNKNOWN，不静默通过。</text>
+  </g>
+  <g transform="translate(820 788)">
+    <rect width="710" height="112" rx="20" fill="#eef8f2" stroke="#9bc6ac" stroke-width="2"/>
+    <text x="24" y="32" font-size="18" font-weight="900" fill="#2c7b61">反馈闭环 · Owner Gate</text>
+    <text x="24" y="62" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">失败证据回到最早分叉点，修复后使用同一版本输入重跑并产生新receipt。业务/</text>
+<text x="24" y="87" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="650" fill="#13261f">质量Owner批准判据、风险接受与发布；AI只生成候选和整理证据。</text>
+  </g>
+  <g transform="translate(100 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#4f7fb8" stroke-width="5" stroke-dasharray=""/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">数据流</text></g>
+<g transform="translate(345 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#c9852c" stroke-width="5" stroke-dasharray="10 7"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">控制流</text></g>
+<g transform="translate(590 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#765ca6" stroke-width="5" stroke-dasharray="4 6"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">证据流</text></g>
+<g transform="translate(835 936)"><line x1="0" y1="0" x2="56" y2="0" stroke="#2c7b61" stroke-width="5" stroke-dasharray="14 6"/><text x="70" y="7" font-size="20" font-weight="700" fill="#52665e">反馈闭环</text></g>
 </svg>

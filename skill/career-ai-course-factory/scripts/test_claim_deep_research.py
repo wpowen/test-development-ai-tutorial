@@ -180,6 +180,15 @@ class ClaimDeepResearchTests(unittest.TestCase):
         self.assertEqual(len(artifacts["citations"]), 1)
         self.assertEqual(len(artifacts["tool_calls"]), 1)
         self.assertEqual(artifacts["opened_source_count"], 1)
+        self.assertEqual(artifacts["discovered_source_count"], 2)
+        self.assertEqual(artifacts["cited_source_count"], 1)
+        self.assertEqual(artifacts["opening_events"], [{
+            "event_id": "ws_1",
+            "tool_call_id": "ws_1",
+            "action_type": "open_page",
+            "timestamp": "",
+            "url": "https://example.test/primary",
+        }])
         validate_completed_artifacts(response, artifacts)
 
     def test_citations_and_search_sources_do_not_prove_opening(self) -> None:
@@ -218,7 +227,35 @@ class ClaimDeepResearchTests(unittest.TestCase):
 
         artifacts = extract_response_artifacts(response)
         self.assertEqual(artifacts["opened_source_count"], 0)
+        self.assertEqual(artifacts["discovered_source_count"], 1)
+        self.assertEqual(artifacts["cited_source_count"], 1)
+        self.assertEqual(artifacts["opening_events"], [])
         with self.assertRaisesRegex(ValueError, "opened source"):
+            validate_completed_artifacts(response, artifacts)
+
+    def test_opened_count_cannot_be_self_reported_without_opening_events(self) -> None:
+        response = {
+            "id": "resp_123",
+            "status": "completed",
+            "output": [{
+                "type": "message",
+                "content": [{
+                    "type": "output_text",
+                    "text": "Finding.",
+                    "annotations": [{
+                        "type": "url_citation",
+                        "url": "https://example.test/source",
+                    }],
+                }],
+            }, {
+                "type": "web_search_call",
+                "id": "ws_1",
+                "action": {"type": "search", "sources": [{"url": "https://example.test/source"}]},
+            }],
+        }
+        artifacts = extract_response_artifacts(response)
+        artifacts["opened_source_count"] = 1
+        with self.assertRaisesRegex(ValueError, "opening event"):
             validate_completed_artifacts(response, artifacts)
 
     def test_completed_artifacts_fail_closed_without_trace_or_citations(self) -> None:

@@ -200,6 +200,8 @@ def extract_response_artifacts(response: dict[str, Any]) -> dict[str, Any]:
     report_parts: list[str] = []
     citations: list[dict[str, Any]] = []
     tool_calls: list[dict[str, Any]] = []
+    discovered_urls: set[str] = set()
+    cited_urls: set[str] = set()
     opened_urls: set[str] = set()
     opening_events: list[dict[str, str]] = []
     citation_keys: set[tuple[str, str, int, int]] = set()
@@ -215,13 +217,20 @@ def extract_response_artifacts(response: dict[str, Any]) -> dict[str, Any]:
             tool_calls.append(item)
             action = item.get("action")
             if isinstance(action, dict):
+                sources = action.get("sources")
+                if isinstance(sources, list):
+                    for source in sources:
+                        if isinstance(source, dict) and isinstance(source.get("url"), str) and source["url"]:
+                            discovered_urls.add(source["url"])
                 if action.get("type") in {"open_page", "open", "browse"}:
                     url = action.get("url")
                     if isinstance(url, str) and url:
                         opened_urls.add(url)
                         opening_events.append({
+                            "event_id": str(item.get("id", "")),
                             "tool_call_id": str(item.get("id", "")),
                             "action_type": str(action.get("type", "")),
+                            "timestamp": str(item.get("created_at") or action.get("timestamp") or ""),
                             "url": url,
                         })
         if item_type != "message":
@@ -244,6 +253,7 @@ def extract_response_artifacts(response: dict[str, Any]) -> dict[str, Any]:
                 url = annotation.get("url")
                 if not isinstance(url, str) or not url:
                     continue
+                cited_urls.add(url)
                 title = annotation.get("title") if isinstance(annotation.get("title"), str) else ""
                 start = annotation.get("start_index") if isinstance(annotation.get("start_index"), int) else -1
                 end = annotation.get("end_index") if isinstance(annotation.get("end_index"), int) else -1
@@ -265,11 +275,19 @@ def extract_response_artifacts(response: dict[str, Any]) -> dict[str, Any]:
                 tool_calls.append(node)
                 known_tool_fingerprints.add(fingerprint)
             action = node.get("action")
+            if isinstance(action, dict):
+                sources = action.get("sources")
+                if isinstance(sources, list):
+                    for source in sources:
+                        if isinstance(source, dict) and isinstance(source.get("url"), str) and source["url"]:
+                            discovered_urls.add(source["url"])
             if isinstance(action, dict) and action.get("type") in {"open_page", "open", "browse"}:
                 url = action.get("url")
                 event = {
+                    "event_id": str(node.get("id", "")),
                     "tool_call_id": str(node.get("id", "")),
                     "action_type": str(action.get("type", "")),
+                    "timestamp": str(node.get("created_at") or action.get("timestamp") or ""),
                     "url": str(url or ""),
                 }
                 if isinstance(url, str) and url:
@@ -281,7 +299,11 @@ def extract_response_artifacts(response: dict[str, Any]) -> dict[str, Any]:
         "report": "\n\n".join(report_parts).strip(),
         "citations": citations,
         "tool_calls": tool_calls,
+        "discovered_urls": sorted(discovered_urls),
+        "cited_urls": sorted(cited_urls),
         "opening_events": opening_events,
+        "discovered_source_count": len(discovered_urls),
+        "cited_source_count": len(cited_urls),
         "opened_source_count": len(opened_urls),
     }
 
@@ -300,6 +322,25 @@ def validate_completed_artifacts(response: dict[str, Any], artifacts: dict[str, 
         raise ValueError("completed response lacks a research tool-call trajectory")
     if not isinstance(artifacts.get("opened_source_count"), int) or artifacts["opened_source_count"] < 1:
         raise ValueError("completed response does not prove any opened source")
+    opening_events = artifacts.get("opening_events")
+    if not isinstance(opening_events, list) or not opening_events:
+        raise ValueError("completed response lacks an explicit source opening event")
+    opened_event_urls: set[str] = set()
+    for event in opening_events:
+        if not isinstance(event, dict):
+            raise ValueError("completed response has an invalid source opening event")
+        if not event.get("event_id") or not event.get("tool_call_id"):
+            raise ValueError("completed response source opening event lacks provider identity")
+        if event.get("action_type") not in {"open_page", "open", "browse"}:
+            raise ValueError("completed response source opening event has an invalid action type")
+        if "timestamp" not in event or not isinstance(event.get("timestamp"), str):
+            raise ValueError("completed response source opening event lacks an observed timestamp field")
+        url = event.get("url")
+        if not isinstance(url, str) or not url:
+            raise ValueError("completed response source opening event lacks a URL")
+        opened_event_urls.add(url)
+    if artifacts["opened_source_count"] != len(opened_event_urls):
+        raise ValueError("completed response opened source count does not match explicit opening events")
 
 
 def append_completed_receipt(topic_dir: Path, topic_id: str, receipt: dict[str, Any]) -> None:
@@ -537,12 +578,30 @@ def main(argv: list[str] | None = None) -> int:
         report_path = run_dir / "report.md"
         citations_path = run_dir / "citations.json"
         tool_calls_path = run_dir / "tool-calls.json"
+        source_opening_ledger_path = run_dir / "source-opening-ledger.json"
         report_path.write_text(artifacts["report"].rstrip() + "\n", encoding="utf-8")
         write_json(citations_path, {"citations": artifacts["citations"]})
         write_json(tool_calls_path, {"calls": artifacts["tool_calls"]})
         validate_completed_artifacts(response, artifacts)
 
         response_id = str(response["id"])
+        write_json(
+            source_opening_ledger_path,
+            {
+                "schema_version": "source-opening-ledger.v1",
+                "run_id": run_id,
+                "response_or_export_id": response_id,
+                "discovered_urls": artifacts["discovered_urls"],
+                "cited_urls": artifacts["cited_urls"],
+                "opening_events": artifacts["opening_events"],
+                "discovered_source_count": artifacts["discovered_source_count"],
+                "cited_source_count": artifacts["cited_source_count"],
+                "opened_source_count": artifacts["opened_source_count"],
+                "limitations": [
+                    "Only explicit open_page/open/browse provider actions count as opened; search sources and citations remain separate."
+                ],
+            },
+        )
         receipt = {
             "run_id": run_id,
             "claim_ids": [claim_id],
@@ -559,11 +618,14 @@ def main(argv: list[str] | None = None) -> int:
             "report_path": str(report_path.relative_to(topic_dir)),
             "citations_path": str(citations_path.relative_to(topic_dir)),
             "tool_calls_path": str(tool_calls_path.relative_to(topic_dir)),
+            "source_opening_ledger_path": str(source_opening_ledger_path.relative_to(topic_dir)),
             "input_sha256": sha256_path(request_path),
             "output_sha256": sha256_path(raw_response_path),
             "data_sources": data_sources,
             "tool_call_count": len(artifacts["tool_calls"]),
             "citation_count": len(artifacts["citations"]),
+            "discovered_source_count": artifacts["discovered_source_count"],
+            "cited_source_count": artifacts["cited_source_count"],
             "opened_source_count": artifacts["opened_source_count"],
             "status": "completed",
             "limitations": args.limitation,
