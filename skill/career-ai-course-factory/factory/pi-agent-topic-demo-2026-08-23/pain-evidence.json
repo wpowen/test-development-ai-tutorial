@@ -1,0 +1,78 @@
+{
+  "schema_version": "pain-evidence.v1",
+  "pain_id": "pi-identity-skill-reuse",
+  "status": "PAIN-VALIDATED",
+  "title": "别再装错 Pi Agent：验证它能否发现你已有的 Codex Skill",
+  "risk_level": "medium",
+  "decision_question_types": ["当前入口对不对", "现有 Skill 能不能复用", "哪些能力是内置或外接"],
+  "affected_user": "已经使用 Codex 或 Claude Skills、希望评估 Pi 的内容生产者与独立开发者",
+  "trigger_event": "看到 Pi Agent 热点、功能清单或旧教程，准备安装或迁移工作流",
+  "market_problem": "官方包名近期迁移，社区内容同时混用新旧名称；功能介绍又常把核心、Skill、Extension 和第三方 Package 混在一起，用户难以做低风险的第一步验证。",
+  "losses": ["安装弃用包或照着旧文档操作", "重复制作已有 Skill", "给未知扩展过高权限", "把发现能力误写成已验证执行能力"],
+  "non_ai_baseline": "逐页查官方迁移公告、文档、仓库、npm 元数据，再人工对比本机 Skill 目录和配置。",
+  "friction_gap": "来源分散、命名变化快、能力分层术语多；但最终判断仍可以通过官方文档和实际只读输出核验。",
+  "privacy_minimization": "使用公开文档和本项目自建 Skill；录屏隐藏 API key、用户目录、会话内容和私有仓库名。",
+  "evidence": [
+    {
+      "source_id": "pi-migration",
+      "publisher_group": "Pi official",
+      "source_type": "official-problem-statement",
+      "url": "https://pi.dev/news/2026/5/7/pi-has-a-new-home",
+      "opened_at": "2026-08-23",
+      "supports": "官方确认包名和仓库迁移，并给出现有安装迁移步骤",
+      "cannot_prove": "不能证明每位用户都遇到迁移问题"
+    },
+    {
+      "source_id": "pi-discoverability-issue",
+      "publisher_group": "GitHub user issue",
+      "source_type": "user-problem-report",
+      "url": "https://github.com/earendil-works/pi/issues/1031",
+      "opened_at": "2026-08-23",
+      "supports": "真实用户报告旧链接和弃用包造成发现与维护状态困惑",
+      "cannot_prove": "单一 issue 不能估算发生率"
+    },
+    {
+      "source_id": "pi-skills-doc",
+      "publisher_group": "Pi official",
+      "source_type": "official-documentation",
+      "url": "https://pi.dev/docs/latest/skills",
+      "opened_at": "2026-08-23",
+      "supports": "官方定义 Skill 发现位置，包括 Codex 用户 Skills",
+      "cannot_prove": "不能证明本项目 Skill 已实际运行"
+    }
+  ],
+  "capability_core": {
+    "stable_flow": ["object", "claim", "evidence", "source", "boundary", "action"],
+    "allowed_actions": [
+      "识别当前项目、包名、版本和能力声明",
+      "把能力拆为核心、Skill、Extension、Package、SDK/RPC",
+      "打开官方来源并生成迁移检查表",
+      "在无敏感数据的测试目录执行只读发现验证",
+      "记录成功、失败和未验证边界"
+    ],
+    "forbidden_actions": [
+      "未经审查安装第三方扩展或 Package",
+      "在包含密钥或私有代码的目录直接试跑",
+      "把文档声明写成本机实测结果",
+      "把高 GitHub star 写成效果证明"
+    ]
+  },
+  "independent_verification": {
+    "methods": [
+      {
+        "type": "official-source",
+        "procedure": "对照 pi.dev 当前安装文档和 2026-05-07 迁移公告核验包名"
+      },
+      {
+        "type": "deterministic-rule",
+        "procedure": "安装后用 pi --version、Skill 列表/路径输出和文件系统实际路径逐项对照，不用模型自述作证"
+      }
+    ],
+    "decision_owner": "用户本人；涉及安装第三方代码时由熟悉本机权限的人审查",
+    "pass_language": "仅当当前包名、版本、Skill 路径和实际只读输出一致时，写‘本机发现验证通过’；否则写具体阻断"
+  },
+  "stop_and_escalate": {
+    "conditions": ["安装命令仍指向旧 scope", "要求粘贴密钥到公开录屏", "第三方包来源或权限不明", "Skill 需要执行破坏性命令才能证明发现"],
+    "actions": ["停止安装或执行", "回到官方 latest 文档", "改用空白测试目录和无密钥模型", "把结果标记为 BLOCKED-EVIDENCE 或 NOT-LIVE-TESTED"]
+  }
+}

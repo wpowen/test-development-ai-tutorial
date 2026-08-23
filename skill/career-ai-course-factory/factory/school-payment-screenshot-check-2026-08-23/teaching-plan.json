@@ -1,0 +1,15 @@
+{
+  "schema_version":"teaching-plan.v1","outcome":"家长能在付款前把脱敏截图转成四项核验清单，并通过群外既有联系方式完成真实性核验。","prerequisites":["会截图和打码","能找到老师或学校既有联系方式","使用支持图片的 AI 或手工抄录文字"],"learner_artifact":"一张脱敏截图、一份四项预检结果、一条群外核验记录和最终人工决定","assessment":"AI 不得下诈骗结论；二维码保持打码；四项都需填写；最终结果必须有群外官方证据。","maturity":"FIXTURE-TESTED",
+  "steps":[
+    {"kind":"pain","action":"展示合成家长群消息：今晚前扫码交资料费，已有家长接龙","evidence":"2026-08-19 警方当前预警与公开损失案例"},
+    {"kind":"baseline","action":"先演示不用 AI 的可靠做法：不扫不付，群外电话联系学校","evidence":"警方与央视建议"},
+    {"kind":"demo","action":"遮盖隐私后把截图交给 AI，只让它回答谁收、收什么、怎么收、凭什么可信","evidence":"fixture 输入输出记录"},
+    {"kind":"pause","action":"观众暂停 20 秒，打码自己的截图或使用下载的合成截图","evidence":"脱敏检查清单"},
+    {"kind":"verify","action":"用通讯录原有电话和学校官方渠道核实，不点截图链接、不问群内高仿账号","evidence":"群外核验记录"},
+    {"kind":"failure","action":"展示失败输出：AI 因语气像老师且多人接龙，判断可以付款","evidence":"fixture-run 中的红色失败样例"},
+    {"kind":"repair","action":"补充提示：只找风险信号和缺失证据，禁止判定、扫码、付款","evidence":"修复版提示卡"},
+    {"kind":"rerun","action":"同一输入重跑，结果必须回到 PAUSE-VERIFY 并给群外核验路线","evidence":"fixture-run 绿色情况"},
+    {"kind":"transfer","action":"换成孩子私聊培训费急缴，重复四项预检与独立回拨","evidence":"第二 fixture 核验表"},
+    {"kind":"human-gate","action":"监护人结合学校官方确认决定；已付款或点链接则留证、联系支付机构并报警","evidence":"最终决定与升级记录"}
+  ]
+}

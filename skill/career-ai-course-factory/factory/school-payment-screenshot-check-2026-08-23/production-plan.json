@@ -1,0 +1,15 @@
+{
+  "schema_version":"production-plan.v1","host_strategy":"信任敏感题材推荐真人开场和收口；中段全部使用合成截图、手机实录、大字图卡和来源卡，不模仿反诈主播形象或声音。","video_brief":"75–90 秒竖屏：本周预警→合成消息→打码→四项预检→失败修复→群外核验→已付款升级。",
+  "materials":[
+    {"material_id":"mat-host-open","type":"human-host-video","method":"真人拍摄或本人授权稳定 IP","usage":"开场阻止冲动扫码","exactness":"逐字对照口播稿","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-synthetic-chat","type":"synthetic-fixture","method":"基于公开套路原创合成，不使用真实群截图","usage":"展示待核验通知","exactness":"明确标注合成练习图，二维码不可扫","rights_status":"PASS","privacy_status":"PASS","provenance_status":"PASS-FIXTURE"},
+    {"material_id":"mat-four-checks","type":"generated-diagram","method":"原创四格大字图","usage":"谁收、收什么、怎么收、凭什么可信","exactness":"绑定 fixture-run 字段","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-phone-demo","type":"screen-recording","method":"手机对合成截图 exact recording","usage":"打码、上传与读取结果","exactness":"必须真实录屏，不生成伪 UI","rights_status":"PASS","privacy_status":"PASS","provenance_status":"BLOCKED-NOT-RECORDED"},
+    {"material_id":"mat-prompt-card","type":"download-card","method":"依据能力边界原创编写","usage":"固定模型权限和输出结构","exactness":"禁止判定、扫码和付款","rights_status":"PASS","privacy_status":"PASS","provenance_status":"PASS-FIXTURE"},
+    {"material_id":"mat-red-green","type":"fixture-comparison","method":"同一合成输入的失败与修复输出","usage":"展示 AI 失败和最小修复","exactness":"只证明 fixture 结构，不证明真实模型准确率","rights_status":"PASS","privacy_status":"PASS","provenance_status":"PASS-FIXTURE"},
+    {"material_id":"mat-oracle-route","type":"generated-diagram","method":"原创群外核验路线图","usage":"通讯录电话、学校办公室、官方平台","exactness":"不写某校固定渠道","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-stop-card","type":"download-card","method":"依据官方建议原创整理","usage":"已付款、点链接或泄露隐私后的升级动作","exactness":"不替代警方或支付机构处置","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-host-close","type":"human-host-video","method":"真人拍摄或本人授权稳定 IP","usage":"说明 AI 不是裁判和升级动作","exactness":"保持 FIXTURE-TESTED 边界","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"}
+  ],
+  "publication_gates":{"research":"PASS","fixture":"PASS","privacy-design":"PASS","live-phone-demo":"BLOCKED-NOT-RUN","learner-test":"BLOCKED-NOT-RUN","rights-review":"PASS","render":"BLOCKED-NOT-RUN","video-qc":"BLOCKED-NOT-RUN","publication":"BLOCKED-NOT-RUN"}
+}

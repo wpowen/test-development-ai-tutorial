@@ -1,0 +1,192 @@
+{
+  "schema_version": "topic-radar.v1",
+  "radar_id": "radar-pi-agent-2026-08-23",
+  "generated_at": "2026-08-23T00:00:00+08:00",
+  "market": "中文 AI 工具与工作流内容；面向内容生产者、独立开发者和愿意使用终端的进阶用户",
+  "time_window": "2026-05-07 至 2026-08-23；易变信息按 2026-08-23 复核",
+  "search_questions": [
+    "Pi Agent 当前官方仓库和安装包是什么？",
+    "它所谓的很多能力，哪些是内核能力，哪些来自扩展、Skills 或 Packages？",
+    "中文内容里是否存在旧包名、旧版本或把能力说得过满的问题？",
+    "哪个命题既有当前事件，又能解决长期的工具选择与迁移痛点？"
+  ],
+  "channels": [
+    {
+      "channel_id": "official-change",
+      "type": "official-change",
+      "query": "site:pi.dev Pi has a new home Earendil",
+      "status": "opened",
+      "opened_urls": ["https://pi.dev/news/2026/5/7/pi-has-a-new-home"]
+    },
+    {
+      "channel_id": "technical-evidence",
+      "type": "technical-evidence",
+      "query": "site:pi.dev/docs/latest Pi extensions skills packages sessions security",
+      "status": "opened",
+      "opened_urls": [
+        "https://pi.dev/docs/latest",
+        "https://pi.dev/docs/latest/skills",
+        "https://pi.dev/docs/latest/extensions"
+      ]
+    },
+    {
+      "channel_id": "community-friction",
+      "type": "community-friction",
+      "query": "site:github.com/earendil-works/pi discoverability old package deprecated",
+      "status": "opened",
+      "opened_urls": ["https://github.com/earendil-works/pi/issues/1031"]
+    },
+    {
+      "channel_id": "platform-supply",
+      "type": "platform-supply",
+      "query": "Pi coding agent 中文 教程 2026 extensions skills",
+      "status": "opened",
+      "opened_urls": [
+        "https://www.runoob.com/ai-agent/pi-coding-agent.html",
+        "https://www.learningatlas.us/learning/video/B5_lAbGeBDY"
+      ]
+    },
+    {
+      "channel_id": "package-metadata",
+      "type": "current-package-metadata",
+      "query": "npm view @earendil-works/pi-coding-agent version dist-tags.latest --json",
+      "status": "opened",
+      "opened_urls": ["local://npm-view-2026-08-23"]
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "sig-migration",
+      "source_id": "pi-migration",
+      "channel_id": "official-change",
+      "publisher_group": "Pi official",
+      "source_type": "official-release",
+      "url": "https://pi.dev/news/2026/5/7/pi-has-a-new-home",
+      "opened_at": "2026-08-23",
+      "supports": "2026-05-07 起代码与 npm scope 迁往 Earendil；0.74.0 是新 scope 首版，旧 @mariozechner 包被弃用但未删除",
+      "cannot_prove": "不能证明所有旧教程都不可用，也不能证明 Pi 更适合每位用户",
+      "freshness": "易变；安装说明发布前重新打开"
+    },
+    {
+      "signal_id": "sig-capability-model",
+      "source_id": "pi-docs-overview",
+      "channel_id": "technical-evidence",
+      "publisher_group": "Pi official",
+      "source_type": "official-documentation",
+      "url": "https://pi.dev/docs/latest",
+      "opened_at": "2026-08-23",
+      "supports": "Pi 将自身定义为小内核终端 coding harness，并通过 extensions、skills、prompt templates、themes 和 packages 扩展",
+      "cannot_prove": "不能证明第三方扩展安全、有效或适合普通人",
+      "freshness": "易变；按 latest 文档刷新"
+    },
+    {
+      "signal_id": "sig-skill-compatibility",
+      "source_id": "pi-skills-doc",
+      "channel_id": "technical-evidence",
+      "publisher_group": "Pi official",
+      "source_type": "official-documentation",
+      "url": "https://pi.dev/docs/latest/skills",
+      "opened_at": "2026-08-23",
+      "supports": "Pi 实现 Agent Skills 标准并可发现 Pi、Claude Code 与 Codex 的技能目录",
+      "cannot_prove": "不能保证每个 Skill 在 Pi 中行为一致或无需适配",
+      "freshness": "易变；版本升级时复核"
+    },
+    {
+      "signal_id": "sig-friction",
+      "source_id": "pi-discoverability-issue",
+      "channel_id": "community-friction",
+      "publisher_group": "GitHub user issue",
+      "source_type": "user-problem-report",
+      "url": "https://github.com/earendil-works/pi/issues/1031",
+      "opened_at": "2026-08-23",
+      "supports": "至少有用户因旧链接和弃用包产生项目是否停止维护的困惑",
+      "cannot_prove": "单个 issue 不能代表普遍发生率",
+      "freshness": "历史问题；用于解释命名摩擦"
+    },
+    {
+      "signal_id": "sig-supply",
+      "source_id": "pi-runoob",
+      "channel_id": "platform-supply",
+      "publisher_group": "菜鸟教程",
+      "source_type": "competitor-content",
+      "url": "https://www.runoob.com/ai-agent/pi-coding-agent.html",
+      "opened_at": "2026-08-23",
+      "supports": "中文市场已有入门教程供给，安装型总览不是空白赛道",
+      "cannot_prove": "不能证明内容销量、完播率、准确率或市场饱和度",
+      "freshness": "易变；只作为供给信号"
+    },
+    {
+      "signal_id": "sig-current-version",
+      "source_id": "pi-npm-current",
+      "channel_id": "package-metadata",
+      "publisher_group": "npm registry",
+      "source_type": "package-metadata",
+      "url": "local://npm-view-2026-08-23",
+      "opened_at": "2026-08-23",
+      "supports": "本机只读查询返回 @earendil-works/pi-coding-agent latest 为 0.84.2",
+      "cannot_prove": "不能证明本机已安装或任何具体功能已实测",
+      "freshness": "高度易变；录制当天再次查询"
+    }
+  ],
+  "candidates": [
+    {
+      "proposition_id": "pi-current-identity-and-skill-bridge",
+      "type": "hybrid",
+      "title": "别再装错 Pi Agent：它为什么看起来很小，却能读取你的 Codex Skills？",
+      "audience": "已经积累 Codex/Claude Skills、想尝试可定制终端 Agent 的内容生产者和独立开发者",
+      "trigger": "看到 Pi 热度或教程后准备安装，却遇到旧包名、功能清单和安全边界混在一起",
+      "pain": "无法判断当前官方入口，也不知道现有 Skill 能否复用，容易按旧教程安装或把第三方能力误认成内置能力",
+      "ai_role": "读取官方文档与现有 Skill，生成迁移检查表和一次只读发现实验；不自动安装未知包或执行外部代码",
+      "oracle": {
+        "type": "official-source",
+        "procedure": "对照 pi.dev 最新文档、官方迁移公告、npm 元数据与 Pi 实际列出的 Skill 路径"
+      },
+      "safe_next_action": "先只读核验包名和技能发现路径；安装与授权单独确认并在沙箱项目中进行",
+      "score": 35,
+      "status": "SELECTED",
+      "selection_reason": "新迁移事件连接长期的工具复用痛点；有官方 Oracle、可录屏验收，并能诚实呈现安全边界"
+    },
+    {
+      "proposition_id": "pi-full-install-guide",
+      "type": "hotspot",
+      "title": "Pi Agent 五分钟完整安装教程",
+      "audience": "第一次接触终端 Agent 的泛 AI 用户",
+      "trigger": "准备安装 Pi",
+      "pain": "不知道安装命令",
+      "ai_role": "生成安装步骤",
+      "oracle": {
+        "type": "official-source",
+        "procedure": "对照官方 quickstart 和 pi --version"
+      },
+      "safe_next_action": "在空白测试目录安装并验证版本",
+      "score": 24,
+      "status": "REJECTED",
+      "selection_reason": "已有中文入门供给，差异化弱；对普通用户仍有终端和模型认证门槛"
+    },
+    {
+      "proposition_id": "pi-everything-agent",
+      "type": "hotspot",
+      "title": "Pi Agent 能做所有事情",
+      "audience": "泛 AI 用户",
+      "trigger": "看到社区能力清单",
+      "pain": "想找万能 Agent",
+      "ai_role": "自动完成所有任务",
+      "oracle": {
+        "type": "qualified-human",
+        "procedure": "由安全工程师逐项审查能力与权限"
+      },
+      "safe_next_action": "停止使用万能表述，改为逐项验证",
+      "score": 10,
+      "status": "REJECTED",
+      "selection_reason": "需求过宽、不可验收且会掩盖第三方扩展的系统权限风险"
+    }
+  ],
+  "selected_proposition_id": "pi-current-identity-and-skill-bridge",
+  "scoring_rules": "0–5 分评价新鲜度、痛点强度、人群具体性、AI 增量价值、Oracle、低门槛、供给缺口与安全性；总分只排序，硬门禁决定是否入选",
+  "refresh_triggers": [
+    "@earendil-works/pi-coding-agent latest 版本变化",
+    "官方仓库、包名或 Skill 发现路径变化",
+    "准备录制 exact UI 或安装命令",
+    "出现新的权限系统、沙箱默认值或安全公告"
+  ]
+}

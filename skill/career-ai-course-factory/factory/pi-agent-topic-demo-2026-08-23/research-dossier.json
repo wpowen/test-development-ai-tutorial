@@ -1,0 +1,125 @@
+{
+  "schema_version": "research-dossier.v1",
+  "proposition_id": "pi-current-identity-and-skill-bridge",
+  "research_question": "Pi Agent 当前是谁、核心与扩展能力如何分层、现有 Codex Skill 能否被发现，以及最安全的第一期内容应该验证什么？",
+  "identity_resolution": "当前官方项目是 Earendil Works 下的 Pi Agent Harness；官方仓库为 earendil-works/pi，npm 安装包为 @earendil-works/pi-coding-agent。2026-05-07 的 0.74.0 起从旧 badlogic/@mariozechner 命名迁移。",
+  "sources": [
+    {
+      "source_id": "pi-migration",
+      "publisher_group": "Pi official",
+      "source_type": "official-release",
+      "url": "https://pi.dev/news/2026/5/7/pi-has-a-new-home",
+      "opened_at": "2026-08-23",
+      "supports": "仓库与 npm scope 迁移、版本分界和旧包弃用状态",
+      "cannot_prove": "不能证明所有旧扩展都兼容新版本"
+    },
+    {
+      "source_id": "pi-docs-overview",
+      "publisher_group": "Pi official",
+      "source_type": "official-documentation",
+      "url": "https://pi.dev/docs/latest",
+      "opened_at": "2026-08-23",
+      "supports": "当前安装入口、极简内核定位、扩展面、SDK/RPC/JSON 模式和会话能力入口",
+      "cannot_prove": "不能证明在本机或特定模型上的实际效果"
+    },
+    {
+      "source_id": "pi-skills-doc",
+      "publisher_group": "Pi official",
+      "source_type": "official-documentation",
+      "url": "https://pi.dev/docs/latest/skills",
+      "opened_at": "2026-08-23",
+      "supports": "Agent Skills 加载方式及 Codex/Claude/Pi 技能目录兼容入口",
+      "cannot_prove": "发现 Skill 不等于 Skill 的脚本、工具和依赖都能无修改运行"
+    },
+    {
+      "source_id": "pi-extension-doc",
+      "publisher_group": "Pi official",
+      "source_type": "official-documentation",
+      "url": "https://pi.dev/docs/latest/extensions",
+      "opened_at": "2026-08-23",
+      "supports": "扩展可注册工具、命令、事件和 UI，并具有强执行能力",
+      "cannot_prove": "不能证明第三方扩展经过安全审计"
+    },
+    {
+      "source_id": "pi-official-repo",
+      "publisher_group": "Pi official GitHub",
+      "source_type": "official-repository",
+      "url": "https://github.com/earendil-works/pi",
+      "opened_at": "2026-08-23",
+      "supports": "官方代码仓库、MIT 许可、核心包分层，以及默认无内建权限限制的安全说明",
+      "cannot_prove": "GitHub star 不能证明用户留存、任务成功率或适合普通人"
+    },
+    {
+      "source_id": "pi-runoob",
+      "publisher_group": "菜鸟教程",
+      "source_type": "competitor-content",
+      "url": "https://www.runoob.com/ai-agent/pi-coding-agent.html",
+      "opened_at": "2026-08-23",
+      "supports": "中文市场已有功能总览与安装型教程",
+      "cannot_prove": "不能证明该页面的流量、转化或全部技术细节正确"
+    },
+    {
+      "source_id": "pi-learning-atlas",
+      "publisher_group": "Learning Atlas / AI Made Simple",
+      "source_type": "competitor-content",
+      "url": "https://www.learningatlas.us/learning/video/B5_lAbGeBDY",
+      "opened_at": "2026-08-23",
+      "supports": "已有英文长视频采用安装到扩展、Skills、Packages 和本地模型的完整路线",
+      "cannot_prove": "不能证明视频当前数据表现或所有步骤仍适用"
+    }
+  ],
+  "claim_inventory": [
+    {
+      "claim_id": "claim-current-identity",
+      "text": "Pi 的当前官方仓库和 npm scope 已迁往 Earendil Works。",
+      "source_ids": ["pi-migration", "pi-official-repo"],
+      "status": "SUPPORTED",
+      "cannot_prove": "不推断旧包立刻不可运行"
+    },
+    {
+      "claim_id": "claim-small-core",
+      "text": "Pi 的产品思路是保持终端 coding harness 核心较小，并通过扩展资源增加能力。",
+      "source_ids": ["pi-docs-overview"],
+      "status": "SUPPORTED",
+      "cannot_prove": "小内核不自动等于更快、更便宜或更安全"
+    },
+    {
+      "claim_id": "claim-skill-bridge",
+      "text": "Pi 官方文档声明可发现 Codex 用户 Skills 目录。",
+      "source_ids": ["pi-skills-doc"],
+      "status": "SUPPORTED-NOT-LIVE-TESTED",
+      "cannot_prove": "本轮未安装 Pi，未实测本项目 Skill 的完整执行兼容性"
+    },
+    {
+      "claim_id": "claim-permission-risk",
+      "text": "Pi 默认不提供限制文件、进程、网络或凭证访问的内建权限系统，第三方扩展需视为本机代码。",
+      "source_ids": ["pi-official-repo", "pi-extension-doc"],
+      "status": "SUPPORTED",
+      "cannot_prove": "不能据此断言 Pi 必然不安全；可通过容器或沙箱降低风险"
+    }
+  ],
+  "counterevidence": [
+    "中文市场并非无人讲 Pi；已有入门总览，因此不能把首期做成普通安装复述。",
+    "Pi 需要终端、Node、模型认证或本地模型，门槛高于面向全民的手机截图小实验。",
+    "Skill 被发现不等于依赖、工具权限和运行结果完全兼容，必须实测。",
+    "许多看起来属于 Pi 的功能实际来自第三方 Skill、Extension 或 Package，不应写成内置能力。"
+  ],
+  "competitor_reference": {
+    "primary": "AI Made Simple 的长屏录路线：安装、选模型、再展示扩展面；借鉴其结果先行和连续实操，不复刻措辞、镜头或能力结论。",
+    "secondary": "菜鸟教程的中文功能分类：适合用作用户已有认知的参照，但本稿改用‘核心/扩展/风险/验证’四层，避免百科堆功能。",
+    "optimization": "把 30 分钟总览压成 90–150 秒单一实验：当前包名核验 → Skill 发现 → 权限边界。视频只承诺一次可验收结果，并把完整安装与扩展开发放到后续课程。"
+  },
+  "findings": [
+    "Pi 最值得讲的不是功能数量，而是‘能力从哪里来’：核心、Skill、Extension、Package 与 SDK/RPC 是不同层。",
+    "2026 年 5 月迁移是当前内容钩子；Skill 复用是长期价值，两者组合成 hybrid 命题。",
+    "本题适合做创作者/开发者支线，不适合作为普通大众防骗或生活 AI 主频道的第一期。",
+    "首期最小实验应先只读验证现有 Codex Skill 能否被 Pi 发现；执行兼容性、第三方包安装和系统权限分别做后续实验。"
+  ],
+  "cannot_prove": [
+    "未安装和运行 Pi，因此不能声明本地 Skill 已被发现或执行成功。",
+    "未做目标用户测试，不能声明 90 秒内人人都能完成。",
+    "未获得平台流量数据，不能声明该命题必然爆款。",
+    "GitHub star、教程数量和搜索结果不能替代观看、转化或付费数据。"
+  ],
+  "disposition": "APPROVE-AS-CREATOR-TRACK-EXPERIMENT；进入结构化脚本与录制准备，但保持 NOT-LIVE-TESTED"
+}

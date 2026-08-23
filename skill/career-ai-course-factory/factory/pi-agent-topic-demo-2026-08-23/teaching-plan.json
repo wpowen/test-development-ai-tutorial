@@ -1,0 +1,60 @@
+{
+  "schema_version": "teaching-plan.v1",
+  "outcome": "学习者能用官方来源核验 Pi 当前身份，并在不执行未知代码的前提下完成一次 Codex Skill 发现验证。",
+  "prerequisites": ["Node.js 已安装", "会打开终端", "准备一个不含敏感信息的测试目录", "拥有一个可公开检查的 SKILL.md"],
+  "learner_artifact": "一张 Pi 身份与包名核验卡、一份 Skill 发现原始输出、一张 discover/load/execute/complete 四级判定表",
+  "assessment": "包名必须来自 current official source；Skill 发现必须以原始输出作证；不得把发现写成执行成功；必须完成权限停止条件。",
+  "maturity": "DESK-RESEARCHED",
+  "steps": [
+    {
+      "kind": "pain",
+      "action": "展示新旧包名同时存在，提出‘到底装哪个、现有 Skill 要不要重做’",
+      "evidence": "官方迁移公告与用户 discoverability issue"
+    },
+    {
+      "kind": "baseline",
+      "action": "演示人工逐页查迁移公告、latest 文档与本机 Skill 路径",
+      "evidence": "打开的 URL 和本机只读路径"
+    },
+    {
+      "kind": "demo",
+      "action": "让 AI 把旧教程命令拆成对象、主张、证据、来源、边界和行动，并生成发现测试",
+      "evidence": "结构化检查表"
+    },
+    {
+      "kind": "pause",
+      "action": "观众暂停，复制官方 current 包名和自己的 Skill 名称到实验卡",
+      "evidence": "已填写实验卡"
+    },
+    {
+      "kind": "verify",
+      "action": "对照 pi.dev latest、迁移公告、pi --version 和实际 Skill 列表",
+      "evidence": "官方页面与终端原始输出"
+    },
+    {
+      "kind": "failure",
+      "action": "展示 AI 沿用旧包名，或把 Skill 被发现误写成完全兼容",
+      "evidence": "红色失败卡和不成立的结论"
+    },
+    {
+      "kind": "repair",
+      "action": "增加来源日期、四级兼容性和禁止执行未知代码的约束",
+      "evidence": "修订后的提示卡"
+    },
+    {
+      "kind": "rerun",
+      "action": "用同一个 Skill 重新生成判定，只允许得到‘发现通过/执行未测’",
+      "evidence": "同输入红绿对照"
+    },
+    {
+      "kind": "transfer",
+      "action": "换一个 Claude Skill 或项目级 .pi/skills 路径，重复发现门禁",
+      "evidence": "第二个路径的独立对照表"
+    },
+    {
+      "kind": "human-gate",
+      "action": "由用户决定是否进入安装、执行和第三方 Package 审查；敏感目录与未知代码直接停止",
+      "evidence": "签字/勾选的权限检查表"
+    }
+  ]
+}

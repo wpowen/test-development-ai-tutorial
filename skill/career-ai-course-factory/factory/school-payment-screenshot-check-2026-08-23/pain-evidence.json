@@ -1,0 +1,11 @@
+{
+  "schema_version":"pain-evidence.v1","pain_id":"parent-group-fee-pressure","status":"PAIN-VALIDATED","title":"家长群突然让扫码交资料费：用 AI 做四项预检，再群外核实","risk_level":"high","decision_question_types":["通知是不是学校发的","收款主体是否可信","付款前还缺什么证据"],"affected_user":"开学季中小学新生家长、祖辈照护者及家庭付款人","trigger_event":"群内头像昵称像老师的账号发布限时缴费通知、二维码或私人收款方式","market_problem":"家长在班级事务忙乱、金额不大、其他人跟随缴费的压力下，可能把群内身份和截图接龙误当成学校确认。","losses":["资金损失","陌生链接或二维码带来的账户风险","暴露孩子姓名班级等隐私","错过及时止付与报警"],"non_ai_baseline":"不扫码不付款，使用通讯录原有电话联系真实老师或学校办公室，并打开学校官网、官方公众号或既有缴费平台核实。","friction_gap":"基线可靠但忙乱时容易遗漏收款人、时限、渠道和证据缺口；AI 可把截图快速整理成核验清单。","privacy_minimization":"上传前裁剪并遮盖孩子姓名、班级、群名、头像、手机号、其他家长姓名、二维码和订单号；优先使用合成 fixture 演示。",
+  "evidence":[
+    {"source_id":"huaibei-2026-warning","publisher_group":"淮北市公安局/政府网站","source_type":"official-problem-statement","url":"https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html","opened_at":"2026-08-23","supports":"近期问题、套路和双重核验动作","cannot_prove":"全国发生率或 AI 效果"},
+    {"source_id":"cctv-parent-group-case","publisher_group":"央视网/平安北京","source_type":"regulator-cases","url":"https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml","opened_at":"2026-08-23","supports":"真实损失、对公渠道、群外核验和留证报警","cannot_prove":"所有学校收费模式"},
+    {"source_id":"huairou-parent-guide","publisher_group":"怀柔区政府反诈课堂","source_type":"official-guidance","url":"https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html","opened_at":"2026-08-23","supports":"电话核验、隐私、保存证据和报警","cannot_prove":"学习者完成率"}
+  ],
+  "capability_core":{"stable_flow":["object","claim","evidence","source","boundary","action"],"allowed_actions":["从脱敏截图提取收费主体、事项、金额、时限和方式","标出身份依据、官方渠道和收款主体的缺失证据","生成群外核验问题和记录表","提醒暂停扫码付款并保留证据"],"forbidden_actions":["判定某人一定是骗子","扫描或访问截图中的二维码和陌生链接","替用户付款、转账或联系群内账号","上传未打码的未成年人和家长信息","把 AI 自述作为真实性证明"]},
+  "independent_verification":{"methods":[{"type":"original-record","procedure":"拨打通讯录中原有的老师或学校办公室电话，不使用截图内新增号码"},{"type":"official-source","procedure":"对照学校官网、官方公众号、既有校园 App/缴费平台和对公收款主体"}],"decision_owner":"孩子监护人或家庭付款人；疑似诈骗由学校与公安机关处理","pass_language":"只能写发现风险信号、尚需群外核验；只有学校官方渠道确认后才能写收费信息已核实"},
+  "stop_and_escalate":{"conditions":["要求立即扫码、私人转账或验证码","收款主体与学校官方渠道不一致","无法联系真实老师或学校","已经付款或点击陌生链接","截图含未打码未成年人信息"],"actions":["立即暂停操作","从群外既有渠道联系学校","保存聊天、账号与付款凭证","已付款时联系支付机构并报警","删除未打码上传内容并检查账户安全"]}
+}

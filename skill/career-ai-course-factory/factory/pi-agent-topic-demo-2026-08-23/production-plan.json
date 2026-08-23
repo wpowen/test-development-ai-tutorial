@@ -1,0 +1,108 @@
+{
+  "schema_version": "production-plan.v1",
+  "host_strategy": "真人出镜为推荐但非硬门槛：开场和权限收口真人；中段屏幕实录。若使用 AI IP，必须保持固定形象与本人授权声音，不仿冒竞品主播。",
+  "video_brief": "90–150 秒创作者支线短视频。结果先行：新旧包名冲突 → 当前官方身份 → 能力分层 → Codex Skill 只读发现 → 四级兼容性与权限停止动作。",
+  "materials": [
+    {
+      "material_id": "mat-host-hook",
+      "type": "human-host-video",
+      "method": "真人拍摄或本人授权稳定 IP",
+      "usage": "开场提出新旧包名冲突",
+      "exactness": "口播需逐字核对 fact sheet",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "READY"
+    },
+    {
+      "material_id": "mat-old-new-package",
+      "type": "generated-diagram",
+      "method": "本地图片/排版流水线原创生成",
+      "usage": "展示旧 @mariozechner 与新 @earendil-works scope",
+      "exactness": "包名与日期必须来自官方来源",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "READY"
+    },
+    {
+      "material_id": "mat-official-screen",
+      "type": "screen-recording",
+      "method": "录制当天打开官方页面",
+      "usage": "核验迁移公告与 latest 文档",
+      "exactness": "必须 exact UI，不用生成图替代",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "BLOCKED-NOT-RECORDED"
+    },
+    {
+      "material_id": "mat-capability-layers",
+      "type": "generated-diagram",
+      "method": "原创四/五层架构图",
+      "usage": "区分核心、Skill、Extension、Package、SDK/RPC",
+      "exactness": "只画官方文档支持的关系",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "READY"
+    },
+    {
+      "material_id": "mat-terminal-discovery",
+      "type": "screen-recording",
+      "method": "隔离目录 exact terminal recording",
+      "usage": "展示本机 Skill 发现结果",
+      "exactness": "原始输出不可由 AI 生成画面伪造",
+      "rights_status": "PASS",
+      "privacy_status": "BLOCKED-NOT-RECORDED",
+      "provenance_status": "BLOCKED-NOT-RECORDED"
+    },
+    {
+      "material_id": "mat-compatibility-ladder",
+      "type": "generated-diagram",
+      "method": "原创信息图",
+      "usage": "展示 discover/load/execute/complete 四级",
+      "exactness": "状态取自实际门禁结果",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "READY"
+    },
+    {
+      "material_id": "mat-red-green",
+      "type": "generated-comparison",
+      "method": "依据同输入失败/修复结果排版",
+      "usage": "展示旧结论与修复结论",
+      "exactness": "需要真实同输入重跑证据",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "BLOCKED-NOT-RUN"
+    },
+    {
+      "material_id": "mat-permission-check",
+      "type": "download-card",
+      "method": "依据官方安全边界原创制作",
+      "usage": "安装和第三方代码前停止检查",
+      "exactness": "不能声称替代安全审计",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "READY"
+    },
+    {
+      "material_id": "mat-host-close",
+      "type": "human-host-video",
+      "method": "真人拍摄或本人授权稳定 IP",
+      "usage": "说清本轮未执行与下一期门禁",
+      "exactness": "保持 NOT-LIVE-TESTED",
+      "rights_status": "PASS",
+      "privacy_status": "PASS",
+      "provenance_status": "READY"
+    }
+  ],
+  "publication_gates": {
+    "research": "PASS",
+    "identity_and_version": "PASS",
+    "local_install": "BLOCKED-NOT-RUN",
+    "skill_discovery": "BLOCKED-NOT-RUN",
+    "privacy_review": "BLOCKED-NOT-RUN",
+    "rights_review": "PASS",
+    "render": "BLOCKED-NOT-RUN",
+    "video_qc": "BLOCKED-NOT-RUN",
+    "learner_test": "BLOCKED-NOT-RUN"
+  }
+}

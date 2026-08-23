@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1600 1000" width="1600" height="1000">
-  <title id="title">用 Mutation 和对照实验验证 AI 生成测试是否真正提效｜专业关系图</title>
+  <title id="title">AI 生成的测试是否真的提效：用 Mutation 和对照实验验证｜专业关系图</title>
   <desc id="desc">相对于人工或规则 baseline，AI 生成测试是否在相同任务、风险和完成定义下提高了可接受检测力，而不是只增加候选数量？ 任一关键证据缺失时保持 UNKNOWN/BLOCKED。 图中区分数据流、控制流、证据流与反馈回路，并显示失败路径、系统边界和责任门禁。</desc>
   <defs>
     <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f32" flood-opacity="0.12"/></filter>
@@ -11,7 +11,7 @@
   <rect width="1600" height="1000" rx="32" fill="#f4f7f2"/>
   <rect x="0" y="0" width="1600" height="146" rx="32" fill="#174f3f"/>
   <text x="72" y="48" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" font-weight="800" fill="#b8dd78">TD-T26 · evidence-lineage · lineage-chain-b</text>
-  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">用Mutation和对照实验验证AI生成测试是否真正提效｜专业关系图</text>
+  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">AI生成的测试是否真的提效：用Mutation和对照实验验证｜专业关系图</text>
   <text x="72" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="600" fill="#d9e9df">相对于人工或规则baseline，AI生成测试是否在相同任务、风险和完成定义下提高了可接受检测力，而不是只增加候选数量？任一</text>
   <rect x="54" y="172" width="1492" height="590" rx="26" fill="#fbfdfb" stroke="#c9d6cf" stroke-width="2"/>
   <text x="82" y="204" font-size="17" font-weight="800" fill="#52665e">系统边界 · 课程方法与可复核工件在边界内；真实企业系统、模型和生产状态在边界外。</text>

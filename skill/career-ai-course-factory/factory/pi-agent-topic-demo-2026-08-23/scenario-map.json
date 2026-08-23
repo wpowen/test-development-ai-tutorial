@@ -1,0 +1,40 @@
+{
+  "schema_version": "scenario-map.v1",
+  "capability_core": {
+    "stable_flow": ["object", "claim", "evidence", "source", "boundary", "action"]
+  },
+  "adapters": [
+    {
+      "scenario_id": "verify-current-install",
+      "name": "核验当前官方安装入口",
+      "trigger": "中文教程给出 @mariozechner/pi-coding-agent 或旧 badlogic 仓库",
+      "input": "一条安装命令、一个仓库链接或教程截图",
+      "ai_task": "抽取包名、仓库、版本和日期，打开官方迁移公告与 latest 文档形成差异表",
+      "inspectable_output": "current-install-check.md：输入命令、当前官方命令、迁移日期、证据 URL、不能推断项",
+      "oracle": {
+        "type": "official-source",
+        "procedure": "逐字符对照 pi.dev latest quickstart 与官方迁移公告"
+      },
+      "failure": "AI 只依据旧搜索摘要，继续推荐 @mariozechner scope",
+      "human_gate": "用户确认来源域名、发布日期与命令，再决定是否安装",
+      "teaching_content": "教会观众识别版本敏感命令，并把‘旧但可复现’和‘当前推荐’分开",
+      "materials": ["旧/新包名红绿对照卡", "官方迁移公告录屏", "安装前检查清单"]
+    },
+    {
+      "scenario_id": "verify-skill-discovery",
+      "name": "验证现有 Codex Skill 是否被发现",
+      "trigger": "用户已有 ~/.codex/skills/ai-small-experiment-producer，想知道能否复用",
+      "input": "一个公开可审查的 SKILL.md 和 Pi 官方 Skill 发现规则",
+      "ai_task": "读取 Skill 的名称与描述，生成只读发现测试和预期输出；不执行 Skill 内脚本",
+      "inspectable_output": "skill-discovery-evidence.md：Skill 路径、Pi 输出、预期/实际对照、执行兼容性未验证声明",
+      "oracle": {
+        "type": "original-record",
+        "procedure": "用本机文件路径和 Pi 实际列出的 Skill 名称对照；保存终端原始输出"
+      },
+      "failure": "Pi 能看到 Skill 名称，但脚本依赖 Codex 专有工具；内容却误写成‘完全兼容’",
+      "human_gate": "只通过发现门禁；执行门禁需另建测试目录逐项验证依赖、工具与副作用",
+      "teaching_content": "区分 discover、load、execute、complete 四级兼容性，避免一跳式结论",
+      "materials": ["四级兼容性阶梯图", "终端录屏占位", "原始输出证据卡"]
+    }
+  ]
+}

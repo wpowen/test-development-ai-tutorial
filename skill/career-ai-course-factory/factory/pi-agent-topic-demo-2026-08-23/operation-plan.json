@@ -1,0 +1,88 @@
+{
+  "schema_version": "operation-plan.v1",
+  "outcome": "把桌面研究稿推进到可录制、可验证的 Pi Skill 发现实验，同时不越过安装、密钥和第三方代码安全门禁。",
+  "user_actions": [
+    {
+      "action_id": "user-01-review-install",
+      "actor": "用户/主持人",
+      "action": "录制当天重新打开 pi.dev latest 与迁移公告，确认当前安装命令和包名",
+      "output": "带日期的官方页面录屏与 current-install-check.md",
+      "verification": "域名、发布日期、包名逐字符一致",
+      "status": "READY"
+    },
+    {
+      "action_id": "user-02-sanitize",
+      "actor": "用户/主持人",
+      "action": "建立空白测试目录，清理终端历史，隐藏用户名、API key、私有仓库和全局配置",
+      "output": "可安全录屏的测试环境检查表",
+      "verification": "隐私检查表所有项 PASS 后才录制",
+      "status": "READY"
+    },
+    {
+      "action_id": "user-03-install-run",
+      "actor": "用户/主持人",
+      "action": "在确认授权后安装当前官方 Pi，记录 pi --version，并进行只读 Skill 发现测试",
+      "output": "未经剪辑的终端原始录屏和 skill-discovery-evidence.md",
+      "verification": "版本、Skill 名称、路径与原始输出可逐项对照；不执行 Skill 脚本",
+      "status": "READY"
+    },
+    {
+      "action_id": "user-04-host-record",
+      "actor": "用户/主持人",
+      "action": "录制开场和边界收口；中段可只用屏幕录制与旁白",
+      "output": "两段真人或稳定 IP 口播素材",
+      "verification": "口播不出现‘完全兼容、万能、安全无风险’等越界表述",
+      "status": "READY"
+    }
+  ],
+  "build_actions": [
+    {
+      "action_id": "build-01-experiment-card",
+      "actor": "内容工厂",
+      "action": "生成《Pi 当前入口 + Skill 四级兼容性实验卡》",
+      "output": "可下载 PDF/Markdown 卡片",
+      "verification": "包含来源日期、四级判定、隐私项、停止条件和证据粘贴位",
+      "status": "DONE"
+    },
+    {
+      "action_id": "build-02-visuals",
+      "actor": "图片生成与设计流水线",
+      "action": "生成能力分层图、四级兼容性阶梯和新旧包名红绿卡",
+      "output": "三张 9:16 原创图解和横屏变体",
+      "verification": "技术文字与 fact sheet 一致；不生成伪 UI、不使用竞品品牌视觉",
+      "status": "READY"
+    },
+    {
+      "action_id": "build-03-edit-pack",
+      "actor": "视频流水线",
+      "action": "把真人口播、exact screen recording、图解和字幕装配成 90–150 秒样片",
+      "output": "竖屏样片、字幕、封面与 QC 回执",
+      "verification": "exact UI 来自实录；PASS-DISCOVER 与 NOT-EXECUTED 同屏；无密钥和私有路径",
+      "status": "BLOCKED"
+    },
+    {
+      "action_id": "build-04-course-module",
+      "actor": "课程工厂",
+      "action": "把样片扩展为 15–25 分钟实验课，加入失败、修复、重跑和第二 Skill 迁移",
+      "output": "模块讲义、实验步骤、学员提交模板与评分表",
+      "verification": "至少 5 名目标学员完成后才可升级为 LEARNER-TESTED",
+      "status": "BLOCKED"
+    }
+  ],
+  "recording_plan": "建议真人出镜：开头 8 秒建立信任，结尾 12 秒讲权限边界；中段用官方页面和终端实录。若不真人出镜，使用固定 IP 形象与本人旁白，但安全边界必须由清晰可识别的稳定声音完整说出。",
+  "artifacts": [
+    "dist/FINAL-PRODUCT.md",
+    "dist/episode-package.json",
+    "current-install-check.md",
+    "skill-discovery-evidence.md",
+    "pi-skill-compatibility-card.md",
+    "screen-recording.mov",
+    "host-hook.mov",
+    "host-close.mov",
+    "final-vertical.mp4",
+    "qc-receipt.json"
+  ],
+  "dependencies": ["当前官方 Pi 安装入口", "Node.js", "隔离测试目录", "无敏感信息的 Skill", "可用模型认证或本地模型", "用户对安装和运行的明确授权"],
+  "stop_conditions": ["本轮未授权安装", "官方包名或文档冲突未解决", "录屏出现密钥/私有路径", "发现测试需要执行未知代码", "无法保存独立原始输出"],
+  "next_handoff": "当前交给 validation lane：先完成安装授权后的本机只读发现实验。只有获得原始终端证据，才交给视频流水线生成 exact screen recording 和最终样片。"
+}

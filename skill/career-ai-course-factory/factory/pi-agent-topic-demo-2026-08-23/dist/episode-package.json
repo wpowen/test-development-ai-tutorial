@@ -1,0 +1,979 @@
+{
+  "schema_version": "pain-first-episode-package.v1",
+  "compiled_at": "2026-08-23T15:18:12.963038+00:00",
+  "status": "PASS-STRUCTURE",
+  "maturity": "DESK-RESEARCHED",
+  "limitations": [
+    "NOT-LEARNER-TESTED",
+    "NOT-PRODUCTION-VALIDATED"
+  ],
+  "source_hashes": {
+    "topic-radar.json": "cd792f02d84752dd526f77ec95e493cd11ba298599eb0d9eb61b8e4cf91cbdf4",
+    "pain-evidence.json": "fc19b618a81a6430217ef88acd895f57d3f9d5760c1584b48ff57cce8566914c",
+    "research-dossier.json": "f3983b31a00a3a4224342c8128880456ebca44cc50d1043a1711fd0c0e997c29",
+    "audience-profile.json": "7efb7450fff95db07efcd79162c312238fc11d5199649127d314d2f1894f0c1a",
+    "scenario-map.json": "9eab8cc688ad596eb830ef6ef99fc7a6b85f02fcf59314073bf0f92c6882eeba",
+    "teaching-plan.json": "77990b72eb2736ba1a8f13e6cc0ec8fd1bb82d0e19e38d4f19dcd26efaa5acaf",
+    "content-plan.json": "332735ff1a0ae553295fca49bd959d6aaf7e9d5ab4911c70c1e06f25c0dcdfd7",
+    "operation-plan.json": "49294c99f1124f91c39acf2ef5adfd964b915f8110d98365e1c528bfff39d084",
+    "production-plan.json": "608d8a8ad238b98a49cb87da855757f0db50840d9dce3a0165ec55c61b9dbfd7"
+  },
+  "radar": {
+    "schema_version": "topic-radar.v1",
+    "radar_id": "radar-pi-agent-2026-08-23",
+    "generated_at": "2026-08-23T00:00:00+08:00",
+    "market": "中文 AI 工具与工作流内容；面向内容生产者、独立开发者和愿意使用终端的进阶用户",
+    "time_window": "2026-05-07 至 2026-08-23；易变信息按 2026-08-23 复核",
+    "search_questions": [
+      "Pi Agent 当前官方仓库和安装包是什么？",
+      "它所谓的很多能力，哪些是内核能力，哪些来自扩展、Skills 或 Packages？",
+      "中文内容里是否存在旧包名、旧版本或把能力说得过满的问题？",
+      "哪个命题既有当前事件，又能解决长期的工具选择与迁移痛点？"
+    ],
+    "channels": [
+      {
+        "channel_id": "official-change",
+        "type": "official-change",
+        "query": "site:pi.dev Pi has a new home Earendil",
+        "status": "opened",
+        "opened_urls": [
+          "https://pi.dev/news/2026/5/7/pi-has-a-new-home"
+        ]
+      },
+      {
+        "channel_id": "technical-evidence",
+        "type": "technical-evidence",
+        "query": "site:pi.dev/docs/latest Pi extensions skills packages sessions security",
+        "status": "opened",
+        "opened_urls": [
+          "https://pi.dev/docs/latest",
+          "https://pi.dev/docs/latest/skills",
+          "https://pi.dev/docs/latest/extensions"
+        ]
+      },
+      {
+        "channel_id": "community-friction",
+        "type": "community-friction",
+        "query": "site:github.com/earendil-works/pi discoverability old package deprecated",
+        "status": "opened",
+        "opened_urls": [
+          "https://github.com/earendil-works/pi/issues/1031"
+        ]
+      },
+      {
+        "channel_id": "platform-supply",
+        "type": "platform-supply",
+        "query": "Pi coding agent 中文 教程 2026 extensions skills",
+        "status": "opened",
+        "opened_urls": [
+          "https://www.runoob.com/ai-agent/pi-coding-agent.html",
+          "https://www.learningatlas.us/learning/video/B5_lAbGeBDY"
+        ]
+      },
+      {
+        "channel_id": "package-metadata",
+        "type": "current-package-metadata",
+        "query": "npm view @earendil-works/pi-coding-agent version dist-tags.latest --json",
+        "status": "opened",
+        "opened_urls": [
+          "local://npm-view-2026-08-23"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "sig-migration",
+        "source_id": "pi-migration",
+        "channel_id": "official-change",
+        "publisher_group": "Pi official",
+        "source_type": "official-release",
+        "url": "https://pi.dev/news/2026/5/7/pi-has-a-new-home",
+        "opened_at": "2026-08-23",
+        "supports": "2026-05-07 起代码与 npm scope 迁往 Earendil；0.74.0 是新 scope 首版，旧 @mariozechner 包被弃用但未删除",
+        "cannot_prove": "不能证明所有旧教程都不可用，也不能证明 Pi 更适合每位用户",
+        "freshness": "易变；安装说明发布前重新打开"
+      },
+      {
+        "signal_id": "sig-capability-model",
+        "source_id": "pi-docs-overview",
+        "channel_id": "technical-evidence",
+        "publisher_group": "Pi official",
+        "source_type": "official-documentation",
+        "url": "https://pi.dev/docs/latest",
+        "opened_at": "2026-08-23",
+        "supports": "Pi 将自身定义为小内核终端 coding harness，并通过 extensions、skills、prompt templates、themes 和 packages 扩展",
+        "cannot_prove": "不能证明第三方扩展安全、有效或适合普通人",
+        "freshness": "易变；按 latest 文档刷新"
+      },
+      {
+        "signal_id": "sig-skill-compatibility",
+        "source_id": "pi-skills-doc",
+        "channel_id": "technical-evidence",
+        "publisher_group": "Pi official",
+        "source_type": "official-documentation",
+        "url": "https://pi.dev/docs/latest/skills",
+        "opened_at": "2026-08-23",
+        "supports": "Pi 实现 Agent Skills 标准并可发现 Pi、Claude Code 与 Codex 的技能目录",
+        "cannot_prove": "不能保证每个 Skill 在 Pi 中行为一致或无需适配",
+        "freshness": "易变；版本升级时复核"
+      },
+      {
+        "signal_id": "sig-friction",
+        "source_id": "pi-discoverability-issue",
+        "channel_id": "community-friction",
+        "publisher_group": "GitHub user issue",
+        "source_type": "user-problem-report",
+        "url": "https://github.com/earendil-works/pi/issues/1031",
+        "opened_at": "2026-08-23",
+        "supports": "至少有用户因旧链接和弃用包产生项目是否停止维护的困惑",
+        "cannot_prove": "单个 issue 不能代表普遍发生率",
+        "freshness": "历史问题；用于解释命名摩擦"
+      },
+      {
+        "signal_id": "sig-supply",
+        "source_id": "pi-runoob",
+        "channel_id": "platform-supply",
+        "publisher_group": "菜鸟教程",
+        "source_type": "competitor-content",
+        "url": "https://www.runoob.com/ai-agent/pi-coding-agent.html",
+        "opened_at": "2026-08-23",
+        "supports": "中文市场已有入门教程供给，安装型总览不是空白赛道",
+        "cannot_prove": "不能证明内容销量、完播率、准确率或市场饱和度",
+        "freshness": "易变；只作为供给信号"
+      },
+      {
+        "signal_id": "sig-current-version",
+        "source_id": "pi-npm-current",
+        "channel_id": "package-metadata",
+        "publisher_group": "npm registry",
+        "source_type": "package-metadata",
+        "url": "local://npm-view-2026-08-23",
+        "opened_at": "2026-08-23",
+        "supports": "本机只读查询返回 @earendil-works/pi-coding-agent latest 为 0.84.2",
+        "cannot_prove": "不能证明本机已安装或任何具体功能已实测",
+        "freshness": "高度易变；录制当天再次查询"
+      }
+    ],
+    "candidates": [
+      {
+        "proposition_id": "pi-current-identity-and-skill-bridge",
+        "type": "hybrid",
+        "title": "别再装错 Pi Agent：它为什么看起来很小，却能读取你的 Codex Skills？",
+        "audience": "已经积累 Codex/Claude Skills、想尝试可定制终端 Agent 的内容生产者和独立开发者",
+        "trigger": "看到 Pi 热度或教程后准备安装，却遇到旧包名、功能清单和安全边界混在一起",
+        "pain": "无法判断当前官方入口，也不知道现有 Skill 能否复用，容易按旧教程安装或把第三方能力误认成内置能力",
+        "ai_role": "读取官方文档与现有 Skill，生成迁移检查表和一次只读发现实验；不自动安装未知包或执行外部代码",
+        "oracle": {
+          "type": "official-source",
+          "procedure": "对照 pi.dev 最新文档、官方迁移公告、npm 元数据与 Pi 实际列出的 Skill 路径"
+        },
+        "safe_next_action": "先只读核验包名和技能发现路径；安装与授权单独确认并在沙箱项目中进行",
+        "score": 35,
+        "status": "SELECTED",
+        "selection_reason": "新迁移事件连接长期的工具复用痛点；有官方 Oracle、可录屏验收，并能诚实呈现安全边界"
+      },
+      {
+        "proposition_id": "pi-full-install-guide",
+        "type": "hotspot",
+        "title": "Pi Agent 五分钟完整安装教程",
+        "audience": "第一次接触终端 Agent 的泛 AI 用户",
+        "trigger": "准备安装 Pi",
+        "pain": "不知道安装命令",
+        "ai_role": "生成安装步骤",
+        "oracle": {
+          "type": "official-source",
+          "procedure": "对照官方 quickstart 和 pi --version"
+        },
+        "safe_next_action": "在空白测试目录安装并验证版本",
+        "score": 24,
+        "status": "REJECTED",
+        "selection_reason": "已有中文入门供给，差异化弱；对普通用户仍有终端和模型认证门槛"
+      },
+      {
+        "proposition_id": "pi-everything-agent",
+        "type": "hotspot",
+        "title": "Pi Agent 能做所有事情",
+        "audience": "泛 AI 用户",
+        "trigger": "看到社区能力清单",
+        "pain": "想找万能 Agent",
+        "ai_role": "自动完成所有任务",
+        "oracle": {
+          "type": "qualified-human",
+          "procedure": "由安全工程师逐项审查能力与权限"
+        },
+        "safe_next_action": "停止使用万能表述，改为逐项验证",
+        "score": 10,
+        "status": "REJECTED",
+        "selection_reason": "需求过宽、不可验收且会掩盖第三方扩展的系统权限风险"
+      }
+    ],
+    "selected_proposition_id": "pi-current-identity-and-skill-bridge",
+    "scoring_rules": "0–5 分评价新鲜度、痛点强度、人群具体性、AI 增量价值、Oracle、低门槛、供给缺口与安全性；总分只排序，硬门禁决定是否入选",
+    "refresh_triggers": [
+      "@earendil-works/pi-coding-agent latest 版本变化",
+      "官方仓库、包名或 Skill 发现路径变化",
+      "准备录制 exact UI 或安装命令",
+      "出现新的权限系统、沙箱默认值或安全公告"
+    ]
+  },
+  "pain": {
+    "schema_version": "pain-evidence.v1",
+    "pain_id": "pi-identity-skill-reuse",
+    "status": "PAIN-VALIDATED",
+    "title": "别再装错 Pi Agent：验证它能否发现你已有的 Codex Skill",
+    "risk_level": "medium",
+    "decision_question_types": [
+      "当前入口对不对",
+      "现有 Skill 能不能复用",
+      "哪些能力是内置或外接"
+    ],
+    "affected_user": "已经使用 Codex 或 Claude Skills、希望评估 Pi 的内容生产者与独立开发者",
+    "trigger_event": "看到 Pi Agent 热点、功能清单或旧教程，准备安装或迁移工作流",
+    "market_problem": "官方包名近期迁移，社区内容同时混用新旧名称；功能介绍又常把核心、Skill、Extension 和第三方 Package 混在一起，用户难以做低风险的第一步验证。",
+    "losses": [
+      "安装弃用包或照着旧文档操作",
+      "重复制作已有 Skill",
+      "给未知扩展过高权限",
+      "把发现能力误写成已验证执行能力"
+    ],
+    "non_ai_baseline": "逐页查官方迁移公告、文档、仓库、npm 元数据，再人工对比本机 Skill 目录和配置。",
+    "friction_gap": "来源分散、命名变化快、能力分层术语多；但最终判断仍可以通过官方文档和实际只读输出核验。",
+    "privacy_minimization": "使用公开文档和本项目自建 Skill；录屏隐藏 API key、用户目录、会话内容和私有仓库名。",
+    "evidence": [
+      {
+        "source_id": "pi-migration",
+        "publisher_group": "Pi official",
+        "source_type": "official-problem-statement",
+        "url": "https://pi.dev/news/2026/5/7/pi-has-a-new-home",
+        "opened_at": "2026-08-23",
+        "supports": "官方确认包名和仓库迁移，并给出现有安装迁移步骤",
+        "cannot_prove": "不能证明每位用户都遇到迁移问题"
+      },
+      {
+        "source_id": "pi-discoverability-issue",
+        "publisher_group": "GitHub user issue",
+        "source_type": "user-problem-report",
+        "url": "https://github.com/earendil-works/pi/issues/1031",
+        "opened_at": "2026-08-23",
+        "supports": "真实用户报告旧链接和弃用包造成发现与维护状态困惑",
+        "cannot_prove": "单一 issue 不能估算发生率"
+      },
+      {
+        "source_id": "pi-skills-doc",
+        "publisher_group": "Pi official",
+        "source_type": "official-documentation",
+        "url": "https://pi.dev/docs/latest/skills",
+        "opened_at": "2026-08-23",
+        "supports": "官方定义 Skill 发现位置，包括 Codex 用户 Skills",
+        "cannot_prove": "不能证明本项目 Skill 已实际运行"
+      }
+    ],
+    "capability_core": {
+      "stable_flow": [
+        "object",
+        "claim",
+        "evidence",
+        "source",
+        "boundary",
+        "action"
+      ],
+      "allowed_actions": [
+        "识别当前项目、包名、版本和能力声明",
+        "把能力拆为核心、Skill、Extension、Package、SDK/RPC",
+        "打开官方来源并生成迁移检查表",
+        "在无敏感数据的测试目录执行只读发现验证",
+        "记录成功、失败和未验证边界"
+      ],
+      "forbidden_actions": [
+        "未经审查安装第三方扩展或 Package",
+        "在包含密钥或私有代码的目录直接试跑",
+        "把文档声明写成本机实测结果",
+        "把高 GitHub star 写成效果证明"
+      ]
+    },
+    "independent_verification": {
+      "methods": [
+        {
+          "type": "official-source",
+          "procedure": "对照 pi.dev 当前安装文档和 2026-05-07 迁移公告核验包名"
+        },
+        {
+          "type": "deterministic-rule",
+          "procedure": "安装后用 pi --version、Skill 列表/路径输出和文件系统实际路径逐项对照，不用模型自述作证"
+        }
+      ],
+      "decision_owner": "用户本人；涉及安装第三方代码时由熟悉本机权限的人审查",
+      "pass_language": "仅当当前包名、版本、Skill 路径和实际只读输出一致时，写‘本机发现验证通过’；否则写具体阻断"
+    },
+    "stop_and_escalate": {
+      "conditions": [
+        "安装命令仍指向旧 scope",
+        "要求粘贴密钥到公开录屏",
+        "第三方包来源或权限不明",
+        "Skill 需要执行破坏性命令才能证明发现"
+      ],
+      "actions": [
+        "停止安装或执行",
+        "回到官方 latest 文档",
+        "改用空白测试目录和无密钥模型",
+        "把结果标记为 BLOCKED-EVIDENCE 或 NOT-LIVE-TESTED"
+      ]
+    }
+  },
+  "research": {
+    "schema_version": "research-dossier.v1",
+    "proposition_id": "pi-current-identity-and-skill-bridge",
+    "research_question": "Pi Agent 当前是谁、核心与扩展能力如何分层、现有 Codex Skill 能否被发现，以及最安全的第一期内容应该验证什么？",
+    "identity_resolution": "当前官方项目是 Earendil Works 下的 Pi Agent Harness；官方仓库为 earendil-works/pi，npm 安装包为 @earendil-works/pi-coding-agent。2026-05-07 的 0.74.0 起从旧 badlogic/@mariozechner 命名迁移。",
+    "sources": [
+      {
+        "source_id": "pi-migration",
+        "publisher_group": "Pi official",
+        "source_type": "official-release",
+        "url": "https://pi.dev/news/2026/5/7/pi-has-a-new-home",
+        "opened_at": "2026-08-23",
+        "supports": "仓库与 npm scope 迁移、版本分界和旧包弃用状态",
+        "cannot_prove": "不能证明所有旧扩展都兼容新版本"
+      },
+      {
+        "source_id": "pi-docs-overview",
+        "publisher_group": "Pi official",
+        "source_type": "official-documentation",
+        "url": "https://pi.dev/docs/latest",
+        "opened_at": "2026-08-23",
+        "supports": "当前安装入口、极简内核定位、扩展面、SDK/RPC/JSON 模式和会话能力入口",
+        "cannot_prove": "不能证明在本机或特定模型上的实际效果"
+      },
+      {
+        "source_id": "pi-skills-doc",
+        "publisher_group": "Pi official",
+        "source_type": "official-documentation",
+        "url": "https://pi.dev/docs/latest/skills",
+        "opened_at": "2026-08-23",
+        "supports": "Agent Skills 加载方式及 Codex/Claude/Pi 技能目录兼容入口",
+        "cannot_prove": "发现 Skill 不等于 Skill 的脚本、工具和依赖都能无修改运行"
+      },
+      {
+        "source_id": "pi-extension-doc",
+        "publisher_group": "Pi official",
+        "source_type": "official-documentation",
+        "url": "https://pi.dev/docs/latest/extensions",
+        "opened_at": "2026-08-23",
+        "supports": "扩展可注册工具、命令、事件和 UI，并具有强执行能力",
+        "cannot_prove": "不能证明第三方扩展经过安全审计"
+      },
+      {
+        "source_id": "pi-official-repo",
+        "publisher_group": "Pi official GitHub",
+        "source_type": "official-repository",
+        "url": "https://github.com/earendil-works/pi",
+        "opened_at": "2026-08-23",
+        "supports": "官方代码仓库、MIT 许可、核心包分层，以及默认无内建权限限制的安全说明",
+        "cannot_prove": "GitHub star 不能证明用户留存、任务成功率或适合普通人"
+      },
+      {
+        "source_id": "pi-runoob",
+        "publisher_group": "菜鸟教程",
+        "source_type": "competitor-content",
+        "url": "https://www.runoob.com/ai-agent/pi-coding-agent.html",
+        "opened_at": "2026-08-23",
+        "supports": "中文市场已有功能总览与安装型教程",
+        "cannot_prove": "不能证明该页面的流量、转化或全部技术细节正确"
+      },
+      {
+        "source_id": "pi-learning-atlas",
+        "publisher_group": "Learning Atlas / AI Made Simple",
+        "source_type": "competitor-content",
+        "url": "https://www.learningatlas.us/learning/video/B5_lAbGeBDY",
+        "opened_at": "2026-08-23",
+        "supports": "已有英文长视频采用安装到扩展、Skills、Packages 和本地模型的完整路线",
+        "cannot_prove": "不能证明视频当前数据表现或所有步骤仍适用"
+      }
+    ],
+    "claim_inventory": [
+      {
+        "claim_id": "claim-current-identity",
+        "text": "Pi 的当前官方仓库和 npm scope 已迁往 Earendil Works。",
+        "source_ids": [
+          "pi-migration",
+          "pi-official-repo"
+        ],
+        "status": "SUPPORTED",
+        "cannot_prove": "不推断旧包立刻不可运行"
+      },
+      {
+        "claim_id": "claim-small-core",
+        "text": "Pi 的产品思路是保持终端 coding harness 核心较小，并通过扩展资源增加能力。",
+        "source_ids": [
+          "pi-docs-overview"
+        ],
+        "status": "SUPPORTED",
+        "cannot_prove": "小内核不自动等于更快、更便宜或更安全"
+      },
+      {
+        "claim_id": "claim-skill-bridge",
+        "text": "Pi 官方文档声明可发现 Codex 用户 Skills 目录。",
+        "source_ids": [
+          "pi-skills-doc"
+        ],
+        "status": "SUPPORTED-NOT-LIVE-TESTED",
+        "cannot_prove": "本轮未安装 Pi，未实测本项目 Skill 的完整执行兼容性"
+      },
+      {
+        "claim_id": "claim-permission-risk",
+        "text": "Pi 默认不提供限制文件、进程、网络或凭证访问的内建权限系统，第三方扩展需视为本机代码。",
+        "source_ids": [
+          "pi-official-repo",
+          "pi-extension-doc"
+        ],
+        "status": "SUPPORTED",
+        "cannot_prove": "不能据此断言 Pi 必然不安全；可通过容器或沙箱降低风险"
+      }
+    ],
+    "counterevidence": [
+      "中文市场并非无人讲 Pi；已有入门总览，因此不能把首期做成普通安装复述。",
+      "Pi 需要终端、Node、模型认证或本地模型，门槛高于面向全民的手机截图小实验。",
+      "Skill 被发现不等于依赖、工具权限和运行结果完全兼容，必须实测。",
+      "许多看起来属于 Pi 的功能实际来自第三方 Skill、Extension 或 Package，不应写成内置能力。"
+    ],
+    "competitor_reference": {
+      "primary": "AI Made Simple 的长屏录路线：安装、选模型、再展示扩展面；借鉴其结果先行和连续实操，不复刻措辞、镜头或能力结论。",
+      "secondary": "菜鸟教程的中文功能分类：适合用作用户已有认知的参照，但本稿改用‘核心/扩展/风险/验证’四层，避免百科堆功能。",
+      "optimization": "把 30 分钟总览压成 90–150 秒单一实验：当前包名核验 → Skill 发现 → 权限边界。视频只承诺一次可验收结果，并把完整安装与扩展开发放到后续课程。"
+    },
+    "findings": [
+      "Pi 最值得讲的不是功能数量，而是‘能力从哪里来’：核心、Skill、Extension、Package 与 SDK/RPC 是不同层。",
+      "2026 年 5 月迁移是当前内容钩子；Skill 复用是长期价值，两者组合成 hybrid 命题。",
+      "本题适合做创作者/开发者支线，不适合作为普通大众防骗或生活 AI 主频道的第一期。",
+      "首期最小实验应先只读验证现有 Codex Skill 能否被 Pi 发现；执行兼容性、第三方包安装和系统权限分别做后续实验。"
+    ],
+    "cannot_prove": [
+      "未安装和运行 Pi，因此不能声明本地 Skill 已被发现或执行成功。",
+      "未做目标用户测试，不能声明 90 秒内人人都能完成。",
+      "未获得平台流量数据，不能声明该命题必然爆款。",
+      "GitHub star、教程数量和搜索结果不能替代观看、转化或付费数据。"
+    ],
+    "disposition": "APPROVE-AS-CREATOR-TRACK-EXPERIMENT；进入结构化脚本与录制准备，但保持 NOT-LIVE-TESTED"
+  },
+  "audience": {
+    "schema_version": "audience-profile.v1",
+    "primary_audience": "有终端基础、已积累 Codex/Claude Skills 的 AI 内容生产者和独立开发者",
+    "secondary_audience": "想理解 Pi 能力分层、但暂不准备安装的 AI 工具观察者",
+    "roles": {
+      "viewer": "在短视频、B站或知识库看到 Pi 热点的人",
+      "operator": "能在隔离测试目录运行命令的人",
+      "exposed_person": "本机账号、文件与凭证所有者",
+      "decision_owner": "决定是否安装、授权和迁移工作流的用户本人"
+    },
+    "digital_ability": "会打开终端、复制命令、查看文件路径；不要求会写 TypeScript",
+    "device_context": "macOS/Linux 桌面为主；竖屏视频展示终端局部放大，完整操作放横屏课程或下载卡",
+    "emotional_context": "对新工具兴奋但担心装错、重复配置或暴露权限",
+    "objections": [
+      "我已经有 Codex，为什么还要 Pi",
+      "是不是又要重做 Skills",
+      "终端 Agent 会不会乱动文件",
+      "教程为什么包名不一样"
+    ],
+    "language_rules": [
+      "先说能验证的结果再讲术语",
+      "每个能力标注内置/外接/未验证",
+      "命令逐行显示",
+      "不使用万能、完全兼容、绝对安全"
+    ],
+    "accessibility": "字幕至少两行内、命令高对比度、读出关键包名并在下载卡提供可复制文本",
+    "privacy": "只在空白测试目录操作；录屏前清空终端历史并遮盖用户目录、密钥和私有仓库",
+    "share_path": "短视频负责发现和边界；评论区/简介领取实验卡；长视频或课程承接完整安装和适配",
+    "learner_validation": {
+      "minimum_users": 5,
+      "success_artifact": "至少 5 名目标用户提交包名核验截图、Skill 发现结果和权限检查表",
+      "current_status": "NOT-LEARNER-TESTED"
+    }
+  },
+  "scenarios": {
+    "schema_version": "scenario-map.v1",
+    "capability_core": {
+      "stable_flow": [
+        "object",
+        "claim",
+        "evidence",
+        "source",
+        "boundary",
+        "action"
+      ]
+    },
+    "adapters": [
+      {
+        "scenario_id": "verify-current-install",
+        "name": "核验当前官方安装入口",
+        "trigger": "中文教程给出 @mariozechner/pi-coding-agent 或旧 badlogic 仓库",
+        "input": "一条安装命令、一个仓库链接或教程截图",
+        "ai_task": "抽取包名、仓库、版本和日期，打开官方迁移公告与 latest 文档形成差异表",
+        "inspectable_output": "current-install-check.md：输入命令、当前官方命令、迁移日期、证据 URL、不能推断项",
+        "oracle": {
+          "type": "official-source",
+          "procedure": "逐字符对照 pi.dev latest quickstart 与官方迁移公告"
+        },
+        "failure": "AI 只依据旧搜索摘要，继续推荐 @mariozechner scope",
+        "human_gate": "用户确认来源域名、发布日期与命令，再决定是否安装",
+        "teaching_content": "教会观众识别版本敏感命令，并把‘旧但可复现’和‘当前推荐’分开",
+        "materials": [
+          "旧/新包名红绿对照卡",
+          "官方迁移公告录屏",
+          "安装前检查清单"
+        ]
+      },
+      {
+        "scenario_id": "verify-skill-discovery",
+        "name": "验证现有 Codex Skill 是否被发现",
+        "trigger": "用户已有 ~/.codex/skills/ai-small-experiment-producer，想知道能否复用",
+        "input": "一个公开可审查的 SKILL.md 和 Pi 官方 Skill 发现规则",
+        "ai_task": "读取 Skill 的名称与描述，生成只读发现测试和预期输出；不执行 Skill 内脚本",
+        "inspectable_output": "skill-discovery-evidence.md：Skill 路径、Pi 输出、预期/实际对照、执行兼容性未验证声明",
+        "oracle": {
+          "type": "original-record",
+          "procedure": "用本机文件路径和 Pi 实际列出的 Skill 名称对照；保存终端原始输出"
+        },
+        "failure": "Pi 能看到 Skill 名称，但脚本依赖 Codex 专有工具；内容却误写成‘完全兼容’",
+        "human_gate": "只通过发现门禁；执行门禁需另建测试目录逐项验证依赖、工具与副作用",
+        "teaching_content": "区分 discover、load、execute、complete 四级兼容性，避免一跳式结论",
+        "materials": [
+          "四级兼容性阶梯图",
+          "终端录屏占位",
+          "原始输出证据卡"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "schema_version": "teaching-plan.v1",
+    "outcome": "学习者能用官方来源核验 Pi 当前身份，并在不执行未知代码的前提下完成一次 Codex Skill 发现验证。",
+    "prerequisites": [
+      "Node.js 已安装",
+      "会打开终端",
+      "准备一个不含敏感信息的测试目录",
+      "拥有一个可公开检查的 SKILL.md"
+    ],
+    "learner_artifact": "一张 Pi 身份与包名核验卡、一份 Skill 发现原始输出、一张 discover/load/execute/complete 四级判定表",
+    "assessment": "包名必须来自 current official source；Skill 发现必须以原始输出作证；不得把发现写成执行成功；必须完成权限停止条件。",
+    "maturity": "DESK-RESEARCHED",
+    "steps": [
+      {
+        "kind": "pain",
+        "action": "展示新旧包名同时存在，提出‘到底装哪个、现有 Skill 要不要重做’",
+        "evidence": "官方迁移公告与用户 discoverability issue"
+      },
+      {
+        "kind": "baseline",
+        "action": "演示人工逐页查迁移公告、latest 文档与本机 Skill 路径",
+        "evidence": "打开的 URL 和本机只读路径"
+      },
+      {
+        "kind": "demo",
+        "action": "让 AI 把旧教程命令拆成对象、主张、证据、来源、边界和行动，并生成发现测试",
+        "evidence": "结构化检查表"
+      },
+      {
+        "kind": "pause",
+        "action": "观众暂停，复制官方 current 包名和自己的 Skill 名称到实验卡",
+        "evidence": "已填写实验卡"
+      },
+      {
+        "kind": "verify",
+        "action": "对照 pi.dev latest、迁移公告、pi --version 和实际 Skill 列表",
+        "evidence": "官方页面与终端原始输出"
+      },
+      {
+        "kind": "failure",
+        "action": "展示 AI 沿用旧包名，或把 Skill 被发现误写成完全兼容",
+        "evidence": "红色失败卡和不成立的结论"
+      },
+      {
+        "kind": "repair",
+        "action": "增加来源日期、四级兼容性和禁止执行未知代码的约束",
+        "evidence": "修订后的提示卡"
+      },
+      {
+        "kind": "rerun",
+        "action": "用同一个 Skill 重新生成判定，只允许得到‘发现通过/执行未测’",
+        "evidence": "同输入红绿对照"
+      },
+      {
+        "kind": "transfer",
+        "action": "换一个 Claude Skill 或项目级 .pi/skills 路径，重复发现门禁",
+        "evidence": "第二个路径的独立对照表"
+      },
+      {
+        "kind": "human-gate",
+        "action": "由用户决定是否进入安装、执行和第三方 Package 审查；敏感目录与未知代码直接停止",
+        "evidence": "签字/勾选的权限检查表"
+      }
+    ]
+  },
+  "content": {
+    "schema_version": "content-plan.v1",
+    "positioning": "创作者/开发者支线的单点验证视频：不做 Pi 百科，也不承诺万能；只验证当前官方身份、能力分层和现有 Codex Skill 的发现路径。",
+    "titles": [
+      "别再装错 Pi Agent：它为什么能看到你的 Codex Skills？",
+      "Pi Agent 功能很多？先分清哪些是内置、哪些是外接",
+      "我把现有 Codex Skill 交给 Pi：第一步只验证这件事"
+    ],
+    "hook": "网上两条 Pi 安装命令，只有一条是 2026 年 5 月迁移后的当前入口。更关键的是：Pi 说能读 Codex Skills，但‘能看到’绝不等于‘能完整运行’。",
+    "fact_sheet": {
+      "claims": [
+        {
+          "claim_id": "claim-current-identity",
+          "text": "当前官方仓库和 npm scope 已迁往 Earendil Works。",
+          "source_ids": [
+            "pi-migration",
+            "pi-official-repo"
+          ],
+          "cannot_prove": "旧包没有被删除，不应说成所有旧安装立即失效"
+        },
+        {
+          "claim_id": "claim-small-core",
+          "text": "Pi 用小内核加 Extensions、Skills、Prompts、Themes 和 Packages 扩展能力。",
+          "source_ids": [
+            "pi-docs-overview"
+          ],
+          "cannot_prove": "功能多不等于每项都内置、免费、安全或已配置"
+        },
+        {
+          "claim_id": "claim-skill-bridge",
+          "text": "官方文档声明 Pi 可以发现 Codex 用户 Skills 目录。",
+          "source_ids": [
+            "pi-skills-doc"
+          ],
+          "cannot_prove": "本轮未安装 Pi；发现不等于加载、执行或完整成功"
+        },
+        {
+          "claim_id": "claim-permission-risk",
+          "text": "Pi 默认按启动它的用户与进程权限运行，官方建议需要强边界时使用容器或沙箱。",
+          "source_ids": [
+            "pi-official-repo",
+            "pi-extension-doc"
+          ],
+          "cannot_prove": "不能把这一点夸大为 Pi 必然不安全"
+        }
+      ]
+    },
+    "director_script": [
+      {
+        "time": "00:00-00:08",
+        "shot": "真人半身或稳定 IP 主播 + 两条新旧安装命令大字卡",
+        "action": "手指向不同 scope，屏幕打上 2026-05-07",
+        "overlay": "先核验身份，再谈能力",
+        "material_ids": [
+          "mat-host-hook",
+          "mat-old-new-package"
+        ]
+      },
+      {
+        "time": "00:08-00:28",
+        "shot": "官方迁移公告和 latest 文档 exact screen recording",
+        "action": "框选新仓库、新包名和版本分界",
+        "overlay": "@earendil-works/pi-coding-agent",
+        "material_ids": [
+          "mat-official-screen"
+        ]
+      },
+      {
+        "time": "00:28-00:52",
+        "shot": "原创能力分层图",
+        "action": "从核心依次长出 Skill、Extension、Package、SDK/RPC",
+        "overlay": "功能来源不一样，权限也不一样",
+        "material_ids": [
+          "mat-capability-layers"
+        ]
+      },
+      {
+        "time": "00:52-01:20",
+        "shot": "终端 exact recording：显示 Skill 路径和 Pi 实际输出",
+        "action": "只读查询现有 Skill 名称；不执行脚本",
+        "overlay": "PASS-DISCOVER / NOT-EXECUTED",
+        "material_ids": [
+          "mat-terminal-discovery",
+          "mat-compatibility-ladder"
+        ]
+      },
+      {
+        "time": "01:20-01:42",
+        "shot": "红绿对照：旧包名与‘完全兼容’为红；当前包名与四级判定为绿",
+        "action": "停在权限检查表",
+        "overlay": "发现 ≠ 加载 ≠ 执行 ≠ 完成",
+        "material_ids": [
+          "mat-red-green",
+          "mat-permission-check"
+        ]
+      },
+      {
+        "time": "01:42-01:55",
+        "shot": "真人或 IP 主播收口",
+        "action": "提示领取实验卡，预告下一期执行兼容性测试",
+        "overlay": "先做小实验，再决定迁移",
+        "material_ids": [
+          "mat-host-close"
+        ]
+      }
+    ],
+    "spoken_narration": [
+      {
+        "section": "开场",
+        "text": "如果你最近搜 Pi Agent，可能会看到两套安装名字。别急着复制命令。2026 年 5 月，Pi 的官方仓库和 npm 包已经迁到 Earendil Works。旧包还在，但当前入口已经变了。",
+        "claim_ids": [
+          "claim-current-identity"
+        ]
+      },
+      {
+        "section": "能力分层",
+        "text": "Pi 看起来功能很多，真正关键的不是背功能表，而是分清能力从哪来。它把核心保持得比较小，再通过 Extension、Skill、提示模板、主题和 Package 长出工作流。第三方扩展不是网页插件，它可能就是能操作你电脑的代码。",
+        "claim_ids": [
+          "claim-small-core",
+          "claim-permission-risk"
+        ]
+      },
+      {
+        "section": "小实验",
+        "text": "我们第一期只验证一件事：Pi 能不能发现我已经做好的 Codex Skill。官方文档确实写了 Codex 的 Skills 目录，但验证必须看本机原始输出，不能让 Pi 自己说‘我可以’就算通过。这里如果能列出 Skill 名称，只能写 PASS-DISCOVER。加载、执行、最终完成，都是后面的独立门禁。",
+        "claim_ids": [
+          "claim-skill-bridge"
+        ]
+      },
+      {
+        "section": "失败与修复",
+        "text": "最容易犯的两个错：照旧教程装旧 scope；或者看到 Skill 名字就说完全兼容。修复方法很简单：每条易变信息都带日期，兼容性拆成发现、加载、执行、完成四级，第三方代码先审查再运行。",
+        "claim_ids": [
+          "claim-current-identity",
+          "claim-permission-risk"
+        ]
+      },
+      {
+        "section": "收口",
+        "text": "所以 Pi 适合讲成一个可验证的能力底座，不适合讲成万能 Agent。你下一步只要做三件事：核验当前包名，准备一个无敏感信息的测试目录，保存 Skill 发现的原始输出。执行兼容性，我们下一期再测。",
+        "claim_ids": [
+          "claim-current-identity",
+          "claim-skill-bridge"
+        ]
+      }
+    ],
+    "benchmark": {
+      "primary": "AI Made Simple 的屏幕实操推进：先给结果，再连续操作",
+      "reverse": "官方文档的高密度功能索引：事实准确但不直接照搬为口播结构",
+      "originality_changes": [
+        "从完整安装总览改为一个 Skill 发现实验",
+        "加入新旧身份冲突和四级兼容性",
+        "明确权限停止动作",
+        "中文口语化但不复制竞品措辞和镜头"
+      ]
+    },
+    "call_to_action": "领取《Pi 当前入口 + Skill 四级兼容性实验卡》，提交 PASS-DISCOVER 或具体阻断截图；不要提交密钥、用户目录或私有仓库信息。"
+  },
+  "operation": {
+    "schema_version": "operation-plan.v1",
+    "outcome": "把桌面研究稿推进到可录制、可验证的 Pi Skill 发现实验，同时不越过安装、密钥和第三方代码安全门禁。",
+    "user_actions": [
+      {
+        "action_id": "user-01-review-install",
+        "actor": "用户/主持人",
+        "action": "录制当天重新打开 pi.dev latest 与迁移公告，确认当前安装命令和包名",
+        "output": "带日期的官方页面录屏与 current-install-check.md",
+        "verification": "域名、发布日期、包名逐字符一致",
+        "status": "READY"
+      },
+      {
+        "action_id": "user-02-sanitize",
+        "actor": "用户/主持人",
+        "action": "建立空白测试目录，清理终端历史，隐藏用户名、API key、私有仓库和全局配置",
+        "output": "可安全录屏的测试环境检查表",
+        "verification": "隐私检查表所有项 PASS 后才录制",
+        "status": "READY"
+      },
+      {
+        "action_id": "user-03-install-run",
+        "actor": "用户/主持人",
+        "action": "在确认授权后安装当前官方 Pi，记录 pi --version，并进行只读 Skill 发现测试",
+        "output": "未经剪辑的终端原始录屏和 skill-discovery-evidence.md",
+        "verification": "版本、Skill 名称、路径与原始输出可逐项对照；不执行 Skill 脚本",
+        "status": "READY"
+      },
+      {
+        "action_id": "user-04-host-record",
+        "actor": "用户/主持人",
+        "action": "录制开场和边界收口；中段可只用屏幕录制与旁白",
+        "output": "两段真人或稳定 IP 口播素材",
+        "verification": "口播不出现‘完全兼容、万能、安全无风险’等越界表述",
+        "status": "READY"
+      }
+    ],
+    "build_actions": [
+      {
+        "action_id": "build-01-experiment-card",
+        "actor": "内容工厂",
+        "action": "生成《Pi 当前入口 + Skill 四级兼容性实验卡》",
+        "output": "可下载 PDF/Markdown 卡片",
+        "verification": "包含来源日期、四级判定、隐私项、停止条件和证据粘贴位",
+        "status": "DONE"
+      },
+      {
+        "action_id": "build-02-visuals",
+        "actor": "图片生成与设计流水线",
+        "action": "生成能力分层图、四级兼容性阶梯和新旧包名红绿卡",
+        "output": "三张 9:16 原创图解和横屏变体",
+        "verification": "技术文字与 fact sheet 一致；不生成伪 UI、不使用竞品品牌视觉",
+        "status": "READY"
+      },
+      {
+        "action_id": "build-03-edit-pack",
+        "actor": "视频流水线",
+        "action": "把真人口播、exact screen recording、图解和字幕装配成 90–150 秒样片",
+        "output": "竖屏样片、字幕、封面与 QC 回执",
+        "verification": "exact UI 来自实录；PASS-DISCOVER 与 NOT-EXECUTED 同屏；无密钥和私有路径",
+        "status": "BLOCKED"
+      },
+      {
+        "action_id": "build-04-course-module",
+        "actor": "课程工厂",
+        "action": "把样片扩展为 15–25 分钟实验课，加入失败、修复、重跑和第二 Skill 迁移",
+        "output": "模块讲义、实验步骤、学员提交模板与评分表",
+        "verification": "至少 5 名目标学员完成后才可升级为 LEARNER-TESTED",
+        "status": "BLOCKED"
+      }
+    ],
+    "recording_plan": "建议真人出镜：开头 8 秒建立信任，结尾 12 秒讲权限边界；中段用官方页面和终端实录。若不真人出镜，使用固定 IP 形象与本人旁白，但安全边界必须由清晰可识别的稳定声音完整说出。",
+    "artifacts": [
+      "dist/FINAL-PRODUCT.md",
+      "dist/episode-package.json",
+      "current-install-check.md",
+      "skill-discovery-evidence.md",
+      "pi-skill-compatibility-card.md",
+      "screen-recording.mov",
+      "host-hook.mov",
+      "host-close.mov",
+      "final-vertical.mp4",
+      "qc-receipt.json"
+    ],
+    "dependencies": [
+      "当前官方 Pi 安装入口",
+      "Node.js",
+      "隔离测试目录",
+      "无敏感信息的 Skill",
+      "可用模型认证或本地模型",
+      "用户对安装和运行的明确授权"
+    ],
+    "stop_conditions": [
+      "本轮未授权安装",
+      "官方包名或文档冲突未解决",
+      "录屏出现密钥/私有路径",
+      "发现测试需要执行未知代码",
+      "无法保存独立原始输出"
+    ],
+    "next_handoff": "当前交给 validation lane：先完成安装授权后的本机只读发现实验。只有获得原始终端证据，才交给视频流水线生成 exact screen recording 和最终样片。"
+  },
+  "production": {
+    "schema_version": "production-plan.v1",
+    "host_strategy": "真人出镜为推荐但非硬门槛：开场和权限收口真人；中段屏幕实录。若使用 AI IP，必须保持固定形象与本人授权声音，不仿冒竞品主播。",
+    "video_brief": "90–150 秒创作者支线短视频。结果先行：新旧包名冲突 → 当前官方身份 → 能力分层 → Codex Skill 只读发现 → 四级兼容性与权限停止动作。",
+    "materials": [
+      {
+        "material_id": "mat-host-hook",
+        "type": "human-host-video",
+        "method": "真人拍摄或本人授权稳定 IP",
+        "usage": "开场提出新旧包名冲突",
+        "exactness": "口播需逐字核对 fact sheet",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-old-new-package",
+        "type": "generated-diagram",
+        "method": "本地图片/排版流水线原创生成",
+        "usage": "展示旧 @mariozechner 与新 @earendil-works scope",
+        "exactness": "包名与日期必须来自官方来源",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-official-screen",
+        "type": "screen-recording",
+        "method": "录制当天打开官方页面",
+        "usage": "核验迁移公告与 latest 文档",
+        "exactness": "必须 exact UI，不用生成图替代",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "BLOCKED-NOT-RECORDED"
+      },
+      {
+        "material_id": "mat-capability-layers",
+        "type": "generated-diagram",
+        "method": "原创四/五层架构图",
+        "usage": "区分核心、Skill、Extension、Package、SDK/RPC",
+        "exactness": "只画官方文档支持的关系",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-terminal-discovery",
+        "type": "screen-recording",
+        "method": "隔离目录 exact terminal recording",
+        "usage": "展示本机 Skill 发现结果",
+        "exactness": "原始输出不可由 AI 生成画面伪造",
+        "rights_status": "PASS",
+        "privacy_status": "BLOCKED-NOT-RECORDED",
+        "provenance_status": "BLOCKED-NOT-RECORDED"
+      },
+      {
+        "material_id": "mat-compatibility-ladder",
+        "type": "generated-diagram",
+        "method": "原创信息图",
+        "usage": "展示 discover/load/execute/complete 四级",
+        "exactness": "状态取自实际门禁结果",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-red-green",
+        "type": "generated-comparison",
+        "method": "依据同输入失败/修复结果排版",
+        "usage": "展示旧结论与修复结论",
+        "exactness": "需要真实同输入重跑证据",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "BLOCKED-NOT-RUN"
+      },
+      {
+        "material_id": "mat-permission-check",
+        "type": "download-card",
+        "method": "依据官方安全边界原创制作",
+        "usage": "安装和第三方代码前停止检查",
+        "exactness": "不能声称替代安全审计",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-host-close",
+        "type": "human-host-video",
+        "method": "真人拍摄或本人授权稳定 IP",
+        "usage": "说清本轮未执行与下一期门禁",
+        "exactness": "保持 NOT-LIVE-TESTED",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      }
+    ],
+    "publication_gates": {
+      "research": "PASS",
+      "identity_and_version": "PASS",
+      "local_install": "BLOCKED-NOT-RUN",
+      "skill_discovery": "BLOCKED-NOT-RUN",
+      "privacy_review": "BLOCKED-NOT-RUN",
+      "rights_review": "PASS",
+      "render": "BLOCKED-NOT-RUN",
+      "video_qc": "BLOCKED-NOT-RUN",
+      "learner_test": "BLOCKED-NOT-RUN"
+    }
+  }
+}

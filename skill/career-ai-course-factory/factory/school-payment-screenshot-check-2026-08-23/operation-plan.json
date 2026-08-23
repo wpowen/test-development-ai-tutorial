@@ -1,0 +1,20 @@
+{
+  "schema_version":"operation-plan.v1","outcome":"把已通过 fixture 的四项预检方法推进到可录制样片和目标家长测试，同时不上传真实未成年人信息。",
+  "user_actions":[
+    {"action_id":"user-01-review-sources","actor":"主持人/研究者","action":"录制当天重开 2026 警方预警和所选 AI 的图片/隐私文档","output":"带日期的来源核验记录","verification":"URL、日期、支持与不能证明字段完整","status":"READY"},
+    {"action_id":"user-02-phone-record","actor":"主持人","action":"用合成截图录制打码、上传、粘贴提示和读取四项结果","output":"未经剪辑的手机原始录屏","verification":"二维码不可扫、无真实学校和孩子信息、AI 不下诈骗结论","status":"READY"},
+    {"action_id":"user-03-host-record","actor":"主持人","action":"录制开场与边界收口；中段使用手机录屏和图卡","output":"两段真人口播素材","verification":"口播与 fact sheet 一致，不说准确识骗或有效防骗","status":"READY"},
+    {"action_id":"user-04-learner-test","actor":"目标家长测试组织者","action":"让至少 5 名家长用合成图完成打码、预检、群外路线选择和第二场景迁移","output":"用时、错误、恢复和迁移记录","verification":"所有提交均无真实儿童信息；不足 5 人保持 NOT-LEARNER-TESTED","status":"BLOCKED"}
+  ],
+  "build_actions":[
+    {"action_id":"build-01-fixture-pack","actor":"内容工厂","action":"生成合成家长群消息、固定提示、四项预检卡和 fixture 红绿证据","output":"本目录中的 fixture 与实验卡文件","verification":"不含真实人物、学校、群名或可扫二维码","status":"DONE"},
+    {"action_id":"build-02-visual-pack","actor":"图片流水线","action":"生成四格预检图、群外核验路线图和停止卡","output":"3 张 9:16 原创图解及横屏变体","verification":"不伪造 exact UI，文字绑定 fact sheet","status":"READY"},
+    {"action_id":"build-03-video","actor":"视频流水线","action":"组合真人、手机 exact recording、字幕、图解和来源卡","output":"75–90 秒竖屏样片、封面、字幕和 QC 回执","verification":"素材、隐私、事实、字幕、音频和边界门禁均 PASS","status":"BLOCKED"},
+    {"action_id":"build-04-course","actor":"课程工厂","action":"扩展成一课两场景的 15 分钟带做课","output":"讲义、实验卡、评分表和提交模板","verification":"完成失败、修复、重跑、迁移和 5 人测试后才能晋级","status":"BLOCKED"}
+  ],
+  "recording_plan":"推荐真人出镜：开头建立家庭信任，结尾说安全边界；中段用合成截图与手机实录。没有真人也可用稳定 IP 与本人授权声音，但风险收口必须清晰。",
+  "artifacts":["dist/FINAL-PRODUCT.md","dist/episode-package.json","fixture-message.md","prompt-card.md","four-check-experiment-card.md","fixture-run.json","phone-recording.mov","host-open.mov","host-close.mov","final-vertical.mp4","qc-receipt.json"],
+  "dependencies":["合成截图","支持图片输入的 AI","当前官方来源","手机录屏","隐私打码能力","5 名目标家长测试者"],
+  "stop_conditions":["真实截图未打码","出现可扫描二维码或真实联系方式","AI 输出判定诈骗或建议付款","录屏当天来源已失效","没有群外独立核验路线"],
+  "next_handoff":"先进入 validation lane 复核 fixture 和录制一次合成图手机实测；通过后再交给视频流水线。真实群截图与真实付款不属于首轮验证。"
+}

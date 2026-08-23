@@ -1,0 +1,24 @@
+{
+  "schema_version": "audience-profile.v1",
+  "primary_audience": "有终端基础、已积累 Codex/Claude Skills 的 AI 内容生产者和独立开发者",
+  "secondary_audience": "想理解 Pi 能力分层、但暂不准备安装的 AI 工具观察者",
+  "roles": {
+    "viewer": "在短视频、B站或知识库看到 Pi 热点的人",
+    "operator": "能在隔离测试目录运行命令的人",
+    "exposed_person": "本机账号、文件与凭证所有者",
+    "decision_owner": "决定是否安装、授权和迁移工作流的用户本人"
+  },
+  "digital_ability": "会打开终端、复制命令、查看文件路径；不要求会写 TypeScript",
+  "device_context": "macOS/Linux 桌面为主；竖屏视频展示终端局部放大，完整操作放横屏课程或下载卡",
+  "emotional_context": "对新工具兴奋但担心装错、重复配置或暴露权限",
+  "objections": ["我已经有 Codex，为什么还要 Pi", "是不是又要重做 Skills", "终端 Agent 会不会乱动文件", "教程为什么包名不一样"],
+  "language_rules": ["先说能验证的结果再讲术语", "每个能力标注内置/外接/未验证", "命令逐行显示", "不使用万能、完全兼容、绝对安全"],
+  "accessibility": "字幕至少两行内、命令高对比度、读出关键包名并在下载卡提供可复制文本",
+  "privacy": "只在空白测试目录操作；录屏前清空终端历史并遮盖用户目录、密钥和私有仓库",
+  "share_path": "短视频负责发现和边界；评论区/简介领取实验卡；长视频或课程承接完整安装和适配",
+  "learner_validation": {
+    "minimum_users": 5,
+    "success_artifact": "至少 5 名目标用户提交包名核验截图、Skill 发现结果和权限检查表",
+    "current_status": "NOT-LEARNER-TESTED"
+  }
+}

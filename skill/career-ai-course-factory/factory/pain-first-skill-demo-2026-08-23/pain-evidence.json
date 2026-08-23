@@ -1,0 +1,115 @@
+{
+  "schema_version": "pain-evidence.v1",
+  "pain_id": "PAIN-ELDER-HEALTH-CLAIM-001",
+  "status": "PAIN-VALIDATED",
+  "title": "爸妈收到“能治病”的保健品广告，先用 AI 做四项证据核验",
+  "risk_level": "high",
+  "decision_question_types": [
+    "is_effective",
+    "is_correct",
+    "is_suitable",
+    "is_trustworthy"
+  ],
+  "market_problem": "部分面向中老年人的私域直播、微信群、短视频引流和线下会销，把普通食品或保健食品宣传为能够治疗疾病，并叠加伪专家、虚假评价、免费体验或催促付款，使老人及其家属难以及时完成产品身份、宣传边界和交易风险核验。",
+  "affected_user": "收到保健品包装、直播截图、微信群海报或销售话术的老年人及其成年子女",
+  "trigger_event": "准备付款或复购前，对方声称产品能治疗疾病、替代药物或要求尽快付款",
+  "losses": [
+    "购买高价但不符合宣传的产品",
+    "因错误健康主张延误正规咨询",
+    "泄露身份证、验证码、付款码或健康隐私",
+    "付款后缺少可用于投诉和退款的证据"
+  ],
+  "evidence": [
+    {
+      "source_id": "S01",
+      "publisher_group": "国家市场监督管理总局",
+      "source_type": "regulator-cases",
+      "url": "https://www.samr.gov.cn/zt/ndzt/2025n/zhzznjsjzwhgpjzsczx/zjbs/art/2025/art_8e7d791b19a24aa8a0574ee3acf0c4bf.html",
+      "opened_at": "2026-08-23",
+      "supports": "私域直播、微信群、会销以及普通食品或保健食品宣称疾病治疗功效属于真实执法场景",
+      "cannot_prove": "不能证明所有保健品或所有销售人员违法，也不能证明 AI 能减少总体损失"
+    },
+    {
+      "source_id": "S02",
+      "publisher_group": "中国老龄协会",
+      "source_type": "official-problem-statement",
+      "url": "https://www.cncaprc.gov.cn/xwllxw/771609.jhtml",
+      "opened_at": "2026-08-23",
+      "supports": "涉老数字消费、个人信息和私域直播保健品误导属于公开权益保护热点",
+      "cannot_prove": "不能给出全国诈骗发生率、课程需求或学习效果"
+    },
+    {
+      "source_id": "S03",
+      "publisher_group": "国家市场监督管理总局",
+      "source_type": "official-problem-statement",
+      "url": "https://www.samr.gov.cn/xw/sj/art/2024/art_90d42b1914404c54857e504bcee93ead.html",
+      "opened_at": "2026-08-23",
+      "supports": "蓝帽子、注册备案、特殊食品信息查询、正规渠道、购物凭证和投诉电话构成现有非 AI 核验基线",
+      "cannot_prove": "不能证明具体产品对某个人有效或适用"
+    },
+    {
+      "source_id": "S04",
+      "publisher_group": "国家卫生健康委员会",
+      "source_type": "standard",
+      "url": "https://www.nhc.gov.cn/fzs/c100048/201808/31b2202291464a5fb9e1f64bebc4d877.shtml",
+      "opened_at": "2026-08-23",
+      "supports": "食品安全法要求保健食品标签说明书不得涉及疾病预防治疗功能并声明不能代替药物",
+      "cannot_prove": "不能仅凭一句广告词完成诈骗犯罪定性"
+    }
+  ],
+  "non_ai_baseline": "阅读包装标签和销售凭证，登录市场监管总局特殊食品信息查询平台核对注册备案，向医生或药师确认健康问题，必要时通过 12315、12345、银行或警方求助。",
+  "friction_gap": "老人可能看不清小字、不会从截图抄写批准号、不知道官方入口、难以把多段销售话术与监管规则逐项对照；子女往往在付款临近时才收到零散截图。",
+  "privacy_minimization": "只上传脱敏后的包装或宣传截图；遮挡姓名、手机号、住址、病历、身份证、银行卡、验证码、付款码和群成员信息。",
+  "capability_core": {
+    "stable_flow": [
+      "object",
+      "claim",
+      "evidence",
+      "source",
+      "boundary",
+      "action"
+    ],
+    "allowed_actions": [
+      "逐字提取产品名、产品类别、注册备案号和宣传话术",
+      "把可见话术映射到权威规则中的风险信号",
+      "生成官方数据库需要核对的字段和操作清单",
+      "明确看不清、查不到和不能证明的部分",
+      "生成暂停付款、保留证据和真人求助清单"
+    ],
+    "forbidden_actions": [
+      "诊断疾病或判断个体疗效",
+      "建议停药、换药或改变治疗",
+      "把未查到自动定性为诈骗",
+      "保证产品安全、有效或适合某个人",
+      "替用户付款、投诉、报警或公开点名商家"
+    ]
+  },
+  "independent_verification": {
+    "methods": [
+      {
+        "type": "official-source",
+        "procedure": "由用户亲自打开市场监管总局特殊食品信息查询平台，逐项核对产品名、注册备案号、企业、适宜人群和允许声称的功能。"
+      },
+      {
+        "type": "qualified-human",
+        "procedure": "涉及疾病、用药或个体适用性时，把整理后的问题交给医生或药师确认；涉及付款、个人信息或损失时联系家人、银行、12315/12345 或警方。"
+      }
+    ],
+    "decision_owner": "老年消费者本人及其授权家属；医疗判断由医生或药师承担，违法定性由监管或司法机关承担",
+    "pass_language": "本次没有发现已定义的红色风险项，且关键字段已经由用户在官方来源中核对；这不等于产品有效或适合某个人。"
+  },
+  "stop_and_escalate": {
+    "conditions": [
+      "宣传涉及治疗疾病、替代药物、停药或换药",
+      "包装字段看不清、官方记录不一致或无法核实",
+      "对方要求私人转账、立即付款或提供验证码、人脸、身份证",
+      "已经付款、已经服用后不适或已经泄露敏感信息"
+    ],
+    "actions": [
+      "暂停付款和继续提供个人信息",
+      "保存包装、聊天、直播、订单和付款凭证",
+      "联系医生或药师确认健康与用药问题",
+      "联系家人、银行、12315/12345 或警方处理交易和权益问题"
+    ]
+  }
+}

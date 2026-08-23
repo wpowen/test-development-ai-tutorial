@@ -1,0 +1,115 @@
+{
+  "schema_version": "content-plan.v1",
+  "positioning": "创作者/开发者支线的单点验证视频：不做 Pi 百科，也不承诺万能；只验证当前官方身份、能力分层和现有 Codex Skill 的发现路径。",
+  "titles": [
+    "别再装错 Pi Agent：它为什么能看到你的 Codex Skills？",
+    "Pi Agent 功能很多？先分清哪些是内置、哪些是外接",
+    "我把现有 Codex Skill 交给 Pi：第一步只验证这件事"
+  ],
+  "hook": "网上两条 Pi 安装命令，只有一条是 2026 年 5 月迁移后的当前入口。更关键的是：Pi 说能读 Codex Skills，但‘能看到’绝不等于‘能完整运行’。",
+  "fact_sheet": {
+    "claims": [
+      {
+        "claim_id": "claim-current-identity",
+        "text": "当前官方仓库和 npm scope 已迁往 Earendil Works。",
+        "source_ids": ["pi-migration", "pi-official-repo"],
+        "cannot_prove": "旧包没有被删除，不应说成所有旧安装立即失效"
+      },
+      {
+        "claim_id": "claim-small-core",
+        "text": "Pi 用小内核加 Extensions、Skills、Prompts、Themes 和 Packages 扩展能力。",
+        "source_ids": ["pi-docs-overview"],
+        "cannot_prove": "功能多不等于每项都内置、免费、安全或已配置"
+      },
+      {
+        "claim_id": "claim-skill-bridge",
+        "text": "官方文档声明 Pi 可以发现 Codex 用户 Skills 目录。",
+        "source_ids": ["pi-skills-doc"],
+        "cannot_prove": "本轮未安装 Pi；发现不等于加载、执行或完整成功"
+      },
+      {
+        "claim_id": "claim-permission-risk",
+        "text": "Pi 默认按启动它的用户与进程权限运行，官方建议需要强边界时使用容器或沙箱。",
+        "source_ids": ["pi-official-repo", "pi-extension-doc"],
+        "cannot_prove": "不能把这一点夸大为 Pi 必然不安全"
+      }
+    ]
+  },
+  "director_script": [
+    {
+      "time": "00:00-00:08",
+      "shot": "真人半身或稳定 IP 主播 + 两条新旧安装命令大字卡",
+      "action": "手指向不同 scope，屏幕打上 2026-05-07",
+      "overlay": "先核验身份，再谈能力",
+      "material_ids": ["mat-host-hook", "mat-old-new-package"]
+    },
+    {
+      "time": "00:08-00:28",
+      "shot": "官方迁移公告和 latest 文档 exact screen recording",
+      "action": "框选新仓库、新包名和版本分界",
+      "overlay": "@earendil-works/pi-coding-agent",
+      "material_ids": ["mat-official-screen"]
+    },
+    {
+      "time": "00:28-00:52",
+      "shot": "原创能力分层图",
+      "action": "从核心依次长出 Skill、Extension、Package、SDK/RPC",
+      "overlay": "功能来源不一样，权限也不一样",
+      "material_ids": ["mat-capability-layers"]
+    },
+    {
+      "time": "00:52-01:20",
+      "shot": "终端 exact recording：显示 Skill 路径和 Pi 实际输出",
+      "action": "只读查询现有 Skill 名称；不执行脚本",
+      "overlay": "PASS-DISCOVER / NOT-EXECUTED",
+      "material_ids": ["mat-terminal-discovery", "mat-compatibility-ladder"]
+    },
+    {
+      "time": "01:20-01:42",
+      "shot": "红绿对照：旧包名与‘完全兼容’为红；当前包名与四级判定为绿",
+      "action": "停在权限检查表",
+      "overlay": "发现 ≠ 加载 ≠ 执行 ≠ 完成",
+      "material_ids": ["mat-red-green", "mat-permission-check"]
+    },
+    {
+      "time": "01:42-01:55",
+      "shot": "真人或 IP 主播收口",
+      "action": "提示领取实验卡，预告下一期执行兼容性测试",
+      "overlay": "先做小实验，再决定迁移",
+      "material_ids": ["mat-host-close"]
+    }
+  ],
+  "spoken_narration": [
+    {
+      "section": "开场",
+      "text": "如果你最近搜 Pi Agent，可能会看到两套安装名字。别急着复制命令。2026 年 5 月，Pi 的官方仓库和 npm 包已经迁到 Earendil Works。旧包还在，但当前入口已经变了。",
+      "claim_ids": ["claim-current-identity"]
+    },
+    {
+      "section": "能力分层",
+      "text": "Pi 看起来功能很多，真正关键的不是背功能表，而是分清能力从哪来。它把核心保持得比较小，再通过 Extension、Skill、提示模板、主题和 Package 长出工作流。第三方扩展不是网页插件，它可能就是能操作你电脑的代码。",
+      "claim_ids": ["claim-small-core", "claim-permission-risk"]
+    },
+    {
+      "section": "小实验",
+      "text": "我们第一期只验证一件事：Pi 能不能发现我已经做好的 Codex Skill。官方文档确实写了 Codex 的 Skills 目录，但验证必须看本机原始输出，不能让 Pi 自己说‘我可以’就算通过。这里如果能列出 Skill 名称，只能写 PASS-DISCOVER。加载、执行、最终完成，都是后面的独立门禁。",
+      "claim_ids": ["claim-skill-bridge"]
+    },
+    {
+      "section": "失败与修复",
+      "text": "最容易犯的两个错：照旧教程装旧 scope；或者看到 Skill 名字就说完全兼容。修复方法很简单：每条易变信息都带日期，兼容性拆成发现、加载、执行、完成四级，第三方代码先审查再运行。",
+      "claim_ids": ["claim-current-identity", "claim-permission-risk"]
+    },
+    {
+      "section": "收口",
+      "text": "所以 Pi 适合讲成一个可验证的能力底座，不适合讲成万能 Agent。你下一步只要做三件事：核验当前包名，准备一个无敏感信息的测试目录，保存 Skill 发现的原始输出。执行兼容性，我们下一期再测。",
+      "claim_ids": ["claim-current-identity", "claim-skill-bridge"]
+    }
+  ],
+  "benchmark": {
+    "primary": "AI Made Simple 的屏幕实操推进：先给结果，再连续操作",
+    "reverse": "官方文档的高密度功能索引：事实准确但不直接照搬为口播结构",
+    "originality_changes": ["从完整安装总览改为一个 Skill 发现实验", "加入新旧身份冲突和四级兼容性", "明确权限停止动作", "中文口语化但不复制竞品措辞和镜头"]
+  },
+  "call_to_action": "领取《Pi 当前入口 + Skill 四级兼容性实验卡》，提交 PASS-DISCOVER 或具体阻断截图；不要提交密钥、用户目录或私有仓库信息。"
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version":"content-plan.v1","positioning":"普通家庭开学季 AI 小实验：不是让 AI 识别骗子，而是把一张脱敏缴费截图变成付款前四项核验清单。",
+  "titles":["家长群突然让扫码交资料费？付款前先让 AI 问四个问题","头像昵称都像老师，也先别付：一张截图做四项预检","开学季家长群缴费通知，AI 只帮你做这一步"],
+  "hook":"群里老师头像、老师语气、还有一排家长缴费接龙——这三样加起来，也不能证明这笔钱该付。",
+  "fact_sheet":{"claims":[
+    {"claim_id":"claim-current-warning","text":"2026-08-19 警方公开提醒近期出现冒充班级老师收资料费的场景。","source_ids":["huaibei-2026-warning"],"cannot_prove":"不代表所有家长群收费都有问题"},
+    {"claim_id":"claim-risk-patterns","text":"高仿身份、二维码、限时催促和缴费接龙是需要进一步核验的信号。","source_ids":["huaibei-2026-warning","cctv-parent-group-case","huairou-parent-guide"],"cannot_prove":"不能凭单个信号指控任何人"},
+    {"claim_id":"claim-oracle","text":"付款前应通过群外既有联系方式和学校官方渠道核实。","source_ids":["huaibei-2026-warning","cctv-parent-group-case"],"cannot_prove":"具体学校的唯一合规渠道需向学校确认"},
+    {"claim_id":"claim-ai-role","text":"支持图片输入的 AI 能帮助提取截图文字和视觉信息并整理清单。","source_ids":["openai-image-input"],"cannot_prove":"不能证明通知真伪或 OCR 完全正确"},
+    {"claim_id":"claim-privacy","text":"真实截图上传前应最小化未成年人和群成员信息。","source_ids":["openai-data-controls","huairou-parent-guide"],"cannot_prove":"不能替代所用产品的当前隐私条款"}
+  ]},
+  "director_script":[
+    {"time":"00:00-00:07","shot":"真人近景，旁边浮出合成家长群消息","action":"在二维码上盖巨大马赛克","overlay":"先别扫，先问四个问题","material_ids":["mat-host-open","mat-synthetic-chat"]},
+    {"time":"00:07-00:18","shot":"四格大字卡","action":"依次出现谁收、收什么、怎么收、凭什么可信","overlay":"头像昵称不是身份凭证","material_ids":["mat-four-checks"]},
+    {"time":"00:18-00:42","shot":"手机 exact screen recording","action":"对合成截图打码并上传，粘贴固定提示","overlay":"只提取，不判定；不扫码，不付款","material_ids":["mat-phone-demo","mat-prompt-card"]},
+    {"time":"00:42-00:56","shot":"红色失败卡转绿色修复卡","action":"失败输出说可以付；修复后回到 PAUSE-VERIFY","overlay":"AI 不是 Oracle","material_ids":["mat-red-green"]},
+    {"time":"00:56-01:12","shot":"群外核验路线图","action":"通讯录老师电话→学校办公室→官网/公众号/缴费平台","overlay":"不要使用截图里的新号码","material_ids":["mat-oracle-route"]},
+    {"time":"01:12-01:25","shot":"真人收口","action":"说清已付款、点链接和隐私泄露的升级动作","overlay":"留证、止付、报警","material_ids":["mat-host-close","mat-stop-card"]}
+  ],
+  "spoken_narration":[
+    {"section":"开场","text":"群里是老师头像，语气也像老师，下面还有一排家长缴费接龙。先别扫。最近警方刚提醒，开学季已经出现冒充老师收资料费的场景。","claim_ids":["claim-current-warning","claim-risk-patterns"]},
+    {"section":"四项预检","text":"你只让 AI 帮你问四个问题：谁在收钱？收的是什么？通过什么方式收？除了头像、昵称和接龙，还有什么证据能证明这是学校通知？","claim_ids":["claim-ai-role","claim-risk-patterns"]},
+    {"section":"操作","text":"先把孩子姓名、班级、群名、头像、手机号和二维码全部遮住，再上传。提示词我放在实验卡里。记住：只提取风险信号和缺失证据，不许 AI 扫码，不许它替你判断真假。","claim_ids":["claim-ai-role","claim-privacy"]},
+    {"section":"失败与修复","text":"如果 AI 因为语气正式、很多人已缴费，就说可以付款，这个结果直接作废。加上一句：群内信息不是独立证据，最终必须通过群外官方渠道核实。","claim_ids":["claim-risk-patterns","claim-oracle"]},
+    {"section":"独立核验","text":"然后拨打你通讯录里原来就有的老师或学校电话，再看学校官网、官方公众号或既有缴费平台。不要使用截图里新发来的号码，也不要回头问那个高仿账号。","claim_ids":["claim-oracle"]},
+    {"section":"收口","text":"AI 在这里不是识骗裁判，只是帮忙把忙乱信息整理成清单。学校确认前不付款；已经扫码或付款，保存聊天和凭证，尽快联系支付机构并报警。","claim_ids":["claim-ai-role","claim-oracle"]}
+  ],
+  "benchmark":{"primary":"央视真实案例的故事先行、损失可视化和警方动作","reverse":"泛 AI 防骗清单和模型下结论式内容","originality_changes":["改成一张合成截图现场实验","增加隐私打码作为第一步","固定四项预检而非骗局大全","用群外 Oracle 验收","展示同输入失败、修复和迁移"]},
+  "call_to_action":"领取《家长群缴费四项预检卡》和合成练习截图；先用练习图完成一次，再处理真实信息。"
+}

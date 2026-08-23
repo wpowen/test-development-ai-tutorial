@@ -1,0 +1,104 @@
+{
+  "schema_version": "production-plan.v1",
+  "host_strategy": "固定真人‘家庭核验员’在开头 5–8 秒和结尾 8–12 秒出镜；中间使用手机录屏、大字证据卡和红黄绿对照。父母可参与封闭测试，但不公开真实健康、财务或受骗经历。",
+  "video_brief": {
+    "format": "9:16 竖屏短视频，另保留 16:9 完整教学版适配空间",
+    "duration": "60–90 秒入口版；5–8 分钟完整版承接完整跟做与失败修复",
+    "visual_language": "高对比、大字号、一步一屏、风险红/待核验黄/已核对绿",
+    "audio": "优先真人普通话；可用有授权的稳定 TTS，不做声音克隆",
+    "exact_ui_rule": "官方查询和模型结果必须使用当前真实录屏；图像生成只用于非精确场景和 B-roll"
+  },
+  "materials": [
+    {
+      "material_id": "M01",
+      "type": "synthetic-fixture-image",
+      "method": "依据公开监管套路自行编写虚构品牌、批准号和版式，并醒目标注教学样例",
+      "usage": "包装与广告输入",
+      "exactness": "non-exact-illustration",
+      "rights_status": "owned",
+      "privacy_status": "sanitized",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M02",
+      "type": "host-shot",
+      "method": "本人拍摄并留存肖像和声音授权",
+      "usage": "开场建立信任",
+      "exactness": "exact-host",
+      "rights_status": "cleared",
+      "privacy_status": "sanitized",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M03",
+      "type": "screen-recording",
+      "method": "使用干净账号和虚构图片录制当前模型界面",
+      "usage": "字段提取跟做",
+      "exactness": "exact-current-ui",
+      "rights_status": "owned",
+      "privacy_status": "sanitized",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M04",
+      "type": "failure-card",
+      "method": "从保存的失败输出生成确定性红色对照卡",
+      "usage": "展示猜批准号和过度定性",
+      "exactness": "exact-result-transcription",
+      "rights_status": "owned",
+      "privacy_status": "sanitized",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M05",
+      "type": "official-source-screen-recording",
+      "method": "录制市场监管总局当前公开查询页面并显示访问日期",
+      "usage": "独立 Oracle",
+      "exactness": "exact-current-ui",
+      "rights_status": "official-link",
+      "privacy_status": "public",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M06",
+      "type": "oracle-card",
+      "method": "由固定规则生成红黄绿核验表",
+      "usage": "对照产品身份、宣传、交易和 AI 边界",
+      "exactness": "deterministic-rule",
+      "rights_status": "owned",
+      "privacy_status": "not-applicable",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M07",
+      "type": "synthetic-transfer-image",
+      "method": "自写虚构微信群对话，不使用真实头像、账号、商家或收款信息",
+      "usage": "第二场景迁移",
+      "exactness": "non-exact-illustration",
+      "rights_status": "owned",
+      "privacy_status": "sanitized",
+      "provenance_status": "recorded"
+    },
+    {
+      "material_id": "M08",
+      "type": "stop-escalation-card",
+      "method": "根据 pain-evidence 的停止条件确定性生成",
+      "usage": "结尾 Human Gate 和下载物",
+      "exactness": "deterministic-rule",
+      "rights_status": "owned",
+      "privacy_status": "not-applicable",
+      "provenance_status": "recorded"
+    }
+  ],
+  "publication_gates": {
+    "pain_evidence": "PASS",
+    "oracle_independence": "PASS",
+    "high_risk_boundary": "PASS",
+    "rights": "PASS",
+    "privacy": "PASS",
+    "likeness_voice": "PASS",
+    "render": "BLOCKED-NOT-RUN",
+    "learner_validation": "BLOCKED-NOT-RUN",
+    "production_effect": "BLOCKED-NOT-RUN"
+  }
+}

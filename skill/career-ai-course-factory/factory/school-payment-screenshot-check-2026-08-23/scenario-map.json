@@ -1,0 +1,7 @@
+{
+  "schema_version":"scenario-map.v1","capability_core":{"stable_flow":["object","claim","evidence","source","boundary","action"]},
+  "adapters":[
+    {"scenario_id":"group-material-fee","name":"班级群资料费二维码","trigger":"群内高仿老师账号要求今晚前扫码交 398 元资料费并接龙","input":"已遮盖群名、头像、孩子姓名和二维码的合成聊天截图","ai_task":"提取谁收、收什么、怎么收、凭什么可信，并列出缺失证据和群外核验动作","inspectable_output":"四项预检卡：主体、事项、渠道、证据；状态固定为 PAUSE-VERIFY","oracle":{"type":"original-record","procedure":"拨打通讯录原有老师/学校电话并对照官方缴费入口、收款主体"},"failure":"AI 因头像、语气和多人接龙直接判断通知真实，或扫描二维码","human_gate":"家长在学校群外渠道确认前不得付款；发现异常由学校和警方处理","teaching_content":"识别群内身份、催促、私人收款和跟风截图都不是独立证据","materials":["合成家长群截图","四项预检卡","群外核验路线卡"]},
+    {"scenario_id":"private-training-fee","name":"孩子私聊说培训费急缴","trigger":"陌生账号或孩子社交账号私聊，称课程名额将满，要求转到个人账户","input":"已打码的合成私聊文本，不含真实孩子信息","ai_task":"提取提出者、培训机构、截止时间、收款账户和缺失合同/官方通知，生成回拨孩子与机构的核验问题","inspectable_output":"私聊转账核验表和 STOP-TRANSFER 状态","oracle":{"type":"original-record","procedure":"拨打孩子既有号码并从机构官网独立查找电话，不使用消息中号码"},"failure":"AI 把能说出孩子信息当作身份验证，忽略账号可能被盗","human_gate":"家长与孩子本人和机构分别确认，合同与对公主体一致后再决定","teaching_content":"把方法迁移到冒充孩子、同学或培训机构的私聊缴费请求","materials":["合成私聊 fixture","独立回拨问题卡","收款主体对照表"]}
+  ]
+}

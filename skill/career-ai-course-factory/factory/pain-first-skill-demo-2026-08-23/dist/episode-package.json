@@ -1,0 +1,570 @@
+{
+  "schema_version": "pain-first-episode-package.v1",
+  "compiled_at": "2026-08-23T14:55:15.105881+00:00",
+  "status": "PASS-STRUCTURE",
+  "maturity": "DESK-RESEARCHED",
+  "limitations": [
+    "NOT-LEARNER-TESTED",
+    "NOT-PRODUCTION-VALIDATED"
+  ],
+  "source_hashes": {
+    "pain-evidence.json": "64f311692833e161f20a67248ab26a3fe5097be1c09bc4b9ec1940e600b42c6e",
+    "audience-profile.json": "d7bdc15ec788763a924ed920777cfe730d49d165a18204ba015fa4d8e9c8b119",
+    "scenario-map.json": "36046c30cf844e7be114cff933912394138106ca42a90fca45639d780abd2f82",
+    "teaching-plan.json": "b5882ee1c0437189b74875c474a864ecc86a2019680d0423c591564ebb07c859",
+    "content-plan.json": "ef951d8889b262402f8e301175e66b7394bd702cc4cd0a90d2148ceb5f6315cf",
+    "production-plan.json": "924c85b101a8e76ee7180a4c3d2d054fdaddca5b8abe381a1a63b92e1d3a94ed"
+  },
+  "pain": {
+    "schema_version": "pain-evidence.v1",
+    "pain_id": "PAIN-ELDER-HEALTH-CLAIM-001",
+    "status": "PAIN-VALIDATED",
+    "title": "爸妈收到“能治病”的保健品广告，先用 AI 做四项证据核验",
+    "risk_level": "high",
+    "decision_question_types": [
+      "is_effective",
+      "is_correct",
+      "is_suitable",
+      "is_trustworthy"
+    ],
+    "market_problem": "部分面向中老年人的私域直播、微信群、短视频引流和线下会销，把普通食品或保健食品宣传为能够治疗疾病，并叠加伪专家、虚假评价、免费体验或催促付款，使老人及其家属难以及时完成产品身份、宣传边界和交易风险核验。",
+    "affected_user": "收到保健品包装、直播截图、微信群海报或销售话术的老年人及其成年子女",
+    "trigger_event": "准备付款或复购前，对方声称产品能治疗疾病、替代药物或要求尽快付款",
+    "losses": [
+      "购买高价但不符合宣传的产品",
+      "因错误健康主张延误正规咨询",
+      "泄露身份证、验证码、付款码或健康隐私",
+      "付款后缺少可用于投诉和退款的证据"
+    ],
+    "evidence": [
+      {
+        "source_id": "S01",
+        "publisher_group": "国家市场监督管理总局",
+        "source_type": "regulator-cases",
+        "url": "https://www.samr.gov.cn/zt/ndzt/2025n/zhzznjsjzwhgpjzsczx/zjbs/art/2025/art_8e7d791b19a24aa8a0574ee3acf0c4bf.html",
+        "opened_at": "2026-08-23",
+        "supports": "私域直播、微信群、会销以及普通食品或保健食品宣称疾病治疗功效属于真实执法场景",
+        "cannot_prove": "不能证明所有保健品或所有销售人员违法，也不能证明 AI 能减少总体损失"
+      },
+      {
+        "source_id": "S02",
+        "publisher_group": "中国老龄协会",
+        "source_type": "official-problem-statement",
+        "url": "https://www.cncaprc.gov.cn/xwllxw/771609.jhtml",
+        "opened_at": "2026-08-23",
+        "supports": "涉老数字消费、个人信息和私域直播保健品误导属于公开权益保护热点",
+        "cannot_prove": "不能给出全国诈骗发生率、课程需求或学习效果"
+      },
+      {
+        "source_id": "S03",
+        "publisher_group": "国家市场监督管理总局",
+        "source_type": "official-problem-statement",
+        "url": "https://www.samr.gov.cn/xw/sj/art/2024/art_90d42b1914404c54857e504bcee93ead.html",
+        "opened_at": "2026-08-23",
+        "supports": "蓝帽子、注册备案、特殊食品信息查询、正规渠道、购物凭证和投诉电话构成现有非 AI 核验基线",
+        "cannot_prove": "不能证明具体产品对某个人有效或适用"
+      },
+      {
+        "source_id": "S04",
+        "publisher_group": "国家卫生健康委员会",
+        "source_type": "standard",
+        "url": "https://www.nhc.gov.cn/fzs/c100048/201808/31b2202291464a5fb9e1f64bebc4d877.shtml",
+        "opened_at": "2026-08-23",
+        "supports": "食品安全法要求保健食品标签说明书不得涉及疾病预防治疗功能并声明不能代替药物",
+        "cannot_prove": "不能仅凭一句广告词完成诈骗犯罪定性"
+      }
+    ],
+    "non_ai_baseline": "阅读包装标签和销售凭证，登录市场监管总局特殊食品信息查询平台核对注册备案，向医生或药师确认健康问题，必要时通过 12315、12345、银行或警方求助。",
+    "friction_gap": "老人可能看不清小字、不会从截图抄写批准号、不知道官方入口、难以把多段销售话术与监管规则逐项对照；子女往往在付款临近时才收到零散截图。",
+    "privacy_minimization": "只上传脱敏后的包装或宣传截图；遮挡姓名、手机号、住址、病历、身份证、银行卡、验证码、付款码和群成员信息。",
+    "capability_core": {
+      "stable_flow": [
+        "object",
+        "claim",
+        "evidence",
+        "source",
+        "boundary",
+        "action"
+      ],
+      "allowed_actions": [
+        "逐字提取产品名、产品类别、注册备案号和宣传话术",
+        "把可见话术映射到权威规则中的风险信号",
+        "生成官方数据库需要核对的字段和操作清单",
+        "明确看不清、查不到和不能证明的部分",
+        "生成暂停付款、保留证据和真人求助清单"
+      ],
+      "forbidden_actions": [
+        "诊断疾病或判断个体疗效",
+        "建议停药、换药或改变治疗",
+        "把未查到自动定性为诈骗",
+        "保证产品安全、有效或适合某个人",
+        "替用户付款、投诉、报警或公开点名商家"
+      ]
+    },
+    "independent_verification": {
+      "methods": [
+        {
+          "type": "official-source",
+          "procedure": "由用户亲自打开市场监管总局特殊食品信息查询平台，逐项核对产品名、注册备案号、企业、适宜人群和允许声称的功能。"
+        },
+        {
+          "type": "qualified-human",
+          "procedure": "涉及疾病、用药或个体适用性时，把整理后的问题交给医生或药师确认；涉及付款、个人信息或损失时联系家人、银行、12315/12345 或警方。"
+        }
+      ],
+      "decision_owner": "老年消费者本人及其授权家属；医疗判断由医生或药师承担，违法定性由监管或司法机关承担",
+      "pass_language": "本次没有发现已定义的红色风险项，且关键字段已经由用户在官方来源中核对；这不等于产品有效或适合某个人。"
+    },
+    "stop_and_escalate": {
+      "conditions": [
+        "宣传涉及治疗疾病、替代药物、停药或换药",
+        "包装字段看不清、官方记录不一致或无法核实",
+        "对方要求私人转账、立即付款或提供验证码、人脸、身份证",
+        "已经付款、已经服用后不适或已经泄露敏感信息"
+      ],
+      "actions": [
+        "暂停付款和继续提供个人信息",
+        "保存包装、聊天、直播、订单和付款凭证",
+        "联系医生或药师确认健康与用药问题",
+        "联系家人、银行、12315/12345 或警方处理交易和权益问题"
+      ]
+    }
+  },
+  "audience": {
+    "schema_version": "audience-profile.v1",
+    "primary_audience": "30–55 岁、经常帮助父母处理手机、消费和健康信息的成年子女或照护者",
+    "secondary_audience": "能够拍照、转发截图或在家人陪同下操作手机的老年人",
+    "roles": {
+      "viewer": "成年子女、照护者、社区工作者以及愿意了解风险的老年人",
+      "operator": "优先由成年子女或照护者操作；数字能力足够的老人可在陪同下操作",
+      "exposed_person": "准备购买、使用产品或提交个人信息的老年消费者",
+      "decision_owner": "老人本人及其授权家属；医生、药师、监管部门和警方分别承担专业判断"
+    },
+    "digital_ability": "会使用微信、拍照和转发，但可能不熟悉复制小字、浏览器标签、官方数据库和来源核验",
+    "device_context": "手机竖屏为主，家庭共同观看；需要大字、圈选、语音和一步一屏",
+    "emotional_context": "老人可能相信长期关怀自己的销售人员，子女可能因焦急而直接否定父母，导致抵触",
+    "objections": [
+      "我认识这个老师很久了，不会骗我",
+      "这是专家推荐的，你不懂",
+      "只买一点试试没有关系",
+      "AI 也不一定可靠"
+    ],
+    "language_rules": [
+      "不使用嘲讽、责备和‘你怎么又被骗’",
+      "先说一起核验，不说我来证明你错了",
+      "每屏只给一个动作和一个结果",
+      "把专业词替换成可见字段和下一步动作"
+    ],
+    "accessibility": "大字号、高对比、普通话口播、关键动作可暂停、提示词可复制、核验卡可打印",
+    "privacy": "示例全部使用虚构数据；真实使用前必须遮挡身份、健康、支付和群成员信息",
+    "share_path": "子女在短视频平台看到后转入家庭群，和父母共同完成一次；社区工作者可使用打印核验卡带练",
+    "learner_validation": {
+      "minimum_users": 5,
+      "required_metrics": [
+        "任务完成率",
+        "完成用时",
+        "隐私遮挡错误",
+        "官方来源打开率",
+        "错误恢复率",
+        "第二场景迁移率"
+      ]
+    }
+  },
+  "scenarios": {
+    "schema_version": "scenario-map.v1",
+    "capability_core": {
+      "stable_flow": [
+        "object",
+        "claim",
+        "evidence",
+        "source",
+        "boundary",
+        "action"
+      ],
+      "stable_question": "面对一个声称有功效、正确、可行或适合的对象，先提取对象与主张，再找可见证据和独立来源，最后给出边界与下一步行动。"
+    },
+    "adapters": [
+      {
+        "scenario_id": "SCN-PACKAGE-CLAIM",
+        "name": "保健品包装和宣传海报核验",
+        "trigger": "父母发来一张产品包装或直播海报，称产品可以治疗糖尿病或心脑血管疾病",
+        "input": "一张完全虚构、已脱敏的产品包装与广告合成图",
+        "ai_task": "逐字提取产品名、类别、注册备案号、企业和疾病治疗话术，生成官方查询字段和红黄绿风险表",
+        "inspectable_output": "字段提取表、风险句原文、官方核验清单、不能证明清单和停止动作",
+        "oracle": {
+          "type": "official-source",
+          "procedure": "打开市场监管总局特殊食品信息查询平台，对照包装字段和允许声称的功能；将涉及疾病和用药的问题交给医生或药师。"
+        },
+        "failure": "模型把模糊的小字猜成一个不存在的批准号，并直接回答‘这一定是骗局’",
+        "human_gate": "用户必须亲自打开官方页面；涉及用药、付款或个人信息时暂停并转交相应真人渠道",
+        "teaching_content": [
+          "如何拍清楚包装正反面并遮挡隐私",
+          "如何要求 AI 看不清就拒绝猜",
+          "如何分开产品身份、宣传风险和个体疗效",
+          "如何逐项核对官方记录"
+        ],
+        "materials": [
+          "虚构包装图",
+          "风险规则卡",
+          "官方查询字段卡",
+          "红黄绿验收表"
+        ]
+      },
+      {
+        "scenario_id": "SCN-GROUP-PAYMENT",
+        "name": "微信群专家推荐和私人转账核验",
+        "trigger": "群内所谓专家持续推荐产品，水军评价效果好，并要求添加个人微信或私人转账",
+        "input": "一张完全虚构、已脱敏的群聊截图和付款要求",
+        "ai_task": "提取专家身份主张、疗效主张、虚假评价信号、私人转账和敏感信息请求，映射到风险规则并生成证据保全清单",
+        "inspectable_output": "聊天原文引用、身份核验问题、交易风险表、证据保全和求助路径",
+        "oracle": {
+          "type": "original-record",
+          "procedure": "对照完整聊天、订单和收款主体；通过机构官方电话、监管平台、银行和 12315/12345 核验，不使用群内提供的联系方式。"
+        },
+        "failure": "模型只给‘提高警惕’的泛泛建议，没有引用聊天原文，也没有指出私人转账和验证码属于立即停止条件",
+        "human_gate": "在任何转账、提交身份信息或公开指控前，由家属、银行、监管部门或警方接管",
+        "teaching_content": [
+          "如何保存完整聊天而不是截取一句话",
+          "如何区分风险信号和最终违法定性",
+          "如何不用对方提供的联系方式核验身份",
+          "已经付款后如何整理证据和求助"
+        ],
+        "materials": [
+          "虚构群聊图",
+          "身份与交易风险卡",
+          "证据保全清单",
+          "求助渠道卡"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "schema_version": "teaching-plan.v1",
+    "outcome": "学习者能用一张脱敏截图让 AI 提取可核对事实，识别已定义风险信号，亲自打开官方来源完成核验，并在高风险条件下停止操作和求助。",
+    "prerequisites": [
+      "会拍照或保存截图",
+      "会把图片发给支持图片输入的 AI",
+      "会点击并查看一个官方网页",
+      "知道真实个人信息必须遮挡"
+    ],
+    "learner_artifact": "一份包含图中证据、风险规则、官方核验结果、不能证明内容和下一步动作的红黄绿核验表",
+    "assessment": "检查逐字提取、拒绝猜测、官方来源打开、停止条件触发和第二场景迁移五项；任一高风险项失败即不通过。",
+    "maturity": "DESK-RESEARCHED",
+    "steps": [
+      {
+        "kind": "pain",
+        "action": "展示一句‘能治疗糖尿病，可以替代药物’的虚构广告，让学习者先判断潜在损失",
+        "evidence": "监管案例和食品安全规则卡"
+      },
+      {
+        "kind": "baseline",
+        "action": "说明现有正确办法是看包装、查注册备案、问医生药师、保留凭证和联系监管渠道",
+        "evidence": "市场监管总局消费提示"
+      },
+      {
+        "kind": "demo",
+        "action": "上传脱敏图片，让 AI 只提取可见字段、风险句和查询字段",
+        "evidence": "保存的提示词和首次输出"
+      },
+      {
+        "kind": "pause",
+        "action": "暂停视频，让学习者遮挡隐私并在自己的设备上完成一次字段提取",
+        "evidence": "学习者保存的脱敏输入与输出"
+      },
+      {
+        "kind": "verify",
+        "action": "亲自打开官方来源，逐项核对产品身份和允许声称的功能",
+        "evidence": "官方页面核对记录"
+      },
+      {
+        "kind": "failure",
+        "action": "展示模型猜批准号并直接定性诈骗的失败输出",
+        "evidence": "红色失败记录"
+      },
+      {
+        "kind": "repair",
+        "action": "加入‘逐字引用、看不清拒绝猜、风险信号与最终定性分开、必须给官方核验’四条约束",
+        "evidence": "修复提示词差异"
+      },
+      {
+        "kind": "rerun",
+        "action": "对同一张图重跑，检查批准号不再被猜测并出现不能证明清单",
+        "evidence": "同输入修复后输出"
+      },
+      {
+        "kind": "transfer",
+        "action": "换成微信群专家推荐和私人转账截图，复用同一六步能力并增加交易风险",
+        "evidence": "第二场景核验表"
+      },
+      {
+        "kind": "human-gate",
+        "action": "在疾病、用药、付款、身份信息或损失条件下暂停，把材料交给医生药师、家属、银行、监管部门或警方",
+        "evidence": "停止与升级卡"
+      }
+    ]
+  },
+  "content": {
+    "schema_version": "content-plan.v1",
+    "positioning": "不是教父母学一个 AI 工具，而是教家庭在准备付款的真实时刻，用 AI 降低信息提取和官方核验门槛。",
+    "titles": [
+      "爸妈收到‘能治病’的保健品广告，先用 AI 做这 4 项核验",
+      "别直接问 AI 是不是骗子：先让它找出 4 个能查证的证据",
+      "保健品说能替代药物？拍一张图，和父母一起完成官方核验"
+    ],
+    "hook": "别急着和爸妈争，也别直接问 AI 这是不是骗子。AI 也会猜。先让它把四个能查证的证据找出来。",
+    "fact_sheet": {
+      "claims": [
+        {
+          "claim_id": "C01",
+          "text": "公开监管案例中存在普通食品或保健食品通过私域直播、微信群和会销宣称疾病治疗功效的情形。",
+          "source_ids": [
+            "S01",
+            "S02"
+          ],
+          "cannot_prove": "不能据此判断所有产品或销售人员违法。"
+        },
+        {
+          "claim_id": "C02",
+          "text": "现有非 AI 核验包括查看蓝帽子和注册备案号、打开特殊食品信息查询平台、保留购物凭证并通过官方渠道咨询投诉。",
+          "source_ids": [
+            "S03"
+          ],
+          "cannot_prove": "不能据此判断具体产品对某个人有效或适合。"
+        },
+        {
+          "claim_id": "C03",
+          "text": "保健食品标签说明书不得涉及疾病预防治疗功能，并应声明不能代替药物。",
+          "source_ids": [
+            "S04"
+          ],
+          "cannot_prove": "不能仅凭一句宣传完成诈骗犯罪定性。"
+        }
+      ],
+      "input": "虚构且已脱敏的包装/广告截图",
+      "oracle": "市场监管总局官方记录、原始包装和医生/药师或监管人员",
+      "result_status": "DESIGNED-NOT-RUN"
+    },
+    "director_script": [
+      {
+        "scene_id": "SC01",
+        "time": "0–8s",
+        "visual": "真人出镜，手持一张虚构且醒目标记为教学样例的广告图",
+        "action": "指出‘治疗糖尿病、替代药物’两句",
+        "overlay": "先暂停付款，不先下结论",
+        "material_ids": [
+          "M01",
+          "M02"
+        ]
+      },
+      {
+        "scene_id": "SC02",
+        "time": "8–28s",
+        "visual": "手机竖屏录制，上传脱敏图片并运行提示词",
+        "action": "圈出产品名、类别、批准号、疗效话术",
+        "overlay": "看不清就写无法辨认，禁止猜",
+        "material_ids": [
+          "M01",
+          "M03"
+        ]
+      },
+      {
+        "scene_id": "SC03",
+        "time": "28–42s",
+        "visual": "红色失败卡和首次输出对照",
+        "action": "展示模型猜批准号并直接定性的失败",
+        "overlay": "AI 不能批准自己",
+        "material_ids": [
+          "M04"
+        ]
+      },
+      {
+        "scene_id": "SC04",
+        "time": "42–62s",
+        "visual": "官方查询页面当前录屏与字段核对卡",
+        "action": "由用户亲自打开并逐项核对",
+        "overlay": "AI 提取，官方来源验收",
+        "material_ids": [
+          "M05",
+          "M06"
+        ]
+      },
+      {
+        "scene_id": "SC05",
+        "time": "62–78s",
+        "visual": "微信群虚构截图，私人转账和验证码区域被圈出",
+        "action": "迁移到第二场景并触发停止动作",
+        "overlay": "换题材，六步不变",
+        "material_ids": [
+          "M07",
+          "M08"
+        ]
+      },
+      {
+        "scene_id": "SC06",
+        "time": "78–90s",
+        "visual": "真人出镜和大字求助卡",
+        "action": "说明 AI 不能判断疗效和违法性质",
+        "overlay": "涉及病、药、钱、身份信息，找真人",
+        "material_ids": [
+          "M08"
+        ]
+      }
+    ],
+    "spoken_narration": [
+      {
+        "section": "开场",
+        "text": "爸妈发来一张保健品广告，说能治糖尿病。先别争，也别直接问 AI 这是不是骗子。AI 也会猜。今天只让它找四个能查证的证据。",
+        "claim_ids": [
+          "C01"
+        ]
+      },
+      {
+        "section": "跟做",
+        "text": "先把姓名、手机号、付款码和群成员遮住。上传图片后，让 AI 逐字提取产品名、产品类别、注册备案号和所有疾病疗效话术。看不清就必须写无法辨认，不能补。",
+        "claim_ids": []
+      },
+      {
+        "section": "第一次失败",
+        "text": "第一次它直接说很可能是骗局，还猜了一个批准号。这个答案不能用，因为没有逐字证据，也没有独立核验。",
+        "claim_ids": []
+      },
+      {
+        "section": "修复与核验",
+        "text": "补上四条规则：逐句引用原图；看不清拒绝猜；风险信号和最终定性分开；必须告诉我去哪个官方入口核对。然后由我们亲自打开市场监管总局查询平台，对照产品名、批准号、企业和允许声称的功能。",
+        "claim_ids": [
+          "C02",
+          "C03"
+        ]
+      },
+      {
+        "section": "迁移",
+        "text": "换成微信群里所谓专家推荐并要求私人转账，六步仍然一样：看对象、找主张、留证据、查来源、说边界、给行动。这里只是新增了身份和支付风险。",
+        "claim_ids": []
+      },
+      {
+        "section": "Human Gate",
+        "text": "AI 不能证明产品有效，也不能替你停药、付款或给商家定罪。只要涉及病、药、钱、验证码或身份证，先停下来，把证据交给医生药师、家人、银行、市场监管部门或警方。",
+        "claim_ids": [
+          "C02",
+          "C03"
+        ]
+      }
+    ],
+    "benchmark": {
+      "primary": "抽象借鉴面向老年用户的一件事一课、慢节奏陪伴和练习后核验机制，不复制任何具体创作者的台词、人物、镜头或品牌。",
+      "reverse": "避免以强权威口吻无证据点名、喊话或绝对定性；所有判断必须回到可见证据、官方来源和人工责任。",
+      "originality_changes": [
+        "从工具功能改为准备付款的真实家庭时刻",
+        "主要观看者改为成年子女和照护者，受益者为父母",
+        "新增 AI 失败、最小修复和同输入复验",
+        "新增官方 Oracle 和不能证明清单",
+        "使用自有家庭核验员人物与视觉系统，不模仿现有主播"
+      ]
+    },
+    "call_to_action": "领取脱敏提示词和红黄绿核验卡，先用虚构样例练一次；真实场景涉及病、药、钱或身份信息时必须暂停并找相应真人。"
+  },
+  "production": {
+    "schema_version": "production-plan.v1",
+    "host_strategy": "固定真人‘家庭核验员’在开头 5–8 秒和结尾 8–12 秒出镜；中间使用手机录屏、大字证据卡和红黄绿对照。父母可参与封闭测试，但不公开真实健康、财务或受骗经历。",
+    "video_brief": {
+      "format": "9:16 竖屏短视频，另保留 16:9 完整教学版适配空间",
+      "duration": "60–90 秒入口版；5–8 分钟完整版承接完整跟做与失败修复",
+      "visual_language": "高对比、大字号、一步一屏、风险红/待核验黄/已核对绿",
+      "audio": "优先真人普通话；可用有授权的稳定 TTS，不做声音克隆",
+      "exact_ui_rule": "官方查询和模型结果必须使用当前真实录屏；图像生成只用于非精确场景和 B-roll"
+    },
+    "materials": [
+      {
+        "material_id": "M01",
+        "type": "synthetic-fixture-image",
+        "method": "依据公开监管套路自行编写虚构品牌、批准号和版式，并醒目标注教学样例",
+        "usage": "包装与广告输入",
+        "exactness": "non-exact-illustration",
+        "rights_status": "owned",
+        "privacy_status": "sanitized",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M02",
+        "type": "host-shot",
+        "method": "本人拍摄并留存肖像和声音授权",
+        "usage": "开场建立信任",
+        "exactness": "exact-host",
+        "rights_status": "cleared",
+        "privacy_status": "sanitized",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M03",
+        "type": "screen-recording",
+        "method": "使用干净账号和虚构图片录制当前模型界面",
+        "usage": "字段提取跟做",
+        "exactness": "exact-current-ui",
+        "rights_status": "owned",
+        "privacy_status": "sanitized",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M04",
+        "type": "failure-card",
+        "method": "从保存的失败输出生成确定性红色对照卡",
+        "usage": "展示猜批准号和过度定性",
+        "exactness": "exact-result-transcription",
+        "rights_status": "owned",
+        "privacy_status": "sanitized",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M05",
+        "type": "official-source-screen-recording",
+        "method": "录制市场监管总局当前公开查询页面并显示访问日期",
+        "usage": "独立 Oracle",
+        "exactness": "exact-current-ui",
+        "rights_status": "official-link",
+        "privacy_status": "public",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M06",
+        "type": "oracle-card",
+        "method": "由固定规则生成红黄绿核验表",
+        "usage": "对照产品身份、宣传、交易和 AI 边界",
+        "exactness": "deterministic-rule",
+        "rights_status": "owned",
+        "privacy_status": "not-applicable",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M07",
+        "type": "synthetic-transfer-image",
+        "method": "自写虚构微信群对话，不使用真实头像、账号、商家或收款信息",
+        "usage": "第二场景迁移",
+        "exactness": "non-exact-illustration",
+        "rights_status": "owned",
+        "privacy_status": "sanitized",
+        "provenance_status": "recorded"
+      },
+      {
+        "material_id": "M08",
+        "type": "stop-escalation-card",
+        "method": "根据 pain-evidence 的停止条件确定性生成",
+        "usage": "结尾 Human Gate 和下载物",
+        "exactness": "deterministic-rule",
+        "rights_status": "owned",
+        "privacy_status": "not-applicable",
+        "provenance_status": "recorded"
+      }
+    ],
+    "publication_gates": {
+      "pain_evidence": "PASS",
+      "oracle_independence": "PASS",
+      "high_risk_boundary": "PASS",
+      "rights": "PASS",
+      "privacy": "PASS",
+      "likeness_voice": "PASS",
+      "render": "BLOCKED-NOT-RUN",
+      "learner_validation": "BLOCKED-NOT-RUN",
+      "production_effect": "BLOCKED-NOT-RUN"
+    }
+  }
+}
