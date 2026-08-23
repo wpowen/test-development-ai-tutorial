@@ -1,9 +1,9 @@
 {
   "schema_version": "github-candidate-artifact-closure.v1",
   "canonical_catalog_ref": "CATALOG-MANIFEST.json",
-  "canonical_catalog_hash": "sha256:9ec70dd6e944147a6fac97f1cc5b8c8c2af90ef16ac3f402c8fe77a4d3173748",
+  "canonical_catalog_hash": "sha256:b20e31ac73649b38058dc986ab637a6085953c781fb1fbfabf94a9c7f6e4bb3b",
   "tutorial_ref": "tutorial/tutorial-site.json",
-  "tutorial_hash": "sha256:776d211d46e62c1d66cb09240b794672779511edf51e57d1ad47c73b24d59de8",
+  "tutorial_hash": "sha256:dd5e8e9c080b48c388a950ada7ad962cc6381ea26d26c43c0769f6563fc146cb",
   "archive_ref": "COURSE-RELEASE.zip",
   "material_entries": [
     {

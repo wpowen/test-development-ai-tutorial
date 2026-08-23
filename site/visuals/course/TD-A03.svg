@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" viewBox="0 0 1600 1000" width="1600" height="1000">
-  <title id="title">AI Serving 指标：TTFT、TPOT、ITL、Goodput 与单位成功成本｜专业关系图</title>
+  <title id="title">AI 服务快不快，应该看哪些指标｜专业关系图</title>
   <desc id="desc">怎样让 TTFT、TPOT、ITL、Goodput 和 cost_per_success 的时间点、分母、切片与质量条件都可重算？ 任一关键证据缺失时保持 UNKNOWN/BLOCKED。 图中区分数据流、控制流、证据流与反馈回路，并显示失败路径、系统边界和责任门禁。</desc>
   <defs>
     <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#173f32" flood-opacity="0.12"/></filter>
@@ -11,7 +11,7 @@
   <rect width="1600" height="1000" rx="32" fill="#f4f7f2"/>
   <rect x="0" y="0" width="1600" height="146" rx="32" fill="#174f3f"/>
   <text x="72" y="48" font-family="ui-monospace,SFMono-Regular,Menlo,monospace" font-size="18" font-weight="800" fill="#b8dd78">TD-A03 · metric-experiment · metric-paired-b</text>
-  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">AIServing指标：TTFT、TPOT、ITL、Goodput与单位成功成本｜专业关系图</text>
+  <text x="72" y="92" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="30" font-weight="800" fill="#ffffff">AI服务快不快，应该看哪些指标｜专业关系图</text>
   <text x="72" y="132" text-anchor="start" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif" font-size="17" font-weight="600" fill="#d9e9df">怎样让TTFT、TPOT、ITL、Goodput和cost_per_success的时间点、分母、切片与质量条件都可重算？任一关键证据缺失时保持</text>
   <rect x="54" y="172" width="1492" height="590" rx="26" fill="#fbfdfb" stroke="#c9d6cf" stroke-width="2"/>
   <text x="82" y="204" font-size="17" font-weight="800" fill="#52665e">系统边界 · 课程方法与可复核工件在边界内；真实企业系统、模型和生产状态在边界外。</text>

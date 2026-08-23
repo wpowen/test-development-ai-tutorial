@@ -1,7 +1,7 @@
 {
   "schema_version": "executability-audit.v1",
   "audit_id": "executability-c9ef1a241fda",
-  "audited_at": "2026-08-21T14:13:13.824Z",
+  "audited_at": "2026-08-23T14:20:59.523Z",
   "public_page_ids": [
     "TD-F01",
     "TD-P01",
@@ -1629,13 +1629,13 @@
   ],
   "verdict": "PASS",
   "findings": [],
-  "generated_at": "2026-08-21T14:13:13.824Z",
+  "generated_at": "2026-08-23T14:20:59.523Z",
   "evidence_run": {
     "schema_version": "evidence-run.v1",
-    "run_id": "integrity-2026-08-21T14-13-50-268Z-3f054c76",
+    "run_id": "integrity-2026-08-23T14-21-38-104Z-f44f360a",
     "command": "node scripts/generate-course-integrity-manifests.mjs --write-fixture-preview",
-    "started_at": "2026-08-21T14:13:13.696Z",
-    "finished_at": "2026-08-21T14:13:50.268Z",
+    "started_at": "2026-08-23T14:20:59.398Z",
+    "finished_at": "2026-08-23T14:21:38.105Z",
     "exit_code": 0,
     "validator": {
       "path": "scripts/generate-course-integrity-manifests.mjs",
@@ -1643,7 +1643,7 @@
     },
     "input_hashes": {
       "course": "sha256:28cd25de11fc2aff7b4da293a76ac14b89d8454ba414ecec5581bb54e97c4bd7",
-      "tutorial": "sha256:776d211d46e62c1d66cb09240b794672779511edf51e57d1ad47c73b24d59de8"
+      "tutorial": "sha256:dd5e8e9c080b48c388a950ada7ad962cc6381ea26d26c43c0769f6563fc146cb"
     }
   }
 }
