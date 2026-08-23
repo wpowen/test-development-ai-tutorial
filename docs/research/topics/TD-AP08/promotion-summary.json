@@ -22,7 +22,7 @@
   "editorial_score": 100,
   "boundary_preservation_score": 100,
   "executability_verdict": "PASS",
-  "validated_at": "2026-08-23T16:03:43.071Z",
+  "validated_at": "2026-08-23T16:16:38.331Z",
   "reviewer": "validation-semantic-parity-verifier-2026-08-13",
   "evidence_boundary": "Public-safe gate summary only; detailed research remains in the authoring package."
 }

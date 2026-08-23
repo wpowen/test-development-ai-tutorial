@@ -1,6 +1,6 @@
 {
   "schema_version":"topic-radar.v1","radar_id":"ordinary-family-hotspot-2026-08-23","generated_at":"2026-08-23T00:00:00+08:00","market":"中国大陆普通家庭低门槛 AI 小实验内容","time_window":"2026-08-01 至 2026-08-23，耐久背景来源回溯至 2020 年",
-  "search_questions":["近期哪些普通家庭场景有官方问题证据和明确损失？","能否用一张截图在手机 AI 中完成低风险预检？","AI 输出能否由群外官方渠道独立核验？","现有供给是否主要停留在提醒而缺少暂停即做的实验？"],
+  "search_questions":["近期哪些普通家庭场景有官方问题证据和明确损失？","人类原本会核对哪些分散证据，哪些证据在平台界面不可见？","AI 输出能否由群外官方渠道独立核验？","现有供给是否主要停留在提醒而缺少暂停即做的实验？"],
   "channels":[
     {"channel_id":"current-warning","type":"official-change","query":"site:gov.cn 2026 开学 家长群 缴费 诈骗","status":"opened","opened_urls":["https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html"]},
     {"channel_id":"case-evidence","type":"pain-and-complaints","query":"家长群 冒充老师 缴费 真实案例 官方","status":"opened","opened_urls":["https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml"]},

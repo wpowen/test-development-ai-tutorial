@@ -1,0 +1,21 @@
+{
+  "schema_version":"source-material-readback.v1",
+  "checked_at":"2026-08-24T00:00:00+08:00",
+  "method":"curl -L --max-time 20; web open for pivotal text",
+  "items":[
+    {"url":"https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html","http_status":200,"content_type":"text/html; charset=utf-8","use":"current police warning citation"},
+    {"url":"https://www.huaibei.gov.cn/group3/M00/07/05/CqETMmqFE5KAdy8VAAfbBLcD908737.png","http_status":200,"content_type":"image/png","use":"source locator only; not cleared for direct reuse"},
+    {"url":"https://www.huaibei.gov.cn/group3/M00/07/05/CqETMmqFE3yADEzwAAe6F1bux0g498.png","http_status":200,"content_type":"image/png","use":"source locator only; not cleared for direct reuse"},
+    {"url":"https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml","http_status":200,"content_type":"text/html","use":"case facts and official verification route"},
+    {"url":"https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html","http_status":200,"content_type":"text/html; charset=utf-8","use":"privacy, historical contact, evidence preservation and escalation"},
+    {"url":"https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202002/t20200217_421853.html","http_status":200,"content_type":"text/html","use":"long-lived group fee impersonation mechanism"},
+    {"url":"https://pay.wechatpay.cn/doc/v3/merchant/4012154495","http_status":200,"content_type":"text/html;charset=utf-8","use":"authorized personal class-fee counterexample"},
+    {"url":"https://gtimg.wechatpay.cn/resource/xres/build/wxpayuserinfo/wxpay_user_agreement/latest/userservice.html","http_status":200,"content_type":"text/html","use":"visible nickname/avatar and payment method boundary"},
+    {"url":"https://developers.openai.com/api/docs/models","http_status":200,"content_type":"text/html","use":"one current image-input implementation option"},
+    {"url":"https://developers.openai.com/api/reference/cli/resources/responses/methods/create","http_status":200,"content_type":"text/html","use":"image input and JSON output API capability"}
+  ],
+  "removed":[
+    {"url":"https://platform.openai.com/docs/quickstart/make-your-first-api-request","reason":"2026-08-24 curl follow-redirect ended at a 404 developer URL; replaced with current official model and Responses pages"}
+  ],
+  "boundary":"HTTP 200 proves current retrievability only. It does not grant image/video reuse rights or prove the educational method works."
+}

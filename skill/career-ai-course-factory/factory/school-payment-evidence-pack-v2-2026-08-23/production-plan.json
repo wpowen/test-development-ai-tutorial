@@ -1,0 +1,18 @@
+{
+  "schema_version":"production-plan.v2","host_strategy":"高风险身份与支付题材使用真人开场和收口；中段为合成证据、真实模型录屏、原创图解和来源卡。不得仿冒反诈主播、老师、学校或家长。","video_brief":"90 秒：否定单图识别→A–F 六组证据→群/账号/聊天/支付具体动作→个人收款反例→严格 JSON 五态→F 类群外确认→准确性风险。",
+  "materials":[
+    {"material_id":"mat-host-open","type":"human-host-video","method":"真人拍摄","usage":"承认 AI 不能认证老师身份","exactness":"逐字绑定口播","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-invalid-old-method","type":"audit-card","method":"基于旧产物和新验证器结果原创制作","usage":"说明单图四问不足","exactness":"显示真实阻断原因，不羞辱用户","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-six-evidence-board","type":"generated-diagram","method":"原创 A–F 六格证据图","usage":"讲具体输入动作","exactness":"绑定采集指南","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-group-history-boundary","type":"generated-diagram","method":"原创 UNKNOWN 边界图","usage":"最早消息、建群时间和入群时间边界","exactness":"不得声称微信一定显示或不显示字段","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-evidence-grades","type":"generated-diagram","method":"原创弱中强证据阶梯","usage":"头像昵称、连续性、群外确认分层","exactness":"不是概率或准确率","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-payment-boundary","type":"generated-comparison","method":"原创个人/商户/小程序/官方平台比较","usage":"个人收款反例和授权核验","exactness":"引用微信支付官方班费场景","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-phone-demo","type":"screen-recording","method":"当前模型对合成 A–F 证据 exact recording","usage":"展示提示词和 JSON 输出","exactness":"尚未录制，不得生成伪 UI","rights_status":"PASS","privacy_status":"PASS","provenance_status":"BLOCKED-NOT-RECORDED"},
+    {"material_id":"mat-universal-prompt","type":"download-card","method":"原创通用提示词","usage":"用户复制到模型","exactness":"包含禁止项和 F 约束","rights_status":"PASS","privacy_status":"PASS","provenance_status":"PASS-FIXTURE"},
+    {"material_id":"mat-output-schema","type":"download-json","method":"原创 JSON Schema","usage":"约束模型输出","exactness":"通过本地验证脚本","rights_status":"PASS","privacy_status":"PASS","provenance_status":"PASS-FIXTURE"},
+    {"material_id":"mat-official-route","type":"generated-diagram","method":"原创群外核验路线","usage":"关闭 Human Gate","exactness":"不包含当前消息新号码","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-risk-card","type":"source-bound-card","method":"依据研究边界原创整理","usage":"准确性与风险告知","exactness":"明确 NOT-MULTI-MODEL-TESTED","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"},
+    {"material_id":"mat-host-close","type":"human-host-video","method":"真人拍摄","usage":"群外确认与已付款升级","exactness":"保持 FIXTURE-TESTED","rights_status":"PASS","privacy_status":"PASS","provenance_status":"READY"}
+  ],
+  "publication_gates":{"research":"PASS","source-availability":"PASS","high-risk-input-contract":"PASS","sample-output-contract":"PASS","multi-model-evaluation":"BLOCKED-NOT-RUN","real-phone-demo":"BLOCKED-NOT-RUN","learner-test":"BLOCKED-NOT-RUN","rights-review":"PASS","render":"BLOCKED-NOT-RUN","video-qc":"BLOCKED-NOT-RUN","publication":"BLOCKED-NOT-RUN"}
+}

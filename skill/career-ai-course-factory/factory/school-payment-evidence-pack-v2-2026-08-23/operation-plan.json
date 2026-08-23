@@ -1,0 +1,21 @@
+{
+  "schema_version":"operation-plan.v2","outcome":"交付用户可直接复制使用的 A–F 证据核验包，并把多模型准确性、真实手机录屏和家长测试保留为后续门禁。",
+  "user_actions":[
+    {"action_id":"user-01-synthetic-practice","actor":"用户/家长","action":"先用合成 manifest 和通用提示词在所选模型中练习，不上传真实群截图","output":"模型原始 JSON","verification":"通过 validate_model_output.py 或人工按判断规则检查","status":"READY"},
+    {"action_id":"user-02-collect-redact","actor":"用户/家长","action":"按指南收集 A–F，仅保留必要字段并完成打码","output":"脱敏证据包或文本 manifest","verification":"二维码、链接、未成年人、群成员和支付隐私不可见","status":"READY"},
+    {"action_id":"user-03-official-check","actor":"孩子监护人/付款人","action":"使用通讯录原有号码、学校办公室、官网、认证公众号或既有平台核实事项、金额、渠道和授权主体","output":"F 类外部核验记录","verification":"联系渠道不是当前消息新提供的号码/链接；记录时间和角色","status":"READY"},
+    {"action_id":"user-04-multi-model-eval","actor":"验证组织者","action":"在至少 3 个当前通用模型运行 7 个 evaluation cases，保存原始输出","output":"模型×案例矩阵、结构失败、越权、漏报、错误确认和一致性统计","verification":"没有原始输出不得声明准确性","status":"BLOCKED"},
+    {"action_id":"user-05-learner-test","actor":"目标家长测试组织者","action":"至少 5 名家长完成采集、模型使用、错误恢复和第二场景迁移","output":"用时、错误、恢复、隐私和迁移记录","verification":"未满 5 人保持 NOT-LEARNER-TESTED","status":"BLOCKED"}
+  ],
+  "build_actions":[
+    {"action_id":"build-01-user-pack","actor":"内容工厂","action":"生成用户总入口、采集指南、提示词、Schema、规则、样例、验证脚本和来源台账","output":"v2 本目录用户交付文件","verification":"文件可打开、JSON 可解析、样例输出通过合同验证","status":"DONE"},
+    {"action_id":"build-02-source-cards","actor":"内容工厂","action":"制作警方、央视、教育部、微信支付和模型能力来源卡","output":"带标题、机构、日期、URL、支持与不能证明的来源卡","verification":"发布当天页面可用性复核；新闻图片不直接重用","status":"READY"},
+    {"action_id":"build-03-visuals","actor":"图片流水线","action":"生成 A–F 六格证据板、证据等级、五态状态机和群外核验路线图","output":"4 张 9:16 原创图解及横屏变体","verification":"不伪造平台 UI，不包含真实二维码和身份信息","status":"READY"},
+    {"action_id":"build-04-video","actor":"视频流水线","action":"组合真人口播、合成证据、真实模型录屏、JSON 输出和来源卡","output":"90 秒竖屏样片、字幕、封面和 QC 回执","verification":"必须使用 current model exact recording；风险与来源边界同屏","status":"BLOCKED"}
+  ],
+  "recording_plan":"真人开场直接承认 AI 不能认证老师身份；中段用合成 A–F 证据和真实模型录屏；结尾真人说清 F 类学校确认和准确性未验证。",
+  "artifacts":["USER-DELIVERY.md","EVIDENCE-CAPTURE-GUIDE.md","UNIVERSAL-MODEL-PROMPT.md","model-output-schema.json","JUDGMENT-RULES.md","SAMPLE-EVIDENCE-MANIFEST.json","SAMPLE-MODEL-OUTPUT.json","EVALUATION-CASES.json","validate_model_output.py","test_validate_model_output.py","validation-receipt.json","SOURCE-MATERIAL-LEDGER.md","source-material-readback.json","dist/FINAL-PRODUCT.md"],
+  "dependencies":["支持多图或文本输入的通用模型","当前平台界面","A–F 脱敏证据","学校群外官方渠道","多模型评测与目标家长"],
+  "stop_conditions":["证据未打码","模型试图解码二维码或访问链接","模型输出身份概率、诈骗结论或付款建议","F 缺失却返回确认","新闻/平台来源失效未刷新","没有真实原始输出却声称准确"],
+  "next_handoff":"当前可交付为内部 FIXTURE-TESTED 用户包。下一 validation lane 先执行 7 案例×3 模型评测和手机 exact recording；之后才决定是否制作公开视频。"
+}

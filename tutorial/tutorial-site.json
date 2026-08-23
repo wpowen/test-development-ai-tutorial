@@ -1318,7 +1318,7 @@
           "发布证据"
         ],
         "visual": {
-          "src": "visuals/course/TD-P01.svg",
+          "src": "visuals/course/TD-P01.svg?v=5f4c3ce4afe0",
           "alt": "PRD、技术方案和接口文档说法不一致时，测试应该信谁的decision-tree：展示PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行之间的数据、控制、证据和反馈关系。",
           "kind": "decision"
         }
@@ -1472,7 +1472,7 @@
           "whatItDoesNotProve": "信封统一不代表语义统一。两个系统都发 `deployment.finished`，含义可能完全不同。"
         }
       ],
-      "source_hash": "4f808c45d6ddf94dde8db69f9b005a3cdea61ef955d0e1540ea0f327f3a3e346",
+      "source_hash": "49e5d9bcd06928dd9710f83f0992f8a47d3233b26b7ae1e579936353f20a46d2",
       "reference_hash": "5d08d3b61f1db3a1c9ea10b037d788ae447f7b362ad56e0df4ef67495b5f0cd8",
       "material_hash": "a70b5d4205bacbda392c82d391eb601a2225dbde4422465f646d82d485558a83",
       "previous_page_id": "TD-F01",
@@ -4413,7 +4413,7 @@
           "发布证据"
         ],
         "visual": {
-          "src": "visuals/course/TD-P04.svg",
+          "src": "visuals/course/TD-P04.svg?v=b77fd8f4f8bb",
           "alt": "项目时间有限时，单元、接口和 E2E 测试应该怎么分配的decision-tree：展示PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行之间的数据、控制、证据和反馈关系。",
           "kind": "decision"
         }
@@ -4557,7 +4557,7 @@
           "whatItDoesNotProve": "框架不给阈值也不给测试方法；它规定要管什么，不规定管到什么程度算合格。"
         }
       ],
-      "source_hash": "53162312de1098a54d5055f019df5a617811e414ce377e251e23a7ab4f978e32",
+      "source_hash": "4f0bc84984b3db23d99732e29de597a1c2521090b3b5bfcb6e86bdfcd108e383",
       "reference_hash": "8198a9d9df066491b30892eed9ea7063c003004b1fad10293d3773695960d2f2",
       "material_hash": "2be638115c5bd456feb7a7d4e3cae766eda749c0c3b0803653ab2fc1de8ece33",
       "previous_page_id": "TD-P03",
@@ -8448,7 +8448,7 @@
           "发布证据"
         ],
         "visual": {
-          "src": "visuals/course/TD-P08.svg",
+          "src": "visuals/course/TD-P08.svg?v=ab97afcd1e25",
           "alt": "需求变更后的回归选择：该重跑什么，什么时候能发布的evidence-lineage：展示PRD/技术方案、Basis Gate、需求契约、风险与 TestPackage、自动化执行之间的数据、控制、证据和反馈关系。",
           "kind": "evidence"
         }
@@ -8597,7 +8597,7 @@
           "whatItDoesNotProve": "分析指标是你写的。指标覆盖不到的质量退化，金丝雀会一路放行到 100%。"
         }
       ],
-      "source_hash": "834e0f271af8f44311e68ae67bc1c3eb3a5b75ec793e6b7ccd40d7b770900bdb",
+      "source_hash": "32cbd580a57fb2ff8c3afd6464d3aa2d755e1603825169820a8bda3ed7b3c595",
       "reference_hash": "9620b47ecef93ff290c8e5e810f825bb607abbcf76532b5bc94ecf5caeed4c74",
       "material_hash": "79cd1eec6884d5f3ed8d5929b45eb72a0801dbba893c6a5b2bb8bf23e43214d2",
       "previous_page_id": "TD-P07",
@@ -17123,7 +17123,7 @@
           "自动停止与回滚"
         ],
         "visual": {
-          "src": "visuals/course/TD-PS10.svg",
+          "src": "visuals/course/TD-PS10.svg?v=6e85fa41b49f",
           "alt": "服务超时或流量过载时，怎样降级才不会扩大故障的state-machine：展示实验授权/隔离命名空间、注入器、模型/工具/检索依赖、Agent 重试与降级、订单 API/队列之间的数据、控制、证据和反馈关系。",
           "kind": "state"
         }
@@ -17294,7 +17294,7 @@
           "whatItDoesNotProve": "平台提供注入能力，不提供假设。没有稳态定义与终止条件的实验，注入再多也不产生结论。"
         }
       ],
-      "source_hash": "55ecab87caadc4ec43e3dc82561db4b86356c03f222a7af79d55c2c1824929af",
+      "source_hash": "ce22007f2dda40cc2db470658a6d7a5d23cd7440aa64a616f360b3cf1fe100ce",
       "reference_hash": "4fcbda0806d59b0e80e6af194d1102439e84dcb05f36a3cb5d50354e7df8ee0d",
       "material_hash": "17873e39116a001ed6a861cbc32aac01321c8a78f402711960437c1e2d51db55",
       "previous_page_id": "TD-PS09",
@@ -23442,7 +23442,7 @@
           "人工升级·补偿"
         ],
         "visual": {
-          "src": "visuals/course/TD-F04.svg",
+          "src": "visuals/course/TD-F04.svg?v=408ca5803e2e",
           "alt": "AI 应用只是回答问题，还是会查资料、调工具和改状态的layered-architecture：展示用户目标、检索·Context、模型决策、工具策略 Gate、Worker·队列之间的数据、控制、证据和反馈关系。",
           "kind": "architecture"
         }
@@ -23596,7 +23596,7 @@
           "whatItDoesNotProve": "GenAI 部分的约定仍在演进，字段名可能变更；且约定只规定怎么记，不规定记了之后如何判断质量。"
         }
       ],
-      "source_hash": "76efd76675483e7ff36464aa1e7496d658216d7b55c9aa0f364ee758569b0f67",
+      "source_hash": "59866774ddfca7f6ed17394f0a666708b25b7ed29c9e0929bbe9086f3a1e2794",
       "reference_hash": "4c7d51b82947093c8eff9728e27164ee8ba5eb22c51411852cf997029570acf9",
       "material_hash": "eb1480359d058af911549842d6fcfc9034081bd23d5bcdb2f974c78056b3a9be",
       "previous_page_id": "TD-F03",
@@ -26061,7 +26061,7 @@
           "发布/升级决定"
         ],
         "visual": {
-          "src": "visuals/course/TD-T03.svg",
+          "src": "visuals/course/TD-T03.svg?v=d48f8589532a",
           "alt": "AI 答案没有标准答案时，怎样判断它到底对不对的decision-tree：展示Eval case、Schema Gate、业务规则 Gate、权限·副作用 Gate、语义 Judge之间的数据、控制、证据和反馈关系。",
           "kind": "decision"
         }
@@ -26215,7 +26215,7 @@
           "whatItDoesNotProve": "多数指标本身由模型计算，因此指标带有与被测系统同源的误差；未经人工标注校准前，它的绝对值不能当验收线，只能看趋势。"
         }
       ],
-      "source_hash": "53287ed68d19f12a6415005db60667473735834cbbac12ba452ffe6b97d2fd16",
+      "source_hash": "d6939cfee365af6eaf2cf080f9e2a6ba723f948986a77a8aeee30a9f14ef5d0b",
       "reference_hash": "d8c1b339c2cc1e0251b47852c985180c08a907134bfa02a4d2229a39484830dd",
       "material_hash": "6970bb82900c6f3c42fb67a1f2cf1ae8d504aea528a699815a8920df6df444f6",
       "previous_page_id": "TD-T02",
@@ -26940,7 +26940,7 @@
           "Owner decision"
         ],
         "visual": {
-          "src": "visuals/course/TD-T04.svg",
+          "src": "visuals/course/TD-T04.svg?v=6e3b9be310b3",
           "alt": "一次评测结果不稳定，重复几次后应该怎样下结论的metric-experiment：展示版本化 cases、重复采样、Raw run ledger、独立 Scorer、Slice aggregation之间的数据、控制、证据和反馈关系。",
           "kind": "metric"
         }
@@ -27050,7 +27050,7 @@
           "whatItDoesNotProve": "它保证的是执行可复现，不保证任务本身衡量了你关心的能力，也不检测数据污染。"
         }
       ],
-      "source_hash": "10b9b0251fc38acabc438c1c465e7ae903e61648f4943523814badedf87c2a4a",
+      "source_hash": "da6592f46d12245051778874875a20dd5f9be3e1b5bb9f39994a39b8885086b4",
       "reference_hash": "8a2c0afbfeffae3eeeebe828c6cdc115878916ed447b23dd32ecd7d8fca9c244",
       "material_hash": "c68319b00359dba63d5324ce3fd4f85a8419a91d9f36b978514f7fd9d5647ee4",
       "previous_page_id": "TD-T03",
@@ -32051,7 +32051,7 @@
           "协议门禁"
         ],
         "visual": {
-          "src": "visuals/course/TD-A02.svg",
+          "src": "visuals/course/TD-A02.svg?v=d95e2390cdba",
           "alt": "AI 接口边生成边返回，还会调用工具，自动化测试怎么写的state-machine：展示请求、SSE reducer、Schema+语义、Tool 权限/幂等、Async 状态机之间的数据、控制、证据和反馈关系。",
           "kind": "state"
         }
@@ -32207,7 +32207,7 @@
           "whatItDoesNotProve": "规范定义的是方法语义的期望，不强制实现遵守。你的 POST 加没加幂等键、加了是否生效，只能靠测试证明。"
         }
       ],
-      "source_hash": "b21f833fb81bcec5a7320b6e59944a71b8d155a53458dd6f030d0b2db67bc34c",
+      "source_hash": "9c7b84784c6fa4c5f8e48955393656a86b217c30a9703a585076cc1a20186e0f",
       "reference_hash": "4d7ce4a4032ebdbbc8f4f39a66c49687e13c08e46001164feaef8fc9e1b47863",
       "material_hash": "daea70a51266af7dc592004fe8a546e761d67d03767412feef1d392741c72c41",
       "previous_page_id": "TD-A01",
@@ -32890,7 +32890,7 @@
           "成本门禁"
         ],
         "visual": {
-          "src": "visuals/course/TD-A03.svg",
+          "src": "visuals/course/TD-A03.svg?v=bf61d0a96d36",
           "alt": "AI 服务快不快、能处理多少请求、花多少钱，应该看哪些指标的metric-experiment：展示到达、Queue、Prefill/首 Token、Decode/ITL、终态/质量之间的数据、控制、证据和反馈关系。",
           "kind": "metric"
         }
@@ -33029,7 +33029,7 @@
           "whatItDoesNotProve": "指标口径依赖具体后端；不同 backend 的批处理与队列语义不同，跨部署比较数字没有意义。"
         }
       ],
-      "source_hash": "11dee168941fe2323bc7fd29a7169d04f8ded8599197faa7255979071665eb6c",
+      "source_hash": "0434c8f0b7738afa95c2b115dc549cb72835f1256ad66da0bd17cdb7be416fcf",
       "reference_hash": "db08a7d462418c0f326586de18d5502a4977231ad2f3c5e22c98972359d32ced",
       "material_hash": "df6dcca0b12538a9fcb4836d6106d9fd057cfbf4f75db080b96355d062018949",
       "previous_page_id": "TD-A02",
@@ -37097,7 +37097,7 @@
           "Miss reason/owner"
         ],
         "visual": {
-          "src": "visuals/course/TD-T10.svg",
+          "src": "visuals/course/TD-T10.svg?v=4885fa0438d1",
           "alt": "知识库里明明有答案，RAG 为什么还是搜不到的metric-experiment：展示Query slices、Query rewrite、ACL/metadata filter、Retriever、Top-k ranking之间的数据、控制、证据和反馈关系。",
           "kind": "metric"
         }
@@ -37229,7 +37229,7 @@
           "whatItDoesNotProve": "框架提供组件，不提供语料治理。切分策略与元数据设计仍是决定检索质量的主要因素，且高度依赖你的文档形态。"
         }
       ],
-      "source_hash": "3ed85fced717f56fee625ad4a93da3b31679871c9d88fde6f5a96b58d2d17023",
+      "source_hash": "ce3a306662ab1c447149deedafe903ac7fcd0c2a5d1c547beeab99b70c05f4ab",
       "reference_hash": "d011392c44cc5830681720aa6f4bf877acbfc180fc8815a0d4faf755cef1a667",
       "material_hash": "04656260e0c8951e1c680cd2498468f9cfb1fc2e6c9e38c197e2427731e8630c",
       "previous_page_id": "TD-T09",
@@ -37948,7 +37948,7 @@
           "Human policy owner"
         ],
         "visual": {
-          "src": "visuals/course/TD-T11.svg",
+          "src": "visuals/course/TD-T11.svg?v=e06f1fe6d7cf",
           "alt": "AI 回答带了引用，怎样判断引用真的支持答案的layered-architecture：展示Retrieved Context、Generated answer、Atomic claims、Evidence spans、Faithfulness scorer之间的数据、控制、证据和反馈关系。",
           "kind": "architecture"
         }
@@ -38058,7 +38058,7 @@
           "whatItDoesNotProve": "指标默认阈值是框架给的示例值，不是你业务的验收线。"
         }
       ],
-      "source_hash": "064fa777e12359c30929027d3236a4b59855e4fdfcd2a22879c2890c8d153ba0",
+      "source_hash": "9521902d9f67e34448629448c296b219c2c3aad8fecfc2a14cd66cafb5967355",
       "reference_hash": "d59988ce2fbd5fe05d4bf3e8b98ae519794e4fc21ff483d818b554c218d9fcb9",
       "material_hash": "f24a3a05625372a576260665cb0e13c1e5adad4dc5d11cccca6627336028235e",
       "previous_page_id": "TD-T10",
@@ -38772,7 +38772,7 @@
           "Handoff·Human Gate"
         ],
         "visual": {
-          "src": "visuals/course/TD-T12.svg",
+          "src": "visuals/course/TD-T12.svg?v=5f6ece12190e",
           "alt": "RAG 上线前，哪些检索、拒答和权限问题必须拦住的state-machine：展示Versioned corpus、Tenant ACL、Retriever/no-result、Generator、Faithfulness·Citation之间的数据、控制、证据和反馈关系。",
           "kind": "state"
         }
@@ -38899,7 +38899,7 @@
           "whatItDoesNotProve": "多数指标本身由模型计算，因此指标带有与被测系统同源的误差；未经人工标注校准前，它的绝对值不能当验收线，只能看趋势。"
         }
       ],
-      "source_hash": "0538314d8523c728ad06476ab6c933ccb5ff588bd2e5e687ac48fe4ce6fddda9",
+      "source_hash": "92c8005aef8f28b42a1e199417a3ded9717a4664f00e3427fe6ef14265221b2c",
       "reference_hash": "ead1506da2a3ffb54013dc5e35301ee98ad186ede5c36d399e47447d97840d34",
       "material_hash": "4a86688598a9d6e0cc5a12063d9d67b8dad413455fe27befbbbca0f22ce4ce45",
       "previous_page_id": "TD-T11",
@@ -39667,7 +39667,7 @@
           "人工复核"
         ],
         "visual": {
-          "src": "visuals/course/TD-X501.svg",
+          "src": "visuals/course/TD-X501.svg?v=79150a3d2289",
           "alt": "AI 同时看图和文字：重点检查图文矛盾和理解错误的decision-tree：展示任务/模态合同、配对 Fixture、跨模态关系、独立 Oracle、矛盾注入之间的数据、控制、证据和反馈关系。",
           "kind": "decision"
         }
@@ -39784,7 +39784,7 @@
           "whatItDoesNotProve": "框架不提供判据。scorer 写得对不对、数据集有没有覆盖你的风险切片，框架一概不管，全绿只说明流程跑通了。"
         }
       ],
-      "source_hash": "ba0d09724a67128b0e96a413b80a3ec47ec7299ad7aae2f32b8c5794360d9d69",
+      "source_hash": "13b6bd2d7e78df6b22c01c7ceaf60a25b2a342dc87420d2784b6acde09b179f9",
       "reference_hash": "afbf0dfb8c019b6c31cc8c46a54dbef2aeb6601bd60cc834b5956c44d4b97985",
       "material_hash": "bfe5e59f22d2ee03945d80b3e8eb1c57fde2a6849dd09d84e0acd77044c08ea3",
       "previous_page_id": "TD-T12",
@@ -42268,7 +42268,7 @@
           "Human escalation"
         ],
         "visual": {
-          "src": "visuals/course/TD-T14.svg",
+          "src": "visuals/course/TD-T14.svg?v=dc7ceb2d8778",
           "alt": "用另一个模型给答案打分靠谱吗，什么时候必须人工复核的decision-tree：展示Double human labels、Blind pair shuffle、Versioned Judge、Bias probes、Disagreement matrix之间的数据、控制、证据和反馈关系。",
           "kind": "decision"
         }
@@ -42385,7 +42385,7 @@
           "whatItDoesNotProve": "框架不提供判据。scorer 写得对不对、数据集有没有覆盖你的风险切片，框架一概不管，全绿只说明流程跑通了。"
         }
       ],
-      "source_hash": "125e119d04e71c77faee8000430cf782b141db9727518657310b5e9b9dda7b34",
+      "source_hash": "39e543995bd91bc57f684c423ada89b5657017359154634aa4a0a0519e7e4e53",
       "reference_hash": "5d7fd4b07346763112a37713247564bacf9ef933c8ff7000b829a6262fb0d605",
       "material_hash": "da8a03e8245ab9fc62cf819ef19cd435320b6f4966b4910bbf960743061b7869",
       "previous_page_id": "TD-T13",
@@ -43075,7 +43075,7 @@
           "Human decision"
         ],
         "visual": {
-          "src": "visuals/course/TD-T15.svg",
+          "src": "visuals/course/TD-T15.svg?v=3178a01e7bbb",
           "alt": "Agent 最终答对了，为什么执行过程仍可能不安全的layered-architecture：展示Business outcome、Tool step ledger、State snapshots、Trajectory graph、Policy blockers之间的数据、控制、证据和反馈关系。",
           "kind": "architecture"
         }
@@ -43192,7 +43192,7 @@
           "whatItDoesNotProve": "规范描述接口不描述权限。哪些工具允许被哪个会话调用、不可逆动作要不要二次确认，规范里没有，必须在工具调用层自己实现并验证。"
         }
       ],
-      "source_hash": "ba7394892ca08783286d36d51f6643c7beb3b1a70912c0c773b9238b566caefd",
+      "source_hash": "0960c495b5fd8ba290927d4ae567dca7abf6698c0678718d0271babacbb1b5b1",
       "reference_hash": "d9395efa1a414003147bdb245be01bec3715e84b5aef2021df456cf8aeff14c6",
       "material_hash": "96a8f1c90e0c6f3fb033305306e1305bdbe9f3faa49eee728f3f5d8f5939c43b",
       "previous_page_id": "TD-T14",
@@ -47938,7 +47938,7 @@
           "Human handoff"
         ],
         "visual": {
-          "src": "visuals/course/TD-W02.svg",
+          "src": "visuals/course/TD-W02.svg?v=5292405abe91",
           "alt": "AI 长流程为什么会丢状态、重复执行或一直不结束的state-machine：展示Workflow state、Checkpoint、Queue delivery、Idempotent worker、Budget guard之间的数据、控制、证据和反馈关系。",
           "kind": "state"
         }
@@ -48077,7 +48077,7 @@
           "whatItDoesNotProve": "注入的是网络层症状，不是依赖服务的真实故障语义（如半提交、脏数据）。"
         }
       ],
-      "source_hash": "73fb37243d5a907f9cdb09726fd703ac6374ddc329cf049706eda21956779436",
+      "source_hash": "38accd5de065e1ed82d480649243958a907e90cf07b8e88f56e5edac1406d96b",
       "reference_hash": "8fef94411e0209ef8477f283ef3b17dfa3ddc1cf6b23e20ef947b199a54f814c",
       "material_hash": "f5ef533c7461eca4dd05888771051f382316076e98118407bd9783144aa95da5",
       "previous_page_id": "TD-W01",
@@ -50572,7 +50572,7 @@
           "Trace/回滚"
         ],
         "visual": {
-          "src": "visuals/course/TD-X604.svg",
+          "src": "visuals/course/TD-X604.svg?v=37180ff6dfa4",
           "alt": "切换模型或工具后，哪些功能和安全行为必须重新测试的state-machine：展示请求合同、能力/区域/权限、Provider 路由、协议/Schema、Fallback 再授权之间的数据、控制、证据和反馈关系。",
           "kind": "state"
         }
@@ -50706,7 +50706,7 @@
           "whatItDoesNotProve": "规范描述接口不描述权限。哪些工具允许被哪个会话调用、不可逆动作要不要二次确认，规范里没有，必须在工具调用层自己实现并验证。"
         }
       ],
-      "source_hash": "206ab7275f39fd9feb8476fdba32536ffad311d6c0424ed3f8755042d0fcd68f",
+      "source_hash": "dac48cf719a5b26bae39b422f0904c9fc5dc61d59a9713c0280ae7cb05c9eebe",
       "reference_hash": "1e95883c27b67c10d877575daeea57d69346db3582b0ad672280521fb59db7c6",
       "material_hash": "5a4ebc71de46b5119578d57d7cddb55c775dd73c16c0d325dbe8ac05e62d7f51",
       "previous_page_id": "TD-X603",
@@ -54241,7 +54241,7 @@
           "Run Manifest/决策"
         ],
         "visual": {
-          "src": "visuals/course/TD-T21.svg",
+          "src": "visuals/course/TD-T21.svg?v=27fbf3035a9f",
           "alt": "一次 AI 评测要记录哪些版本，才能复现历史结果的layered-architecture：展示代码 Commit、Prompt/Input/Schema、Dataset/Split、Knowledge/Tool、Model/Runtime之间的数据、控制、证据和反馈关系。",
           "kind": "architecture"
         }
@@ -54380,7 +54380,7 @@
           "whatItDoesNotProve": "漂移不等于质量下降，反之亦然。它是调查触发器，不能直接作为阻断门禁。"
         }
       ],
-      "source_hash": "79f9de5d0b52b0db89ec94384780f7c8e55539f004aa0a928474e79e8a32cff3",
+      "source_hash": "8caafcbfcdee78e0d63ec8e95d6d63fadc04722648019ffa963d114db2533609",
       "reference_hash": "8d8d7261163a37bd0829b68a5716b9cadf807e4bab426e38d7682c9bea527560",
       "material_hash": "2286d7d88f2753bfb3d33ea66a7a54be8481c45fefba2800a62e422671aa2c87",
       "previous_page_id": "TD-T20",
@@ -55079,7 +55079,7 @@
           "修复与事件 Closure"
         ],
         "visual": {
-          "src": "visuals/course/TD-T22.svg",
+          "src": "visuals/course/TD-T22.svg?v=45b1dc1da6ad",
           "alt": "把线上出现过的 AI 故障变成自动回归用例的evidence-lineage：展示生产 Trace 隔离区、字段分类/脱敏、最小失败抽取、业务/安全 Oracle、Regression Dataset之间的数据、控制、证据和反馈关系。",
           "kind": "evidence"
         }
@@ -55240,7 +55240,7 @@
           "whatItDoesNotProve": "漂移不等于质量下降，反之亦然。它是调查触发器，不能直接作为阻断门禁。"
         }
       ],
-      "source_hash": "fea69c3c4b7db1ce15620d1676d5747838425f77a170626f35efb6fa6319b0e9",
+      "source_hash": "75d3ec7c3e04f3bf7c6cd2681113a910d5ce614d39657a3d6522a2ea5d9a12b2",
       "reference_hash": "003ec3b7657f3bf249138c6ef936da15bcd6ae2154d320485957e1862979c797",
       "material_hash": "cf892a7beae96315ad2d6b73d9999f0ed2ae9ee2a41ea4235642fe2791d58bb4",
       "previous_page_id": "TD-T21",
@@ -56093,7 +56093,7 @@
           "容量与产品 Owner"
         ],
         "visual": {
-          "src": "visuals/course/TD-T23.svg",
+          "src": "visuals/course/TD-T23.svg?v=1729c3a5a122",
           "alt": "质量更好但更慢更贵时，这个 AI 版本到底能不能发的metric-experiment：展示版本化 Workload、模型/路由候选、质量 Scorer、Trace/延迟分解、Token/成本账本之间的数据、控制、证据和反馈关系。",
           "kind": "metric"
         }
@@ -56222,7 +56222,7 @@
           "whatItDoesNotProve": "框架不给阈值也不给测试方法；它规定要管什么，不规定管到什么程度算合格。"
         }
       ],
-      "source_hash": "c08d97f71e6087f2815203fd5b917da4d39d1925bac4c1a83ba5e7ac8c444e35",
+      "source_hash": "264a8e71079b314f5003aac7a286372ddb697aa2b0df13e621eff18c84e16f3d",
       "reference_hash": "5255abb711c45a8da2f5ec95a99e9267b68810ebf4ee0faa2936d1a5e019d484",
       "material_hash": "c3357cbfa098736fa2184b0d62341891833c174ae39b897d6ced0604888da326",
       "previous_page_id": "TD-T22",
@@ -57804,7 +57804,7 @@
           "扩量/回滚"
         ],
         "visual": {
-          "src": "visuals/course/TD-X805.svg",
+          "src": "visuals/course/TD-X805.svg?v=ddc41b21adec",
           "alt": "AI 新版本从离线测试到小流量上线的decision-tree：展示假设/MDE、稳定分流、离线门禁、小流量 Canary、Guardrail/最坏切片之间的数据、控制、证据和反馈关系。",
           "kind": "decision"
         }
@@ -57938,7 +57938,7 @@
           "whatItDoesNotProve": "书里的示例数字是示例。任何直接照抄的 SLO 都没有经过你自己业务成本的校准。"
         }
       ],
-      "source_hash": "1cba2ba01b3670ebbe09b873ccbff20f17ec745d5c6aa37ad92cda7eec00901f",
+      "source_hash": "98dcfd0795c71e45d66e158e96df34779c39e9c29a9d402577cc70b910706784",
       "reference_hash": "0289c731b06e43b6282df5b3561240ee134303aa95ad1d87d13632b55cca386b",
       "material_hash": "8d6edfafe7ac4658c689470de70a1809d5bfe12f8709e61a935b9f3ef126c66d",
       "previous_page_id": "TD-T24",
@@ -60453,7 +60453,7 @@
           "Decision Gate"
         ],
         "visual": {
-          "src": "visuals/course/TD-B03.svg",
+          "src": "visuals/course/TD-B03.svg?v=e8d47315d7ef",
           "alt": "AI 评测分数怎么计算，样本少时结果能信吗的metric-experiment：展示逐题多次 Runs、Raw Ledger、确定性 Oracle、Judge/校准、Metric Calculator之间的数据、控制、证据和反馈关系。",
           "kind": "metric"
         }
@@ -60570,7 +60570,7 @@
           "whatItDoesNotProve": "指标默认阈值是框架给的示例值，不是你业务的验收线。"
         }
       ],
-      "source_hash": "a09f843f25e07ded4929871cd6b464b1b2748d707efdf0ae329597b40621b0ab",
+      "source_hash": "9eafe0141f645cb133bf736aad96f1346373b2ebc39415545464775607ca5579",
       "reference_hash": "b1d069c1c29467abf6836e6058f739b6e03f3c1c1e7483f79de073d3aa2462ee",
       "material_hash": "abdc9a270b80db1082a73590179f5af2ce86e73b3c385a453a17ede91ea9a5f1",
       "previous_page_id": "TD-B02",
@@ -64984,7 +64984,7 @@
           "MR Approval/Protected Branch Gate"
         ],
         "visual": {
-          "src": "visuals/course/TD-QP02.svg",
+          "src": "visuals/course/TD-QP02.svg?v=4a25862b4442",
           "alt": "代码已经更新，为什么测试报告可能还是旧版本的的evidence-lineage：展示GitLab MR/当前 HEAD、Project Webhook/Inbox、Pipeline 与 Jobs、JUnit/Artifact Store、确定性聚合器之间的数据、控制、证据和反馈关系。",
           "kind": "evidence"
         }
@@ -65108,7 +65108,7 @@
           "whatItDoesNotProve": "等级描述构建过程的可信度，不评价依赖本身是否有漏洞。"
         }
       ],
-      "source_hash": "d7fe5cd7b11af192d3fdd600f2a0d7fc890bb113a45f9a2262c7a3ab8624ae82",
+      "source_hash": "1de026da8485fc207904ffe92b55897505c0145a786c93bad81d750f061d86e7",
       "reference_hash": "c94c8b90b0b9e9647a9f1f2c15b588debff75402e83560a68996bc2db120ab0e",
       "material_hash": "53a05e30532dde39b329652630a7b6032f310027ee73c0a59adeb9db0cccbb38",
       "previous_page_id": "TD-QP01",
@@ -67251,7 +67251,7 @@
           "Reconciliation/Trace/审计 Sink"
         ],
         "visual": {
-          "src": "visuals/course/TD-QP04.svg",
+          "src": "visuals/course/TD-QP04.svg?v=c849290aa321",
           "alt": "把需求、代码流水线和测试环境串成一条证据记录的state-machine：展示Jira/GitLab/K8s 上游事件、Event Gateway/验签去重、Inbox/Outbox/DLQ、Quality Orchestrator/状态机、Jira/GitLab/K8s 适配器之间的数据、控制、证据和反馈关系。",
           "kind": "state"
         }
@@ -67397,7 +67397,7 @@
           "whatItDoesNotProve": "桩的行为是你编的。真实依赖的失败形态可能与你的假设完全不同——桩测试通过不代表真实降级路径有效。"
         }
       ],
-      "source_hash": "679f953bc84fd36883595c75350054c1c3efd066655ed82637a14dfc94c06460",
+      "source_hash": "cf0706f4c79d40295726dd999785ba370a8a9f976641b851ab3cf94b746b3938",
       "reference_hash": "c63644acf91242093c83b7eb4379daea7b21fe90a8502e3bb8c8d52fdacd016e",
       "material_hash": "59ae1fbadc791a33fe3532f2e879440a05d6ef9e346863d53bedec5f9279308f",
       "previous_page_id": "TD-QP03",
@@ -68375,7 +68375,7 @@
           "Fixture RC/Human Gate"
         ],
         "visual": {
-          "src": "visuals/course/TD-T25.svg",
+          "src": "visuals/course/TD-T25.svg?v=e1a2cea284de",
           "alt": "AI 版本发布前的质量报告应该写什么的evidence-lineage：展示PRD/Risk/Owner、Dataset/Split/Trace、Prompt/Input/Schema、Composite Oracle、Benchmark/CI之间的数据、控制、证据和反馈关系。",
           "kind": "evidence"
         }
@@ -68509,7 +68509,7 @@
           "whatItDoesNotProve": "标准正文需付费获取，且它给的是过程框架不是有效性证明；符合标准不代表测试有检测力。本课程只引用其结构，不复制条文。"
         }
       ],
-      "source_hash": "83d003fd5bb1b58ba3be1958150edb4b9453f7b6d5290e82f7bc045fbaac7f00",
+      "source_hash": "e6704f004c8657344a5bd441587c8481c89242376eceea1cd6428f1290a94dd4",
       "reference_hash": "6727d92fef066c47c3b5dba5dff2434aeba63e562e9adbbd28b21a10c9e9bd92",
       "material_hash": "14a0e9b4cb5e0b7d9ac5da7d5a112350e8b7fe793721d447403a24209fb55a14",
       "previous_page_id": "TD-QP04",
@@ -76129,7 +76129,7 @@
           "Task Goodput Gate"
         ],
         "visual": {
-          "src": "visuals/course/TD-AP02.svg",
+          "src": "visuals/course/TD-AP02.svg?v=ca6a6b1c2da0",
           "alt": "用户等 Agent 太久：把排队、模型、工具和重试耗时拆开的metric-experiment：展示计划到达时间、Queue wait、Prefill/TTFT、Decode/TPOT、Tool/Retry/Step之间的数据、控制、证据和反馈关系。",
           "kind": "metric"
         }
@@ -76263,7 +76263,7 @@
           "whatItDoesNotProve": "书里的示例数字是示例。任何直接照抄的 SLO 都没有经过你自己业务成本的校准。"
         }
       ],
-      "source_hash": "89dfee4e89be6c5142af71fb8891f36345f4f04d558ac42f7a328ec1d11c5035",
+      "source_hash": "fc008aadf262c812cfd64553d92ea4a621e8e7c9cbaa6c50b8f6013feafa3005",
       "reference_hash": "5ce4a2eaa7b51fae0b3f9d6ed148612777fb3add3111721543993946afcd4b48",
       "material_hash": "5bc9c9e9651bbd6d1bf353bb6f5ffe214a81febf671e9ef9091ce1bacbe4c4f6",
       "previous_page_id": "TD-AP01",
@@ -77272,7 +77272,7 @@
           "Metric/Trace/Log 存储与访问"
         ],
         "visual": {
-          "src": "visuals/course/TD-AP03.svg",
+          "src": "visuals/course/TD-AP03.svg?v=c98dd876a93c",
           "alt": "记录 Agent 每一步，定位慢点和最早失败的layered-architecture：展示invoke_agent root、queue.wait span、gen_ai generation span、execute_tool attempt span、task.finalize event之间的数据、控制、证据和反馈关系。",
           "kind": "architecture"
         }
@@ -77433,7 +77433,7 @@
           "whatItDoesNotProve": "指标口径依赖具体后端；不同 backend 的批处理与队列语义不同，跨部署比较数字没有意义。"
         }
       ],
-      "source_hash": "94f3ecd000dce3f19cc6881b9f0724d16319d087121286077810016c29459ef0",
+      "source_hash": "4303c132d17382c5f52b2df78c22649524033d29d1e8e38114a8d127c21b6c1c",
       "reference_hash": "f3b4f933772322cc48b14c7f020b9acb75948443e0112ee91c45ea234570c1aa",
       "material_hash": "4820d4316e24c65ba7f27b74876f73c2b38979c6f08c94258e4419f9fd39549c",
       "previous_page_id": "TD-AP02",

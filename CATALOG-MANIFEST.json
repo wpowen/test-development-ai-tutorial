@@ -1560,7 +1560,7 @@
   ],
   "verdict": "PASS",
   "findings": [],
-  "generated_at": "2026-08-23T16:03:43.071Z",
+  "generated_at": "2026-08-23T16:16:38.331Z",
   "source_catalog_ref": "authoring:research/catalog-manifest.json",
-  "source_catalog_hash": "sha256:42867ecf57d5f6b83c68ff2a32546d30daee74906b7357a7b130f64f1c28976c"
+  "source_catalog_hash": "sha256:4f5ced8110a7dac18ef4854c5b3f0a4c1d5fe42b08f81f7514cb01f0848820ae"
 }

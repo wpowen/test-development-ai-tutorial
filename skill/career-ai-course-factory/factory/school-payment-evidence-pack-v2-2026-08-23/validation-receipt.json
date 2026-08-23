@@ -1,0 +1,12 @@
+{
+  "schema_version": "parent-group-fee-output-validation.v2",
+  "validated_at": "2026-08-23T16:12:39.073083+00:00",
+  "input_path": "outputs/career-ai-course-factory/factory/school-payment-evidence-pack-v2-2026-08-23/SAMPLE-MODEL-OUTPUT.json",
+  "input_sha256": "358edbb3a98c4375000240a785412656f5bddf2ce247838c389756c83ffb86eb",
+  "status": "PASS-CONTRACT",
+  "findings": [],
+  "limitations": [
+    "Validates structure and fail-closed invariants only",
+    "Does not prove OCR accuracy, identity, fraud status, learner success, or loss prevention"
+  ]
+}

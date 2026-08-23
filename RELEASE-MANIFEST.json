@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3-candidate",
-  "source_commit": "afb85b006f53c2cdf164d53a86fd376c04a306cb",
+  "source_commit": "374751257e68323d5015fc2265f533a5422d51fc",
   "release_scope": "validated-subset",
   "catalog_complete": false,
   "page_count": 103,
@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:7a62045b7940cfe560a7aef3f7f487db39a78bd2100df237e52bfb368285ef2c",
+  "content_hash": "sha256:59591ca040231d43b4e6ff95658a1fece2c0598dbfa12b885d5d2eb7ea320f62",
   "release_profile": "fixture-preview.v1",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
@@ -124,10 +124,10 @@
   "evidence_level": "fixture-tested local candidate; not practitioner-reviewed; not published",
   "publication_blockers_ref": "PUBLICATION-BLOCKERS.json",
   "solution_manifest_hash": "sha256:d1d458cfb7698cee5ebbb3f1ce2e94af4bbe9ed7383db31e1926bea1846d20af",
-  "catalog_manifest_hash": "sha256:d8e74f59219b4d140a14635becb5395f469126b1df6b4d53316b7f6b1d1168cb",
-  "promotion_manifest_hash": "sha256:2daa458dc33e001ff091ece2a5c11e04692982fc0745690a1e86905828f2f352",
-  "executability_manifest_hash": "sha256:06e8292386b2ad26ff51a2c7352c8e50f87c4279c8d9a9b77524a3982bdf9f32",
-  "artifact_closure_hash": "sha256:f422820056ebb478d4336601cd06e4bb660926b01710247510af674559b0429b",
+  "catalog_manifest_hash": "sha256:021f2da208a664726c3bbd5f924be4069c559807053b73ca57aeecff09a5521e",
+  "promotion_manifest_hash": "sha256:5b8887032ad97825761109fd3d0323b324d8db48eae072e51a9d7d48780d6ca9",
+  "executability_manifest_hash": "sha256:d1e6b02abe08f3b829964359fee2443469fe4d0c210291fcd2c862a20762c84a",
+  "artifact_closure_hash": "sha256:17bf4fa9bfff7f9cabfb9d18f52390e941e2fdd6341ee16fac59db961df446dc",
   "capability_profiles_hash": "sha256:f4eb0cfbbc437576e86e8233d3638e3f3b5f84a4760327bde8be231d206d7afc",
   "professional_evidence_hash": "sha256:db1c664ca3667fe49417582945babddf85bd27daa9052e380bd5171c73ee52b5",
   "status_registry_hash": "sha256:0a6f7e45793d19b9ba754c115be57570ec7cafda90fd17e77c7fe17b124de1e2",

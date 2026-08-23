@@ -1,0 +1,15 @@
+{
+  "schema_version":"teaching-plan.v2","outcome":"家长能收集并打码 A–F 六组证据，让通用大模型输出可检查的一致性报告，并在学校群外确认前保持暂停付款。","prerequisites":["会截图和打码","能打开聊天记录、联系人资料和支付确认前页面","能找到老师或学校既有联系方式","所选模型支持多图或文本证据"],"learner_artifact":"A–F 证据 manifest、符合 Schema 的模型 JSON、输出验证回执、群外学校核验记录和最终人工决定","assessment":"任何不可见字段必须 UNKNOWN；头像昵称不得认证身份；F 缺失不得确认；个人收款不得自动判诈骗；输出不得有概率或付款建议。","maturity":"FIXTURE-TESTED",
+  "steps":[
+    {"kind":"pain","action":"展示旧版单图提示为何不能回答老师身份","evidence":"新验证器将旧高风险场景因缺输入合同而阻断"},
+    {"kind":"baseline","action":"列出人类原本要检查的群历史、账号、历史聊天、支付主体和学校渠道","evidence":"A–F 证据采集指南"},
+    {"kind":"demo","action":"用合成 A–F manifest 上传或粘贴，运行通用提示词","evidence":"SAMPLE-EVIDENCE-MANIFEST.json"},
+    {"kind":"pause","action":"观众暂停并按隐私门禁准备证据；看不到的字段写 UNKNOWN","evidence":"EVIDENCE-CAPTURE-GUIDE.md"},
+    {"kind":"verify","action":"检查模型 JSON 是否符合 Schema 和五态规则，再由学校群外渠道关闭 Human Gate","evidence":"model-output-schema.json 与 validate_model_output.py"},
+    {"kind":"failure","action":"展示单图模型猜身份、把最早消息当建群时间、把个人收款判诈骗","evidence":"旧产物失败审计与反证来源"},
+    {"kind":"repair","action":"增加 A–F 证据、弱中强等级、UNKNOWN、个人收款反例、严格 Schema 和五态状态机","evidence":"v2 用户交付包"},
+    {"kind":"rerun","action":"同一合成案例返回账号冲突、支付授权缺失和 INCONSISTENCY-DETECTED","evidence":"SAMPLE-MODEL-OUTPUT.json 与 validation-receipt.json"},
+    {"kind":"transfer","action":"换成孩子私聊培训费，复用稳定账号、历史沟通、支付主体和机构官方确认","evidence":"scenario-map 第二适配器和 EVALUATION-CASES.json"},
+    {"kind":"human-gate","action":"用户使用群外原有或独立官方渠道确认；已付款或点击链接则留证、联系支付机构并报警","evidence":"F 类证据和最终记录"}
+  ]
+}
