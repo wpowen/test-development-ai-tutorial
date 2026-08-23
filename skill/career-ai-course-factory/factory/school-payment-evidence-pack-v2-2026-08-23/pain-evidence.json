@@ -1,0 +1,39 @@
+{
+  "schema_version":"pain-evidence.v2",
+  "pain_id":"parent-group-fee-evidence-gap",
+  "status":"PAIN-VALIDATED",
+  "title":"家长群收费核验包：让 AI 比对六组证据，但不让它猜老师身份",
+  "risk_level":"high",
+  "decision_question_types":["当前账号与历史老师账号是否连续","群历史与加入记录是否可见且一致","当前通知与历史沟通是否连续","收款主体与学校授权是否一致","付款前还缺什么强证据"],
+  "affected_user":"开学季中小学新生家长、祖辈照护者及家庭付款人",
+  "trigger_event":"群内头像昵称像老师的账号发布限时缴费通知、二维码或私人收款方式",
+  "market_problem":"单张通知截图无法证明发送者身份。人类实际会检查群历史、账号连续性、过去沟通、支付确认页和学校官方渠道，但这些证据分散、强弱不同且部分字段根本不可见。",
+  "losses":["资金损失","误点二维码或链接","把真实老师/家委误判成骗子","暴露未成年人和群成员隐私","错过及时止付与报警"],
+  "non_ai_baseline":"暂停付款；人工逐项检查群历史、当前与历史账号、既往沟通、支付确认页和学校官方通知，再使用通讯录原有号码联系学校。",
+  "friction_gap":"人工基线可靠但证据分散，容易把头像、语气、群年龄或个人收款当成充分证明。AI 可以整理和比对用户提供的可见证据，但不能访问微信后台或认证账号控制人。",
+  "privacy_minimization":"所有 A–F 截图必须按指南打码；只保留日期、脱敏稳定标识、金额、收款类型和官方渠道一致性；二维码、链接、孩子与群成员信息不可上传。",
+  "evidence":[
+    {"source_id":"huaibei-2026-warning","publisher_group":"淮北市公安局/政府网站","source_type":"official-problem-statement","url":"https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html","opened_at":"2026-08-23","supports":"近期冒充老师收费问题、身份克隆和双重核验动作","cannot_prove":"全国发生率或 AI 身份判断准确率"},
+    {"source_id":"cctv-parent-group-case","publisher_group":"央视网/平安北京","source_type":"regulator-cases","url":"https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml","opened_at":"2026-08-23","supports":"真实损失、学校官方收费渠道、对公主体和留证报警建议","cannot_prove":"所有学校统一使用对公账户"},
+    {"source_id":"wechatpay-class-fee","publisher_group":"微信支付官方文档","source_type":"official-problem-statement","url":"https://pay.wechatpay.cn/doc/v3/merchant/4012154495","opened_at":"2026-08-23","supports":"个人班费收款可以存在合规业务场景，个人收款不能自动判诈骗","cannot_prove":"当前收款是否获学校或家委授权"},
+    {"source_id":"huairou-parent-guide","publisher_group":"怀柔区政府反诈课堂","source_type":"official-guidance","url":"https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html","opened_at":"2026-08-23","supports":"电话核验、隐私、历史联系人、留证与报警","cannot_prove":"学习者完成率"}
+  ],
+  "capability_core":{
+    "stable_flow":["object","claim","evidence","source","boundary","action"],
+    "allowed_actions":["指导用户收集 A–F 六组脱敏证据","精确提取可见账号标识、日期、金额、事项和收款主体","比较当前与历史记录的一致性","标记 UNKNOWN、缺失和冲突","按证据等级生成补证与群外核验动作"],
+    "forbidden_actions":["仅凭头像、昵称、语气、脸、声音或写作风格认证身份","猜测不可见的建群或入群时间","输出真假概率或身份置信度","解码二维码、访问链接、联系当前消息中的号码","判定诈骗、指控个人或建议付款","上传未打码隐私"]
+  },
+  "independent_verification":{
+    "methods":[
+      {"type":"original-record","procedure":"使用通讯录原有老师或学校办公室电话核实账号、收费事项、金额、渠道和授权收款主体"},
+      {"type":"official-source","procedure":"对照学校官网、认证公众号、既有校园 App/缴费平台和学校发布的正式通知"},
+      {"type":"transaction-record","procedure":"只查看支付确认前页面中的收款主体、类型和金额；不输入密码、不完成支付"}
+    ],
+    "decision_owner":"孩子监护人或家庭付款人；学校确认授权，疑似诈骗由公安机关处理",
+    "pass_language":"AI 只允许输出证据状态。OFFICIAL-CHANNEL-CONFIRMED 只能记录用户已提供的群外学校确认，不等于模型认证老师身份。"
+  },
+  "stop_and_escalate":{
+    "conditions":["A–F 关键证据缺失或冲突","要求立即扫码、私人转账或验证码","无法取得群外学校确认","已付款或点击陌生链接","截图未完成隐私打码"],
+    "actions":["状态设为 INSUFFICIENT-EVIDENCE 或 HIGH-RISK-PAUSE","从既有渠道联系学校","保存聊天、资料页和支付凭证","已付款时联系支付机构并报警","删除未打码上传内容并检查账户安全"]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version":"research-dossier.v1","proposition_id":"parent-group-fee-screenshot","research_question":"开学季家长收到群内缴费二维码时，AI 能安全帮助哪一步，哪些判断必须交给学校官方渠道？","identity_resolution":"对象是群内冒充教师发布缴费通知的既有诈骗机制，不等于所有群收费都违法；AI 只做截图信息提取和核验清单。",
+  "sources":[
+    {"source_id":"huaibei-2026-warning","publisher_group":"淮北市公安局/政府网站","source_type":"official-problem-statement","url":"https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html","opened_at":"2026-08-23","supports":"近期场景、套路和双重核验动作","cannot_prove":"全国发生率与 AI 效果"},
+    {"source_id":"cctv-parent-group-case","publisher_group":"央视网/平安北京","source_type":"regulator-cases","url":"https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml","opened_at":"2026-08-23","supports":"真实损失、官方收费渠道与留证报警建议","cannot_prove":"所有学校统一收费方式"},
+    {"source_id":"moe-fee-warning","publisher_group":"教育部","source_type":"official-problem-statement","url":"https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202002/t20200217_421853.html","opened_at":"2026-08-23","supports":"长期机制及群成员身份审核要求","cannot_prove":"2026 单个学校规则"},
+    {"source_id":"huairou-parent-guide","publisher_group":"怀柔区政府反诈课堂","source_type":"public-service-content","url":"https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html","opened_at":"2026-08-23","supports":"多场景核验、隐私、留证与报警","cannot_prove":"学习效果"},
+    {"source_id":"openai-image-input","publisher_group":"OpenAI official","source_type":"vendor-documentation","url":"https://developers.openai.com/api/docs/models","opened_at":"2026-08-24","supports":"当前 OpenAI 模型支持图片输入，可作为证据提取实现之一","cannot_prove":"任意大模型都支持多图、OCR 正确率或身份/诈骗判断准确率"},
+    {"source_id":"openai-data-controls","publisher_group":"OpenAI official","source_type":"vendor-documentation","url":"https://platform.openai.com/docs/models/default-usage-policies-by-endpoint","opened_at":"2026-08-23","supports":"图片上传涉及数据处理，需隐私最小化","cannot_prove":"所有 AI 产品的数据规则"},
+    {"source_id":"wechatpay-class-fee","publisher_group":"微信支付官方文档","source_type":"vendor-documentation","url":"https://pay.wechatpay.cn/doc/v3/merchant/4012154495","opened_at":"2026-08-23","supports":"官方文档列出家委通过小程序发起个人班费收款的应用场景，说明个人收款不能自动等同诈骗","cannot_prove":"当前群内收款是否得到学校或家委授权"},
+    {"source_id":"wechatpay-user-agreement","publisher_group":"微信支付官方协议","source_type":"vendor-documentation","url":"https://gtimg.wechatpay.cn/resource/xres/build/wxpayuserinfo/wxpay_user_agreement/latest/userservice.html","opened_at":"2026-08-23","supports":"支付账单等会展示账户昵称和头像，支付支持个人转账、二维码收款、群收款等多种方式","cannot_prove":"昵称头像对应老师本人，也不能证明某笔收费合规"},
+    {"source_id":"wechat-group-metadata-gap","publisher_group":"bounded source audit","source_type":"research-gap","url":"local://wechat-group-metadata-official-search-2026-08-23","opened_at":"2026-08-23","supports":"本轮没有找到可打开的微信官方资料证明普通微信群当前 UI 一定展示建群时间或每个成员入群时间","cannot_prove":"这些字段绝对不存在；不同版本、企业微信或管理员权限可能不同"}
+  ],
+  "claim_inventory":[
+    {"claim_id":"claim-current-warning","text":"2026-08-19 警方公开提醒开学季出现冒充老师收资料费场景。","source_ids":["huaibei-2026-warning"],"status":"SUPPORTED","cannot_prove":"不外推全国发生率"},
+    {"claim_id":"claim-risk-patterns","text":"高仿头像昵称、群内二维码、限时催促和他人缴费截图都不能证明收费真实。","source_ids":["huaibei-2026-warning","cctv-parent-group-case","huairou-parent-guide"],"status":"SUPPORTED-AS-RISK-SIGNALS","cannot_prove":"单一信号不能确定诈骗"},
+    {"claim_id":"claim-oracle","text":"付款前应通过群外既有联系方式和学校官方渠道核实。","source_ids":["huaibei-2026-warning","cctv-parent-group-case"],"status":"SUPPORTED","cannot_prove":"不能给出所有学校唯一收费渠道"},
+    {"claim_id":"claim-ai-role","text":"支持图片输入的 AI 可帮助提取截图信息并整理核验清单。","source_ids":["openai-image-input"],"status":"SUPPORTED-CAPABILITY-NOT-EFFECTIVENESS","cannot_prove":"不能判断诈骗真伪或保证 OCR 正确"},
+    {"claim_id":"claim-privacy","text":"上传前应遮盖孩子姓名、班级、头像、群名、手机号和二维码。","source_ids":["openai-data-controls","huairou-parent-guide"],"status":"SCOPED-SAFETY-RULE","cannot_prove":"不能替代具体产品隐私条款"},
+    {"claim_id":"claim-personal-payee-boundary","text":"个人收款不是诈骗充分条件；需要核验学校/家委授权、既有流程和实际收款主体。","source_ids":["wechatpay-class-fee","cctv-parent-group-case"],"status":"SUPPORTED-AS-BOUNDARY","cannot_prove":"不能据此认为任何个人收款都合规"},
+    {"claim_id":"claim-profile-boundary","text":"支付或聊天界面显示的昵称头像属于可见线索，不是老师真实身份的独立证明。","source_ids":["wechatpay-user-agreement","huaibei-2026-warning"],"status":"SUPPORTED-AS-BOUNDARY","cannot_prove":"不能单凭界面字段确认账户实际控制人"},
+    {"claim_id":"claim-group-time-unknown","text":"没有可靠可见记录时，AI 必须把建群时间和成员入群时间标为 UNKNOWN。","source_ids":["wechat-group-metadata-gap"],"status":"UNKNOWN-EXPLICIT-SAFETY-RULE","cannot_prove":"不能断言所有微信版本均不显示这些信息"}
+  ],
+  "counterevidence":["群内收费不必然是诈骗，微信支付官方文档本身列出家委个人收班费场景。","AI 可能漏读小字、误读稳定标识或把风险说得过满。","头像、昵称、语气、历史聊天和账号连续性都可能被复制或账号接管，不能单独认证身份。","最可靠动作仍是群外联系学校；不用 AI 也能完成。","未经打码上传群截图会暴露未成年人和其他家长信息。"],
+  "competitor_reference":{"primary":"央视案例的真实损失开场、骗子机制、警方动作；借鉴故事先行和权威核验，不复制措辞或画面。","reverse":"泛 AI 防骗内容常直接罗列骗局或让 AI 下结论；本稿改成一张截图、四项预检、群外 Oracle 和停止动作。","optimization":"60–90 秒让观众暂停、打码、粘贴固定提示、拿到核验清单；不展示可扫描二维码。"},
+  "findings":["单张通知截图不足以判断老师身份，最低可用输入应扩展为 A–F 六组证据。","AI 的任务是可见事实提取、精确标识比对、冲突与缺失定位，不是头像、人脸、声音或写作风格识别。","建群时间或入群时间只有在当前界面/历史系统消息明确可见时才能使用，否则必须 UNKNOWN。","个人收款只是一项需要授权核验的事实，不是诈骗结论。","最终关闭支付 Human Gate 的只能是群外学校官方渠道、既有联系人和授权收款主体。"],
+  "cannot_prove":["没有目标家长完成率、误判率、止损率或平台流量数据。","没有跨多个真实大模型的准确率、拒答率和一致性评测。","fixture 是合成证据包，不代表真实微信截图 OCR 或微信后台身份。","没有真实学校收费平台和支付交易验证。"],"disposition":"APPROVE-FIXTURE-V2-ONLY；允许把 A–F 证据包、严格输出 Schema 和人工核验路线交给用户；不得宣传为 AI 能确认老师身份、准确识骗或有效防骗"
+}

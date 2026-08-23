@@ -1,0 +1,28 @@
+{
+  "schema_version":"parent-group-fee-evidence-output.v2",
+  "case_id":"synthetic-case-001",
+  "privacy_gate":"PASS-REDACTED",
+  "input_completeness":{"provided":["A","B","C","D","E"],"missing":["F"]},
+  "observations":[
+    {"evidence_id":"A","field":"current_sender_id","observed_value":"wxid_teacher_new_***91","evidence_grade":"moderate","limitations":"可见账号标识，但不能证明当前控制人"},
+    {"evidence_id":"A","field":"notice","observed_value":"资料费 398 元，20:00 前，个人二维码","evidence_grade":"weak","limitations":"通知内容和紧迫措辞可伪造"},
+    {"evidence_id":"B","field":"visible_join_time","observed_value":null,"evidence_grade":"UNKNOWN","limitations":"平台/记录未显示，不能猜测"},
+    {"evidence_id":"C","field":"historically_confirmed_teacher_id","observed_value":"wxid_teacher_old_***73","evidence_grade":"moderate","limitations":"历史账号仍可能被盗，但可用于精确连续性比较"},
+    {"evidence_id":"E","field":"payee","observed_value":"personal / 张*华 / 398","evidence_grade":"moderate","limitations":"个人收款可能有正常授权，也可能无授权；显示名不是法定身份"}
+  ],
+  "identity_continuity":{"status":"INCONSISTENT","exact_matches":[],"mismatches":["当前发送者标识 wxid_teacher_new_***91 与历史确认老师 wxid_teacher_old_***73 不一致"],"unknowns":["成员入群时间","当前账号实际控制人"],"account_takeover_boundary":"即使账号一致也不能排除盗号；本例已出现标识不一致"},
+  "group_history":{"earliest_visible_record":"2025-09-01","join_or_rename_records":[],"status":"NO-VISIBLE-RECORD","boundary":"最早可见消息不等于建群时间；未找到加入记录不等于最近加入"},
+  "payment_consistency":{"payee_type":"personal","payee_display_name":"张*华","amount_match":"MATCH","purpose_match":"UNKNOWN","authorization_match":"UNKNOWN","status":"INSUFFICIENT","boundary":"个人收款不是诈骗充分条件；缺学校/家委授权和项目说明"},
+  "missing_evidence":[
+    {"field":"F-school-confirmation","why_needed":"关闭付款 Human Gate","collection_action":"使用通讯录原有老师或学校办公室电话核实收费项目、金额、渠道和授权收款人"},
+    {"field":"payment-authorization","why_needed":"确认个人收款是否为获授权的班费流程","collection_action":"从学校官方通知或既有平台取得授权主体与项目说明"},
+    {"field":"visible-join-time","why_needed":"用户关心成员是否近期加入","collection_action":"仅查找可见系统加入/改名消息；若没有则永久保持 UNKNOWN"}
+  ],
+  "conflicts":[
+    {"field":"sender_account_id","left_evidence":"A","right_evidence":"C","conflict":"当前发送者稳定标识与历史确认老师不一致"},
+    {"field":"chat_account_continuity","left_evidence":"A","right_evidence":"D","conflict":"当前通知不是由历史老师会话中的同一可见账号发出"}
+  ],
+  "decision_state":"INCONSISTENCY-DETECTED",
+  "next_actions":["暂停扫码和付款","不要联系当前消息提供的新号码","拨打通讯录原有老师或学校办公室电话","核对学校官方缴费入口和授权收款主体","保存当前消息、资料页和支付预览的脱敏证据"],
+  "risk_notice":"本结果只比较用户提供的可见证据，不能访问微信后台、认证账号实际控制人或保证判断准确。学校群外官方确认前不要付款。"
+}

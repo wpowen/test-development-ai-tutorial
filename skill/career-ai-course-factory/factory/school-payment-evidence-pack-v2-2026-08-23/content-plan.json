@@ -1,0 +1,39 @@
+{
+  "schema_version":"content-plan.v2",
+  "positioning":"用户可领取并实际操作的证据核验包：教家长收集 A–F 六组证据，让通用大模型做可见事实提取和一致性比对；不让模型认证老师身份或判断诈骗。",
+  "titles":[
+    "家长群里这个老师是真的吗？别让 AI 猜，给它这六组证据",
+    "头像、群历史、聊天记录、收款人：家长群缴费该怎么交给 AI 核验",
+    "AI 不能证明他是老师，但能帮你发现这六组证据哪里冲突"
+  ],
+  "hook":"只发一张缴费截图，任何 AI 都不可能严谨确认这个人是不是老师。它看不到微信后台，也不知道账号现在由谁控制。真正能交给 AI 的，是六组可检查证据。",
+  "fact_sheet":{"claims":[
+    {"claim_id":"claim-current-warning","text":"2026-08-19 警方公开提醒近期出现冒充老师收资料费场景。","source_ids":["huaibei-2026-warning"],"cannot_prove":"不代表所有家长群收费有问题"},
+    {"claim_id":"claim-risk-patterns","text":"克隆头像昵称、限时通知和缴费接龙是风险信号，不是身份或收费真实性证明。","source_ids":["huaibei-2026-warning","cctv-parent-group-case","huairou-parent-guide"],"cannot_prove":"单个信号不能确定诈骗"},
+    {"claim_id":"claim-oracle","text":"付款前应通过群外既有联系方式和学校官方渠道核实。","source_ids":["huaibei-2026-warning","cctv-parent-group-case"],"cannot_prove":"各学校具体渠道不同"},
+    {"claim_id":"claim-ai-role","text":"支持图片输入的模型可接收图片作为证据提取输入。","source_ids":["openai-image-input"],"cannot_prove":"任意模型都支持多图、OCR 正确或身份判断准确"},
+    {"claim_id":"claim-personal-payee-boundary","text":"个人收款不能自动判诈骗，官方支付文档存在家委个人收班费场景。","source_ids":["wechatpay-class-fee"],"cannot_prove":"当前个人收款已获学校或家委授权"},
+    {"claim_id":"claim-profile-boundary","text":"聊天或支付界面显示的昵称头像只是可见线索，不能证明实际控制人。","source_ids":["wechatpay-user-agreement","huaibei-2026-warning"],"cannot_prove":"无法访问微信后台实名与控制权"},
+    {"claim_id":"claim-group-time-unknown","text":"没有可见系统记录时，建群时间和成员入群时间必须保持 UNKNOWN。","source_ids":["wechat-group-metadata-gap"],"cannot_prove":"不同版本或权限绝对不显示这些字段"},
+    {"claim_id":"claim-privacy","text":"上传前应遮盖未成年人、群成员、二维码、链接和支付信息。","source_ids":["openai-data-controls","huairou-parent-guide"],"cannot_prove":"不能替代所用模型当前隐私政策"}
+  ]},
+  "director_script":[
+    {"time":"00:00-00:10","shot":"真人开场，屏幕显示‘一张截图能确认老师吗？不能’","action":"把旧版四项预检卡盖上 INVALID 标记","overlay":"AI 看不到微信后台","material_ids":["mat-host-open","mat-invalid-old-method"]},
+    {"time":"00:10-00:28","shot":"A–F 六格证据板","action":"依次点亮当前通知、群历史、账号资料、历史聊天、支付预览、学校官方渠道","overlay":"不是多传图，是给每张图定义证据任务","material_ids":["mat-six-evidence-board"]},
+    {"time":"00:28-00:42","shot":"群历史和资料页合成示例","action":"指出最早消息不等于建群时间、看不到入群时间就写 UNKNOWN、头像昵称是弱证据","overlay":"不可见 ≠ 可以猜","material_ids":["mat-group-history-boundary","mat-evidence-grades"]},
+    {"time":"00:42-00:56","shot":"支付确认前页面合成示例","action":"比对金额、事项、个人/商户、小程序和收款显示名","overlay":"个人收款 ≠ 自动诈骗；先查授权","material_ids":["mat-payment-boundary"]},
+    {"time":"00:56-01:15","shot":"手机模型录屏 + JSON 输出","action":"上传 A–F、粘贴通用提示词、展示冲突和 UNKNOWN，而非真假结论","overlay":"只允许五种状态","material_ids":["mat-phone-demo","mat-universal-prompt","mat-output-schema"]},
+    {"time":"01:15-01:30","shot":"群外核验路线与真人收口","action":"通讯录原有电话→学校办公室/官网→既有平台→授权收款主体","overlay":"F 缺失，永远不能确认","material_ids":["mat-official-route","mat-host-close","mat-risk-card"]}
+  ],
+  "spoken_narration":[
+    {"section":"纠正问题","text":"先纠正一个关键错误：只发一张家长群缴费截图，AI 不可能严谨判断这个人是不是老师。它看不到微信后台，也不知道账号现在由谁控制。","claim_ids":["claim-profile-boundary"]},
+    {"section":"六组输入","text":"真正能交给 AI 的，是六组证据。A 是当前通知；B 是群里最早保留消息、历史公告和可见加入或改名记录；C 是当前账号和以前确认过的老师资料；D 是跨日期历史沟通；E 是支付确认前显示的收款主体；F 是学校群外官方确认。","claim_ids":["claim-oracle","claim-group-time-unknown"]},
+    {"section":"群和身份","text":"注意，最早一条消息不等于建群时间。看不到成员入群时间，就必须写 UNKNOWN。头像、昵称、语气都能复制，只算弱证据。账号和历史聊天连续算中等证据，但仍不能排除盗号。","claim_ids":["claim-risk-patterns","claim-group-time-unknown","claim-profile-boundary"]},
+    {"section":"收款主体","text":"付款前只停在确认页面，看收款人、个人还是商户、金额和项目，不输入密码。个人收款也不能直接判诈骗，因为官方支付文档里就有家委个人收班费的场景。关键是学校或家委是否授权，金额、项目和主体是否一致。","claim_ids":["claim-personal-payee-boundary"]},
+    {"section":"模型输出","text":"把六组打码证据按 A 到 F 上传，再粘贴提示词。模型只能提取可见事实、做精确字段比对、标出 UNKNOWN、冲突和下一步。它不能给真假概率，也不能说可以付款。","claim_ids":["claim-ai-role","claim-privacy"]},
+    {"section":"最终边界","text":"如果 F 类学校群外确认缺失，最高只能得到‘暂时一致，仍需群外核验’。只有你用原有电话、学校办公室、官网或既有平台确认了事项、金额、渠道和授权主体，才算关闭付款门禁。这个确认来自学校，不来自 AI。","claim_ids":["claim-oracle"]},
+    {"section":"风险告知","text":"这个工具包没有经过真实家长和多模型准确率测试，不能保证不漏读、不误判，也不保证防止损失。学校确认前不付款；已经付款或点了链接，保存证据，联系支付机构并按情况报警。","claim_ids":["claim-oracle"]}
+  ],
+  "benchmark":{"primary":"央视和警方内容的真实案例、来源可见、外部核验动作","reverse":"只传一张截图就让 AI 判断真假或输出概率的伪精确内容","originality_changes":["从单图升级为 A–F 证据包","增加平台不可见字段和 UNKNOWN 规则","区分弱中强证据与盗号边界","加入个人收款合法反例","使用严格 JSON Schema 与五态状态机","来源物料单独做可用性和版权台账"]},
+  "call_to_action":"领取 v2 核验包：证据采集指南、通用提示词、输出 Schema、判断规则、合成样例和来源台账。先用合成案例练习，不上传真实孩子信息。"
+}

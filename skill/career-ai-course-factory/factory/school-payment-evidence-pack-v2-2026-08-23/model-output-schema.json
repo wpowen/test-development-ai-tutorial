@@ -1,0 +1,22 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"Parent Group Fee Evidence Comparison Output",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","case_id","privacy_gate","input_completeness","observations","identity_continuity","group_history","payment_consistency","missing_evidence","conflicts","decision_state","next_actions","risk_notice"],
+  "properties":{
+    "schema_version":{"const":"parent-group-fee-evidence-output.v2"},
+    "case_id":{"type":"string","minLength":1},
+    "privacy_gate":{"enum":["PASS-REDACTED","FAIL-REDACTION"]},
+    "input_completeness":{"type":"object","additionalProperties":false,"required":["provided","missing"],"properties":{"provided":{"type":"array","items":{"enum":["A","B","C","D","E","F"]},"uniqueItems":true},"missing":{"type":"array","items":{"enum":["A","B","C","D","E","F"]},"uniqueItems":true}}},
+    "observations":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["evidence_id","field","observed_value","evidence_grade","limitations"],"properties":{"evidence_id":{"enum":["A","B","C","D","E","F"]},"field":{"type":"string"},"observed_value":{"type":["string","number","null"]},"evidence_grade":{"enum":["weak","moderate","strong","UNKNOWN"]},"limitations":{"type":"string"}}}},
+    "identity_continuity":{"type":"object","required":["status","exact_matches","mismatches","unknowns","account_takeover_boundary"],"properties":{"status":{"enum":["CONSISTENT","INCONSISTENT","INSUFFICIENT"]},"exact_matches":{"type":"array","items":{"type":"string"}},"mismatches":{"type":"array","items":{"type":"string"}},"unknowns":{"type":"array","items":{"type":"string"}},"account_takeover_boundary":{"type":"string"}}},
+    "group_history":{"type":"object","required":["earliest_visible_record","join_or_rename_records","status","boundary"],"properties":{"earliest_visible_record":{"type":["string","null"]},"join_or_rename_records":{"type":"array","items":{"type":"string"}},"status":{"enum":["LONGITUDINAL-EVIDENCE","RECENT-CHANGE-VISIBLE","NO-VISIBLE-RECORD","UNKNOWN"]},"boundary":{"type":"string"}}},
+    "payment_consistency":{"type":"object","required":["payee_type","payee_display_name","amount_match","purpose_match","authorization_match","status","boundary"],"properties":{"payee_type":{"enum":["personal","merchant","mini-program","official-platform","UNKNOWN"]},"payee_display_name":{"type":["string","null"]},"amount_match":{"enum":["MATCH","MISMATCH","UNKNOWN"]},"purpose_match":{"enum":["MATCH","MISMATCH","UNKNOWN"]},"authorization_match":{"enum":["MATCH","MISMATCH","UNKNOWN"]},"status":{"enum":["CONSISTENT","INCONSISTENT","INSUFFICIENT"]},"boundary":{"type":"string"}}},
+    "missing_evidence":{"type":"array","items":{"type":"object","required":["field","why_needed","collection_action"],"properties":{"field":{"type":"string"},"why_needed":{"type":"string"},"collection_action":{"type":"string"}}}},
+    "conflicts":{"type":"array","items":{"type":"object","required":["field","left_evidence","right_evidence","conflict"],"properties":{"field":{"type":"string"},"left_evidence":{"enum":["A","B","C","D","E","F"]},"right_evidence":{"enum":["A","B","C","D","E","F"]},"conflict":{"type":"string"}}}},
+    "decision_state":{"enum":["INSUFFICIENT-EVIDENCE","HIGH-RISK-PAUSE","INCONSISTENCY-DETECTED","PROVISIONALLY-CONSISTENT-VERIFY-OUTSIDE-APP","OFFICIAL-CHANNEL-CONFIRMED"]},
+    "next_actions":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "risk_notice":{"type":"string","minLength":40}
+  }
+}

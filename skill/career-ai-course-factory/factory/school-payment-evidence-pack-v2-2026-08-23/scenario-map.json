@@ -1,0 +1,57 @@
+{
+  "schema_version":"scenario-map.v2",
+  "capability_core":{"stable_flow":["object","claim","evidence","source","boundary","action"]},
+  "adapters":[
+    {
+      "scenario_id":"group-material-fee-evidence-pack",
+      "name":"班级群收费身份与收款证据核验",
+      "trigger":"群内疑似老师账号要求扫码缴费",
+      "input":"按 A–F 编号的脱敏证据截图包，而不是单张通知截图",
+      "input_bundle":[
+        {"item_id":"A-current-notice","user_action":"截取当前缴费通知及发送者在群里的可见账号入口","visible_fields":["发送时间","金额与事项","截止时间","收款方式","发送者昵称/头像/可见账号标识"],"redaction":"遮盖孩子、班级、群名、其他家长、二维码、链接、号码和订单号","strength":"weak-to-moderate","limitations":"通知内容、头像、昵称和语气都可复制；只能描述，不能证明身份"},
+        {"item_id":"B-group-history","user_action":"在聊天记录中查找最早保留消息、历史群公告、老师长期发言，以及可见的加入/改名系统消息","visible_fields":["最早可见日期","历史公告","长期发言连续性","可见加入或改名记录"],"redaction":"只保留日期、系统动作和必要上下文，遮盖成员信息","strength":"moderate","limitations":"最早可见消息不等于建群时间；普通微信若未显示入群时间则必须写 UNKNOWN，不能猜"},
+        {"item_id":"C-sender-identity","user_action":"打开当前发送者资料页，截取可见账号标识；另取此前已通过线下或学校确认的老师资料/联系人记录","visible_fields":["账号标识","备注名","昵称","头像","共同群或联系入口"],"redaction":"遮盖完整手机号和不必要个人信息，保留可比较的脱敏尾号或稳定标识","strength":"moderate","limitations":"头像昵称属于弱证据；账号标识连续也不能排除账号被盗"},
+        {"item_id":"D-history-chat","user_action":"选取此前确认过的老师与家长之间 2–3 个跨日期历史沟通片段","visible_fields":["同一会话入口","日期跨度","过去学校事务上下文","账号标识连续性"],"redaction":"遮盖学生姓名、成绩、健康、地址及其他隐私，只保留连续性证据","strength":"moderate","limitations":"写作风格和历史信息可被模仿；账号也可能被接管"},
+        {"item_id":"E-payment-preview","user_action":"只到支付确认前页面，截取显示的收款人/商户名称、类别和金额；不要输入密码或确认支付","visible_fields":["收款主体显示名","个人/商户/小程序场景","金额","项目说明"],"redaction":"遮盖二维码、账号、订单号、银行卡和余额","strength":"moderate-to-strong","limitations":"支付昵称和头像不是法定身份；个人收款也可能是经授权的家委班费场景，不能直接判诈骗"},
+        {"item_id":"F-official-route","user_action":"提供学校官网/公众号/既有缴费平台通知，或记录通过通讯录原有号码联系老师/学校办公室的结果","visible_fields":["官方域名或认证主体","收费项目与金额","指定渠道","授权收款主体","确认时间与联系人角色"],"redaction":"不公开内部电话、学生信息和通话录音，只记录核验结果","strength":"strong","limitations":"必须从既有或独立找到的官方渠道取得，不能使用当前消息中新给的号码或链接"}
+      ],
+      "evidence_grades":{"weak":"头像、昵称、语气、群里别人已缴费、单张通知截图；易复制，不能单独证明","moderate":"群历史、稳定账号标识、跨日期历史沟通、支付确认页显示；可支持连续性，但仍可能被盗号或伪造","strong":"群外既有电话/学校办公室、学校官网/认证公众号/既有缴费平台、授权收款主体一致；用于关闭 Human Gate"},
+      "ai_task":"逐项提取 A–F 可见事实，精确比对稳定标识与金额/事项/收款主体，标记缺失、冲突、可伪造性，并生成下一步采集动作；不做身份识别或诈骗判决",
+      "inspectable_output":"严格 JSON + 人类可读摘要；包含证据表、连续性比对、收款核对、缺失项、冲突、允许状态和下一步动作",
+      "decision_states":["INSUFFICIENT-EVIDENCE","HIGH-RISK-PAUSE","INCONSISTENCY-DETECTED","PROVISIONALLY-CONSISTENT-VERIFY-OUTSIDE-APP","OFFICIAL-CHANNEL-CONFIRMED"],
+      "model_output_contract":{"format":"严格 JSON，字段符合 model-output-schema.json；随后给不超过 120 字的人类摘要","required_sections":["observations","identity_continuity","group_history","payment_consistency","missing_evidence","conflicts","decision_state","next_actions","risk_notice"],"forbidden_outputs":["真假百分比","确认此人就是老师","一定诈骗或绝对安全","建议扫码/点击/付款","人脸、声纹、写作风格身份识别","解码或访问二维码/链接"]},
+      "confidence_policy":"不输出概率、置信度百分比或模型自评分；只报告证据覆盖、证据等级、冲突和未验证项。",
+      "unavailable_evidence_behavior":"任何看不到、平台不提供或用户未上传的字段都写 UNKNOWN；不得把最早可见消息等同建群时间，不得猜入群时间；生成具体补证动作。",
+      "oracle":{"type":"original-record","procedure":"由用户使用群外既有学校联系方式和官方收费渠道确认账号、事项、金额、渠道及授权收款主体"},
+      "failure":"AI 仅凭头像昵称相似、历史聊天或个人收款就给出真假结论",
+      "human_gate":"只有 F 类群外官方证据闭合且与当前通知一致，状态才可由用户记录为 OFFICIAL-CHANNEL-CONFIRMED；该状态是外部证据结果，不是模型认证身份",
+      "teaching_content":"教用户收集 A–F 六组证据，区分弱/中/强证据，并把 UNKNOWN 转成下一步动作",
+      "materials":["证据采集指南","通用提示词","模型输出 Schema","判断规则","来源台账","合成样例包"]
+    },
+    {
+      "scenario_id":"private-training-fee-evidence-pack",
+      "name":"孩子私聊培训费的身份与收款核验",
+      "trigger":"孩子或陌生账号私聊称培训名额将满，要求紧急转账",
+      "input":"当前私聊、已确认联系人资料、历史聊天、支付预览、机构官方信息五组脱敏证据",
+      "input_bundle":[
+        {"item_id":"A-current-request","user_action":"截取当前转账请求、提出者资料入口和时间压力","visible_fields":["账号标识","金额","理由","截止时间","收款方式"],"redaction":"遮盖孩子姓名、头像、学校、号码、二维码和链接","strength":"weak-to-moderate","limitations":"能说出家庭信息不等于身份真实"},
+        {"item_id":"B-known-contact","user_action":"截取此前已确认的孩子账号或联系人资料中可比较的稳定标识","visible_fields":["账号标识","备注","历史会话入口"],"redaction":"只保留脱敏稳定标识","strength":"moderate","limitations":"账号连续不能排除盗号"},
+        {"item_id":"C-history-chat","user_action":"提供跨日期历史沟通片段用于精确标识连续性，不做写作风格识别","visible_fields":["同一会话","日期跨度","过往上下文"],"redaction":"删除家庭和学校敏感内容","strength":"moderate","limitations":"内容和语气可被攻击者掌握"},
+        {"item_id":"D-payment-preview","user_action":"停在支付确认前，记录收款主体、金额、类型","visible_fields":["收款显示名","个人/商户","金额","用途"],"redaction":"隐藏账户、余额和订单号","strength":"moderate","limitations":"显示名不等于法定身份"},
+        {"item_id":"E-out-of-band","user_action":"拨打孩子原有号码，并从机构官网独立找到电话核实合同、项目和收款主体","visible_fields":["孩子确认结果","机构官方确认","合同/订单","授权主体"],"redaction":"只记录结果和时间，不公开录音与号码","strength":"strong","limitations":"不得使用当前私聊提供的新号码或链接"}
+      ],
+      "evidence_grades":{"weak":"头像、昵称、语气、紧急故事和家庭知识","moderate":"稳定账号、历史会话和支付预览","strong":"孩子原有号码回拨、机构官网独立联系方式、合同和授权收款主体"},
+      "ai_task":"比对可见稳定标识、请求内容、支付主体与机构官方信息，标记 UNKNOWN 和冲突，生成独立回拨问题",
+      "inspectable_output":"与主场景相同的严格 JSON 与分级状态",
+      "decision_states":["INSUFFICIENT-EVIDENCE","HIGH-RISK-PAUSE","INCONSISTENCY-DETECTED","PROVISIONALLY-CONSISTENT-VERIFY-OUTSIDE-APP","OFFICIAL-CHANNEL-CONFIRMED"],
+      "model_output_contract":{"format":"严格 JSON + 120 字内摘要","required_sections":["observations","identity_continuity","payment_consistency","missing_evidence","conflicts","decision_state","next_actions","risk_notice"],"forbidden_outputs":["真假概率","确认账号本人","建议转账","声纹/人脸/语气鉴定","访问链接或二维码"]},
+      "confidence_policy":"不输出概率；只报告证据覆盖、等级、冲突和外部确认。",
+      "unavailable_evidence_behavior":"未提供或不可见字段一律 UNKNOWN，并要求独立回拨或补充原始记录。",
+      "oracle":{"type":"original-record","procedure":"拨打孩子原有号码，并通过机构官网独立联系方式核实合同和收款主体"},
+      "failure":"AI 把账号连续、声音相似或掌握家庭信息当作本人证明",
+      "human_gate":"孩子本人和机构官方渠道均确认前不转账",
+      "teaching_content":"迁移 A–F 证据法到私聊紧急付款场景",
+      "materials":["合成私聊包","独立回拨卡","支付主体核验表","同一输出 Schema"]
+    }
+  ]
+}

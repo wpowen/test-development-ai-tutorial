@@ -1,0 +1,13 @@
+{
+  "schema_version":"parent-group-fee-evidence-input.v2",
+  "case_id":"synthetic-case-001",
+  "privacy_gate":"PASS-REDACTED",
+  "evidence":{
+    "A":{"provided":true,"facts":{"sender_visible_id":"wxid_teacher_old_***73","notice_amount":398,"purpose":"资料费","deadline":"20:00","payment_method":"个人二维码","urgency":"逾期影响教材发放"}},
+    "B":{"provided":true,"facts":{"earliest_visible_message":"2025-09-01","historical_announcements":true,"sender_longitudinal_messages":true,"visible_join_time":"UNKNOWN","visible_join_or_rename_record":false},"boundary":"最早消息不是建群时间；未找到加入记录不代表最近加入"},
+    "C":{"provided":true,"facts":{"current_sender_id":"wxid_teacher_new_***91","historically_confirmed_teacher_id":"wxid_teacher_old_***73","avatar_similarity":"similar","nickname_similarity":"same"}},
+    "D":{"provided":true,"facts":{"historical_chat_account_id":"wxid_teacher_old_***73","date_span":"2025-09 to 2026-06","current_notice_account_matches_history":false}},
+    "E":{"provided":true,"facts":{"payee_type":"personal","payee_display_name":"张*华","amount":398,"purpose_displayed":"UNKNOWN","authorization_displayed":false}},
+    "F":{"provided":false,"facts":{},"collection_action":"拨打通讯录原有班主任或学校办公室电话，并查学校官方缴费入口"}
+  }
+}

@@ -1,0 +1,1010 @@
+{
+  "schema_version": "pain-first-episode-package.v1",
+  "compiled_at": "2026-08-23T15:34:52.428162+00:00",
+  "status": "PASS-STRUCTURE",
+  "maturity": "FIXTURE-TESTED",
+  "limitations": [
+    "NOT-LEARNER-TESTED",
+    "NOT-PRODUCTION-VALIDATED"
+  ],
+  "source_hashes": {
+    "topic-radar.json": "5ccdee010948e4114906ddd656b10e5e3cc8574e89011f6ee1fac7283cabac4a",
+    "pain-evidence.json": "885ea2fc3725427bee8a90c9b524e461bfcab2432bcc2e538272de91bb58cbc4",
+    "research-dossier.json": "6de502a46977074b34f457738512531c1d799c304578b6384c95758a1638cfbc",
+    "audience-profile.json": "e86be427b7dc8aa3eb12e69fe17e55983da5854425eead9f4b4d4b0d49372b46",
+    "scenario-map.json": "124d5a56d0cb94a672c3aeb792e5222dae0f4b3843f7b4020a6daebf4dfccd18",
+    "teaching-plan.json": "a3d286a198765c597d64b348bbed566897b85f609820c9e0a9a30061163ed3a3",
+    "content-plan.json": "7197e7a62575bd748f4377a025c6daa8873db55aca37796d22855029f4b4fed5",
+    "operation-plan.json": "85c2712dd36fed87b2335ac33962cb445c8a4c4a92bc25ab2ee8fb0f62a74a0e",
+    "production-plan.json": "d68c15cc2c8c6dabd6c367afc14c733bcc569bd6f47f0eac0f55b1f056eebbdd"
+  },
+  "radar": {
+    "schema_version": "topic-radar.v1",
+    "radar_id": "ordinary-family-hotspot-2026-08-23",
+    "generated_at": "2026-08-23T00:00:00+08:00",
+    "market": "中国大陆普通家庭低门槛 AI 小实验内容",
+    "time_window": "2026-08-01 至 2026-08-23，耐久背景来源回溯至 2020 年",
+    "search_questions": [
+      "近期哪些普通家庭场景有官方问题证据和明确损失？",
+      "能否用一张截图在手机 AI 中完成低风险预检？",
+      "AI 输出能否由群外官方渠道独立核验？",
+      "现有供给是否主要停留在提醒而缺少暂停即做的实验？"
+    ],
+    "channels": [
+      {
+        "channel_id": "current-warning",
+        "type": "official-change",
+        "query": "site:gov.cn 2026 开学 家长群 缴费 诈骗",
+        "status": "opened",
+        "opened_urls": [
+          "https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html"
+        ]
+      },
+      {
+        "channel_id": "case-evidence",
+        "type": "pain-and-complaints",
+        "query": "家长群 冒充老师 缴费 真实案例 官方",
+        "status": "opened",
+        "opened_urls": [
+          "https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml"
+        ]
+      },
+      {
+        "channel_id": "official-rule",
+        "type": "official-policy",
+        "query": "site:moe.gov.cn 家长群 缴费诈骗 预警",
+        "status": "opened",
+        "opened_urls": [
+          "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202002/t20200217_421853.html"
+        ]
+      },
+      {
+        "channel_id": "content-supply",
+        "type": "platform-supply",
+        "query": "家长群 缴费诈骗 AI 核验 教程",
+        "status": "opened",
+        "opened_urls": [
+          "https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html",
+          "https://www.aigc.cn/100102.html"
+        ]
+      },
+      {
+        "channel_id": "ai-capability",
+        "type": "technical-evidence",
+        "query": "official OpenAI image input analyze screenshot",
+        "status": "opened",
+        "opened_urls": [
+          "https://platform.openai.com/docs/quickstart/make-your-first-api-request",
+          "https://help.openai.com/en/articles/9295241-how-to-launch-the-chat-bar"
+        ]
+      },
+      {
+        "channel_id": "counterevidence",
+        "type": "counterevidence",
+        "query": "AI screenshot privacy image upload policy",
+        "status": "opened",
+        "opened_urls": [
+          "https://platform.openai.com/docs/models/default-usage-policies-by-endpoint"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "sig-current-case",
+        "source_id": "huaibei-2026-warning",
+        "channel_id": "current-warning",
+        "publisher_group": "淮北市公安局/政府网站",
+        "source_type": "official-problem-statement",
+        "url": "https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html",
+        "opened_at": "2026-08-23",
+        "supports": "2026-08-19 警方披露近期冒充老师收资料费，并要求直接联系真实老师双重核实、不扫陌生二维码",
+        "cannot_prove": "不能证明全国发生率或 AI 识别效果",
+        "freshness": "开学季热点，发布前重开"
+      },
+      {
+        "signal_id": "sig-loss-case",
+        "source_id": "cctv-parent-group-case",
+        "channel_id": "case-evidence",
+        "publisher_group": "央视网/平安北京",
+        "source_type": "regulator-cases",
+        "url": "https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml",
+        "opened_at": "2026-08-23",
+        "supports": "公开案例中 40 多分钟内 9 名家长扫码共损失 4000 余元，并给出官方渠道核验建议",
+        "cannot_prove": "单一案例不能估算总体损失",
+        "freshness": "耐久案例，学校收费渠道需当前复核"
+      },
+      {
+        "signal_id": "sig-official-rule",
+        "source_id": "moe-fee-warning",
+        "channel_id": "official-rule",
+        "publisher_group": "教育部",
+        "source_type": "official-problem-statement",
+        "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202002/t20200217_421853.html",
+        "opened_at": "2026-08-23",
+        "supports": "教育部曾针对班级群冒充教师收费诈骗发布预警并要求身份审核",
+        "cannot_prove": "2020 背景不能代替 2026 各校规则",
+        "freshness": "用于耐久机制"
+      },
+      {
+        "signal_id": "sig-public-guide",
+        "source_id": "huairou-parent-guide",
+        "channel_id": "content-supply",
+        "publisher_group": "怀柔区政府反诈课堂",
+        "source_type": "public-service-content",
+        "url": "https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html",
+        "opened_at": "2026-08-23",
+        "supports": "覆盖克隆身份、跟风截图、电话核实、隐私和留证报警",
+        "cannot_prove": "不能证明观众完成核验或 AI 效果",
+        "freshness": "耐久机制"
+      },
+      {
+        "signal_id": "sig-image-input",
+        "source_id": "openai-image-input",
+        "channel_id": "ai-capability",
+        "publisher_group": "OpenAI official",
+        "source_type": "vendor-documentation",
+        "url": "https://platform.openai.com/docs/quickstart/make-your-first-api-request",
+        "opened_at": "2026-08-23",
+        "supports": "官方文档说明模型可接收图片并提取文字、分类内容或识别视觉元素",
+        "cannot_prove": "不能证明对聊天截图准确或能判断诈骗",
+        "freshness": "能力易变，录制前复核"
+      },
+      {
+        "signal_id": "sig-privacy",
+        "source_id": "openai-data-controls",
+        "channel_id": "counterevidence",
+        "publisher_group": "OpenAI official",
+        "source_type": "vendor-documentation",
+        "url": "https://platform.openai.com/docs/models/default-usage-policies-by-endpoint",
+        "opened_at": "2026-08-23",
+        "supports": "图片和文件输入属于上传处理数据，应做隐私最小化",
+        "cannot_prove": "不能替代具体产品、账户和地区政策",
+        "freshness": "政策易变，发布前复核"
+      }
+    ],
+    "candidates": [
+      {
+        "proposition_id": "parent-group-fee-screenshot",
+        "type": "hybrid",
+        "title": "家长群突然让扫码交资料费：先把脱敏截图交给 AI 做四项预检",
+        "audience": "开学季中小学新生家长与家庭付款人",
+        "trigger": "群内高仿老师发布限时缴费通知、二维码或私人收款信息",
+        "pain": "家长在忙乱和群体跟随下容易先付款再核实，头像昵称又无法证明身份",
+        "ai_role": "从脱敏截图提取金额、时限、收款方式、身份依据和缺失证据，生成群外核验清单；不判定诈骗、不扫码、不付款",
+        "oracle": {
+          "type": "original-record",
+          "procedure": "用通讯录原有电话联系真实老师或学校办公室，并对照学校官网、官方公众号、官方缴费平台和实际收款主体"
+        },
+        "safe_next_action": "暂停扫码付款，群外联系学校；已付款则留证并立即联系支付机构、报警",
+        "score": 38,
+        "status": "SELECTED",
+        "selection_reason": "本周官方新预警、损失明确、一张截图可做、Oracle 独立且门槛低"
+      },
+      {
+        "proposition_id": "senior-supplement-claim",
+        "type": "evergreen",
+        "title": "爸妈收到能治病的保健品广告：让 AI 帮忙拆四类主张",
+        "audience": "老年消费者及成年子女",
+        "trigger": "直播或私域群宣称保健品治疗疾病",
+        "pain": "可能损失养老钱并延误正规治疗",
+        "ai_role": "提取宣传主张并导航官方批准信息，不做诊断",
+        "oracle": {
+          "type": "official-source",
+          "procedure": "查国家药监、市场监管官方数据库并咨询医生"
+        },
+        "safe_next_action": "暂停购买和停药决定，保留证据并咨询医生或 12315",
+        "score": 34,
+        "status": "HOLD",
+        "selection_reason": "痛点强但医疗与老年隐私风险更高，需要专业审阅"
+      },
+      {
+        "proposition_id": "voice-clone-family-transfer",
+        "type": "hybrid",
+        "title": "听到孩子声音也别转账：AI 换声求助的群外核验",
+        "audience": "收到亲友紧急转账请求的家庭成员",
+        "trigger": "语音或视频称突发事故急需付款",
+        "pain": "声音和画面不再足以确认身份",
+        "ai_role": "整理核验问题和独立回拨路径，不检测真假声纹",
+        "oracle": {
+          "type": "original-record",
+          "procedure": "拨打既有号码、当面核实或联系第三位家人"
+        },
+        "safe_next_action": "停止转账并通过独立渠道核验",
+        "score": 32,
+        "status": "REJECTED",
+        "selection_reason": "真实痛点，但让 AI 判断真假声音容易误导，首期不如截图场景可控"
+      }
+    ],
+    "selected_proposition_id": "parent-group-fee-screenshot",
+    "scoring_rules": "0–5 分评价新鲜度、痛点、人群、AI 增量、Oracle、低门槛、供给缺口和安全；分数只排序，支付前暂停与独立核验是硬门禁",
+    "refresh_triggers": [
+      "开学季结束或收费政策变化",
+      "官方学校收费入口变化",
+      "AI 图片上传和数据政策变化",
+      "出现独立效果研究或新的失败案例"
+    ]
+  },
+  "pain": {
+    "schema_version": "pain-evidence.v1",
+    "pain_id": "parent-group-fee-pressure",
+    "status": "PAIN-VALIDATED",
+    "title": "家长群突然让扫码交资料费：用 AI 做四项预检，再群外核实",
+    "risk_level": "high",
+    "decision_question_types": [
+      "通知是不是学校发的",
+      "收款主体是否可信",
+      "付款前还缺什么证据"
+    ],
+    "affected_user": "开学季中小学新生家长、祖辈照护者及家庭付款人",
+    "trigger_event": "群内头像昵称像老师的账号发布限时缴费通知、二维码或私人收款方式",
+    "market_problem": "家长在班级事务忙乱、金额不大、其他人跟随缴费的压力下，可能把群内身份和截图接龙误当成学校确认。",
+    "losses": [
+      "资金损失",
+      "陌生链接或二维码带来的账户风险",
+      "暴露孩子姓名班级等隐私",
+      "错过及时止付与报警"
+    ],
+    "non_ai_baseline": "不扫码不付款，使用通讯录原有电话联系真实老师或学校办公室，并打开学校官网、官方公众号或既有缴费平台核实。",
+    "friction_gap": "基线可靠但忙乱时容易遗漏收款人、时限、渠道和证据缺口；AI 可把截图快速整理成核验清单。",
+    "privacy_minimization": "上传前裁剪并遮盖孩子姓名、班级、群名、头像、手机号、其他家长姓名、二维码和订单号；优先使用合成 fixture 演示。",
+    "evidence": [
+      {
+        "source_id": "huaibei-2026-warning",
+        "publisher_group": "淮北市公安局/政府网站",
+        "source_type": "official-problem-statement",
+        "url": "https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html",
+        "opened_at": "2026-08-23",
+        "supports": "近期问题、套路和双重核验动作",
+        "cannot_prove": "全国发生率或 AI 效果"
+      },
+      {
+        "source_id": "cctv-parent-group-case",
+        "publisher_group": "央视网/平安北京",
+        "source_type": "regulator-cases",
+        "url": "https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml",
+        "opened_at": "2026-08-23",
+        "supports": "真实损失、对公渠道、群外核验和留证报警",
+        "cannot_prove": "所有学校收费模式"
+      },
+      {
+        "source_id": "huairou-parent-guide",
+        "publisher_group": "怀柔区政府反诈课堂",
+        "source_type": "official-guidance",
+        "url": "https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html",
+        "opened_at": "2026-08-23",
+        "supports": "电话核验、隐私、保存证据和报警",
+        "cannot_prove": "学习者完成率"
+      }
+    ],
+    "capability_core": {
+      "stable_flow": [
+        "object",
+        "claim",
+        "evidence",
+        "source",
+        "boundary",
+        "action"
+      ],
+      "allowed_actions": [
+        "从脱敏截图提取收费主体、事项、金额、时限和方式",
+        "标出身份依据、官方渠道和收款主体的缺失证据",
+        "生成群外核验问题和记录表",
+        "提醒暂停扫码付款并保留证据"
+      ],
+      "forbidden_actions": [
+        "判定某人一定是骗子",
+        "扫描或访问截图中的二维码和陌生链接",
+        "替用户付款、转账或联系群内账号",
+        "上传未打码的未成年人和家长信息",
+        "把 AI 自述作为真实性证明"
+      ]
+    },
+    "independent_verification": {
+      "methods": [
+        {
+          "type": "original-record",
+          "procedure": "拨打通讯录中原有的老师或学校办公室电话，不使用截图内新增号码"
+        },
+        {
+          "type": "official-source",
+          "procedure": "对照学校官网、官方公众号、既有校园 App/缴费平台和对公收款主体"
+        }
+      ],
+      "decision_owner": "孩子监护人或家庭付款人；疑似诈骗由学校与公安机关处理",
+      "pass_language": "只能写发现风险信号、尚需群外核验；只有学校官方渠道确认后才能写收费信息已核实"
+    },
+    "stop_and_escalate": {
+      "conditions": [
+        "要求立即扫码、私人转账或验证码",
+        "收款主体与学校官方渠道不一致",
+        "无法联系真实老师或学校",
+        "已经付款或点击陌生链接",
+        "截图含未打码未成年人信息"
+      ],
+      "actions": [
+        "立即暂停操作",
+        "从群外既有渠道联系学校",
+        "保存聊天、账号与付款凭证",
+        "已付款时联系支付机构并报警",
+        "删除未打码上传内容并检查账户安全"
+      ]
+    }
+  },
+  "research": {
+    "schema_version": "research-dossier.v1",
+    "proposition_id": "parent-group-fee-screenshot",
+    "research_question": "开学季家长收到群内缴费二维码时，AI 能安全帮助哪一步，哪些判断必须交给学校官方渠道？",
+    "identity_resolution": "对象是群内冒充教师发布缴费通知的既有诈骗机制，不等于所有群收费都违法；AI 只做截图信息提取和核验清单。",
+    "sources": [
+      {
+        "source_id": "huaibei-2026-warning",
+        "publisher_group": "淮北市公安局/政府网站",
+        "source_type": "official-problem-statement",
+        "url": "https://www.huaibei.gov.cn/xwzx/bmdt/65106032.html",
+        "opened_at": "2026-08-23",
+        "supports": "近期场景、套路和双重核验动作",
+        "cannot_prove": "全国发生率与 AI 效果"
+      },
+      {
+        "source_id": "cctv-parent-group-case",
+        "publisher_group": "央视网/平安北京",
+        "source_type": "regulator-cases",
+        "url": "https://news.cctv.cn/2025/08/10/ARTISKw8Ca0VqPjwU36D76KU250810.shtml",
+        "opened_at": "2026-08-23",
+        "supports": "真实损失、官方收费渠道与留证报警建议",
+        "cannot_prove": "所有学校统一收费方式"
+      },
+      {
+        "source_id": "moe-fee-warning",
+        "publisher_group": "教育部",
+        "source_type": "official-problem-statement",
+        "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202002/t20200217_421853.html",
+        "opened_at": "2026-08-23",
+        "supports": "长期机制及群成员身份审核要求",
+        "cannot_prove": "2026 单个学校规则"
+      },
+      {
+        "source_id": "huairou-parent-guide",
+        "publisher_group": "怀柔区政府反诈课堂",
+        "source_type": "public-service-content",
+        "url": "https://www.bjhr.gov.cn/zt/qmfzhr/fzxkt/202409/t20240920_3902298.html",
+        "opened_at": "2026-08-23",
+        "supports": "多场景核验、隐私、留证与报警",
+        "cannot_prove": "学习效果"
+      },
+      {
+        "source_id": "openai-image-input",
+        "publisher_group": "OpenAI official",
+        "source_type": "vendor-documentation",
+        "url": "https://platform.openai.com/docs/quickstart/make-your-first-api-request",
+        "opened_at": "2026-08-23",
+        "supports": "图片输入可用于提取文字、分类和识别视觉元素",
+        "cannot_prove": "诈骗识别准确率"
+      },
+      {
+        "source_id": "openai-data-controls",
+        "publisher_group": "OpenAI official",
+        "source_type": "vendor-documentation",
+        "url": "https://platform.openai.com/docs/models/default-usage-policies-by-endpoint",
+        "opened_at": "2026-08-23",
+        "supports": "图片上传涉及数据处理，需隐私最小化",
+        "cannot_prove": "所有 AI 产品的数据规则"
+      }
+    ],
+    "claim_inventory": [
+      {
+        "claim_id": "claim-current-warning",
+        "text": "2026-08-19 警方公开提醒开学季出现冒充老师收资料费场景。",
+        "source_ids": [
+          "huaibei-2026-warning"
+        ],
+        "status": "SUPPORTED",
+        "cannot_prove": "不外推全国发生率"
+      },
+      {
+        "claim_id": "claim-risk-patterns",
+        "text": "高仿头像昵称、群内二维码、限时催促和他人缴费截图都不能证明收费真实。",
+        "source_ids": [
+          "huaibei-2026-warning",
+          "cctv-parent-group-case",
+          "huairou-parent-guide"
+        ],
+        "status": "SUPPORTED-AS-RISK-SIGNALS",
+        "cannot_prove": "单一信号不能确定诈骗"
+      },
+      {
+        "claim_id": "claim-oracle",
+        "text": "付款前应通过群外既有联系方式和学校官方渠道核实。",
+        "source_ids": [
+          "huaibei-2026-warning",
+          "cctv-parent-group-case"
+        ],
+        "status": "SUPPORTED",
+        "cannot_prove": "不能给出所有学校唯一收费渠道"
+      },
+      {
+        "claim_id": "claim-ai-role",
+        "text": "支持图片输入的 AI 可帮助提取截图信息并整理核验清单。",
+        "source_ids": [
+          "openai-image-input"
+        ],
+        "status": "SUPPORTED-CAPABILITY-NOT-EFFECTIVENESS",
+        "cannot_prove": "不能判断诈骗真伪或保证 OCR 正确"
+      },
+      {
+        "claim_id": "claim-privacy",
+        "text": "上传前应遮盖孩子姓名、班级、头像、群名、手机号和二维码。",
+        "source_ids": [
+          "openai-data-controls",
+          "huairou-parent-guide"
+        ],
+        "status": "SCOPED-SAFETY-RULE",
+        "cannot_prove": "不能替代具体产品隐私条款"
+      }
+    ],
+    "counterevidence": [
+      "群内收费不必然是诈骗，个别学校可能使用合规线上平台。",
+      "AI 可能漏读小字、误读收款人或把风险说得过满。",
+      "最可靠动作仍是群外联系学校；不用 AI 也能完成。",
+      "未经打码上传群截图会暴露未成年人和其他家长信息。"
+    ],
+    "competitor_reference": {
+      "primary": "央视案例的真实损失开场、骗子机制、警方动作；借鉴故事先行和权威核验，不复制措辞或画面。",
+      "reverse": "泛 AI 防骗内容常直接罗列骗局或让 AI 下结论；本稿改成一张截图、四项预检、群外 Oracle 和停止动作。",
+      "optimization": "60–90 秒让观众暂停、打码、粘贴固定提示、拿到核验清单；不展示可扫描二维码。"
+    },
+    "findings": [
+      "命题是开学热点与长期群身份问题的 hybrid。",
+      "AI 增量是把忙乱截图变成清单，不是识别骗子。",
+      "最小教学单位是‘谁收、收什么、怎么收、凭什么可信’四项预检。",
+      "付款、指控和报警必须由家长结合官方渠道与警方处理。"
+    ],
+    "cannot_prove": [
+      "没有目标家长完成率、误判率、止损率或平台流量数据。",
+      "fixture 是合成文本，不代表真实截图 OCR。",
+      "没有真实学校收费平台和支付交易验证。"
+    ],
+    "disposition": "APPROVE-FIXTURE-ONLY；允许生成内部样片和实验卡，不允许宣传为 AI 准确识骗或有效防骗"
+  },
+  "audience": {
+    "schema_version": "audience-profile.v1",
+    "primary_audience": "开学季中小学新生家长，尤其是不熟悉新班主任和学校缴费流程的人",
+    "secondary_audience": "帮助父母操作手机的成年子女、祖辈照护者、班主任和家委会成员",
+    "roles": {
+      "viewer": "刷到短视频的家长或家庭成员",
+      "operator": "会截图、打码并使用手机 AI 的成年人",
+      "exposed_person": "孩子、其他群成员和家庭付款账户所有者",
+      "decision_owner": "孩子监护人或家庭付款人"
+    },
+    "digital_ability": "会截屏、裁剪、打码、粘贴提示；不要求理解 OCR 或诈骗技术",
+    "device_context": "手机微信/QQ 家长群与手机 AI App；演示用合成截图，真实操作先打码",
+    "emotional_context": "开学事务繁多，怕耽误孩子、怕被老师认为不配合，容易在催促和接龙下快速付款",
+    "objections": [
+      "群里那么多家长都交了还能假吗",
+      "头像昵称就是老师",
+      "金额不大没必要打电话",
+      "AI 说危险是不是就能报警"
+    ],
+    "language_rules": [
+      "先说暂停付款，不用恐吓",
+      "不用骗子定罪式措辞",
+      "四项问题都用大白话",
+      "反复说明 AI 不是最终裁判"
+    ],
+    "accessibility": "大字四格卡、关键口令读两遍、二维码始终打码、字幕不超过两行",
+    "privacy": "真实截图必须遮盖未成年人和群成员信息；不展示可扫二维码、手机号、学校内部群名和订单号",
+    "share_path": "家长刷到视频后领取实验卡；也可由老师转发到班群作为缴费前检查流程",
+    "learner_validation": {
+      "minimum_users": 5,
+      "success_artifact": "5 名目标家长能在 3 分钟内完成打码、四项预检和群外核验路线选择",
+      "current_status": "NOT-LEARNER-TESTED"
+    }
+  },
+  "scenarios": {
+    "schema_version": "scenario-map.v1",
+    "capability_core": {
+      "stable_flow": [
+        "object",
+        "claim",
+        "evidence",
+        "source",
+        "boundary",
+        "action"
+      ]
+    },
+    "adapters": [
+      {
+        "scenario_id": "group-material-fee",
+        "name": "班级群资料费二维码",
+        "trigger": "群内高仿老师账号要求今晚前扫码交 398 元资料费并接龙",
+        "input": "已遮盖群名、头像、孩子姓名和二维码的合成聊天截图",
+        "ai_task": "提取谁收、收什么、怎么收、凭什么可信，并列出缺失证据和群外核验动作",
+        "inspectable_output": "四项预检卡：主体、事项、渠道、证据；状态固定为 PAUSE-VERIFY",
+        "oracle": {
+          "type": "original-record",
+          "procedure": "拨打通讯录原有老师/学校电话并对照官方缴费入口、收款主体"
+        },
+        "failure": "AI 因头像、语气和多人接龙直接判断通知真实，或扫描二维码",
+        "human_gate": "家长在学校群外渠道确认前不得付款；发现异常由学校和警方处理",
+        "teaching_content": "识别群内身份、催促、私人收款和跟风截图都不是独立证据",
+        "materials": [
+          "合成家长群截图",
+          "四项预检卡",
+          "群外核验路线卡"
+        ]
+      },
+      {
+        "scenario_id": "private-training-fee",
+        "name": "孩子私聊说培训费急缴",
+        "trigger": "陌生账号或孩子社交账号私聊，称课程名额将满，要求转到个人账户",
+        "input": "已打码的合成私聊文本，不含真实孩子信息",
+        "ai_task": "提取提出者、培训机构、截止时间、收款账户和缺失合同/官方通知，生成回拨孩子与机构的核验问题",
+        "inspectable_output": "私聊转账核验表和 STOP-TRANSFER 状态",
+        "oracle": {
+          "type": "original-record",
+          "procedure": "拨打孩子既有号码并从机构官网独立查找电话，不使用消息中号码"
+        },
+        "failure": "AI 把能说出孩子信息当作身份验证，忽略账号可能被盗",
+        "human_gate": "家长与孩子本人和机构分别确认，合同与对公主体一致后再决定",
+        "teaching_content": "把方法迁移到冒充孩子、同学或培训机构的私聊缴费请求",
+        "materials": [
+          "合成私聊 fixture",
+          "独立回拨问题卡",
+          "收款主体对照表"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "schema_version": "teaching-plan.v1",
+    "outcome": "家长能在付款前把脱敏截图转成四项核验清单，并通过群外既有联系方式完成真实性核验。",
+    "prerequisites": [
+      "会截图和打码",
+      "能找到老师或学校既有联系方式",
+      "使用支持图片的 AI 或手工抄录文字"
+    ],
+    "learner_artifact": "一张脱敏截图、一份四项预检结果、一条群外核验记录和最终人工决定",
+    "assessment": "AI 不得下诈骗结论；二维码保持打码；四项都需填写；最终结果必须有群外官方证据。",
+    "maturity": "FIXTURE-TESTED",
+    "steps": [
+      {
+        "kind": "pain",
+        "action": "展示合成家长群消息：今晚前扫码交资料费，已有家长接龙",
+        "evidence": "2026-08-19 警方当前预警与公开损失案例"
+      },
+      {
+        "kind": "baseline",
+        "action": "先演示不用 AI 的可靠做法：不扫不付，群外电话联系学校",
+        "evidence": "警方与央视建议"
+      },
+      {
+        "kind": "demo",
+        "action": "遮盖隐私后把截图交给 AI，只让它回答谁收、收什么、怎么收、凭什么可信",
+        "evidence": "fixture 输入输出记录"
+      },
+      {
+        "kind": "pause",
+        "action": "观众暂停 20 秒，打码自己的截图或使用下载的合成截图",
+        "evidence": "脱敏检查清单"
+      },
+      {
+        "kind": "verify",
+        "action": "用通讯录原有电话和学校官方渠道核实，不点截图链接、不问群内高仿账号",
+        "evidence": "群外核验记录"
+      },
+      {
+        "kind": "failure",
+        "action": "展示失败输出：AI 因语气像老师且多人接龙，判断可以付款",
+        "evidence": "fixture-run 中的红色失败样例"
+      },
+      {
+        "kind": "repair",
+        "action": "补充提示：只找风险信号和缺失证据，禁止判定、扫码、付款",
+        "evidence": "修复版提示卡"
+      },
+      {
+        "kind": "rerun",
+        "action": "同一输入重跑，结果必须回到 PAUSE-VERIFY 并给群外核验路线",
+        "evidence": "fixture-run 绿色情况"
+      },
+      {
+        "kind": "transfer",
+        "action": "换成孩子私聊培训费急缴，重复四项预检与独立回拨",
+        "evidence": "第二 fixture 核验表"
+      },
+      {
+        "kind": "human-gate",
+        "action": "监护人结合学校官方确认决定；已付款或点链接则留证、联系支付机构并报警",
+        "evidence": "最终决定与升级记录"
+      }
+    ]
+  },
+  "content": {
+    "schema_version": "content-plan.v1",
+    "positioning": "普通家庭开学季 AI 小实验：不是让 AI 识别骗子，而是把一张脱敏缴费截图变成付款前四项核验清单。",
+    "titles": [
+      "家长群突然让扫码交资料费？付款前先让 AI 问四个问题",
+      "头像昵称都像老师，也先别付：一张截图做四项预检",
+      "开学季家长群缴费通知，AI 只帮你做这一步"
+    ],
+    "hook": "群里老师头像、老师语气、还有一排家长缴费接龙——这三样加起来，也不能证明这笔钱该付。",
+    "fact_sheet": {
+      "claims": [
+        {
+          "claim_id": "claim-current-warning",
+          "text": "2026-08-19 警方公开提醒近期出现冒充班级老师收资料费的场景。",
+          "source_ids": [
+            "huaibei-2026-warning"
+          ],
+          "cannot_prove": "不代表所有家长群收费都有问题"
+        },
+        {
+          "claim_id": "claim-risk-patterns",
+          "text": "高仿身份、二维码、限时催促和缴费接龙是需要进一步核验的信号。",
+          "source_ids": [
+            "huaibei-2026-warning",
+            "cctv-parent-group-case",
+            "huairou-parent-guide"
+          ],
+          "cannot_prove": "不能凭单个信号指控任何人"
+        },
+        {
+          "claim_id": "claim-oracle",
+          "text": "付款前应通过群外既有联系方式和学校官方渠道核实。",
+          "source_ids": [
+            "huaibei-2026-warning",
+            "cctv-parent-group-case"
+          ],
+          "cannot_prove": "具体学校的唯一合规渠道需向学校确认"
+        },
+        {
+          "claim_id": "claim-ai-role",
+          "text": "支持图片输入的 AI 能帮助提取截图文字和视觉信息并整理清单。",
+          "source_ids": [
+            "openai-image-input"
+          ],
+          "cannot_prove": "不能证明通知真伪或 OCR 完全正确"
+        },
+        {
+          "claim_id": "claim-privacy",
+          "text": "真实截图上传前应最小化未成年人和群成员信息。",
+          "source_ids": [
+            "openai-data-controls",
+            "huairou-parent-guide"
+          ],
+          "cannot_prove": "不能替代所用产品的当前隐私条款"
+        }
+      ]
+    },
+    "director_script": [
+      {
+        "time": "00:00-00:07",
+        "shot": "真人近景，旁边浮出合成家长群消息",
+        "action": "在二维码上盖巨大马赛克",
+        "overlay": "先别扫，先问四个问题",
+        "material_ids": [
+          "mat-host-open",
+          "mat-synthetic-chat"
+        ]
+      },
+      {
+        "time": "00:07-00:18",
+        "shot": "四格大字卡",
+        "action": "依次出现谁收、收什么、怎么收、凭什么可信",
+        "overlay": "头像昵称不是身份凭证",
+        "material_ids": [
+          "mat-four-checks"
+        ]
+      },
+      {
+        "time": "00:18-00:42",
+        "shot": "手机 exact screen recording",
+        "action": "对合成截图打码并上传，粘贴固定提示",
+        "overlay": "只提取，不判定；不扫码，不付款",
+        "material_ids": [
+          "mat-phone-demo",
+          "mat-prompt-card"
+        ]
+      },
+      {
+        "time": "00:42-00:56",
+        "shot": "红色失败卡转绿色修复卡",
+        "action": "失败输出说可以付；修复后回到 PAUSE-VERIFY",
+        "overlay": "AI 不是 Oracle",
+        "material_ids": [
+          "mat-red-green"
+        ]
+      },
+      {
+        "time": "00:56-01:12",
+        "shot": "群外核验路线图",
+        "action": "通讯录老师电话→学校办公室→官网/公众号/缴费平台",
+        "overlay": "不要使用截图里的新号码",
+        "material_ids": [
+          "mat-oracle-route"
+        ]
+      },
+      {
+        "time": "01:12-01:25",
+        "shot": "真人收口",
+        "action": "说清已付款、点链接和隐私泄露的升级动作",
+        "overlay": "留证、止付、报警",
+        "material_ids": [
+          "mat-host-close",
+          "mat-stop-card"
+        ]
+      }
+    ],
+    "spoken_narration": [
+      {
+        "section": "开场",
+        "text": "群里是老师头像，语气也像老师，下面还有一排家长缴费接龙。先别扫。最近警方刚提醒，开学季已经出现冒充老师收资料费的场景。",
+        "claim_ids": [
+          "claim-current-warning",
+          "claim-risk-patterns"
+        ]
+      },
+      {
+        "section": "四项预检",
+        "text": "你只让 AI 帮你问四个问题：谁在收钱？收的是什么？通过什么方式收？除了头像、昵称和接龙，还有什么证据能证明这是学校通知？",
+        "claim_ids": [
+          "claim-ai-role",
+          "claim-risk-patterns"
+        ]
+      },
+      {
+        "section": "操作",
+        "text": "先把孩子姓名、班级、群名、头像、手机号和二维码全部遮住，再上传。提示词我放在实验卡里。记住：只提取风险信号和缺失证据，不许 AI 扫码，不许它替你判断真假。",
+        "claim_ids": [
+          "claim-ai-role",
+          "claim-privacy"
+        ]
+      },
+      {
+        "section": "失败与修复",
+        "text": "如果 AI 因为语气正式、很多人已缴费，就说可以付款，这个结果直接作废。加上一句：群内信息不是独立证据，最终必须通过群外官方渠道核实。",
+        "claim_ids": [
+          "claim-risk-patterns",
+          "claim-oracle"
+        ]
+      },
+      {
+        "section": "独立核验",
+        "text": "然后拨打你通讯录里原来就有的老师或学校电话，再看学校官网、官方公众号或既有缴费平台。不要使用截图里新发来的号码，也不要回头问那个高仿账号。",
+        "claim_ids": [
+          "claim-oracle"
+        ]
+      },
+      {
+        "section": "收口",
+        "text": "AI 在这里不是识骗裁判，只是帮忙把忙乱信息整理成清单。学校确认前不付款；已经扫码或付款，保存聊天和凭证，尽快联系支付机构并报警。",
+        "claim_ids": [
+          "claim-ai-role",
+          "claim-oracle"
+        ]
+      }
+    ],
+    "benchmark": {
+      "primary": "央视真实案例的故事先行、损失可视化和警方动作",
+      "reverse": "泛 AI 防骗清单和模型下结论式内容",
+      "originality_changes": [
+        "改成一张合成截图现场实验",
+        "增加隐私打码作为第一步",
+        "固定四项预检而非骗局大全",
+        "用群外 Oracle 验收",
+        "展示同输入失败、修复和迁移"
+      ]
+    },
+    "call_to_action": "领取《家长群缴费四项预检卡》和合成练习截图；先用练习图完成一次，再处理真实信息。"
+  },
+  "operation": {
+    "schema_version": "operation-plan.v1",
+    "outcome": "把已通过 fixture 的四项预检方法推进到可录制样片和目标家长测试，同时不上传真实未成年人信息。",
+    "user_actions": [
+      {
+        "action_id": "user-01-review-sources",
+        "actor": "主持人/研究者",
+        "action": "录制当天重开 2026 警方预警和所选 AI 的图片/隐私文档",
+        "output": "带日期的来源核验记录",
+        "verification": "URL、日期、支持与不能证明字段完整",
+        "status": "READY"
+      },
+      {
+        "action_id": "user-02-phone-record",
+        "actor": "主持人",
+        "action": "用合成截图录制打码、上传、粘贴提示和读取四项结果",
+        "output": "未经剪辑的手机原始录屏",
+        "verification": "二维码不可扫、无真实学校和孩子信息、AI 不下诈骗结论",
+        "status": "READY"
+      },
+      {
+        "action_id": "user-03-host-record",
+        "actor": "主持人",
+        "action": "录制开场与边界收口；中段使用手机录屏和图卡",
+        "output": "两段真人口播素材",
+        "verification": "口播与 fact sheet 一致，不说准确识骗或有效防骗",
+        "status": "READY"
+      },
+      {
+        "action_id": "user-04-learner-test",
+        "actor": "目标家长测试组织者",
+        "action": "让至少 5 名家长用合成图完成打码、预检、群外路线选择和第二场景迁移",
+        "output": "用时、错误、恢复和迁移记录",
+        "verification": "所有提交均无真实儿童信息；不足 5 人保持 NOT-LEARNER-TESTED",
+        "status": "BLOCKED"
+      }
+    ],
+    "build_actions": [
+      {
+        "action_id": "build-01-fixture-pack",
+        "actor": "内容工厂",
+        "action": "生成合成家长群消息、固定提示、四项预检卡和 fixture 红绿证据",
+        "output": "本目录中的 fixture 与实验卡文件",
+        "verification": "不含真实人物、学校、群名或可扫二维码",
+        "status": "DONE"
+      },
+      {
+        "action_id": "build-02-visual-pack",
+        "actor": "图片流水线",
+        "action": "生成四格预检图、群外核验路线图和停止卡",
+        "output": "3 张 9:16 原创图解及横屏变体",
+        "verification": "不伪造 exact UI，文字绑定 fact sheet",
+        "status": "READY"
+      },
+      {
+        "action_id": "build-03-video",
+        "actor": "视频流水线",
+        "action": "组合真人、手机 exact recording、字幕、图解和来源卡",
+        "output": "75–90 秒竖屏样片、封面、字幕和 QC 回执",
+        "verification": "素材、隐私、事实、字幕、音频和边界门禁均 PASS",
+        "status": "BLOCKED"
+      },
+      {
+        "action_id": "build-04-course",
+        "actor": "课程工厂",
+        "action": "扩展成一课两场景的 15 分钟带做课",
+        "output": "讲义、实验卡、评分表和提交模板",
+        "verification": "完成失败、修复、重跑、迁移和 5 人测试后才能晋级",
+        "status": "BLOCKED"
+      }
+    ],
+    "recording_plan": "推荐真人出镜：开头建立家庭信任，结尾说安全边界；中段用合成截图与手机实录。没有真人也可用稳定 IP 与本人授权声音，但风险收口必须清晰。",
+    "artifacts": [
+      "dist/FINAL-PRODUCT.md",
+      "dist/episode-package.json",
+      "fixture-message.md",
+      "prompt-card.md",
+      "four-check-experiment-card.md",
+      "fixture-run.json",
+      "phone-recording.mov",
+      "host-open.mov",
+      "host-close.mov",
+      "final-vertical.mp4",
+      "qc-receipt.json"
+    ],
+    "dependencies": [
+      "合成截图",
+      "支持图片输入的 AI",
+      "当前官方来源",
+      "手机录屏",
+      "隐私打码能力",
+      "5 名目标家长测试者"
+    ],
+    "stop_conditions": [
+      "真实截图未打码",
+      "出现可扫描二维码或真实联系方式",
+      "AI 输出判定诈骗或建议付款",
+      "录屏当天来源已失效",
+      "没有群外独立核验路线"
+    ],
+    "next_handoff": "先进入 validation lane 复核 fixture 和录制一次合成图手机实测；通过后再交给视频流水线。真实群截图与真实付款不属于首轮验证。"
+  },
+  "production": {
+    "schema_version": "production-plan.v1",
+    "host_strategy": "信任敏感题材推荐真人开场和收口；中段全部使用合成截图、手机实录、大字图卡和来源卡，不模仿反诈主播形象或声音。",
+    "video_brief": "75–90 秒竖屏：本周预警→合成消息→打码→四项预检→失败修复→群外核验→已付款升级。",
+    "materials": [
+      {
+        "material_id": "mat-host-open",
+        "type": "human-host-video",
+        "method": "真人拍摄或本人授权稳定 IP",
+        "usage": "开场阻止冲动扫码",
+        "exactness": "逐字对照口播稿",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-synthetic-chat",
+        "type": "synthetic-fixture",
+        "method": "基于公开套路原创合成，不使用真实群截图",
+        "usage": "展示待核验通知",
+        "exactness": "明确标注合成练习图，二维码不可扫",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "PASS-FIXTURE"
+      },
+      {
+        "material_id": "mat-four-checks",
+        "type": "generated-diagram",
+        "method": "原创四格大字图",
+        "usage": "谁收、收什么、怎么收、凭什么可信",
+        "exactness": "绑定 fixture-run 字段",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-phone-demo",
+        "type": "screen-recording",
+        "method": "手机对合成截图 exact recording",
+        "usage": "打码、上传与读取结果",
+        "exactness": "必须真实录屏，不生成伪 UI",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "BLOCKED-NOT-RECORDED"
+      },
+      {
+        "material_id": "mat-prompt-card",
+        "type": "download-card",
+        "method": "依据能力边界原创编写",
+        "usage": "固定模型权限和输出结构",
+        "exactness": "禁止判定、扫码和付款",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "PASS-FIXTURE"
+      },
+      {
+        "material_id": "mat-red-green",
+        "type": "fixture-comparison",
+        "method": "同一合成输入的失败与修复输出",
+        "usage": "展示 AI 失败和最小修复",
+        "exactness": "只证明 fixture 结构，不证明真实模型准确率",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "PASS-FIXTURE"
+      },
+      {
+        "material_id": "mat-oracle-route",
+        "type": "generated-diagram",
+        "method": "原创群外核验路线图",
+        "usage": "通讯录电话、学校办公室、官方平台",
+        "exactness": "不写某校固定渠道",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-stop-card",
+        "type": "download-card",
+        "method": "依据官方建议原创整理",
+        "usage": "已付款、点链接或泄露隐私后的升级动作",
+        "exactness": "不替代警方或支付机构处置",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      },
+      {
+        "material_id": "mat-host-close",
+        "type": "human-host-video",
+        "method": "真人拍摄或本人授权稳定 IP",
+        "usage": "说明 AI 不是裁判和升级动作",
+        "exactness": "保持 FIXTURE-TESTED 边界",
+        "rights_status": "PASS",
+        "privacy_status": "PASS",
+        "provenance_status": "READY"
+      }
+    ],
+    "publication_gates": {
+      "research": "PASS",
+      "fixture": "PASS",
+      "privacy-design": "PASS",
+      "live-phone-demo": "BLOCKED-NOT-RUN",
+      "learner-test": "BLOCKED-NOT-RUN",
+      "rights-review": "PASS",
+      "render": "BLOCKED-NOT-RUN",
+      "video-qc": "BLOCKED-NOT-RUN",
+      "publication": "BLOCKED-NOT-RUN"
+    }
+  }
+}
