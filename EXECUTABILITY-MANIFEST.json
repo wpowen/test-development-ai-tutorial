@@ -1,7 +1,7 @@
 {
   "schema_version": "executability-audit.v1",
   "audit_id": "executability-c9ef1a241fda",
-  "audited_at": "2026-08-23T16:16:38.331Z",
+  "audited_at": "2026-08-24T06:13:49.956Z",
   "public_page_ids": [
     "TD-F01",
     "TD-P01",
@@ -108,7 +108,7 @@
     "TD-AG-10"
   ],
   "source_hashes": {
-    "course": "sha256:83e18681c9cd1ee313eca202095ac6dc69feff2542e6de222ab9288a9af8b85f",
+    "course": "sha256:712cf167824f39e9b7129e508999a2f552825d43622cc39f59b53ea9e149230a",
     "audit_implementation": "sha256:c2889e2311c3d952b4c0a07db829a8b8c6de0419d3cf230da801ded9ba04cc65"
   },
   "summary": {
@@ -1629,21 +1629,21 @@
   ],
   "verdict": "PASS",
   "findings": [],
-  "generated_at": "2026-08-23T16:16:38.331Z",
+  "generated_at": "2026-08-24T06:13:49.956Z",
   "evidence_run": {
     "schema_version": "evidence-run.v1",
-    "run_id": "integrity-2026-08-23T16-17-15-754Z-faf48a3c",
+    "run_id": "integrity-2026-08-24T06-14-35-721Z-4f4f1afd",
     "command": "node scripts/generate-course-integrity-manifests.mjs --write-fixture-preview",
-    "started_at": "2026-08-23T16:16:38.167Z",
-    "finished_at": "2026-08-23T16:17:15.755Z",
+    "started_at": "2026-08-24T06:13:49.824Z",
+    "finished_at": "2026-08-24T06:14:35.722Z",
     "exit_code": 0,
     "validator": {
       "path": "scripts/generate-course-integrity-manifests.mjs",
       "sha256": "sha256:734f71dd66ce0f8e9914cb7b4a4cbbd0dc5a520d077c855be59636ce193b7d4a"
     },
     "input_hashes": {
-      "course": "sha256:83e18681c9cd1ee313eca202095ac6dc69feff2542e6de222ab9288a9af8b85f",
-      "tutorial": "sha256:81bc46e554a009d77c4191ff2756dbf78cfd8ab248d09425cb494f93bd3c2fde"
+      "course": "sha256:712cf167824f39e9b7129e508999a2f552825d43622cc39f59b53ea9e149230a",
+      "tutorial": "sha256:21c71ba22b816db9ee503486548a92bc672ebc63bb6439997409bce48fe7e627"
     }
   }
 }
