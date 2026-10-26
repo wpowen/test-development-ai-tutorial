@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:78931e27f6b7b892b94f03891fce58c41bcc39ece34f84d0e94d9959dbfa04c3",
+  "content_hash": "sha256:0cb526c47c33a79aba121c50cd911663f6f233b669ee226ed579e50ed3871f4d",
   "release_profile": "fixture-preview.v1",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
