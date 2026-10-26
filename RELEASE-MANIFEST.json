@@ -1,6 +1,6 @@
 {
   "schema_version": "1.3-candidate",
-  "source_commit": "5ad70a3af206ed6870e557ee582b3de6f4234f9b",
+  "source_commit": "9521e3b4eeaac579397d28d8dd49c53de80cf7d7",
   "release_scope": "validated-subset",
   "catalog_complete": false,
   "page_count": 103,
@@ -114,7 +114,7 @@
     "site",
     "tutorial"
   ],
-  "content_hash": "sha256:0cb526c47c33a79aba121c50cd911663f6f233b669ee226ed579e50ed3871f4d",
+  "content_hash": "sha256:e665df55a959b76beeb387f13af3ee31ceda8a0fc4b6eb738b80f25b58f40429",
   "release_profile": "fixture-preview.v1",
   "validation_verdict": "BLOCKED-HIGHER-MATURITY",
   "publication_targets": [
